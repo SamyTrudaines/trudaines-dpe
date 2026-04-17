@@ -20,9 +20,10 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-# -- Configuration --
+# -- Configuration (surchargeable via CLI: python3 extract_dpe_prospection.py 7 semaine) --
 CODES_POSTAUX = ["75018", "75009"]
-NB_JOURS = 3
+NB_JOURS = int(sys.argv[1]) if len(sys.argv) > 1 else 3
+SUFFIXE = sys.argv[2] if len(sys.argv) > 2 else f"{NB_JOURS}jours"
 RAYON_SIRENE_KM = 0.1  # 100 metres
 
 # API endpoints
@@ -37,7 +38,7 @@ SIRENE_API = "https://recherche-entreprises.api.gouv.fr/search"
 
 # Sortie
 DESKTOP = Path.home() / "Bureau"
-OUTPUT_FILE = DESKTOP / "Trudaines_DPE_3jours.csv"
+OUTPUT_FILE = DESKTOP / f"Trudaines_DPE_{SUFFIXE}.csv"
 
 
 # -- Helpers HTTP --
