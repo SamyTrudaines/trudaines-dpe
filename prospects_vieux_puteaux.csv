@@ -1,54 +1,77 @@
-Nom,Categorie,Activite,Adresse,Telephone,Email,B2B_id,Source,Notes
-La Perle de l'Ecailler,Restauration,Restaurant de fruits de mer,"46 rue Voltaire, 92800 Puteaux",01 42 04 55 55,,,TheFork,Voisin direct rue Voltaire
-Brasserie Le Flore,Restauration,Brasserie cuisine francaise,"108 rue Jean Jaures, 92800 Puteaux",01 47 76 20 98,brasserieleflore@yahoo.fr,ed8328c6edb9cfeaf91bb834a119c24a,brasserie-leflore-puteaux.fr,Matched B2B
-L'Orangerie M&K,Restauration,Restaurant,"33 rue Jean Jaures, 92800 Puteaux",01 70 16 45 97,lorangerie@lorangeriemk.fr,,lorangeriemk.eatbu.com,
-L'Imprevu,Restauration,Restaurant (cuisine algerienne),"68 rue de la Republique, 92800 Puteaux",01 40 90 90 91,,,limprevu-puteaux.com,
-Kancel,Restauration,Restaurant,"35 rue de la Republique, 92800 Puteaux",,,,Mappy,Tel/email non trouves
-Maison Becam,Commerce de bouche,Boulangerie patisserie,"107 rue Jean Jaures, 92800 Puteaux",09 86 39 67 23,contact@maisonbecam.com,,maisonbecam.com,Email = siege chaine
-Boulangerie La Rose de Puteaux,Commerce de bouche,Boulangerie patisserie,"56 rue Jean Jaures, 92800 Puteaux",01 47 78 01 18,,,MyBoulange,
-Paul,Commerce de bouche,Boulangerie patisserie,"138 rue Jean Jaures, 92800 Puteaux",,,,Pubeco,Chaine - tel direct non trouve
-C'est ma boulangerie,Commerce de bouche,Boulangerie patisserie,"66 rue Jean Jaures, 92800 Puteaux",,,,118000,Tel/email non trouves
-Boulangerie Stephane Moa,Commerce de bouche,Boulangerie patisserie,"196 rue de la Republique, 92800 Puteaux",09 73 88 20 50,,,PagesJaunes,
-Chez Meunier,Commerce de bouche,Boulangerie patisserie,"51 bd Richard Wallace, 92800 Puteaux",,,,Annuaire,Tel/email non trouves
-Maison Legrand,Commerce de bouche,Boucherie charcuterie,"121 rue Jean Jaures, 92800 Puteaux",01 41 37 32 48,,,PagesJaunes,
-Nicolas,Commerce de bouche,Cave a vins,"101 rue Jean Jaures, 92800 Puteaux",01 47 76 25 99,,,nicolas.com,Chaine - adresse listee au 99
-Cave Mannevy,Commerce de bouche,Cave a vins,"50 bd Richard Wallace, 92800 Puteaux",01 45 06 07 75,helene@cavemannevy.fr,,RocketReach,
-Au Centenaire,Commerce de bouche,Dietetique / alimentation,"74 bd Richard Wallace, 92800 Puteaux",01 47 72 37 48,,,Annuaire,
-Madame Leslie Bury,Beaute / bien-etre,Institut de beaute,"17 rue Voltaire, 92800 Puteaux",,,,PagesJaunes,Voisin direct - tel non trouve
-MD Coiffure,Beaute / bien-etre,Coiffeur,"31 rue Jean Jaures, 92800 Puteaux",01 47 78 40 70,,,PagesJaunes,
-Andrea Coiffure,Beaute / bien-etre,Coiffeur,"164 rue Jean Jaures, 92800 Puteaux",01 45 06 19 82,,,PagesJaunes,
-Franck Provost,Beaute / bien-etre,Coiffeur,"109 rue Jean Jaures, 92800 Puteaux",01 46 98 93 09,,21dd69f10861f5163ce576384963eae0,franckprovost.com,Matched B2B
-Arte Coiffure,Beaute / bien-etre,Coiffeur,"74 rue Jean Jaures, 92800 Puteaux",01 47 73 79 63,,,Annuaire,
-L'Institut,Beaute / bien-etre,Institut de beaute,"162 rue Jean Jaures, 92800 Puteaux",01 42 04 66 06,,,PagesJaunes,
-Au Nom de la Rose,Commerce / boutique,Fleuriste,"116 bis rue Jean Jaures, 92800 Puteaux",01 49 00 04 74,puteaux@aunomdelarose.fr,c188f46ca9776edb183afd9f7a303fb1,aunomdelarose.fr,Matched B2B
-Monceau Fleurs,Commerce / boutique,Fleuriste,"111 rue Jean Jaures, 92800 Puteaux",01 47 78 45 70,monceaufleursputeaux@gmail.com,304166fb81171f4320dc2cc28bffa11a,monceaufleurs.com,Matched B2B
-Fleurs en Herbe,Commerce / boutique,Fleuriste,"89 rue de la Republique, 92800 Puteaux",06 65 39 43 44,,,PagesJaunes,
-Elysa,Commerce / boutique,Pret-a-porter femme,"105 rue Jean Jaures, 92800 Puteaux",01 47 76 29 84,elysaputeaux@gmail.com,223aaade155d1ea23398d2003a425477,elysa-puteaux.com,Matched B2B
-MA&ME,Commerce / boutique,Pret-a-porter,"132 rue Jean Jaures, 92800 Puteaux",,info@maetmeshop.com,,maetmeshop.com,Email = chaine
-Boutique Indemodable / Brocanteo,Commerce / boutique,Decoration cadeaux,"166 rue Jean Jaures, 92800 Puteaux",01 41 38 24 23,,5fd452232f2f2c9ad1998a899b6d2bb7,PagesJaunes,Matched B2B
-Futura Cycles,Commerce / boutique,Magasin de velos,"59 bd Richard Wallace, 92800 Puteaux",01 47 99 35 68,,,PagesJaunes,Possible cessation ~2022 - a verifier
-Le Diplomate,Commerce / boutique,Bar tabac presse,"117 rue Jean Jaures, 92800 Puteaux",07 51 38 81 78,,,Mappy,Adresse corrigee au 117
-Pharmacie de France,Sante,Pharmacie,"31 rue Jean Jaures, 92800 Puteaux",01 47 78 97 97,,,Pharmanity,
-Pharmacie du Centre,Sante,Pharmacie,"112 rue Jean Jaures, 92800 Puteaux",01 47 76 20 58,pharmacentre92@gmail.com,30ce4f126839df12306c8b37d50ad111,pharmacieducentreputeaux.com,Matched B2B
-Pharmacie Pharmavance,Sante,Pharmacie,"142 rue Jean Jaures, 92800 Puteaux",01 45 06 01 38,,,Pharmavance,
-Grande Pharmacie Bergeres Republique,Sante,Pharmacie,"180 rue de la Republique, 92800 Puteaux",01 47 75 07 77,pharmaciebergeresrepublique@gmail.com,,sante.fr,
-Studio Guettaby Kamal,Services / prof. liberales,Studio photo,"13 rue Roque de Fillol, 92800 Puteaux",01 78 53 01 61,,,Mappy,
-Club fitness (O. Issembert),Services / prof. liberales,Club de sport / fitness,"27 rue Roque de Fillol, 92800 Puteaux",01 74 63 21 21,,,Mappy,
-Assay Consulting,Services / prof. liberales,Conseil / logiciels,"17 rue Voltaire, 92800 Puteaux",,,,Mappy,Voisin direct - tel/email non trouves
-GCMI Corporate,Services / prof. liberales,Conseil en management,"20 rue Voltaire, 92800 Puteaux",02 35 26 18 27,contact@gcmi.fr,,gcmi.fr,Tel/email = siege Normandie
-Agence l'Adresse,Services / prof. liberales,Agence immobiliere,"75 bis bd Richard Wallace, 92800 Puteaux",01 70 21 87 31,puteaux@ladresse.immo,2a2d03eea3e41eaefff761abde79fc22,ladresse.com,Matched B2B - prospect cle
-Guy Hoquet,Services / prof. liberales,Agence immobiliere,"36 bd Richard Wallace, 92800 Puteaux",01 41 38 33 83,puteaux@guyhoquet.com,8cb2fac2ff932011bf1a675957740c5b,guy-hoquet.com,Matched B2B - prospect cle
-Le Babour,Restauration,Restaurant mediterraneen,"34 rue Godefroy, 92800 Puteaux",01 49 06 08 38,,,PagesJaunes,
-Optic 2000,Sante,Opticien,"126 rue Jean Jaures, 92800 Puteaux",01 40 90 02 48,,,au-magasin.fr,
-Les Opticiens Mutualistes,Sante,Opticien,"34 Grande Halle, La Defense 4, 92800 Puteaux",09 69 39 11 70,,,Pubeco,Situe a La Defense (hors Vieux Puteaux)
-Societe Generale Puteaux-Centre,Services / prof. liberales,Banque,"159 rue Jean Jaures, 92800 Puteaux",01 46 25 01 50,,,SG,Accueil temporaire; siege 21 bd Richard Wallace
-AXA - Herve Letort,Services / prof. liberales,Assurance / banque,"53 rue Jean Jaures, 92800 Puteaux",01 47 73 87 91,,,AXA,Adresse corrigee au 53
-La Banque Postale,Services / prof. liberales,Banque,"135 rue de la Republique, 92800 Puteaux",01 46 93 94 00,,,PagesJaunes,
-Cabinet Bisdorff,Services / prof. liberales,Agence immobiliere / syndic,"138 rue Jean Jaures, 92800 Puteaux",01 47 78 74 74,bisdorff@orange.fr,,bisdorff-immobilier.fr,
-Nestenn Immobilier,Services / prof. liberales,Agence immobiliere,"105 rue Jean Jaures, 92800 Puteaux",01 41 02 95 95,puteaux@nestenn.com,,nestenn.com,Adresse confirmee au 105
-Meleine,Services / prof. liberales,Courtier en assurance,"62 rue Jean Jaures, 92800 Puteaux",01 80 88 99 77,,,Mappy,
-Avenir & Serenite Patrimoine,Services / prof. liberales,Gestion de patrimoine,"106 rue de la Republique, 92800 Puteaux",09 81 48 61 15,,,avenirserenite.e-monsite.com,
-Les Assurances de Paris,Services / prof. liberales,Assurance,"95 rue de la Republique, 92800 Puteaux",01 47 78 15 15,,,Mappy,
-La Retoucherie,Commerce / boutique,Couture & retouches,"33 rue Jean Jaures, 92800 Puteaux",06 74 71 04 74,,,Mappy,
-Harmony Shoes,Commerce / boutique,Cordonnerie,"38 rue Jean Jaures, 92800 Puteaux",,,,Mappy,Tel non trouve
-Mister Clean,Commerce / boutique,Pressing,"38 rue Jean Jaures, 92800 Puteaux",01 74 54 92 45,,,Mappy,
+Nom,Categorie,Activite,Adresse,Telephone,Email,Dirigeant,SIREN,B2B_id,Source,Notes
+La Perle de l'Ecailler,Restauration,Restaurant de fruits de mer,"46 rue Voltaire, 92800 Puteaux",01 42 04 55 55,,Frederic de Saint Chartrier,813451523,,TheFork,Voisin direct rue Voltaire; ste LES ECAILLERS
+Brasserie Le Flore,Restauration,Brasserie cuisine francaise,"108 rue Jean Jaures, 92800 Puteaux",01 47 76 20 98,brasserieleflore@yahoo.fr,,429141401,ed8328c6edb9cfeaf91bb834a119c24a,brasserie-leflore-puteaux.fr,Matched B2B; SNC Kebiche
+L'Orangerie M&K,Restauration,Restaurant,"33 rue Jean Jaures, 92800 Puteaux",01 70 16 45 97,lorangerie@lorangeriemk.fr,Makhlouf Khemmache,488289737,,lorangeriemk.eatbu.com,
+L'Imprevu,Restauration,Restaurant (cuisine algerienne),"68 rue de la Republique, 92800 Puteaux",01 40 90 90 91,limprevu.puteaux@gmail.com,,409561248,,limprevu-puteaux.com,
+Kancel,Restauration,Restaurant,"35 rue de la Republique, 92800 Puteaux",,,,885269613,,Mappy,Tel non trouve
+Maison Becam,Commerce de bouche,Boulangerie patisserie,"107 rue Jean Jaures, 92800 Puteaux",09 86 39 67 23,contact@maisonbecam.com,Leana Strebel,944595529,,maisonbecam.com,Franchise MB PUTEAUX; email = siege
+Boulangerie La Rose de Puteaux,Commerce de bouche,Boulangerie patisserie,"56 rue Jean Jaures, 92800 Puteaux",01 47 78 01 18,,Fradj Mbarek,805175650,,MyBoulange,
+Paul,Commerce de bouche,Boulangerie patisserie,"138 rue Jean Jaures, 92800 Puteaux",,,,,,Pubeco,Chaine nationale (Boulangeries Paul)
+C'est ma boulangerie,Commerce de bouche,Boulangerie patisserie,"66 rue Jean Jaures, 92800 Puteaux",,,Tijani Charmat,797776903,,118000,Ste LES DELICES DE LA RESIDENCE
+Boulangerie Stephane Moa,Commerce de bouche,Boulangerie patisserie,"196 rue de la Republique, 92800 Puteaux",09 73 88 20 50,,Stephane Moa,894656875,,PagesJaunes,
+Chez Meunier,Commerce de bouche,Boulangerie patisserie,"51 bd Richard Wallace, 92800 Puteaux",,,Eric Teboul,948367586,,Annuaire,Groupe MEUNIER-PUTEAUX
+Maison Legrand,Commerce de bouche,Boucherie charcuterie,"121 rue Jean Jaures, 92800 Puteaux",01 41 37 32 48,,Hugo Legrand,984651091,,PagesJaunes,
+Nicolas,Commerce de bouche,Cave a vins,"101 rue Jean Jaures, 92800 Puteaux",01 47 76 25 99,,,542066238,,nicolas.com,Chaine nationale (Ets Nicolas); adresse listee 99
+Cave Mannevy,Commerce de bouche,Cave a vins,"50 bd Richard Wallace, 92800 Puteaux",01 45 06 07 75,helene@cavemannevy.fr,Frederic Delaplace,414341461,,RocketReach,
+Au Centenaire,Commerce de bouche,Dietetique / alimentation,"74 bd Richard Wallace, 92800 Puteaux",01 47 72 37 48,contact@accord-bio.fr,,701035404,,Annuaire,Email = reseau Accord-Bio (a confirmer)
+Madame Leslie Bury,Beaute / bien-etre,Institut de beaute,"17 rue Voltaire, 92800 Puteaux",,,,,,PagesJaunes,Voisin direct; SIREN non trouve
+MD Coiffure,Beaute / bien-etre,Coiffeur,"31 rue Jean Jaures, 92800 Puteaux",01 47 78 40 70,,Mireille Dagba,838441475,,PagesJaunes,
+Andrea Coiffure,Beaute / bien-etre,Coiffeur,"164 rue Jean Jaures, 92800 Puteaux",01 45 06 19 82,,,433019288,,PagesJaunes,
+Franck Provost,Beaute / bien-etre,Coiffeur,"109 rue Jean Jaures, 92800 Puteaux",01 46 98 93 09,,,508157898,21dd69f10861f5163ce576384963eae0,franckprovost.com,Franchise HAIR RAYAN
+Arte Coiffure,Beaute / bien-etre,Coiffeur,"74 rue Jean Jaures, 92800 Puteaux",01 47 73 79 63,,,437577539,,Annuaire,
+L'Institut,Beaute / bien-etre,Institut de beaute,"162 rue Jean Jaures, 92800 Puteaux",01 42 04 66 06,,,499292795,,PagesJaunes,
+Au Nom de la Rose,Commerce / boutique,Fleuriste,"116 bis rue Jean Jaures, 92800 Puteaux",01 49 00 04 74,puteaux@aunomdelarose.fr,Franck Poncet,401555289,c188f46ca9776edb183afd9f7a303fb1,aunomdelarose.fr,Matched B2B; ANR EXPLOITATION
+Monceau Fleurs,Commerce / boutique,Fleuriste,"111 rue Jean Jaures, 92800 Puteaux",01 47 78 45 70,monceaufleursputeaux@gmail.com,Saloua Maslaga,815289913,304166fb81171f4320dc2cc28bffa11a,monceaufleurs.com,Matched B2B; IDF EXPLOITATION
+Fleurs en Herbe,Commerce / boutique,Fleuriste,"89 rue de la Republique, 92800 Puteaux",06 65 39 43 44,,Nora Ouddah,984545558,,PagesJaunes,
+Elysa,Commerce / boutique,Pret-a-porter femme,"105 rue Jean Jaures, 92800 Puteaux",01 47 76 29 84,elysaputeaux@gmail.com,Michael Daoudy,432650190,223aaade155d1ea23398d2003a425477,elysa-puteaux.com,Matched B2B; ste FREHA'M
+MA&ME,Commerce / boutique,Pret-a-porter,"132 rue Jean Jaures, 92800 Puteaux",,info@maetmeshop.com,Fabien Carenini,828416651,,maetmeshop.com,Ste OPALE; email = chaine
+Boutique Indemodable / Brocanteo,Commerce / boutique,Decoration cadeaux,"166 rue Jean Jaures, 92800 Puteaux",01 41 38 24 23,contact@indemodable.com,Nathalie Ouvre,481014389,5fd452232f2f2c9ad1998a899b6d2bb7,indemodable.com,Matched B2B
+Futura Cycles,Commerce / boutique,Magasin de velos,"59 bd Richard Wallace, 92800 Puteaux",01 47 99 35 68,,Jonathan Guren,878833110,,PagesJaunes,Societe dissoute/radiee 2022
+Le Diplomate,Commerce / boutique,Bar tabac presse,"117 rue Jean Jaures, 92800 Puteaux",07 51 38 81 78,,Yimin Tu,493222376,,Mappy,Ste HAILONG; adresse corrigee au 117
+Pharmacie de France,Sante,Pharmacie,"31 rue Jean Jaures, 92800 Puteaux",01 47 78 97 97,pharm.hbrami@orange.fr,Helen Brami / Benedicte Allard,448769612,,Pharmanity,
+Pharmacie du Centre,Sante,Pharmacie,"112 rue Jean Jaures, 92800 Puteaux",01 47 76 20 58,pharmacentre92@gmail.com,Bao Herbin,833376585,30ce4f126839df12306c8b37d50ad111,pharmacieducentreputeaux.com,Matched B2B
+Pharmacie Pharmavance,Sante,Pharmacie,"142 rue Jean Jaures, 92800 Puteaux",01 45 06 01 38,,Jennifer Cohen,533387551,,Pharmavance,Ste PHARMACIE JAURES
+Grande Pharmacie Bergeres Republique,Sante,Pharmacie,"180 rue de la Republique, 92800 Puteaux",01 47 75 07 77,pharmaciebergeresrepublique@gmail.com,,797650165,,sante.fr,Ste JISPHARMA
+Studio Guettaby Kamal,Services / prof. liberales,Studio photo,"13 rue Roque de Fillol, 92800 Puteaux",01 78 53 01 61,,Kamal Guettaby,529928434,,Mappy,
+Club fitness (O. Issembert),Services / prof. liberales,Club de sport / fitness,"27 rue Roque de Fillol, 92800 Puteaux",01 74 63 21 21,,Olivier Issembert,517955688,,Mappy,
+Assay Consulting,Services / prof. liberales,Conseil / logiciels,"17 rue Voltaire, 92800 Puteaux",,,Khalid El Ousami,818215642,,Mappy,Voisin direct rue Voltaire
+GCMI Corporate,Services / prof. liberales,Conseil en management,"20 rue Voltaire, 92800 Puteaux",02 35 26 18 27,contact@gcmi.fr,Guillaume James,531615995,,gcmi.fr,Tel/email = siege Normandie
+Agence l'Adresse,Services / prof. liberales,Agence immobiliere,"75 bis bd Richard Wallace, 92800 Puteaux",01 70 21 87 31,puteaux@ladresse.immo,Nathalie Andrieux / Emmanuel Fargeau,812808657,2a2d03eea3e41eaefff761abde79fc22,ladresse.com,Matched B2B - prospect cle; ste PREFERENCE
+Guy Hoquet,Services / prof. liberales,Agence immobiliere,"36 bd Richard Wallace, 92800 Puteaux",01 41 38 33 83,puteaux@guyhoquet.com,Stephane Hulot,429715733,8cb2fac2ff932011bf1a675957740c5b,guy-hoquet.com,Matched B2B - prospect cle; EURL SOLIMMO
+Le Babour,Restauration,Restaurant mediterraneen,"34 rue Godefroy, 92800 Puteaux",01 49 06 08 38,,Joseph Najm,829854959,,PagesJaunes,JN SARL
+Optic 2000,Sante,Opticien,"126 rue Jean Jaures, 92800 Puteaux",01 40 90 02 48,optic2000puteaux@hotmail.com,Anthony Saada,884204330,,au-magasin.fr,Franchise HUBERT FELIX VISION
+Les Opticiens Mutualistes,Sante,Opticien,"34 Grande Halle, La Defense 4, 92800 Puteaux",09 69 39 11 70,,,,,Pubeco,Situe a La Defense (hors Vieux Puteaux)
+Societe Generale Puteaux-Centre,Services / prof. liberales,Banque,"159 rue Jean Jaures, 92800 Puteaux",01 46 25 01 50,,,,,SG,Accueil temporaire; siege 21 bd Richard Wallace
+AXA - Herve Letort,Services / prof. liberales,Assurance / banque,"53 rue Jean Jaures, 92800 Puteaux",01 47 73 87 91,,Herve Letort,521115865,,AXA,Adresse corrigee au 53; ORIAS 10054199
+La Banque Postale,Services / prof. liberales,Banque,"135 rue de la Republique, 92800 Puteaux",01 46 93 94 00,,,,,PagesJaunes,
+Cabinet Bisdorff,Services / prof. liberales,Agence immobiliere / syndic,"138 rue Jean Jaures, 92800 Puteaux",01 47 78 74 74,bisdorff@orange.fr,Olivier Bisdorff,344482153,,bisdorff-immobilier.fr,
+Nestenn Immobilier,Services / prof. liberales,Agence immobiliere,"105 rue Jean Jaures, 92800 Puteaux",01 41 02 95 95,puteaux@nestenn.com,Anne-Sophie Ducass,488857855,,nestenn.com,Ste ASBD; adresse confirmee au 105
+Meleine,Services / prof. liberales,Courtier en assurance,"62 rue Jean Jaures, 92800 Puteaux",01 80 88 99 77,reclamation@meleine.fr,Karim Benkassem,800897746,,Mappy,Email = service reclamation
+Avenir & Serenite Patrimoine,Services / prof. liberales,Gestion de patrimoine,"106 rue de la Republique, 92800 Puteaux",09 81 48 61 15,agnes.hector@laposte.net,Agnes Hector,803611995,,avenirserenite.e-monsite.com,
+Les Assurances de Paris,Services / prof. liberales,Assurance,"95 rue de la Republique, 92800 Puteaux",01 47 78 15 15,,Benjamin Peyre,844160317,,Mappy,
+La Retoucherie,Commerce / boutique,Couture & retouches,"33 rue Jean Jaures, 92800 Puteaux",06 74 71 04 74,,,402790596,,Mappy,
+Harmony Shoes,Commerce / boutique,Cordonnerie,"38 rue Jean Jaures, 92800 Puteaux",,,Hamadi Rahmouni,431409176,,Mappy,Tel non trouve; SARL Harmony Shoes
+Mister Clean,Commerce / boutique,Pressing,"38 rue Jean Jaures, 92800 Puteaux",01 74 54 92 45,,Nabil Hokayem,793557232,,Mappy,Ste NF PRESSING
+Cote Sushi,Restauration,Restaurant japonais / sushi,"111 rue Jean Jaures, 92800 Puteaux",,,,,,PagesJaunes,Meme adresse que Planet Sushi - verifier lequel est actif
+Kawasaki Sushi,Restauration,Restaurant japonais / sushi,"80 rue Jean Jaures, 92800 Puteaux",01 47 73 66 04,,,,,Mappy,
+Planet Sushi,Restauration,Sushi / livraison,"111 rue Jean Jaures, 92800 Puteaux",,,,,,eater.space,Meme adresse que Cote Sushi - a verifier
+Bar-brasserie (nom a confirmer),Restauration,Bar-brasserie,"102 rue de la Republique, 92800 Puteaux",,,,,,PagesJaunes,Nom a confirmer sur place
+Bar-brasserie (nom a confirmer),Restauration,Bar-brasserie,"106 rue de la Republique, 92800 Puteaux",,,,,,PagesJaunes,Nom a confirmer sur place
+Crenshaw Barber,Beaute / bien-etre,Barbier homme,"31 rue Jean Jaures, 92800 Puteaux",,,,,,PagesJaunes,Meme adresse que MD Coiffure - a verifier
+Jun Beaute,Beaute / bien-etre,Institut de beaute,"143 rue Jean Jaures, 92800 Puteaux",,,,,,Mappy,
+Centre medico-dentaire Medident,Sante,Centre medical & dentaire,"73 rue Jean Jaures, 92800 Puteaux",,,,,,Doctolib,
+Allmm Dentaire,Sante,Cabinet dentaire,"51 rue Voltaire, 92800 Puteaux",,,,,,Mappy,Proche rue Voltaire
+Eyes Factory,Sante,Opticien,"42 rue Voltaire, 92800 Puteaux",,,,,,au-magasin.fr,Source a verifier
+Fromagerie Rovecchio,Commerce de bouche,Fromagerie,"119 rue Jean Jaures, 92800 Puteaux",,,,,,LeGuideDuFromage,
+Boucherie Huet,Commerce de bouche,Boucherie,"15 rue Chante-Coq, 92800 Puteaux",,,,,,AnnuaireFrancais,
+Boucherie Gazengel,Commerce de bouche,Boucherie,"26 rue Voltaire, 92800 Puteaux",,,,,,AnnuaireFrancais,Proche rue Voltaire
+La Maison du Fruit,Commerce de bouche,Primeur,"62 bd Richard Wallace, 92800 Puteaux",,,,,,au-magasin.fr,
+Credit Mutuel,Services / prof. liberales,Banque,"42 rue Godefroy, 92800 Puteaux",,,,,,CreditMutuel,
+LCL,Services / prof. liberales,Banque,"60 bd Richard Wallace, 92800 Puteaux",,,,,,Annubanque,
+Century 21 Cayla Immobilier,Services / prof. liberales,Agence immobiliere,"82-84 bd Richard Wallace, 92800 Puteaux",,,,,,Century21,
+Laforet Puteaux,Services / prof. liberales,Agence immobiliere,"122 rue Jean Jaures, 92800 Puteaux",,,,,,Laforet,
+Parsimmo,Services / prof. liberales,Agence immobiliere,"80 rue Jean Jaures, 92800 Puteaux",09 50 26 10 19,,,,,PagesJaunes,
+Boutique SFR,Commerce / boutique,Telephonie,"113 rue Jean Jaures, 92800 Puteaux",,,,,,PagesJaunes,
+Digifix,Commerce / boutique,Telephonie / reparation,"130 rue Jean Jaures, 92800 Puteaux",,,,,,Mappy,
+Tabac le Totem,Commerce / boutique,Bar tabac presse,"33 rue Jean Jaures, 92800 Puteaux",,,,,,PagesJaunes,
+Auto-Ecole Agora,Services / prof. liberales,Auto-ecole,"83 rue de la Republique, 92800 Puteaux",,,,,,Bottin,
