@@ -740,32 +740,86 @@ with open("01-liste-etablissements.csv", "w", newline="", encoding="utf-8-sig") 
                     "OUI" if has_email(r) else "NON", r["src"], r["tel"],
                     r["contact"] or r["site"], r["accroche"]])
 
-# ---- Emails markdown ----
-def email_body(r):
-    return f"""Objet : Accompagner vos familles dans un moment délicat — {r['nom']}
+# ---- Génération des emails (texte brut + HTML) ----
+AGENDA = SOC["agenda"]
+SUBJECT = "Accompagner vos familles dans un moment délicat : {nom}"
 
-Bonjour,
+def clean(s):
+    """Retire tiret long, tiret demi-cadratin et tilde (consigne client)."""
+    return s.replace("—", "-").replace("–", "-").replace("~", "-")
+
+for _r in E:
+    _r["accroche"] = clean(_r["accroche"])
+
+def body_text(r):
+    return f"""Madame, Monsieur,
 
 {r['accroche']}
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles — que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
 
 Je m'appelle {SOC['contact']}, je dirige {SOC['societe']}. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
 
 Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
-{SOC['agenda']}
+{AGENDA}
 
 Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
 
 {SOC['contact']}
-{SOC['societe']} — Conseil patrimonial & immobilier, approche humaine
+Fondateur, {SOC['societe']} - Conseil patrimonial & immobilier, approche humaine
 Tél. {SOC['tel']} · {SOC['email']}
+TRUDAINES.COM
 
-— Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop »."""
+Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop ».
 
+CLAUDE 2 $"""
+
+# Signature HTML de marque (palette anthracite + or patrimonial)
+SIGNATURE_HTML = """<table cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+<tr><td style="border-top:2px solid #1a1a1a;padding-top:10px;">
+<div style="font-size:15px;font-weight:bold;color:#1a1a1a;letter-spacing:1.5px;">SAMY SANTAMARINA</div>
+<div style="font-size:11px;color:#8a8a8a;letter-spacing:2px;margin-top:1px;">FONDATEUR &nbsp;&middot;&nbsp; TRUDAINES</div>
+<div style="font-size:13px;color:#1a1a1a;margin-top:7px;">
+<a href="tel:+33620465912" style="color:#1a1a1a;text-decoration:none;">+33 6 20 46 59 12</a>
+&nbsp;&middot;&nbsp;
+<a href="mailto:samy.santamarina@trudaines.com" style="color:#1a1a1a;text-decoration:none;">samy.santamarina@trudaines.com</a>
+</div>
+<div style="font-size:12px;margin-top:8px;color:#b08d57;letter-spacing:0.5px;">
+<a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;font-weight:bold;">&#9670; TRUDAINES.COM</a>
+&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">Devenir apporteur</a>
+&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">&#9733; Votre avis</a>
+&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">LinkedIn</a>
+</div>
+</td></tr></table>"""
+
+def p(txt):
+    return f'<p style="margin:0 0 14px 0;">{txt}</p>'
+
+CTA_LINK = ('<a href="' + AGENDA + '" style="color:#b08d57;font-weight:bold;">'
+            'Prendre rendez-vous (30 min avec Samy Trudaines)</a>')
+
+def body_html(r):
+    parts = [
+        '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.55;color:#222;max-width:620px;">',
+        p("Madame, Monsieur,"),
+        p(r['accroche']),
+        p("Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne."),
+        p("Je m'appelle " + SOC['contact'] + ", je dirige " + SOC['societe'] + ". Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse."),
+        p("Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :<br>" + CTA_LINK),
+        p("Avec toute ma considération pour le travail que vous menez auprès de vos résidents,"),
+        SIGNATURE_HTML,
+        '<p style="font-size:11px;color:#9a9a9a;margin:16px 0 4px 0;">Message professionnel adressé à '
+        + r['nom'] + ' (' + r['adresse'] + ', ' + r['cp'] + ' Paris). Pour ne plus être contacté, répondez « stop ».</p>',
+        '<p style="font-size:11px;color:#9a9a9a;margin:0;">CLAUDE 2 $</p>',
+        '</div>',
+    ]
+    return "\n".join(parts)
+
+# ---- Emails markdown ----
 with open("02-emails-prets-a-envoyer.md", "w", encoding="utf-8") as f:
     f.write("# Emails personnalisés prêts à l'envoi — Trudaines\n\n")
-    f.write(f"Total : {len(E)} établissements, triés par priorité. "
+    f.write(f"Total : {len(E)} établissements, triés par priorité. Ouverture « Madame, Monsieur, », "
+            "envoi en HTML (signature de marque Trudaines), sans tiret long ni tilde. "
             "« Email OK = OUI » : adresse trouvée (à reconfirmer d'un clic avant envoi). "
             "« NON » : récupérer l'email sur la page contact / par téléphone avant envoi.\n\n")
     cur = None
@@ -779,7 +833,8 @@ with open("02-emails-prets-a-envoyer.md", "w", encoding="utf-8") as f:
         f.write(f"- **Tél.** : {r['tel']} — **Contact** : {r['contact'] or r['site']}  \n")
         if has_email(r):
             f.write(f"- **Source email** : {r['src']}  \n")
-        f.write("\n```\n" + email_body(r) + "\n```\n\n")
+        f.write(f"- **Objet** : {SUBJECT.format(nom=r['nom'])}\n")
+        f.write("\n```\n" + body_text(r) + "\n```\n\n")
 
 # ---- Payload brouillons Gmail ----
 # On exclut : les emails de SECTION partagés (casvp-sNN@paris.fr) et les résidences
@@ -790,8 +845,9 @@ def section_shared(e):
 draftable = [r for r in E if has_email(r) and not section_shared(r["email"])
              and "autonomie" not in r["type"]]
 payload = [dict(to=r["email"],
-                subject=f"Accompagner vos familles dans un moment délicat — {r['nom']}",
-                body=email_body(r).split("\n", 2)[2],  # retire la ligne "Objet :"
+                subject=SUBJECT.format(nom=r["nom"]),
+                body=body_text(r),
+                htmlBody=body_html(r),
                 nom=r["nom"], prio=r["prio"]) for r in draftable]
 with open("drafts_payload.json", "w", encoding="utf-8") as f:
     json.dump(payload, f, ensure_ascii=False, indent=2)
