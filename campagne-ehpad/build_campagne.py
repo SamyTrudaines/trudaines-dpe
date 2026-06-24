@@ -751,19 +751,65 @@ def clean(s):
 for _r in E:
     _r["accroche"] = clean(_r["accroche"])
 
+# Dirigeants identifiés (recherche OSINT, sources publiques). greeting = salutation
+# nominative ; email = email DIRECT seulement s'il a été vérifié publiquement (sinon None).
+DIRECTORS = {
+    # Confiance moyenne+ et poste non signalé comme vacant -> salutation nominative.
+    "EHPAD Saint-Augustin": {"greeting": "Madame de Compiègne,", "name": "Astrid de Compiègne", "email": None},
+    "EHPAD COS Jacques Barrot": {"greeting": "Madame Meyer,", "name": "Odile Meyer", "email": None},
+    "EHPAD Les Jardins de Montmartre": {"greeting": "Madame Richard,", "name": "Cassandre Richard", "email": None},
+    "EHPAD Maisons de Famille Villa Lecourbe": {"greeting": "Madame Khabi,", "name": "Elena Khabi", "email": None},
+    "EHPAD Résidence Castagnary": {"greeting": "Madame Marquet,", "name": "Marion Marquet", "email": None},
+    "EHPAD Alice Prin": {"greeting": "Madame Sabotier,", "name": "Fabienne Sabotier", "email": None},
+    "EHPAD Résidence Santé Oasis": {"greeting": "Madame Uhl,", "name": "Valérie Uhl", "email": None},
+    "EHPAD Alquier-Debrousse": {"greeting": "Monsieur Rousseau,", "name": "Frédéric Rousseau", "email": None},
+    "EHPAD Sara Weill-Raynal (ex-Belleville)": {"greeting": "Monsieur Werbrouck,", "name": "Vincent Werbrouck", "email": None},
+    "EHPAD Korian Magenta": {"greeting": "Madame Bellucci,", "name": "Maryse Bellucci", "email": None},
+    "EHPAD Les Artistes de Batignolles": {"greeting": "Madame Crepy-Lelievre,", "name": "Laure Crepy-Lelievre", "email": None},
+    "EHPAD Korian Les Arcades": {"greeting": "Madame Ouzzani,", "name": "S. Ouzzani", "email": None},
+    "EHPAD Résidence Jean-Baptiste Carpeaux": {"greeting": "Monsieur Journel,", "name": "Adrien Journel", "email": None},
+    "EHPAD Résidence Antoine Portail": {"greeting": "Madame Houari,", "name": "Samia Houari", "email": None},
+    "EHPAD Amitié et Partage": {"greeting": "Madame Tellier,", "name": "Christelle Tellier", "email": None},
+    # Seul cas avec un email de DIRECTION réellement publié (annonces Adef), non deviné :
+    "EHPAD La Maison du Parc": {"greeting": "Madame Chaussard,", "name": "Caroline Chaussard",
+                                "email": "dir.paris13@adefresidences.com"},
+}
+# Établissements à EXCLURE (fermeture / fiabilité) :
+REMOVE = {
+    "EHPAD Centre Robert Doisneau",          # fermeture annoncée par la Fondation OVE (déc. 2023)
+    "EHPAD Résidence Julie-Siegfried",       # fermé pour travaux depuis janvier 2025
+}
+
+def greeting(r):
+    d = DIRECTORS.get(r["nom"])
+    if d and d.get("greeting"):
+        return d["greeting"]
+    return "Madame, Monsieur,"
+
+def director_email(r):
+    d = DIRECTORS.get(r["nom"])
+    return d["email"] if d and d.get("email") else None
+
+# Corps « humanisé » (chaleureux, incarné) — version retenue pour l'envoi.
+def human_paragraphs(r):
+    return [
+        greeting(r),
+        r["accroche"],
+        "Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?",
+        "Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.",
+        "Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.",
+        "Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?",
+    ]
+
 def body_text(r):
-    return f"""Madame, Monsieur,
+    paras = human_paragraphs(r)
+    corps = "\n\n".join(paras[:-1])
+    return f"""{corps}
 
-{r['accroche']}
-
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
-
-Je m'appelle {SOC['contact']}, je dirige {SOC['societe']}. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
-
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+{paras[-1]}
 {AGENDA}
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 {SOC['contact']}
 Fondateur, {SOC['societe']} - Conseil patrimonial & immobilier, approche humaine
@@ -799,20 +845,17 @@ CTA_LINK = ('<a href="' + AGENDA + '" style="color:#b08d57;font-weight:bold;">'
             'Prendre rendez-vous (30 min avec Samy Trudaines)</a>')
 
 def body_html(r):
-    parts = [
-        '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.55;color:#222;max-width:620px;">',
-        p("Madame, Monsieur,"),
-        p(r['accroche']),
-        p("Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne."),
-        p("Je m'appelle " + SOC['contact'] + ", je dirige " + SOC['societe'] + ". Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse."),
-        p("Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :<br>" + CTA_LINK),
-        p("Avec toute ma considération pour le travail que vous menez auprès de vos résidents,"),
-        SIGNATURE_HTML,
-        '<p style="font-size:11px;color:#9a9a9a;margin:16px 0 4px 0;">Message professionnel adressé à '
-        + r['nom'] + ' (' + r['adresse'] + ', ' + r['cp'] + ' Paris). Pour ne plus être contacté, répondez « stop ».</p>',
-        '<p style="font-size:11px;color:#9a9a9a;margin:0;">CLAUDE 2 $</p>',
-        '</div>',
-    ]
+    paras = human_paragraphs(r)
+    parts = ['<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.55;color:#222;max-width:620px;">']
+    for para in paras[:-1]:                      # salutation, accroche, paragraphes du corps
+        parts.append(p(para))
+    parts.append(p(paras[-1] + "<br>" + CTA_LINK))  # la question + le lien de RDV
+    parts.append(p("Avec toute mon admiration pour ce que vous portez au quotidien,"))
+    parts.append(SIGNATURE_HTML)
+    parts.append('<p style="font-size:11px;color:#9a9a9a;margin:16px 0 4px 0;">Message professionnel adressé à '
+                 + r['nom'] + ' (' + r['adresse'] + ', ' + r['cp'] + ' Paris). Pour ne plus être contacté, répondez « stop ».</p>')
+    parts.append('<p style="font-size:11px;color:#9a9a9a;margin:0;">CLAUDE 2 $</p>')
+    parts.append('</div>')
     return "\n".join(parts)
 
 # ---- Emails markdown ----
@@ -843,12 +886,19 @@ import re
 def section_shared(e):
     return bool(re.match(r"casvp-s\d+@paris\.fr", e.strip().lower()))
 draftable = [r for r in E if has_email(r) and not section_shared(r["email"])
-             and "autonomie" not in r["type"]]
-payload = [dict(to=r["email"],
+             and "autonomie" not in r["type"] and r["nom"] not in REMOVE]
+def recipients(r):
+    to = [r["email"]]
+    de = director_email(r)
+    if de and de not in to:
+        to.append(de)
+    return to
+payload = [dict(to=recipients(r),
                 subject=SUBJECT.format(nom=r["nom"]),
                 body=body_text(r),
                 htmlBody=body_html(r),
-                nom=r["nom"], prio=r["prio"]) for r in draftable]
+                nom=r["nom"], prio=r["prio"],
+                director=DIRECTORS.get(r["nom"], {}).get("name", "")) for r in draftable]
 with open("drafts_payload.json", "w", encoding="utf-8") as f:
     json.dump(payload, f, ensure_ascii=False, indent=2)
 

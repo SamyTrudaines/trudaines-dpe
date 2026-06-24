@@ -19,14 +19,16 @@ Madame, Monsieur,
 
 Petit EHPAD de standing (47 chambres raffinées) à deux pas des Invalides et de Saint-Germain, pensé comme une résidence hôtelière intimiste dans le 7e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -50,14 +52,16 @@ Madame, Monsieur,
 
 Résidence services pour retraités actifs autonomes, idéalement située dans le quartier résidentiel de Reuilly-Daumesnil.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -81,14 +85,16 @@ Madame, Monsieur,
 
 Au pied de la tour Eiffel, vos 98 chambres climatisées sont un vrai atout de confort haut de gamme dans le 15e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -108,18 +114,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Maisons de Famille Villa Lecourbe
 
 ```
-Madame, Monsieur,
+Madame Khabi,
 
 Maison intimiste de seulement 45 résidents : un positionnement haut de gamme à taille familiale, rare à Paris.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -139,18 +147,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Résidence Castagnary
 
 ```
-Madame, Monsieur,
+Madame Marquet,
 
 Idéalement placée près du parc Georges-Brassens, avec une unité protégée Alzheimer au sein du groupe Emeis.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -174,14 +184,16 @@ Madame, Monsieur,
 
 Au nord du Village d'Auteuil, un EHPAD haut de gamme Emeis avec unité protégée pour personnes désorientées.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -201,18 +213,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Les Artistes de Batignolles
 
 ```
-Madame, Monsieur,
+Madame Crepy-Lelievre,
 
 Résidence récente (2016) de 125 chambres au cœur du nouveau quartier Clichy-Batignolles, sur le thème des artistes.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -235,14 +249,16 @@ Madame, Monsieur,
 
 EHPAD haut de gamme près de la Maison de la Radio, dans le quartier prisé de La Muette.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -265,14 +281,16 @@ Madame, Monsieur,
 
 Petit EHPAD de seulement 26 lits rue Boissière, à deux pas de l'Étoile : un format confidentiel et exclusif.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -295,14 +313,16 @@ Madame, Monsieur,
 
 Établissement récent (2018) en plein cœur de Chaillot, avec une unité protégée de 21 lits, l'un des mieux notés du 16e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -325,14 +345,16 @@ Madame, Monsieur,
 
 Résidence services de très haut standing à taille familiale, dans le quartier résidentiel d'Auteuil.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -355,14 +377,16 @@ Madame, Monsieur,
 
 Résidence services pour seniors actifs rue Mirabeau, au cœur d'Auteuil, alternative non médicalisée à l'EHPAD.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -385,14 +409,16 @@ Madame, Monsieur,
 
 À deux pas du parc Monceau, une maison Korian proposant court séjour et unité de vie Alzheimer avec présence infirmière de nuit.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -415,14 +441,16 @@ Madame, Monsieur,
 
 Un EHPAD à taille humaine (24 chambres seulement) près du square des Batignolles, idéal pour un accompagnement de proximité.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -447,18 +475,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Korian Magenta
 
 ```
-Madame, Monsieur,
+Madame Bellucci,
 
 Idéalement situé entre la place de la République et la Gare de l'Est, à deux pas du Canal Saint-Martin, votre établissement bénéficie d'un cadre de quartier parisien vivant rare pour un EHPAD.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -482,14 +512,16 @@ Madame, Monsieur,
 
 Résidence ouverte en 2010 à deux pas de la place de la Nation, dotée d'une unité protégée de 16 chambres et d'un secrétariat joignable 7j/7 pour les familles.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -509,18 +541,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Korian Les Arcades
 
 ```
-Madame, Monsieur,
+Madame Ouzzani,
 
 Situé en plein cœur de la Coulée verte (promenade plantée), dans le quartier rénové de Bercy, l'établissement offre aux résidents Alzheimer un environnement calme et arboré.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -544,14 +578,16 @@ Madame, Monsieur,
 
 Cadre verdoyant et calme à deux pas de Nation et du bois de Vincennes, adossé aux établissements gériatriques de la Fondation de Rothschild.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -571,18 +607,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Résidence Jean-Baptiste Carpeaux
 
 ```
-Madame, Monsieur,
+Monsieur Journel,
 
 Maison de retraite médicalisée du groupe Sedna sur la rue Marcadet, avec une unité Alzheimer dédiée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -606,14 +644,16 @@ Madame, Monsieur,
 
 Implantée face à l'hôpital Robert-Debré près de la Porte de Pantin, votre maison combine proximité hospitalière et unité Alzheimer dédiée - un positionnement très rassurant pour les familles.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -636,14 +676,16 @@ Madame, Monsieur,
 
 Un EHPAD à taille humaine (31 chambres) niché au cœur du Marais, rue Barbette, qui mise sur un cadre de vie intime et central plutôt que sur le volume.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -666,14 +708,16 @@ Madame, Monsieur,
 
 Le seul EHPAD du 9e, entièrement dédié à la maladie d'Alzheimer : le groupe Almage y a fait de l'accompagnement des troubles cognitifs sa spécialité unique, en plein cœur de Paris.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -696,14 +740,16 @@ Madame, Monsieur,
 
 Vos équipes formées à la méthode Montessori et une grande ouverture sur les visites font de votre maison un lieu de vie particulièrement bienveillant.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -726,14 +772,16 @@ Madame, Monsieur,
 
 Face à la Manufacture des Gobelins, votre résidence allie séjours permanents et courts séjours avec une unité protégée de 33 lits dans un quartier emblématique.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -756,14 +804,16 @@ Madame, Monsieur,
 
 Avec deux unités Alzheimer dédiées et des espaces verts, votre résidence du passage Victor Marchand offre une prise en charge complète au cœur du 13e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -786,14 +836,16 @@ Madame, Monsieur,
 
 Au cœur du quartier Brune, votre établissement combine balnéothérapie, espace multi-sensoriel et une restauration labellisée Gault&Millau.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -816,14 +868,16 @@ Madame, Monsieur,
 
 Niché près de Denfert-Rochereau, votre établissement offre la rare combinaison d'un quartier vivant et d'un parc boisé privé et sécurisé en plein Paris.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -846,14 +900,16 @@ Madame, Monsieur,
 
 Avec une trentaine de chambres seulement, votre résidence cultive un accompagnement personnalisé à taille humaine à deux pas du parc Montsouris.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -876,14 +932,16 @@ Madame, Monsieur,
 
 Établissement à taille humaine près du parc Montsouris, votre résidence propose aussi bien le court séjour que des ateliers de médiation animale appréciés des résidents.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -906,14 +964,16 @@ Madame, Monsieur,
 
 Résidence DomusVi près du Sacré-Cœur, avec unité Alzheimer de 24 places et espace dédié à la kinésithérapie.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -936,14 +996,16 @@ Madame, Monsieur,
 
 EHPAD DomusVi doté d'un PASA, d'une salle de balnéothérapie et d'un espace multisensoriel pour l'accompagnement Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -966,14 +1028,16 @@ Madame, Monsieur,
 
 Idéalement située près du Parc de la Villette et du Conservatoire, votre résidence joue déjà la carte du quartier des musiciens : un cadre culturel rare pour vos résidents.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -996,14 +1060,16 @@ Madame, Monsieur,
 
 Avec 42 places sur 106 dédiées à l'unité protégée Alzheimer, l'Océane consacre près de la moitié de sa capacité aux troubles cognitifs : un vrai pôle d'expertise dans le 19e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1026,14 +1092,16 @@ Madame, Monsieur,
 
 Au cœur du quartier des Amandiers/Ménilmontant, l'établissement gère la dépendance lourde et les troubles psychiatriques avec unité protégée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1056,14 +1124,16 @@ Madame, Monsieur,
 
 Avec ses 127 lits et une expertise affichée en Parkinson et soins palliatifs, Saint-Simon est l'un des plus gros EHPAD privés du 20e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1086,14 +1156,16 @@ Madame, Monsieur,
 
 Comme son nom l'indique, votre établissement valorise ses terrasses et son jardin en plein 20e - un atout extérieur rare à Paris, complété par un espace Snoezelen.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1118,18 +1190,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Amitié et Partage
 
 ```
-Madame, Monsieur,
+Madame Tellier,
 
 EHPAD associatif habilité à l'aide sociale à Saint-Germain-des-Prés, porté par Chemins d'Espérance et une vie associative forte autour du bénévolat intergénérationnel.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1149,18 +1223,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Résidence Antoine Portail
 
 ```
-Madame, Monsieur,
+Madame Houari,
 
 EHPAD de l'association Monsieur Vincent, héritière de l'œuvre vincentienne, rue du Cherche-Midi, avec un PASA dédié à l'accompagnement en douceur des troubles cognitifs.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1184,14 +1260,16 @@ Madame, Monsieur,
 
 Établissement mutualiste à but non lucratif géré par VYV3, ouvert en 2004 en plein cœur de Bastille, avec une unité protégée Cantou de 16 places.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1215,14 +1293,16 @@ Madame, Monsieur,
 
 Fondée en 1856 à l'initiative du Consistoire réformé de Paris, La Muette porte la devise « Accueillir pour cheminer ensemble » et est installée face à l'hôpital des Diaconesses depuis 1894.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1242,18 +1322,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD La Maison du Parc
 
 ```
-Madame, Monsieur,
+Madame Chaussard,
 
 Avec 36 places sur 100 dédiées à une unité Alzheimer protégée, votre établissement associatif Adef se distingue par son fort engagement sur les troubles cognitifs.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1277,14 +1359,16 @@ Madame, Monsieur,
 
 Portée par la Congrégation des Sœurs Augustines, votre maison cultive une approche profondément humaine et spirituelle de l'accompagnement, dans un cadre paisible rue de la Santé.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1304,18 +1388,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Saint-Augustin
 
 ```
-Madame, Monsieur,
+Madame de Compiègne,
 
 Entièrement dédié à la maladie d'Alzheimer, votre établissement structure son accompagnement autour de trois unités protégées et d'une unité d'hébergement renforcée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1335,18 +1421,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD COS Jacques Barrot
 
 ```
-Madame, Monsieur,
+Madame Meyer,
 
 Ouvert début 2016 au cœur de l'écoquartier Clichy-Batignolles, avec PASA et unité protégée pensés pour l'accompagnement Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1370,14 +1458,16 @@ Madame, Monsieur,
 
 EHPAD géré par la Fondation OVE, idéalement desservi par le métro Marcadet-Poissonniers dans le 18e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1397,18 +1487,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Les Jardins de Montmartre
 
 ```
-Madame, Monsieur,
+Madame Richard,
 
 EHPAD du groupe Univi au pied de la Butte Montmartre, avec un Cantou Alzheimer de 25 places.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1432,14 +1524,16 @@ Madame, Monsieur,
 
 En plein Ménilmontant, Les Airelles cultive une vie sociale animée (chorale, musicothérapie, jardinage) qui en fait une maison à taille humaine très appréciée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1462,14 +1556,16 @@ Madame, Monsieur,
 
 Maison tenue par les Petites Sœurs des Pauvres dans la tradition de Jeanne Jugan : une communauté religieuse et de nombreux bénévoles pour un accueil profondément familial.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1492,14 +1588,16 @@ Madame, Monsieur,
 
 Établissement de la Fondation COS installé dans un édifice de 1917 (ancien foyer d'étudiantes) rénové en 2007, alliant histoire parisienne et unité Alzheimer protégée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1522,14 +1620,16 @@ Madame, Monsieur,
 
 Maison des Petites Sœurs des Pauvres avenue de Breteuil, dans la grande tradition de Jeanne Jugan : un accueil familial et bienveillant centré sur le partage et la convivialité.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1552,14 +1652,16 @@ Madame, Monsieur,
 
 Installée au cœur du 12e dans un beau parc arboré, la maison de la Fondation de Rothschild a développé une expertise reconnue de la maladie d'Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1582,14 +1684,16 @@ Madame, Monsieur,
 
 Les Petites Sœurs des Pauvres se sont installées rue de Picpus dès 1869 ; « Ma Maison » a rouvert en 2017 dans des locaux entièrement reconstruits.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1612,14 +1716,16 @@ Madame, Monsieur,
 
 Sur le site même où Sœur Catherine Labouré œuvra auprès des plus démunis jusqu'en 1876, la résidence porte un projet intergénérationnel reconnu.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1642,14 +1748,16 @@ Madame, Monsieur,
 
 Avec 85 chambres individuelles et un tarif parmi les plus accessibles du 13e, votre résidence associative offre un cadre à taille humaine proche de la place d'Italie.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1672,14 +1780,16 @@ Madame, Monsieur,
 
 Avec 130 places organisées entre unités ouvertes et protégées, votre maison réserve un étage entier aux activités sociales et à la vie collective.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1702,14 +1812,16 @@ Madame, Monsieur,
 
 Maison de tradition diocésaine, votre établissement associatif accueille de nombreux prêtres âgés d'Île-de-France dans un cadre où priment l'écoute et le respect.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1732,14 +1844,16 @@ Madame, Monsieur,
 
 Grand EHPAD associatif (124 places) géré par Chemins d'Espérance, avec un PASA pour accompagner les troubles cognitifs.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1762,14 +1876,16 @@ Madame, Monsieur,
 
 EHPAD associatif (Chemins d'Espérance) au cœur d'Auteuil, avec 19 places dédiées à la maladie d'Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1792,14 +1908,16 @@ Madame, Monsieur,
 
 Au bord du bassin de la Villette, Alice Guy associe résidence médicalisée et accueil de jour (15 places) - une offre complète qui aide à anticiper l'entrée en institution.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1822,14 +1940,16 @@ Madame, Monsieur,
 
 Face à la station Télégraphe, vos Jardins de Belleville misent sur le bien-être sensoriel (Snoezelen, balnéothérapie) - une approche douce qui séduit particulièrement les familles.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1852,14 +1972,16 @@ Madame, Monsieur,
 
 Gérée par la fondation Casip-Cojasor, Amaraggi propose un cadre confessionnel et culturel spécifique avec balnéothérapie et ateliers mémoire - une identité distinctive dans le 19e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1882,14 +2004,16 @@ Madame, Monsieur,
 
 Ouvert en 2016 à la frontière 11e/20e, cet établissement combine UVP et UHR (14+14 lits) : une rare double expertise sur les troubles du comportement sévères.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1918,14 +2042,16 @@ Madame, Monsieur,
 
 Foyer-logement historique de la Fondation de Rothschild (depuis 1981), au sein de son pôle gériatrique du quartier Picpus-Lamblardie.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1945,18 +2071,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Alice Prin
 
 ```
-Madame, Monsieur,
+Madame Sabotier,
 
 Installé dans l'ancien pavillon Gaudart d'Allaines de l'hôpital Broussais, votre EHPAD public propose 112 chambres lumineuses ouvertes sur jardin.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -1980,14 +2108,16 @@ Madame, Monsieur,
 
 Votre EHPAD se distingue par son parc paysager de 800 m² et sa longue terrasse couverte, un véritable îlot de verdure pour vos 129 résidents.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2011,14 +2141,16 @@ Madame, Monsieur,
 
 Votre résidence dédie une unité protégée de 34 lits à l'accompagnement spécifique des personnes désorientées.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2038,18 +2170,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Résidence Santé Oasis
 
 ```
-Madame, Monsieur,
+Madame Uhl,
 
 EHPAD public de la Ville de Paris au cœur de la Goutte d'Or, avec une unité de vie protégée de 20 places.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2073,14 +2207,16 @@ Madame, Monsieur,
 
 Ouvert en 2007 à deux pas des Buttes-Chaumont, Hérold consacre plus de la moitié de ses 100 chambres (51 places UVP) à l'accompagnement Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2100,18 +2236,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Alquier-Debrousse
 
 ```
-Madame, Monsieur,
+Monsieur Rousseau,
 
 Avec 322 lits dans un parc boisé de 3 300 m², Alquier-Debrousse est l'un des plus grands EHPAD de Paris, doté d'UVP, d'UHR et d'un accueil de jour.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2131,18 +2269,20 @@ CLAUDE 2 $
 - **Objet** : Accompagner vos familles dans un moment délicat : EHPAD Sara Weill-Raynal (ex-Belleville)
 
 ```
-Madame, Monsieur,
+Monsieur Werbrouck,
 
 Rebaptisé Sara Weill-Raynal et rouvert après cinq ans de restructuration, cet EHPAD public flambant neuf rue Pelleport déploie la télémédecine sur tous ses étages.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2165,14 +2305,16 @@ Madame, Monsieur,
 
 Un EHPAD public de la Ville de Paris à deux pas du Jardin des Plantes, doté d'une importante unité de vie protégée (34 places) pour l'accompagnement Alzheimer.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2195,14 +2337,16 @@ Madame, Monsieur,
 
 Nouvelle résidence intergénérationnelle et solidaire de Cités Caritas, autour d'un projet de mixité sociale et d'âges dans le 12e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2225,14 +2369,16 @@ Madame, Monsieur,
 
 Dans un quartier calme du 12e proche du bois de Vincennes, la résidence offre des logements lumineux dotés pour la plupart d'une loggia.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2255,14 +2401,16 @@ Madame, Monsieur,
 
 Résidence à taille humaine de la Fondation Casip-Cojasor, attentive au maintien de l'autonomie et à une vie culturelle animée autour de sa bibliothèque.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2285,14 +2433,16 @@ Madame, Monsieur,
 
 Créée lors de la reconstruction du site Catherine Labouré, elle bénéficie d'un appel d'urgence relié aux soignants de l'EHPAD voisin, sur le même site.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2315,14 +2465,16 @@ Madame, Monsieur,
 
 Rare EHPAD parisien doté d'un médecin à temps plein et d'une infirmière de nuit 24h/24, ouvert en 2014 place Violet.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2345,14 +2497,16 @@ Madame, Monsieur,
 
 EHPAD public récent (2015) au cœur du 15e, avec une unité Alzheimer dédiée dans un bâtiment moderne.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2375,14 +2529,16 @@ Madame, Monsieur,
 
 Plus grande maison de soins palliatifs de France, héritière d'une œuvre fondée en 1842.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2405,14 +2561,16 @@ Madame, Monsieur,
 
 USLD du Centre de Gérontologie Henry Dunant (Croix-Rouge), référence gériatrique de l'Ouest parisien, l'un des mieux notés du 16e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2435,14 +2593,16 @@ Madame, Monsieur,
 
 Unité publique d'hébergement temporaire de la Ville de Paris, pensée comme solution de répit pour les aidants familiaux.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2465,14 +2625,16 @@ Madame, Monsieur,
 
 Gérée par Arpavie au cœur de Belleville, cette résidence autonomie offre une alternative non médicalisée précieuse pour les seniors encore indépendants du 19e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2501,14 +2663,16 @@ Madame, Monsieur,
 
 Sur l'axe vivant du Faubourg du Temple reliant République au Canal, la résidence offre à ses aînés un ancrage en plein cœur de la vie de quartier du 10e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2532,14 +2696,16 @@ Madame, Monsieur,
 
 Implantée juste en face du Canal Saint-Martin, la résidence offre à ses résidents l'une des plus belles vues sur l'eau du parc de logements seniors parisiens.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2563,14 +2729,16 @@ Madame, Monsieur,
 
 Ouverte depuis 1981, la résidence anime un club seniors réputé accueillant des aînés de 55 à 105 ans, salué pour son rôle dans le maintien de l'autonomie.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2594,14 +2762,16 @@ Madame, Monsieur,
 
 À taille humaine et à deux pas du square Cavaillé-Coll, cette petite résidence cultive un esprit familial rare dans Paris.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2625,14 +2795,16 @@ Madame, Monsieur,
 
 Avec ses 88 logements, c'est la plus grande des résidences autonomie du CASVP dans le 10e, au cœur du quartier de la Grange-aux-Belles.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2656,14 +2828,16 @@ Madame, Monsieur,
 
 Résidence-appartements municipale du CASVP près du square de la Roquette, offrant aux seniors autonomes la sécurité d'une présence permanente et le restaurant Émeraude.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2687,14 +2861,16 @@ Madame, Monsieur,
 
 Résidence-appartements nichée dans la discrète Cité Beauharnais, une impasse pavée typique du 11e, offrant un cadre calme à une cinquantaine de seniors autonomes.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2718,14 +2894,16 @@ Madame, Monsieur,
 
 Résidence-appartements municipale à proximité immédiate de la place de la Bastille, alliant centralité et services collectifs pour seniors autonomes.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2749,14 +2927,16 @@ Madame, Monsieur,
 
 Résidence à taille humaine de 32 logements rue de la Folie-Méricourt, dans le quartier vivant et associatif d'Oberkampf.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2780,14 +2960,16 @@ Madame, Monsieur,
 
 Résidence-appartements rue Keller, au cœur du quartier de la Roquette réputé pour ses galeries d'art et ses ateliers.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2811,14 +2993,16 @@ Madame, Monsieur,
 
 L'une des plus grandes résidences autonomie du CASVP dans le 11e (plus de 100 logements), dans le quartier historique de la Roquette.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2842,14 +3026,16 @@ Madame, Monsieur,
 
 Résidence autonomie rue Léon-Frot, dans le quartier populaire et résidentiel de Charonne, proche des commerces du faubourg Saint-Antoine.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2873,14 +3059,16 @@ Madame, Monsieur,
 
 Résidence-appartements rue Morand, proche du canal Saint-Martin et du quartier vivant de Belleville-Goncourt.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2904,14 +3092,16 @@ Madame, Monsieur,
 
 Résidence cachée dans le passage de Ménilmontant, une voie piétonne tranquille, à la lisière du 11e et du 20e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2935,14 +3125,16 @@ Madame, Monsieur,
 
 Résidence-appartements rue Merlin, près de la place Léon-Blum et de la mairie du 11e, dans un secteur central et bien desservi.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2966,14 +3158,16 @@ Madame, Monsieur,
 
 Résidence proche du Père-Lachaise et de la place de la Nation, l'une des seules du 11e parfois proposée à la location comme résidence services seniors.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -2997,14 +3191,16 @@ Madame, Monsieur,
 
 Résidence autonomie donnant sur la promenade plantée du boulevard Richard-Lenoir et son marché bio, un cadre verdoyant rare au cœur du 11e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3028,14 +3224,16 @@ Madame, Monsieur,
 
 Petite résidence autonomie rue Robert-Houdin, dans le quartier convivial de Belleville, à proximité du métro Ménilmontant.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3059,14 +3257,16 @@ Madame, Monsieur,
 
 Petite résidence autonomie de taille familiale sur le Faubourg-du-Temple, à la frontière animée entre le 10e et le 11e.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3090,14 +3290,16 @@ Madame, Monsieur,
 
 Résidence autonomie publique du CASVP à deux pas du port de l'Arsenal et de Bastille, proposant des studios sécurisés à tarif social.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3121,14 +3323,16 @@ Madame, Monsieur,
 
 Petite résidence autonomie publique du CASVP, à taille humaine (44 logements), dans le quartier résidentiel du Bel-Air.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3151,14 +3355,16 @@ Madame, Monsieur,
 
 Résidence autonomie publique du CASVP dans le quartier historique de l'Ave Maria : une solution de logement sécurisé et abordable pour seniors autonomes en plein Marais.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3181,14 +3387,16 @@ Madame, Monsieur,
 
 Unité de soins de longue durée de l'AP-HP installée dans l'historique hôpital de la Collégiale, structure gériatrique publique de référence au cœur du Quartier latin.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3211,14 +3419,16 @@ Madame, Monsieur,
 
 Aux portes des gares de l'Est et du Nord, l'USLD du site Fernand-Widal s'appuie sur le service de gérontologie clinique historique de l'AP-HP.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3241,14 +3451,16 @@ Madame, Monsieur,
 
 Résidence autonomie publique du CASVP destinée aux Parisiens âgés autonomes aux revenus modestes du quartier Saint-Éloi.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3271,14 +3483,16 @@ Madame, Monsieur,
 
 L'USLD est portée par l'hôpital Rothschild de l'AP-HP, pôle gériatrique de référence de l'Est parisien.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3301,14 +3515,16 @@ Madame, Monsieur,
 
 Adossée à l'un des plus grands CHU d'Europe, votre USLD bénéficie d'un plateau technique gériatrique hospitalier de premier plan.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3331,14 +3547,16 @@ Madame, Monsieur,
 
 Implantée dans un bâtiment néoclassique classé monument historique, votre USLD AP-HP allie un patrimoine d'exception à une prise en charge gériatrique de longue durée.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3361,14 +3579,16 @@ Madame, Monsieur,
 
 Hôpital gériatrique AP-HP de référence du 15e avec 210 lits d'USLD.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3391,14 +3611,16 @@ Madame, Monsieur,
 
 Petite résidence autonomie publique en bord de Seine, quai de Grenelle, à taille humaine.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3421,14 +3643,16 @@ Madame, Monsieur,
 
 Résidence autonomie publique du CASVP, solution abordable pour seniors valides dans un 15e plutôt onéreux.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3451,14 +3675,16 @@ Madame, Monsieur,
 
 Résidence autonomie municipale dans le secteur des Épinettes, alternative non médicalisée entre domicile et EHPAD.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3481,14 +3707,16 @@ Madame, Monsieur,
 
 Résidence services seniors de la Ville de Paris dans le quartier des Épinettes, avec restauration et club loisirs sur place.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3511,14 +3739,16 @@ Madame, Monsieur,
 
 Résidence autonomie publique de la Ville de Paris dans le quartier des Ternes, pour seniors autonomes recherchant sécurité et vie collective.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3541,14 +3771,16 @@ Madame, Monsieur,
 
 USLD de l'AP-HP spécialisée dans la grande dépendance et les soins palliatifs, au sein d'un hôpital entièrement dédié à la gériatrie.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
@@ -3571,14 +3803,16 @@ Madame, Monsieur,
 
 Sur l'avenue de Flandre, cette résidence autonomie publique du CASVP cible les seniors valides - un segment complémentaire aux EHPAD médicalisés du quartier.
 
-Je me permets de vous écrire car, dans votre métier, vous accompagnez chaque jour des familles à un moment de bascule : l'entrée d'un parent en établissement. Et derrière ce moment se cache souvent une question lourde et anxiogène pour elles : que faire du logement, comment financer l'accueil, comment préparer la transmission sans abîmer l'équilibre familial ni la sérénité de la personne.
+Si je me permets de vous écrire, c'est parce que je sais que derrière chaque admission dans votre maison, il y a une famille qui vit un moment délicat : un parent qu'on aime, un foyer de toute une vie, et très vite des questions qui serrent le cœur. Faut-il vendre le logement ? Comment financer l'accueil ? Comment préparer la suite sans se déchirer, ni inquiéter celui que l'on accompagne ?
 
-Je m'appelle Samy Santamarina, je dirige Trudaines. Mon métier n'est pas de « vendre de l'immobilier » : c'est d'accompagner ces familles avec une approche de conseil, d'écoute, et une vraie expertise du droit de la famille et du patrimoine. L'objectif est simple : que la personne reste au centre, que la transmission se fasse sereinement, et que vos résidents et leurs proches soient déchargés de cette angoisse.
+Je m'appelle Samy Santamarina, je dirige Trudaines, et je ne suis pas un agent immobilier de plus. Mon métier, c'est d'écouter d'abord. D'apaiser ces décisions patrimoniales - vente, succession, donation - avec une vraie expertise du droit de la famille, et une seule boussole : que la personne reste au centre, et que ses proches retrouvent un peu de sérénité.
 
-Seriez-vous disponible 30 minutes pour en échanger, sans aucun engagement ? Vous pouvez choisir directement un créneau ici :
+Au fond, vous et moi cherchons la même chose : que ces aînés soient bien, entourés, et que ce qu'ils transmettent se fasse dans la paix.
+
+Accepteriez-vous qu'on en parle 30 minutes, autour d'un café ou par téléphone, sans aucun engagement ?
 https://calendar.app.google/6PUSSyjkwazbJHRo9
 
-Avec toute ma considération pour le travail que vous menez auprès de vos résidents,
+Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
 Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
