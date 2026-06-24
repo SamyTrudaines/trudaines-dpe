@@ -729,21 +729,6 @@ for r in E:
     r["prio"] = priorite(r)
 E.sort(key=lambda r: (r["prio"], not has_email(r), r["arr"], r["nom"]))
 
-# ---- CSV ----
-with open("01-liste-etablissements.csv", "w", newline="", encoding="utf-8-sig") as f:
-    w = csv.writer(f, delimiter=";")
-    w.writerow(["Priorité","Tier","Établissement","Type","Gestionnaire","Statut","Adresse","CP","Arr.",
-                "Spécialités","Email","Email_OK","Source_email","Téléphone","Site/Contact","Accroche"])
-    for r in E:
-        w.writerow([r["prio"], LABEL[r["prio"]], r["nom"], r["type"], r["gest"], r["statut"],
-                    r["adresse"], r["cp"], f'{r["arr"]}e', r["spec"], r["email"],
-                    "OUI" if has_email(r) else "NON", r["src"], r["tel"],
-                    r["contact"] or r["site"], r["accroche"]])
-
-# ---- Génération des emails (texte brut + HTML) ----
-AGENDA = SOC["agenda"]
-SUBJECT = "Accompagner vos familles dans un moment délicat : {nom}"
-
 def clean(s):
     """Retire tiret long, tiret demi-cadratin et tilde (consigne client)."""
     return s.replace("—", "-").replace("–", "-").replace("~", "-")
@@ -779,6 +764,26 @@ REMOVE = {
     "EHPAD Centre Robert Doisneau",          # fermeture annoncée par la Fondation OVE (déc. 2023)
     "EHPAD Résidence Julie-Siegfried",       # fermé pour travaux depuis janvier 2025
 }
+
+# ---- CSV ----
+with open("01-liste-etablissements.csv", "w", newline="", encoding="utf-8-sig") as f:
+    w = csv.writer(f, delimiter=";")
+    w.writerow(["Priorité","Tier","Établissement","Type","Gestionnaire","Statut","Adresse","CP","Arr.",
+                "Spécialités","Email","Email_OK","Source_email","Téléphone","Site/Contact","Accroche",
+                "Directeur","Salutation","Email_direction_verifie","Statut_ciblage"])
+    for r in E:
+        d = DIRECTORS.get(r["nom"], {})
+        ferme = "FERMÉ - exclure" if r["nom"] in REMOVE else ""
+        w.writerow([r["prio"], LABEL[r["prio"]], r["nom"], r["type"], r["gest"], r["statut"],
+                    r["adresse"], r["cp"], f'{r["arr"]}e', r["spec"], r["email"],
+                    "OUI" if has_email(r) else "NON", r["src"], r["tel"],
+                    r["contact"] or r["site"], r["accroche"],
+                    d.get("name", ""), d.get("greeting", "Madame, Monsieur,"),
+                    d.get("email") or "", ferme])
+
+# ---- Génération des emails (texte brut + HTML) ----
+AGENDA = SOC["agenda"]
+SUBJECT = "Accompagner vos familles dans un moment délicat : {nom}"
 
 def greeting(r):
     d = DIRECTORS.get(r["nom"])
