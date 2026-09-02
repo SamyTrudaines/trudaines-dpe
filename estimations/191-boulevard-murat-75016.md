@@ -6,6 +6,13 @@ Carte T : CPI92012024000000114 (CCI IDF, 22/08/24) - RCS 930663646
 Garantie financiere Galian, societaire 175720A
 Date de l'estimation : 2 septembre 2026
 
+> MISE A JOUR (v2, meme jour) : le bien est identifie (4 pieces, 85 m2, 3 chambres, 7e et
+> dernier etage avec ascenseur, renovation luxueuse, immeuble 1910 de 14 logements, parties
+> communes refaites). L'avis de valeur complet et a jour est le document
+> `avis-191-murat/Avis_de_valeur_191_bd_Murat_Trudaines.pdf` (source `avis-191-murat/avis.html`).
+> Scenario retenu v2 : 935 000 a 965 000 EUR net vendeur, presentation 995 000 EUR FAI.
+> Les fourchettes generiques ci-dessous (bien non identifie) sont conservees pour trace.
+
 > Estimation d'adresse etablie a partir des donnees de marche publiques (septembre 2026).
 > Il s'agit d'une fourchette de marche, pas d'une valeur ferme. Une estimation definitive
 > chiffree au bien exact necessite les caracteristiques de l'appartement (voir section 8).
