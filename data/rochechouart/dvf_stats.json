@@ -1,0 +1,122 @@
+{
+  "adresse": "9 boulevard de Rochechouart 75009 Paris",
+  "geocodage": {
+    "lat": 48.883391,
+    "lon": 2.34836,
+    "score": 0.6954738033395176
+  },
+  "rayon_m": 300.0,
+  "filtre_prix_eur_m2": [
+    4000.0,
+    25000.0
+  ],
+  "segment_similaire_m2": [
+    35.0,
+    70.0
+  ],
+  "rayon_300m": {
+    "ventes": 860,
+    "par_annee_tous": {
+      "2021": {
+        "ventes": 194,
+        "moyenne_eur_m2": 10874,
+        "mediane_eur_m2": 10788
+      },
+      "2022": {
+        "ventes": 213,
+        "moyenne_eur_m2": 10802,
+        "mediane_eur_m2": 10800
+      },
+      "2023": {
+        "ventes": 137,
+        "moyenne_eur_m2": 10240,
+        "mediane_eur_m2": 10308
+      },
+      "2024": {
+        "ventes": 141,
+        "moyenne_eur_m2": 9612,
+        "mediane_eur_m2": 9474
+      },
+      "2025": {
+        "ventes": 175,
+        "moyenne_eur_m2": 10006,
+        "mediane_eur_m2": 9675
+      }
+    },
+    "par_annee_segment_35_70": {
+      "2021": {
+        "ventes": 79,
+        "moyenne_eur_m2": 10502,
+        "mediane_eur_m2": 10769
+      },
+      "2022": {
+        "ventes": 98,
+        "moyenne_eur_m2": 10860,
+        "mediane_eur_m2": 10894
+      },
+      "2023": {
+        "ventes": 54,
+        "moyenne_eur_m2": 10174,
+        "mediane_eur_m2": 10158
+      },
+      "2024": {
+        "ventes": 59,
+        "moyenne_eur_m2": 9498,
+        "mediane_eur_m2": 9572
+      },
+      "2025": {
+        "ventes": 66,
+        "moyenne_eur_m2": 9851,
+        "mediane_eur_m2": 9654
+      }
+    }
+  },
+  "boulevard_rochechouart": {
+    "ventes": 49,
+    "par_annee": {
+      "2021": {
+        "ventes": 15,
+        "moyenne_eur_m2": 11040,
+        "mediane_eur_m2": 11190
+      },
+      "2022": {
+        "ventes": 17,
+        "moyenne_eur_m2": 11049,
+        "mediane_eur_m2": 11439
+      },
+      "2023": {
+        "ventes": 8,
+        "moyenne_eur_m2": 11043,
+        "mediane_eur_m2": 10752
+      },
+      "2024": {
+        "ventes": 9,
+        "moyenne_eur_m2": 9110,
+        "mediane_eur_m2": 8733
+      }
+    },
+    "cote_9e": {
+      "2021": {
+        "ventes": 15,
+        "moyenne_eur_m2": 11040,
+        "mediane_eur_m2": 11190
+      },
+      "2022": {
+        "ventes": 17,
+        "moyenne_eur_m2": 11049,
+        "mediane_eur_m2": 11439
+      },
+      "2023": {
+        "ventes": 8,
+        "moyenne_eur_m2": 11043,
+        "mediane_eur_m2": 10752
+      },
+      "2024": {
+        "ventes": 9,
+        "moyenne_eur_m2": 9110,
+        "mediane_eur_m2": 8733
+      }
+    },
+    "cote_18e": {}
+  }
+}
