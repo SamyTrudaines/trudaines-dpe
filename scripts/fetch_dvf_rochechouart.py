@@ -113,6 +113,7 @@ def collect_sales(lat0, lon0):
                 "date_mutation": apt.get("date_mutation"),
                 "annee": (apt.get("date_mutation") or "")[:4],
                 "adresse": f"{apt.get('adresse_numero', '')} {apt.get('adresse_nom_voie', '')}".strip(),
+                "voie": (apt.get("adresse_nom_voie") or "").upper(),
                 "commune": commune,
                 "nb_pieces": apt.get("nombre_pieces_principales"),
                 "surface_m2": round(surface, 1),
@@ -125,11 +126,10 @@ def collect_sales(lat0, lon0):
         )
 
     in_radius = [s for s in sales if s["distance_m"] <= RADIUS_M]
+    # Couvre "BD DE ROCHECHOUART" (75109), "BD ROCHECHOUART" et
+    # "BD MARGUERITE DE ROCHECHOUART" (75118, voie renommee en 2022).
     boulevard = [
-        s
-        for s in sales
-        if "BD DE ROCHECHOUART" in s["adresse"].upper()
-        or "BOULEVARD DE ROCHECHOUART" in s["adresse"].upper()
+        s for s in sales if s["voie"].startswith("BD") and "ROCHECHOUART" in s["voie"]
     ]
     return in_radius, boulevard
 
