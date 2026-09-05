@@ -1,6 +1,11 @@
 name: DVF Rochechouart
 
 on:
+  push:
+    branches: ["claude/estimation-rochechoire-paris-wnguzr"]
+    paths:
+      - "scripts/fetch_dvf_rochechouart.py"
+      - ".github/workflows/dvf_rochechouart.yml"
   workflow_dispatch: {}
 
 permissions:
