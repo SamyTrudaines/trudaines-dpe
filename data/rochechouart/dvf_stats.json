@@ -72,27 +72,32 @@
     }
   },
   "boulevard_rochechouart": {
-    "ventes": 49,
+    "ventes": 148,
     "par_annee": {
       "2021": {
-        "ventes": 15,
-        "moyenne_eur_m2": 11040,
-        "mediane_eur_m2": 11190
+        "ventes": 29,
+        "moyenne_eur_m2": 11613,
+        "mediane_eur_m2": 11437
       },
       "2022": {
-        "ventes": 17,
-        "moyenne_eur_m2": 11049,
-        "mediane_eur_m2": 11439
+        "ventes": 40,
+        "moyenne_eur_m2": 10891,
+        "mediane_eur_m2": 11314
       },
       "2023": {
-        "ventes": 8,
-        "moyenne_eur_m2": 11043,
-        "mediane_eur_m2": 10752
+        "ventes": 31,
+        "moyenne_eur_m2": 10601,
+        "mediane_eur_m2": 10943
       },
       "2024": {
-        "ventes": 9,
-        "moyenne_eur_m2": 9110,
-        "mediane_eur_m2": 8733
+        "ventes": 20,
+        "moyenne_eur_m2": 9170,
+        "mediane_eur_m2": 8770
+      },
+      "2025": {
+        "ventes": 28,
+        "moyenne_eur_m2": 9762,
+        "mediane_eur_m2": 9659
       }
     },
     "cote_9e": {
@@ -112,11 +117,42 @@
         "mediane_eur_m2": 10752
       },
       "2024": {
-        "ventes": 9,
-        "moyenne_eur_m2": 9110,
-        "mediane_eur_m2": 8733
+        "ventes": 13,
+        "moyenne_eur_m2": 9552,
+        "mediane_eur_m2": 8807
+      },
+      "2025": {
+        "ventes": 12,
+        "moyenne_eur_m2": 10357,
+        "mediane_eur_m2": 10195
       }
     },
-    "cote_18e": {}
+    "cote_18e": {
+      "2021": {
+        "ventes": 14,
+        "moyenne_eur_m2": 12228,
+        "mediane_eur_m2": 11498
+      },
+      "2022": {
+        "ventes": 23,
+        "moyenne_eur_m2": 10775,
+        "mediane_eur_m2": 10670
+      },
+      "2023": {
+        "ventes": 23,
+        "moyenne_eur_m2": 10447,
+        "mediane_eur_m2": 11146
+      },
+      "2024": {
+        "ventes": 7,
+        "moyenne_eur_m2": 8460,
+        "mediane_eur_m2": 8148
+      },
+      "2025": {
+        "ventes": 16,
+        "moyenne_eur_m2": 9315,
+        "mediane_eur_m2": 9112
+      }
+    }
   }
 }
