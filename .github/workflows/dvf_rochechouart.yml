@@ -1,0 +1,33 @@
+name: DVF Rochechouart
+
+on:
+  push:
+    branches: ["claude/estimation-rochechoire-paris-wnguzr"]
+    paths:
+      - "scripts/fetch_dvf_rochechouart.py"
+      - ".github/workflows/dvf_rochechouart.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install requests pillow
+      - name: Run fetch
+        run: python scripts/fetch_dvf_rochechouart.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/rochechouart/
+          git commit -m "chore(data): DVF Rochechouart $(date -u +'%Y-%m-%d')" || echo "rien à commit"
+          git push
