@@ -22,6 +22,11 @@ const d = bien.data;
 const similaires = (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket)).slice(0, 3);
 const echelle = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
+const dpeConnu = d.dpe !== 'Vierge';
+const gesConnu = d.ges !== 'Vierge';
+const depensesConnues =
+  d.depensesEnergieMin !== undefined && d.depensesEnergieMax !== undefined && d.depensesEnergieAnnee !== undefined;
+
 const donnees = [
   {
     '@context': 'https://schema.org',
@@ -155,7 +160,7 @@ const donnees = [
         </dl>
 
         <h2 class="titre-3 mt-12">Diagnostic de performance énergétique</h2>
-        <div class="mt-6 flex flex-wrap gap-2" role="img" aria-label={`Classe énergie ${d.dpe}`}>
+        <div class="mt-6 flex flex-wrap gap-2" role="img" aria-label={`Classe énergie ${d.dpe}, classe climat ${d.ges}`}>
           {echelle.map((lettre) => (
             <span
               class={`flex h-10 w-10 items-center justify-center border text-sm font-semibold ${
@@ -168,14 +173,33 @@ const donnees = [
             </span>
           ))}
         </div>
-        <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
-          Classe énergie {d.dpe}, classe climat {d.ges}.
-          {['F', 'G'].includes(d.dpe) &&
-            " Ce bien est concerné par le calendrier de rénovation énergétique. Nous chiffrons les travaux avec vous avant toute offre."}
+
+        {/*
+          Articles R126-21 à R126-25 du code de la construction et de l'habitation :
+          les mentions sont précédées des mots « classe énergie » et « classe climat »,
+          en capitales, dans un corps au moins égal à celui du texte de l'annonce, en
+          couleur. Les logements classés F et G portent en plus la mention exacte
+          « Logement à consommation énergétique excessive ».
+        */}
+        <p class="mt-5 text-base font-semibold uppercase text-[color:var(--color-nuit)]">
+          Classe énergie {dpeConnu ? d.dpe : 'non communiquée'} · Classe climat {gesConnu ? d.ges : 'non communiquée'}
         </p>
-        <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
-          Montant estimé des dépenses annuelles d'énergie : à compléter à partir du DPE.
+        {['F', 'G'].includes(d.dpe) && (
+          <p class="mt-3 text-base font-semibold uppercase text-[color:var(--color-nuit)]">
+            Logement à consommation énergétique excessive
+          </p>
+        )}
+        <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+          {depensesConnues
+            ? `Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre ${nombre(d.depensesEnergieMin!)} et ${nombre(d.depensesEnergieMax!)} € par an. Prix moyens des énergies indexés au 1er janvier ${d.depensesEnergieAnnee}.`
+            : "Montant estimé des dépenses annuelles d'énergie : non communiqué à ce stade. Il vous est remis avec le diagnostic complet, sur demande."}
         </p>
+        {['F', 'G'].includes(d.dpe) && (
+          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            Ce bien est concerné par le calendrier de rénovation énergétique. Nous chiffrons les travaux
+            avec vous avant toute offre, devis d'entreprise à l'appui.
+          </p>
+        )}
 
         <p class="mt-10 text-xs text-[color:var(--color-ardoise)]">
           Bien présenté par {site.nomLong}, carte professionnelle {site.legal.carteT}. Les informations sont

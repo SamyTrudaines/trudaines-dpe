@@ -12,6 +12,9 @@ ascenseur: false
 dpe: E
 ges: E
 charges: 1320
+depensesEnergieMin: 760
+depensesEnergieMax: 1080
+depensesEnergieAnnee: 2026
 lotsCopropriete: 22
 procedureCopropriete: false
 honorairesCharge: vendeur

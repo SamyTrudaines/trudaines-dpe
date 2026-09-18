@@ -5,7 +5,8 @@
  * Lancer : npm run build puis npm run verifier
  */
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
-import { join, relative, extname } from 'node:path';
+import { join, relative } from 'node:path';
+import matter from 'gray-matter';
 
 const dist = join(process.cwd(), 'dist');
 if (!existsSync(dist)) {
@@ -112,6 +113,45 @@ if (!existsSync(redirections)) {
     if (code !== '301') avertissements.push(`Redirection sans code 301 : ${propre}`);
     if (destination && destination.startsWith('/') && !destination.includes(':') && !existeCible(destination)) {
       erreurs.push(`Redirection vers une page inexistante : ${propre}`);
+    }
+  }
+}
+
+/*
+ * Conformité des annonces diffusées. Articles R126-21 à R126-25 du code de la
+ * construction et de l'habitation : toute annonce de vente doit porter la classe
+ * énergie, la classe climat et le montant estimé des dépenses annuelles d'énergie.
+ * Une fiche en offMarket n'est pas diffusée dans les pages de biens : elle n'est
+ * pas concernée tant qu'elle reste en relecture.
+ */
+const dossierBiens = join(process.cwd(), 'src', 'content', 'biens');
+if (existsSync(dossierBiens)) {
+  for (const nom of readdirSync(dossierBiens).filter((f) => f.endsWith('.md'))) {
+    const { data } = matter(readFileSync(join(dossierBiens, nom), 'utf8'));
+    if (data.offMarket) continue;
+    const fiche = `src/content/biens/${nom}`;
+    if (!data.dpe || data.dpe === 'Vierge') {
+      erreurs.push(`${fiche} : annonce diffusée sans classe énergie, mention obligatoire`);
+    }
+    if (!data.ges || data.ges === 'Vierge') {
+      erreurs.push(`${fiche} : annonce diffusée sans classe climat, mention obligatoire`);
+    }
+    if (
+      data.depensesEnergieMin === undefined ||
+      data.depensesEnergieMax === undefined ||
+      data.depensesEnergieAnnee === undefined
+    ) {
+      erreurs.push(
+        `${fiche} : annonce diffusée sans montant estimé des dépenses annuelles d'énergie ` +
+          '(depensesEnergieMin, depensesEnergieMax, depensesEnergieAnnee), mention obligatoire'
+      );
+    }
+    if (['F', 'G'].includes(data.dpe)) {
+      const page = join(dist, 'bien', `${nom.replace(/\.md$/, '')}.html`);
+      const rendu = existsSync(page) ? readFileSync(page, 'utf8') : '';
+      if (!/Logement à consommation énergétique excessive/i.test(rendu)) {
+        erreurs.push(`${fiche} : classe ${data.dpe} sans la mention « Logement à consommation énergétique excessive »`);
+      }
     }
   }
 }

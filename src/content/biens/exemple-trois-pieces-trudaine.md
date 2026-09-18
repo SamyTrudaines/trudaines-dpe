@@ -12,6 +12,9 @@ ascenseur: true
 dpe: D
 ges: D
 charges: 2400
+depensesEnergieMin: 1090
+depensesEnergieMax: 1530
+depensesEnergieAnnee: 2026
 taxeFonciere: 1450
 lotsCopropriete: 48
 procedureCopropriete: false

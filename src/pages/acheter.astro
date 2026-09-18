@@ -126,7 +126,8 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
                 <p class="surtitre mt-5">{b.data.quartier} · {b.data.arrondissement}</p>
                 <h2 class="titre-3 mt-2 text-[color:var(--color-encre)]">{b.data.titre}</h2>
                 <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-                  {nombre(b.data.surface)} m² · {b.data.pieces} {b.data.pieces > 1 ? 'pièces' : 'pièce'} · DPE {b.data.dpe}
+                  {nombre(b.data.surface)} m² · {b.data.pieces} {b.data.pieces > 1 ? 'pièces' : 'pièce'}
+                  <span class="uppercase"> · Classe énergie {b.data.dpe === 'Vierge' ? 'non communiquée' : b.data.dpe}</span>
                 </p>
                 <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(b.data.prix)}</p>
               </a>

@@ -20,6 +20,15 @@ const biens = defineCollection({
     ges: z.enum(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'Vierge']).default('Vierge'),
     charges: z.number().optional(),
     taxeFonciere: z.number().optional(),
+    /**
+     * Montant estimé des dépenses annuelles d'énergie pour un usage standard,
+     * borne basse et borne haute, tel qu'il figure sur le DPE, et année des prix
+     * de référence. Articles R126-21 à R126-25 du code de la construction et de
+     * l'habitation : ces trois valeurs sont obligatoires dans toute annonce.
+     */
+    depensesEnergieMin: z.number().optional(),
+    depensesEnergieMax: z.number().optional(),
+    depensesEnergieAnnee: z.number().optional(),
     lotsCopropriete: z.number().optional(),
     procedureCopropriete: z.boolean().default(false),
     honorairesCharge: z.enum(['vendeur', 'acquéreur']).default('vendeur'),
