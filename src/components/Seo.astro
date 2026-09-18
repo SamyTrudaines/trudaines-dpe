@@ -9,8 +9,18 @@ interface Props {
   noindex?: boolean;
 }
 
-const { titre, description, image = '/images/og-trudaines.svg', type = 'website', noindex = false } = Astro.props;
-const canonique = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', site.url).href;
+const { titre, description, image = '/images/og-trudaines.png', type = 'website', noindex = false } = Astro.props;
+/*
+ * Adresse canonique. La construction en fichiers nomme l'accueil index.html :
+ * sans ce nettoyage, l'accueil se déclarait canonique sur /index.html alors que
+ * les visiteurs et les liens entrants pointent la racine, ce qui dédouble le
+ * signal aux moteurs.
+ */
+const chemin = Astro.url.pathname
+  .replace(/\/index\.html$/, '/')
+  .replace(/\.html$/, '')
+  .replace(/(.)\/$/, '$1');
+const canonique = new URL(chemin || '/', site.url).href;
 const imageAbsolue = new URL(image, site.url).href;
 ---
 <title>{titre}</title>

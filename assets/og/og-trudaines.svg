@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="10" fill="#f8b365"/>
+  <text x="96" y="286" font-family="Montserrat Thin SemiBold" font-size="76" letter-spacing="15" fill="#1d1d1b">TRUD<tspan fill="#f8b365">AI</tspan>NES</text>
+  <text x="100" y="334" font-family="Montserrat Thin Medium" font-size="20" letter-spacing="14" fill="#5f6268">IMMOBILIER</text>
+  <rect x="100" y="396" width="76" height="3" fill="#f8b365"/>
+  <text x="100" y="458" font-family="Montserrat Thin Light" font-size="33" fill="#1d1d1b">Vente et estimation, Paris 9e nord, Montmartre, 10e nord</text>
+  <text x="100" y="506" font-family="Montserrat Thin Medium" font-size="19" letter-spacing="1" fill="#5f6268">Avis de valeur écrit sous 48 heures, prix issus des ventes signées</text>
+  <text x="100" y="566" font-family="Montserrat Thin Light" font-size="16" letter-spacing="1" fill="#a7aaae">trudaines.com · 2 rue Livingstone, 75018 Paris · Carte CPI 9201 2024 000 000 114</text>
+</svg>

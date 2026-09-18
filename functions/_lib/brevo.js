@@ -10,7 +10,44 @@ export function echapper(valeur) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
+ * Toute donnée venue du formulaire est bornée avant d'entrer dans un email ou
+ * dans un objet de message. Sans cette borne, un tiers peut faire envoyer par
+ * notre propre expéditeur Brevo, donc signé par notre domaine, un message dont
+ * il choisit le contenu : c'est un vecteur d'hameçonnage au nom du cabinet.
+ */
+export function borner(valeur, longueur = 400) {
+  return String(valeur ?? '')
+    .replace(/[\u0000-\u001f\u007f]/g, ' ')
+    .trim()
+    .slice(0, longueur);
+}
+
+/**
+ * Objet d'email : une seule ligne, sans balise, longueur bornée. Un objet
+ * s'affiche comme du texte, mais il porte l'appât d'un hameçonnage aussi bien
+ * qu'un corps de message : il ne contient donc aucune balise, et jamais de texte
+ * libre venu d'un formulaire.
+ */
+export function objetSur(valeur, longueur = 120) {
+  return borner(valeur, longueur)
+    .replace(/<[^>]*>?/g, ' ')
+    .replace(/[<>]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Identifiant de fichier servi par le site, référence de bien ou slug de guide.
+ * La liste blanche interdit à la fois la traversée de chemin et l'injection de
+ * texte libre dans un email.
+ */
+export function identifiantValide(valeur, longueur = 64) {
+  return new RegExp(`^[a-z0-9][a-z0-9-]{0,${longueur - 1}}$`).test(String(valeur || '').trim().toLowerCase());
 }
 
 /** Réponse JSON pour les envois en fetch, redirection 303 pour les envois sans JavaScript. */
@@ -54,7 +91,7 @@ export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, 
       name: env.BREVO_SENDER_NOM || 'Trudaines Immobilier',
     },
     to: [{ email: destinataire || env.NOTIFICATION_EMAIL || 'samy.santamarina@trudaines.com' }],
-    subject: sujet,
+    subject: objetSur(sujet),
     htmlContent: html,
   };
   if (repondreA) corps.replyTo = { email: repondreA };
@@ -124,33 +161,46 @@ export function gabaritNotification(titre, lignes) {
     .filter((ligne) => ligne && ligne[1])
     .map(
       ([libelle, valeur]) =>
-        `<tr><td style="padding:8px 16px 8px 0;color:#52596a;font-size:13px;vertical-align:top;white-space:nowrap">${echapper(
-          libelle
-        )}</td><td style="padding:8px 0;color:#14181f;font-size:14px">${echapper(valeur).replace(/\n/g, '<br>')}</td></tr>`
+        `<tr><td style="padding:8px 16px 8px 0;color:#5f6268;font-size:13px;vertical-align:top;white-space:nowrap">${echapper(
+          borner(libelle, 80)
+        )}</td><td style="padding:8px 0;color:#1d1d1b;font-size:14px">${echapper(borner(valeur, 4000)).replace(
+          /\n/g,
+          '<br>'
+        )}</td></tr>`
     )
     .join('');
 
   return `<!doctype html><html lang="fr"><body style="margin:0;background:#ffffff;font-family:Helvetica,Arial,sans-serif">
   <div style="max-width:640px;margin:0 auto;padding:32px 24px">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#52596a">Trudaines</p>
-    <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:22px;font-weight:400;color:#14181f">${echapper(titre)}</h1>
-    <table style="width:100%;border-collapse:collapse;border-top:1px solid #e2e4e9">${corps}</table>
-    <p style="margin:32px 0 0;font-size:12px;color:#52596a">Message envoyé automatiquement depuis trudaines.com</p>
+    <p style="margin:0 0 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5f6268">Trudaines</p>
+    <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:22px;font-weight:400;color:#1d1d1b">${echapper(titre)}</h1>
+    <table style="width:100%;border-collapse:collapse;border-top:1px solid #e3e3e0">${corps}</table>
+    <p style="margin:32px 0 0;font-size:12px;color:#5f6268">Message envoyé automatiquement depuis trudaines.com</p>
   </div></body></html>`;
 }
 
-/** Gabarit pour les emails envoyés au prospect. */
+/**
+ * Gabarit pour les emails envoyés au prospect.
+ *
+ * Titre et paragraphes sont échappés sans exception. Un paragraphe est du texte,
+ * jamais du balisage : c'est ce qui empêche qu'une valeur de formulaire glisse un
+ * lien dans un message expédié par notre domaine.
+ */
 export function gabaritClient(titre, paragraphes) {
   const corps = paragraphes
-    .map((p) => `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:#14181f">${p}</p>`)
+    .filter(Boolean)
+    .map(
+      (p) =>
+        `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:#1d1d1b">${echapper(borner(p, 1200))}</p>`
+    )
     .join('');
 
   return `<!doctype html><html lang="fr"><body style="margin:0;background:#ffffff;font-family:Helvetica,Arial,sans-serif">
   <div style="max-width:600px;margin:0 auto;padding:40px 24px">
-    <p style="margin:0 0 8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#52596a">Trudaines</p>
-    <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:24px;font-weight:400;color:#14181f">${echapper(titre)}</h1>
+    <p style="margin:0 0 8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#5f6268">Trudaines</p>
+    <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:24px;font-weight:400;color:#1d1d1b">${echapper(titre)}</h1>
     ${corps}
-    <p style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e2e4e9;font-size:12px;line-height:1.7;color:#52596a">
+    <p style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e3e3e0;font-size:12px;line-height:1.7;color:#5f6268">
       Trudaines Immobilier, 2 rue Livingstone, 75018 Paris<br>
       06 20 46 59 12 · samy.santamarina@trudaines.com<br>
       Carte professionnelle CPI 9201 2024 000 000 114

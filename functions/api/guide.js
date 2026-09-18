@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
-  liste, gabaritNotification, gabaritClient,
+  liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
 export async function onRequestPost({ request, env }) {
@@ -15,8 +15,20 @@ export async function onRequestPost({ request, env }) {
 
     const valeur = (champ) => String(donnees.get(champ) || '').trim();
     const email = valeur('email');
-    const guide = valeur('guide');
-    const titreGuide = valeur('titreGuide') || guide;
+    const guide = valeur('guide').toLowerCase();
+    if (!identifiantValide(guide)) {
+      return reponse(request, { ok: false, message: 'Guide inconnu.' }, 400);
+    }
+    /*
+     * Le titre affiché est reconstruit depuis le slug, déjà passé par la liste
+     * blanche. Le champ titreGuide transmis par le formulaire n'est pas utilisé :
+     * il est libre, donc il servirait d'appât dans un email signé par notre
+     * domaine et adressé à une victime choisie par l'appelant.
+     */
+    const titreGuide = guide
+      .split('-')
+      .join(' ')
+      .replace(/^./, (lettre) => lettre.toUpperCase());
     const base = env.SITE_URL || new URL(request.url).origin;
     const urlGuide = `${base}/guides/${encodeURIComponent(guide)}.pdf`;
 

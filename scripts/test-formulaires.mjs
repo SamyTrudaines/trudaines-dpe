@@ -76,5 +76,114 @@ const sansJs = await estimation.onRequestPost({
 if (sansJs.status !== 303) echecs++;
 console.log(`${sansJs.status === 303 ? 'OK   ' : 'ÉCHEC'} envoi sans JavaScript · statut ${sansJs.status}`);
 
+/* ------------------------------------------- non régression de sécurité ---- */
+
+/**
+ * Ces trois contrôles ferment un vecteur d'hameçonnage réel : sans eux, un tiers
+ * faisait expédier par notre propre expéditeur Brevo, donc signé par notre
+ * domaine, un email dont il choisissait le contenu et le destinataire.
+ */
+function verifier(nom, condition, detail = '') {
+  if (!condition) echecs++;
+  console.log(`${condition ? 'OK   ' : 'ÉCHEC'} ${nom}${detail ? ` · ${detail}` : ''}`);
+}
+
+const ficheBien = await import(new URL('../functions/api/fiche-bien.js', import.meta.url).href);
+const guide = await import(new URL('../functions/api/guide.js', import.meta.url).href);
+const candidature = await import(new URL('../functions/api/candidature.js', import.meta.url).href);
+
+appels.length = 0;
+const referenceHostile = await ficheBien.onRequestPost({
+  request: requete({
+    email: 'victime@example.com',
+    telephone: '0601020304',
+    reference: 'EXEMPLE <a href="https://exemple-hameconnage.test">cliquez ici</a>',
+    horodatage: recent(),
+  }),
+  env,
+});
+verifier(
+  'référence de bien hors liste blanche refusée',
+  referenceHostile.status === 400 && appels.length === 0,
+  `statut ${referenceHostile.status}, appels ${appels.length}`
+);
+
+appels.length = 0;
+const guideHostile = await guide.onRequestPost({
+  request: requete({
+    email: 'victime@example.com',
+    telephone: '0601020304',
+    guide: '../../etc/passwd',
+    horodatage: recent(),
+  }),
+  env,
+});
+verifier(
+  'slug de guide hors liste blanche refusé',
+  guideHostile.status === 400 && appels.length === 0,
+  `statut ${guideHostile.status}`
+);
+
+appels.length = 0;
+await guide.onRequestPost({
+  request: requete({
+    email: 'victime@example.com',
+    telephone: '0601020304',
+    guide: 'guide-prix-2026-9e-nord',
+    titreGuide: '<a href="https://exemple-hameconnage.test">Cliquez pour valider</a>',
+    horodatage: recent(),
+  }),
+  env,
+});
+const corpsEnvoyes = appels
+  .filter((a) => a.url.endsWith('/smtp/email'))
+  .map((a) => `${a.corps.subject} ${a.corps.htmlContent}`)
+  .join(' ');
+verifier(
+  'balise HTML d’un champ libre neutralisée dans l’email',
+  corpsEnvoyes.length > 0 && !/<a\s+href="https:\/\/exemple-hameconnage/i.test(corpsEnvoyes),
+  `${appels.filter((a) => a.url.endsWith('/smtp/email')).length} email(s) inspecté(s)`
+);
+
+appels.length = 0;
+const formulaireCv = new FormData();
+for (const [cle, valeur] of Object.entries({
+  prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304',
+  profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour',
+  consentement: 'oui', horodatage: recent(),
+})) formulaireCv.append(cle, valeur);
+formulaireCv.append('cv', new File(['MZ executable'], 'cv.pdf', { type: 'application/x-msdownload' }));
+const cvHostile = await candidature.onRequestPost({
+  request: new Request('https://www.trudaines.com/api/candidature', {
+    method: 'POST', body: formulaireCv, headers: { Accept: 'application/json' },
+  }),
+  env,
+});
+verifier(
+  'pièce jointe de type non autorisé refusée',
+  cvHostile.status === 400 && appels.length === 0,
+  `statut ${cvHostile.status}`
+);
+
+appels.length = 0;
+const formulairePdfMenteur = new FormData();
+for (const [cle, valeur] of Object.entries({
+  prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304',
+  profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour',
+  consentement: 'oui', horodatage: recent(),
+})) formulairePdfMenteur.append(cle, valeur);
+formulairePdfMenteur.append('cv', new File(['<html>pas un pdf</html>'], 'cv.pdf', { type: 'application/pdf' }));
+const pdfMenteur = await candidature.onRequestPost({
+  request: new Request('https://www.trudaines.com/api/candidature', {
+    method: 'POST', body: formulairePdfMenteur, headers: { Accept: 'application/json' },
+  }),
+  env,
+});
+verifier(
+  'fichier annoncé PDF mais sans signature PDF refusé',
+  pdfMenteur.status === 400 && appels.length === 0,
+  `statut ${pdfMenteur.status}`
+);
+
 console.log(echecs ? `${echecs} échec(s)` : 'Tous les formulaires répondent correctement.');
 process.exit(echecs ? 1 : 0);

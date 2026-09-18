@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Trudaines Immobilier">
-  <rect width="1200" height="630" fill="#f0f0ee"/>
-  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="#e2e4e9"/>
-  <text x="600" y="315" text-anchor="middle" font-family="Montserrat, Helvetica, Arial, sans-serif" font-size="38" letter-spacing="4" fill="#9aa0ad">TRUDAINES IMMOBILIER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Trudaines Immobilier, vente et estimation Paris 9e et 18e">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#f8b365"/>
+  <text x="96" y="286" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="600" font-size="72" letter-spacing="14" fill="#1d1d1b">TRUD<tspan fill="#f8b365">AI</tspan>NES</text>
+  <text x="96" y="332" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="500" font-size="20" letter-spacing="14" fill="#5f6268">IMMOBILIER</text>
+  <rect x="96" y="392" width="72" height="3" fill="#f8b365"/>
+  <text x="96" y="452" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="300" font-size="30" fill="#1d1d1b">Vente et estimation, Paris 9e nord, Montmartre, Paris 10e nord</text>
+  <text x="96" y="500" font-family="Montserrat, Helvetica, Arial, sans-serif" font-weight="500" font-size="19" letter-spacing="2" fill="#5f6268">Avis de valeur écrit sous 48 heures, prix issus des ventes signées</text>
 </svg>

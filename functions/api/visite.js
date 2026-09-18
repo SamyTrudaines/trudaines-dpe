@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
-  liste, gabaritNotification, gabaritClient,
+  liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
 export async function onRequestPost({ request, env }) {
@@ -15,9 +15,13 @@ export async function onRequestPost({ request, env }) {
 
     const valeur = (champ) => String(donnees.get(champ) || '').trim();
     const email = valeur('email');
+    const reference = valeur('reference').toLowerCase();
+    if (!identifiantValide(reference)) {
+      return reponse(request, { ok: false, message: 'Référence de bien inconnue.' }, 400);
+    }
 
     await envoyerEmail(env, {
-      sujet: `Visite demandée · ${valeur('reference')} · ${valeur('bien')}`,
+      sujet: `Visite demandée · réf. ${reference.toUpperCase()}`,
       html: gabaritNotification('Demande de visite', [
         ['Bien', valeur('bien')],
         ['Référence', valeur('reference')],
@@ -43,9 +47,15 @@ export async function onRequestPost({ request, env }) {
 
     await envoyerEmail(env, {
       destinataire: email,
-      sujet: `Votre demande de visite · ${valeur('bien')}`,
+      /*
+       * Objet et corps ne reprennent que la référence, déjà passée par la liste
+       * blanche. Le libellé du bien est un champ libre : dans un email expédié
+       * par notre domaine vers une adresse choisie par l'appelant, il servirait
+       * d'appât.
+       */
+      sujet: `Votre demande de visite · réf. ${reference.toUpperCase()}`,
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
-        `Votre demande de visite pour le bien ${valeur('reference')} est bien enregistrée.`,
+        `Votre demande de visite pour le bien ${reference.toUpperCase()} est bien enregistrée.`,
         'Je reviens vers vous aujourd’hui avec deux créneaux possibles. Si vous avez besoin d’éléments avant la visite, diagnostics, charges ou procès-verbaux d’assemblée, dites-le moi, je vous les transmets en amont.',
         'Samy Santamarina, fondateur de Trudaines.',
       ]),

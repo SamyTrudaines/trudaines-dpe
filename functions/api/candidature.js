@@ -4,6 +4,14 @@ import {
 } from '../_lib/brevo.js';
 
 const TAILLE_MAX = 4 * 1024 * 1024;
+// Le CV part en pièce jointe dans une boîte lue par un humain : on n'accepte que
+// des formats de document, jamais un exécutable renommé en .pdf.
+const TYPES_ACCEPTES = new Set([
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+]);
+const SIGNATURES = { 'application/pdf': [0x25, 0x50, 0x44, 0x46] };
 
 function base64(tampon) {
   const octets = new Uint8Array(tampon);
@@ -34,8 +42,22 @@ export async function onRequestPost({ request, env }) {
       if (cv.size > TAILLE_MAX) {
         return reponse(request, { ok: false, message: 'Le CV dépasse 4 Mo.' }, 400);
       }
-      const nom = `cv-${valeur('prenom')}-${valeur('nom')}.pdf`.toLowerCase().replace(/[^a-z0-9.-]+/g, '-');
-      piecesJointes.push({ name: nom, content: base64(await cv.arrayBuffer()) });
+      if (!TYPES_ACCEPTES.has(cv.type)) {
+        return reponse(request, { ok: false, message: 'Le CV doit être un PDF ou un document Word.' }, 400);
+      }
+      const tampon = await cv.arrayBuffer();
+      const attendue = SIGNATURES[cv.type];
+      if (attendue) {
+        const debut = new Uint8Array(tampon.slice(0, attendue.length));
+        if (attendue.some((octet, index) => debut[index] !== octet)) {
+          return reponse(request, { ok: false, message: 'Le fichier transmis n’est pas un PDF valide.' }, 400);
+        }
+      }
+      const extension = cv.type === 'application/pdf' ? 'pdf' : 'docx';
+      const nom = `cv-${valeur('prenom')}-${valeur('nom')}.${extension}`
+        .toLowerCase()
+        .replace(/[^a-z0-9.-]+/g, '-');
+      piecesJointes.push({ name: nom, content: base64(tampon) });
     }
 
     await envoyerEmail(env, {

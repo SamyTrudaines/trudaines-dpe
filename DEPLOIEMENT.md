@@ -198,3 +198,81 @@ canonicalisation du domaine se règle dans Cloudflare, une seule fois :
   `clic_whatsapp`.
 - Conservez l'ancien hébergement une quinzaine de jours, le temps que les
   redirections soient prises en compte.
+
+---
+
+## Sécurité, à faire côté tableau de bord Cloudflare
+
+Le dépôt couvre tout ce qui se règle dans le code. Quatre points se règlent
+seulement dans l'interface Cloudflare, et ils comptent autant.
+
+### 1. Limitation de débit sur les formulaires
+
+Sans elle, n'importe qui peut boucler sur `/api/contact` : la boîte de Samy est
+inondée et le crédit Brevo consommé. Dans **Security** puis **WAF** puis
+**Rate limiting rules** :
+
+| Réglage | Valeur |
+| --- | --- |
+| Nom | Formulaires |
+| Filtre | `http.request.uri.path contains "/api/"` et `http.request.method eq "POST"` |
+| Compteur | adresse IP |
+| Seuil | 10 requêtes par minute |
+| Action | Bloquer pendant 10 minutes |
+
+### 2. Protection du back office
+
+`/admin` accepte toute personne ayant un compte GitHub avec accès au dépôt. Une
+deuxième barrière vaut d'être posée, dans **Zero Trust** puis **Access** puis
+**Applications** : une application de type self-hosted sur le chemin `/admin*`,
+avec une règle d'autorisation limitée aux adresses email du cabinet et une
+authentification par lien envoyé par email. Gratuit jusqu'à cinquante
+utilisateurs.
+
+### 3. Canonicalisation https et www
+
+Dans **Rules** puis **Redirect rules**, une règle unique qui envoie
+`trudaines.com`, `http://` et toute variante vers `https://www.trudaines.com`,
+en 301. Sans elle, le même contenu répond sur quatre adresses.
+
+### 4. Alertes
+
+Dans **Notifications**, activer au minimum : pic d'erreurs 5xx, échec de
+déploiement Pages, et expiration de certificat.
+
+---
+
+## Durcissement du back office
+
+Trois limites connues, avec leur remède. Aucune n'est bloquante pour la mise en
+ligne, toutes méritent d'être traitées dans le mois.
+
+**La portée OAuth couvre tous les dépôts privés du compte.** Une application
+OAuth GitHub ne sait pas se restreindre à un seul dépôt : la portée `repo`, dont
+Decap a besoin pour écrire sur un dépôt privé, donne mécaniquement accès à tous
+les autres. Deux sorties possibles. Passer le dépôt du site en public, ce qui
+permet de réduire la portée à `public_repo` : le contenu du site est de toute
+façon public. Ou créer un compte GitHub dédié au back office, membre du seul
+dépôt du site, et ne s'y connecter qu'avec celui-là.
+
+**L'empreinte d'intégrité du script Decap n'est pas posée.** La version est
+figée à `3.8.0` dans `public/admin/index.html`, ce qui suffit à empêcher qu'une
+version publiée demain s'exécute sans relecture. Pour fermer complètement, ajouter
+l'attribut d'intégrité, calculé une fois :
+
+```bash
+curl -sL https://unpkg.com/decap-cms@3.8.0/dist/decap-cms.js \
+  | openssl dgst -sha384 -binary | openssl base64 -A
+```
+
+Puis, dans la balise script : `integrity="sha384-LE_RESULTAT"`. À refaire à
+chaque montée de version.
+
+**Les photographies des fiches reprises sortent d'un serveur qui ne nous
+appartient pas.** Les dix-sept fiches importées pointent vers le serveur
+d'images de l'ancien back office. Tant que c'est le cas, ce serveur décide de ce
+que voient nos visiteurs. La politique de sécurité du contenu l'autorise
+nommément, le temps du rapatriement : une fois les images dans
+`public/images/biens/`, retirer les deux domaines `trudaines.staticlbi.com` et
+`trudaines.la-boite-immo.com` de la directive `img-src`, dans
+`astro.config.mjs`.

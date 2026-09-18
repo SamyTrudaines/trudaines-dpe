@@ -23,8 +23,10 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@pdf-lib/fontkit": "^1.1.1",
     "gray-matter": "^4.0.3",
     "pdf-lib": "^1.17.1",
+    "sharp": "^0.35.4",
     "typescript": "^6.0.3"
   }
 }

@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
-  liste, gabaritNotification, gabaritClient,
+  liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
 /**
@@ -19,7 +19,13 @@ export async function onRequestPost({ request, env }) {
 
     const valeur = (champ) => String(donnees.get(champ) || '').trim();
     const email = valeur('email');
-    const reference = valeur('reference');
+    const reference = valeur('reference').toLowerCase();
+    // La référence désigne un fichier servi par le site. Hors liste blanche, on
+    // refuse : cela ferme la traversée de chemin et empêche qu'un texte choisi
+    // par l'appelant se retrouve dans un email expédié par notre domaine.
+    if (!identifiantValide(reference)) {
+      return reponse(request, { ok: false, message: 'Référence de bien inconnue.' }, 400);
+    }
     const base = env.SITE_URL || new URL(request.url).origin;
     const urlFiche = `${base}/fiches/${encodeURIComponent(reference.toLowerCase())}.pdf`;
 
@@ -28,7 +34,8 @@ export async function onRequestPost({ request, env }) {
 
     await envoyerEmail(env, {
       destinataire: email,
-      sujet: `Dossier complet · ${valeur('bien') || reference}`,
+      // Objet construit sur la seule référence validée, pas sur le libellé libre.
+      sujet: `Dossier complet · réf. ${reference.toUpperCase()}`,
       html: gabaritClient('Votre dossier est en pièce jointe', [
         `Vous trouverez le dossier complet du bien ${reference} joint à ce message : photographies, caractéristiques, diagnostic, charges et honoraires.`,
         piecesJointes.length

@@ -52,14 +52,27 @@
   --font-titre: "Libre Baskerville", Georgia, "Times New Roman", serif;
   --font-texte: "Montserrat", "Helvetica Neue", Arial, sans-serif;
 
-  /* Couleur d'accent unique : bleu nuit profond. Contraste 14,4:1 sur blanc. */
-  --color-nuit: #12234a;
-  --color-nuit-fonce: #0b1830;
-  --color-nuit-clair: #e8ecf4;
-  --color-encre: #14181f;
-  --color-ardoise: #52596a;
-  --color-trait: #e2e4e9;
-  --color-papier: #f7f7f5;
+  /*
+   * Palette tirée du logo : le noir de la marque et son orange, rien d'autre.
+   *
+   * L'orange ne porte jamais de texte sur blanc, son contraste y est de 1,9:1.
+   * Il sert de fond, de filet et de repère, avec l'encre par dessus, où le
+   * contraste monte à 9,9:1. L'encre porte les aplats et le texte, à 15,6:1 sur
+   * blanc. Les anciens jetons « nuit » restent définis sur l'encre, le temps que
+   * plus aucune page ne les appelle.
+   */
+  --color-encre: #1d1d1b;
+  --color-encre-fonce: #000000;
+  --color-or: #f8b365;
+  --color-or-fonce: #e2933a;
+  --color-or-clair: #fdf1e2;
+  --color-ardoise: #5f6268;
+  --color-trait: #e3e3e0;
+  --color-papier: #f7f6f3;
+
+  --color-nuit: var(--color-encre);
+  --color-nuit-fonce: var(--color-encre-fonce);
+  --color-nuit-clair: var(--color-or-clair);
 
   --spacing: 0.5rem; /* grille de 8 px */
 }
@@ -86,14 +99,17 @@
     text-wrap: balance;
   }
   a {
-    color: var(--color-nuit);
+    color: var(--color-encre);
+    text-decoration-color: var(--color-or);
+    text-underline-offset: 0.2em;
   }
   :focus-visible {
-    outline: 2px solid var(--color-nuit);
+    outline: 2px solid var(--color-encre);
     outline-offset: 3px;
+    box-shadow: 0 0 0 5px var(--color-or);
   }
   img { max-width: 100%; height: auto; }
-  ::selection { background: var(--color-nuit); color: #fff; }
+  ::selection { background: var(--color-or); color: var(--color-encre); }
 }
 
 @layer components {
@@ -153,21 +169,31 @@
     cursor: pointer;
     transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
   }
-  .bouton:hover { background-color: var(--color-nuit-fonce); border-color: var(--color-nuit-fonce); }
+  /* Au survol, l'aplat passe à l'orange de la marque, texte encre par dessus. */
+  .bouton:hover {
+    background-color: var(--color-or);
+    border-color: var(--color-or);
+    color: var(--color-encre);
+  }
   .bouton:disabled { opacity: 0.55; cursor: not-allowed; }
   .bouton-secondaire {
     background-color: #ffffff;
-    color: var(--color-nuit);
+    color: var(--color-encre);
   }
-  .bouton-secondaire:hover { background-color: var(--color-nuit-clair); border-color: var(--color-nuit); color: var(--color-nuit-fonce); }
+  .bouton-secondaire:hover {
+    background-color: var(--color-or-clair);
+    border-color: var(--color-or-fonce);
+    color: var(--color-encre);
+  }
 
   .lien-souligne {
-    color: var(--color-nuit);
+    color: var(--color-encre);
     text-decoration: underline;
+    text-decoration-color: var(--color-or-fonce);
     text-underline-offset: 0.25em;
     text-decoration-thickness: 1px;
   }
-  .lien-souligne:hover { text-decoration-thickness: 2px; }
+  .lien-souligne:hover { text-decoration-thickness: 2px; text-decoration-color: var(--color-encre); }
 
   .champ {
     display: block;
@@ -181,7 +207,11 @@
     border: 1px solid var(--color-trait);
     border-radius: 0;
   }
-  .champ:focus { border-color: var(--color-nuit); outline: 2px solid var(--color-nuit); outline-offset: 0; }
+  .champ:focus {
+    border-color: var(--color-encre);
+    outline: 2px solid var(--color-or-fonce);
+    outline-offset: 0;
+  }
   .etiquette {
     display: block;
     margin-bottom: 0.5rem;
