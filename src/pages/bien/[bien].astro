@@ -1,0 +1,204 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormulaireVisite from '../../components/FormulaireVisite.astro';
+import FormulaireFiche from '../../components/FormulaireFiche.astro';
+import Dpe from '../../components/Dpe.astro';
+import CarteBien from '../../components/CarteBien.astro';
+import { getCollection, render } from 'astro:content';
+import { euros, nombre, libelleStatut, cabinet } from '../../data/site';
+
+export async function getStaticPaths() {
+  const biens = await getCollection('biens');
+  return biens.map((bien) => ({ params: { bien: bien.id }, props: { bien } }));
+}
+
+const { bien } = Astro.props;
+const { Content } = await render(bien);
+const d = bien.data;
+
+const similaires = (await getCollection('biens'))
+  .filter((b) => b.id !== bien.id && b.data.publie && !b.data.offMarket && b.data.secteur === d.secteur)
+  .slice(0, 3);
+
+const disponible = d.statut === 'a-vendre';
+
+const schemaBien = {
+  '@context': 'https://schema.org',
+  '@type': 'Residence',
+  name: d.titre,
+  url: `${cabinet.domaine}/bien/${bien.id}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Paris',
+    postalCode: `750${d.arrondissement.replace('e', '').padStart(2, '0')}`,
+    addressCountry: 'FR',
+  },
+  numberOfRooms: d.pieces,
+  floorSize: { '@type': 'QuantitativeValue', value: d.surfaceCarrez, unitCode: 'MTK' },
+  ...(d.photos[0] ? { image: `${cabinet.domaine}${d.photos[0].src}` } : {}),
+};
+
+const schemaOffre = {
+  '@context': 'https://schema.org',
+  '@type': 'Offer',
+  name: d.titre,
+  url: `${cabinet.domaine}/bien/${bien.id}`,
+  price: d.prix,
+  priceCurrency: 'EUR',
+  availability: disponible ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
+  seller: { '@id': `${cabinet.domaine}/#cabinet` },
+  itemOffered: schemaBien,
+};
+---
+<Base
+  title={`${d.titre} | ${d.quartier}, Paris ${d.arrondissement} - Trudaines`}
+  description={d.resume || `${d.titre}, ${nombre(d.surfaceCarrez)} m², ${d.pieces} pièces, ${d.quartier}, Paris ${d.arrondissement}. Référence ${d.reference}, cabinet Trudaines.`}
+  image={d.photos[0]?.src}
+  ariane={[{ nom: 'Acheter', url: '/acheter' }, { nom: d.titre, url: `/bien/${bien.id}` }]}
+  schemas={[schemaBien, schemaOffre]}
+>
+  <section class="conteneur pt-10">
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <p class="surtitre">{d.quartier}, Paris {d.arrondissement} · Réf. {d.reference}</p>
+        <h1 class="mt-4 max-w-3xl text-2xl leading-tight lg:text-4xl">{d.titre}</h1>
+        <p class="mt-4 text-lg">
+          {euros(d.prix)}
+          {!disponible && <span class="ml-3 border border-encre px-3 py-1 text-xs uppercase tracking-widest">{libelleStatut[d.statut]}</span>}
+        </p>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="#visite" class="bouton">Demander une visite</a>
+        <a href={`tel:${cabinet.telephoneLien}`} class="bouton bouton-secondaire" data-evenement="clic_telephone">Appeler le cabinet</a>
+      </div>
+    </div>
+  </section>
+
+  {d.photos.length > 0 && (
+    <section class="conteneur mt-10">
+      <div class="grid gap-3 lg:grid-cols-4">
+        <div class="lg:col-span-4">
+          <img src={d.photos[0].src} alt={d.photos[0].alt} width="1600" height="1000" fetchpriority="high" decoding="async" class="aspect-[16/10] w-full object-cover" />
+        </div>
+        {d.photos.slice(1, 5).map((photo) => (
+          <img src={photo.src} alt={photo.alt} width="800" height="600" loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="conteneur py-16 lg:py-20">
+    <div class="grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+      <div>
+        <dl class="grid grid-cols-2 gap-6 border-y border-ligne py-8 sm:grid-cols-4">
+          <div>
+            <dt class="text-sm text-gris">Surface Carrez</dt>
+            <dd class="mt-1 text-lg">{nombre(d.surfaceCarrez)} m²</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gris">Pièces</dt>
+            <dd class="mt-1 text-lg">{d.pieces}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gris">Chambres</dt>
+            <dd class="mt-1 text-lg">{d.chambres}</dd>
+          </div>
+          <div>
+            <dt class="text-sm text-gris">Étage</dt>
+            <dd class="mt-1 text-lg">{d.etage || 'Non précisé'}</dd>
+          </div>
+        </dl>
+
+        <div class="prose-trudaines mt-10 max-w-none">
+          <Content />
+        </div>
+
+        {d.visiteVirtuelle && (
+          <p class="mt-8">
+            <a href={d.visiteVirtuelle} target="_blank" rel="noopener" class="bouton bouton-secondaire">Voir la visite virtuelle</a>
+          </p>
+        )}
+
+        <div class="mt-12">
+          <Dpe lettre={d.dpe} ges={d.ges} consommation={d.consommation} emissions={d.emissions} depenses={d.depensesEnergie} />
+        </div>
+
+        <div class="mt-12 border border-ligne p-6">
+          <p class="surtitre">Informations réglementaires</p>
+          <dl class="mt-6 grid gap-5 sm:grid-cols-2">
+            <div>
+              <dt class="text-sm text-gris">Prix de vente</dt>
+              <dd class="mt-1">{euros(d.prix)}{d.honorairesCharge === 'acquereur' ? ', honoraires à la charge de l\'acquéreur' : ', honoraires à la charge du vendeur'}</dd>
+            </div>
+            {d.prixHorsHonoraires && (
+              <div>
+                <dt class="text-sm text-gris">Prix hors honoraires</dt>
+                <dd class="mt-1">{euros(d.prixHorsHonoraires)}</dd>
+              </div>
+            )}
+            {d.honoraires && (
+              <div>
+                <dt class="text-sm text-gris">Honoraires</dt>
+                <dd class="mt-1">{d.honoraires}</dd>
+              </div>
+            )}
+            {d.nombreLots && (
+              <div>
+                <dt class="text-sm text-gris">Lots de la copropriété</dt>
+                <dd class="mt-1">{d.nombreLots}</dd>
+              </div>
+            )}
+            {d.charges && (
+              <div>
+                <dt class="text-sm text-gris">Charges annuelles</dt>
+                <dd class="mt-1">{euros(d.charges)}</dd>
+              </div>
+            )}
+            {d.taxeFonciere && (
+              <div>
+                <dt class="text-sm text-gris">Taxe foncière</dt>
+                <dd class="mt-1">{euros(d.taxeFonciere)}</dd>
+              </div>
+            )}
+            <div>
+              <dt class="text-sm text-gris">Procédure en cours</dt>
+              <dd class="mt-1">{d.procedureCopro ? 'Oui, détail communiqué sur demande' : 'Aucune procédure portée à notre connaissance'}</dd>
+            </div>
+          </dl>
+          <p class="mt-6 text-xs text-gris">
+            Bien soumis au statut de la copropriété. Les informations ci dessus sont communiquées sous réserve
+            des éléments définitifs remis par le syndic et le notaire.
+          </p>
+        </div>
+      </div>
+
+      <aside class="space-y-8 lg:sticky lg:top-8 lg:self-start">
+        <div id="visite">
+          <FormulaireVisite reference={d.reference} titre={d.titre} />
+        </div>
+        <FormulaireFiche reference={d.reference} titre={d.titre} />
+        <div class="border border-ligne p-6">
+          <p class="surtitre">Votre interlocuteur</p>
+          <p class="mt-4">{cabinet.fondateur}</p>
+          <p class="mt-1 text-sm text-gris">Fondateur du cabinet</p>
+          <p class="mt-4 text-sm">
+            <a href={`tel:${cabinet.telephoneLien}`} class="lien-souligne" data-evenement="clic_telephone">{cabinet.telephone}</a><br />
+            <a href={`mailto:${cabinet.email}`} class="lien-souligne">{cabinet.email}</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {similaires.length > 0 && (
+    <section class="border-t border-ligne">
+      <div class="conteneur py-16 lg:py-24">
+        <p class="surtitre">À voir également</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">D'autres biens sur le même secteur</h2>
+        <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {similaires.map((autre) => <CarteBien bien={autre} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>

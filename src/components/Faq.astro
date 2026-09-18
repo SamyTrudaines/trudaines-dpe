@@ -1,0 +1,23 @@
+---
+interface Props { questions: { question: string; reponse: string }[]; titre?: string }
+const { questions, titre = 'Les questions que se posent les vendeurs' } = Astro.props;
+---
+<section class="conteneur py-16 lg:py-24">
+  <div class="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+    <div>
+      <p class="surtitre">Questions fréquentes</p>
+      <h2 class="mt-4 text-2xl lg:text-3xl">{titre}</h2>
+    </div>
+    <div class="divide-y divide-ligne border-t border-ligne">
+      {questions.map((q) => (
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-start justify-between gap-6 text-base font-medium">
+            <span>{q.question}</span>
+            <span class="mt-1 shrink-0 text-encre transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-4 text-gris">{q.reponse}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

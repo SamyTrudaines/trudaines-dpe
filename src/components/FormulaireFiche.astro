@@ -1,0 +1,36 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+interface Props { reference: string; titre: string }
+const { reference, titre } = Astro.props;
+---
+<form
+  action="/api/fiche"
+  method="post"
+  data-formulaire="fiche"
+  data-evenement-succes="fiche_telechargee"
+  class="relative border border-ligne bg-creme p-6"
+>
+  <input type="hidden" name="reference" value={reference} />
+  <input type="hidden" name="bien" value={titre} />
+  <div data-champs>
+    <h2 class="text-lg">Recevoir le dossier complet du bien</h2>
+    <p class="mt-2 text-sm text-gris">Photos, plan, diagnostics, charges et éléments de copropriété, en un PDF.</p>
+    <div class="mt-5 grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="fiche-email">Adresse email</label>
+        <input class="champ" id="fiche-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label class="etiquette" for="fiche-tel">Téléphone</label>
+        <input class="champ" id="fiche-tel" name="telephone" type="tel" required autocomplete="tel" />
+      </div>
+    </div>
+    <div class="mt-5"><ConsentementRgpd id="consentement-fiche" /></div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Recevoir le dossier</button>
+  </div>
+  <Confirmation
+    titre="Le dossier part dans votre boîte mail"
+    texte="Si vous ne le voyez pas d'ici quelques minutes, regardez dans les indésirables."
+  />
+</form>

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Page introuvable | Trudaines"
+  description="La page demandée n'existe pas ou a été déplacée. Retrouvez les biens à vendre, l'estimation et les quartiers du cabinet Trudaines."
+  sansCta
+>
+  <section class="conteneur-etroit py-24 text-center lg:py-32">
+    <p class="surtitre">Erreur 404</p>
+    <h1 class="mt-6 text-3xl lg:text-4xl">Cette page n'existe plus</h1>
+    <p class="mt-6 text-lg text-gris">
+      Le bien a peut être été vendu, ou l'adresse a changé. Voici les chemins les plus utiles.
+    </p>
+    <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+      <a href="/acheter" class="bouton">Les biens à vendre</a>
+      <a href="/estimation" class="bouton bouton-secondaire">Estimer mon bien</a>
+      <a href="/contact" class="bouton bouton-secondaire">Contact</a>
+    </div>
+  </section>
+</Base>

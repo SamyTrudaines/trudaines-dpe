@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import CarteBien from '../../components/CarteBien.astro';
+import AvisClients from '../../components/AvisClients.astro';
+import { getCollection, render } from 'astro:content';
+import { nombre } from '../../data/site';
+
+export async function getStaticPaths() {
+  const quartiers = await getCollection('quartiers');
+  return quartiers.map((quartier) => ({ params: { quartier: quartier.id }, props: { quartier } }));
+}
+
+const { quartier } = Astro.props;
+const { Content } = await render(quartier);
+const d = quartier.data;
+
+const biens = (await getCollection('biens')).filter(
+  (b) => b.data.publie && !b.data.offMarket && b.data.quartier === d.nom,
+);
+const autres = (await getCollection('quartiers'))
+  .filter((q) => q.id !== quartier.id)
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+const tousAvis = (await getCollection('avis')).filter((a) => a.data.publie);
+const avis = [...tousAvis.filter((a) => a.data.quartier === d.nom), ...tousAvis].slice(0, 2);
+---
+<Base
+  title={d.titleSeo}
+  description={d.metaDescription}
+  ariane={[{ nom: 'Quartiers', url: '/quartiers' }, { nom: d.nom, url: `/quartiers/${quartier.id}` }]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-20 lg:py-20">
+      <div>
+        <p class="surtitre">Paris {d.arrondissement}</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-4xl">{d.nom}</h1>
+        <p class="mt-6 text-lg text-gris">{d.chapo}</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href={`/estimation/${d.secteur}`} class="bouton">Estimer mon bien ici</a>
+          <a href="/acheter" class="bouton bouton-secondaire">Voir les biens</a>
+        </div>
+      </div>
+      <div class="aspect-[4/3] bg-creme">
+        {d.photos[0] && (
+          <img src={d.photos[0].src} alt={d.photos[0].alt} width="900" height="675" fetchpriority="high" decoding="async" class="h-full w-full object-cover" />
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ligne bg-creme">
+    <div class="conteneur grid gap-10 py-14 sm:grid-cols-3">
+      <div>
+        <p class="surtitre">Prix moyen au m²</p>
+        <p class="mt-3 font-titre text-2xl text-encre">{nombre(d.prixMoyenM2)} euros</p>
+        <p class="mt-2 text-xs text-gris">{d.sourcePrix}</p>
+      </div>
+      <div>
+        <p class="surtitre">Fourchette constatée</p>
+        <p class="mt-3 font-titre text-2xl text-encre">{nombre(d.fourchetteBasse)} à {nombre(d.fourchetteHaute)} euros</p>
+        <p class="mt-2 text-xs text-gris">Selon étage, exposition et état du bien</p>
+      </div>
+      <div>
+        <p class="surtitre">Estimation</p>
+        <p class="mt-3 font-titre text-2xl text-encre">Gratuite</p>
+        <p class="mt-2 text-xs text-gris">Avis de valeur écrit sous 48 heures après la visite</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="grid gap-16 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+      <div class="prose-trudaines max-w-none">
+        <Content />
+      </div>
+      <aside>
+        <div class="border border-ligne p-8">
+          <p class="surtitre">Faits de marché</p>
+          <dl class="mt-6 space-y-5">
+            {d.faitsDeMarche.map((fait) => (
+              <div class="border-b border-ligne pb-5 last:border-0 last:pb-0">
+                <dt class="text-sm text-gris">{fait.intitule}</dt>
+                <dd class="mt-1">{fait.valeur}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div class="mt-8 border border-ligne p-8">
+          <p class="surtitre">Autres quartiers</p>
+          <ul class="mt-6 space-y-3 text-sm">
+            {autres.map((q) => (
+              <li><a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}, Paris {q.data.arrondissement}</a></li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {biens.length > 0 && (
+    <section class="border-t border-ligne">
+      <div class="conteneur py-16 lg:py-24">
+        <p class="surtitre">À vendre</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Nos biens sur {d.nom}</h2>
+        <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {biens.map((bien) => <CarteBien bien={bien} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Estimation</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Vous possédez un bien sur {d.nom}</h2>
+        <p class="mt-6 text-gris">
+          Nous connaissons les immeubles de ce quartier et les ventes qui s'y sont faites.
+          L'estimation est gratuite, et l'avis de valeur vous appartient.
+        </p>
+      </div>
+      <FormulaireEstimation secteur={d.secteur} quartier={d.nom} identifiant={`estimation-${quartier.id}`} />
+    </div>
+  </section>
+
+  <AvisClients avis={avis} />
+</Base>

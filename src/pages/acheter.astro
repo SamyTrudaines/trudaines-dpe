@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import CarteBien from '../components/CarteBien.astro';
+import FormulaireAlerte from '../components/FormulaireAlerte.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'acheter');
+const { Content } = await render(page!);
+
+const biens = (await getCollection('biens'))
+  .filter((b) => b.data.publie && !b.data.offMarket)
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const secteurs = (await getCollection('secteurs')).sort((a, b) => a.data.ordre - b.data.ordre);
+const listeQuartiers = quartiers.map((q) => ({ id: q.id, nom: q.data.nom }));
+---
+<Base
+  title="Appartements à vendre Paris 9e, 18e et 10e | Cabinet Trudaines"
+  description="Les appartements à vendre par le cabinet Trudaines à Paris 9e, Montmartre et Paris 10e. Filtres par quartier, prix, surface et pièces, alerte email personnalisée."
+  ariane={[{ nom: 'Acheter', url: '/acheter' }]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur py-16 lg:py-20">
+      <p class="surtitre">Acheter</p>
+      <h1 class="mt-6 max-w-3xl text-3xl leading-tight lg:text-4xl">Les biens à vendre</h1>
+      <p class="mt-6 max-w-2xl text-lg text-gris">{page!.data.chapo}</p>
+    </div>
+  </section>
+
+  <section class="border-b border-ligne bg-creme">
+    <div class="conteneur py-10">
+      <form data-filtres class="grid gap-5 sm:grid-cols-2 lg:grid-cols-5" aria-label="Filtrer les biens">
+        <div>
+          <label class="etiquette" for="filtre-secteur">Arrondissement</label>
+          <select class="champ" id="filtre-secteur" name="secteur">
+            <option value="">Tous</option>
+            {secteurs.map((s) => <option value={s.id}>{s.data.nom}</option>)}
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="filtre-quartier">Quartier</label>
+          <select class="champ" id="filtre-quartier" name="quartier">
+            <option value="">Tous</option>
+            {listeQuartiers.map((q) => <option value={q.nom}>{q.nom}</option>)}
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="filtre-prix">Budget maximum</label>
+          <select class="champ" id="filtre-prix" name="prixMax">
+            <option value="">Indifférent</option>
+            <option value="400000">400 000 euros</option>
+            <option value="600000">600 000 euros</option>
+            <option value="800000">800 000 euros</option>
+            <option value="1000000">1 000 000 euros</option>
+            <option value="1500000">1 500 000 euros</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="filtre-surface">Surface minimum</label>
+          <select class="champ" id="filtre-surface" name="surfaceMin">
+            <option value="">Indifférent</option>
+            <option value="30">30 m²</option>
+            <option value="50">50 m²</option>
+            <option value="70">70 m²</option>
+            <option value="90">90 m²</option>
+            <option value="120">120 m²</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="filtre-pieces">Pièces minimum</label>
+          <select class="champ" id="filtre-pieces" name="pieces">
+            <option value="">Indifférent</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </form>
+      <p class="mt-5 text-sm text-gris" data-resultat role="status"></p>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    {biens.length > 0 ? (
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        {biens.map((bien, i) => <CarteBien bien={bien} priorite={i < 3} />)}
+      </div>
+    ) : (
+      <div class="border border-ligne p-10 text-center">
+        <h2 class="text-xl">Aucun bien publié en ce moment</h2>
+        <p class="mx-auto mt-4 max-w-xl text-gris">
+          Une partie des biens que nous commercialisons ne paraît jamais en ligne, à la demande des propriétaires.
+          Inscrivez vous à l'alerte pour les recevoir avant toute diffusion publique.
+        </p>
+        <a href="#alerte" class="bouton mt-8">Créer mon alerte</a>
+      </div>
+    )}
+
+    <div class="prose-trudaines mt-16 max-w-3xl text-gris">
+      <Content />
+    </div>
+  </section>
+
+  <section class="border-t border-ligne bg-white">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Alerte</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Recevoir les biens avant leur mise en ligne</h2>
+        <p class="mt-6 text-gris">
+          Vous décrivez ce que vous cherchez, nous vous écrivons quand un bien correspond.
+          Pas de diffusion de masse, pas de relance automatique.
+        </p>
+        <p class="mt-6 text-sm text-gris">
+          Si votre recherche demande plus qu'une alerte, nous proposons un
+          <a href="/chasse" class="lien-souligne"> mandat de recherche</a>.
+        </p>
+      </div>
+      <FormulaireAlerte quartiers={listeQuartiers} />
+    </div>
+  </section>
+</Base>

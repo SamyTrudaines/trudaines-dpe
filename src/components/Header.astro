@@ -1,0 +1,71 @@
+---
+import { navigation, cabinet } from '../data/site';
+const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<header class="border-b border-ligne bg-white">
+  <div class="conteneur flex items-center justify-between gap-6 py-4 lg:py-6">
+    <a href="/" class="flex items-center gap-3 no-underline" aria-label="Trudaines, retour à l'accueil">
+      <img src="/images/logo.svg" alt="Trudaines" width="168" height="34" class="logo" />
+    </a>
+
+    <nav class="hidden lg:block" aria-label="Navigation principale">
+      <ul class="flex items-center gap-8">
+        {navigation.map((item) => (
+          <li class="group relative">
+            <a
+              href={item.url}
+              class="inline-block py-2 text-sm no-underline"
+              style={chemin === item.url || chemin.startsWith(item.url + '/') ? 'text-decoration: underline; text-underline-offset: 6px;' : ''}
+            >
+              {item.libelle}
+            </a>
+            {item.enfants && (
+              <ul class="invisible absolute left-0 top-full z-40 w-64 border border-ligne bg-white py-2 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                {item.enfants.map((enfant) => (
+                  <li>
+                    <a href={enfant.url} class="block px-4 py-2 text-sm no-underline hover:bg-creme">{enfant.libelle}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hidden items-center gap-4 lg:flex">
+      <a href={`tel:${cabinet.telephoneLien}`} class="text-sm no-underline" data-evenement="clic_telephone">{cabinet.telephone}</a>
+      <a href="/estimation" class="bouton">Estimer mon bien</a>
+    </div>
+
+    <button
+      type="button"
+      class="lg:hidden inline-flex h-12 w-12 items-center justify-center border border-ligne"
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+      data-menu-bouton
+    >
+      <span class="sr-only">Ouvrir le menu</span>
+      <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M0 1h20M0 7h20M0 13h20" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="menu-mobile" class="hidden border-t border-ligne lg:hidden" aria-label="Navigation mobile" hidden>
+    <ul class="conteneur flex flex-col py-4">
+      {navigation.map((item) => (
+        <li class="border-b border-ligne last:border-0">
+          <a href={item.url} class="block py-3 no-underline">{item.libelle}</a>
+          {item.enfants && (
+            <ul class="pb-3 pl-4">
+              {item.enfants.map((enfant) => (
+                <li><a href={enfant.url} class="block py-2 text-sm text-gris no-underline">{enfant.libelle}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

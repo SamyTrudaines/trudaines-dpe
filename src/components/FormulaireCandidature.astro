@@ -1,0 +1,67 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+---
+<form
+  id="candidature"
+  action="/api/candidature"
+  method="post"
+  enctype="multipart/form-data"
+  data-formulaire="candidature"
+  data-evenement-succes="cv_envoye"
+  class="relative border border-ligne bg-white p-6 lg:p-10"
+>
+  <div data-champs>
+    <h2 class="text-xl lg:text-2xl">Déposer ma candidature</h2>
+    <p class="mt-2 text-sm text-gris">Chaque candidature est lue par Samy Santamarina. Réponse sous une semaine.</p>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="cand-prenom">Prénom</label>
+        <input class="champ" id="cand-prenom" name="prenom" required autocomplete="given-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-nom">Nom</label>
+        <input class="champ" id="cand-nom" name="nom" required autocomplete="family-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-email">Adresse email</label>
+        <input class="champ" id="cand-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-tel">Téléphone</label>
+        <input class="champ" id="cand-tel" name="telephone" type="tel" required autocomplete="tel" />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-profil">Votre situation</label>
+        <select class="champ" id="cand-profil" name="profil" required>
+          <option value="">Choisir</option>
+          <option>Étudiant ou jeune diplômé</option>
+          <option>Première expérience en immobilier</option>
+          <option>Négociateur confirmé</option>
+          <option>Reconversion professionnelle</option>
+        </select>
+      </div>
+      <div>
+        <label class="etiquette" for="cand-secteur">Secteur souhaité</label>
+        <select class="champ" id="cand-secteur" name="secteurSouhaite" required>
+          <option value="">Choisir</option>
+          <option>Paris 9e</option>
+          <option>Paris 18e</option>
+          <option>Paris 10e</option>
+          <option>Autre secteur en Île-de-France</option>
+        </select>
+      </div>
+      <div class="sm:col-span-2">
+        <label class="etiquette" for="cand-message">Pourquoi Trudaines</label>
+        <textarea class="champ" id="cand-message" name="message" rows="4" required></textarea>
+      </div>
+      <div class="sm:col-span-2">
+        <label class="etiquette" for="cand-cv">Votre CV au format PDF, 4 Mo maximum</label>
+        <input class="champ" id="cand-cv" name="cv" type="file" accept="application/pdf,.pdf" required />
+      </div>
+    </div>
+    <div class="mt-5"><ConsentementRgpd id="consentement-candidature" /></div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Envoyer ma candidature</button>
+  </div>
+  <Confirmation titre="Candidature bien reçue" texte="Nous revenons vers vous sous une semaine, quelle que soit notre réponse." />
+</form>

@@ -1,0 +1,51 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+---
+<form
+  action="/api/contact"
+  method="post"
+  data-formulaire="contact"
+  data-evenement-succes="contact_envoye"
+  class="relative border border-ligne bg-white p-6 lg:p-10"
+>
+  <div data-champs>
+    <div class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="contact-prenom">Prénom</label>
+        <input class="champ" id="contact-prenom" name="prenom" required autocomplete="given-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-nom">Nom</label>
+        <input class="champ" id="contact-nom" name="nom" required autocomplete="family-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-email">Adresse email</label>
+        <input class="champ" id="contact-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-tel">Téléphone</label>
+        <input class="champ" id="contact-tel" name="telephone" type="tel" required autocomplete="tel" />
+      </div>
+      <div class="sm:col-span-2">
+        <label class="etiquette" for="contact-sujet">Votre projet</label>
+        <select class="champ" id="contact-sujet" name="sujet" required>
+          <option value="">Choisir</option>
+          <option>Vendre un bien</option>
+          <option>Acheter un bien</option>
+          <option>Confier une recherche</option>
+          <option>Confier un bien en gestion locative</option>
+          <option>Rejoindre le cabinet</option>
+          <option>Autre demande</option>
+        </select>
+      </div>
+      <div class="sm:col-span-2">
+        <label class="etiquette" for="contact-message">Message</label>
+        <textarea class="champ" id="contact-message" name="message" rows="5" required></textarea>
+      </div>
+    </div>
+    <div class="mt-5"><ConsentementRgpd id="consentement-contact" /></div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Envoyer</button>
+  </div>
+  <Confirmation titre="Message reçu" texte="Nous répondons sous 24 heures ouvrées, par email ou par téléphone selon ce qui vous arrange." />
+</form>

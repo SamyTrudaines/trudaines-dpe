@@ -1,0 +1,19 @@
+---
+import PageSimple from '../components/PageSimple.astro';
+import FormulaireCandidature from '../components/FormulaireCandidature.astro';
+---
+<PageSimple identifiant="nous-rejoindre" url="/nous-rejoindre" surtitre="Carrières">
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Candidature</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Devenir mandataire immobilier à Paris</h2>
+        <p class="mt-6 text-gris">
+          Nous recrutons sur le 9e, le 18e et le 10e. Le dossier tient en un formulaire et un CV.
+          Pas de test en ligne, pas de processus à cinq étapes.
+        </p>
+      </div>
+      <FormulaireCandidature />
+    </div>
+  </section>
+</PageSimple>

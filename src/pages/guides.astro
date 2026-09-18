@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import FormulaireGuide from '../components/FormulaireGuide.astro';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides'))
+  .filter((g) => g.data.publie)
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+---
+<Base
+  title="Guides immobiliers à télécharger | Trudaines"
+  description="Deux guides gratuits : le guide des prix 2026 du 9e nord et Bien vendre à Paris en 2026, remis aux propriétaires par le cabinet Trudaines."
+  ariane={[{ nom: 'Guides', url: '/guides' }]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur py-16 lg:py-20">
+      <p class="surtitre">Guides</p>
+      <h1 class="mt-6 max-w-3xl text-3xl leading-tight lg:text-4xl">Les documents que nous remettons à nos clients</h1>
+      <p class="mt-6 max-w-2xl text-lg text-gris">
+        Ce sont les mêmes documents que ceux remis lors d'un rendez vous d'estimation. Vous les recevez par courriel,
+        en un clic, sans démarchage derrière.
+      </p>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="space-y-20">
+      {guides.map((guide) => (
+        <article class="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+          <div class="aspect-[3/4] bg-creme">
+            {guide.data.couverture && (
+              <img src={guide.data.couverture} alt={guide.data.couvertureAlt} width="600" height="800" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+            )}
+          </div>
+          <div>
+            <p class="surtitre">{guide.data.pages > 0 ? `${guide.data.pages} pages, PDF` : 'PDF'}</p>
+            <h2 class="mt-4 text-2xl lg:text-3xl">{guide.data.titre}</h2>
+            {guide.data.sousTitre && <p class="mt-2 text-lg text-gris">{guide.data.sousTitre}</p>}
+            <p class="mt-6 text-gris">{guide.data.resume}</p>
+            <div class="mt-8">
+              <FormulaireGuide guide={guide.id} titre={guide.data.titre} identifiant={guide.id} />
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>

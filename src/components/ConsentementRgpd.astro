@@ -1,0 +1,16 @@
+---
+interface Props { id?: string }
+const { id = 'consentement' } = Astro.props;
+---
+<div class="flex items-start gap-3">
+  <input type="checkbox" id={id} name="consentement" value="oui" required class="mt-1 h-5 w-5 shrink-0 border border-ligne" />
+  <label for={id} class="text-sm text-gris">
+    J'accepte que Trudaines utilise ces informations pour répondre à ma demande.
+    Elles ne sont ni revendues ni transmises à des tiers.
+    <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+  </label>
+</div>
+<div class="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+  <label for={`site-${id}`}>Ne pas remplir</label>
+  <input type="text" id={`site-${id}`} name="site_web" tabindex="-1" autocomplete="off" />
+</div>

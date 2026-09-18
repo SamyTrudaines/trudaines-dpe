@@ -1,0 +1,49 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+interface Props { reference: string; titre: string }
+const { reference, titre } = Astro.props;
+---
+<form
+  id="visite"
+  action="/api/visite"
+  method="post"
+  data-formulaire="visite"
+  data-evenement-succes="visite_demandee"
+  class="relative border border-ligne bg-white p-6 lg:p-8"
+>
+  <input type="hidden" name="reference" value={reference} />
+  <input type="hidden" name="bien" value={titre} />
+  <div data-champs>
+    <h2 class="text-xl">Demander une visite</h2>
+    <p class="mt-2 text-sm text-gris">Référence {reference}. Réponse le jour même.</p>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="visite-prenom">Prénom</label>
+        <input class="champ" id="visite-prenom" name="prenom" required autocomplete="given-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-nom">Nom</label>
+        <input class="champ" id="visite-nom" name="nom" required autocomplete="family-name" />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-email">Adresse email</label>
+        <input class="champ" id="visite-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-tel">Téléphone</label>
+        <input class="champ" id="visite-tel" name="telephone" type="tel" required autocomplete="tel" />
+      </div>
+      <div class="sm:col-span-2">
+        <label class="etiquette" for="visite-creneaux">Créneaux souhaités</label>
+        <textarea class="champ" id="visite-creneaux" name="creneaux" rows="2" placeholder="Jeudi en fin de journée, samedi matin" required></textarea>
+      </div>
+    </div>
+    <div class="mt-5"><ConsentementRgpd id="consentement-visite" /></div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Demander la visite</button>
+  </div>
+  <Confirmation
+    titre="Votre demande de visite est enregistrée"
+    texte="Nous revenons vers vous aujourd'hui avec un créneau ferme."
+  />
+</form>

@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { dateFr } from '../../data/site';
+
+const articles = (await getCollection('articles'))
+  .filter((a) => !a.data.brouillon)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const [une, ...suite] = articles;
+---
+<Base
+  title="Panorama | Analyses du marché immobilier parisien - Trudaines"
+  description="Analyses du marché immobilier à Paris 9e, 18e et 10e : prix, diagnostic énergétique, délais de vente et conseils aux propriétaires vendeurs."
+  ariane={[{ nom: 'Panorama', url: '/panorama' }]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur py-16 lg:py-20">
+      <p class="surtitre">Panorama</p>
+      <h1 class="mt-6 max-w-3xl text-3xl leading-tight lg:text-4xl">Ce qu'il faut comprendre du marché</h1>
+      <p class="mt-6 max-w-2xl text-lg text-gris">
+        Des analyses écrites pour les propriétaires, pas pour les professionnels. Sans jargon et sans promesse.
+      </p>
+    </div>
+  </section>
+
+  {une && (
+    <section class="conteneur py-16">
+      <a href={`/panorama/${une.id}`} class="grid gap-10 no-underline lg:grid-cols-2 lg:gap-16">
+        <div class="aspect-[3/2] overflow-hidden bg-creme">
+          {une.data.image && <img src={une.data.image} alt={une.data.imageAlt} width="900" height="600" fetchpriority="high" decoding="async" class="h-full w-full object-cover" />}
+        </div>
+        <div class="self-center">
+          <p class="surtitre">{dateFr(une.data.date)}</p>
+          <h2 class="mt-4 text-2xl lg:text-3xl">{une.data.titre}</h2>
+          <p class="mt-4 text-gris">{une.data.chapo}</p>
+          <p class="mt-6 lien-souligne text-sm">Lire l'article</p>
+        </div>
+      </a>
+    </section>
+  )}
+
+  {suite.length > 0 && (
+    <section class="conteneur pb-16 lg:pb-24">
+      <div class="grid gap-12 border-t border-ligne pt-12 sm:grid-cols-2 lg:grid-cols-3">
+        {suite.map((article) => (
+          <article>
+            <a href={`/panorama/${article.id}`} class="no-underline">
+              <div class="aspect-[3/2] overflow-hidden bg-creme">
+                {article.data.image && <img src={article.data.image} alt={article.data.imageAlt} width="600" height="400" loading="lazy" decoding="async" class="h-full w-full object-cover" />}
+              </div>
+              <p class="surtitre mt-5">{dateFr(article.data.date)}</p>
+              <h2 class="mt-2 text-lg">{article.data.titre}</h2>
+              <p class="mt-3 text-sm text-gris">{article.data.chapo}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+</Base>

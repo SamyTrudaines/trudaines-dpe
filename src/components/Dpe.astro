@@ -1,0 +1,29 @@
+---
+interface Props { lettre: string; ges: string; consommation?: number; emissions?: number; depenses?: string }
+const { lettre, ges, consommation, emissions, depenses } = Astro.props;
+const lettres = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+---
+<div class="border border-ligne p-6">
+  <p class="surtitre">Diagnostic de performance énergétique</p>
+  <div class="mt-5 grid gap-6 sm:grid-cols-2">
+    <div>
+      <p class="text-sm text-gris">Consommation énergétique</p>
+      <div class="mt-3 flex gap-1" role="img" aria-label={`Classe énergie ${lettre}`}>
+        {lettres.map((l) => (
+          <span class={`flex h-9 w-9 items-center justify-center border text-sm ${l === lettre ? 'border-encre bg-encre text-white' : 'border-ligne text-gris'}`}>{l}</span>
+        ))}
+      </div>
+      {consommation !== undefined && <p class="mt-3 text-sm text-gris">{consommation} kWh/m²/an</p>}
+    </div>
+    <div>
+      <p class="text-sm text-gris">Émissions de gaz à effet de serre</p>
+      <div class="mt-3 flex gap-1" role="img" aria-label={`Classe climat ${ges}`}>
+        {lettres.map((l) => (
+          <span class={`flex h-9 w-9 items-center justify-center border text-sm ${l === ges ? 'border-encre bg-encre text-white' : 'border-ligne text-gris'}`}>{l}</span>
+        ))}
+      </div>
+      {emissions !== undefined && <p class="mt-3 text-sm text-gris">{emissions} kg CO₂/m²/an</p>}
+    </div>
+  </div>
+  {depenses && <p class="mt-5 text-sm text-gris">Montant estimé des dépenses annuelles d'énergie : {depenses}</p>}
+</div>

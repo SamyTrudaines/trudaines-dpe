@@ -1,0 +1,19 @@
+---
+import PageSimple from '../components/PageSimple.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+---
+<PageSimple identifiant="chasse" url="/chasse" surtitre="Recherche">
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Confier une recherche</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Décrivez ce que vous cherchez</h2>
+        <p class="mt-6 text-gris">
+          Premier rendez vous sans frais pour cadrer le périmètre et vérifier que votre recherche
+          entre dans notre territoire. Si ce n'est pas le cas, nous vous le disons tout de suite.
+        </p>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</PageSimple>

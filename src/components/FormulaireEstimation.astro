@@ -1,0 +1,156 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+
+interface Props {
+  secteur?: string;
+  quartier?: string;
+  identifiant?: string;
+  titre?: string;
+}
+const { secteur = '', quartier = '', identifiant = 'estimation', titre = 'Demander mon estimation' } = Astro.props;
+const listeId = `adresses-${identifiant}`;
+---
+<form
+  id={identifiant}
+  action="/api/estimation"
+  method="post"
+  data-formulaire="estimation"
+  data-evenement-succes="estimation_envoyee"
+  data-etapes
+  class="relative border border-ligne bg-white p-6 lg:p-10"
+>
+  <input type="hidden" name="secteur" value={secteur} />
+  <input type="hidden" name="quartier" value={quartier} />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+
+  <div data-champs>
+    <h2 class="text-xl lg:text-2xl">{titre}</h2>
+    <p class="mt-2 text-sm text-gris">Deux minutes suffisent. Nous vous rappelons sous 24 heures ouvrées.</p>
+
+    <div class="mt-6" aria-hidden="true">
+      <div class="h-1 w-full bg-ligne">
+        <div class="h-1 bg-encre transition-all duration-300" style="width: 50%" data-progression></div>
+      </div>
+    </div>
+    <p class="mt-2 text-xs text-gris" data-compteur>Étape 1 sur 2</p>
+
+    <fieldset class="etape mt-8 border-0 p-0">
+      <legend class="surtitre">Votre bien</legend>
+      <div class="mt-6 grid gap-6">
+        <div>
+          <label class="etiquette" for={`adresse-${identifiant}`}>Adresse du bien</label>
+          <input
+            class="champ"
+            id={`adresse-${identifiant}`}
+            name="adresse"
+            list={listeId}
+            data-adresse
+            required
+            autocomplete="street-address"
+            placeholder="12 rue Rodier, 75009 Paris"
+          />
+          <datalist id={listeId}></datalist>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div>
+            <label class="etiquette" for={`type-${identifiant}`}>Type de bien</label>
+            <select class="champ" id={`type-${identifiant}`} name="typeBien" required>
+              <option value="">Choisir</option>
+              <option>Appartement</option>
+              <option>Maison</option>
+              <option>Immeuble</option>
+              <option>Local commercial</option>
+              <option>Parking ou cave</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`surface-${identifiant}`}>Surface en m²</label>
+            <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="5" max="1000" required inputmode="numeric" />
+          </div>
+          <div>
+            <label class="etiquette" for={`pieces-${identifiant}`}>Nombre de pièces</label>
+            <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
+              <option value="">Choisir</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6 et plus</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
+            <select class="champ" id={`etage-${identifiant}`} name="etage" required>
+              <option value="">Choisir</option>
+              <option>Rez-de-chaussée</option>
+              <option>1er</option><option>2e</option><option>3e</option><option>4e</option><option>5e</option>
+              <option>6e et plus</option>
+              <option>Sans objet</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <span class="etiquette">Horizon de vente</span>
+          <div class="grid gap-3 sm:grid-cols-3">
+            {[
+              ['Moins de 3 mois', 'moins-3-mois'],
+              ['3 à 6 mois', '3-6-mois'],
+              ['Plus tard', 'plus-tard'],
+            ].map(([libelle, valeur], i) => (
+              <label class="flex min-h-12 cursor-pointer items-center gap-3 border border-ligne px-4 py-3 text-sm">
+                <input type="radio" name="horizon" value={valeur} required={i === 0} class="h-4 w-4" />
+                {libelle}
+              </label>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <button type="button" class="bouton w-full sm:w-auto" data-suivant>Continuer</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="etape mt-8 border-0 p-0">
+      <legend class="surtitre">Vos coordonnées</legend>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
+        <div>
+          <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
+          <input class="champ" id={`prenom-${identifiant}`} name="prenom" required autocomplete="given-name" />
+        </div>
+        <div>
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" required autocomplete="family-name" />
+        </div>
+        <div>
+          <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
+          <input class="champ" id={`email-${identifiant}`} name="email" type="email" required autocomplete="email" />
+        </div>
+        <div>
+          <label class="etiquette" for={`tel-${identifiant}`}>Téléphone</label>
+          <input class="champ" id={`tel-${identifiant}`} name="telephone" type="tel" required autocomplete="tel" placeholder="06 00 00 00 00" />
+        </div>
+        <div class="sm:col-span-2">
+          <label class="etiquette" for={`message-${identifiant}`}>Un mot sur votre projet, facultatif</label>
+          <textarea class="champ" id={`message-${identifiant}`} name="message" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <ConsentementRgpd id={`consentement-${identifiant}`} />
+      </div>
+
+      <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+        <button type="submit" class="bouton">Recevoir mon estimation</button>
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+      </div>
+      <p class="mt-4 text-xs text-gris">
+        Estimation gratuite et sans engagement. Nous vous rappelons sous 24 heures ouvrées.
+      </p>
+    </fieldset>
+  </div>
+
+  <Confirmation
+    titre="Votre demande d'estimation est bien arrivée"
+    texte="Samy Santamarina vous rappelle sous 24 heures ouvrées pour caler la visite et vous remettre l'avis de valeur écrit."
+  />
+</form>

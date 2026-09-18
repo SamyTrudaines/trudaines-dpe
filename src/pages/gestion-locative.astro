@@ -1,0 +1,19 @@
+---
+import PageSimple from '../components/PageSimple.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+---
+<PageSimple identifiant="gestion-locative" url="/gestion-locative" surtitre="Gestion">
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Confier un bien</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Parlons de votre bien loué</h2>
+        <p class="mt-6 text-gris">
+          Nous étudions chaque demande individuellement, en fonction du bien, de sa localisation
+          et du bail en cours.
+        </p>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</PageSimple>

@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+import FormulaireEstimation from '../components/FormulaireEstimation.astro';
+import CarteBien from '../components/CarteBien.astro';
+import AvisClients from '../components/AvisClients.astro';
+import { getCollection } from 'astro:content';
+import { cabinet, dateFr, nombre } from '../data/site';
+
+const biens = (await getCollection('biens'))
+  .filter((b) => b.data.publie && !b.data.offMarket)
+  .sort((a, b) => a.data.ordre - b.data.ordre)
+  .slice(0, 3);
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = (await getCollection('avis')).filter((a) => a.data.publie).slice(0, 2);
+const presse = (await getCollection('presse')).filter((p) => p.data.publie).slice(0, 5);
+const articles = (await getCollection('articles'))
+  .filter((a) => !a.data.brouillon)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Base
+  title="Trudaines | Cabinet immobilier Paris 9e et Montmartre - Vente et estimation"
+  description="Cabinet de vente immobilière à Paris 9e nord, Montmartre et Paris 10e. Estimation gratuite et argumentée, compte rendu après chaque visite, vente discrète possible."
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Paris 9e nord, Montmartre, Paris 10e</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-5xl">
+          Transformer les rêves en réalité immobilière
+        </h1>
+        <p class="mt-6 max-w-lg text-lg text-gris">
+          Cabinet de vente indépendant installé sur son territoire. Nous estimons sur place, nous argumentons par écrit,
+          et nous vous rendons compte après chaque visite.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="/estimation" class="bouton">Estimer mon bien</a>
+          <a href="/vendre" class="bouton bouton-secondaire">La méthode de vente</a>
+        </div>
+        <p class="mt-8 text-sm text-gris">
+          Estimation gratuite, sans engagement. Rappel sous 24 heures ouvrées.
+        </p>
+      </div>
+      <div class="relative aspect-[4/5] bg-creme lg:aspect-[4/5]">
+        <img
+          src="/images/pages/accueil.webp"
+          alt="Immeuble haussmannien du 9e arrondissement de Paris"
+          width="900"
+          height="1125"
+          fetchpriority="high"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ligne bg-creme">
+    <div class="conteneur grid gap-10 py-14 sm:grid-cols-3">
+      <div>
+        <p class="font-titre text-3xl text-encre">3 secteurs</p>
+        <p class="mt-2 text-sm text-gris">Le 9e nord, Montmartre et Lariboisière Rocroy. Rien au delà, pour tout connaître en dedans.</p>
+      </div>
+      <div>
+        <p class="font-titre text-3xl text-encre">48 heures</p>
+        <p class="mt-2 text-sm text-gris">Délai de remise de l'avis de valeur écrit après la visite d'estimation.</p>
+      </div>
+      <div>
+        <p class="font-titre text-3xl text-encre">7 engagements</p>
+        <p class="mt-2 text-sm text-gris">Portés au mandat, du compte rendu de visite à la stratégie de paliers de prix.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+      <div>
+        <p class="surtitre">Notre méthode</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">La donnée prépare la visite. La visite tranche.</h2>
+        <p class="mt-6 text-gris">
+          Nous travaillons les mutations réellement enregistrées et les diagnostics énergétiques du secteur avec nos propres outils.
+          Cette donnée ne remplace jamais le fait de monter les escaliers, elle nous évite d'arriver les mains vides.
+        </p>
+        <a href="/vendre" class="bouton bouton-secondaire mt-8">Voir les sept engagements</a>
+      </div>
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div class="border-t border-encre pt-6">
+          <p class="surtitre">01</p>
+          <h3 class="mt-3 text-lg">Estimer</h3>
+          <p class="mt-3 text-sm text-gris">Ventes comparables, visite d'une heure, avis de valeur écrit avec la fourchette et le prix recommandé.</p>
+        </div>
+        <div class="border-t border-encre pt-6">
+          <p class="surtitre">02</p>
+          <h3 class="mt-3 text-lg">Préparer</h3>
+          <p class="mt-3 text-sm text-gris">Diagnostics, procès verbaux, charges et travaux votés réunis avant la première visite d'acquéreur.</p>
+        </div>
+        <div class="border-t border-encre pt-6">
+          <p class="surtitre">03</p>
+          <h3 class="mt-3 text-lg">Commercialiser</h3>
+          <p class="mt-3 text-sm text-gris">Photographies professionnelles, diffusion maîtrisée ou vente discrète, visites accompagnées.</p>
+        </div>
+        <div class="border-t border-encre pt-6">
+          <p class="surtitre">04</p>
+          <h3 class="mt-3 text-lg">Rendre compte</h3>
+          <p class="mt-3 text-sm text-gris">Compte rendu après chaque visite, point hebdomadaire, paliers de prix décidés à l'avance avec vous.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Estimation</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Combien vaut votre bien aujourd'hui</h2>
+        <p class="mt-6 text-gris">
+          Deux minutes pour décrire le bien, puis un rappel sous 24 heures ouvrées pour caler la visite.
+          Vous recevez un avis de valeur écrit, avec les ventes sur lesquelles il s'appuie.
+        </p>
+        <ul class="mt-8 space-y-3 text-sm text-gris">
+          <li>Gratuit et sans engagement de mandat.</li>
+          <li>Conduit personnellement par Samy Santamarina.</li>
+          <li>Vente discrète possible si vous ne souhaitez aucune diffusion.</li>
+        </ul>
+      </div>
+      <FormulaireEstimation identifiant="estimation-accueil" titre="Demander mon estimation" />
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="surtitre">À vendre</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Les biens en cours de commercialisation</h2>
+      </div>
+      <a href="/acheter" class="lien-souligne text-sm">Voir tous les biens</a>
+    </div>
+
+    {biens.length > 0 ? (
+      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {biens.map((bien, i) => <CarteBien bien={bien} priorite={i === 0} />)}
+      </div>
+    ) : (
+      <div class="mt-12 border border-ligne p-10 text-center">
+        <p class="text-gris">
+          Les biens actuellement disponibles sont présentés en priorité aux acquéreurs inscrits à notre alerte.
+        </p>
+        <a href="/acheter#alerte" class="bouton mt-6">Créer mon alerte</a>
+      </div>
+    )}
+  </section>
+
+  <section class="border-t border-ligne bg-white">
+    <div class="conteneur py-16 lg:py-24">
+      <p class="surtitre">Territoire</p>
+      <h2 class="mt-4 max-w-2xl text-2xl lg:text-3xl">Cinq quartiers que nous connaissons rue par rue</h2>
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {quartiers.map((q) => (
+          <a href={`/quartiers/${q.id}`} class="group block no-underline">
+            <div class="aspect-[3/2] overflow-hidden bg-creme">
+              {q.data.photos[0] && (
+                <img
+                  src={q.data.photos[0].src}
+                  alt={q.data.photos[0].alt}
+                  width="600"
+                  height="400"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+              )}
+            </div>
+            <h3 class="mt-5 text-lg">{q.data.nom}</h3>
+            <p class="mt-1 text-sm text-gris">Paris {q.data.arrondissement} · {nombre(q.data.prixMoyenM2)} euros le m² en moyenne</p>
+            <p class="mt-3 text-sm text-gris">{q.data.chapo}</p>
+          </a>
+        ))}
+      </div>
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href="/agence-immobiliere-paris-9" class="lien-souligne text-sm">Agence immobilière Paris 9e</a>
+        <a href="/agence-immobiliere-paris-18" class="lien-souligne text-sm">Agence immobilière Paris 18e</a>
+        <a href="/agence-immobiliere-montmartre" class="lien-souligne text-sm">Agence immobilière Montmartre</a>
+      </div>
+    </div>
+  </section>
+
+  <AvisClients avis={avis} />
+
+  {presse.length > 0 && (
+    <section class="border-t border-ligne bg-creme">
+      <div class="conteneur py-14">
+        <p class="surtitre text-center">La presse en parle</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-10">
+          {presse.map((p) => (
+            <img src={p.data.logo} alt={p.data.media} height="28" width="120" loading="lazy" class="h-7 w-auto opacity-70" />
+          ))}
+        </div>
+        <p class="mt-8 text-center"><a href="/presse" class="lien-souligne text-sm">Voir toutes les retombées</a></p>
+      </div>
+    </section>
+  )}
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="surtitre">Panorama</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Ce qu'il faut comprendre du marché</h2>
+      </div>
+      <a href="/panorama" class="lien-souligne text-sm">Tous les articles</a>
+    </div>
+    <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {articles.map((article) => (
+        <article>
+          <a href={`/panorama/${article.id}`} class="no-underline">
+            <div class="aspect-[3/2] overflow-hidden bg-creme">
+              {article.data.image && (
+                <img src={article.data.image} alt={article.data.imageAlt} width="600" height="400" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+              )}
+            </div>
+            <p class="surtitre mt-5">{dateFr(article.data.date)}</p>
+            <h3 class="mt-2 text-lg">{article.data.titre}</h3>
+            <p class="mt-3 text-sm text-gris">{article.data.chapo}</p>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-t border-ligne bg-white">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-2 lg:py-24">
+      <div>
+        <p class="surtitre">Le cabinet</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Samy Santamarina, fondateur</h2>
+        <p class="mt-6 text-gris">
+          Il conduit personnellement les estimations et suit chaque vente jusqu'à l'acte authentique.
+          Carte professionnelle {cabinet.carteT}, délivrée par la {cabinet.carteTDelivree}.
+        </p>
+        <a href="/samy-santamarina" class="bouton bouton-secondaire mt-8">Découvrir son parcours</a>
+      </div>
+      <div class="aspect-[4/3] bg-creme">
+        <img src="/images/pages/samy-santamarina.webp" alt="Portrait de Samy Santamarina" width="800" height="600" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+</Base>

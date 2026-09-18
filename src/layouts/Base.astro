@@ -1,0 +1,103 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BarreMobile from '../components/BarreMobile.astro';
+import BandeauCookies from '../components/BandeauCookies.astro';
+import CtaFinal from '../components/CtaFinal.astro';
+import JsonLd from '../components/JsonLd.astro';
+import FilAriane from '../components/FilAriane.astro';
+import { agenceSchema, filAriane } from '../lib/schema';
+import { cabinet } from '../data/site';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  ariane?: { nom: string; url: string }[];
+  schemas?: Record<string, unknown>[];
+  sansCta?: boolean;
+  classeMain?: string;
+}
+
+const { title, description, image = '/images/og-trudaines.jpg', ariane = [], schemas = [], sansCta = false, classeMain = '' } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', cabinet.domaine).href;
+const avis = await getCollection('avis');
+const note = avis.length
+  ? { note: avis.reduce((t, a) => t + a.data.note, 0) / avis.length, nombre: avis.length }
+  : undefined;
+
+const gaId = import.meta.env.PUBLIC_GA4_ID ?? '';
+
+const donnees = [
+  agenceSchema(note),
+  ...(ariane.length ? [filAriane([{ nom: 'Accueil', url: '/' }, ...ariane])] : []),
+  ...schemas,
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Trudaines" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, cabinet.domaine).href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0e2440" />
+    <link rel="preload" href="/fonts/montserrat-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/libre-baskerville-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <JsonLd data={donnees} />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    {gaId && (
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('consent', 'default', {
+          ad_storage: 'denied',
+          analytics_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+        });
+        window.__gaId = gaId;
+        try {
+          if (localStorage.getItem('trudaines-consentement') === 'accepte') {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+            document.head.appendChild(s);
+            window.gtag('consent', 'update', { analytics_storage: 'granted' });
+            window.gtag('config', gaId, { anonymize_ip: true });
+          }
+        } catch (e) {}
+      </script>
+    )}
+  </head>
+  <body>
+    <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-4">Aller au contenu</a>
+    <Header />
+    <main id="contenu" class={classeMain}>
+      {ariane.length > 0 && <FilAriane elements={ariane} />}
+      <slot />
+      {!sansCta && <CtaFinal />}
+    </main>
+    <Footer />
+    <BarreMobile />
+    <BandeauCookies />
+    <script is:inline src="/js/trudaines.js" defer></script>
+  </body>
+</html>

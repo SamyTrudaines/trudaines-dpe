@@ -1,0 +1,219 @@
+backend:
+  name: github
+  repo: SamyTrudaines/trudaines-dpe
+  branch: main
+  base_url: https://www.trudaines.com
+  auth_endpoint: api/auth
+  commit_messages:
+    create: 'Ajout {{collection}} : {{slug}}'
+    update: 'Mise à jour {{collection}} : {{slug}}'
+    delete: 'Suppression {{collection}} : {{slug}}'
+    uploadMedia: 'Ajout du média {{path}}'
+    deleteMedia: 'Suppression du média {{path}}'
+
+locale: 'fr'
+media_folder: 'public/images'
+public_folder: '/images'
+site_url: 'https://www.trudaines.com'
+display_url: 'https://www.trudaines.com'
+logo_url: 'https://www.trudaines.com/images/logo.svg'
+publish_mode: simple
+
+collections:
+  - name: biens
+    label: 'Biens'
+    label_singular: 'Bien'
+    folder: 'src/content/biens'
+    create: true
+    slug: '{{year}}-{{slug}}'
+    media_folder: '/public/images/biens'
+    public_folder: '/images/biens'
+    summary: '{{titre}} — {{reference}} — {{statut}}'
+    sortable_fields: ['ordre', 'prix', 'titre']
+    fields:
+      - { name: titre, label: 'Titre de l''annonce', widget: string }
+      - { name: reference, label: 'Référence', widget: string, hint: 'Exemple : TRD-014. Sert de nom au PDF du dossier.' }
+      - { name: publie, label: 'Publié sur le site', widget: boolean, default: false }
+      - { name: statut, label: 'Statut', widget: select, options: ['a-vendre', 'sous-offre', 'vendu'], default: 'a-vendre' }
+      - { name: offMarket, label: 'Vente discrète, non listée', widget: boolean, default: false, required: false }
+      - { name: quartier, label: 'Quartier', widget: select, options: ['Trudaine Maubeuge', 'Martyrs Lorette', 'Clichy Trinité', 'Montmartre', 'Lariboisière Rocroy'] }
+      - { name: arrondissement, label: 'Arrondissement', widget: select, options: ['9e', '18e', '10e'] }
+      - { name: secteur, label: 'Secteur', widget: select, options: ['paris-9', 'paris-18', 'paris-10'], default: 'paris-9' }
+      - { name: prix, label: 'Prix affiché en euros', widget: number, value_type: int }
+      - { name: prixHorsHonoraires, label: 'Prix hors honoraires', widget: number, value_type: int, required: false }
+      - { name: honoraires, label: 'Honoraires, texte affiché', widget: string, required: false }
+      - { name: honorairesCharge, label: 'Honoraires à la charge', widget: select, options: ['vendeur', 'acquereur'], default: 'vendeur' }
+      - { name: surfaceCarrez, label: 'Surface Carrez en m²', widget: number, value_type: float }
+      - { name: pieces, label: 'Nombre de pièces', widget: number, value_type: int }
+      - { name: chambres, label: 'Nombre de chambres', widget: number, value_type: int, default: 0 }
+      - { name: etage, label: 'Étage', widget: string, required: false, hint: 'Exemple : 4e avec ascenseur' }
+      - { name: ascenseur, label: 'Ascenseur', widget: boolean, default: false }
+      - { name: dpe, label: 'Classe énergie', widget: select, options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'NC'], default: 'NC' }
+      - { name: ges, label: 'Classe climat', widget: select, options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'NC'], default: 'NC' }
+      - { name: consommation, label: 'Consommation en kWh/m²/an', widget: number, value_type: int, required: false }
+      - { name: emissions, label: 'Émissions en kg CO2/m²/an', widget: number, value_type: int, required: false }
+      - { name: depensesEnergie, label: 'Dépenses annuelles d''énergie', widget: string, required: false }
+      - { name: charges, label: 'Charges annuelles en euros', widget: number, value_type: int, required: false }
+      - { name: taxeFonciere, label: 'Taxe foncière en euros', widget: number, value_type: int, required: false }
+      - { name: nombreLots, label: 'Nombre de lots de la copropriété', widget: number, value_type: int, required: false }
+      - { name: procedureCopro, label: 'Procédure en cours dans la copropriété', widget: boolean, default: false }
+      - { name: visiteVirtuelle, label: 'Lien de la visite virtuelle', widget: string, required: false }
+      - { name: resume, label: 'Résumé affiché dans les listes', widget: string, required: false }
+      - name: photos
+        label: 'Photos'
+        widget: list
+        required: false
+        fields:
+          - { name: src, label: 'Image', widget: image }
+          - { name: alt, label: 'Description de l''image', widget: string, required: false }
+      - { name: ordre, label: 'Ordre d''affichage', widget: number, value_type: int, default: 100 }
+      - { name: body, label: 'Description complète', widget: markdown }
+
+  - name: articles
+    label: 'Panorama, articles'
+    label_singular: 'Article'
+    folder: 'src/content/articles'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '/public/images/panorama'
+    public_folder: '/images/panorama'
+    fields:
+      - { name: titre, label: 'Titre', widget: string }
+      - { name: date, label: 'Date de publication', widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD/MM/YYYY', time_format: false }
+      - { name: brouillon, label: 'Brouillon, non publié', widget: boolean, default: false }
+      - { name: chapo, label: 'Chapô, deux lignes de résumé', widget: text }
+      - { name: image, label: 'Image principale', widget: image, required: false }
+      - { name: imageAlt, label: 'Description de l''image', widget: string, required: false }
+      - { name: motsCles, label: 'Mots clés', widget: list, required: false }
+      - { name: body, label: 'Article', widget: markdown }
+
+  - name: quartiers
+    label: 'Quartiers'
+    label_singular: 'Quartier'
+    folder: 'src/content/quartiers'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '/public/images/quartiers'
+    public_folder: '/images/quartiers'
+    fields:
+      - { name: nom, label: 'Nom du quartier', widget: string }
+      - { name: arrondissement, label: 'Arrondissement', widget: select, options: ['9e', '18e', '10e'] }
+      - { name: secteur, label: 'Secteur', widget: select, options: ['paris-9', 'paris-18', 'paris-10'] }
+      - { name: titleSeo, label: 'Titre pour Google', widget: string }
+      - { name: metaDescription, label: 'Description pour Google', widget: text }
+      - { name: prixMoyenM2, label: 'Prix moyen au m²', widget: number, value_type: int }
+      - { name: fourchetteBasse, label: 'Fourchette basse au m²', widget: number, value_type: int }
+      - { name: fourchetteHaute, label: 'Fourchette haute au m²', widget: number, value_type: int }
+      - { name: sourcePrix, label: 'Source et date des prix', widget: string, default: 'A ACTUALISER' }
+      - { name: chapo, label: 'Phrase d''accroche', widget: text }
+      - name: photos
+        label: 'Photos'
+        widget: list
+        required: false
+        fields:
+          - { name: src, label: 'Image', widget: image }
+          - { name: alt, label: 'Description de l''image', widget: string, required: false }
+      - name: faitsDeMarche
+        label: 'Faits de marché'
+        widget: list
+        required: false
+        fields:
+          - { name: intitule, label: 'Intitulé', widget: string }
+          - { name: valeur, label: 'Valeur', widget: string }
+      - { name: ordre, label: 'Ordre d''affichage', widget: number, value_type: int, default: 100 }
+      - { name: body, label: 'Présentation du quartier', widget: markdown }
+
+  - name: secteurs
+    label: 'Pages estimation par arrondissement'
+    label_singular: 'Secteur'
+    folder: 'src/content/secteurs'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { name: nom, label: 'Nom affiché', widget: string, hint: 'Exemple : Paris 11e' }
+      - { name: arrondissement, label: 'Arrondissement', widget: string }
+      - { name: codePostal, label: 'Code postal', widget: string }
+      - { name: titleSeo, label: 'Titre pour Google', widget: string }
+      - { name: metaDescription, label: 'Description pour Google', widget: text }
+      - { name: h1, label: 'Titre de la page', widget: string }
+      - { name: chapo, label: 'Phrase d''accroche', widget: text }
+      - { name: prixMoyenM2, label: 'Prix moyen au m²', widget: number, value_type: int }
+      - { name: dateReferencePrix, label: 'Date de référence des prix', widget: string, default: 'A ACTUALISER' }
+      - name: faq
+        label: 'Questions fréquentes, six minimum'
+        widget: list
+        fields:
+          - { name: question, label: 'Question', widget: string }
+          - { name: reponse, label: 'Réponse', widget: text }
+      - { name: ordre, label: 'Ordre d''affichage', widget: number, value_type: int, default: 100 }
+      - { name: body, label: 'Texte de la page', widget: markdown }
+
+  - name: avis
+    label: 'Avis clients'
+    label_singular: 'Avis'
+    folder: 'src/content/avis'
+    create: true
+    slug: '{{year}}-{{slug}}'
+    fields:
+      - { name: auteur, label: 'Auteur', widget: string, hint: 'Prénom et initiale du nom' }
+      - { name: quartier, label: 'Quartier', widget: string }
+      - { name: typeProjet, label: 'Type de projet', widget: select, options: ['vente', 'achat', 'location', 'chasse'] }
+      - { name: secteur, label: 'Secteur', widget: select, options: ['paris-9', 'paris-18', 'paris-10'], default: 'paris-9' }
+      - { name: note, label: 'Note sur 5', widget: number, value_type: int, min: 1, max: 5, default: 5 }
+      - { name: date, label: 'Date', widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD/MM/YYYY', time_format: false, required: false }
+      - { name: texte, label: 'Texte de l''avis', widget: text }
+      - { name: publie, label: 'Publié sur le site', widget: boolean, default: false, hint: 'Ne publier qu''un avis réellement recueilli.' }
+
+  - name: presse
+    label: 'Presse'
+    label_singular: 'Retombée presse'
+    folder: 'src/content/presse'
+    create: true
+    slug: '{{year}}-{{slug}}'
+    media_folder: '/public/images/presse'
+    public_folder: '/images/presse'
+    fields:
+      - { name: media, label: 'Média', widget: string }
+      - { name: logo, label: 'Logo du média', widget: image, required: false }
+      - { name: date, label: 'Date de parution', widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD/MM/YYYY', time_format: false }
+      - { name: titre, label: 'Titre de l''article', widget: string }
+      - { name: citation, label: 'Citation exacte', widget: text }
+      - { name: lien, label: 'Lien vers l''article', widget: string, required: false }
+      - { name: publie, label: 'Publié sur le site', widget: boolean, default: false }
+
+  - name: guides
+    label: 'Guides à télécharger'
+    label_singular: 'Guide'
+    folder: 'src/content/guides'
+    create: true
+    slug: '{{slug}}'
+    media_folder: '/public/images/guides'
+    public_folder: '/images/guides'
+    fields:
+      - { name: titre, label: 'Titre', widget: string }
+      - { name: sousTitre, label: 'Sous titre', widget: string, required: false }
+      - { name: resume, label: 'Résumé affiché sur la page', widget: text }
+      - { name: couverture, label: 'Couverture', widget: image, required: false }
+      - { name: couvertureAlt, label: 'Description de la couverture', widget: string, required: false }
+      - { name: pages, label: 'Nombre de pages', widget: number, value_type: int, default: 0 }
+      - { name: fichier, label: 'Nom du fichier PDF généré', widget: string, hint: 'Exemple : guide-prix-2026-9e-nord.pdf' }
+      - { name: publie, label: 'Publié sur le site', widget: boolean, default: true }
+      - { name: ordre, label: 'Ordre d''affichage', widget: number, value_type: int, default: 100 }
+      - { name: body, label: 'Contenu du guide, un titre de niveau 2 par page', widget: markdown }
+
+  - name: pages
+    label: 'Pages fixes'
+    label_singular: 'Page'
+    folder: 'src/content/pages'
+    create: false
+    slug: '{{slug}}'
+    media_folder: '/public/images/pages'
+    public_folder: '/images/pages'
+    fields:
+      - { name: titre, label: 'Titre affiché', widget: string }
+      - { name: titleSeo, label: 'Titre pour Google', widget: string }
+      - { name: metaDescription, label: 'Description pour Google', widget: text }
+      - { name: chapo, label: 'Phrase d''accroche', widget: text, required: false }
+      - { name: image, label: 'Image principale', widget: image, required: false }
+      - { name: imageAlt, label: 'Description de l''image', widget: string, required: false }
+      - { name: body, label: 'Contenu', widget: markdown }

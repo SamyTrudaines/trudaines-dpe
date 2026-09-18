@@ -1,0 +1,24 @@
+---
+import PageSimple from '../components/PageSimple.astro';
+import FormulaireEstimation from '../components/FormulaireEstimation.astro';
+---
+<PageSimple identifiant="vendre" url="/vendre" surtitre="Vendre">
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Première étape</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Commencer par l'estimation</h2>
+        <p class="mt-6 text-gris">
+          Rien ne se décide avant d'avoir vu le bien et les ventes comparables.
+          L'estimation est gratuite, et elle n'engage à aucun mandat.
+        </p>
+        <ul class="mt-8 space-y-3 text-sm text-gris">
+          <li>Rappel sous 24 heures ouvrées.</li>
+          <li>Visite entre quarante cinq minutes et une heure.</li>
+          <li>Avis de valeur écrit remis sous 48 heures.</li>
+        </ul>
+      </div>
+      <FormulaireEstimation identifiant="estimation-vendre" />
+    </div>
+  </section>
+</PageSimple>
