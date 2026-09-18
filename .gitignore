@@ -11,3 +11,6 @@ npm-debug.log*
 # PDF générés à la construction
 public/fiches/*.pdf
 public/guides/*.pdf
+
+# Cache des fichiers de valeurs foncières téléchargés par scripts/prix-dvf.py
+.cache/

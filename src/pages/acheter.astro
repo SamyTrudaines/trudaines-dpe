@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
-import { prix, nombre, libelleStatut } from '../lib/format';
+import { prixAffiche, nombre, libelleStatut } from '../lib/format';
 
 const biens = (await getCollection('biens', (b) => !b.data.offMarket)).sort(
   (a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix
@@ -128,7 +128,7 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
                 <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
                   {nombre(b.data.surface)} m² · {b.data.pieces} {b.data.pieces > 1 ? 'pièces' : 'pièce'} · DPE {b.data.dpe}
                 </p>
-                <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prix(b.data.prix)}</p>
+                <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(b.data.prix)}</p>
               </a>
             </article>
           ))}

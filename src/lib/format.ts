@@ -7,7 +7,13 @@ export const nombre = (valeur: number) => nombreFormat.format(valeur).replace(/�
 export const dateFr = (valeur: Date) => dateFormat.format(valeur);
 export const dateIso = (valeur: Date) => valeur.toISOString().slice(0, 10);
 export const prixM2 = (prixBien: number, surface: number) =>
-  surface > 0 ? prix(Math.round(prixBien / surface)) : '';
+  prixBien > 0 && surface > 0 ? prix(Math.round(prixBien / surface)) : '';
+
+/**
+ * Un prix à zéro signifie « non renseigné », jamais « gratuit ». C'est le cas des
+ * biens vendus repris de l'ancien site, dont le prix n'était plus affiché.
+ */
+export const prixAffiche = (valeur: number) => (valeur > 0 ? prix(valeur) : 'Prix non communiqué');
 
 export const libelleStatut: Record<string, string> = {
   'a-vendre': 'À vendre',

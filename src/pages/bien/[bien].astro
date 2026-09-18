@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import FormulaireVisite from '../../components/FormulaireVisite.astro';
 import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import CarteBien from '../../components/CarteBien.astro';
-import { prix, nombre, prixM2, libelleStatut } from '../../lib/format';
+import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
 import { site } from '../../data/site';
 
 interface Props { bien: CollectionEntry<'biens'> }
@@ -33,8 +33,9 @@ const donnees = [
     brand: { '@id': `${site.url}/#cabinet` },
     offers: {
       '@type': 'Offer',
-      price: d.prix,
-      priceCurrency: 'EUR',
+      // Un prix à zéro veut dire « non renseigné » : mieux vaut ne rien annoncer
+      // que d'annoncer une offre gratuite aux moteurs de recherche.
+      ...(d.prix > 0 ? { price: d.prix, priceCurrency: 'EUR' } : {}),
       availability: d.statut === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
       url: `${site.url}/bien/${bien.id}`,
       seller: { '@id': `${site.url}/#cabinet` },
@@ -46,7 +47,7 @@ const donnees = [
     name: d.titre,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Paris',
+      addressLocality: d.ville,
       postalCode: d.arrondissement,
       addressCountry: 'FR',
     },
@@ -57,7 +58,7 @@ const donnees = [
 ---
 <Layout
   titre={`${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
-  description={`${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, Paris ${d.arrondissement}. ${prix(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
+  description={`${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
   image={d.photos[0]?.src}
   filAriane={[{ nom: 'Acheter', href: '/acheter' }, { nom: d.titre }]}
   donnees={donnees}
@@ -65,10 +66,10 @@ const donnees = [
   <section class="section pt-10">
     <div class="conteneur grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
       <div>
-        <p class="surtitre">{d.quartier} · Paris {d.arrondissement} · Réf. {d.reference}</p>
+        <p class="surtitre">{d.quartier} · {d.ville} {d.arrondissement} · Réf. {d.reference}</p>
         <h1 class="titre-1 mt-5">{d.titre}</h1>
         <p class="mt-6 text-2xl font-semibold text-[color:var(--color-nuit)]">
-          {prix(d.prix)}
+          {prixAffiche(d.prix)}
           {d.statut !== 'a-vendre' && (
             <span class="ml-4 align-middle text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ardoise)]">
               {libelleStatut[d.statut]}
@@ -76,7 +77,8 @@ const donnees = [
           )}
         </p>
         <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
-          Soit {prixM2(d.prix, d.surface)} le m². Honoraires à la charge du {d.honorairesCharge}
+          {prixM2(d.prix, d.surface) && `Soit ${prixM2(d.prix, d.surface)} le m². `}
+          Honoraires à la charge du {d.honorairesCharge}
           {d.honorairesTaux ? `, ${d.honorairesTaux}` : ''}.
         </p>
 

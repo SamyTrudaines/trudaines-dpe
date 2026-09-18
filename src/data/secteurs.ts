@@ -40,8 +40,9 @@ export const secteurs: Secteur[] = [
     introAgence:
       "Nous travaillons le 9e nord depuis notre bureau du 18e, à dix minutes à pied. Ce périmètre réduit est un choix : il nous permet de connaître les immeubles, les syndics, les acheteurs en recherche active et les niveaux de prix qui passent aujourd'hui.",
     quartiers: ['trudaine-maubeuge', 'martyrs-lorette', 'clichy-trinite'],
-    prixMoyen: 'À ACTUALISER € le m²',
-    fourchette: "À ACTUALISER à À ACTUALISER € le m² selon la rue, l'étage et l'état",
+    prixMoyen: '10 900 € le m², prix médian',
+    fourchette:
+      "7 700 à 14 100 € le m², du premier au neuvième décile des ventes d'appartements de janvier à décembre 2025",
     faq: [
       {
         question: "Comment estimez-vous un appartement dans le 9e arrondissement ?",
@@ -92,8 +93,9 @@ export const secteurs: Secteur[] = [
     introAgence:
       "Notre bureau est au 2 rue Livingstone, entre Anvers et Château Rouge. Nous couvrons Montmartre, les Abbesses, Lamarck Caulaincourt et le sud de l'arrondissement, là où le 18e rejoint le 9e nord. C'est le même bassin d'acheteurs, nous le traitons comme un seul territoire.",
     quartiers: ['montmartre'],
-    prixMoyen: 'À ACTUALISER € le m²',
-    fourchette: "À ACTUALISER à À ACTUALISER € le m² selon la rue, l'étage et l'état",
+    prixMoyen: '8 900 € le m², prix médian',
+    fourchette:
+      "6 200 à 12 300 € le m², du premier au neuvième décile des ventes d'appartements de janvier à décembre 2025",
     faq: [
       {
         question: "Pourquoi les estimations en ligne varient-elles autant dans le 18e ?",
@@ -144,8 +146,9 @@ export const secteurs: Secteur[] = [
     introAgence:
       "Lariboisière Rocroy fait partie de notre périmètre naturel : même bassin d'acheteurs que le 9e nord, mêmes typologies d'immeubles, et une demande qui se déplace d'un arrondissement à l'autre au gré des budgets.",
     quartiers: ['lariboisiere-rocroy'],
-    prixMoyen: 'À ACTUALISER € le m²',
-    fourchette: "À ACTUALISER à À ACTUALISER € le m² selon la rue, l'étage et l'état",
+    prixMoyen: '9 400 € le m², prix médian',
+    fourchette:
+      "6 700 à 12 200 € le m², du premier au neuvième décile des ventes d'appartements de janvier à décembre 2025",
     faq: [
       {
         question: "Quels sont les prix pratiqués dans le nord du 10e ?",

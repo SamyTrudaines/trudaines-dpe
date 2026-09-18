@@ -135,7 +135,41 @@ scripts/         génération des PDF, import de l'ancien site, recette
 | `npm run test-formulaires` | Teste les sept formulaires sans appel réseau réel |
 | `npm run check` | Contrôle les types, zéro erreur attendue |
 | `node scripts/importer-ancien-site.mjs` | Importe les annonces et articles de l'ancien site |
+| `python3 scripts/prix-dvf.py` | Recalcule les prix au m² par quartier sur les ventes signées |
 | `node scripts/placeholders.mjs` | Régénère les visuels de remplacement |
+
+### D'où viennent les prix au m² publiés
+
+Les prix affichés sur les pages quartier et sur les pages d'estimation sortent du
+fichier des **demandes de valeurs foncières**, publié par la direction générale des
+finances publiques sur data.gouv.fr. Aucun chiffre n'est saisi à la main.
+
+Chiffres en ligne actuellement : millésime publié le **5 avril 2026**, qui couvre les
+ventes **de janvier à décembre 2025**, soit les douze derniers mois disponibles.
+Appartements uniquement, ventes hors multilots, médiane et fourchette du premier au
+neuvième décile.
+
+| Quartier | Ventes | 1er décile | Médiane | 9e décile |
+| --- | --- | --- | --- | --- |
+| Trudaine Maubeuge | 292 | 8 000 | 10 650 | 14 300 |
+| Martyrs Lorette | 372 | 8 100 | 11 150 | 14 600 |
+| Clichy Trinité | 138 | 8 000 | 10 850 | 14 000 |
+| Montmartre | 455 | 8 100 | 11 000 | 14 800 |
+| Lariboisière Rocroy | 165 | 6 100 | 9 050 | 11 500 |
+| Paris 9e entier | 1 120 | 7 700 | 10 900 | 14 100 |
+| Paris 10e entier | 1 404 | 6 700 | 9 400 | 12 200 |
+| Paris 18e entier | 2 974 | 6 200 | 8 900 | 12 300 |
+
+Deux réserves à connaître avant de citer ces chiffres devant un client. Le fichier
+mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la
+surface Carrez. Et le rattachement d'une vente à un quartier se fait par la distance
+à un point de repère, dans un rayon de 500 mètres : la méthode complète est décrite
+en tête de `scripts/prix-dvf.py` et reprise en clair au bas de chaque page quartier.
+
+Le fichier est republié deux fois par an, en avril et en octobre, avec environ six
+mois de décalage. À chaque publication : `python3 scripts/prix-dvf.py`, puis report
+des chiffres dans `src/content/quartiers/*.md` et `src/data/secteurs.ts`, période
+exacte comprise.
 
 ### Déploiement
 
@@ -151,9 +185,18 @@ DNS chez Gandi.
    (`/admin`, rubrique **Avis clients**), puis supprimer les fiches marquées
    *Avis de démonstration*.
 2. Remplacer les deux biens marqués **EXEMPLE** par les annonces réelles.
-3. Remplacer toutes les mentions **À ACTUALISER** par vos chiffres de marché.
+3. Remplacer les mentions **À ACTUALISER** restantes : barème d'honoraires,
+   texte des deux guides, ordres de grandeur de travaux de l'article DPE. Les
+   prix au m² des quartiers et des arrondissements sont en place, voir plus haut.
+   Les quatre actualités restées vides sur l'ancien site sont à écrire, leurs
+   titres sont listés dans `migration-rapport.txt`.
 4. Remplacer les visuels de remplacement de `public/images/` par les
    photographies définitives, au format webp.
 5. Vérifier le barème d'honoraires dans `src/data/site.ts`.
 6. Ajouter les retombées presse dans `/admin`, rubrique **Presse**.
-7. Lancer l'import de l'ancien site puis compléter `public/_redirects`.
+7. Relire les dix sept fiches reprises de l'ancien site, aujourd'hui en
+   `offMarket: true` donc hors des pages `/acheter` et d'accueil, puis passer à
+   `false` celles qui sont réellement à vendre. Les redirections 301 de l'ancien
+   site sont déjà dans `public/_redirects`.
+8. Rapatrier les photographies des fiches reprises : elles pointent encore vers
+   le serveur d'images de l'ancien back office et tomberont avec lui.

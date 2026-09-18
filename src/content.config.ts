@@ -7,6 +7,8 @@ const biens = defineCollection({
     titre: z.string(),
     reference: z.string(),
     quartier: z.string(),
+    /** Commune du bien. Les reprises de l'ancien site sortent du périmètre parisien. */
+    ville: z.string().default('Paris'),
     arrondissement: z.string(),
     prix: z.number(),
     surface: z.number(),
