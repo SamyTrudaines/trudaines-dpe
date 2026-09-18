@@ -1,0 +1,57 @@
+---
+import ConsentementRgpd from './ConsentementRgpd.astro';
+import Confirmation from './Confirmation.astro';
+interface Props { quartiers: { id: string; nom: string }[] }
+const { quartiers } = Astro.props;
+---
+<form
+  id="alerte"
+  action="/api/alerte"
+  method="post"
+  data-formulaire="alerte"
+  data-evenement-succes="alerte_creee"
+  class="relative border border-ligne bg-creme p-6 lg:p-10"
+>
+  <div data-champs>
+    <h2 class="text-xl lg:text-2xl">Créer mon alerte email</h2>
+    <p class="mt-2 text-sm text-gris">Vous recevez les biens avant leur mise en ligne publique, y compris les ventes discrètes.</p>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="alerte-quartier">Quartier recherché</label>
+        <select class="champ" id="alerte-quartier" name="quartier" required>
+          <option value="">Tous les quartiers</option>
+          {quartiers.map((q) => <option value={q.nom}>{q.nom}</option>)}
+        </select>
+      </div>
+      <div>
+        <label class="etiquette" for="alerte-pieces">Nombre de pièces minimum</label>
+        <select class="champ" id="alerte-pieces" name="pieces">
+          <option value="">Indifférent</option>
+          <option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </div>
+      <div>
+        <label class="etiquette" for="alerte-budget">Budget maximum</label>
+        <input class="champ" id="alerte-budget" name="budget" type="number" min="100000" step="10000" inputmode="numeric" placeholder="900000" />
+      </div>
+      <div>
+        <label class="etiquette" for="alerte-surface">Surface minimum en m²</label>
+        <input class="champ" id="alerte-surface" name="surface" type="number" min="10" inputmode="numeric" placeholder="55" />
+      </div>
+      <div>
+        <label class="etiquette" for="alerte-email">Adresse email</label>
+        <input class="champ" id="alerte-email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div>
+        <label class="etiquette" for="alerte-tel">Téléphone, facultatif</label>
+        <input class="champ" id="alerte-tel" name="telephone" type="tel" autocomplete="tel" />
+      </div>
+    </div>
+    <div class="mt-5"><ConsentementRgpd id="consentement-alerte" /></div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Créer mon alerte</button>
+  </div>
+  <Confirmation
+    titre="Votre alerte est active"
+    texte="Vous recevrez un email dès qu'un bien correspond. Vous pouvez vous désinscrire en un clic."
+  />
+</form>

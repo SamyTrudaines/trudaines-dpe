@@ -1,0 +1,34 @@
+---
+import PageSimple from '../components/PageSimple.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+import { cabinet } from '../data/site';
+---
+<PageSimple identifiant="contact" url="/contact" surtitre="Contact">
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Écrire au cabinet</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Nous vous répondons sous 24 heures ouvrées</h2>
+        <dl class="mt-8 space-y-5 text-sm">
+          <div>
+            <dt class="text-gris">Téléphone</dt>
+            <dd class="mt-1"><a href={`tel:${cabinet.telephoneLien}`} class="lien-souligne" data-evenement="clic_telephone">{cabinet.telephone}</a></dd>
+          </div>
+          <div>
+            <dt class="text-gris">WhatsApp</dt>
+            <dd class="mt-1"><a href={`https://wa.me/${cabinet.whatsapp}`} rel="noopener" target="_blank" class="lien-souligne" data-evenement="clic_whatsapp">Écrire sur WhatsApp</a></dd>
+          </div>
+          <div>
+            <dt class="text-gris">Courriel</dt>
+            <dd class="mt-1"><a href={`mailto:${cabinet.email}`} class="lien-souligne">{cabinet.email}</a></dd>
+          </div>
+          <div>
+            <dt class="text-gris">Bureau</dt>
+            <dd class="mt-1">{cabinet.adresse}, {cabinet.codePostal} {cabinet.ville}</dd>
+          </div>
+        </dl>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</PageSimple>

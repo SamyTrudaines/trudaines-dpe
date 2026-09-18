@@ -1,0 +1,48 @@
+# Redirections Cloudflare Pages
+# Les règles les plus spécifiques doivent rester au dessus des règles génériques.
+# Le passage en https et la redirection de trudaines.com vers www.trudaines.com
+# se règlent dans le tableau de bord Cloudflare, voir DEPLOIEMENT.md.
+
+# --- Bloc manuel : anciennes fiches de biens et anciens articles ---
+/vente/index.html  /acheter  301
+/vente  /acheter  301
+/vente/*  /acheter  301
+/location/*  /gestion-locative  301
+/nos-actualites/index.html  /panorama  301
+/nos-actualites/*  /panorama/:splat  301
+/blog  /panorama  301
+/blog/*  /panorama/:splat  301
+/index.html  /  301
+/home  /  301
+/accueil  /  301
+
+# --- Début du bloc généré depuis redirections/anciennes-urls.csv ---
+/nos-actualites  /panorama  301
+/nos-actualites/  /panorama  301
+/actualites  /panorama  301
+/nos-biens  /acheter  301
+/biens  /acheter  301
+/nos-services  /trudaines  301
+/services  /trudaines  301
+/qui-sommes-nous  /trudaines  301
+/a-propos  /trudaines  301
+/equipe  /samy-santamarina  301
+/notre-equipe  /samy-santamarina  301
+/estimation-en-ligne  /estimation  301
+/estimer  /estimation  301
+/estimation-gratuite  /estimation  301
+/vendre-son-bien  /vendre  301
+/vendeur  /vendre  301
+/acheteur  /acheter  301
+/chasse-immobiliere  /chasse  301
+/gestion  /gestion-locative  301
+/nous-contacter  /contact  301
+/recrutement  /nous-rejoindre  301
+/rejoindre  /nous-rejoindre  301
+/mentions  /mentions-legales  301
+/rgpd  /politique-de-confidentialite  301
+/confidentialite  /politique-de-confidentialite  301
+/paris-9  /agence-immobiliere-paris-9  301
+/paris-18  /agence-immobiliere-paris-18  301
+/montmartre  /agence-immobiliere-montmartre  301
+# --- Fin du bloc généré ---

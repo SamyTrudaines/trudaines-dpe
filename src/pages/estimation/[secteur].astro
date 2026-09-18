@@ -1,0 +1,116 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import Faq from '../../components/Faq.astro';
+import AvisClients from '../../components/AvisClients.astro';
+import { getCollection, render } from 'astro:content';
+import { faqSchema } from '../../lib/schema';
+import { nombre } from '../../data/site';
+
+export async function getStaticPaths() {
+  const secteurs = await getCollection('secteurs');
+  return secteurs.map((secteur) => ({ params: { secteur: secteur.id }, props: { secteur } }));
+}
+
+const { secteur } = Astro.props;
+const { Content } = await render(secteur);
+const d = secteur.data;
+
+const quartiers = (await getCollection('quartiers'))
+  .filter((q) => q.data.secteur === secteur.id)
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+
+const tousAvis = (await getCollection('avis')).filter((a) => a.data.publie);
+const avis = [...tousAvis.filter((a) => a.data.secteur === secteur.id), ...tousAvis].slice(0, 2);
+---
+<Base
+  title={d.titleSeo}
+  description={d.metaDescription}
+  ariane={[{ nom: 'Estimation', url: '/estimation' }, { nom: d.nom, url: `/estimation/${secteur.id}` }]}
+  schemas={[faqSchema(d.faq)]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-20">
+      <div>
+        <p class="surtitre">Estimation {d.nom}</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-4xl">{d.h1}</h1>
+        <p class="mt-6 text-lg text-gris">{d.chapo}</p>
+        <div class="prose-trudaines mt-8 text-gris"><Content /></div>
+        <p class="mt-8 text-sm text-gris">
+          Nous estimons aussi les maisons et les immeubles de rapport du {d.arrondissement} arrondissement.
+        </p>
+      </div>
+      <div>
+        <FormulaireEstimation secteur={secteur.id} identifiant={`estimation-${secteur.id}`} />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ligne bg-creme">
+    <div class="conteneur py-16 lg:py-24">
+      <p class="surtitre">Prix constatés</p>
+      <h2 class="mt-4 text-2xl lg:text-3xl">Les niveaux de prix, quartier par quartier</h2>
+      <p class="mt-4 max-w-2xl text-sm text-gris">
+        Moyennes indicatives. {d.dateReferencePrix}. Un appartement se valorise à l'étage, à l'exposition et à l'état, jamais à la moyenne.
+      </p>
+
+      <div class="mt-10 overflow-x-auto">
+        <table class="w-full min-w-[40rem] border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-encre">
+              <th scope="col" class="py-4 pr-6 font-medium">Quartier</th>
+              <th scope="col" class="py-4 pr-6 font-medium">Prix moyen au m²</th>
+              <th scope="col" class="py-4 pr-6 font-medium">Fourchette constatée</th>
+              <th scope="col" class="py-4 font-medium">Détail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {quartiers.map((q) => (
+              <tr class="border-b border-ligne">
+                <th scope="row" class="py-4 pr-6 font-normal">{q.data.nom}</th>
+                <td class="py-4 pr-6">{nombre(q.data.prixMoyenM2)} euros</td>
+                <td class="py-4 pr-6">{nombre(q.data.fourchetteBasse)} à {nombre(q.data.fourchetteHaute)} euros</td>
+                <td class="py-4"><a href={`/quartiers/${q.id}`} class="lien-souligne">Le quartier</a></td>
+              </tr>
+            ))}
+            <tr>
+              <th scope="row" class="py-4 pr-6 font-normal">Moyenne {d.nom}</th>
+              <td class="py-4 pr-6">{nombre(d.prixMoyenM2)} euros</td>
+              <td class="py-4 pr-6">Selon étage, exposition et état</td>
+              <td class="py-4"><a href={`#estimation-${secteur.id}`} class="lien-souligne">Estimer mon bien</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="grid gap-12 lg:grid-cols-3">
+      <div>
+        <h2 class="text-xl">Vendre sans passer sous le prix</h2>
+        <p class="mt-4 text-sm text-gris">
+          Le prix de mise en marché vous est remis par écrit, avec les ventes comparables qui le justifient.
+          Vous pouvez le contester ligne par ligne, c'est fait pour.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl">Tenir le délai quand vous rachetez</h2>
+        <p class="mt-4 text-sm text-gris">
+          La date butoir, le prix plancher et les paliers figurent au mandat. Compte rendu après chaque visite,
+          point hebdomadaire même sans nouvelle.
+        </p>
+      </div>
+      <div>
+        <h2 class="text-xl">Vendre discrètement</h2>
+        <p class="mt-4 text-sm text-gris">
+          Vente off market possible à tout moment. Ni panneau, ni portail, ni diffusion publique.
+          Le bien circule dans notre fichier d'acquéreurs et notre réseau de confrères.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq questions={d.faq} titre={`Vendre dans le ${d.arrondissement}, les questions fréquentes`} />
+  <AvisClients avis={avis} />
+</Base>

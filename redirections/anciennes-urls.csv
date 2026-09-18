@@ -1,0 +1,29 @@
+ancienne_url,nouvelle_url,statut,commentaire
+/nos-actualites,/panorama,301,Ancien blog
+/nos-actualites/,/panorama,301,Ancien blog avec barre finale
+/actualites,/panorama,301,Variante
+/nos-biens,/acheter,301,Ancienne liste des biens
+/biens,/acheter,301,Variante
+/nos-services,/trudaines,301,Ancienne page services
+/services,/trudaines,301,Variante
+/qui-sommes-nous,/trudaines,301,Ancienne page à propos
+/a-propos,/trudaines,301,Variante
+/equipe,/samy-santamarina,301,Ancienne page équipe
+/notre-equipe,/samy-santamarina,301,Variante
+/estimation-en-ligne,/estimation,301,Ancien formulaire
+/estimer,/estimation,301,Variante
+/estimation-gratuite,/estimation,301,Variante
+/vendre-son-bien,/vendre,301,Ancienne page vendeur
+/vendeur,/vendre,301,Variante
+/acheteur,/acheter,301,Variante
+/chasse-immobiliere,/chasse,301,Ancien libellé
+/gestion,/gestion-locative,301,Variante
+/nous-contacter,/contact,301,Variante
+/recrutement,/nous-rejoindre,301,Ancienne page recrutement
+/rejoindre,/nous-rejoindre,301,Variante
+/mentions,/mentions-legales,301,Variante
+/rgpd,/politique-de-confidentialite,301,Variante
+/confidentialite,/politique-de-confidentialite,301,Variante
+/paris-9,/agence-immobiliere-paris-9,301,Ancienne page secteur
+/paris-18,/agence-immobiliere-paris-18,301,Ancienne page secteur
+/montmartre,/agence-immobiliere-montmartre,301,Ancienne page secteur

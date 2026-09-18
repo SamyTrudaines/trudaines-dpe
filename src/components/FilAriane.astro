@@ -1,0 +1,19 @@
+---
+interface Props { elements: { nom: string; url: string }[] }
+const { elements } = Astro.props;
+---
+<nav aria-label="Fil d'Ariane" class="border-b border-ligne bg-white">
+  <ol class="conteneur flex flex-wrap items-center gap-2 py-3 text-xs text-gris">
+    <li><a href="/" class="no-underline hover:underline">Accueil</a></li>
+    {elements.map((e, i) => (
+      <li class="flex items-center gap-2">
+        <span aria-hidden="true">/</span>
+        {i === elements.length - 1 ? (
+          <span aria-current="page">{e.nom}</span>
+        ) : (
+          <a href={e.url} class="no-underline hover:underline">{e.nom}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

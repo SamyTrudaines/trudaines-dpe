@@ -1,0 +1,87 @@
+---
+import { cabinet } from '../data/site';
+import { getCollection } from 'astro:content';
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const secteurs = (await getCollection('secteurs')).sort((a, b) => a.data.ordre - b.data.ordre);
+const annee = new Date().getFullYear();
+---
+<footer class="border-t border-ligne bg-white">
+  <div class="conteneur grid gap-12 py-16 lg:grid-cols-4 lg:py-20">
+    <div>
+      <img src="/images/logo.svg" alt="Trudaines" width="168" height="34" class="logo" />
+      <p class="mt-6 text-sm text-gris">
+        Cabinet de vente immobilière à Paris 9e nord, Montmartre et Paris 10e.
+        Estimation, vente, recherche et gestion locative.
+      </p>
+      <address class="mt-6 not-italic text-sm text-gris">
+        {cabinet.adresse}<br />
+        {cabinet.codePostal} {cabinet.ville}<br />
+        <a href={`tel:${cabinet.telephoneLien}`} class="lien-souligne" data-evenement="clic_telephone">{cabinet.telephone}</a><br />
+        <a href={`mailto:${cabinet.email}`} class="lien-souligne">{cabinet.email}</a>
+      </address>
+      <p class="mt-4 text-sm text-gris">{cabinet.horaires}</p>
+    </div>
+
+    <div>
+      <p class="surtitre">Estimation</p>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li><a href="/estimation" class="no-underline hover:underline">Estimer mon bien</a></li>
+        {secteurs.map((s) => (
+          <li><a href={`/estimation/${s.id}`} class="no-underline hover:underline">Estimation {s.data.nom}</a></li>
+        ))}
+        <li><a href="/guides" class="no-underline hover:underline">Guides et prix de marché</a></li>
+      </ul>
+      <p class="surtitre mt-10">Le cabinet</p>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li><a href="/trudaines" class="no-underline hover:underline">La maison Trudaines</a></li>
+        <li><a href="/samy-santamarina" class="no-underline hover:underline">Samy Santamarina</a></li>
+        <li><a href="/presse" class="no-underline hover:underline">La presse en parle</a></li>
+        <li><a href="/nous-rejoindre" class="no-underline hover:underline">Nous rejoindre</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="surtitre">Quartiers</p>
+      <ul class="mt-5 space-y-3 text-sm">
+        {quartiers.map((q) => (
+          <li><a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a></li>
+        ))}
+      </ul>
+      <p class="surtitre mt-10">Agences de secteur</p>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li><a href="/agence-immobiliere-paris-9" class="no-underline hover:underline">Agence immobilière Paris 9e</a></li>
+        <li><a href="/agence-immobiliere-paris-18" class="no-underline hover:underline">Agence immobilière Paris 18e</a></li>
+        <li><a href="/agence-immobiliere-montmartre" class="no-underline hover:underline">Agence immobilière Montmartre</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="surtitre">Services</p>
+      <ul class="mt-5 space-y-3 text-sm">
+        <li><a href="/vendre" class="no-underline hover:underline">Vendre avec Trudaines</a></li>
+        <li><a href="/acheter" class="no-underline hover:underline">Les biens à vendre</a></li>
+        <li><a href="/chasse" class="no-underline hover:underline">Mandat de recherche</a></li>
+        <li><a href="/gestion-locative" class="no-underline hover:underline">Gestion locative</a></li>
+        <li><a href="/honoraires" class="no-underline hover:underline">Honoraires</a></li>
+        <li><a href="/panorama" class="no-underline hover:underline">Panorama</a></li>
+        <li><a href="/contact" class="no-underline hover:underline">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-ligne">
+    <div class="conteneur flex flex-col gap-4 py-8 text-xs text-gris lg:flex-row lg:items-start lg:justify-between">
+      <p>
+        {cabinet.nomLong}, {cabinet.raisonSociale}, {cabinet.rcs}. Carte professionnelle {cabinet.carteT} délivrée par la {cabinet.carteTDelivree}.
+        {cabinet.carteTMention} Garantie financière {cabinet.garantie}, sociétaire n° {cabinet.garantieNumero}.
+      </p>
+      <ul class="flex flex-wrap gap-4">
+        <li><a href="/mentions-legales" class="no-underline hover:underline">Mentions légales</a></li>
+        <li><a href="/politique-de-confidentialite" class="no-underline hover:underline">Données personnelles</a></li>
+        <li><a href="/honoraires" class="no-underline hover:underline">Honoraires</a></li>
+        <li><span>© {annee} Trudaines</span></li>
+      </ul>
+    </div>
+  </div>
+</footer>

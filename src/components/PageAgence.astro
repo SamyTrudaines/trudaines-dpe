@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import FormulaireEstimation from './FormulaireEstimation.astro';
+import CarteBien from './CarteBien.astro';
+import AvisClients from './AvisClients.astro';
+import { getCollection } from 'astro:content';
+import { cabinet, nombre } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  surtitre: string;
+  h1: string;
+  chapo: string;
+  secteur: string;
+  quartiersAffiches?: string[];
+  url: string;
+  nomAriane: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const {
+  title, description, surtitre, h1, chapo, secteur,
+  quartiersAffiches, url, nomAriane,
+  image = '/images/pages/accueil.webp', imageAlt = 'Immeuble parisien',
+} = Astro.props;
+
+const tousQuartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const quartiers = quartiersAffiches
+  ? tousQuartiers.filter((q) => quartiersAffiches.includes(q.id))
+  : tousQuartiers.filter((q) => q.data.secteur === secteur);
+
+const biens = (await getCollection('biens'))
+  .filter((b) => b.data.publie && !b.data.offMarket && b.data.secteur === secteur)
+  .slice(0, 3);
+
+const tousAvis = (await getCollection('avis')).filter((a) => a.data.publie);
+const avis = [...tousAvis.filter((a) => a.data.secteur === secteur), ...tousAvis].slice(0, 2);
+---
+<Base title={title} description={description} ariane={[{ nom: nomAriane, url }]}>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-20 lg:py-20">
+      <div>
+        <p class="surtitre">{surtitre}</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-4xl">{h1}</h1>
+        <p class="mt-6 text-lg text-gris">{chapo}</p>
+        <div class="prose-trudaines mt-6 text-gris"><slot /></div>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href={`/estimation/${secteur}`} class="bouton">Estimer mon bien</a>
+          <a href={`tel:${cabinet.telephoneLien}`} class="bouton bouton-secondaire" data-evenement="clic_telephone">{cabinet.telephone}</a>
+        </div>
+      </div>
+      <div class="aspect-[4/3] bg-creme">
+        <img src={image} alt={imageAlt} width="900" height="675" fetchpriority="high" decoding="async" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-ligne bg-creme">
+    <div class="conteneur grid gap-10 py-14 sm:grid-cols-3">
+      <div>
+        <p class="surtitre">Adresse</p>
+        <p class="mt-3 text-sm text-gris">{cabinet.adresse}, {cabinet.codePostal} {cabinet.ville}. Nous recevons sur rendez vous et nous nous déplaçons pour les estimations.</p>
+      </div>
+      <div>
+        <p class="surtitre">Horaires</p>
+        <p class="mt-3 text-sm text-gris">{cabinet.horaires}. En dehors, laissez un message, nous rappelons le lendemain matin.</p>
+      </div>
+      <div>
+        <p class="surtitre">Carte professionnelle</p>
+        <p class="mt-3 text-sm text-gris">{cabinet.carteT}, {cabinet.carteTDelivree}. {cabinet.carteTMention}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <p class="surtitre">Quartiers couverts</p>
+    <h2 class="mt-4 text-2xl lg:text-3xl">Les quartiers que nous traitons sur ce secteur</h2>
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {quartiers.map((q) => (
+        <a href={`/quartiers/${q.id}`} class="block border border-ligne p-8 no-underline transition-colors hover:bg-creme">
+          <h3 class="text-lg">{q.data.nom}</h3>
+          <p class="mt-2 text-sm text-gris">{nombre(q.data.prixMoyenM2)} euros le m² en moyenne</p>
+          <p class="mt-4 text-sm text-gris">{q.data.chapo}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {biens.length > 0 && (
+    <section class="border-t border-ligne">
+      <div class="conteneur py-16 lg:py-24">
+        <p class="surtitre">À vendre</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Nos biens sur ce secteur</h2>
+        <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          {biens.map((bien) => <CarteBien bien={bien} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="border-t border-ligne bg-creme">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-24">
+      <div>
+        <p class="surtitre">Estimation</p>
+        <h2 class="mt-4 text-2xl lg:text-3xl">Faire estimer votre bien sur ce secteur</h2>
+        <p class="mt-6 text-gris">
+          Gratuit, sans engagement, conduit personnellement par Samy Santamarina.
+          Avis de valeur écrit remis sous 48 heures après la visite.
+        </p>
+      </div>
+      <FormulaireEstimation secteur={secteur} identifiant={`estimation-${url.replace(/\//g, '')}`} />
+    </div>
+  </section>
+
+  <AvisClients avis={avis} />
+</Base>

@@ -1,0 +1,22 @@
+---
+interface Props { avis: any[]; titre?: string }
+const { avis, titre = 'Ce que disent nos clients' } = Astro.props;
+---
+{avis.length > 0 && (
+  <section class="border-t border-ligne bg-white">
+    <div class="conteneur py-16 lg:py-24">
+      <p class="surtitre">Avis</p>
+      <h2 class="mt-4 max-w-2xl text-2xl lg:text-3xl">{titre}</h2>
+      <div class="mt-12 grid gap-10 lg:grid-cols-2">
+        {avis.map((a) => (
+          <figure class="border-l-2 border-encre pl-6">
+            <blockquote class="font-titre text-lg leading-relaxed">{a.data.texte}</blockquote>
+            <figcaption class="mt-4 text-sm text-gris">
+              {a.data.auteur}, {a.data.quartier}. Projet de {a.data.typeProjet}.
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

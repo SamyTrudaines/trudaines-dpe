@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { cabinet } from '../data/site';
+
+const page = await getEntry('pages', 'samy-santamarina');
+const { Content } = await render(page!);
+const presse = (await getCollection('presse')).filter((p) => p.data.publie).slice(0, 3);
+
+const schemaPersonne = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Samy Santamarina',
+  jobTitle: 'Fondateur et président',
+  worksFor: { '@id': `${cabinet.domaine}/#cabinet` },
+  url: `${cabinet.domaine}/samy-santamarina`,
+  image: `${cabinet.domaine}/images/pages/samy-santamarina.webp`,
+  email: cabinet.email,
+  telephone: cabinet.telephoneLien,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: cabinet.adresse,
+    addressLocality: 'Paris',
+    postalCode: cabinet.codePostal,
+    addressCountry: 'FR',
+  },
+  knowsAbout: ['Vente immobilière', 'Estimation immobilière', 'Paris 9e', 'Montmartre'],
+};
+---
+<Base
+  title="Samy Santamarina | Fondateur de Trudaines, cabinet immobilier Paris 9e"
+  description="Samy Santamarina, fondateur du cabinet Trudaines à Paris 9e et Montmartre. Parcours, méthode d'estimation, carte professionnelle et engagements auprès des vendeurs."
+  ariane={[{ nom: 'Samy Santamarina', url: '/samy-santamarina' }]}
+  schemas={[schemaPersonne]}
+  image="/images/pages/samy-santamarina.webp"
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid items-center gap-12 py-16 lg:grid-cols-2 lg:gap-20 lg:py-20">
+      <div>
+        <p class="surtitre">Le fondateur</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-4xl">Samy Santamarina</h1>
+        <p class="mt-6 text-lg text-gris">{page!.data.chapo}</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="/estimation" class="bouton">Demander une estimation</a>
+          <a href={`tel:${cabinet.telephoneLien}`} class="bouton bouton-secondaire" data-evenement="clic_telephone">{cabinet.telephone}</a>
+        </div>
+      </div>
+      <div class="aspect-[4/5] bg-creme">
+        <img src="/images/pages/samy-santamarina.webp" alt="Portrait de Samy Santamarina, fondateur de Trudaines" width="800" height="1000" fetchpriority="high" decoding="async" class="h-full w-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <div class="grid gap-16 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+      <div class="prose-trudaines max-w-none"><Content /></div>
+      <aside>
+        <div class="border border-ligne p-8">
+          <p class="surtitre">Habilitation</p>
+          <dl class="mt-6 space-y-5 text-sm">
+            <div>
+              <dt class="text-gris">Carte professionnelle</dt>
+              <dd class="mt-1">{cabinet.carteT}</dd>
+            </div>
+            <div>
+              <dt class="text-gris">Délivrée par</dt>
+              <dd class="mt-1">{cabinet.carteTDelivree}</dd>
+            </div>
+            <div>
+              <dt class="text-gris">Objet</dt>
+              <dd class="mt-1">{cabinet.carteTMention}</dd>
+            </div>
+            <div>
+              <dt class="text-gris">Garantie financière</dt>
+              <dd class="mt-1">{cabinet.garantie}</dd>
+            </div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+
+    {presse.length > 0 && (
+      <div class="mt-16 border-t border-ligne pt-12">
+        <p class="surtitre">Citations presse</p>
+        <div class="mt-8 grid gap-10 lg:grid-cols-3">
+          {presse.map((p) => (
+            <figure>
+              <blockquote class="font-titre text-lg">{p.data.citation}</blockquote>
+              <figcaption class="mt-3 text-sm text-gris">
+                {p.data.lien ? <a href={p.data.lien} rel="noopener" target="_blank" class="lien-souligne">{p.data.media}</a> : p.data.media}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    )}
+  </section>
+</Base>

@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import Faq from '../../components/Faq.astro';
+import AvisClients from '../../components/AvisClients.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { faqSchema } from '../../lib/schema';
+import { nombre } from '../../data/site';
+
+const page = await getEntry('pages', 'estimation');
+const { Content } = await render(page!);
+const secteurs = (await getCollection('secteurs')).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = (await getCollection('avis')).filter((a) => a.data.publie).slice(0, 2);
+
+const questions = [
+  {
+    question: "L'estimation Trudaines est elle gratuite ?",
+    reponse: "Oui, gratuite et sans engagement. Vous recevez un avis de valeur écrit, que vous vendiez avec nous ou non.",
+  },
+  {
+    question: 'Sur quoi repose votre estimation ?',
+    reponse: "Sur trois sources croisées : les mutations réellement enregistrées dans votre rue, les ventes que nous avons conclues dans le secteur, et les biens actuellement en concurrence avec le vôtre. La visite complète ce que la donnée ignore.",
+  },
+  {
+    question: 'Combien de temps dure la visite d\'estimation ?',
+    reponse: "Entre quarante cinq minutes et une heure. Nous regardons le bien, l'immeuble, les parties communes et les documents de copropriété.",
+  },
+  {
+    question: 'Quand recevez vous mon avis de valeur ?',
+    reponse: "Dans les 48 heures qui suivent la visite, par écrit, avec la liste des comparables retenus.",
+  },
+  {
+    question: 'Une estimation en ligne suffit elle ?',
+    reponse: "Elle donne un ordre de grandeur. Elle ignore l'étage, l'exposition, le plan, les charges et les travaux votés, qui représentent couramment dix à vingt pour cent de la valeur d'un appartement parisien.",
+  },
+  {
+    question: 'Suis je obligé de signer un mandat après l\'estimation ?',
+    reponse: "Non. L'avis de valeur vous appartient. Si vous décidez de ne pas vendre, ou de vendre autrement, nous n'insistons pas.",
+  },
+];
+---
+<Base
+  title="Estimation immobilière à Paris | Précision data et regard expert - Trudaines"
+  description="Estimation immobilière gratuite à Paris 9e, 18e et 10e. Croisement des ventes réelles et visite d'expert, avis de valeur écrit sous 48 heures, sans engagement."
+  ariane={[{ nom: 'Estimation', url: '/estimation' }]}
+  schemas={[faqSchema(questions)]}
+>
+  <section class="border-b border-ligne">
+    <div class="conteneur grid gap-12 py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:py-20">
+      <div>
+        <p class="surtitre">Estimation</p>
+        <h1 class="mt-6 text-3xl leading-tight lg:text-4xl">Estimation immobilière à Paris</h1>
+        <p class="mt-6 text-lg text-gris">{page!.data.chapo}</p>
+        <div class="prose-trudaines mt-8 text-gris"><Content /></div>
+      </div>
+      <div>
+        <FormulaireEstimation identifiant="estimation-hub" />
+      </div>
+    </div>
+  </section>
+
+  <section class="conteneur py-16 lg:py-24">
+    <p class="surtitre">Par arrondissement</p>
+    <h2 class="mt-4 text-2xl lg:text-3xl">Choisissez votre secteur</h2>
+    <div class="mt-12 grid gap-8 sm:grid-cols-3">
+      {secteurs.map((s) => (
+        <a href={`/estimation/${s.id}`} class="block border border-ligne p-8 no-underline transition-colors hover:bg-creme">
+          <h3 class="text-xl">{s.data.nom}</h3>
+          <p class="mt-3 text-sm text-gris">{nombre(s.data.prixMoyenM2)} euros le m² en moyenne</p>
+          <p class="mt-4 text-sm text-gris">{s.data.chapo}</p>
+          <p class="mt-6 text-sm lien-souligne">Estimer dans le {s.data.arrondissement}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Faq questions={questions} />
+  <AvisClients avis={avis} />
+</Base>
