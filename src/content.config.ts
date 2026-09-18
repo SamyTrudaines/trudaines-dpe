@@ -96,6 +96,16 @@ const avis = defineCollection({
     texte: z.string(),
     note: z.number().min(1).max(5),
     date: z.coerce.date().optional(),
+    /**
+     * Origine de l'avis. « google » signifie repris de la fiche d'établissement
+     * Google par scripts/importer-avis-google.mjs : l'affichage doit alors citer
+     * la source et renvoyer vers l'avis d'origine, comme l'exigent les conditions
+     * d'utilisation de Google Maps Platform.
+     */
+    source: z.enum(['google', 'direct']).default('direct'),
+    lienSource: z.string().url().optional(),
+    /** Ancienneté telle que Google la publie, « il y a 2 mois » par exemple. */
+    anciennete: z.string().optional(),
     exemple: z.boolean().default(false),
   }),
 });

@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import { honoraires, site } from '../data/site';
 
 const tableaux = [
-  { titre: 'Vente, honoraires à la charge du vendeur sauf mention contraire', lignes: honoraires.vente },
-  { titre: 'Mandat de recherche, honoraires à la charge de l\'acquéreur', lignes: honoraires.chasse },
-  { titre: 'Location et gestion', lignes: honoraires.location },
+  { titre: 'Mandat de vente, honoraires à la charge du vendeur', lignes: honoraires.vente },
+  { titre: "Mandat de recherche, honoraires à la charge de l'acquéreur", lignes: honoraires.chasse },
+  { titre: 'Mandat de gestion, honoraires à la charge du bailleur', lignes: honoraires.gestion },
 ];
 ---
 <Layout
   titre="Honoraires | Trudaines, cabinet immobilier Paris"
-  description="Barème des honoraires de Trudaines : vente, mandat de recherche, mise en location et gestion locative. Montants TTC, affichage conforme à la réglementation."
+  description="Barème maximum des honoraires de Trudaines : mandat de vente, mandat de recherche, gestion locative. Montants TTC et charge du paiement indiquée."
   filAriane={[{ nom: 'Honoraires' }]}
 >
   <section class="section pt-10">
@@ -21,7 +21,10 @@ const tableaux = [
         Les honoraires ne sont dus qu'en cas de réalisation effective de l'opération. Ils sont indiqués toutes taxes
         comprises et figurent en toutes lettres dans le mandat que vous signez.
       </p>
-      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">À ACTUALISER : vérifier ce barème avant mise en ligne.</p>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Ce barème est un barème maximum. Nous pouvons pratiquer un taux inférieur, jamais supérieur. Le taux retenu
+        pour votre bien est arrêté avec vous avant la signature du mandat et y figure en toutes lettres.
+      </p>
     </div>
   </section>
 

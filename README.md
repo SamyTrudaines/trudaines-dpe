@@ -136,6 +136,7 @@ scripts/         génération des PDF, import de l'ancien site, recette
 | `npm run check` | Contrôle les types, zéro erreur attendue |
 | `node scripts/importer-ancien-site.mjs` | Importe les annonces et articles de l'ancien site |
 | `python3 scripts/prix-dvf.py` | Recalcule les prix au m² par quartier sur les ventes signées |
+| `npm run avis-google` | Reprend les avis de la fiche Google dans `src/content/avis` |
 | `node scripts/placeholders.mjs` | Régénère les visuels de remplacement |
 
 ### D'où viennent les prix au m² publiés
@@ -181,22 +182,33 @@ DNS chez Gandi.
 
 ## Points à traiter avant la mise en ligne
 
-1. Remplacer les deux avis de démonstration par de vrais avis clients
-   (`/admin`, rubrique **Avis clients**), puis supprimer les fiches marquées
-   *Avis de démonstration*.
-2. Remplacer les deux biens marqués **EXEMPLE** par les annonces réelles.
-3. Remplacer les mentions **À ACTUALISER** restantes : barème d'honoraires,
-   texte des deux guides, ordres de grandeur de travaux de l'article DPE. Les
-   prix au m² des quartiers et des arrondissements sont en place, voir plus haut.
-   Les quatre actualités restées vides sur l'ancien site sont à écrire, leurs
-   titres sont listés dans `migration-rapport.txt`.
-4. Remplacer les visuels de remplacement de `public/images/` par les
+1. **Avis clients.** Le dossier `src/content/avis` est vide, le bloc d'avis reste
+   donc masqué sur le site. Deux façons de le remplir. Les avis Google :
+   renseigner `GOOGLE_PLACES_API_KEY` et `GOOGLE_PLACE_ID` dans un `.env` local
+   puis lancer `npm run avis-google`. L'API ne renvoie que cinq avis, ceux que
+   Google juge les plus pertinents, et ses conditions d'utilisation imposent de
+   citer la source et de rafraîchir régulièrement : le script s'en charge, mais
+   il faut le relancer. Les avis recueillis en direct : les saisir dans `/admin`,
+   rubrique **Avis clients**, avec l'accord écrit de leur auteur. Ne jamais
+   publier un avis qui n'a pas été laissé par un client réel.
+2. **Biens d'exemple.** Remplacer les deux fiches marquées **EXEMPLE** par des
+   annonces réelles. Leurs dépenses annuelles d'énergie sont elles aussi des
+   valeurs d'exemple.
+3. **Mentions À ACTUALISER.** Il en reste une seule, dans
+   `src/content/articles/dpe-f-et-g-vendre.md` : les ordres de grandeur de
+   travaux observés sur le secteur. Barème, prix au m² et guides sont en place.
+4. **Actualités vides.** Les quatre actualités restées vides sur l'ancien site
+   sont à écrire, leurs titres figurent dans `migration-rapport.txt`. Leurs
+   anciennes adresses renvoient vers `/panorama` en attendant.
+5. **Visuels.** Remplacer les images de remplacement de `public/images/` par les
    photographies définitives, au format webp.
-5. Vérifier le barème d'honoraires dans `src/data/site.ts`.
-6. Ajouter les retombées presse dans `/admin`, rubrique **Presse**.
-7. Relire les dix sept fiches reprises de l'ancien site, aujourd'hui en
-   `offMarket: true` donc hors des pages `/acheter` et d'accueil, puis passer à
-   `false` celles qui sont réellement à vendre. Les redirections 301 de l'ancien
-   site sont déjà dans `public/_redirects`.
-8. Rapatrier les photographies des fiches reprises : elles pointent encore vers
-   le serveur d'images de l'ancien back office et tomberont avec lui.
+6. **Presse.** Ajouter les retombées dans `/admin`, rubrique **Presse**.
+7. **Fiches reprises de l'ancien site.** Les dix sept fiches sont en
+   `offMarket: true`, donc hors des pages `/acheter` et d'accueil. Avant de
+   passer l'une d'elles à `false`, il faut sa classe énergie, sa classe climat
+   et ses dépenses annuelles d'énergie : `npm run verifier` refuse une annonce
+   diffusée sans ces mentions, obligatoires dans toute annonce de vente. Les
+   redirections 301 de l'ancien site sont déjà dans `public/_redirects`.
+8. **Photographies des fiches reprises.** Elles pointent encore vers le serveur
+   d'images de l'ancien back office et tomberont avec lui. À rapatrier dans
+   `public/images/biens/` avant toute résiliation.

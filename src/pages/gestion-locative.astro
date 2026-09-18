@@ -45,7 +45,7 @@ import { honoraires } from '../data/site';
       <div class="border-t border-[color:var(--color-encre)] pt-6">
         <h2 class="titre-3">Honoraires</h2>
         <ul class="mt-4 space-y-3 text-[color:var(--color-ardoise)]">
-          {honoraires.location.map((h) => (
+          {honoraires.gestion.map((h) => (
             <li>{h.tranche} : {h.taux}</li>
           ))}
         </ul>

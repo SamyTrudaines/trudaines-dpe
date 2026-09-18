@@ -10,7 +10,8 @@
     "check": "astro check",
     "fiches": "node scripts/generate-pdfs.mjs",
     "verifier": "node scripts/verifier.mjs",
-    "test-formulaires": "node scripts/test-formulaires.mjs"
+    "test-formulaires": "node scripts/test-formulaires.mjs",
+    "avis-google": "node scripts/importer-avis-google.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

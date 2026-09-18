@@ -50,18 +50,30 @@ export const site = {
   ga4: import.meta.env.PUBLIC_GA4_ID ?? '',
 } as const;
 
+/**
+ * Barème maximum affiché, au sens de l'arrêté du 26 janvier 2022 : le cabinet
+ * peut pratiquer moins, jamais plus. Prix toutes taxes comprises et charge du
+ * paiement indiquée pour chaque prestation, comme l'impose l'arrêté du
+ * 10 janvier 2017. Les fourchettes de prix ne sont pas admises : un taux par
+ * tranche, et un minimum forfaitaire quand il existe.
+ */
 export const honoraires = {
-  /** À ACTUALISER : barème affiché obligatoirement en vitrine et sur le site. */
   vente: [
-    { tranche: "Jusqu'à 300 000 €", taux: '5 % TTC du prix de vente', minimum: '9 000 € TTC' },
-    { tranche: 'De 300 001 € à 700 000 €', taux: '4 % TTC du prix de vente', minimum: null },
-    { tranche: 'De 700 001 € à 1 200 000 €', taux: '3,5 % TTC du prix de vente', minimum: null },
-    { tranche: 'Au-delà de 1 200 000 €', taux: '3 % TTC du prix de vente', minimum: null },
+    { tranche: "Jusqu'à 100 000 €", taux: '10 % TTC du prix de vente', minimum: '5 000 € TTC' },
+    { tranche: 'De 100 001 € à 300 000 €', taux: '7 % TTC du prix de vente', minimum: null },
+    { tranche: 'De 300 001 € à 700 000 €', taux: '6 % TTC du prix de vente', minimum: null },
+    { tranche: 'Au-delà de 700 000 €', taux: '5 % TTC du prix de vente', minimum: null },
   ],
-  chasse: [{ tranche: 'Mandat de recherche', taux: "3 % TTC du prix d'achat", minimum: '9 000 € TTC' }],
-  location: [
-    { tranche: 'Mise en location, part bailleur', taux: "1 mois de loyer hors charges TTC", minimum: null },
-    { tranche: 'Gestion locative', taux: '6,9 % TTC des sommes encaissées', minimum: null },
+  chasse: [
+    { tranche: "Jusqu'à 400 000 €", taux: "4 % TTC du prix d'achat", minimum: null },
+    { tranche: 'De 400 001 € à 800 000 €', taux: "3,70 % TTC du prix d'achat", minimum: null },
+    { tranche: 'De 800 001 € à 1 200 000 €', taux: "3,50 % TTC du prix d'achat", minimum: null },
+    { tranche: 'De 1 200 001 € à 1 600 000 €', taux: "3 % TTC du prix d'achat", minimum: null },
+    { tranche: 'De 1 600 001 € à 2 500 000 €', taux: "2,90 % TTC du prix d'achat", minimum: null },
+    { tranche: 'Au-delà de 2 500 000 €', taux: 'Sur demande, arrêté au mandat', minimum: null },
+  ],
+  gestion: [
+    { tranche: 'Gestion locative', taux: '10 % TTC du loyer hors taxes encaissé', minimum: null },
   ],
 } as const;
 
