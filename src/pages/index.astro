@@ -1,0 +1,182 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import CarteBien from '../components/CarteBien.astro';
+import CarteArticle from '../components/CarteArticle.astro';
+import Avis from '../components/Avis.astro';
+import { site } from '../data/site';
+import { secteurs } from '../data/secteurs';
+
+const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket))
+  .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
+  .slice(0, 3);
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const articles = (await getCollection('articles', (a) => !a.data.brouillon))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+const avis = (await getCollection('avis')).slice(0, 2);
+const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
+
+const engagements = [
+  {
+    titre: 'Un prix argumenté par écrit',
+    texte:
+      "Vous recevez un avis de valeur qui cite les ventes signées comparables, explique chaque ajustement et assume une fourchette. Pas un chiffre lancé au téléphone pour emporter le mandat.",
+  },
+  {
+    titre: 'Un compte rendu après chaque visite',
+    texte:
+      "Ce que l'acheteur a dit, ce qui l'a retenu, ce qui l'a fait reculer. Par écrit, le jour même, avec un point de synthèse chaque semaine.",
+  },
+  {
+    titre: 'Un seul interlocuteur',
+    texte:
+      "Samy Santamarina fait l'estimation, les visites, la négociation et le suivi jusqu'à la signature. Personne ne reprend votre dossier en cours de route.",
+  },
+];
+---
+<Layout
+  titre="Trudaines | Cabinet immobilier Paris 9e et Montmartre - Vente et estimation"
+  description="Cabinet de vente immobilière à Paris 9e nord, Montmartre et 10e. Estimation écrite sous 48 heures et compte rendu après chaque visite."
+>
+  <section class="section pt-12 md:pt-20">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div>
+        <p class="surtitre">Paris 9e nord · Montmartre · Paris 10e</p>
+        <h1 class="titre-1 mt-6">
+          Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
+        </h1>
+        <p class="chapo mt-8 max-w-xl">
+          Trudaines est un cabinet de vente immobilière installé au pied de la Butte. Nous travaillons un périmètre
+          restreint, rue par rue, avec les données des ventes réellement signées et le regard d'un professionnel qui
+          visite lui-même chaque bien.
+        </p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href="/estimation" class="bouton">Estimer mon bien</a>
+          <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
+        </div>
+        <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
+          Estimation gratuite et sans engagement. Réponse sous 24 heures ouvrées, au
+          <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
+        </p>
+      </div>
+      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
+        <img
+          src="/images/accueil-paris-9.svg"
+          alt="Façades haussmanniennes de l'avenue Trudaine, Paris 9e"
+          width="900"
+          height="1125"
+          fetchpriority="high"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="engagements">
+    <div class="conteneur">
+      <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
+      <div class="mt-14 grid gap-12 md:grid-cols-3">
+        {engagements.map((e) => (
+          <div class="border-t border-[color:var(--color-encre)] pt-6">
+            <h3 class="titre-3">{e.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+          </div>
+        ))}
+      </div>
+      <a href="/vendre" class="lien-souligne mt-12 inline-block text-sm">Les sept engagements de la méthode Trudaines</a>
+    </div>
+  </section>
+
+  {biens.length > 0 && (
+    <section class="section" aria-labelledby="biens-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="biens-accueil" class="titre-2">Biens à la vente</h2>
+          <a href="/acheter" class="lien-souligne text-sm">Voir tous les biens</a>
+        </div>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {biens.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section filet" aria-labelledby="territoire">
+    <div class="conteneur">
+      <h2 id="territoire" class="titre-2 max-w-2xl">Notre territoire</h2>
+      <p class="chapo mt-6 max-w-2xl">
+        Trois arrondissements qui se touchent, un seul bassin d'acheteurs. Nous refusons les mandats hors de ce
+        périmètre plutôt que de promettre une expertise que nous n'aurions pas.
+      </p>
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {secteurs.map((s) => (
+          <div class="border-t border-[color:var(--color-trait)] pt-6">
+            <h3 class="titre-3">{s.nom}</h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li><a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a></li>
+              <li><a href={s.hrefAgence} class="no-underline hover:underline">Agence immobilière {s.nom}</a></li>
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {quartiers.map((q) => (
+          <a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Avis avis={avis} />
+
+  {presse.length > 0 && (
+    <section class="section filet" aria-labelledby="presse-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="presse-accueil" class="titre-2">Ils parlent de nous</h2>
+          <a href="/presse" class="lien-souligne text-sm">Toutes les retombées</a>
+        </div>
+        <div class="mt-12 grid gap-10 md:grid-cols-4">
+          {presse.map((p) => (
+            <div>
+              <p class="surtitre">{p.data.media}</p>
+              <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{p.data.citation}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {articles.length > 0 && (
+    <section class="section" aria-labelledby="panorama-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="panorama-accueil" class="titre-2">Panorama</h2>
+          <a href="/panorama" class="lien-souligne text-sm">Tous les articles</a>
+        </div>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {articles.map((a) => (
+            <CarteArticle id={a.id} titre={a.data.titre} date={a.data.date} chapo={a.data.chapo} image={a.data.image} imageAlt={a.data.imageAlt} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env
+.env.*
+!.env.example
+.DS_Store
+npm-debug.log*
+
+# PDF générés à la construction
+public/fiches/*.pdf
+public/guides/*.pdf

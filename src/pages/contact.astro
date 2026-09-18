@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+import { site } from '../data/site';
+---
+<Layout
+  titre="Contact | Trudaines, cabinet immobilier Paris 9e et Montmartre"
+  description="Contacter Trudaines : 2 rue Livingstone, Paris 18e. Téléphone, email et formulaire. Réponse sous 24 heures ouvrées."
+  filAriane={[{ nom: 'Contact' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div>
+        <p class="surtitre">Contact</p>
+        <h1 class="titre-1 mt-6">Parlons de votre projet</h1>
+        <p class="chapo mt-8">
+          Un appel de quinze minutes suffit souvent à y voir clair. Nous répondons sous 24 heures ouvrées, y compris
+          aux demandes qui ne débouchent pas sur un mandat.
+        </p>
+        <dl class="mt-12 space-y-8">
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Adresse</dt>
+            <dd class="mt-2">{site.adresse.rue}<br />{site.adresse.codePostal} {site.adresse.ville}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Téléphone</dt>
+            <dd class="mt-2"><a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a></dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Email</dt>
+            <dd class="mt-2"><a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a></dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">WhatsApp</dt>
+            <dd class="mt-2"><a href={site.whatsapp} data-evt="clic_whatsapp" rel="noopener" target="_blank" class="lien-souligne">Écrire sur WhatsApp</a></dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Horaires</dt>
+            <dd class="mt-2">{site.horairesTexte}</dd>
+          </div>
+        </dl>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</Layout>

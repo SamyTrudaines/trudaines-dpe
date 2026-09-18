@@ -1,0 +1,43 @@
+---
+---
+<div
+  id="bandeau-cookies"
+  hidden
+  role="dialog"
+  aria-live="polite"
+  aria-label="Gestion des cookies"
+  class="fixed bottom-[4.5rem] left-0 right-0 z-50 border-y border-[color:var(--color-trait)] bg-white md:bottom-6 md:left-6 md:right-auto md:max-w-md md:border"
+>
+  <div class="p-6">
+    <p class="text-sm text-[color:var(--color-encre)]">
+      Nous utilisons une mesure d'audience anonyme pour comprendre ce qui est utile sur ce site. Aucun cookie publicitaire.
+      Vous pouvez refuser sans conséquence sur votre navigation.
+    </p>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <button type="button" class="bouton" data-cookies="accepte">Accepter</button>
+      <button type="button" class="bouton bouton-secondaire" data-cookies="refuse">Refuser</button>
+      <a href="/politique-de-confidentialite" class="self-center text-xs lien-souligne">En savoir plus</a>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var cle = 'trudaines-consentement';
+    var bandeau = document.getElementById('bandeau-cookies');
+    if (!bandeau) return;
+    var choix = null;
+    try { choix = localStorage.getItem(cle); } catch (e) {}
+    if (!choix) bandeau.hidden = false;
+    bandeau.addEventListener('click', function (evt) {
+      var cible = evt.target.closest('[data-cookies]');
+      if (!cible) return;
+      var valeur = cible.getAttribute('data-cookies');
+      try { localStorage.setItem(cle, valeur); } catch (e) {}
+      if (valeur === 'accepte' && typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+      bandeau.hidden = true;
+    });
+  })();
+</script>

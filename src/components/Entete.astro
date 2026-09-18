@@ -1,0 +1,87 @@
+---
+import Logo from './Logo.astro';
+import { navigationPrincipale, site } from '../data/site';
+const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">
+  Aller au contenu
+</a>
+<header class="sticky top-0 z-40 border-b border-[color:var(--color-trait)] bg-white/95 backdrop-blur">
+  <div class="conteneur-large flex items-center justify-between gap-4 py-4 2xl:gap-8">
+    <a href="/" class="no-underline">
+      <Logo />
+    </a>
+
+    <nav aria-label="Navigation principale" class="hidden xl:block">
+      <ul class="flex items-center gap-4 2xl:gap-7">
+        {navigationPrincipale.map((lien) => (
+          <li>
+            <a
+              href={lien.href}
+              aria-current={chemin === lien.href ? 'page' : undefined}
+              class={`whitespace-nowrap text-[0.6875rem] font-medium uppercase tracking-[0.08em] no-underline transition-colors xl:text-[0.75rem] ${
+                chemin.startsWith(lien.href) && lien.href !== '/'
+                  ? 'text-[color:var(--color-nuit)]'
+                  : 'text-[color:var(--color-encre)] hover:text-[color:var(--color-nuit)]'
+              }`}
+            >
+              {lien.libelle}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="hidden items-center gap-4 xl:flex 2xl:gap-6">
+      <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="hidden whitespace-nowrap text-sm font-medium no-underline text-[color:var(--color-encre)] hover:text-[color:var(--color-nuit)] 2xl:block">
+        {site.telephone}
+      </a>
+      <a href="/estimation" class="bouton whitespace-nowrap px-5 2xl:px-7">Estimer mon bien</a>
+    </div>
+
+    <button
+      type="button"
+      class="xl:hidden inline-flex h-12 w-12 items-center justify-center border border-[color:var(--color-trait)]"
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+      aria-label="Ouvrir le menu"
+      data-menu-bouton
+    >
+      <span aria-hidden="true" class="flex w-6 flex-col gap-[5px]">
+        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
+        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
+        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
+      </span>
+    </button>
+  </div>
+
+  <div id="menu-mobile" hidden class="border-t border-[color:var(--color-trait)] bg-white xl:hidden">
+    <nav aria-label="Navigation mobile" class="conteneur-large py-6">
+      <ul class="space-y-1">
+        {navigationPrincipale.map((lien) => (
+          <li>
+            <a href={lien.href} class="block py-3 text-base no-underline text-[color:var(--color-encre)]">{lien.libelle}</a>
+          </li>
+        ))}
+        <li><a href="/panorama" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Panorama</a></li>
+        <li><a href="/nous-rejoindre" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Nous rejoindre</a></li>
+        <li><a href="/honoraires" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Honoraires</a></li>
+      </ul>
+      <a href="/estimation" class="bouton mt-6 w-full">Estimer mon bien</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var bouton = document.querySelector('[data-menu-bouton]');
+    var menu = document.getElementById('menu-mobile');
+    if (!bouton || !menu) return;
+    bouton.addEventListener('click', function () {
+      var ouvert = bouton.getAttribute('aria-expanded') === 'true';
+      bouton.setAttribute('aria-expanded', String(!ouvert));
+      bouton.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
+      menu.hidden = ouvert;
+    });
+  })();
+</script>

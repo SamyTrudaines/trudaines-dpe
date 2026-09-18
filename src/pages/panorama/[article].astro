@@ -1,0 +1,99 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CarteArticle from '../../components/CarteArticle.astro';
+import { dateFr, dateIso } from '../../lib/format';
+import { site } from '../../data/site';
+
+interface Props { article: CollectionEntry<'articles'> }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await getCollection('articles', (a) => !a.data.brouillon);
+  return articles.map((a) => ({ params: { article: a.id }, props: { article: a } }));
+};
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const autres = (await getCollection('articles', (a) => !a.data.brouillon && a.id !== article.id))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.data.titre,
+    description: article.data.chapo,
+    datePublished: dateIso(article.data.date),
+    dateModified: dateIso(article.data.dateMaj ?? article.data.date),
+    author: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
+    publisher: { '@id': `${site.url}/#cabinet` },
+    mainEntityOfPage: `${site.url}/panorama/${article.id}`,
+    ...(article.data.image ? { image: new URL(article.data.image, site.url).href } : {}),
+    keywords: article.data.motsCles.join(', '),
+  },
+];
+---
+<Layout
+  titre={`${article.data.titre} | Panorama Trudaines`}
+  description={article.data.chapo}
+  image={article.data.image}
+  type="article"
+  filAriane={[{ nom: 'Panorama', href: '/panorama' }, { nom: article.data.titre }]}
+  donnees={donnees}
+>
+  <article>
+    <header class="section pb-0 pt-10">
+      <div class="conteneur-texte">
+        <p class="surtitre">{dateFr(article.data.date)}</p>
+        <h1 class="titre-1 mt-6">{article.data.titre}</h1>
+        <p class="chapo mt-8">{article.data.chapo}</p>
+      </div>
+      {article.data.image && (
+        <div class="conteneur mt-12">
+          <img
+            src={article.data.image}
+            alt={article.data.imageAlt}
+            width="1400"
+            height="800"
+            fetchpriority="high"
+            decoding="async"
+            class="aspect-[16/9] w-full object-cover"
+          />
+        </div>
+      )}
+    </header>
+
+    <div class="section">
+      <div class="conteneur-texte prose-trudaines">
+        <Content />
+      </div>
+      <div class="conteneur-texte mt-16 border-t border-[color:var(--color-trait)] pt-8">
+        <p class="text-sm text-[color:var(--color-ardoise)]">
+          Article rédigé par Samy Santamarina, fondateur de Trudaines.
+          <a href="/estimation" class="lien-souligne">Faire estimer mon bien</a>.
+        </p>
+        {article.data.motsCles.length > 0 && (
+          <p class="mt-4 text-xs uppercase tracking-[0.12em] text-[color:var(--color-ardoise)]">
+            {article.data.motsCles.join(' · ')}
+          </p>
+        )}
+      </div>
+    </div>
+  </article>
+
+  {autres.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">À lire également</h2>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {autres.map((a) => (
+            <CarteArticle id={a.id} titre={a.data.titre} date={a.data.date} chapo={a.data.chapo} image={a.data.image} imageAlt={a.data.imageAlt} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

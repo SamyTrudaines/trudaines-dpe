@@ -1,0 +1,116 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+
+const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Samy Santamarina',
+    jobTitle: 'Président fondateur',
+    worksFor: { '@id': `${site.url}/#cabinet` },
+    url: `${site.url}/samy-santamarina`,
+    image: `${site.url}/images/samy-santamarina.svg`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.adresse.rue,
+      postalCode: site.adresse.codePostal,
+      addressLocality: site.adresse.ville,
+      addressCountry: 'FR',
+    },
+    email: site.email,
+    telephone: site.telephoneLien,
+    sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
+    knowsAbout: ['Vente immobilière', 'Estimation immobilière', 'Paris 9e', 'Montmartre'],
+  },
+];
+---
+<Layout
+  titre="Samy Santamarina | Fondateur de Trudaines, cabinet immobilier Paris 9e"
+  description="Samy Santamarina, président fondateur de Trudaines. Vente immobilière à Paris 9e nord, Montmartre et 10e. Carte professionnelle CPI 9201 2024 000 000 114."
+  filAriane={[{ nom: 'Samy Santamarina' }]}
+  donnees={donnees}
+>
+  <section class="section pt-10">
+    <div class="conteneur grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
+        <img
+          src="/images/samy-santamarina.svg"
+          alt="Samy Santamarina, fondateur du cabinet Trudaines"
+          width="900"
+          height="1125"
+          fetchpriority="high"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
+      <div>
+        <p class="surtitre">Fondateur</p>
+        <h1 class="titre-1 mt-6">Samy Santamarina</h1>
+        <p class="chapo mt-8">
+          J'ai fondé Trudaines en septembre 2024, après avoir constaté que les vendeurs parisiens recevaient beaucoup
+          de promesses et peu de documents. Mon métier consiste à estimer juste, à préparer un bien sérieusement, et
+          à rendre compte de ce que je fais, semaine après semaine.
+        </p>
+        <div class="mt-10 space-y-6 text-[color:var(--color-ardoise)]">
+          <p>
+            Je visite moi-même chaque bien que je prends en mandat. Je conduis les visites, je mène les négociations
+            et je suis le dossier jusqu'à l'acte. Cela limite mécaniquement le nombre de ventes que je peux traiter
+            en parallèle, et c'est un choix assumé.
+          </p>
+          <p>
+            Le cabinet s'appuie sur la donnée publique des transactions, sur des outils d'analyse que nous
+            développons en interne, et sur une connaissance de terrain limitée à trois arrondissements. Je préfère
+            dire non à un mandat lointain plutôt que de découvrir un marché en même temps que mon client.
+          </p>
+        </div>
+        <dl class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Carte professionnelle</dt>
+            <dd class="mt-2 text-sm">{site.legal.carteT}, CCI Paris Île-de-France, {site.legal.carteTDate}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Garantie financière</dt>
+            <dd class="mt-2 text-sm">{site.legal.garantie}, {site.legal.garantieMontant}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Territoire</dt>
+            <dd class="mt-2 text-sm">Paris 9e nord, Montmartre et 18e sud, Paris 10e nord</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Contact direct</dt>
+            <dd class="mt-2 text-sm">
+              <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a><br />
+              <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  {presse.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">Citations et interventions</h2>
+        <div class="mt-12 grid gap-10 md:grid-cols-2">
+          {presse.slice(0, 4).map((p) => (
+            <figure class="border-t border-[color:var(--color-trait)] pt-6">
+              <blockquote class="font-[family-name:var(--font-titre)] text-lg">{p.data.citation}</blockquote>
+              <figcaption class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+                {p.data.media}
+                {p.data.lien && (
+                  <> · <a href={p.data.lien} rel="noopener" target="_blank" class="lien-souligne">Lire</a></>
+                )}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="mt-10 text-sm"><a href="/presse" class="lien-souligne">Toutes les retombées presse</a></p>
+      </div>
+    </section>
+  )}
+</Layout>

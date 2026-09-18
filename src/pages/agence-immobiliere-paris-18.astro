@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from '../components/BlocAgence.astro';
+import Avis from '../components/Avis.astro';
+import { getSecteur } from '../data/secteurs';
+
+const secteur = getSecteur('paris-18')!;
+const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id));
+const avis = (await getCollection('avis')).slice(0, 2);
+
+const services = [
+  { titre: 'Vente et mandat', texte: "Un seul interlocuteur du premier rendez-vous à la signature, avec un compte rendu après chaque visite.", href: '/vendre' },
+  { titre: 'Estimation', texte: "Estimation appartement Paris 18e fondée sur les ventes signées de votre rue, pas sur une moyenne d'arrondissement.", href: '/estimation/paris-18' },
+  { titre: 'Gestion locative', texte: "Pour les propriétaires bailleurs du secteur qui veulent déléguer sans perdre la main sur les décisions.", href: '/gestion-locative' },
+];
+---
+<Layout
+  titre={secteur.titreAgence}
+  description={secteur.descriptionAgence}
+  filAriane={[{ nom: 'Agence immobilière Paris 18e' }]}
+>
+  <BlocAgence
+    h1="Agence immobilière à Paris 18e, au 2 rue Livingstone"
+    intro={secteur.introAgence}
+    secteurNom="le 18e arrondissement"
+    hrefEstimation="/estimation/paris-18"
+    quartiers={quartiers}
+    services={services}
+  />
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Le 18e ne se résume pas à Montmartre</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Entre la Butte, les Abbesses, Lamarck Caulaincourt et le bas de l'arrondissement, les niveaux de prix, les
+        typologies d'immeubles et les profils d'acheteurs changent radicalement. Nous suivons ces écarts rue par rue
+        et nous les documentons dans chaque avis de valeur.
+      </p>
+      <p class="mt-8">
+        <a href="/agence-immobiliere-montmartre" class="lien-souligne">Voir notre page dédiée à Montmartre</a>
+      </p>
+    </div>
+  </section>
+  <Avis avis={avis} />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { avis: CollectionEntry<'avis'>[]; titre?: string; }
+const { avis, titre = 'Ils nous ont confié leur vente' } = Astro.props;
+---
+{avis.length > 0 && (
+  <section class="section" aria-labelledby="avis-clients">
+    <div class="conteneur">
+      <h2 id="avis-clients" class="titre-2">{titre}</h2>
+      <div class="mt-12 grid gap-12 md:grid-cols-2">
+        {avis.map((a) => (
+          <figure class="border-t border-[color:var(--color-trait)] pt-8">
+            <blockquote class="font-[family-name:var(--font-titre)] text-lg leading-relaxed">
+              {a.data.texte}
+            </blockquote>
+            <figcaption class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+              {a.data.auteur}, {a.data.quartier} · {a.data.typeProjet}
+              {a.data.exemple && <span class="ml-2 uppercase tracking-[0.16em]">À ACTUALISER</span>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

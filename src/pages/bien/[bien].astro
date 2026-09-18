@@ -1,0 +1,208 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FormulaireVisite from '../../components/FormulaireVisite.astro';
+import FormulaireFiche from '../../components/FormulaireFiche.astro';
+import CarteBien from '../../components/CarteBien.astro';
+import { prix, nombre, prixM2, libelleStatut } from '../../lib/format';
+import { site } from '../../data/site';
+
+interface Props { bien: CollectionEntry<'biens'> }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const biens = await getCollection('biens');
+  return biens.map((b) => ({ params: { bien: b.id }, props: { bien: b } }));
+};
+
+const { bien } = Astro.props;
+const { Content } = await render(bien);
+const d = bien.data;
+
+const similaires = (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket)).slice(0, 3);
+const echelle = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: d.titre,
+    sku: d.reference,
+    description: d.description,
+    image: d.photos.map((p: { src: string }) => new URL(p.src, site.url).href),
+    brand: { '@id': `${site.url}/#cabinet` },
+    offers: {
+      '@type': 'Offer',
+      price: d.prix,
+      priceCurrency: 'EUR',
+      availability: d.statut === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
+      url: `${site.url}/bien/${bien.id}`,
+      seller: { '@id': `${site.url}/#cabinet` },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Residence',
+    name: d.titre,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Paris',
+      postalCode: d.arrondissement,
+      addressCountry: 'FR',
+    },
+    numberOfRooms: d.pieces,
+    floorSize: { '@type': 'QuantitativeValue', value: d.surface, unitCode: 'MTK' },
+  },
+];
+---
+<Layout
+  titre={`${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
+  description={`${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, Paris ${d.arrondissement}. ${prix(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
+  image={d.photos[0]?.src}
+  filAriane={[{ nom: 'Acheter', href: '/acheter' }, { nom: d.titre }]}
+  donnees={donnees}
+>
+  <section class="section pt-10">
+    <div class="conteneur grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+      <div>
+        <p class="surtitre">{d.quartier} · Paris {d.arrondissement} · Réf. {d.reference}</p>
+        <h1 class="titre-1 mt-5">{d.titre}</h1>
+        <p class="mt-6 text-2xl font-semibold text-[color:var(--color-nuit)]">
+          {prix(d.prix)}
+          {d.statut !== 'a-vendre' && (
+            <span class="ml-4 align-middle text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ardoise)]">
+              {libelleStatut[d.statut]}
+            </span>
+          )}
+        </p>
+        <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
+          Soit {prixM2(d.prix, d.surface)} le m². Honoraires à la charge du {d.honorairesCharge}
+          {d.honorairesTaux ? `, ${d.honorairesTaux}` : ''}.
+        </p>
+
+        {d.photos.length > 0 ? (
+          <div class="mt-10 grid gap-4">
+            <img
+              src={d.photos[0].src}
+              alt={d.photos[0].alt}
+              width="1200"
+              height="800"
+              fetchpriority="high"
+              decoding="async"
+              class="aspect-[3/2] w-full object-cover"
+            />
+            {d.photos.length > 1 && (
+              <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+                {d.photos.slice(1).map((p) => (
+                  <img src={p.src} alt={p.alt} width="600" height="400" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover" />
+                ))}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div class="mt-10 flex aspect-[3/2] items-center justify-center bg-[color:var(--color-papier)] text-xs uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
+            Photographies en cours de préparation
+          </div>
+        )}
+
+        {d.visiteVirtuelle && (
+          <p class="mt-6">
+            <a href={d.visiteVirtuelle} target="_blank" rel="noopener" class="lien-souligne">Ouvrir la visite virtuelle</a>
+          </p>
+        )}
+      </div>
+
+      <div class="lg:sticky lg:top-28">
+        <FormulaireVisite reference={d.reference} titreBien={d.titre} />
+        <div class="mt-6">
+          <FormulaireFiche reference={d.reference} titreBien={d.titre} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1.15fr_0.85fr]">
+      <div class="prose-trudaines max-w-none">
+        <h2 class="titre-2">Le bien</h2>
+        <p class="chapo mt-6">{d.description}</p>
+        <Content />
+      </div>
+
+      <div>
+        <h2 class="titre-3">Caractéristiques</h2>
+        <dl class="mt-6 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)] text-sm">
+          <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Surface Carrez</dt><dd>{nombre(d.surface)} m²</dd></div>
+          <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Pièces</dt><dd>{d.pieces}</dd></div>
+          <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Chambres</dt><dd>{d.chambres}</dd></div>
+          <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Étage</dt><dd>{d.etage}</dd></div>
+          <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Ascenseur</dt><dd>{d.ascenseur ? 'Oui' : 'Non'}</dd></div>
+          {d.charges !== undefined && (
+            <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Charges annuelles</dt><dd>{prix(d.charges)}</dd></div>
+          )}
+          {d.taxeFonciere !== undefined && (
+            <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Taxe foncière</dt><dd>{prix(d.taxeFonciere)}</dd></div>
+          )}
+          {d.lotsCopropriete !== undefined && (
+            <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Lots dans la copropriété</dt><dd>{d.lotsCopropriete}</dd></div>
+          )}
+          <div class="flex justify-between gap-6 py-3">
+            <dt class="text-[color:var(--color-ardoise)]">Procédure en cours</dt>
+            <dd>{d.procedureCopropriete ? 'Oui' : 'Non'}</dd>
+          </div>
+        </dl>
+
+        <h2 class="titre-3 mt-12">Diagnostic de performance énergétique</h2>
+        <div class="mt-6 flex flex-wrap gap-2" role="img" aria-label={`Classe énergie ${d.dpe}`}>
+          {echelle.map((lettre) => (
+            <span
+              class={`flex h-10 w-10 items-center justify-center border text-sm font-semibold ${
+                lettre === d.dpe
+                  ? 'border-[color:var(--color-nuit)] bg-[color:var(--color-nuit)] text-white'
+                  : 'border-[color:var(--color-trait)] text-[color:var(--color-ardoise)]'
+              }`}
+            >
+              {lettre}
+            </span>
+          ))}
+        </div>
+        <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+          Classe énergie {d.dpe}, classe climat {d.ges}.
+          {['F', 'G'].includes(d.dpe) &&
+            " Ce bien est concerné par le calendrier de rénovation énergétique. Nous chiffrons les travaux avec vous avant toute offre."}
+        </p>
+        <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+          Montant estimé des dépenses annuelles d'énergie : à compléter à partir du DPE.
+        </p>
+
+        <p class="mt-10 text-xs text-[color:var(--color-ardoise)]">
+          Bien présenté par {site.nomLong}, carte professionnelle {site.legal.carteT}. Les informations sont
+          communiquées sous réserve d'erreur ou d'omission et ne constituent pas un document contractuel.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {similaires.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">Autres biens du cabinet</h2>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {similaires.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

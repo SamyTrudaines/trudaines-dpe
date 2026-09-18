@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import FormulaireGuide from '../components/FormulaireGuide.astro';
+
+const guides = await getCollection('guides');
+---
+<Layout
+  titre="Guides et livres blancs immobiliers | Trudaines"
+  description="Guide des prix 2026 du 9e nord et Bien vendre à Paris en 2026 : deux documents à recevoir par email, rédigés par le cabinet Trudaines."
+  filAriane={[{ nom: 'Guides' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Guides</p>
+      <h1 class="titre-1 mt-6">Deux documents pour décider sans se presser</h1>
+      <p class="chapo mt-8">
+        Ils sont écrits pour des propriétaires qui veulent comprendre le marché avant d'appeler qui que ce soit.
+        Vous les recevez par email, sans relance automatique derrière.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur grid gap-16 lg:grid-cols-2">
+      {guides.map((g) => (
+        <article class="border-t border-[color:var(--color-encre)] pt-8">
+          <h2 class="titre-2">{g.data.titre}</h2>
+          <p class="chapo mt-6">{g.data.chapo}</p>
+          {g.data.sommaire.length > 0 && (
+            <ul class="mt-8 space-y-3 text-sm text-[color:var(--color-ardoise)]">
+              {g.data.sommaire.map((s) => (
+                <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> {s}</li>
+              ))}
+            </ul>
+          )}
+          <p class="mt-6 text-xs uppercase tracking-[0.12em] text-[color:var(--color-ardoise)]">
+            {g.data.pages > 0 ? `${g.data.pages} pages · PDF` : 'PDF'}
+          </p>
+          <div class="mt-8">
+            {g.data.disponible ? (
+              <FormulaireGuide guide={g.data.slug} titreGuide={g.data.titre} identifiant={g.data.slug} />
+            ) : (
+              <p class="border border-[color:var(--color-trait)] p-6 text-sm text-[color:var(--color-ardoise)]">
+                Ce guide est en cours de rédaction. Écrivez-nous pour être prévenu de sa parution.
+              </p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

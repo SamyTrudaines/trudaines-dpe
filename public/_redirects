@@ -1,0 +1,70 @@
+# Redirections 301 de l'ancien site vers la nouvelle arborescence.
+# Format Cloudflare Pages : source destination code.
+# La canonicalisation https et www se règle dans le tableau de bord Cloudflare,
+# voir DEPLOIEMENT.md, section « Règles de redirection ».
+
+# --- Anciennes annonces -----------------------------------------------------
+/vente/:slug                    /bien/:slug             301
+/vente                          /acheter                301
+/vente/*                        /acheter                301
+/nos-biens/:slug                /bien/:slug             301
+/nos-biens                      /acheter                301
+/biens/:slug                    /bien/:slug             301
+/biens                          /acheter                301
+/annonces/*                     /acheter                301
+
+# --- Ancien blog ------------------------------------------------------------
+/nos-actualites/:slug           /panorama/:slug         301
+/nos-actualites                 /panorama               301
+/nos-actualites/*               /panorama               301
+/actualites/:slug               /panorama/:slug         301
+/actualites                     /panorama               301
+/blog/:slug                     /panorama/:slug         301
+/blog                           /panorama               301
+
+# --- Anciennes pages fixes --------------------------------------------------
+/estimer                        /estimation             301
+/estimation-immobiliere         /estimation             301
+/estimation-en-ligne            /estimation             301
+/vendre-son-bien                /vendre                 301
+/vendre-mon-bien                /vendre                 301
+/acheter-un-bien                /acheter                301
+/chasse-immobiliere             /chasse                 301
+/gestion                        /gestion-locative       301
+/gestion-de-patrimoine          /gestion-locative       301
+/qui-sommes-nous                /trudaines              301
+/a-propos                       /trudaines              301
+/notre-agence                   /trudaines              301
+/agence                         /trudaines              301
+/equipe                         /samy-santamarina       301
+/notre-equipe                   /samy-santamarina       301
+/fondateur                      /samy-santamarina       301
+/nos-honoraires                 /honoraires             301
+/bareme-honoraires              /honoraires             301
+/recrutement                    /nous-rejoindre         301
+/rejoindre                      /nous-rejoindre         301
+/carriere                       /nous-rejoindre         301
+/nous-contacter                 /contact                301
+/contactez-nous                 /contact                301
+/mentions                       /mentions-legales       301
+/confidentialite                /politique-de-confidentialite 301
+/rgpd                           /politique-de-confidentialite 301
+/presse-medias                  /presse                 301
+/telechargements                /guides                 301
+/livres-blancs                  /guides                 301
+
+# --- Anciens secteurs -------------------------------------------------------
+/immobilier-paris-9             /agence-immobiliere-paris-9    301
+/immobilier-paris-18            /agence-immobiliere-paris-18   301
+/immobilier-montmartre          /agence-immobiliere-montmartre 301
+/paris-9                        /agence-immobiliere-paris-9    301
+/paris-18                       /agence-immobiliere-paris-18   301
+/montmartre                     /agence-immobiliere-montmartre 301
+/quartier/:slug                 /quartiers/:slug        301
+/quartier                       /quartiers              301
+/ile-de-france                  /                       301
+
+# --- À COMPLÉTER ------------------------------------------------------------
+# Ajouter ici les URLs de l'ancien site qui ne rentrent pas dans les motifs
+# ci-dessus, une ligne par URL, en conservant le code 301.
+# Exemple : /vente/appar-3-pieces-trudaine   /bien/trois-pieces-avenue-trudaine   301

@@ -1,0 +1,63 @@
+---
+---
+<form
+  class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
+  method="POST"
+  action="/api/contact"
+  data-trudaines
+  data-evenement="contact_envoye"
+>
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for="societe-contact">Ne pas remplir</label>
+    <input type="text" id="societe-contact" name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="contact-prenom">Prénom</label>
+        <input class="champ" id="contact-prenom" name="prenom" type="text" autocomplete="given-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-nom">Nom</label>
+        <input class="champ" id="contact-nom" name="nom" type="text" autocomplete="family-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-email">Email</label>
+        <input class="champ" id="contact-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div>
+        <label class="etiquette" for="contact-telephone">Téléphone</label>
+        <input class="champ" id="contact-telephone" name="telephone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="contact-sujet">Votre projet</label>
+      <select class="champ" id="contact-sujet" name="sujet" required>
+        <option value="Vendre">Vendre un bien</option>
+        <option value="Estimer">Faire estimer un bien</option>
+        <option value="Acheter">Acheter ou faire rechercher un bien</option>
+        <option value="Louer">Louer ou confier en gestion</option>
+        <option value="Rejoindre">Rejoindre le cabinet</option>
+        <option value="Autre">Autre sujet</option>
+      </select>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="contact-message">Message</label>
+      <textarea class="champ" id="contact-message" name="message" rows="5" required></textarea>
+    </div>
+    <div class="mt-6 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="contact-consentement" name="consentement" type="checkbox" required value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for="contact-consentement">
+        J'accepte d'être recontacté au sujet de ma demande.
+        <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-8">Envoyer ma demande</button>
+    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <div data-confirmation hidden class="py-2">
+    <h2 class="titre-3">Message reçu</h2>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">Nous vous répondons sous 24 heures ouvrées.</p>
+  </div>
+</form>

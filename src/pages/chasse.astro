@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+
+const etapes = [
+  { titre: 'Le cahier des charges', texte: "Une heure de travail ensemble pour écrire ce que vous cherchez vraiment : usage, contraintes de vie, budget global travaux compris, critères négociables et critères qui ne le sont pas." },
+  { titre: 'La recherche active', texte: "Veille sur les biens diffusés, appels aux confrères du secteur, approche directe de propriétaires et accès aux biens présentés avant diffusion publique." },
+  { titre: 'Le tri et la visite', texte: "Nous visitons avant vous et nous écartons. Vous ne vous déplacez que pour des biens qui passent nos critères, avec un compte rendu écrit et des photographies honnêtes." },
+  { titre: "L'offre et la négociation", texte: "Analyse du prix au regard des ventes signées, stratégie d'offre, négociation menée par nous, puis suivi jusqu'à l'acte avec le notaire." },
+];
+---
+<Layout
+  titre="Chasse immobilière Paris 9e et 18e | Mandat de recherche - Trudaines"
+  description="Mandat de recherche à Paris 9e, 18e et 10e : cahier des charges, accès aux biens avant diffusion, visites filtrées, négociation menée par le cabinet Trudaines."
+  filAriane={[{ nom: 'Chasse immobilière' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Chasse immobilière</p>
+      <h1 class="titre-1 mt-6">Chercher à votre place, sur un territoire que nous connaissons</h1>
+      <p class="chapo mt-8">
+        Le mandat de recherche s'adresse aux acquéreurs qui manquent de temps, qui habitent loin, ou qui ont déjà
+        perdu deux biens faute d'avoir été prévenus assez tôt. Nous ne cherchons que sur nos trois arrondissements :
+        c'est la condition pour être utile.
+      </p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a href="#demande" class="bouton">Confier une recherche</a>
+        <a href="/acheter" class="bouton bouton-secondaire">Voir les biens disponibles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Comment cela se passe</h2>
+      <ol class="mt-14 grid gap-12 md:grid-cols-2">
+        {etapes.map((e, i) => (
+          <li class="border-t border-[color:var(--color-encre)] pt-6">
+            <p class="surtitre">Étape {i + 1}</p>
+            <h3 class="titre-3 mt-3">{e.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-12 text-sm text-[color:var(--color-ardoise)]">
+        Honoraires de recherche détaillés sur la <a href="/honoraires" class="lien-souligne">page honoraires</a>.
+        Ils ne sont dus qu'en cas d'acquisition effective.
+      </p>
+    </div>
+  </section>
+
+  <section id="demande" class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Décrivez votre recherche</h2>
+        <p class="chapo mt-6">
+          Quelques lignes suffisent pour commencer. Nous vous rappelons sous 24 heures ouvrées pour préciser le
+          cahier des charges et vous dire honnêtement si votre budget correspond au marché actuel.
+        </p>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,93 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import TableauPrix from '../../components/TableauPrix.astro';
+import Faq from '../../components/Faq.astro';
+import Avis from '../../components/Avis.astro';
+import { secteurs, type Secteur } from '../../data/secteurs';
+
+interface Props { secteur: Secteur }
+
+export const getStaticPaths: GetStaticPaths = () =>
+  secteurs.map((s) => ({ params: { secteur: s.slug }, props: { secteur: s } }));
+
+const { secteur } = Astro.props;
+const tousQuartiers = await getCollection('quartiers');
+const quartiers = tousQuartiers
+  .filter((q) => secteur.quartiers.includes(q.id))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+const avisSecteur = (await getCollection('avis')).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug).slice(0, 2);
+const autresSecteurs = secteurs.filter((s) => s.slug !== secteur.slug);
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: secteur.faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Estimation immobilière ${secteur.nom}`,
+    serviceType: 'Estimation immobilière',
+    provider: { '@id': 'https://www.trudaines.com/#cabinet' },
+    areaServed: { '@type': 'AdministrativeArea', name: secteur.nomLong },
+  },
+];
+---
+<Layout
+  titre={secteur.titre}
+  description={secteur.description}
+  filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
+  donnees={donnees}
+>
+  <section class="section pt-10">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <p class="surtitre">Estimation · {secteur.arrondissement}</p>
+        <h1 class="titre-1 mt-6">Estimation immobilière {secteur.nom}</h1>
+        <p class="chapo mt-8">{secteur.intro}</p>
+        <div class="mt-10 border-t border-[color:var(--color-encre)] pt-6">
+          <p class="surtitre">Niveau de prix constaté</p>
+          <p class="mt-3 text-lg">{secteur.prixMoyen}</p>
+          <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">{secteur.fourchette}</p>
+        </div>
+        <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
+          Estimation appartement {secteur.nom}, estimation maison et immeuble, vente maison {secteur.nom} :
+          la méthode est la même, seule la base de comparaison change.
+        </p>
+      </div>
+      <FormulaireEstimation secteur={secteur.slug} identifiant={`estimation-${secteur.slug}`} />
+    </div>
+  </section>
+
+  {quartiers.length > 0 && <TableauPrix quartiers={quartiers} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />}
+
+  <Faq questions={secteur.faq} titre={`Questions des vendeurs du ${secteur.nom.replace('Paris ', '')}`} />
+
+  <Avis avis={avisSecteur} titre="Deux ventes récentes racontées par leurs propriétaires" />
+
+  <section class="section filet" aria-labelledby="ailleurs">
+    <div class="conteneur">
+      <h2 id="ailleurs" class="titre-2">Continuer</h2>
+      <div class="mt-10 grid gap-8 md:grid-cols-3">
+        <a href={secteur.hrefAgence} class="border-t border-[color:var(--color-trait)] pt-6 no-underline">
+          <span class="titre-3 block">Agence immobilière {secteur.nom}</span>
+          <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Qui nous sommes sur ce secteur</span>
+        </a>
+        {autresSecteurs.map((s) => (
+          <a href={`/estimation/${s.slug}`} class="border-t border-[color:var(--color-trait)] pt-6 no-underline">
+            <span class="titre-3 block">Estimation {s.nom}</span>
+            <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">{s.fourchette}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

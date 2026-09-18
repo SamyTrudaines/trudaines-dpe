@@ -1,0 +1,62 @@
+---
+interface Props { reference: string; titreBien: string; }
+const { reference, titreBien } = Astro.props;
+---
+<form
+  id="demande-visite"
+  class="border border-[color:var(--color-trait)] bg-white p-6"
+  method="POST"
+  action="/api/visite"
+  data-trudaines
+  data-evenement="visite_demandee"
+>
+  <input type="hidden" name="reference" value={reference} />
+  <input type="hidden" name="bien" value={titreBien} />
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for="societe-visite">Ne pas remplir</label>
+    <input type="text" id="societe-visite" name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div data-corps>
+    <h2 class="titre-3">Demander une visite</h2>
+    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">Réponse le jour même, créneaux en semaine et le samedi.</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="visite-prenom">Prénom</label>
+        <input class="champ" id="visite-prenom" name="prenom" type="text" autocomplete="given-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-nom">Nom</label>
+        <input class="champ" id="visite-nom" name="nom" type="text" autocomplete="family-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-email">Email</label>
+        <input class="champ" id="visite-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div>
+        <label class="etiquette" for="visite-telephone">Téléphone</label>
+        <input class="champ" id="visite-telephone" name="telephone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+    <div class="mt-4">
+      <label class="etiquette" for="visite-creneaux">Créneaux souhaités</label>
+      <textarea class="champ" id="visite-creneaux" name="creneaux" rows="2" required placeholder="Jeudi en fin de journée, samedi matin"></textarea>
+    </div>
+    <div class="mt-4 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="visite-consentement" name="consentement" type="checkbox" required value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for="visite-consentement">
+        J'accepte d'être recontacté au sujet de ce bien.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-6 w-full">Demander une visite</button>
+    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+
+  <div data-confirmation hidden class="py-2">
+    <h2 class="titre-3">Demande transmise</h2>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">
+      Nous revenons vers vous aujourd'hui avec deux créneaux de visite. Référence {reference}.
+    </p>
+  </div>
+</form>

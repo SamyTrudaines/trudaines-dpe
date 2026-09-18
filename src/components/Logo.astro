@@ -1,0 +1,15 @@
+---
+interface Props { taille?: 'normal' | 'grand'; sousTitre?: boolean; }
+const { taille = 'normal', sousTitre = true } = Astro.props;
+const classeMot = taille === 'grand' ? 'text-3xl md:text-4xl' : 'text-xl md:text-[1.375rem]';
+---
+<span class="inline-flex flex-col leading-none">
+  <span class={`font-[family-name:var(--font-titre)] tracking-[0.22em] text-[color:var(--color-encre)] ${classeMot}`}>
+    TRUDAINES
+  </span>
+  {sousTitre && (
+    <span class="mt-2 text-[0.5625rem] font-medium uppercase tracking-[0.3em] text-[color:var(--color-ardoise)]">
+      Immobilier Paris
+    </span>
+  )}
+</span>

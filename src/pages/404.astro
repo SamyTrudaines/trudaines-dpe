@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  titre="Page introuvable | Trudaines"
+  description="La page demandée n'existe plus ou a été déplacée."
+  noindex={true}
+  cta={false}
+>
+  <section class="section pt-20">
+    <div class="conteneur-texte text-center">
+      <p class="surtitre">Erreur 404</p>
+      <h1 class="titre-1 mt-6">Cette page n'existe plus</h1>
+      <p class="chapo mt-8">
+        Le bien a peut-être été vendu, ou l'adresse a changé lors de la refonte du site.
+      </p>
+      <div class="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="/acheter" class="bouton">Voir les biens à vendre</a>
+        <a href="/estimation" class="bouton bouton-secondaire">Estimer mon bien</a>
+      </div>
+    </div>
+  </section>
+</Layout>

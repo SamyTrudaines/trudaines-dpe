@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TableauPrix from '../../components/TableauPrix.astro';
+import { secteurs } from '../../data/secteurs';
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+---
+<Layout
+  titre="Quartiers de Paris 9e, 18e et 10e | Prix et marché - Trudaines"
+  description="Trudaine Maubeuge, Martyrs Lorette, Clichy Trinité, Montmartre, Lariboisière Rocroy : prix au mètre carré, physionomie du marché et biens en vente."
+  filAriane={[{ nom: 'Quartiers' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Territoire</p>
+      <h1 class="titre-1 mt-6">Cinq quartiers, une seule façon de les lire</h1>
+      <p class="chapo mt-8">
+        Nous ne publions pas de moyenne d'arrondissement. Chaque quartier a sa demande, ses typologies dominantes,
+        ses rues qui se vendent vite et celles qui demandent plus de patience. Voici ce que nous observons.
+      </p>
+    </div>
+  </section>
+
+  <TableauPrix quartiers={quartiers} titre="Prix constatés par quartier" />
+
+  <section class="section">
+    <div class="conteneur grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      {quartiers.map((q) => (
+        <article class="border-t border-[color:var(--color-encre)] pt-6">
+          <p class="surtitre">{q.data.arrondissement}</p>
+          <h2 class="titre-3 mt-3">
+            <a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a>
+          </h2>
+          <p class="mt-4 text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
+          <p class="mt-4 text-sm">{q.data.prixMoyenM2}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Estimer dans ces quartiers</h2>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {secteurs.map((s) => (
+          <a href={`/estimation/${s.slug}`} class="lien-souligne">Estimation {s.nom}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

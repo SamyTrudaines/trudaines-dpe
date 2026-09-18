@@ -1,0 +1,148 @@
+---
+interface Props { secteur?: string; quartier?: string; identifiant?: string; }
+const { secteur = '', quartier = '', identifiant = 'estimation' } = Astro.props;
+const listeId = `adresses-${identifiant}`;
+---
+<form
+  id={identifiant}
+  class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
+  method="POST"
+  action="/api/estimation"
+  data-trudaines
+  data-evenement="estimation_envoyee"
+  data-evenement-etape="estimation_etape1"
+  novalidate={false}
+>
+  <input type="hidden" name="secteur" value={secteur} />
+  <input type="hidden" name="quartier" value={quartier} />
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for={`societe-${identifiant}`}>Ne pas remplir</label>
+    <input type="text" id={`societe-${identifiant}`} name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <div data-corps>
+    <div class="mb-8">
+      <p class="surtitre" data-compteur>Étape 1 sur 2</p>
+      <div class="mt-3 h-[2px] w-full bg-[color:var(--color-trait)]" role="presentation">
+        <div class="h-[2px] bg-[color:var(--color-nuit)] transition-[width] duration-200" style="width:50%" data-barre></div>
+      </div>
+    </div>
+
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3 mb-6">Votre bien</legend>
+      <div class="grid gap-6">
+        <div>
+          <label class="etiquette" for={`adresse-${identifiant}`}>Adresse du bien</label>
+          <input
+            class="champ"
+            id={`adresse-${identifiant}`}
+            name="adresse"
+            type="text"
+            required
+            autocomplete="street-address"
+            placeholder="12 avenue Trudaine, 75009 Paris"
+            list={listeId}
+            data-autocomplete-adresse
+          />
+          <datalist id={listeId}></datalist>
+          <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+            Adresse utilisée uniquement pour l'estimation. Elle n'est jamais publiée.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div>
+            <label class="etiquette" for={`type-${identifiant}`}>Type de bien</label>
+            <select class="champ" id={`type-${identifiant}`} name="type" required>
+              <option value="Appartement">Appartement</option>
+              <option value="Maison">Maison</option>
+              <option value="Immeuble">Immeuble</option>
+              <option value="Local ou autre">Local ou autre</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`surface-${identifiant}`}>Surface en m²</label>
+            <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="5" max="1000" required inputmode="numeric" />
+          </div>
+          <div>
+            <label class="etiquette" for={`pieces-${identifiant}`}>Nombre de pièces</label>
+            <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
+              <option value="1">1 pièce</option>
+              <option value="2">2 pièces</option>
+              <option value="3">3 pièces</option>
+              <option value="4">4 pièces</option>
+              <option value="5">5 pièces</option>
+              <option value="6 et plus">6 pièces et plus</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
+            <input class="champ" id={`etage-${identifiant}`} name="etage" type="text" placeholder="3e avec ascenseur" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="etiquette" for={`horizon-${identifiant}`}>Horizon de vente</label>
+          <select class="champ" id={`horizon-${identifiant}`} name="horizon" required>
+            <option value="Moins de 3 mois">Moins de 3 mois</option>
+            <option value="3 à 6 mois">3 à 6 mois</option>
+            <option value="Plus tard">Plus tard, je prépare mon projet</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Continuer</button>
+    </fieldset>
+
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3 mb-6">Vos coordonnées</legend>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
+          <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
+          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`telephone-${identifiant}`}>Téléphone</label>
+          <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" required />
+        </div>
+      </div>
+      <div class="mt-6">
+        <label class="etiquette" for={`message-${identifiant}`}>Précisions utiles, facultatif</label>
+        <textarea class="champ" id={`message-${identifiant}`} name="message" rows="3" placeholder="Travaux récents, vue, exposition, contexte de la vente"></textarea>
+      </div>
+      <div class="mt-6 flex items-start gap-3">
+        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
+        <label class="text-sm text-[color:var(--color-ardoise)]" for={`consentement-${identifiant}`}>
+          J'accepte d'être recontacté par Trudaines au sujet de ma demande. Mes données ne sont ni vendues ni cédées.
+          <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+        </label>
+      </div>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Vous êtes rappelé sous 24 heures ouvrées. L'estimation est gratuite et sans engagement.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="submit" class="bouton">Recevoir mon estimation</button>
+      </div>
+    </fieldset>
+
+    <p class="mt-6 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+
+  <div data-confirmation hidden class="py-4">
+    <p class="surtitre">Demande envoyée</p>
+    <h3 class="titre-3 mt-4">Merci, votre demande est enregistrée.</h3>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">
+      Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
+      Un email de confirmation vient de partir vers votre boîte.
+    </p>
+  </div>
+</form>

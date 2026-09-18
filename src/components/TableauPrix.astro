@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { quartiers: CollectionEntry<'quartiers'>[]; titre?: string; }
+const { quartiers, titre = 'Prix par quartier' } = Astro.props;
+---
+<section class="section filet" aria-labelledby="prix-quartiers">
+  <div class="conteneur">
+    <h2 id="prix-quartiers" class="titre-2">{titre}</h2>
+    <p class="mt-4 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
+      Fourchettes observées sur les ventes signées. Elles servent à cadrer une réflexion, jamais à fixer un prix :
+      l'écart entre deux biens d'un même immeuble dépasse souvent celui entre deux quartiers.
+    </p>
+    <div class="mt-10 overflow-x-auto">
+      <table class="w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b border-[color:var(--color-encre)]">
+            <th scope="col" class="py-4 pr-6 font-semibold">Quartier</th>
+            <th scope="col" class="py-4 pr-6 font-semibold">Prix moyen au m²</th>
+            <th scope="col" class="py-4 font-semibold">Fourchette observée</th>
+          </tr>
+        </thead>
+        <tbody>
+          {quartiers.map((q) => (
+            <tr class="border-b border-[color:var(--color-trait)]">
+              <th scope="row" class="py-4 pr-6 font-medium">
+                <a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a>
+              </th>
+              <td class="py-4 pr-6">{q.data.prixMoyenM2}</td>
+              <td class="py-4 text-[color:var(--color-ardoise)]">{q.data.fourchette}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
