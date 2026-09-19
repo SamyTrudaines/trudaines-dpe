@@ -2,9 +2,11 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 
-const avis = (await getCollection('avis')).slice(0, 2);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
 
 const valeurs = [
   { titre: 'Dire le prix, même quand il déplaît', texte: "Un cabinet qui flatte pour prendre un mandat vous fait perdre trois mois et finit par vous faire vendre plus bas. Nous préférons perdre le mandat." },
@@ -75,7 +77,7 @@ const valeurs = [
     </div>
   </section>
 
-  <Avis avis={avis} />
+  <Avis avis={avis} agregat={agregatAvis} />
 
   <section class="section filet">
     <div class="conteneur">

@@ -8,9 +8,6 @@ chapo: Le nord du 10e, entre la gare du Nord et le square Rocroy, offre des volu
 ordre: 5
 titreSeo: Immobilier Lariboisière Rocroy, Paris 10e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier Lariboisière Rocroy, Paris 10e. Estimation écrite et vente accompagnée par le cabinet Trudaines.
-photos:
-  - src: /images/quartiers/lariboisiere-rocroy.svg
-    alt: Rues du quartier Lariboisière Rocroy, Paris 10e
 faits:
   - titre: Typologies dominantes
     valeur: Trois et quatre pièces, beaux volumes dans des immeubles de la fin du dix neuvième

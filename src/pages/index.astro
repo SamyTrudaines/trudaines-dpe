@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import CarteBien from '../components/CarteBien.astro';
 import CarteArticle from '../components/CarteArticle.astro';
 import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 
@@ -15,7 +16,8 @@ const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre
 const articles = (await getCollection('articles', (a) => !a.data.brouillon))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
-const avis = (await getCollection('avis')).slice(0, 2);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
 const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
 
 const engagements = [
@@ -61,17 +63,43 @@ const engagements = [
           <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
         </p>
       </div>
-      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
-        <img
-          src="/images/accueil-paris-9.svg"
-          alt="Façades haussmanniennes de l'avenue Trudaine, Paris 9e"
-          width="900"
-          height="1125"
-          fetchpriority="high"
-          decoding="async"
-          class="h-full w-full object-cover"
-        />
-      </div>
+      {/*
+        Colonne de preuve plutôt qu'une photographie d'illustration : la note
+        des clients, le périmètre travaillé et les mentions réglementaires que
+        tout vendeur vérifie avant d'appeler. À remplacer par une photographie
+        du cabinet quand elle existera, pas par une image de banque d'images.
+      */}
+      <aside class="border-t border-[color:var(--color-encre)] pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+        <p class="surtitre">Le cabinet en clair</p>
+        <dl class="mt-8 space-y-8">
+          <div>
+            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Avis clients</dt>
+            <dd class="mt-2 font-[family-name:var(--font-titre)] text-3xl">
+              {agregatAvis.noteTexte} <span class="text-lg">/ 5</span>
+              <span class="ml-3 align-middle text-sm text-[color:var(--color-ardoise)]">
+                sur {agregatAvis.total} avis
+              </span>
+            </dd>
+            <dd class="mt-2">
+              <a href="/avis" class="lien-souligne text-sm">Lire les avis</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Périmètre</dt>
+            <dd class="mt-2 text-sm leading-relaxed">
+              Paris 9e nord, Montmartre et le 10e nord. Cinq quartiers travaillés rue par rue, pas un de plus.
+            </dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Cadre réglementaire</dt>
+            <dd class="mt-2 text-sm leading-relaxed text-[color:var(--color-ardoise)]">
+              Carte professionnelle {site.legal.carteT}, délivrée le {site.legal.carteTDate} par la CCI Paris
+              Île-de-France. Garantie financière {site.legal.garantieMontant} chez Galian.
+              {site.legal.detentionFonds}
+            </dd>
+          </div>
+        </dl>
+      </aside>
     </div>
   </section>
 
@@ -143,7 +171,7 @@ const engagements = [
     </div>
   </section>
 
-  <Avis avis={avis} />
+  <Avis avis={avis} agregat={agregatAvis} />
 
   {presse.length > 0 && (
     <section class="section filet" aria-labelledby="presse-accueil">

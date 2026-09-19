@@ -4,9 +4,11 @@ import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import { secteurs } from '../../data/secteurs';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../../lib/avis';
 
 const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
-const avis = (await getCollection('avis')).slice(0, 2);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
 
 const etapes = [
   {
@@ -143,5 +145,5 @@ const donnees = [
     </div>
   </section>
 
-  <Avis avis={avis} titre="Ce qu'en disent les propriétaires" />
+  <Avis avis={avis} agregat={agregatAvis} titre="Ce qu'en disent les propriétaires" />
 </Layout>

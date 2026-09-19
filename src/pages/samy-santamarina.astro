@@ -13,7 +13,6 @@ const donnees = [
     jobTitle: 'Président fondateur',
     worksFor: { '@id': `${site.url}/#cabinet` },
     url: `${site.url}/samy-santamarina`,
-    image: `${site.url}/images/samy-santamarina.svg`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.adresse.rue,
@@ -35,18 +34,7 @@ const donnees = [
   donnees={donnees}
 >
   <section class="section pt-10">
-    <div class="conteneur grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
-        <img
-          src="/images/samy-santamarina.svg"
-          alt="Samy Santamarina, fondateur du cabinet Trudaines"
-          width="900"
-          height="1125"
-          fetchpriority="high"
-          decoding="async"
-          class="h-full w-full object-cover"
-        />
-      </div>
+    <div class="conteneur max-w-4xl">
       <div>
         <p class="surtitre">Fondateur</p>
         <h1 class="titre-1 mt-6">Samy Santamarina</h1>

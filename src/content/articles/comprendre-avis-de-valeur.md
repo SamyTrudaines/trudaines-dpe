@@ -1,8 +1,6 @@
 ---
 titre: Ce que doit contenir un avis de valeur sérieux
 date: 2026-03-04
-image: /images/articles/panorama.svg
-imageAlt: Documents d'estimation immobilière posés sur une table
 chapo: Trois agences, trois chiffres, parfois cent mille euros d'écart. Voici les éléments qui permettent de savoir laquelle a réellement travaillé.
 motsCles:
   - estimation immobilière

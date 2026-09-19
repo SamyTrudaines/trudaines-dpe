@@ -1,8 +1,6 @@
 ---
 titre: Vendre un appartement classé F ou G à Paris
 date: 2026-04-22
-image: /images/articles/panorama.svg
-imageAlt: Façade d'immeuble parisien ancien
 chapo: Le diagnostic énergétique est devenu un sujet de négociation à part entière. Le traiter avant la mise en vente vaut mieux que de le subir en deuxième visite.
 motsCles:
   - DPE

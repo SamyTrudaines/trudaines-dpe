@@ -21,12 +21,14 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       <p class="surtitre">Acheter</p>
       <h1 class="titre-1 mt-6">Les biens que nous vendons</h1>
       <p class="chapo mt-8">
-        Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le
-        vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé.
+        {biens.length > 0
+          ? "Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé."
+          : "Chaque bien que nous rentrons est visité, documenté et présenté par la personne qui le vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé le premier."}
       </p>
     </div>
   </section>
 
+  {biens.length > 0 && (
   <section class="section pt-0" aria-labelledby="filtres">
     <div class="conteneur">
       <h2 id="filtres" class="sr-only">Filtrer les biens</h2>
@@ -80,16 +82,12 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]" data-compte-biens>{biens.length} biens</p>
     </div>
   </section>
+  )}
 
+  {biens.length > 0 && (
   <section class="section pt-0">
     <div class="conteneur">
-      {biens.length === 0 ? (
-        <p class="text-[color:var(--color-ardoise)]">
-          Aucun bien n'est actuellement diffusé publiquement. Créez une alerte ci-dessous, nous vous écrivons dès
-          qu'un bien correspond à votre recherche.
-        </p>
-      ) : (
-        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-liste-biens>
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-liste-biens>
           {biens.map((b, index) => (
             <article
               class="group"
@@ -133,21 +131,22 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
               </a>
             </article>
           ))}
-        </div>
-      )}
+      </div>
       <p class="mt-12 text-sm text-[color:var(--color-ardoise)]" data-aucun-resultat hidden>
         Aucun bien ne correspond à ces critères pour le moment. Créez une alerte, nous vous préviendrons.
       </p>
     </div>
   </section>
+  )}
 
   <section class="section filet">
     <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
-        <h2 class="titre-2">Acheter avant tout le monde</h2>
+        <h2 class="titre-2">{biens.length > 0 ? 'Acheter avant tout le monde' : "Aucune annonce publique en ce moment"}</h2>
         <p class="chapo mt-6">
-          Les biens que nous rentrons sont présentés d'abord à notre fichier d'acquéreurs. C'est souvent là que se
-          traitent les meilleures affaires, sans surenchère et sans visite groupée.
+          Les biens que nous rentrons sont présentés d'abord à notre fichier d'acquéreurs, et partent le plus souvent
+          avant d'être diffusés. C'est le fonctionnement normal d'un périmètre aussi resserré, et c'est souvent là que
+          se traitent les meilleures affaires, sans surenchère et sans visite groupée.
         </p>
         <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
           Vous cherchez un bien précis et vous ne le trouvez pas ?
@@ -158,44 +157,47 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
     </div>
   </section>
 
-  <script is:inline>
-    (function () {
-      var form = document.querySelector('[data-filtres]');
-      var liste = document.querySelector('[data-liste-biens]');
-      if (!form || !liste) return;
-      var cartes = Array.prototype.slice.call(liste.querySelectorAll('[data-bien]'));
-      var compte = document.querySelector('[data-compte-biens]');
-      var vide = document.querySelector('[data-aucun-resultat]');
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-filtres]');
+    const liste = document.querySelector('[data-liste-biens]');
 
-      function appliquer() {
-        var d = new FormData(form);
-        var arrondissement = d.get('arrondissement');
-        var quartier = d.get('quartier');
-        var pieces = parseInt(d.get('pieces') || '0', 10);
-        var prixMax = parseInt(d.get('prix') || '0', 10);
-        var surfaceMin = parseInt(d.get('surface') || '0', 10);
-        var visibles = 0;
+    if (form && liste) {
+      const cartes = Array.from(liste.querySelectorAll<HTMLElement>('[data-bien]'));
+      const compte = document.querySelector('[data-compte-biens]');
+      const vide = document.querySelector<HTMLElement>('[data-aucun-resultat]');
 
-        cartes.forEach(function (carte) {
-          var ok =
+      const champ = (d: FormData, nom: string) => String(d.get(nom) ?? '');
+      const nombre = (valeur: string | undefined) => parseInt(valeur ?? '0', 10) || 0;
+
+      const appliquer = () => {
+        const d = new FormData(form);
+        const arrondissement = champ(d, 'arrondissement');
+        const quartier = champ(d, 'quartier');
+        const pieces = nombre(champ(d, 'pieces'));
+        const prixMax = nombre(champ(d, 'prix'));
+        const surfaceMin = nombre(champ(d, 'surface'));
+        let visibles = 0;
+
+        for (const carte of cartes) {
+          const ok =
             (!arrondissement || carte.dataset.arrondissement === arrondissement) &&
             (!quartier || carte.dataset.quartier === quartier) &&
-            (!pieces || parseInt(carte.dataset.pieces, 10) >= pieces) &&
-            (!prixMax || parseInt(carte.dataset.prix, 10) <= prixMax) &&
-            (!surfaceMin || parseInt(carte.dataset.surface, 10) >= surfaceMin);
+            (!pieces || nombre(carte.dataset.pieces) >= pieces) &&
+            (!prixMax || nombre(carte.dataset.prix) <= prixMax) &&
+            (!surfaceMin || nombre(carte.dataset.surface) >= surfaceMin);
           carte.hidden = !ok;
           if (ok) visibles++;
-        });
+        }
 
         if (compte) compte.textContent = visibles + (visibles > 1 ? ' biens' : ' bien');
         if (vide) vide.hidden = visibles !== 0;
-      }
+      };
 
       form.addEventListener('change', appliquer);
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         appliquer();
       });
-    })();
+    }
   </script>
 </Layout>

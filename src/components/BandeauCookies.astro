@@ -21,23 +21,27 @@
   </div>
 </div>
 
-<script is:inline>
-  (function () {
-    var cle = 'trudaines-consentement';
-    var bandeau = document.getElementById('bandeau-cookies');
-    if (!bandeau) return;
-    var choix = null;
-    try { choix = localStorage.getItem(cle); } catch (e) {}
+<script>
+  const cle = 'trudaines-consentement';
+  const bandeau = document.getElementById('bandeau-cookies');
+  if (bandeau) {
+    let choix: string | null = null;
+    try {
+      choix = localStorage.getItem(cle);
+    } catch (e) {}
     if (!choix) bandeau.hidden = false;
-    bandeau.addEventListener('click', function (evt) {
-      var cible = evt.target.closest('[data-cookies]');
-      if (!cible) return;
-      var valeur = cible.getAttribute('data-cookies');
-      try { localStorage.setItem(cle, valeur); } catch (e) {}
-      if (valeur === 'accepte' && typeof window.gtag === 'function') {
-        window.gtag('consent', 'update', { analytics_storage: 'granted' });
+
+    bandeau.addEventListener('click', (evt) => {
+      const cible = evt.target instanceof Element ? evt.target.closest('[data-cookies]') : null;
+      const valeur = cible?.getAttribute('data-cookies');
+      if (!valeur) return;
+      try {
+        localStorage.setItem(cle, valeur);
+      } catch (e) {}
+      if (valeur === 'accepte') {
+        window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
       }
       bandeau.hidden = true;
     });
-  })();
+  }
 </script>

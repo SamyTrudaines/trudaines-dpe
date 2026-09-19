@@ -46,6 +46,17 @@ export const site = {
     linkedin: 'https://www.linkedin.com/in/samysantamarina',
     instagram: 'https://www.instagram.com/trudaines.immobilier',
   },
+  /**
+   * Avis clients. Le total et la moyenne ne sont pas écrits ici : ils sont
+   * calculés sur les fiches publiées dans src/content/avis, pour que le chiffre
+   * annoncé corresponde toujours à ce que le visiteur peut compter sur /avis.
+   * Seule la date de relevé est tenue à la main, à changer à chaque import.
+   */
+  avis: {
+    lienGoogle:
+      'https://www.google.com/maps/search/?api=1&query=Trudaines+Immobilier+2+rue+Livingstone+75018+Paris',
+    releve: 'septembre 2026',
+  },
   /** Identifiant GA4, renseigné dans les variables Cloudflare Pages (PUBLIC_GA4_ID). */
   ga4: import.meta.env.PUBLIC_GA4_ID ?? '',
 } as const;

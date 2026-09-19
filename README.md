@@ -137,7 +137,7 @@ scripts/         génération des PDF, import de l'ancien site, recette
 | `node scripts/importer-ancien-site.mjs` | Importe les annonces et articles de l'ancien site |
 | `python3 scripts/prix-dvf.py` | Recalcule les prix au m² par quartier sur les ventes signées |
 | `npm run avis-google` | Reprend les avis de la fiche Google dans `src/content/avis` |
-| `node scripts/placeholders.mjs` | Régénère les visuels de remplacement |
+| `node scripts/placeholders.mjs` | Régénère la carte de partage des réseaux sociaux |
 
 ### D'où viennent les prix au m² publiés
 
@@ -182,33 +182,33 @@ DNS chez Gandi.
 
 ## Points à traiter avant la mise en ligne
 
-1. **Avis clients.** Le dossier `src/content/avis` est vide, le bloc d'avis reste
-   donc masqué sur le site. Deux façons de le remplir. Les avis Google :
-   renseigner `GOOGLE_PLACES_API_KEY` et `GOOGLE_PLACE_ID` dans un `.env` local
-   puis lancer `npm run avis-google`. L'API ne renvoie que cinq avis, ceux que
-   Google juge les plus pertinents, et ses conditions d'utilisation imposent de
-   citer la source et de rafraîchir régulièrement : le script s'en charge, mais
-   il faut le relancer. Les avis recueillis en direct : les saisir dans `/admin`,
-   rubrique **Avis clients**, avec l'accord écrit de leur auteur. Ne jamais
-   publier un avis qui n'a pas été laissé par un client réel.
-2. **Biens d'exemple.** Remplacer les deux fiches marquées **EXEMPLE** par des
-   annonces réelles. Leurs dépenses annuelles d'énergie sont elles aussi des
-   valeurs d'exemple.
-3. **Mentions À ACTUALISER.** Il en reste une seule, dans
+1. **Nouveaux avis.** Les trente et un avis relevés en septembre 2026 sont en
+   ligne, page `/avis`. Pour en ajouter un : `/admin`, rubrique **Avis clients**,
+   en recopiant le texte sans le retoucher, la plateforme, l'ancienneté affichée
+   et la mention de visite. La note moyenne et le total se recalculent seuls, sur
+   les fiches publiées et sur elles seules : ce que le site annonce est toujours
+   ce que le visiteur peut compter sur `/avis`. Penser à changer la date de
+   relevé dans `src/data/site.ts`, clé `avis.releve`. Ne jamais publier un avis
+   qui n'a pas été laissé par un client réel.
+2. **Mentions À ACTUALISER.** Il en reste une seule, dans
    `src/content/articles/dpe-f-et-g-vendre.md` : les ordres de grandeur de
    travaux observés sur le secteur. Barème, prix au m² et guides sont en place.
-4. **Actualités vides.** Les quatre actualités restées vides sur l'ancien site
+3. **Actualités vides.** Les quatre actualités restées vides sur l'ancien site
    sont à écrire, leurs titres figurent dans `migration-rapport.txt`. Leurs
    anciennes adresses renvoient vers `/panorama` en attendant.
-5. **Visuels.** Remplacer les images de remplacement de `public/images/` par les
-   photographies définitives, au format webp.
-6. **Presse.** Ajouter les retombées dans `/admin`, rubrique **Presse**.
-7. **Fiches reprises de l'ancien site.** Les dix sept fiches sont en
+4. **Photographies.** Le site n'affiche plus aucun cadre gris : là où une
+   photographie manque, la page montre du texte et des chiffres, et le site se
+   tient sans image. Vos photographies se déposent dans `public/images/` au
+   format webp, puis s'appellent depuis la page concernée. Le portrait de la page
+   `/samy-santamarina` est volontairement absent tant que le vôtre n'existe pas :
+   une photo de banque d'images n'y a pas sa place.
+5. **Presse.** Ajouter les retombées dans `/admin`, rubrique **Presse**.
+6. **Fiches reprises de l'ancien site.** Les dix sept fiches sont en
    `offMarket: true`, donc hors des pages `/acheter` et d'accueil. Avant de
    passer l'une d'elles à `false`, il faut sa classe énergie, sa classe climat
    et ses dépenses annuelles d'énergie : `npm run verifier` refuse une annonce
    diffusée sans ces mentions, obligatoires dans toute annonce de vente. Les
    redirections 301 de l'ancien site sont déjà dans `public/_redirects`.
-8. **Photographies des fiches reprises.** Elles pointent encore vers le serveur
+7. **Photographies des fiches reprises.** Elles pointent encore vers le serveur
    d'images de l'ancien back office et tomberont avec lui. À rapatrier dans
    `public/images/biens/` avant toute résiliation.

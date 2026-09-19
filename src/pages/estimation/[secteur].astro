@@ -6,6 +6,7 @@ import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import TableauPrix from '../../components/TableauPrix.astro';
 import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
+import { avisCommentés, agrégatAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 
 interface Props { secteur: Secteur }
@@ -18,7 +19,10 @@ const tousQuartiers = await getCollection('quartiers');
 const quartiers = tousQuartiers
   .filter((q) => secteur.quartiers.includes(q.id))
   .sort((a, b) => a.data.ordre - b.data.ordre);
-const avisSecteur = (await getCollection('avis')).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug).slice(0, 2);
+const avisSecteur = trierAvis(
+  (await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug),
+).slice(0, 3);
+const agregatAvis = await agrégatAvis();
 const autresSecteurs = secteurs.filter((s) => s.slug !== secteur.slug);
 
 const donnees = [
@@ -71,7 +75,7 @@ const donnees = [
 
   <Faq questions={secteur.faq} titre={`Questions des vendeurs du ${secteur.nom.replace('Paris ', '')}`} />
 
-  <Avis avis={avisSecteur} titre="Deux ventes récentes racontées par leurs propriétaires" />
+  <Avis avis={avisSecteur} agregat={agregatAvis} titre="Des ventes racontées par leurs propriétaires" />
 
   <section class="section filet" aria-labelledby="ailleurs">
     <div class="conteneur">
