@@ -1,7 +1,7 @@
 ---
 titre: Bien vendre à Paris en 2026
 slug: bien-vendre-paris-2026
-chapo: La préparation, le prix de départ, le choix du mandat, la conduite des visites et la négociation. Le déroulé complet d'une vente parisienne, avec les erreurs qui coûtent le plus cher.
+chapo: Le déroulé complet d'une vente parisienne tel que nous le pratiquons, de la préparation qui change tout à la négociation. Avec les erreurs que nous voyons coûter le plus cher, et la manière de les éviter.
 sommaire:
   - Le dossier à réunir avant la première visite
   - Fixer un prix de départ défendable

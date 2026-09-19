@@ -51,6 +51,7 @@ const donnees = [
 ];
 ---
 <Layout
+  ancreEstimation={`#estimation-${situation.id}`}
   titre={d.titreSeo}
   description={d.descriptionSeo}
   filAriane={[{ nom: 'Vendre', href: '/vendre' }, { nom: d.titre }]}
@@ -62,6 +63,10 @@ const donnees = [
         <p class="surtitre">Situations de vente · mis à jour en {dateFr(d.dateMaj)}</p>
         <h1 class="titre-1 mt-6">{d.titre}</h1>
         <p class="chapo mt-8">{d.chapo}</p>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href={`#estimation-${situation.id}`} class="bouton">Faire estimer mon bien dans cette situation</a>
+        </div>
 
         {d.essentiel.length > 0 && (
           <div class="bloc mt-12">
@@ -106,6 +111,7 @@ const donnees = [
       <FormulaireEstimation identifiant={`estimation-${situation.id}`} />
     </div>
   </section>
+
 
   {autres.length > 0 && (
     <section class="section filet">

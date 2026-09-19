@@ -1,8 +1,10 @@
 ---
 import { site } from '../data/site';
+interface Props { ancreEstimation?: string }
+const { ancreEstimation } = Astro.props;
 ---
 <div class="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 border-t border-[color:var(--color-trait)] bg-white md:hidden">
-  <a href="/estimation" class="flex min-h-[4rem] items-center justify-center bg-[color:var(--color-nuit)] px-2 text-center text-[0.8125rem] font-semibold text-white no-underline">
+  <a href={ancreEstimation ?? '/estimation'} class="flex min-h-[4rem] items-center justify-center bg-[color:var(--color-nuit)] px-2 text-center text-[0.8125rem] font-semibold text-white no-underline">
     Estimer
   </a>
   <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="flex min-h-[4rem] items-center justify-center px-2 text-center text-[0.8125rem] font-semibold text-[color:var(--color-encre)] no-underline">
