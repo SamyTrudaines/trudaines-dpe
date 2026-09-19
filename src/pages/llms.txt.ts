@@ -13,6 +13,7 @@ export const GET: APIRoute = async () => {
   const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
   const avis = await agrégatAvis();
   const références = (await getCollection('biens', (b) => b.data.archive)).length;
+  const situations = (await getCollection('situations')).sort((a, b) => a.data.ordre - b.data.ordre);
   const articles = (await getCollection('articles', (a) => !a.data.brouillon)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime()
   );
@@ -99,6 +100,7 @@ ${secteurs.map((s) => `- ${site.url}${s.hrefAgence} : agence immobilière ${s.no
 - ${site.url}/agence-immobiliere-montmartre : agence immobilière Montmartre
 - ${site.url}/vendre : les sept engagements de vente
 - ${site.url}/mandat-exclusif : mandat exclusif, contreparties écrites et conditions de sortie
+${situations.map((s) => `- ${site.url}/vendre/${s.id} : ${s.data.question}`).join('\n')}
 - ${site.url}/choisir-son-agence-immobiliere-paris : huit critères pour comparer des cabinets avant de signer
 - ${site.url}/acheter : biens à la vente
 - ${site.url}/references : mandats déjà confiés au cabinet

@@ -51,7 +51,7 @@ Cela ne vous empêche pas de commencer. La mise en vente, les visites et même l
 
 Un bien de succession appartient à tous les héritiers à la fois : c'est l'indivision successorale. Vendre est un acte de disposition, et l'article 815-3 du code civil exige pour cela le consentement de tous les indivisaires. Concrètement, le mandat de vente, la promesse et l'acte définitif portent la signature de chaque héritier, ou celle de son mandataire muni d'une procuration.
 
-Ce point se vérifie avant de commencer, pas au moment de l'offre. Un héritier hésitant qui signe le mandat « pour voir » et se rétracte devant une offre au prix fait perdre des mois à tout le monde. Si l'un des héritiers refuse la vente, la situation change de nature : l'article 815-5-1 du code civil permet, sous conditions, aux indivisaires titulaires d'au moins deux tiers des droits de demander au tribunal l'autorisation de vendre. C'est alors une procédure judiciaire, que votre notaire engage, et le calendrier de la vente s'allonge d'autant.
+Ce point se vérifie avant de commencer, pas au moment de l'offre. Un héritier hésitant qui signe le mandat « pour voir » et se rétracte devant une offre au prix fait perdre des mois à tout le monde. Si l'un des héritiers refuse la vente, la situation change de nature : l'article 815-5-1 du code civil permet, sous conditions, aux indivisaires titulaires d'au moins deux tiers des droits de demander au tribunal l'autorisation de vendre. Nous détaillons ce recours dans la fiche [vendre un bien en indivision](/vendre/indivision).
 
 ## Le calendrier réel
 

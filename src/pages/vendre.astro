@@ -7,6 +7,7 @@ import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { secteurs } from '../data/secteurs';
 
+const situations = (await getCollection('situations')).sort((a, b) => a.data.ordre - b.data.ordre);
 const avis = await avisCommentés(3);
 const agregatAvis = await agrégatAvis();
 
@@ -102,6 +103,25 @@ const questions = [
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="situations">
+    <div class="conteneur">
+      <p class="surtitre">Situations particulières</p>
+      <h2 id="situations" class="titre-2 mt-6 max-w-2xl">Votre vente n'est pas une vente ordinaire ? Nous avons écrit la fiche</h2>
+      <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+        Succession, indivision, divorce, bien occupé, travaux votés, expatriation : chaque situation a ses règles,
+        ses délais et ses pièges. Une fiche par cas, avec les textes cités et ce qui se décide vraiment.
+      </p>
+      <div class="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {situations.map((s) => (
+          <a href={`/vendre/${s.id}`} class="bloc block no-underline">
+            <h3 class="titre-3 text-[color:var(--color-encre)]">{s.data.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{s.data.question}</p>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
