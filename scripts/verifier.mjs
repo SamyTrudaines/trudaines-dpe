@@ -73,6 +73,19 @@ for (const page of pages) {
     erreurs.push(`${url} : espace manquante autour d'un lien, « ${collé[0].slice(0, 60)} »`);
   }
 
+  /*
+   * Titre affiché deux fois de suite. Une page ouverte par une bannière porte
+   * son titre dans l'image, puis son h1 juste en dessous : quand les deux
+   * portent la même phrase, le visiteur la lit deux fois. Les autres pages
+   * donnent la règle, la bannière annonce, le h1 nomme.
+   */
+  const titreBanniere = /<div class="mt-6 font-\[family-name:var\(--font-titre\)\][^"]*"[^>]*>([\s\S]*?)<\/div>/.exec(html);
+  const premierH1 = /<h1[^>]*>([\s\S]*?)<\/h1>/.exec(html);
+  const sansBalises = (s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (titreBanniere && premierH1 && sansBalises(titreBanniere[1]) === sansBalises(premierH1[1])) {
+    erreurs.push(`${url} : la bannière et le h1 portent la même phrase, « ${sansBalises(premierH1[1]).slice(0, 50)} »`);
+  }
+
   const h1 = html.match(/<h1[\s>]/g) || [];
   if (h1.length === 0) erreurs.push(`${url} : aucun h1`);
   if (h1.length > 1) erreurs.push(`${url} : ${h1.length} balises h1`);
