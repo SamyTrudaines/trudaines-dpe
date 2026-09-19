@@ -2,7 +2,7 @@
 titre: "Immobilier à Paris en avril 2025 : retour du dynamisme"
 date: 2025-05-06
 chapo: "Le marché immobilier parisien renoue avec une dynamique positive en ce printemps 2025. Après des mois de tension liée au pouvoir d’achat et aux taux d’intérêt, les indicateurs repassent au vert."
-image: https://trudaines.la-boite-immo.com/images/userupload/1266da0e886fcefcaef9d93fb50cdcc8.jpg
+image: /images/panorama/immobilier-paris-avril-2025-retour-du-dynamisme.webp
 imageAlt: "Immobilier à Paris en avril 2025 : retour du dynamisme"
 motsCles: ['prix immobilier Paris', 'délai de vente', 'marché parisien']
 brouillon: false

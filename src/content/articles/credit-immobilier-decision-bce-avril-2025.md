@@ -2,7 +2,7 @@
 titre: "Crédit immobilier : ce que la décision de la BCE change en avril 2025"
 date: 2025-05-05
 chapo: "Le 17 avril 2025, la Banque centrale européenne (BCE) envoie un signal clair : pour la troisième fois de l’année, elle abaisse ses trois taux directeurs de 25 points de base."
-image: https://trudaines.la-boite-immo.com/images/userupload/5aac1519203dd22b38ade980e81f4a81.jpg
+image: /images/panorama/credit-immobilier-decision-bce-avril-2025.webp
 imageAlt: "Crédit immobilier : ce que la décision de la BCE change en avril 2025"
 motsCles: ['crédit immobilier', 'taux BCE', 'financement', 'Paris 9e', 'Paris 18e']
 brouillon: false

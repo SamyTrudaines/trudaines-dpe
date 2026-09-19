@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement bourgeois 4 pièces, en étage élevé, ensoleillé (orienté ouest), traversant, au plan optimisé, à rénover, avec du charme haussmannien, 3 chambres, 89 m², Paris 9e, quartier Trudaine / Condorcet."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_b6c4df615a8fd9729cefc4b8231dbcc7.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/01.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_07065b72b18f8c1b0fa3b37054fbb1fe.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/02.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_b81ef3aa36164500f4b1850378ac146c.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/03.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_867aa6be2189cc6db800019c224ffdd5.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/04.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_a564d4cc63ad9987560b04995f35df9f.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/05.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_d121cbbf3cc7e6035ef7da74679e9a32.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/06.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_9339d3e5eb80cc26d10b92b736b26a21.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/07.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_ced440b3e3453ad688909f8170df7fed.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/08.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_f1f497058f3047936f1fd76bd552f5a2.jpg
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/09.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/00f35569ce4b0c6a57844f1a54459c2a/photo_c1849c4b86ee914e4554ffd3d1eac16b.png
+  - src: /images/biens/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet/10.webp
     alt: "Appartement 4 pièces 89 m² haussmannien, Trudaine Condorcet"
 ---
 

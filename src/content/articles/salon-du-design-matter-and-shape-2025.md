@@ -2,7 +2,7 @@
 titre: "Salon du design Matter & Shape 2025"
 date: 2025-03-28
 chapo: "Design, architecture et artisanats, chez Trudaines nous portons une attention toute particulière aux disciplines qui enrichissent l'immobilier et valorisent les espaces."
-image: https://trudaines.la-boite-immo.com/images/userupload/2a7cbe0b5d40fec92b0a1bea130e7272.jpg
+image: /images/panorama/salon-du-design-matter-and-shape-2025.webp
 imageAlt: "Salon du design Matter & Shape 2025"
 motsCles: ['design', 'architecture', 'artisanat']
 brouillon: false

@@ -476,7 +476,11 @@ async function principal() {
   const produits = [];
 
   for (const nom of readdirSync(dossierBiens).filter((f) => f.endsWith('.md'))) {
-    produits.push(await genererFiche(join(dossierBiens, nom)));
+    const chemin = join(dossierBiens, nom);
+    // Un mandat archivé n'a pas de dossier à envoyer : le bien n'est plus
+    // proposé, et un PDF qui porte encore un prix redeviendrait une annonce.
+    if (/^archive:\s*true$/m.test(readFileSync(chemin, 'utf8'))) continue;
+    produits.push(await genererFiche(chemin));
   }
   for (const nom of readdirSync(dossierGuides).filter((f) => f.endsWith('.md'))) {
     const resultat = await genererGuide(join(dossierGuides, nom));

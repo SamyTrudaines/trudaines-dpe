@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Trudaines vous propose en exclusivité : Dans le secteur Rue de Babylone/Vaneau, entre Le Bon Marché et Invalides, un appartement traversant de deux pièces entièrement rénové, avec cheminée, moulures et cuisine ouverte, idéalement situé dans une rue calme - 1 chambre - 43 m² environ - Paris 7è."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_23120899186e246bf2e1b843885dd6e8.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/01.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_620e08e163fcc8df9b39ebb4bb329fd7.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/02.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_1c7b5117946c436d725b5abc7137ca74.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/03.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_87e5d70f754828ac635cc7a1e5bcdac0.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/04.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_475eb3cdb5513d84905c812cec4e56ab.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/05.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_37084bf0477d8472902468a35586623e.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/06.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_efe20cd1e7b42ee9375acc1cdb3849ab.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/07.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_124e650345e4abbb7f05005f17b7ae18.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/08.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_c3fcb688ea761196d47a227c8d319c99.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/09.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/66f07294354ecd87b80844906b24ecdc/photo_a818d8a285fcf109651685c0e44350fd.jpg
+  - src: /images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/10.webp
     alt: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
 ---
 

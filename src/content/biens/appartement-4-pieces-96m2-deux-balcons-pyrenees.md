@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement familial traversant situé au troisième d’un immeuble de quatre étages, accessible par ascenseur, de 97m2 avec 3 chambres dont une suite, 2 salles d’eau et 2 balcons (sud-est)."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_a375e06b0c8475216d0309daf1a64744.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/01.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_552975c5dabccaaebc96f8314e2ee92b.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/02.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_9c241f5deaca09deadfc5875ea81f1b5.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/03.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_f938a3b8a31286378dd94d7bf8022e21.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/04.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_e2665544d7bf2925ed6088a03c0eb2a8.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/05.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_f9ad6d83f4fd7fb47e13773279f41718.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/06.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_048792311a931e431ef2b26d30ffff07.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/07.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_26ee7eb113d9361ebae80a10d3f1fb71.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/08.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_ba32f2e2178c2ff4eff1565b99e60c24.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/09.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/45b0d4ee9f916ee398a34b2d40531a23/photo_13bb3d9103738d9d9ba543c84e5b8428.jpg
+  - src: /images/biens/appartement-4-pieces-96m2-deux-balcons-pyrenees/10.webp
     alt: "Appartement 4 pièces 96 m² avec deux balcons, Pyrénées"
 ---
 

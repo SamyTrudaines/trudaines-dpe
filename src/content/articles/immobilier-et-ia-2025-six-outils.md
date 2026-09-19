@@ -2,7 +2,7 @@
 titre: "Immobilier et IA en 2025 : six outils qui changent la productivité"
 date: 2025-05-04
 chapo: "L'intelligence artificielle n'est plus un gadget. En 2025, elle est le moteur de la nouvelle productivité immobilière."
-image: https://trudaines.la-boite-immo.com/images/userupload/52e9dbef9696ad0b653edd62ce6467ad.jpg
+image: /images/panorama/immobilier-et-ia-2025-six-outils.webp
 imageAlt: "Immobilier et IA en 2025 : six outils qui changent la productivité"
 motsCles: ['intelligence artificielle', 'outils immobiliers', 'productivité']
 brouillon: false

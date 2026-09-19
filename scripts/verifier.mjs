@@ -123,13 +123,37 @@ if (!existsSync(redirections)) {
  * énergie, la classe climat et le montant estimé des dépenses annuelles d'énergie.
  * Une fiche en offMarket n'est pas diffusée dans les pages de biens : elle n'est
  * pas concernée tant qu'elle reste en relecture.
+ *
+ * Une fiche en archive n'est plus une annonce : le bien n'est pas proposé à la
+ * vente, la page ne porte ni prix ni demande de visite. Les mentions ne sont
+ * donc pas dues, mais l'absence d'annonce, elle, est vérifiée : une page
+ * archivée qui laisserait passer un prix ou un formulaire de visite redeviendrait
+ * une annonce, et une annonce sans classe énergie.
  */
 const dossierBiens = join(process.cwd(), 'src', 'content', 'biens');
 if (existsSync(dossierBiens)) {
   for (const nom of readdirSync(dossierBiens).filter((f) => f.endsWith('.md'))) {
     const { data } = matter(readFileSync(join(dossierBiens, nom), 'utf8'));
-    if (data.offMarket) continue;
     const fiche = `src/content/biens/${nom}`;
+    if (data.archive) {
+      const page = join(dist, 'bien', `${nom.replace(/\.md$/, '')}.html`);
+      const rendu = existsSync(page) ? readFileSync(page, 'utf8') : '';
+      if (!rendu) {
+        erreurs.push(`${fiche} : mandat archivé sans page construite`);
+        continue;
+      }
+      if (/Demander une visite|name="reference"/.test(rendu)) {
+        erreurs.push(`${fiche} : mandat archivé qui propose encore une visite, la page redevient une annonce`);
+      }
+      if (/"@type":\s*"Offer"/.test(rendu)) {
+        erreurs.push(`${fiche} : mandat archivé qui déclare encore une offre aux moteurs de recherche`);
+      }
+      if (!/Mandat présenté par le cabinet|Vendu par le cabinet/.test(rendu)) {
+        erreurs.push(`${fiche} : mandat archivé sans mention indiquant que le bien n'est plus disponible`);
+      }
+      continue;
+    }
+    if (data.offMarket) continue;
     if (!data.dpe || data.dpe === 'Vierge') {
       erreurs.push(`${fiche} : annonce diffusée sans classe énergie, mention obligatoire`);
     }

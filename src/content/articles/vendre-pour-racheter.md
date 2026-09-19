@@ -1,6 +1,8 @@
 ---
 titre: "Vendre pour racheter à Paris, dans quel ordre"
 date: 2026-06-10
+image: /images/panorama/vendre-pour-racheter.webp
+imageAlt: Cuisine d'une maison familiale à Bois-Colombes
 chapo: La crainte de se retrouver sans logement pousse beaucoup de propriétaires à acheter d'abord. C'est souvent la décision la plus coûteuse.
 motsCles:
   - vendre pour racheter

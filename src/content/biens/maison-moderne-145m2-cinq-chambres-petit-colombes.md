@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Découvrez cette magnifique maison moderne en béton cellulaire de 145 m² avec ses 5 chambres, elle est répartie sur 3 niveaux avec son grand jardin privatif de 280m2 pour une parcelle totale de 423 m² et ses 3 places de parking avec portail automatique."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_23254b90fb9b0304791d44224e98d3b9.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/01.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_25e8eef8403cb3fea69ffbc406759396.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/02.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_fd53572a4317219d8e487cc0e1a56a4f.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/03.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_e3f4894fe6953be5bcbd753e3ef1f32b.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/04.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_3a9dcdb2fbac41ba9e0db5b979955205.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/05.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_7d4ed662815885c56c2510e578a7c7e8.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/06.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_60e87c0ba3ff80fb6bdd333d34071879.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/07.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_905455b584fa48f1e1262330b709b701.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/08.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_aa79ff9815657ccca3ccc30d14026344.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/09.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e22fe11bce3ab75d0bfe85a3e27af26e/photo_f0ab4184c9667c85c63714e582b3a7eb.jpg
+  - src: /images/biens/maison-moderne-145m2-cinq-chambres-petit-colombes/10.webp
     alt: "Maison moderne 145 m², 5 chambres, Petit Colombes"
 ---
 

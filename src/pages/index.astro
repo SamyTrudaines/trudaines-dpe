@@ -8,8 +8,16 @@ import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 
-const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket))
+const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
+  .slice(0, 3);
+
+/** Mandats passés : la preuve du travail accompli, sans prix ni disponibilité. */
+const mandats = await getCollection('biens', (b) => b.data.archive);
+const totalReferences = mandats.length;
+const references = mandats
+  .filter((b) => b.data.ville === 'Paris')
+  .sort((a, b) => b.data.surface - a.data.surface)
   .slice(0, 3);
 
 const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
@@ -59,47 +67,21 @@ const engagements = [
           <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
         </div>
         <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
-          Estimation gratuite et sans engagement. Réponse sous 24 heures ouvrées, au
+          Estimation gratuite et sans engagement. Réponse sous 24 heures ouvrées, au{' '}
           <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
         </p>
       </div>
-      {/*
-        Colonne de preuve plutôt qu'une photographie d'illustration : la note
-        des clients, le périmètre travaillé et les mentions réglementaires que
-        tout vendeur vérifie avant d'appeler. À remplacer par une photographie
-        du cabinet quand elle existera, pas par une image de banque d'images.
-      */}
-      <aside class="border-t border-[color:var(--color-encre)] pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-        <p class="surtitre">Le cabinet en clair</p>
-        <dl class="mt-8 space-y-8">
-          <div>
-            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Avis clients</dt>
-            <dd class="mt-2 font-[family-name:var(--font-titre)] text-3xl">
-              {agregatAvis.noteTexte} <span class="text-lg">/ 5</span>
-              <span class="ml-3 align-middle text-sm text-[color:var(--color-ardoise)]">
-                sur {agregatAvis.total} avis
-              </span>
-            </dd>
-            <dd class="mt-2">
-              <a href="/avis" class="lien-souligne text-sm">Lire les avis</a>
-            </dd>
-          </div>
-          <div>
-            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Périmètre</dt>
-            <dd class="mt-2 text-sm leading-relaxed">
-              Paris 9e nord, Montmartre et le 10e nord. Cinq quartiers travaillés rue par rue, pas un de plus.
-            </dd>
-          </div>
-          <div>
-            <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Cadre réglementaire</dt>
-            <dd class="mt-2 text-sm leading-relaxed text-[color:var(--color-ardoise)]">
-              Carte professionnelle {site.legal.carteT}, délivrée le {site.legal.carteTDate} par la CCI Paris
-              Île-de-France. Garantie financière {site.legal.garantieMontant} chez Galian.
-              {site.legal.detentionFonds}
-            </dd>
-          </div>
-        </dl>
-      </aside>
+      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
+        <img
+          src="/images/accueil-fenetre-abbesses.webp"
+          alt="Fenêtre ouverte sur une façade aux volets pâles, appartement présenté par Trudaines aux Abbesses"
+          width="1000"
+          height="1250"
+          fetchpriority="high"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
     </div>
   </section>
 
@@ -137,6 +119,39 @@ const engagements = [
               pieces={b.data.pieces}
               statut={b.data.statut}
               photo={b.data.photos[0]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {references.length > 0 && (
+    <section class="section filet" aria-labelledby="references-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <h2 id="references-accueil" class="titre-2">Ce qui nous a été confié</h2>
+            <p class="mt-6 text-[color:var(--color-ardoise)]">
+              {totalReferences} mandats depuis septembre 2024, du deux pièces de la Butte à la demeure avec
+              jardin. Les photographies sont celles des dossiers du cabinet.
+            </p>
+          </div>
+          <a href="/references" class="lien-souligne text-sm">Voir toutes nos références</a>
+        </div>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {references.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              sansPrix
             />
           ))}
         </div>

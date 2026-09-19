@@ -190,25 +190,23 @@ DNS chez Gandi.
    ce que le visiteur peut compter sur `/avis`. Penser à changer la date de
    relevé dans `src/data/site.ts`, clé `avis.releve`. Ne jamais publier un avis
    qui n'a pas été laissé par un client réel.
-2. **Mentions À ACTUALISER.** Il en reste une seule, dans
-   `src/content/articles/dpe-f-et-g-vendre.md` : les ordres de grandeur de
-   travaux observés sur le secteur. Barème, prix au m² et guides sont en place.
-3. **Actualités vides.** Les quatre actualités restées vides sur l'ancien site
+2. **Actualités vides.** Les quatre actualités restées vides sur l'ancien site
    sont à écrire, leurs titres figurent dans `migration-rapport.txt`. Leurs
    anciennes adresses renvoient vers `/panorama` en attendant.
-4. **Photographies.** Le site n'affiche plus aucun cadre gris : là où une
-   photographie manque, la page montre du texte et des chiffres, et le site se
-   tient sans image. Vos photographies se déposent dans `public/images/` au
-   format webp, puis s'appellent depuis la page concernée. Le portrait de la page
-   `/samy-santamarina` est volontairement absent tant que le vôtre n'existe pas :
-   une photo de banque d'images n'y a pas sa place.
-5. **Presse.** Ajouter les retombées dans `/admin`, rubrique **Presse**.
-6. **Fiches reprises de l'ancien site.** Les dix sept fiches sont en
-   `offMarket: true`, donc hors des pages `/acheter` et d'accueil. Avant de
-   passer l'une d'elles à `false`, il faut sa classe énergie, sa classe climat
-   et ses dépenses annuelles d'énergie : `npm run verifier` refuse une annonce
-   diffusée sans ces mentions, obligatoires dans toute annonce de vente. Les
-   redirections 301 de l'ancien site sont déjà dans `public/_redirects`.
-7. **Photographies des fiches reprises.** Elles pointent encore vers le serveur
-   d'images de l'ancien back office et tomberont avec lui. À rapatrier dans
-   `public/images/biens/` avant toute résiliation.
+3. **Photographies du cabinet.** Les photographies des mandats sont rapatriées
+   dans `public/images/biens`, au format webp et sans métadonnées Exif. Le site
+   n'affiche plus aucun cadre gris : là où une photographie manque, la page
+   montre du texte et des chiffres, et se tient sans image. Le portrait de la
+   page `/samy-santamarina` est volontairement absent tant que le vôtre n'existe
+   pas : une photo de banque d'images n'y a pas sa place. Vos photographies se
+   déposent dans `public/images/` au format webp.
+4. **Presse.** Ajouter les retombées dans `/admin`, rubrique **Presse**.
+5. **Remettre un bien en vente.** Les dix sept fiches reprises sont en
+   `archive: true` : ce sont des références, sans prix ni formulaire de visite.
+   Pour rediffuser l'une d'elles comme annonce, repasser `archive` et `offMarket`
+   à `false`, et renseigner sa classe énergie, sa classe climat et ses dépenses
+   annuelles d'énergie à jour : `npm run verifier` refuse une annonce diffusée
+   sans ces mentions, obligatoires dans toute annonce de vente. Les diagnostics
+   des anciens mandats ne sont plus valides, il faut les refaire.
+6. **Mentions légales de l'ancien back office.** Plus aucune page n'appelle le
+   serveur d'images de l'ancien abonnement : il peut être résilié.

@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement 3 pièces lumnieux, rénové et modulable, 61 m², Paris 18e, Abbesses, cœur de Montmartre Idéalement situé à environ 3 min à pied du métro Abbesses (ligne 12), rue des Trois Frères, l'une des plus jolies rues de Montmartre, à deux pas de la place des Abbesses, de la Halle Saint-Pierre et…"
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_c5d3ab1925d5dd6bd21e3781b266e461.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/01.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_2b1c261235cc8031faa4bfba9f8a1dd9.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/02.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_67dc90f94708dc0b813cecd697e4a37a.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/03.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_1d61719e8c0d68d1265f1b6e097f0505.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/04.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_204f5c5a179a61f0fd70785629b61857.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/05.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_d17e16da5804aa6aefe15e110e6582f9.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/06.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_719e075791f73d37d586d43dade5e42b.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/07.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_87199236c07ccefedfddd5128f562f92.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/08.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_db92d35b8fc3a309c381df9d073bc19a.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/09.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/279133793de5cc2bc172a745af064f24/photo_398280fdb50bd47e54867860467fa415.jpg
+  - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/10.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
 ---
 

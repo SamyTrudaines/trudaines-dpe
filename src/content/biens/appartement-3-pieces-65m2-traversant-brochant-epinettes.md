@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: vendu
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement traversant et lumineux, orienté sud-est de 3 pièces et 65m² en quatrième étage par escalier dans le secteur Brochant / Epinettes. Bien desservi en matière de transports avec les Métros M14 Cardinet / M13 Brochant / RER C Porte de Clichy/ T3b, Ligne L."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_06bb2749a7e8997f899432ab4be64651.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/01.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_a40f497e4826170dbfa27c0cb1cf4097.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/02.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_42da0108bda04b6f640cbc877a67c48c.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/03.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_27e1bdb4970d1452a5ccd13ff75930c4.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/04.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_379ac4336f1479edf10fdc476bc820af.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/05.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_3f3223f7ec3ecaba3b47667ca4a94a63.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/06.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_6e3ff45c68c005dd2794bebe74efb4fe.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/07.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_849d215c5a436066b2e36c689d1c7fc1.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/08.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_629e1497ce5872cb62f8c615ace8cfd8.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/09.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/e135bb223b95a3b3fcfa1a0dcb1d7146/photo_037675a1a72756293cf79dd9a3a32621.jpg
+  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/10.webp
     alt: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
 ---
 

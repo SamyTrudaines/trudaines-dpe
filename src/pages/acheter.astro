@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
 import { prixAffiche, nombre, libelleStatut } from '../lib/format';
 
-const biens = (await getCollection('biens', (b) => !b.data.offMarket)).sort(
+const biens = (await getCollection('biens', (b) => !b.data.offMarket && !b.data.archive)).sort(
   (a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix
 );
 
@@ -21,9 +21,8 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       <p class="surtitre">Acheter</p>
       <h1 class="titre-1 mt-6">Les biens que nous vendons</h1>
       <p class="chapo mt-8">
-        {biens.length > 0
-          ? "Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé."
-          : "Chaque bien que nous rentrons est visité, documenté et présenté par la personne qui le vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé le premier."}
+        Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le
+        vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé.
       </p>
     </div>
   </section>
@@ -84,10 +83,21 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
   </section>
   )}
 
-  {biens.length > 0 && (
   <section class="section pt-0">
     <div class="conteneur">
-      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-liste-biens>
+      {biens.length === 0 ? (
+        <div class="max-w-2xl">
+          <p class="text-[color:var(--color-ardoise)]">
+            Aucun bien n'est actuellement diffusé publiquement. Une partie des ventes du cabinet se fait avant
+            diffusion, auprès d'acquéreurs déjà qualifiés : créez une alerte ci-dessous, nous vous écrivons dès
+            qu'un bien correspond à votre recherche.
+          </p>
+          <p class="mt-6 text-sm">
+            <a href="/references" class="lien-souligne">Voir les biens que le cabinet a présentés</a>
+          </p>
+        </div>
+      ) : (
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-liste-biens>
           {biens.map((b, index) => (
             <article
               class="group"
@@ -131,22 +141,21 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
               </a>
             </article>
           ))}
-      </div>
+        </div>
+      )}
       <p class="mt-12 text-sm text-[color:var(--color-ardoise)]" data-aucun-resultat hidden>
         Aucun bien ne correspond à ces critères pour le moment. Créez une alerte, nous vous préviendrons.
       </p>
     </div>
   </section>
-  )}
 
   <section class="section filet">
     <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
-        <h2 class="titre-2">{biens.length > 0 ? 'Acheter avant tout le monde' : "Aucune annonce publique en ce moment"}</h2>
+        <h2 class="titre-2">Acheter avant tout le monde</h2>
         <p class="chapo mt-6">
-          Les biens que nous rentrons sont présentés d'abord à notre fichier d'acquéreurs, et partent le plus souvent
-          avant d'être diffusés. C'est le fonctionnement normal d'un périmètre aussi resserré, et c'est souvent là que
-          se traitent les meilleures affaires, sans surenchère et sans visite groupée.
+          Les biens que nous rentrons sont présentés d'abord à notre fichier d'acquéreurs. C'est souvent là que se
+          traitent les meilleures affaires, sans surenchère et sans visite groupée.
         </p>
         <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
           Vous cherchez un bien précis et vous ne le trouvez pas ?
@@ -167,24 +176,24 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       const vide = document.querySelector<HTMLElement>('[data-aucun-resultat]');
 
       const champ = (d: FormData, nom: string) => String(d.get(nom) ?? '');
-      const nombre = (valeur: string | undefined) => parseInt(valeur ?? '0', 10) || 0;
+      const nombreChamp = (valeur: string | undefined) => parseInt(valeur ?? '0', 10) || 0;
 
       const appliquer = () => {
         const d = new FormData(form);
         const arrondissement = champ(d, 'arrondissement');
         const quartier = champ(d, 'quartier');
-        const pieces = nombre(champ(d, 'pieces'));
-        const prixMax = nombre(champ(d, 'prix'));
-        const surfaceMin = nombre(champ(d, 'surface'));
+        const pieces = nombreChamp(champ(d, 'pieces'));
+        const prixMax = nombreChamp(champ(d, 'prix'));
+        const surfaceMin = nombreChamp(champ(d, 'surface'));
         let visibles = 0;
 
         for (const carte of cartes) {
           const ok =
             (!arrondissement || carte.dataset.arrondissement === arrondissement) &&
             (!quartier || carte.dataset.quartier === quartier) &&
-            (!pieces || nombre(carte.dataset.pieces) >= pieces) &&
-            (!prixMax || nombre(carte.dataset.prix) <= prixMax) &&
-            (!surfaceMin || nombre(carte.dataset.surface) >= surfaceMin);
+            (!pieces || nombreChamp(carte.dataset.pieces) >= pieces) &&
+            (!prixMax || nombreChamp(carte.dataset.prix) <= prixMax) &&
+            (!surfaceMin || nombreChamp(carte.dataset.surface) >= surfaceMin);
           carte.hidden = !ok;
           if (ok) visibles++;
         }

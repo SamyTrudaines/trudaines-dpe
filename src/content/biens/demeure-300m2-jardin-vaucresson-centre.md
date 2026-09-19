@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "En exclusivité chez Trudaines. À Vaucresson centre, à deux pas de la gare et des commerces, découvrez une demeure bourgeoise du début du XXème siècle, à l’architecture francilienne élégante, entourée d’un jardin clos d’environ 1000 m²."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_1d757beffd7d058af199bea1eb3d38be.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/01.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_23a1e260c051dffddf295d10f6e7a04d.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/02.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_7d687c05326f01553e2d7f0ab34c45a8.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/03.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_809f12d78b549c23a4398f12db484deb.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/04.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_9300e80a743b78da991971cd3c4289a2.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/05.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_8f5213ea3ff8c3a61d1d51f49cb5bb42.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/06.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_02f0b6e98bebb69c81bb557aaf9f0a8c.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/07.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_2d0c39174dfb21d2537471d1d0cd7b3d.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/08.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_3c154828ddd9fb7a770a92e2ae900efd.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/09.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/cc11f0f9021d3b7f44cd5bb8daf4be28/photo_ef66b6f2679d483e4a8330a811099965.jpg
+  - src: /images/biens/demeure-300m2-jardin-vaucresson-centre/10.webp
     alt: "Demeure de 300 m² avec jardin, Vaucresson Centre"
 ---
 

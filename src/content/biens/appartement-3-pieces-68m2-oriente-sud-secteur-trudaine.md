@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement au 4ème étage, ensoleillé, traversant et refait à neuf avec style, de 68m² avec 2 chambres et cuisine ouverte."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_427a3f7dfa79af1a1d98d237a527c73e.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/01.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_04caadbb28279fc339c0f84bcc17a484.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/02.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_6c49b3a4be53d9243475f49dc6dac946.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/03.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_1f1025fc195a20c480dccb7b4fb184af.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/04.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_53fb261f57350ccf690e5418d37686bc.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/05.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_eca8288677071a2355facdde304606d2.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/06.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_6b6f059250558639047edf90b96d1b7c.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/07.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_6c364c13b89cefce6f77aaafb1de7b04.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/08.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_a43568b5ddada4825ece975fb670b49d.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/09.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da7a09dfd4b2b4bbc1a0152202b033cd/photo_f517d0169f1db391f22c2c3ab6e6d04b.jpg
+  - src: /images/biens/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine/10.webp
     alt: "Appartement 3 pièces 68 m² orienté sud, secteur Trudaine"
 ---
 
