@@ -81,7 +81,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 18e | Montmartre et sud du 18e - Trudaines',
+    titre: 'Estimation immobilière Paris 18e et Montmartre | Trudaines',
     description:
       "Estimation immobilière à Paris 18e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet de Montmartre.",
     titreAgence: 'Agence immobilière Paris 18e | Vente et estimation - Trudaines',

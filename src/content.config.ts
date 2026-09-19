@@ -78,6 +78,13 @@ const articles = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().default(''),
     chapo: z.string(),
+    /**
+     * Balise title et meta description, quand le titre éditorial et le chapô
+     * dépassent les longueurs utiles en résultat de recherche, 70 et 160
+     * caractères. Le h1 et le chapô affichés ne changent pas.
+     */
+    titreSeo: z.string().optional(),
+    descriptionSeo: z.string().optional(),
     motsCles: z.array(z.string()).default([]),
     brouillon: z.boolean().default(false),
   }),

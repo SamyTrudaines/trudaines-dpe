@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import BlocCta from '../components/BlocCta.astro';
 import { nombre } from '../lib/format';
+import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
 import { site } from '../data/site';
 
 /**
@@ -91,7 +92,9 @@ const donnees = [
                 <div class="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-papier)]">
                   {b.data.photos[0] && (
                     <img
-                      src={b.data.photos[0].src}
+                      src={jeuPhoto(b.data.photos[0].src).src}
+                      srcset={jeuPhoto(b.data.photos[0].src).srcset}
+                      sizes={TAILLES_CARTE}
                       alt={b.data.photos[0].alt}
                       width="800"
                       height="600"

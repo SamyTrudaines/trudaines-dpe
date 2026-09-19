@@ -2,6 +2,8 @@
 titre: "Immobilier à Paris en avril 2025 : retour du dynamisme"
 date: 2025-05-06
 chapo: "Le marché immobilier parisien renoue avec une dynamique positive en ce printemps 2025. Après des mois de tension liée au pouvoir d’achat et aux taux d’intérêt, les indicateurs repassent au vert."
+titreSeo: "Immobilier à Paris, le retour du dynamisme | Trudaines"
+descriptionSeo: "Transactions, taux et négociation au printemps 2025 : ce que les chiffres du marché parisien disent, et ce qu'ils ne disent pas."
 image: /images/panorama/immobilier-paris-avril-2025-retour-du-dynamisme.webp
 imageAlt: "Immobilier à Paris en avril 2025 : retour du dynamisme"
 motsCles: ['prix immobilier Paris', 'délai de vente', 'marché parisien']
@@ -12,19 +14,19 @@ Le marché immobilier parisien renoue avec une dynamique positive en ce printemp
 
 - Les chiffres clés du marché parisien (avril 2025)
 
-Prix moyen des appartements : 9 418 €/m²
+Prix moyen des appartements : 9 418 €/m²
 
-→ +1,6 % sur 1 mois | +3,2 % sur 1 an
+→ +1,6 % sur 1 mois | +3,2 % sur 1 an
 
-Prix moyen des maisons : 10 045 €/m²
+Prix moyen des maisons : 10 045 €/m²
 
 → Stabilité sur un an
 
 Délai de vente moyen raccourci : 75 jours
 
-→ -4 % sur un an
+→ -4 % sur un an
 
-Taux de négociation : en recul, sous la barre des 4,5 % en France et 3% à Paris alors que nous étions à 8% en général en mi 2024, et actuellement 3% à Paris, signal d’un retour de tension côté acheteurs.
+Taux de négociation : en recul, sous la barre des 4,5 % en France et 3% à Paris alors que nous étions à 8% en général en mi 2024, et actuellement 3% à Paris, signal d’un retour de tension côté acheteurs.
 
 - Côté vendeurs : une fenêtre de tir idéale
 

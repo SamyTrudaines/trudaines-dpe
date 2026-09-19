@@ -34,11 +34,11 @@
 /nos-actualites/immobilier-a-paris-en-avril-2025-retour-du-dynamisme-les-chiffres-qui-comptent.html                                /panorama/immobilier-paris-avril-2025-retour-du-dynamisme        301
 /nos-actualites/immobilier-et-ia-en-2025-les-6-outils-qui-vont-transformer-votre-performance.html                                  /panorama/immobilier-et-ia-2025-six-outils                       301
 /nos-actualites/test.html                                                                                                          /panorama/salon-du-design-matter-and-shape-2025                  301
-/nos-actualites/Estimation75009_agenceimmobiliere75018_A%20propos                                                                  /panorama                                                        301
-/nos-actualites/estimation-immobilier-paris-9-18                                                                                   /panorama                                                        301
-/nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html                             /panorama                                                        301
-/nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html                                                             /panorama                                                        301
-/nos-actualites/wdxcdc                                                                                                             /panorama                                                        301
+/nos-actualites/Estimation75009_agenceimmobiliere75018_A%20propos  /panorama/frontiere-9e-18e-estimation  301
+/nos-actualites/estimation-immobilier-paris-9-18  /panorama/frontiere-9e-18e-estimation  301
+/nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html  /panorama/prix-immobilier-paris-9-18-analyse  301
+/nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html  /panorama/prix-immobilier-paris-9-18-analyse  301
+/nos-actualites/wdxcdc  /panorama/prix-immobilier-paris-9-18-analyse  301
 
 # --- Anciennes annonces, motifs ---------------------------------------------
 /vente/:slug                    /bien/:slug             301

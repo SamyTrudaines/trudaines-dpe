@@ -9,8 +9,8 @@ ordre: 3
 titreSeo: Immobilier Clichy Trinité, Paris 9e | Prix et vente - Trudaines
 descriptionSeo: "Marché immobilier du secteur Clichy Trinité, Paris 9e : prix au mètre carré, typologies et vente accompagnée par le cabinet Trudaines."
 photos:
-  - src: /images/quartiers/clichy-trinite.svg
-    alt: Église de la Trinité, Paris 9e
+  - src: /images/quartiers/clichy-trinite.webp
+    alt: Séjour d'un trois pièces orienté sud, Paris 9e
 faits:
   - titre: Typologies dominantes
     valeur: Deux et trois pièces, quelques immeubles de rapport

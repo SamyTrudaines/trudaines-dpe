@@ -237,6 +237,33 @@
     color: var(--color-encre);
   }
   .prose-trudaines :where(img) { margin-block: 2rem; }
+
+  /* Tableaux de données des actualités : filets fins, chiffres alignés à droite. */
+  .prose-trudaines :where(table) {
+    width: 100%;
+    margin-block: 2.25rem;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .prose-trudaines :where(thead) { border-bottom: 1px solid var(--color-encre); }
+  .prose-trudaines :where(th) {
+    padding: 0.75rem 0.5rem 0.75rem 0;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-encre);
+  }
+  .prose-trudaines :where(td) {
+    padding: 0.75rem 0.5rem 0.75rem 0;
+    border-bottom: 1px solid var(--color-trait);
+    color: var(--color-ardoise);
+  }
+  .prose-trudaines :where(tbody tr:last-child td) { border-bottom: 0; }
+  .prose-trudaines :where(th:not(:first-child)),
+  .prose-trudaines :where(td:not(:first-child)) { text-align: right; }
+
+  @media (max-width: 640px) {
+    .prose-trudaines :where(table) { display: block; overflow-x: auto; white-space: nowrap; }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

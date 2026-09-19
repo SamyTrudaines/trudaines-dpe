@@ -37,8 +37,8 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={`${article.data.titre} | Panorama Trudaines`}
-  description={article.data.chapo}
+  titre={article.data.titreSeo ?? `${article.data.titre} | Trudaines`}
+  description={article.data.descriptionSeo ?? article.data.chapo}
   image={article.data.image}
   type="article"
   filAriane={[{ nom: 'Panorama', href: '/panorama' }, { nom: article.data.titre }]}
