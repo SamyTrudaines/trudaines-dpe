@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
-import { nombre, prix as prixFr } from '../../lib/format';
+import { nombre, prix as prixFr, enPhrase } from '../../lib/format';
 import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, type Rue } from '../../lib/rues';
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
@@ -40,18 +40,20 @@ const lectureDispersion = {
     "L'écart entre les ventes les moins chères et les plus chères y est large : la rue mélange des biens très différents, et une estimation à la médiane s'y trompe presque à coup sûr.",
 }[dispersion];
 
+const nomEnPhrase = enPhrase(rue.nom);
+
 const questions = [
   {
     '@type': 'Question',
-    name: `Quel est le prix au m² ${rue.nom}, ${rue.arrondissement} ?`,
+    name: `Quel est le prix au m² ${nomEnPhrase}, ${rue.arrondissement} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `Le prix médian constaté ${rue.nom} est de ${euros(rue.mediane)} le mètre carré, sur ${rue.ventes} ventes d'appartements signées de ${periode}. Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`,
+      text: `Le prix médian constaté ${nomEnPhrase} est de ${euros(rue.mediane)} le mètre carré, sur ${rue.ventes} ventes d'appartements signées de ${periode}. Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`,
     },
   },
   {
     '@type': 'Question',
-    name: `Quelle agence immobilière vend ${rue.nom} ?`,
+    name: `Quelle agence immobilière vend ${nomEnPhrase} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
       text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. Le cabinet ne détient aucun fonds.`,
@@ -59,7 +61,7 @@ const questions = [
   },
   {
     '@type': 'Question',
-    name: `D'où vient ce prix au m² ${rue.nom} ?`,
+    name: `D'où vient ce prix au m² ${nomEnPhrase} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
       text: "Du fichier des demandes de valeurs foncières publié par la direction générale des finances publiques, qui recense les ventes enregistrées devant notaire. Appartements seuls, ventes hors multilots. Aucune estimation, aucune annonce, uniquement des ventes signées.",
@@ -75,7 +77,7 @@ const donnees = [
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: `Prix au mètre carré ${rue.nom}, ${rue.arrondissement}`,
-    description: `Médiane et déciles du prix au mètre carré des appartements vendus ${rue.nom}, sur ${rue.ventes} ventes de ${periode}.`,
+    description: `Médiane et déciles du prix au mètre carré des appartements vendus ${nomEnPhrase}, sur ${rue.ventes} ventes de ${periode}.`,
     creator: { '@id': `${site.url}/#cabinet` },
     isBasedOn: 'https://www.data.gouv.fr/datasets/5c4ae55a634f4117716d5656/',
     temporalCoverage: '2024-01-01/2025-12-31',
@@ -105,12 +107,12 @@ const donnees = [
       <p class="surtitre">{rue.arrondissement} · {rue.ventes} ventes analysées</p>
       <h1 class="titre-1 mt-6">Prix au m² {rue.nom}</h1>
       <p class="chapo mt-8">
-        {euros(rue.mediane)} le mètre carré, prix médian des appartements vendus {rue.nom} de {periode}.
+        {euros(rue.mediane)} le mètre carré, prix médian des appartements vendus {nomEnPhrase} de {periode}.
         {' '}{position}
       </p>
       <p class="mt-6 text-[color:var(--color-ardoise)]">
         Ce chiffre est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
-        {' '}{rue.nom}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
+        {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
         Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les trois arrondissements
         voisins.
       </p>
@@ -142,7 +144,7 @@ const donnees = [
         <div>
           <h2 class="titre-2">Ce que ces chiffres disent</h2>
           <p class="mt-6 text-[color:var(--color-ardoise)]">
-            Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {rue.nom}.
+            Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {nomEnPhrase}.
             La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
             mètre carré, la moitié au dessus. {position}
           </p>

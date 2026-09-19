@@ -20,3 +20,24 @@ export const libelleStatut: Record<string, string> = {
   'sous-offre': 'Sous offre',
   vendu: 'Vendu',
 };
+
+/**
+ * Nom de voie en milieu de phrase.
+ *
+ * La base des valeurs foncières livre « Rue de Thann », et un titre le garde
+ * ainsi. Mais en français courant le type de voie ne prend pas de majuscule
+ * au milieu d'une phrase : on écrit « les appartements vendus rue de Thann ».
+ * Seul le premier mot est abaissé, et seulement s'il est un type de voie :
+ * les noms propres qui suivent gardent leur capitale.
+ */
+const TYPES_DE_VOIE = new Set([
+  'Rue', 'Avenue', 'Boulevard', 'Place', 'Passage', 'Impasse', 'Villa',
+  'Cité', 'Square', 'Quai', 'Allée', 'Chemin', 'Cour', 'Galerie', 'Hameau',
+  'Sente', 'Route', 'Voie', 'Rond-point', 'Esplanade', 'Parvis',
+]);
+
+export function enPhrase(nom: string): string {
+  const [premier, ...reste] = nom.split(' ');
+  if (!TYPES_DE_VOIE.has(premier)) return nom;
+  return [premier.toLowerCase(), ...reste].join(' ');
+}
