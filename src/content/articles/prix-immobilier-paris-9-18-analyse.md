@@ -1,8 +1,8 @@
 ---
 titre: "Prix immobilier Paris 9e et 18e : l'analyse du cabinet"
 date: 2026-04-14
-image: /images/quartiers/trudaine-maubeuge.webp
-imageAlt: Salon d'un quatre pièces haussmannien, secteur Trudaine Condorcet, Paris 9e
+image: /images/panorama/prix-immobilier-paris-9-18-analyse.webp
+imageAlt: Boulevard parisien bordé de façades en pierre de taille, sous un ciel dégagé
 chapo: Les prix au mètre carré du 9e, du 10e et du 18e, quartier par quartier et typologie par typologie, tirés de 5 498 ventes signées devant notaire entre janvier et décembre 2025.
 titreSeo: "Prix immobilier Paris 9e et 18e en 2025 | Trudaines"
 descriptionSeo: "Prix au m² du 9e, du 10e et du 18e, par quartier et par typologie, sur 5 498 ventes signées de janvier à décembre 2025."

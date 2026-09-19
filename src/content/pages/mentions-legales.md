@@ -38,8 +38,10 @@ Le traitement des données collectées sur ce site est décrit dans la [politiqu
 ## Crédits photographiques
 
 Les photographies de biens, de quartiers et de références sont celles du
-cabinet. Les photographies d'ambiance sont publiées sous licence Unsplash :
-toits de Paris et toits haussmanniens par Clément Dellandrea et Mario Gogh,
-rue de l'Abreuvoir par Nathan Staz, La Maison Rose par Bastien Nvs.
+cabinet, de même que la vue du square d'Anvers et du Sacré-Cœur qui ouvre
+la page d'accueil. Les photographies d'atmosphère sont publiées sous licence
+Unsplash : la porte Saint-Martin par Jonathan Ferreira, la façade
+haussmannienne par Tristan Guillemet, l'immeuble d'angle par Wyatt Simpson,
+le boulevard parisien par Johann Ströhfeldt, La Maison Rose par Bastien Nvs.
 La photographie du fondateur accompagnant l'article d'Immo Matin est publiée
 par ce média, droits réservés.

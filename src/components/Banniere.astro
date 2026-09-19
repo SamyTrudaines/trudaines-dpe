@@ -17,9 +17,12 @@ interface Props {
   chapo?: string;
   hauteur?: 'grand' | 'moyen';
   premiere?: boolean;
+  /** 'h1' par défaut ; 'div' quand la page porte son h1 ailleurs. */
+  balise?: 'h1' | 'div';
 }
 
-const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false } = Astro.props;
+const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false, balise = 'h1' } = Astro.props;
+const Titre = balise;
 const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : 'min-h-[48svh]';
 ---
 <section class={`relative isolate flex items-end overflow-hidden bg-[color:var(--color-encre)] ${classeHauteur}`}>
@@ -49,9 +52,9 @@ const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : '
           {surtitre}
         </p>
       )}
-      <h1 class="mt-6 font-[family-name:var(--font-titre)] text-[2.25rem] leading-[1.08] text-white sm:text-5xl md:text-6xl">
+      <Titre class="mt-6 font-[family-name:var(--font-titre)] text-[2.25rem] leading-[1.08] text-white sm:text-5xl md:text-6xl">
         {titre}
-      </h1>
+      </Titre>
       {chapo && <p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/85">{chapo}</p>}
       <div class="mt-10 flex flex-col gap-4 sm:flex-row">
         <slot />

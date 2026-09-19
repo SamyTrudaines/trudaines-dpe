@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import BlocAgence from '../components/BlocAgence.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 
@@ -20,6 +22,15 @@ const services = [
   description="Trudaines, cabinet de vente immobilière à Montmartre : Abbesses, Lamarck Caulaincourt, avenue Junot, Sacré-Cœur. Estimation écrite, vente confidentielle possible."
   filAriane={[{ nom: 'Agence immobilière Montmartre' }]}
 >
+  <Banniere
+    image={ambiance.maisonRose}
+    surtitre="Paris 18e"
+    titre="Montmartre"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
   <BlocAgence
     h1="Agence immobilière à Montmartre"
     intro="Montmartre est un marché à part : des acheteurs venus de tout Paris et d'ailleurs, un bâti ancien exigeant, des immeubles sans ascenseur, des vues qui valent parfois plus que vingt mètres carrés supplémentaires. Nous vendons sur la Butte avec cette grille de lecture, et notre bureau est à dix minutes à pied."

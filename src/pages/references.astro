@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 import BlocCta from '../components/BlocCta.astro';
 import { nombre } from '../lib/format';
 import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
@@ -62,10 +64,18 @@ const donnees = [
   donnees={donnees}
   cta={false}
 >
-  <section class="section pt-10">
+  <Banniere
+    image={ambiance.immeubleAngle}
+    surtitre="Depuis septembre 2024"
+    titre="Les biens qui nous ont été confiés"
+    balise="div"
+    hauteur="moyen"
+    premiere
+  />
+
+  <section class="section pt-14">
     <div class="conteneur max-w-3xl">
-      <p class="surtitre">Depuis septembre 2024</p>
-      <h1 class="titre-1 mt-6">Les biens qui nous ont été confiés</h1>
+      <h1 class="titre-1">Nos références</h1>
       <p class="chapo mt-8">
         {mandats.length} mandats, de {Math.round(surfaceMin)} à {Math.round(surfaceMax)} m², du deux pièces de la
         Butte à la demeure avec jardin. Les photographies sont celles des dossiers, prises pour le cabinet.

@@ -1,0 +1,27 @@
+---
+import { marque } from '../data/ambiance';
+
+/**
+ * Ouverture de l'accueil : la photographie du quartier, seule, pleine largeur.
+ *
+ * Pas de texte posé dessus, et c'est délibéré. L'image porte déjà la marque,
+ * un titre par dessus ferait double emploi avec le logo et obligerait à
+ * assombrir un ciel bleu pour rester lisible. Le titre vient juste en dessous,
+ * sur blanc, où il se lit sans artifice. C'est la règle des maisons de luxe :
+ * l'image d'abord, la parole ensuite.
+ */
+---
+<div class="relative w-full overflow-hidden bg-[color:var(--color-papier)]">
+  <img
+    src={`${marque.fichier}.webp`}
+    srcset={`${marque.fichier}-760.webp 760w, ${marque.fichier}-1200.webp 1200w, ${marque.fichier}.webp 1500w`}
+    sizes="100vw"
+    alt={marque.alt}
+    width={marque.largeur}
+    height={marque.hauteur}
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+    class="h-[56svh] w-full object-cover object-center md:h-[64svh] lg:h-[72svh]"
+  />
+</div>

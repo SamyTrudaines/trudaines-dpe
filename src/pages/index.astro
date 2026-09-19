@@ -7,8 +7,7 @@ import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
-import Banniere from '../components/Banniere.astro';
-import { ambiance } from '../data/ambiance';
+import Ouverture from '../components/Ouverture.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -52,20 +51,25 @@ const engagements = [
   titre="Trudaines | Cabinet immobilier Paris 9e et Montmartre"
   description="Cabinet de vente immobilière à Paris 9e nord, Montmartre et 10e. Estimation écrite sous 48 heures et compte rendu après chaque visite."
 >
-  <Banniere
-    image={ambiance.toitsHaussmanniens}
-    surtitre="Paris 9e nord · Montmartre · Paris 10e"
-    titre="Vendre un appartement parisien sans y laisser ni son prix ni son calendrier"
-    chapo="Cabinet de vente immobilière installé au pied de la Butte. Un périmètre restreint, travaillé rue par rue, avec les ventes réellement signées et le regard d'un professionnel qui visite lui même chaque bien."
-    premiere
-  >
-    <a href="/estimation" class="bouton bouton-clair">Estimer mon bien</a>
-    <a href="/vendre" class="bouton bouton-contour-clair">Notre méthode de vente</a>
-  </Banniere>
+  <Ouverture />
 
-  <section class="section pt-12">
+  <section class="section pt-14 md:pt-20">
     <div class="conteneur">
-      <p class="max-w-3xl text-[color:var(--color-ardoise)]">
+      <p class="surtitre">Paris 9e nord · Montmartre · Paris 10e</p>
+      <h1 class="titre-1 mt-8 max-w-4xl">
+        Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
+      </h1>
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
+        <p class="chapo max-w-2xl">
+          Cabinet de vente immobilière installé au pied de la Butte. Un périmètre restreint, travaillé rue par rue,
+          avec les ventes réellement signées et le regard d'un professionnel qui visite lui même chaque bien.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a href="/estimation" class="bouton">Estimer mon bien</a>
+          <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
+        </div>
+      </div>
+      <p class="mt-12 max-w-3xl border-t border-[color:var(--color-trait)] pt-6 text-sm text-[color:var(--color-ardoise)]">
         Estimation sans frais et sans engagement, avis de valeur écrit remis après visite sous 48 heures.
         Réponse sous 24 heures ouvrées, au{' '}
         <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
