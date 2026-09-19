@@ -242,5 +242,59 @@ verifier(
   `statut ${voixValide.status}, pièces ${JSON.stringify(piecesVoix.map((p) => p.name))}`
 );
 
+/*
+ * Le garde commun des fonctions /api : un POST portant l'Origin d'un autre
+ * site est refusé avant même d'atteindre la fonction ; un POST de notre
+ * propre site passe ; un POST sans en-tête Origin passe aussi, c'est le cas
+ * des clients anciens, et le refuser casserait des envois légitimes.
+ */
+const garde = await import(new URL('../functions/api/_middleware.js', import.meta.url).href);
+
+function requeteGarde(origine) {
+  const entetes = { Accept: 'application/json' };
+  if (origine) entetes.Origin = origine;
+  return new Request('https://www.trudaines.com/api/contact', {
+    method: 'POST', body: new FormData(), headers: entetes,
+  });
+}
+
+let fonctionAtteinte = false;
+const suivant = async () => {
+  fonctionAtteinte = true;
+  return new Response(JSON.stringify({ ok: true }), { status: 200 });
+};
+
+fonctionAtteinte = false;
+const origineForgee = await garde.onRequest({ request: requeteGarde('https://site-pirate.test'), next: suivant });
+verifier(
+  'POST venu d’un autre site refusé avant la fonction',
+  origineForgee.status === 403 && !fonctionAtteinte,
+  `statut ${origineForgee.status}`
+);
+
+fonctionAtteinte = false;
+const origineNulle = await garde.onRequest({ request: requeteGarde('null'), next: suivant });
+verifier(
+  'POST d’un cadre isolé (Origin: null) refusé',
+  origineNulle.status === 403 && !fonctionAtteinte,
+  `statut ${origineNulle.status}`
+);
+
+fonctionAtteinte = false;
+const origineLegitime = await garde.onRequest({ request: requeteGarde('https://www.trudaines.com'), next: suivant });
+verifier(
+  'POST de notre propre site accepté, en-têtes posés',
+  origineLegitime.status === 200 && fonctionAtteinte && origineLegitime.headers.get('Cache-Control') === 'no-store',
+  `statut ${origineLegitime.status}`
+);
+
+fonctionAtteinte = false;
+const sansOrigine = await garde.onRequest({ request: requeteGarde(null), next: suivant });
+verifier(
+  'POST sans en-tête Origin toléré',
+  sansOrigine.status === 200 && fonctionAtteinte,
+  `statut ${sansOrigine.status}`
+);
+
 console.log(echecs ? `${echecs} échec(s)` : 'Tous les formulaires répondent correctement.');
 process.exit(echecs ? 1 : 0);
