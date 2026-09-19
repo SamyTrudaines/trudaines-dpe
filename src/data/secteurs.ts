@@ -140,7 +140,7 @@ export const secteurs: Secteur[] = [
     titreAgence: 'Agence immobilière Paris 10e | Lariboisière Rocroy - Trudaines',
     descriptionAgence:
       "Trudaines accompagne les propriétaires vendeurs du 10e nord, secteur Lariboisière Rocroy. Estimation écrite, mise en vente, suivi hebdomadaire.",
-    hrefAgence: '/agence-immobiliere-paris-9',
+    hrefAgence: '/agence-immobiliere-paris-10',
     intro:
       "Le nord du 10e touche le 9e à la rue du Faubourg Poissonnière et le 18e au boulevard de la Chapelle. Les acheteurs y arrivent souvent après avoir cherché dans le 9e, avec le même budget et une exigence différente sur le volume. Estimer ici demande de savoir ce qui se vend juste à côté.",
     introAgence:
@@ -179,6 +179,59 @@ export const secteurs: Secteur[] = [
         question: "Puis-je confier mon bien si je ne vis plus à Paris ?",
         reponse:
           "Oui, une partie de nos vendeurs habite en province ou à l'étranger. Nous gérons les diagnostics, l'accès, les visites et la relation avec le notaire, avec un point hebdomadaire par visioconférence ou par téléphone selon ce qui vous arrange.",
+      },
+    ],
+  },
+  {
+    slug: 'paris-17',
+    arrondissement: '75017',
+    nom: 'Paris 17e',
+    nomLong: '17e arrondissement de Paris',
+    titre: 'Estimation immobilière Paris 17e | Trudaines',
+    description:
+      "Estimation immobilière à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures par un agent immobilier du secteur.",
+    titreAgence: 'Agence immobilière Paris 17e | Batignolles et Épinettes - Trudaines',
+    descriptionAgence:
+      "Agence immobilière dans le 17e : Batignolles, Épinettes, Brochant, Ternes. Vente, recherche et gestion, un seul interlocuteur jusqu'à la signature.",
+    hrefAgence: '/agence-immobiliere-paris-17',
+    intro:
+      "Le 17e se lit en trois marchés qui n'ont presque rien en commun. Les Batignolles et leur square, où la demande familiale est constante. Les Épinettes et Brochant, plus abordables, portés par le prolongement du tramway et par Clichy Batignolles. Et la plaine Monceau, qui relève d'un autre budget. Estimer ici suppose de savoir dans lequel des trois se trouve votre rue.",
+    introAgence:
+      "Le 17e nord prolonge naturellement notre terrain : même bassin d'acheteurs que le 9e et le 18e ouest, mêmes immeubles de rapport de la fin du XIXe, et des vendeurs qui arbitrent souvent entre les deux rives de la place de Clichy.",
+    quartiers: [],
+    prixMoyen: '10 130 € le m², prix médian',
+    fourchette:
+      "7 375 à 13 246 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
+    faq: [
+      {
+        question: "Quel est le prix au mètre carré dans le 17e arrondissement ?",
+        reponse:
+          "Le prix médian ressort à 10 130 € le mètre carré sur 4 641 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025, avec un premier décile à 7 375 € et un neuvième à 13 246 €. Cet écart de près de 5 900 € mesure ce qu'une moyenne d'arrondissement ne dit pas : l'adresse, l'étage, l'ascenseur, l'état du bien et celui de la copropriété. Nous publions le détail rue par rue.",
+      },
+      {
+        question: "Les Batignolles se vendent-elles plus cher que les Épinettes ?",
+        reponse:
+          "Oui, et l'écart est mesurable. Le secteur du square des Batignolles et de la rue des Dames soutient des niveaux nettement supérieurs à ceux des Épinettes et de Brochant, à quelques centaines de mètres. La frontière économique ne suit pas la limite administrative : elle passe grosso modo par l'avenue de Clichy.",
+      },
+      {
+        question: "Le nouveau quartier Clichy Batignolles a-t-il fait monter les prix ?",
+        reponse:
+          "Il a surtout changé la demande. L'arrivée du tribunal, du parc Martin Luther King et des bureaux a amené des acheteurs qui ne regardaient pas le 17e nord auparavant. L'effet sur les prix de l'ancien est réel mais très localisé, et il faut le vérifier rue par rue plutôt que de l'appliquer à l'arrondissement entier.",
+      },
+      {
+        question: "Faut-il un agent immobilier du 17e pour vendre dans le 17e ?",
+        reponse:
+          "Il faut surtout quelqu'un qui connaisse le bassin d'acheteurs, qui déborde largement l'arrondissement : beaucoup d'acquéreurs des Batignolles ont d'abord cherché dans le 9e ou le 18e ouest. Nous travaillons ces trois marchés ensemble, ce qui permet de présenter un bien du 17e à des acheteurs qui n'y pensaient pas encore.",
+      },
+      {
+        question: "Vendez-vous aussi des maisons dans le 17e ?",
+        reponse:
+          "Le 17e compte quelques maisons de ville, notamment dans le secteur des Épinettes et autour de la cité des Fleurs. Elles constituent un marché à part, avec peu de références comparables : l'avis de valeur s'appuie alors sur un travail d'ajustement plus fin, que nous documentons ligne par ligne.",
+      },
+      {
+        question: "Combien de temps faut-il pour vendre un appartement dans le 17e ?",
+        reponse:
+          "Le délai dépend d'abord du prix de mise en marché. Un bien positionné juste trouve son acquéreur en quelques semaines ; un bien surévalué s'use et finit par se vendre en dessous de sa valeur. Nous écrivons dès le mandat le prix de départ, la date de la première revue et le palier suivant.",
       },
     ],
   },

@@ -20,7 +20,8 @@ export const GET: APIRoute = async () => {
   const contenu = `# ${site.nomLong}
 
 > Cabinet de vente immobilière indépendant, fondé en septembre 2024 par Samy Santamarina.
-> Territoire : Paris 9e nord, Montmartre et sud du 18e, nord du 10e.
+> Territoire : Paris. Le cabinet travaille toute la capitale, avec une connaissance au mètre carré
+> des 9e, 10e, 17e et 18e arrondissements, où il publie ses propres prix voie par voie.
 > Transactions résidentielles, majoritairement des appartements de 2 à 5 pièces.
 
 ## Identité
@@ -32,7 +33,7 @@ export const GET: APIRoute = async () => {
 - Horaires : ${site.horairesTexte}
 
 ## Services
-- Vente immobilière, mandat simple, mandat exclusif ou vente confidentielle : ${site.url}/mandat-exclusif
+- Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle : ${site.url}/mandat-exclusif
 - Avis de valeur écrit, remis après visite sous 48 heures, sans frais et sans engagement, conservé par le propriétaire même s'il vend ailleurs
 - Mandat de recherche pour acquéreurs
 - Gestion locative
@@ -53,7 +54,7 @@ visite systématique du bien, puis avis de valeur écrit citant ses comparables.
 Le cabinet calcule et publie ses propres prix au mètre carré à partir du fichier des demandes de valeurs
 foncières de la direction générale des finances publiques, qui recense les ventes enregistrées devant notaire.
 Appartements seuls, ventes hors multilots, aucune estimation et aucune annonce dans le calcul.
-- Prix au mètre carré de ${rues.length} voies de Paris 9e, 10e et 18e : ${site.url}/prix-immobilier
+- Prix au mètre carré de ${rues.length} voies de Paris 9e, 10e, 17e et 18e : ${site.url}/prix-immobilier
 - Données brutes réutilisables, au format JSON : ${site.url}/prix-immobilier.json
 - Période couverte : ${periode}. Seuil de publication : ${ventesMinimum} ventes minimum par voie.
 - Scripts de calcul publiés avec le site, recalcul à chaque parution de la base, en avril et en octobre.
@@ -79,7 +80,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 
 ## Ce que le cabinet ne fait pas
 - Aucune estimation par téléphone ni par formulaire seul : l'avis de valeur suppose une visite.
-- Aucun mandat hors du périmètre annoncé, Paris 9e nord, Montmartre, sud du 18e et nord du 10e.
+- Aucun mandat hors de Paris. Le cabinet ne traite ni la petite ni la grande couronne.
 - Aucune détention de fonds : ${site.legal.detentionFonds}
 - Aucun avis client inventé : les avis publiés sont repris de Google et de Pages Jaunes, avec leur source et leur lien.
 

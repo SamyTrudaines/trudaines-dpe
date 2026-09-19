@@ -40,7 +40,7 @@ from pathlib import Path
 
 DATASET = 'https://www.data.gouv.fr/api/1/datasets/5c4ae55a634f4117716d5656/'
 BAN = 'https://api-adresse.data.gouv.fr/search/'
-COMMUNES = {'109': '75009', '110': '75010', '118': '75018'}
+COMMUNES = {'109': '75009', '110': '75010', '117': '75017', '118': '75018'}
 
 SECTEURS = [
     ('trudaine-maubeuge',   'Trudaine Maubeuge',   '75009', 'Avenue Trudaine'),
@@ -48,6 +48,8 @@ SECTEURS = [
     ('clichy-trinite',      'Clichy Trinité',      '75009', "Place d'Estienne d'Orves"),
     ('montmartre',          'Montmartre',          '75018', 'Place des Abbesses'),
     ('lariboisiere-rocroy', 'Lariboisière Rocroy', '75010', 'Rue de Rocroy'),
+    ('batignolles',         'Batignolles',         '75017', 'Place du Docteur Félix Lobligeois'),
+    ('epinettes',           'Épinettes',           '75017', 'Rue des Épinettes'),
 ]
 
 CACHE = Path(__file__).resolve().parent.parent / '.cache' / 'dvf'

@@ -38,7 +38,12 @@ _spec = importlib.util.spec_from_file_location('prix_dvf', RACINE / 'scripts' / 
 prix_dvf = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(prix_dvf)
 
-ARRONDISSEMENTS = {'75009': 'Paris 9e', '75010': 'Paris 10e', '75018': 'Paris 18e'}
+ARRONDISSEMENTS = {
+    '75009': 'Paris 9e',
+    '75010': 'Paris 10e',
+    '75017': 'Paris 17e',
+    '75018': 'Paris 18e',
+}
 
 # Voies dont le nom ne se prête pas à une page : adresses inexploitables.
 VOIES_ECARTEES = re.compile(r'^(rue|avenue|boulevard|place|passage|impasse|cite|villa|square)?\s*$', re.I)

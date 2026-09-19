@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from '../components/BlocAgence.astro';
+import Avis from '../components/Avis.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { getSecteur } from '../data/secteurs';
+import { arrondissements, periode } from '../lib/rues';
+
+const secteur = getSecteur('paris-17')!;
+const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+const chiffres = arrondissements['75017'];
+
+const services = [
+  { titre: 'Vente et mandat', texte: "Mise en marché complète : avis de valeur écrit, photographies en lumière naturelle, diffusion, visites qualifiées, négociation et suivi jusqu'à l'acte.", href: '/vendre' },
+  { titre: 'Estimation', texte: "Un avis de valeur documenté, remis sous 48 heures après la visite, sans frais et sans engagement.", href: '/estimation/paris-17' },
+  { titre: 'Recherche pour acquéreur', texte: "Mandat de recherche pour les acheteurs des Batignolles et des Épinettes, y compris sur des biens non diffusés.", href: '/chasse' },
+  { titre: 'Gestion locative', texte: "Bail, sélection du locataire, quittancement, révision et suivi de copropriété, dans une approche patrimoniale.", href: '/gestion-locative' },
+];
+---
+<Layout
+  titre={secteur.titreAgence}
+  description={secteur.descriptionAgence}
+  filAriane={[{ nom: 'Agence immobilière Paris 17e' }]}
+>
+  <Banniere
+    image={ambiance.ruePavee}
+    surtitre="Paris 17e"
+    titre="Batignolles, Épinettes, Brochant"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
+  <BlocAgence
+    h1="Agence immobilière à Paris 17e"
+    intro={secteur.introAgence}
+    secteurNom="le 17e arrondissement"
+    hrefEstimation="/estimation/paris-17"
+    quartiers={quartiers}
+    services={services}
+  />
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Trois marchés dans un seul arrondissement</h2>
+      <p class="mt-8 text-[color:var(--color-ardoise)]">
+        Le 17e est l'arrondissement parisien où l'écart entre deux adresses voisines se paie le plus cher en
+        erreur d'estimation. Les Batignolles, autour du square et de la rue des Dames, portent une demande
+        familiale constante et des immeubles de rapport bien tenus. Les Épinettes et Brochant, de l'autre côté
+        de l'avenue de Clichy, restent plus abordables et se sont transformés avec le parc Martin Luther King
+        et le quartier Clichy Batignolles. La plaine Monceau, enfin, relève d'un autre budget et d'une autre
+        clientèle.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Un agent immobilier qui applique une moyenne d'arrondissement à ces trois marchés se trompe dans les
+        trois cas. Nous publions le prix au mètre carré voie par voie, à partir des ventes enregistrées devant
+        notaire, pour que vous puissiez vérifier vous même avant de nous appeler.
+      </p>
+      <dl class="mt-12 grid gap-8 sm:grid-cols-3">
+        <div class="bloc">
+          <dt class="surtitre">Prix médian</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.mediane.toLocaleString('fr-FR')} € le m²</dd>
+        </div>
+        <div class="bloc">
+          <dt class="surtitre">Ventes analysées</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.ventes.toLocaleString('fr-FR')}</dd>
+        </div>
+        <div class="bloc">
+          <dt class="surtitre">Du 1er au 9e décile</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.d1.toLocaleString('fr-FR')} à {chiffres?.d9.toLocaleString('fr-FR')} €</dd>
+        </div>
+      </dl>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Ventes d'appartements enregistrées devant notaire, {periode}, hors multilots. Source : fichier des
+        demandes de valeurs foncières de la direction générale des finances publiques.
+      </p>
+      <p class="mt-10">
+        <a href="/prix-immobilier" class="lien-souligne">Le prix au mètre carré, rue par rue</a>
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} />
+</Layout>

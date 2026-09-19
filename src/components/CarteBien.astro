@@ -1,6 +1,6 @@
 ---
 import { prixAffiche, nombre, libelleStatut } from '../lib/format';
-import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
+import { jeuPhoto, TAILLES_CARTE, TAILLES_VITRINE } from '../lib/images';
 interface Props {
   id: string;
   titre: string;
@@ -14,20 +14,22 @@ interface Props {
   chargement?: 'lazy' | 'eager';
   /** Vrai pour un mandat archivé : la carte ne porte alors aucun prix. */
   sansPrix?: boolean;
+  /** Vrai dans la vitrine de l'accueil : image plus grande, format plus large. */
+  vitrine?: boolean;
 }
-const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false } = Astro.props;
+const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false } = Astro.props;
 ---
 <article class="group">
   <a href={`/bien/${id}`} class="block no-underline">
-    <div class="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-papier)]">
+    <div class={`relative overflow-hidden bg-[color:var(--color-papier)] ${vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
       {photo ? (
         <img
           src={jeuPhoto(photo.src).src}
           srcset={jeuPhoto(photo.src).srcset}
-          sizes={TAILLES_CARTE}
+          sizes={vitrine ? TAILLES_VITRINE : TAILLES_CARTE}
           alt={photo.alt}
-          width="800"
-          height="600"
+          width={vitrine ? 1600 : 800}
+          height={vitrine ? 1067 : 600}
           loading={chargement}
           decoding="async"
           class="h-full w-full object-cover transition-opacity duration-200 group-hover:opacity-90"
@@ -44,7 +46,7 @@ const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, 
       )}
     </div>
     <p class="surtitre mt-5">{quartier} · {arrondissement}</p>
-    <h3 class="titre-3 mt-2 text-[color:var(--color-encre)]">{titre}</h3>
+    <h3 class={`titre-3 mt-2 text-[color:var(--color-encre)] ${vitrine ? 'text-[1.35rem] md:text-[1.6rem]' : ''}`}>{titre}</h3>
     <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
       {nombre(surface)} m² · {pieces} {pieces > 1 ? 'pièces' : 'pièce'}
     </p>

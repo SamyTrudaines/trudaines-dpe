@@ -49,22 +49,22 @@ const engagements = [
 ];
 ---
 <Layout
-  titre="Trudaines | Cabinet de vente immobilière à Paris et en Île-de-France"
-  description="Vente, recherche et gestion locative à Paris et en Île-de-France. Maison numérique qui travaille par le réseau et par la donnée. Avis de valeur écrit sous 48 heures."
+  titre="Trudaines | Agence immobilière à Paris, vente, recherche et gestion"
+  description="Agence immobilière à Paris : vente, recherche pour acquéreur et gestion locative. Avis de valeur écrit sous 48 heures, compte rendu après chaque visite."
 >
   <Ouverture />
 
   <section class="section pt-14 md:pt-20">
     <div class="conteneur">
-      <p class="surtitre">Paris et Île-de-France</p>
+      <p class="surtitre">Paris</p>
       <h1 class="titre-1 mt-8 max-w-4xl">
         Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
       </h1>
       <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
         <p class="chapo max-w-2xl">
-          Maison numérique de vente immobilière. Nous travaillons par le réseau, par la recommandation et par la
-          donnée, sur toute l'Île-de-France, avec une connaissance au mètre carré du nord de Paris. Vente,
-          recherche pour acquéreur, gestion locative.
+          Agence immobilière parisienne, numérique et sans vitrine. Nous vendons, nous recherchons pour des
+          acquéreurs et nous gérons des biens loués. Le réseau amène les affaires, la donnée fixe le prix, un
+          seul professionnel conduit le dossier du premier rendez vous à la signature.
         </p>
         <div class="flex flex-col gap-4 sm:flex-row">
           <a href="/estimation" class="bouton">Estimer mon bien</a>
@@ -78,6 +78,68 @@ const engagements = [
       </p>
     </div>
   </section>
+
+  {biens.length > 0 ? (
+    <section class="section" aria-labelledby="biens-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="biens-accueil" class="titre-2">Nos biens à vendre à Paris</h2>
+          <a href="/acheter" class="lien-souligne text-sm">Tous les biens à la vente</a>
+        </div>
+        <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
+          {biens.map((b, n) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              chargement={n === 0 ? 'eager' : 'lazy'}
+              vitrine
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (
+    references.length > 0 && (
+      <section class="section" aria-labelledby="biens-accueil">
+        <div class="conteneur">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <h2 id="biens-accueil" class="titre-2">Les appartements que nous avons vendus</h2>
+            <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
+          </div>
+          <p class="chapo mt-6 max-w-2xl">
+            Aucun mandat n'est ouvert à la diffusion en ce moment : une partie de nos ventes se conclut avant
+            d'être publiée. Voici ce qui nous a été confié jusqu'ici.
+          </p>
+          <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
+            {references.slice(0, 2).map((b, n) => (
+              <CarteBien
+                id={b.id}
+                titre={b.data.titre}
+                quartier={b.data.quartier}
+                arrondissement={b.data.arrondissement}
+                prixBien={b.data.prix}
+                surface={b.data.surface}
+                pieces={b.data.pieces}
+                statut={b.data.statut}
+                photo={b.data.photos[0]}
+                chargement={n === 0 ? 'eager' : 'lazy'}
+                sansPrix
+                vitrine
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  )}
+
 
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
@@ -99,31 +161,6 @@ const engagements = [
 
   <Manifeste />
 
-  {biens.length > 0 && (
-    <section class="section" aria-labelledby="biens-accueil">
-      <div class="conteneur">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 id="biens-accueil" class="titre-2">Biens à la vente</h2>
-          <a href="/acheter" class="lien-souligne text-sm">Voir tous les biens</a>
-        </div>
-        <div class="mt-12 grid gap-12 md:grid-cols-3">
-          {biens.map((b) => (
-            <CarteBien
-              id={b.id}
-              titre={b.data.titre}
-              quartier={b.data.quartier}
-              arrondissement={b.data.arrondissement}
-              prixBien={b.data.prix}
-              surface={b.data.surface}
-              pieces={b.data.pieces}
-              statut={b.data.statut}
-              photo={b.data.photos[0]}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 
   {references.length > 0 && (
     <section class="section filet" aria-labelledby="references-accueil">

@@ -24,3 +24,11 @@ export function jeuPhoto(src: string): { src: string; srcset?: string } {
  * fichier de 1600 px sur un écran à haute densité, ce que la variante évite.
  */
 export const TAILLES_CARTE = '(min-width: 1024px) 341px, (min-width: 640px) 45vw, 92vw';
+
+/**
+ * Place occupée par une carte dans une grille de deux colonnes, celle de la
+ * vitrine : conteneur de 78 rem moins ses marges, moins une gouttière de
+ * 3 rem, divisé par deux, soit 568 px. C'est la taille qui justifie de servir
+ * le fichier de 1600 px sur un écran à haute densité.
+ */
+export const TAILLES_VITRINE = '(min-width: 1024px) 568px, (min-width: 640px) 46vw, 94vw';
