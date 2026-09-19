@@ -46,6 +46,34 @@ const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTim
                 {p.data.signature && (
                   <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{p.data.signature}</p>
                 )}
+                {p.data.photo && (
+                  <figure class="mt-6">
+                    <img
+                      src={p.data.photo}
+                      alt={p.data.photoAlt || p.data.titre}
+                      width="620"
+                      height="349"
+                      loading="lazy"
+                      decoding="async"
+                      class="w-full max-w-xl"
+                    />
+                    {p.data.credit && (
+                      <figcaption class="mt-2 text-xs text-[color:var(--color-ardoise)]">{p.data.credit}</figcaption>
+                    )}
+                  </figure>
+                )}
+                {p.data.audio && (
+                  <div class="mt-6 max-w-xl">
+                    <audio controls preload="none" class="w-full" src={p.data.audio}>
+                      Votre navigateur ne lit pas l'audio.{' '}
+                      <a href={p.data.ecouter || p.data.lien}>Écouter l'épisode sur le site du média</a>.
+                    </audio>
+                    <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+                      Épisode produit par {p.data.media}. Écoute mise à disposition avec la source, l'émission
+                      complète est sur le site du média.
+                    </p>
+                  </div>
+                )}
                 <p class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm">
                   {p.data.ecouter && (
                     <a href={p.data.ecouter} rel="noopener" target="_blank" data-evt="clic_podcast" class="lien-souligne">

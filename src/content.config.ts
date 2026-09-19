@@ -110,6 +110,16 @@ const presse = defineCollection({
     duree: z.string().optional(),
     /** Nom de l'émission ou du journaliste, quand il est connu. */
     signature: z.string().optional(),
+    /** Illustration publiée par le média, avec son crédit. */
+    photo: z.string().optional(),
+    photoAlt: z.string().optional(),
+    credit: z.string().optional(),
+    /**
+     * Fichier audio servi par le site. Reproduction de l'œuvre du média : à ne
+     * renseigner qu'avec son accord, le lien vers la page d'origine suffit
+     * sinon.
+     */
+    audio: z.string().optional(),
   }),
 });
 
