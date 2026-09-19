@@ -6742,7 +6742,7 @@
   },
   {
    "slug": "rue-jouffroy-d-abbans-17",
-   "nom": "Rue Jouffroy D'Abbans",
+   "nom": "Rue Jouffroy d'Abbans",
    "codePostal": "75017",
    "arrondissement": "Paris 17e",
    "ventes": 70,
@@ -8990,8 +8990,8 @@
    "ruesClassees": 146
   },
   {
-   "slug": "boulevard-gouvion-st-cyr-17",
-   "nom": "Boulevard Gouvion St-Cyr",
+   "slug": "boulevard-gouvion-saint-cyr-17",
+   "nom": "Boulevard Gouvion Saint-Cyr",
    "codePostal": "75017",
    "arrondissement": "Paris 17e",
    "ventes": 35,

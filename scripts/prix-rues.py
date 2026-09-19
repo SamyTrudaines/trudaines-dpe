@@ -107,6 +107,18 @@ def capitaliser(nom):
             sortie.append(f'{prefixe}-{cap(reste[i + 1])}')
             i += 2
             continue
+        # « ST-CYR » arrive parfois en un seul mot, trait d'union compris.
+        if mot.startswith(('ST-', 'STE-')):
+            prefixe = 'Saint' if mot.startswith('ST-') else 'Sainte'
+            sortie.append(f"{prefixe}-{cap(mot.split('-', 1)[1])}")
+            i += 1
+            continue
+        # « D'ABBANS » arrive parfois en un seul mot, apostrophe comprise.
+        elision = re.match(r"^([DL])'(.+)$", mot)
+        if elision:
+            sortie.append(f"{elision.group(1).lower()}'{cap(elision.group(2))}")
+            i += 1
+            continue
         if mot in ('D', 'L') and i + 1 < len(reste):
             sortie.append(f"{mot.lower()}'{cap(reste[i + 1])}")
             i += 2

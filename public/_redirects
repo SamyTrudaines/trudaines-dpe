@@ -109,3 +109,5 @@
 # /nos-actualites/* la couvre. C'est le cas de l'adresse fautive
 # /nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18,
 # signalée dans migration-rapport.txt.
+# L'abréviation St-Cyr a été développée en Saint-Cyr à la relecture du 17e.
+/prix-immobilier/boulevard-gouvion-st-cyr-17  /prix-immobilier/boulevard-gouvion-saint-cyr-17  301
