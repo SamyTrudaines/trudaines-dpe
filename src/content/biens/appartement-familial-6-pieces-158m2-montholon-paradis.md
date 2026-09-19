@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Dans le très prisé secteur de Square Montholon et Rue Paradis, un appartement familial au calme, traversant et élégant de 4 chambres et 1 bureau de 158m² au sol en premier étage par escalier d'un bel immeuble ravalé du début du 20ème siècle."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_f73a427eb06af84d7a125eb5f02c6d8f.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/01.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_24f7f118b5f1935b0a761180fe8a406c.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/02.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_8c7f8150925992c13fc81de355d27bac.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/03.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_941b4557066854242f8952cc4c807f60.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/04.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_7b798a3f96a6404e1a4e429d945800c0.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/05.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_fb87622644167f0a59cf8f4e4b2b1df1.png
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/06.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_61df519859b84570ab55f91e10207be7.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/07.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_522c59aa0f75c094c04f2ede03000a09.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/08.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_8adc8ac4aab61cb3006a1a7ca09b873e.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/09.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/ccef3b41cb05baa4b3a2398bdca25c56/photo_8e7332f81f6139cbd55ed46d1ce37f29.jpg
+  - src: /images/biens/appartement-familial-6-pieces-158m2-montholon-paradis/10.webp
     alt: "Appartement familial 6 pièces 158 m², Montholon Paradis"
 ---
 

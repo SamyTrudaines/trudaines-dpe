@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Idéalement située proche de la place des Colonnes, au cœur d’un secteur résidentiel très prisé, cette élégante maison familiale non mitoyenne de 226m² carrez et 252m² au sol environ offre le parfait équilibre entre cachet, volumes généreux et jardin paysager."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_f0b96e6f7735b205b4c5b3bfdb9a8aec.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/01.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_c1328755ccc6ab51673cee5ad8cce072.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/02.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_458b7a1cfd70719317e09bb4753f8d18.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/03.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_762271b65a6a0b39c5b67a7433024f74.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/04.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_24406e21eac4bcf7475f5cc32a195307.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/05.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_e46c94d5d994d26ebfbcde4992e0bb38.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/06.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_6937ed4f318922e40bdfdcde12a642ee.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/07.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_9c59335c1ca228459307123979fe6c6d.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/08.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_3851245d9edb6d32788d1350404736bf.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/09.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/0ec5660762bab46e7c21a6b1497042b7/photo_be8c9c0577392bc357127243342ac74b.jpg
+  - src: /images/biens/maison-de-charme-226m2-jardin-la-garenne-colombes/10.webp
     alt: "Maison de charme 226 m² avec jardin, La Garenne-Colombes"
 ---
 

@@ -83,6 +83,7 @@ export const navigationPrincipale: LienNav[] = [
   { libelle: 'Vendre', href: '/vendre' },
   { libelle: 'Estimation', href: '/estimation' },
   { libelle: 'Acheter', href: '/acheter' },
+  { libelle: 'Références', href: '/references' },
   { libelle: 'Quartiers', href: '/quartiers' },
   { libelle: 'Le cabinet', href: '/trudaines' },
   { libelle: 'Contact', href: '/contact' },

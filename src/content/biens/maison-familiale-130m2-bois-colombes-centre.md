@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Grande maison lumineuse de 130 m² sur 3 niveaux dans l'hyper centre de Bois-Colombes, à proximité immédiate de la gare SNCF. Au rez-de-chaussée surélevé, un salon traversant avec une cuisine sur mesure équipée donnant sur une terrasse surplombant le beau jardin arboré."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_deb3a5221e2bfbaaa38d9af08a52cb1e.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/01.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_261b3dedb7761daefecc49e63147c9a5.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/02.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_44fc1bde0f602c15b91d3d9e094fd6d7.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/03.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_cd64f9ca46aca670a7ea7fae59ca4a77.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/04.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_ad5a7b5ad15f6ce9583f026909570a39.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/05.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_4273254d123015d1d7c1ebfe1c4bc769.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/06.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_275b5e39515f1c14cc5b1456fd78773e.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/07.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_c4d8a9efb4cc143acec2031136c318a5.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/08.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_51b2a9df1ca6c2aed88277b100acb739.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/09.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/9942006f2d43430cf0acd4eb4e794160/photo_d45433a655a07dcfdb8ed0f95acef294.jpg
+  - src: /images/biens/maison-familiale-130m2-bois-colombes-centre/10.webp
     alt: "Maison familiale 130 m² avec jardin, Bois-Colombes centre"
 ---
 

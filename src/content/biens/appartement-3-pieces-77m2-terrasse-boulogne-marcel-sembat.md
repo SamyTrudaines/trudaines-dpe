@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "superbe appartement situé au 1er étage avec ascenseur dans une copropriété récente et bien entretenue, à deux pas du métro Marcel Sembat et des commodités du centre-ville de Boulogne-Billancourt. Superficie : 76m² Carrez Terrasse"
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_5d601366a04767a4964f6536ab086306.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/01.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_7aaf55c08af8d9b04dbe8ea3d1182c7e.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/02.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_0d3fb4477f4e10b47cbe60d1939120f7.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/03.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_0f82e7f6e20e6d29fb5134418b7d8f2e.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/04.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_ae7ec38da6166fe5b91540cf5ebf1380.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/05.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_79f784cfa226bc8e3c45c5e657bbbe62.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/06.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_60a3ef2b79fb8e0c1c763e81b731ec7d.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/07.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_57be93041983127a0a07150879a630ca.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/08.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_1bc25c198f4a1a4de512bbf9a41d7c31.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/09.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f0c37b2c2a8bbb27005df9f63f91943b/photo_3a56d1cc997085c416519cc7dcb9020d.jpg
+  - src: /images/biens/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat/10.webp
     alt: "Appartement 3 pièces 77 m² avec terrasse, Boulogne Marcel Sembat"
 ---
 

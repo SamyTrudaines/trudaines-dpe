@@ -11,8 +11,10 @@ interface Props {
   statut: string;
   photo?: { src: string; alt: string };
   chargement?: 'lazy' | 'eager';
+  /** Vrai pour un mandat archivé : la carte ne porte alors aucun prix. */
+  sansPrix?: boolean;
 }
-const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy' } = Astro.props;
+const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false } = Astro.props;
 ---
 <article class="group">
   <a href={`/bien/${id}`} class="block no-underline">
@@ -43,6 +45,12 @@ const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, 
     <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
       {nombre(surface)} m² · {pieces} {pieces > 1 ? 'pièces' : 'pièce'}
     </p>
-    <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(prixBien)}</p>
+    {sansPrix ? (
+      <p class="mt-2 text-sm uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">
+        {statut === 'vendu' ? 'Vendu' : 'Mandat présenté'}
+      </p>
+    ) : (
+      <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(prixBien)}</p>
+    )}
   </a>
 </article>

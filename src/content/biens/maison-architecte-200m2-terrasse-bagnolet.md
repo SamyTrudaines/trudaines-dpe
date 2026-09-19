@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Exclusivité Trudaines : Maison de ville lumineuse et entièrement rénovée de 200 m² carrez dans une impasse au calme, avec 5 chambres, 3 salles d'eau et 3 WC, une terrasse bien exposée à Bagnolet limite Montreuil Robespierre dans un secteur commerçant, bien desservi et proche des écoles."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_b9d9435433307d0cc10b6374df1c3c23.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/01.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_ce2e1c376e09a6465d93c56880c8a003.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/02.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_065989f2abc9fcc885e153d9d5363326.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/03.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_dae90782209aca83996123669c85a67e.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/04.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_b07e55813a3eb65e8877ada0cd459426.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/05.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_2c0dcaaa7d1e35b04c8927171c7a0d81.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/06.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_7073cbf654615114b1e778de586a3b7f.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/07.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_79820f5b57c08bfe5204c4504ce218c3.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/08.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_5330ff9d944dd21f72a8c0a24189deec.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/09.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/5f5a1512237682b46b8aabf46360055e/photo_a00b20b85a44c84c0d1d1cfc024332fb.jpg
+  - src: /images/biens/maison-architecte-200m2-terrasse-bagnolet/10.webp
     alt: "Maison d'architecte 200 m² avec terrasse, Bagnolet"
 ---
 

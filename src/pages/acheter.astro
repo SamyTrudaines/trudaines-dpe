@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
 import { prixAffiche, nombre, libelleStatut } from '../lib/format';
 
-const biens = (await getCollection('biens', (b) => !b.data.offMarket)).sort(
+const biens = (await getCollection('biens', (b) => !b.data.offMarket && !b.data.archive)).sort(
   (a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix
 );
 
@@ -27,6 +27,7 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
     </div>
   </section>
 
+  {biens.length > 0 && (
   <section class="section pt-0" aria-labelledby="filtres">
     <div class="conteneur">
       <h2 id="filtres" class="sr-only">Filtrer les biens</h2>
@@ -80,14 +81,21 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]" data-compte-biens>{biens.length} biens</p>
     </div>
   </section>
+  )}
 
   <section class="section pt-0">
     <div class="conteneur">
       {biens.length === 0 ? (
-        <p class="text-[color:var(--color-ardoise)]">
-          Aucun bien n'est actuellement diffusé publiquement. Créez une alerte ci-dessous, nous vous écrivons dès
-          qu'un bien correspond à votre recherche.
-        </p>
+        <div class="max-w-2xl">
+          <p class="text-[color:var(--color-ardoise)]">
+            Aucun bien n'est actuellement diffusé publiquement. Une partie des ventes du cabinet se fait avant
+            diffusion, auprès d'acquéreurs déjà qualifiés : créez une alerte ci-dessous, nous vous écrivons dès
+            qu'un bien correspond à votre recherche.
+          </p>
+          <p class="mt-6 text-sm">
+            <a href="/references" class="lien-souligne">Voir les biens que le cabinet a présentés</a>
+          </p>
+        </div>
       ) : (
         <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3" data-liste-biens>
           {biens.map((b, index) => (

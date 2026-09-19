@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: vendu
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Trudaines Immobilier - Samy Santamarina : Appartement duplex familial coup de cœur, lumineux, traversant, spacieux, et avec parquet moulures et cheminées – 5 chambres – Asnières sur Seine à 3 minutes à pied de la Gare Bécon Les Bruyères."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_2053c8891091cc9de7cb7026a7a21bbf.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/01.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_39f8213ad619f74cbcc0e55aafa8ca3e.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/02.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_6f6b11925c97626edbcead185d570e57.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/03.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_48a1553754e301ec35eb7737b7a05889.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/04.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_003e3bbf9b0e601037d61a0b297502ff.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/05.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_88c260a6dfa4a69c626cf207e8fca07d.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/06.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_2854f76df648ce7f0f701efdb0ba9323.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/07.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_619091e96f90e52fa1cad5becbb09681.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/08.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_211ab0048bcaeaa079cc4c50b257dabe.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/09.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/b6423d9201cd31c04f1e8042f235ccef/photo_c37105ec1196b568b55f4213f5e5d438.jpg
+  - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/10.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
 ---
 

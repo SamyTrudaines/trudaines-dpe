@@ -19,7 +19,16 @@ const { bien } = Astro.props;
 const { Content } = await render(bien);
 const d = bien.data;
 
-const similaires = (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket)).slice(0, 3);
+/**
+ * Un mandat archivé n'est plus une annonce : la fiche garde les photographies et
+ * le texte, elle perd le prix, les formulaires et les mentions énergétiques.
+ * Voir le commentaire du champ `archive` dans src/content.config.ts.
+ */
+const archive = d.archive;
+
+const similaires = archive
+  ? (await getCollection('biens', (b) => b.id !== bien.id && b.data.archive && b.data.ville === d.ville)).slice(0, 3)
+  : (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
 const echelle = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
 const dpeConnu = d.dpe !== 'Vierge';
@@ -28,7 +37,9 @@ const depensesConnues =
   d.depensesEnergieMin !== undefined && d.depensesEnergieMax !== undefined && d.depensesEnergieAnnee !== undefined;
 
 const donnees = [
-  {
+  // Un mandat archivé n'est pas une offre : aucun Product, aucun Offer, sinon
+  // les moteurs continuent de présenter le bien comme disponible à la vente.
+  ...(archive ? [] : [{
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: d.titre,
@@ -45,7 +56,7 @@ const donnees = [
       url: `${site.url}/bien/${bien.id}`,
       seller: { '@id': `${site.url}/#cabinet` },
     },
-  },
+  }]),
   {
     '@context': 'https://schema.org',
     '@type': 'Residence',
@@ -62,10 +73,16 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={`${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
-  description={`${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
+  titre={archive
+    ? `${d.titre} | Référence Trudaines, ${d.quartier} ${d.arrondissement}`
+    : `${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
+  description={archive
+    ? `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. Mandat présenté par le cabinet Trudaines, bien non disponible.`
+    : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
   image={d.photos[0]?.src}
-  filAriane={[{ nom: 'Acheter', href: '/acheter' }, { nom: d.titre }]}
+  filAriane={archive
+    ? [{ nom: 'Nos références', href: '/references' }, { nom: d.titre }]
+    : [{ nom: 'Acheter', href: '/acheter' }, { nom: d.titre }]}
   donnees={donnees}
 >
   <section class="section pt-10">
@@ -73,19 +90,33 @@ const donnees = [
       <div>
         <p class="surtitre">{d.quartier} · {d.ville} {d.arrondissement} · Réf. {d.reference}</p>
         <h1 class="titre-1 mt-5">{d.titre}</h1>
-        <p class="mt-6 text-2xl font-semibold text-[color:var(--color-nuit)]">
-          {prixAffiche(d.prix)}
-          {d.statut !== 'a-vendre' && (
-            <span class="ml-4 align-middle text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ardoise)]">
-              {libelleStatut[d.statut]}
-            </span>
-          )}
-        </p>
-        <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
-          {prixM2(d.prix, d.surface) && `Soit ${prixM2(d.prix, d.surface)} le m². `}
-          Honoraires à la charge du {d.honorairesCharge}
-          {d.honorairesTaux ? `, ${d.honorairesTaux}` : ''}.
-        </p>
+        {archive ? (
+          <>
+            <p class="mt-6 text-base font-semibold uppercase tracking-[0.16em] text-[color:var(--color-encre)]">
+              {d.statut === 'vendu' ? 'Vendu par le cabinet' : 'Mandat présenté par le cabinet'}
+            </p>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+              {nombre(d.surface)} m², {d.pieces} {d.pieces > 1 ? 'pièces' : 'pièce'}. Ce bien n'est plus
+              proposé à la vente. La fiche est conservée comme référence de notre travail, sans prix ni visite.
+            </p>
+          </>
+        ) : (
+          <>
+            <p class="mt-6 text-2xl font-semibold text-[color:var(--color-nuit)]">
+              {prixAffiche(d.prix)}
+              {d.statut !== 'a-vendre' && (
+                <span class="ml-4 align-middle text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ardoise)]">
+                  {libelleStatut[d.statut]}
+                </span>
+              )}
+            </p>
+            <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
+              {prixM2(d.prix, d.surface) && `Soit ${prixM2(d.prix, d.surface)} le m². `}
+              Honoraires à la charge du {d.honorairesCharge}
+              {d.honorairesTaux ? `, ${d.honorairesTaux}` : ''}.
+            </p>
+          </>
+        )}
 
         {d.photos.length > 0 ? (
           <div class="mt-10 grid gap-4">
@@ -120,10 +151,28 @@ const donnees = [
       </div>
 
       <div class="lg:sticky lg:top-28">
-        <FormulaireVisite reference={d.reference} titreBien={d.titre} />
-        <div class="mt-6">
-          <FormulaireFiche reference={d.reference} titreBien={d.titre} />
-        </div>
+        {archive ? (
+          <div class="border border-[color:var(--color-trait)] p-8">
+            <p class="surtitre">Référence</p>
+            <h2 class="titre-3 mt-4">Un bien comparable à vendre ?</h2>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+              Ce dossier a été préparé, photographié et présenté par le cabinet. Le vôtre le sera de la même
+              façon : avis de valeur écrit après visite, ventes comparables citées, compte rendu après chaque
+              visite.
+            </p>
+            <a href="/estimation" class="bouton mt-8 w-full">Estimer mon bien</a>
+            <p class="mt-6 text-sm">
+              <a href="/references" class="lien-souligne">Voir toutes nos références</a>
+            </p>
+          </div>
+        ) : (
+          <>
+            <FormulaireVisite reference={d.reference} titreBien={d.titre} />
+            <div class="mt-6">
+              <FormulaireFiche reference={d.reference} titreBien={d.titre} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   </section>
@@ -159,6 +208,18 @@ const donnees = [
           </div>
         </dl>
 
+        {archive ? (
+          <>
+            <h2 class="titre-3 mt-12">Diagnostics</h2>
+            <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+              Les diagnostics de ce mandat ne sont plus valides : un diagnostic de performance énergétique
+              établi avant le 1er juillet 2021 a cessé de l'être au 31 décembre 2024. Ils ne sont donc pas
+              republiés ici. Pour un bien actuellement en vente, la classe énergie, la classe climat et le
+              montant estimé des dépenses annuelles d'énergie figurent sur sa fiche.
+            </p>
+          </>
+        ) : (
+        <>
         <h2 class="titre-3 mt-12">Diagnostic de performance énergétique</h2>
         <div class="mt-6 flex flex-wrap gap-2" role="img" aria-label={`Classe énergie ${d.dpe}, classe climat ${d.ges}`}>
           {echelle.map((lettre) => (
@@ -200,6 +261,8 @@ const donnees = [
             avec vous avant toute offre, devis d'entreprise à l'appui.
           </p>
         )}
+        </>
+        )}
 
         <p class="mt-10 text-xs text-[color:var(--color-ardoise)]">
           Bien présenté par {site.nomLong}, carte professionnelle {site.legal.carteT}. Les informations sont
@@ -212,7 +275,7 @@ const donnees = [
   {similaires.length > 0 && (
     <section class="section filet">
       <div class="conteneur">
-        <h2 class="titre-2">Autres biens du cabinet</h2>
+        <h2 class="titre-2">{archive ? 'Autres références du cabinet' : 'Autres biens du cabinet'}</h2>
         <div class="mt-12 grid gap-12 md:grid-cols-3">
           {similaires.map((b) => (
             <CarteBien
@@ -225,6 +288,7 @@ const donnees = [
               pieces={b.data.pieces}
               statut={b.data.statut}
               photo={b.data.photos[0]}
+              sansPrix={archive}
             />
           ))}
         </div>

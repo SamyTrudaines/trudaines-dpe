@@ -38,6 +38,15 @@ const biens = defineCollection({
     statut: z.enum(['a-vendre', 'sous-offre', 'vendu']).default('a-vendre'),
     visiteVirtuelle: z.string().url().optional(),
     offMarket: z.boolean().default(false),
+    /**
+     * Mandat passé, conservé comme référence. La fiche n'est plus une annonce :
+     * elle ne porte ni prix, ni formulaire de visite, ni classe énergie, et le
+     * bien n'apparaît que sur /references. Les obligations d'affichage des
+     * articles R126-21 à R126-25 du code de la construction visent les annonces
+     * de vente et de location, pas la présentation d'un mandat achevé, et les
+     * diagnostics d'un ancien mandat ne sont de toute façon plus à jour.
+     */
+    archive: z.boolean().default(false),
     ordre: z.number().default(0),
     exemple: z.boolean().default(false),
   }),

@@ -14,29 +14,30 @@ dpe: Vierge
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "A proximité immédiate de la place des Abbesses, au pied des commerces et des transports, au coeur de l'esprit village de Montmartre, appartement lumineux entièrement rénové avec goût de 46m² avec une grand balcon orienté sud permettant d’installer une table et deux chaises et une vue dégagée, au…"
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_a5273fdf4ace12b7925386ca2dadea62.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/01.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_8a281108ad54a89592c4341fa6befe19.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/02.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_a2605c51f9276da1ec5762586d748e4d.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/03.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_a232e673b2dda5cf3742559601120c06.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/04.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_7e1dfe2f22095e09af15bf650eabaa29.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/05.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_f5587dfaec9bac43d62c6afcf499bace.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/06.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_a182928001b34ca88e1c5849e20d99b5.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/07.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_0a5f71a108c573c7cf3ed025ad8a9a71.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/08.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_14656223a1c879d6d485d0fef04d8a94.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/09.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/f26d0ea6c868d756260739fefb01254c/photo_5a8c284f2ddd6fff4f7f0cce2465bb2f.jpg
+  - src: /images/biens/appartement-2-pieces-46m2-balcon-abbesses/10.webp
     alt: "Appartement 2 pièces 46 m² avec balcon, Abbesses"
 ---
 

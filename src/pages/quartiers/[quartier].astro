@@ -16,7 +16,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const { quartier } = Astro.props;
 const { Content } = await render(quartier);
 
-const biens = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.statut !== 'vendu' && !b.data.offMarket)).slice(0, 3);
+const biens = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
+/** Mandats passés du quartier : la preuve que le cabinet y a déjà travaillé. */
+const mandats = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.archive)).slice(0, 3);
 const autres = (await getCollection('quartiers')).filter((q) => q.id !== quartier.id).sort((a, b) => a.data.ordre - b.data.ordre);
 const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
 const photo = quartier.data.photos[0];
@@ -79,6 +81,37 @@ const photo = quartier.data.photos[0];
               pieces={b.data.pieces}
               statut={b.data.statut}
               photo={b.data.photos[0]}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {mandats.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 class="titre-2">Nos références dans ce quartier</h2>
+          <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
+        </div>
+        <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+          Des mandats déjà conduits ici. Ces biens ne sont plus disponibles, leurs fiches restent
+          consultables.
+        </p>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {mandats.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              sansPrix
             />
           ))}
         </div>

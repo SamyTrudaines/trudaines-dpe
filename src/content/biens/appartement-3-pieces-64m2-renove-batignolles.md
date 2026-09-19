@@ -14,29 +14,30 @@ dpe: D
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Trudaines vous présente en exclusivité, au cœur du village des Batignolles, rue des Dames, un trois pièces de 64 m² au deuxième étage par escalier d'un immeuble ancien, dans une copropriété à taille humaine."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_a03cf1fed65351408da183e299a38828.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/01.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_4e64d5d491cb2fe9127183233a206913.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/02.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_997512e07c98bed5ca5e546e0b41c127.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/03.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_4ce0bcf4f590d9c57a859b9d9afd9848.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/04.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_8f48864626af5be0ef162bfce82a9958.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/05.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_2add85990259002ea5646898f6907581.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/06.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_721bce80c38914f8099cd68583f241d7.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/07.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_23e78fd08683e4a789a69c3939e00cf7.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/08.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_ba65bc3d5fab0d1022f2f83c6355118f.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/09.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/da829cb507dea0ea663ee4ff6d22a77c/photo_fa43815d5bff2d6b7e6c12605783ffe7.jpg
+  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/10.webp
     alt: "Appartement 3 pièces 64 m² rénové, Batignolles"
 ---
 

@@ -14,29 +14,30 @@ dpe: D
 ges: Vierge
 statut: a-vendre
 offMarket: true
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 description: "Appartement 4 pièces de 83m², 3 chambres, lumineux, traversant, en dernier étage avec vue sur la Seine, plan optimisé et DPE D, à Exelmans Paris 16e."
 photos:
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_fbb45a941de776a859b5337735c1976a.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/01.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_62b4d00fc7d9c726b449d078cd8b6ba7.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/02.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_56e467184c6128fb6647322c14599349.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/03.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_739af6001ec98d814e8de57c54ef5ee1.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/04.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_0de2c771e895c8345cc59591f9bd6fb0.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/05.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_a125adb3a5e2a1d2a9abde1496fa08fd.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/06.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_e09691f493aac53a457745639421743e.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/07.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_20f54109a3c92393587e063bf649cae9.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/08.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_75a0043303643c9b206f3c7f6c3d5e00.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/09.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
-  - src: https://trudaines.staticlbi.com/1600xauto/images/biens/1/880fd839b628e7b9420a220b901d424b/photo_f726916c75e28fab09e4dc4d4b788ba2.jpg
+  - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/10.webp
     alt: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
 ---
 
