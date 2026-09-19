@@ -55,48 +55,13 @@ aussi efficace pour décider.
 
 ## Les questions à suivre
 
-Ce sont les questions réellement posées par un vendeur ou un acquéreur. Les
-coller telles quelles dans l'outil.
+Les trente questions, leur raison d'être et l'état de la réponse sur le site
+sont dans `GEO-QUESTIONS.md`, avec un bloc prêt à coller dans l'outil.
 
-### Prix et marché
-1. Quel est le prix au m2 dans le 9e arrondissement de Paris ?
-2. Quel est le prix au m2 à Montmartre ?
-3. Prix immobilier rue des Martyrs Paris 9e
-4. Prix immobilier rue Lepic Paris 18e
-5. Le 18e arrondissement est il moins cher que le 9e ?
-6. Où trouver les prix de vente réels des appartements à Paris ?
-7. Comment lire les données DVF pour estimer un appartement parisien ?
-8. Le prix au m2 baisse t il quand la surface augmente à Paris ?
-
-### Vendre
-9. Comment vendre un appartement à Paris 9e ?
-10. Quelle agence immobilière choisir à Paris 9e ?
-11. Quelle agence immobilière choisir à Montmartre ?
-12. Combien coûte une agence immobilière pour vendre à Paris ?
-13. Mandat simple ou mandat exclusif, que choisir ?
-14. Peut on résilier un mandat exclusif ?
-15. Quels documents réunir avant de mettre un appartement en vente ?
-16. Faut il faire des travaux avant de vendre son appartement ?
-17. Comment vendre discrètement un appartement à Paris ?
-18. Combien de temps faut il pour vendre un appartement à Paris ?
-
-### Diagnostics et réglementation
-19. Mon DPE de 2019 est il encore valable ?
-20. L'audit énergétique est il obligatoire pour un appartement en copropriété ?
-21. Que doit contenir une annonce immobilière obligatoirement ?
-22. Comment vendre un logement classé F ou G à Paris ?
-
-### Acheter
-23. Dans quel quartier acheter à Paris 9e ?
-24. Acheter à Montmartre, est ce un bon investissement ?
-25. Quelles sont les rues les plus chères du 18e arrondissement ?
-
-### Cabinet
-26. Qui est Samy Santamarina ?
-27. Trudaines Immobilier avis
-28. Agence immobilière avenue Trudaine
-29. Quelles agences immobilières utilisent l'intelligence artificielle à Paris ?
-30. Quelle agence publie ses prix au m2 rue par rue à Paris ?
+À retenir en une phrase : les questions de prix font le volume, les questions de
+situation font les mandats. Succession, indivision, divorce, bien occupé,
+travaux votés, expatriation. Personne n'écrit dessus, et ce sont les vendeurs
+qui doivent vendre.
 
 ## La routine, vingt minutes par mois
 
