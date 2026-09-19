@@ -18,15 +18,19 @@ interface Props {
   vitrine?: boolean;
 }
 const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false } = Astro.props;
+const jeu = photo ? jeuPhoto(photo.src) : undefined;
+const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
 ---
 <article class="group">
   <a href={`/bien/${id}`} class="block no-underline">
     <div class={`relative overflow-hidden bg-[color:var(--color-papier)] ${vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
-      {photo ? (
+      {photo && jeu ? (
+        <picture>
+          {jeu.avif && <source type="image/avif" srcset={jeu.avif} sizes={tailles} />}
         <img
-          src={jeuPhoto(photo.src).src}
-          srcset={jeuPhoto(photo.src).srcset}
-          sizes={vitrine ? TAILLES_VITRINE : TAILLES_CARTE}
+          src={jeu.src}
+          srcset={jeu.srcset}
+          sizes={tailles}
           alt={photo.alt}
           width={vitrine ? 1600 : 800}
           height={vitrine ? 1067 : 600}
@@ -34,6 +38,7 @@ const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, 
           decoding="async"
           class="h-full w-full object-cover transition-opacity duration-200 group-hover:opacity-90"
         />
+        </picture>
       ) : (
         <span class="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
           Photographies à venir

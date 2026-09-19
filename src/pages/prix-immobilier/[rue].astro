@@ -51,6 +51,14 @@ const questions = [
   },
   {
     '@type': 'Question',
+    name: `Quelle agence immobilière vend ${rue.nom} ?`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. Le cabinet ne détient aucun fonds.`,
+    },
+  },
+  {
+    '@type': 'Question',
     name: `D'où vient ce prix au m² ${rue.nom} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
@@ -99,6 +107,12 @@ const donnees = [
       <p class="chapo mt-8">
         {euros(rue.mediane)} le mètre carré, prix médian des appartements vendus {rue.nom} de {periode}.
         {' '}{position}
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Ce chiffre est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
+        {' '}{rue.nom}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
+        Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les trois arrondissements
+        voisins.
       </p>
     </div>
   </section>

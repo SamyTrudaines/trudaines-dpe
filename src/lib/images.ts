@@ -12,9 +12,23 @@ const AVEC_VARIANTE = [
   /^\/images\/panorama\/[^/]+\.webp$/,
 ];
 
-export function jeuPhoto(src: string): { src: string; srcset?: string } {
+export function jeuPhoto(src: string): { src: string; srcset?: string; avif?: string } {
   if (!AVEC_VARIANTE.some((motif) => motif.test(src))) return { src };
-  return { src, srcset: `${src.replace('.webp', '-800.webp')} 800w, ${src} 1600w` };
+  const petite = src.replace('.webp', '-800.webp');
+  return {
+    src,
+    srcset: `${petite} 800w, ${src} 1600w`,
+    /*
+     * Les photographies de biens existent aussi en AVIF, produit par
+     * scripts/photos-haute-definition.mjs. À qualité perçue égale il pèse
+     * environ un tiers de moins que le WebP, ce qui permet de servir des
+     * images encodées haut sans allonger l'affichage. Les articles et les
+     * images ajoutées à la main n'en ont pas : le <source> est alors omis.
+     */
+    avif: /^\/images\/biens\//.test(src)
+      ? `${petite.replace('.webp', '.avif')} 800w, ${src.replace('.webp', '.avif')} 1600w`
+      : undefined,
+  };
 }
 
 /**
