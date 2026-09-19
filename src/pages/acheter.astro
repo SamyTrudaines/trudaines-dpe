@@ -2,6 +2,8 @@
 import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
 import { prixAffiche, nombre, libelleStatut } from '../lib/format';
 
@@ -17,10 +19,19 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
   description="Les biens à la vente du cabinet Trudaines : Paris 9e nord, Montmartre, Paris 10e. Filtrez par arrondissement, quartier, prix, surface et nombre de pièces."
   filAriane={[{ nom: 'Acheter' }]}
 >
+  <Banniere
+    image={ambiance.terrasseGlycine}
+    cadrage="bas"
+    surtitre="Acheter"
+    titre="Les biens que nous vendons"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
-      <p class="surtitre">Acheter</p>
-      <h1 class="titre-1 mt-6">Les biens que nous vendons</h1>
+      <h1 class="titre-1">Les biens que nous vendons</h1>
       <p class="chapo mt-8">
         Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le
         vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé.

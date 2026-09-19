@@ -31,27 +31,57 @@ export const marque = {
   hauteur: 1001,
 };
 
+/*
+ * Les photographies ci dessous viennent de la collection « Site WEB » réunie
+ * par Samy Santamarina sur Unsplash. Le choix des images est donc le sien ;
+ * l'attribution de chacune à une page tient à son format et à son sujet.
+ * Les vues hors périmètre du cabinet, Tour Eiffel, Arc de Triomphe, Notre Dame,
+ * pont Alexandre III, Moulin Rouge, ne sont pas reprises : une agence qui
+ * illustre le 9e avec les monuments de tout Paris se présente comme une agence
+ * de partout, donc de nulle part.
+ */
 export const ambiance: Record<string, Ambiance> = {
-  porteSaintMartin: {
-    fichier: '/images/ambiance/porte-saint-martin',
-    alt: 'La porte Saint-Martin et le faubourg, Paris 10e',
-    auteur: 'Jonathan Ferreira',
-    profil: 'https://unsplash.com/@byjono',
-    source: 'https://unsplash.com/photos/a-busy-street-with-cars-and-people-IQS9Mo5I5Zk',
+  montmartreDepuisLesToits: {
+    fichier: '/images/ambiance/montmartre-depuis-les-toits',
+    alt: "La butte Montmartre et le Sacré-Cœur vus des toits de Paris, en fin de journée",
+    auteur: "Henrique Ferreira",
+    profil: 'https://unsplash.com/@rickpsd',
+    source: 'https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime-ZyYsY0ez2D4',
   },
-  facadeHaussmannienne: {
-    fichier: '/images/ambiance/facade-haussmannienne',
-    alt: 'Façade haussmannienne parisienne en plein soleil, ciel bleu',
-    auteur: 'Tristan Guillemet',
-    profil: 'https://unsplash.com/@tri_irl',
-    source: 'https://unsplash.com/photos/black-car-parked-beside-gray-concrete-building-during-daytime-mSI8LSRbL-Q',
+  fenetreSurLesToits: {
+    fichier: '/images/ambiance/fenetre-sur-les-toits',
+    alt: "Fenêtre ouverte sur les toits de zinc de Paris, ciel bleu",
+    auteur: "Isaiah B",
+    profil: 'https://unsplash.com/@i_bekkers',
+    source: 'https://unsplash.com/photos/city-building-illustration-during-day-time-Fc7hOSm1LhI',
   },
-  immeubleAngle: {
-    fichier: '/images/ambiance/immeuble-angle-paris',
-    alt: 'Immeuble parisien en pierre de taille à l’angle de deux rues, sous un ciel bleu',
-    auteur: 'Wyatt Simpson',
-    profil: 'https://unsplash.com/@wyattsimpson98',
-    source: 'https://unsplash.com/photos/a-tall-building-with-many-windows-and-balconies-3v0aQxhZtVk',
+  ruePavee: {
+    fichier: '/images/ambiance/rue-pavee-paris',
+    alt: "Rue pavée bordée d'immeubles parisiens",
+    auteur: "Clément Dellandrea",
+    profil: 'https://unsplash.com/@clementdellandrea',
+    source: 'https://unsplash.com/photos/people-walking-on-street-between-buildings-during-daytime--qo0O0y3EUA',
+  },
+  terrasseGlycine: {
+    fichier: '/images/ambiance/terrasse-glycine',
+    alt: "Terrasse de café sous la glycine, Paris",
+    auteur: "Alex Harmuth",
+    profil: 'https://unsplash.com/@a_harmuth',
+    source: 'https://unsplash.com/photos/people-sitting-on-chair-near-building-during-daytime-bOICdD-Gulk',
+  },
+  cafeDeCoin: {
+    fichier: '/images/ambiance/cafe-de-coin',
+    alt: "Café de quartier à l'angle de deux rues parisiennes",
+    auteur: "Caleb Maxwell",
+    profil: 'https://unsplash.com/@caleb_maxwell',
+    source: 'https://unsplash.com/photos/people-walking-on-sidewalk-near-brown-concrete-building-during-daytime-x6IHQjRMzEg',
+  },
+  brasserieAbbesses: {
+    fichier: '/images/ambiance/brasserie-abbesses',
+    alt: "Devanture d'une brasserie de quartier, Paris 18e",
+    auteur: "Camille Brodard",
+    profil: 'https://unsplash.com/@kmile_ch',
+    source: 'https://unsplash.com/photos/black-and-white-restaurant-with-chairs-and-tables-p5IyIl4wIfU',
   },
   maisonRose: {
     fichier: '/images/ambiance/maison-rose-montmartre',

@@ -19,10 +19,17 @@ interface Props {
   premiere?: boolean;
   /** 'h1' par défaut ; 'div' quand la page porte son h1 ailleurs. */
   balise?: 'h1' | 'div';
+  /**
+   * Point d'ancrage du recadrage. Un bandeau est plus large que la plupart des
+   * photographies : la bande conservée se prend au centre, ce qui vide une
+   * image dont le sujet est en bas, une fenêtre ou une rue sous un grand ciel.
+   */
+  cadrage?: 'centre' | 'bas' | 'haut';
 }
 
-const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false, balise = 'h1' } = Astro.props;
+const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false, balise = 'h1', cadrage = 'centre' } = Astro.props;
 const Titre = balise;
+const ancrage = { centre: 'object-center', bas: 'object-bottom', haut: 'object-top' }[cadrage];
 const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : 'min-h-[48svh]';
 ---
 <section class={`relative isolate flex items-end overflow-hidden bg-[color:var(--color-encre)] ${classeHauteur}`}>
@@ -36,12 +43,12 @@ const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : '
     fetchpriority={premiere ? 'high' : undefined}
     loading={premiere ? 'eager' : 'lazy'}
     decoding="async"
-    class="absolute inset-0 -z-10 h-full w-full object-cover"
+    class={`absolute inset-0 -z-10 h-full w-full object-cover ${ancrage}`}
   />
   <div
     class="absolute inset-0 -z-10"
     aria-hidden="true"
-    style="background: linear-gradient(to top, rgba(29,29,27,0.86) 0%, rgba(29,29,27,0.68) 32%, rgba(29,29,27,0.38) 62%, rgba(29,29,27,0.22) 100%)"
+    style={`background: linear-gradient(to top, rgba(29,29,27,0.88) 0%, rgba(29,29,27,0.74) ${hauteur === "grand" ? "32%" : "48%"}, rgba(29,29,27,0.44) ${hauteur === "grand" ? "62%" : "78%"}, rgba(29,29,27,0.24) 100%)`}
   >
   </div>
 

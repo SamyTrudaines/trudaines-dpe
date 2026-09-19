@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 import FormulaireEstimation from '../components/FormulaireEstimation.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
@@ -149,10 +151,18 @@ const donnees = [
   filAriane={[{ nom: 'Le mandat exclusif' }]}
   donnees={donnees}
 >
+  <Banniere
+    image={ambiance.brasserieAbbesses}
+    surtitre="L'exclusivité comme levier"
+    titre="Le mandat exclusif"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
-      <p class="surtitre">L'exclusivité comme levier</p>
-      <h1 class="titre-1 mt-6">Le mandat exclusif, et ce qu'il vous doit en retour</h1>
+      <h1 class="titre-1">Le mandat exclusif, et ce qu'il vous doit en retour</h1>
       <p class="chapo mt-8">
         Confier un bien à un seul cabinet n'a de sens que si ce cabinet s'engage par écrit en face. Voici les
         quatre choses que l'exclusivité change pour un vendeur, les six engagements qui l'accompagnent chez
