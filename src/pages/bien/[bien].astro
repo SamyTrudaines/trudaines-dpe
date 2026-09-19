@@ -8,7 +8,7 @@ import CarteBien from '../../components/CarteBien.astro';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
 import { site } from '../../data/site';
 import { titreSeo, descriptionSeo } from '../../lib/seo';
-import { jeuPhoto } from '../../lib/images';
+import { jeuPhoto, TAILLES_FICHE, TAILLES_GALERIE } from '../../lib/images';
 
 interface Props { bien: CollectionEntry<'biens'> }
 
@@ -128,52 +128,6 @@ const donnees = [
           </>
         )}
 
-        {d.photos.length > 0 ? (
-          <div class="mt-10 grid gap-4">
-            <picture>
-              {jeuPhoto(d.photos[0].src).avif && (
-                <source type="image/avif" srcset={jeuPhoto(d.photos[0].src).avif} sizes="(min-width: 1024px) 800px, 94vw" />
-              )}
-              <source type="image/webp" srcset={jeuPhoto(d.photos[0].src).srcset} sizes="(min-width: 1024px) 800px, 94vw" />
-              <img
-                src={d.photos[0].src}
-                alt={d.photos[0].alt}
-                width="1600"
-                height="1067"
-                fetchpriority="high"
-                decoding="async"
-                class="aspect-[3/2] w-full object-cover"
-              />
-            </picture>
-            {d.photos.length > 1 && (
-              <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
-                {d.photos.slice(1).map((p) => (
-                  <picture>
-                    {jeuPhoto(p.src).avif && (
-                      <source type="image/avif" srcset={jeuPhoto(p.src).avif} sizes="(min-width: 768px) 260px, 45vw" />
-                    )}
-                    <img
-                      src={jeuPhoto(p.src).src}
-                      srcset={jeuPhoto(p.src).srcset}
-                      sizes="(min-width: 768px) 260px, 45vw"
-                      alt={p.alt}
-                      width="800"
-                      height="533"
-                      loading="lazy"
-                      decoding="async"
-                      class="aspect-[3/2] w-full object-cover"
-                    />
-                  </picture>
-                ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          <div class="mt-10 flex aspect-[3/2] items-center justify-center bg-[color:var(--color-papier)] text-xs uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
-            Photographies en cours de préparation
-          </div>
-        )}
-
         {d.visiteVirtuelle && (
           <p class="mt-6">
             <a href={d.visiteVirtuelle} target="_blank" rel="noopener" class="lien-souligne">Ouvrir la visite virtuelle</a>
@@ -207,6 +161,50 @@ const donnees = [
       </div>
     </div>
   </section>
+
+  {d.photos.length > 0 ? (
+    <section class="pb-4 pt-2" aria-label="Photographies du bien">
+      <div class="conteneur grid gap-4">
+        <picture>
+          <source type="image/webp" srcset={jeuPhoto(d.photos[0].src).srcset} sizes={TAILLES_FICHE} />
+          <img
+            src={d.photos[0].src}
+            alt={d.photos[0].alt}
+            width="2400"
+            height="1600"
+            fetchpriority="high"
+            decoding="async"
+            class="aspect-[3/2] w-full object-cover"
+          />
+        </picture>
+        {d.photos.length > 1 && (
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+            {d.photos.slice(1).map((p) => (
+              <img
+                src={jeuPhoto(p.src).src}
+                srcset={jeuPhoto(p.src).srcset}
+                sizes={TAILLES_GALERIE}
+                alt={p.alt}
+                width="1600"
+                height="1067"
+                loading="lazy"
+                decoding="async"
+                class="aspect-[3/2] w-full object-cover"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  ) : (
+    <section class="pb-4 pt-2">
+      <div class="conteneur">
+        <div class="flex aspect-[3/2] items-center justify-center bg-[color:var(--color-papier)] text-xs uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
+          Photographies en cours de préparation
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section filet">
     <div class="conteneur grid gap-16 lg:grid-cols-[1.15fr_0.85fr]">

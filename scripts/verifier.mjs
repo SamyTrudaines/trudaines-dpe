@@ -102,6 +102,18 @@ for (const page of pages) {
     }
   }
 
+  for (const source of html.matchAll(/<source\s[^>]*>/g)) {
+    const srcset = /srcset="([^"]+)"/.exec(source[0])?.[1];
+    if (!srcset) continue;
+    for (const morceau of srcset.split(',')) {
+      const adresse = morceau.trim().split(/\s+/)[0];
+      if (!adresse || !adresse.startsWith('/')) continue;
+      if (!cheminsPublics.has(adresse.split('?')[0])) {
+        erreurs.push(`${url} : source de picture introuvable ${adresse}`);
+      }
+    }
+  }
+
   for (const lien of html.matchAll(/href="([^"]+)"/g)) {
     const cible = lien[1];
     if (/^(https?:|mailto:|tel:|#|data:)/.test(cible)) continue;
@@ -121,6 +133,23 @@ for (const page of pages) {
     }
     if (src && src.startsWith('/') && !cheminsPublics.has(src.split('?')[0])) {
       erreurs.push(`${url} : image introuvable ${src}`);
+    }
+
+    /*
+     * Variantes du srcset. Le navigateur choisit dans cette liste, pas dans
+     * l'attribut src : une variante manquante donne une image cassée sur les
+     * seuls écrans qui la demandent, c'est à dire souvent sur aucun de ceux
+     * qu'on a sous la main au moment de la recette.
+     */
+    const srcset = /srcset="([^"]+)"/.exec(balise)?.[1];
+    if (srcset) {
+      for (const morceau of srcset.split(',')) {
+        const adresse = morceau.trim().split(/\s+/)[0];
+        if (!adresse || !adresse.startsWith('/')) continue;
+        if (!cheminsPublics.has(adresse.split('?')[0])) {
+          erreurs.push(`${url} : variante de srcset introuvable ${adresse}`);
+        }
+      }
     }
     if (src && /\.(jpg|jpeg|png)$/i.test(src)) {
       avertissements.push(`${url} : image ${src} à convertir en webp`);

@@ -16,9 +16,15 @@ interface Props {
   sansPrix?: boolean;
   /** Vrai dans la vitrine de l'accueil : image plus grande, format plus large. */
   vitrine?: boolean;
+  /**
+   * Portée de la page qui affiche la carte. Une page profonde, quartier ou
+   * voie, reçoit l'AVIF ; une page de vitrine reçoit la plus grande
+   * définition en WebP.
+   */
+  portee?: 'vitrine' | 'profonde';
 }
-const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false } = Astro.props;
-const jeu = photo ? jeuPhoto(photo.src) : undefined;
+const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine' } = Astro.props;
+const jeu = photo ? jeuPhoto(photo.src, portee) : undefined;
 const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
 ---
 <article class="group">
