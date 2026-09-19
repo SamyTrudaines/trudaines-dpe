@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient,
 } from '../_lib/brevo.js';
 
@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await enregistrerContact(env, {
+    await embaser(env, {
       email,
       attributs: {
         PRENOM: prenom,
@@ -55,6 +55,7 @@ export async function onRequestPost({ request, env }) {
         HORIZON_VENTE: valeur('horizon'),
         SECTEUR: valeur('secteur'),
         ORIGINE: 'Formulaire estimation',
+        ...optIn(donnees),
       },
       listes: liste(env, 'vendeurs'),
     });
@@ -72,6 +73,7 @@ export async function onRequestPost({ request, env }) {
 
     return reponse(request, { ok: true, message: 'Demande enregistrée' });
   } catch (erreur) {
+    console.error('api/estimation', erreur);
     return reponse(
       request,
       { ok: false, message: 'L’envoi a échoué. Appelez-nous au 06 20 46 59 12, nous traiterons votre demande directement.' },

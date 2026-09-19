@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient,
 } from '../_lib/brevo.js';
 
@@ -136,7 +136,7 @@ export async function onRequestPost({ request, env }) {
       piecesJointes,
     });
 
-    await enregistrerContact(env, {
+    await embaser(env, {
       email,
       attributs: {
         PRENOM: valeur('prenom'),
@@ -145,6 +145,7 @@ export async function onRequestPost({ request, env }) {
         PROFIL: valeur('profil'),
         SECTEUR_SOUHAITE: valeur('secteurSouhaite'),
         ORIGINE: 'Candidature',
+        ...optIn(donnees),
       },
       listes: liste(env, 'candidats'),
     });
@@ -160,6 +161,7 @@ export async function onRequestPost({ request, env }) {
 
     return reponse(request, { ok: true, message: 'Candidature envoyée' });
   } catch (erreur) {
+    console.error('api/candidature', erreur);
     return reponse(request, { ok: false, message: 'L’envoi a échoué. Écrivez-nous à samy.santamarina@trudaines.com.' }, 500);
   }
 }

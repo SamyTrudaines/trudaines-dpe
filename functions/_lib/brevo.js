@@ -114,6 +114,26 @@ export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, 
   return reponseApi.json().catch(() => ({}));
 }
 
+/**
+ * Attributs présents dans le compte Brevo dès l'ouverture. Un attribut métier,
+ * ORIGINE, SECTEUR ou GUIDE, doit d'abord être créé dans Brevo, Contacts puis
+ * Paramètres puis Attributs de contact ; tant qu'il n'existe pas, Brevo refuse
+ * le contact entier. L'enregistrement se replie alors sur ces attributs sûrs :
+ * mieux vaut un contact embasé sans son origine qu'un contact perdu.
+ */
+const ATTRIBUTS_NATIFS = new Set(['PRENOM', 'NOM', 'SMS', 'OPT_IN', 'WHATSAPP', 'LANDLINE_NUMBER']);
+
+/**
+ * Trace du consentement. La case cochée devient l'attribut OPT_IN, daté du
+ * jour : c'est la preuve que demande le RGPD, portée par le contact lui même,
+ * et l'email de notification reçu par le cabinet en garde le double. Une
+ * campagne ne part jamais vers un contact dont OPT_IN est faux.
+ */
+export function optIn(donnees) {
+  if (String(donnees.get('consentement') || '') !== 'oui') return { OPT_IN: false };
+  return { OPT_IN: true, DATE_OPTIN: new Date().toISOString().slice(0, 10) };
+}
+
 /** Création ou mise à jour d'un contact Brevo, avec ajout à une ou plusieurs listes. */
 export async function enregistrerContact(env, { email, attributs = {}, listes = [] }) {
   if (!env.BREVO_API_KEY) throw new Error('BREVO_API_KEY absente');
@@ -122,26 +142,51 @@ export async function enregistrerContact(env, { email, attributs = {}, listes = 
     .map((liste) => parseInt(liste, 10))
     .filter((identifiant) => Number.isInteger(identifiant) && identifiant > 0);
 
-  const reponseApi = await fetch(`${API}/contacts`, {
-    method: 'POST',
-    headers: {
-      'api-key': env.BREVO_API_KEY,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      email,
-      attributes: attributs,
-      listIds,
-      updateEnabled: true,
-    }),
-  });
+  const envoyer = (retenus) =>
+    fetch(`${API}/contacts`, {
+      method: 'POST',
+      headers: {
+        'api-key': env.BREVO_API_KEY,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        attributes: retenus,
+        listIds,
+        updateEnabled: true,
+      }),
+    });
+
+  let reponseApi = await envoyer(attributs);
+  if (reponseApi.status === 400) {
+    const detail = await reponseApi.text();
+    console.error(`Brevo contacts 400, nouvel essai avec les seuls attributs natifs : ${detail}`);
+    const natifs = Object.fromEntries(
+      Object.entries(attributs).filter(([nom]) => ATTRIBUTS_NATIFS.has(nom))
+    );
+    reponseApi = await envoyer(natifs);
+  }
 
   if (!reponseApi.ok && reponseApi.status !== 204) {
     const detail = await reponseApi.text();
     throw new Error(`Brevo contacts ${reponseApi.status} ${detail}`);
   }
   return true;
+}
+
+/**
+ * Même enregistrement, sans jamais faire échouer le parcours du visiteur. La
+ * notification interne part avant lui et contient tout le contact : un
+ * embasement en panne se répare depuis la boîte de réception, un visiteur
+ * devant un message d'échec ne revient pas.
+ */
+export async function embaser(env, contact) {
+  try {
+    await enregistrerContact(env, contact);
+  } catch (erreur) {
+    console.error('Embasement Brevo échoué, le contact reste dans l’email de notification', erreur);
+  }
 }
 
 /** Listes Brevo, identifiants numériques passés en variables d'environnement. */

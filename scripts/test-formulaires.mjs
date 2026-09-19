@@ -242,6 +242,76 @@ verifier(
   `statut ${voixValide.status}, pièces ${JSON.stringify(piecesVoix.map((p) => p.name))}`
 );
 
+/* ------------------------------------- embasement, opt-in et résilience ---- */
+
+const brevo = await import(new URL('../functions/_lib/brevo.js', import.meta.url).href);
+
+appels.length = 0;
+await guide.onRequestPost({
+  request: requete({
+    email: 'prospect@example.com', telephone: '0601020304',
+    guide: 'guide-prix-2026-9e-nord', consentement: 'oui', horodatage: recent(),
+  }),
+  env,
+});
+const contactGuide = appels.find((a) => a.url.endsWith('/contacts'));
+const aujourdHui = new Date().toISOString().slice(0, 10);
+verifier(
+  'consentement coché : OPT_IN vrai et daté sur le contact',
+  contactGuide && contactGuide.corps.attributes.OPT_IN === true && contactGuide.corps.attributes.DATE_OPTIN === aujourdHui,
+  contactGuide ? JSON.stringify({ OPT_IN: contactGuide.corps.attributes.OPT_IN, DATE_OPTIN: contactGuide.corps.attributes.DATE_OPTIN }) : 'aucun appel /contacts'
+);
+
+/*
+ * Attribut métier absent du compte Brevo : l'API répond 400 et refuserait le
+ * contact entier. L'enregistrement doit réessayer avec les seuls attributs
+ * natifs plutôt que de perdre le contact.
+ */
+const fetchNormal = globalThis.fetch;
+const erreurNormale = console.error;
+console.error = () => {};
+
+const essais = [];
+globalThis.fetch = async (url, options = {}) => {
+  if (String(url).endsWith('/contacts')) {
+    essais.push(JSON.parse(options.body));
+    if (essais.length === 1) {
+      return new Response(JSON.stringify({ code: 'invalid_parameter', message: 'Attribute ORIGINE does not exist' }), { status: 400 });
+    }
+    return new Response(null, { status: 204 });
+  }
+  return fetchNormal(url, options);
+};
+await brevo.enregistrerContact(env, {
+  email: 'repli@example.com',
+  attributs: { PRENOM: 'Test', ORIGINE: 'Essai', OPT_IN: true },
+  listes: ['3'],
+});
+verifier(
+  'attribut inconnu du compte : repli sur les attributs natifs, contact conservé',
+  essais.length === 2 && !('ORIGINE' in essais[1].attributes) && essais[1].attributes.PRENOM === 'Test' && essais[1].attributes.OPT_IN === true,
+  `${essais.length} essai(s)`
+);
+
+/* Panne d'embasement totale : le visiteur reçoit quand même sa confirmation. */
+globalThis.fetch = async (url, options = {}) => {
+  if (String(url).endsWith('/contacts')) return new Response('indisponible', { status: 500 });
+  return fetchNormal(url, options);
+};
+appels.length = 0;
+const malgrePanne = await estimation.onRequestPost({
+  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }),
+  env,
+});
+verifier(
+  'Brevo contacts en panne : la demande aboutit et la notification part',
+  malgrePanne.status === 200 && appels.filter((a) => a.url.endsWith('/smtp/email')).length >= 1,
+  `statut ${malgrePanne.status}`
+);
+
+globalThis.fetch = fetchNormal;
+console.error = erreurNormale;
+
 /*
  * Le garde commun des fonctions /api : un POST portant l'Origin d'un autre
  * site est refusé avant même d'atteindre la fonction ; un POST de notre

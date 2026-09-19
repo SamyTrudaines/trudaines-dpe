@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
@@ -26,11 +26,14 @@ export async function onRequestPost({ request, env }) {
     if (!identifiantValide(reference)) {
       return reponse(request, { ok: false, message: 'Référence de bien inconnue.' }, 400);
     }
-    const base = env.SITE_URL || new URL(request.url).origin;
+    // Même logique que pour les guides : le PDF est joint depuis le
+    // déploiement qui sert la page, adresse toujours vivante, et un fichier
+    // inaccessible n'empêche pas l'email de partir avec le lien.
+    const base = new URL(request.url).origin;
     const urlFiche = `${base}/fiches/${encodeURIComponent(reference.toLowerCase())}.pdf`;
 
-    const fiche = await fetch(urlFiche);
-    const piecesJointes = fiche.ok ? [{ url: urlFiche, name: `trudaines-${reference.toLowerCase()}.pdf` }] : [];
+    const fiche = await fetch(urlFiche).catch(() => null);
+    const piecesJointes = fiche && fiche.ok ? [{ url: urlFiche, name: `trudaines-${reference.toLowerCase()}.pdf` }] : [];
 
     await envoyerEmail(env, {
       destinataire: email,
@@ -58,18 +61,20 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await enregistrerContact(env, {
+    await embaser(env, {
       email,
       attributs: {
         SMS: valeur('telephone'),
         BIEN_REFERENCE: reference,
         ORIGINE: 'Dossier de bien téléchargé',
+        ...optIn(donnees),
       },
       listes: liste(env, 'acheteurs'),
     });
 
     return reponse(request, { ok: true, message: 'Dossier envoyé' });
   } catch (erreur) {
+    console.error('api/fiche-bien', erreur);
     return reponse(request, { ok: false, message: 'L’envoi a échoué. Appelez-nous au 06 20 46 59 12.' }, 500);
   }
 }

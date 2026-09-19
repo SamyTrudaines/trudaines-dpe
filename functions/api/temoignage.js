@@ -58,6 +58,7 @@ export async function onRequestPost({ request, env }) {
 
     return reponse(request, { ok: true, message: 'Témoignage envoyé' });
   } catch (erreur) {
+    console.error('api/temoignage', erreur);
     return reponse(request, { ok: false, message: 'L’envoi a échoué. Appelez-nous au 06 20 46 59 12.' }, 500);
   }
 }
