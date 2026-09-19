@@ -29,7 +29,7 @@ const photo = quartier.data.photos[0];
   filAriane={[{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom }]}
 >
   <section class="section pt-10">
-    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+    <div class={`conteneur grid gap-16 lg:items-start ${photo ? 'lg:grid-cols-[1fr_1fr]' : 'max-w-4xl'}`}>
       <div>
         <p class="surtitre">{quartier.data.arrondissement}</p>
         <h1 class="titre-1 mt-6">{quartier.data.nom}</h1>

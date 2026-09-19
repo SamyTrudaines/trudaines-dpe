@@ -110,7 +110,11 @@ const avis = defineCollection({
     secteur: z.string().optional(),
     /** Renseigné seulement quand l'avis dit lui même de quel projet il s'agit. */
     typeProjet: z.enum(['Vente', 'Achat', 'Recherche', 'Location']).optional(),
-    texte: z.string(),
+    /**
+     * Absent quand le client a mis une note sans écrire de commentaire. L'avis
+     * compte alors dans la moyenne et dans le total, sans vignette citation.
+     */
+    texte: z.string().optional(),
     note: z.number().min(1).max(5),
     date: z.coerce.date().optional(),
     /**
@@ -123,6 +127,8 @@ const avis = defineCollection({
     lienSource: z.string().url().optional(),
     /** Ancienneté telle que Google la publie, « il y a 2 mois » par exemple. */
     anciennete: z.string().optional(),
+    /** Mention de visite telle que Google la publie, « Visité en mars » par exemple. */
+    dateVisite: z.string().optional(),
     exemple: z.boolean().default(false),
   }),
 });

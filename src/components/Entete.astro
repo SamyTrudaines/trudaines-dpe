@@ -63,6 +63,7 @@ const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
             <a href={lien.href} class="block py-3 text-base no-underline text-[color:var(--color-encre)]">{lien.libelle}</a>
           </li>
         ))}
+        <li><a href="/avis" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Avis clients</a></li>
         <li><a href="/panorama" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Panorama</a></li>
         <li><a href="/nous-rejoindre" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Nous rejoindre</a></li>
         <li><a href="/honoraires" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Honoraires</a></li>
@@ -72,16 +73,15 @@ const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
   </div>
 </header>
 
-<script is:inline>
-  (function () {
-    var bouton = document.querySelector('[data-menu-bouton]');
-    var menu = document.getElementById('menu-mobile');
-    if (!bouton || !menu) return;
-    bouton.addEventListener('click', function () {
-      var ouvert = bouton.getAttribute('aria-expanded') === 'true';
+<script>
+  const bouton = document.querySelector<HTMLButtonElement>('[data-menu-bouton]');
+  const menu = document.getElementById('menu-mobile');
+  if (bouton && menu) {
+    bouton.addEventListener('click', () => {
+      const ouvert = bouton.getAttribute('aria-expanded') === 'true';
       bouton.setAttribute('aria-expanded', String(!ouvert));
       bouton.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
       menu.hidden = ouvert;
     });
-  })();
+  }
 </script>

@@ -7,10 +7,14 @@ import { dirname, join } from 'node:path';
 
 const racine = new URL('../public/images/', import.meta.url).pathname;
 
-const visuels = [
-  ['samy-santamarina.svg', 'Samy Santamarina', 900, 1125],
-  ['og-trudaines.svg', 'Trudaines Immobilier', 1200, 630],
-];
+/*
+ * Les pages n'affichent plus de cadre gris en attendant une photographie :
+ * quand l'image manque, elles montrent du texte et des chiffres, et le bloc
+ * disparaît proprement. Seule la carte de partage garde un visuel, elle est
+ * obligatoire. Les photographies d'illustration s'installent avec
+ * scripts/photos.mjs, vos propres prises de vue avec /admin.
+ */
+const visuels = [['og-trudaines.svg', 'Trudaines Immobilier', 1200, 630]];
 
 for (const [chemin, libelle, largeur, hauteur] of visuels) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${largeur} ${hauteur}" width="${largeur}" height="${hauteur}" role="img" aria-label="${libelle}">

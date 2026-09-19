@@ -9,6 +9,7 @@ import Analytics from '../components/Analytics.astro';
 import FilAriane from '../components/FilAriane.astro';
 import BlocCta from '../components/BlocCta.astro';
 import { site } from '../data/site';
+import { agrégatAvis } from '../lib/avis';
 
 interface Props {
   titre: string;
@@ -22,6 +23,12 @@ interface Props {
 }
 
 const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true } = Astro.props;
+
+/*
+ * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
+ * le visiteur comme le moteur peuvent les recompter sur la page.
+ */
+const avis = await agrégatAvis();
 
 const agence = {
   '@context': 'https://schema.org',
@@ -62,6 +69,17 @@ const agence = {
   })),
   founder: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
   sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
+  ...(avis.total > 0
+    ? {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: avis.note,
+          bestRating: 5,
+          worstRating: 1,
+          reviewCount: avis.total,
+        },
+      }
+    : {}),
 };
 ---
 <!doctype html>
@@ -89,12 +107,11 @@ const agence = {
     <BarreMobile />
     <BandeauCookies />
     <script src="/js/formulaires.js" defer is:inline></script>
-    <script is:inline>
-      document.addEventListener('click', function (evt) {
-        var lien = evt.target.closest('[data-evt]');
-        if (lien && typeof window.trudainesEvent === 'function') {
-          window.trudainesEvent(lien.getAttribute('data-evt'), {});
-        }
+    <script>
+      document.addEventListener('click', (evt) => {
+        const cible = evt.target instanceof Element ? evt.target.closest('[data-evt]') : null;
+        const nom = cible?.getAttribute('data-evt');
+        if (nom) window.trudainesEvent?.(nom);
       });
     </script>
   </body>

@@ -24,7 +24,8 @@ export default defineConfig({
         "base-uri 'self'",
         "object-src 'none'",
         "frame-src 'none'",
-        "frame-ancestors 'self'",
+        // frame-ancestors est ignoré dans un meta http-equiv : c'est l'en-tête
+        // X-Frame-Options de public/_headers qui interdit la mise en cadre.
         "form-action 'self'",
         "manifest-src 'self'",
         "font-src 'self'",

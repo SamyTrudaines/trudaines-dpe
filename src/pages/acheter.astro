@@ -166,44 +166,47 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
     </div>
   </section>
 
-  <script is:inline>
-    (function () {
-      var form = document.querySelector('[data-filtres]');
-      var liste = document.querySelector('[data-liste-biens]');
-      if (!form || !liste) return;
-      var cartes = Array.prototype.slice.call(liste.querySelectorAll('[data-bien]'));
-      var compte = document.querySelector('[data-compte-biens]');
-      var vide = document.querySelector('[data-aucun-resultat]');
+  <script>
+    const form = document.querySelector<HTMLFormElement>('[data-filtres]');
+    const liste = document.querySelector('[data-liste-biens]');
 
-      function appliquer() {
-        var d = new FormData(form);
-        var arrondissement = d.get('arrondissement');
-        var quartier = d.get('quartier');
-        var pieces = parseInt(d.get('pieces') || '0', 10);
-        var prixMax = parseInt(d.get('prix') || '0', 10);
-        var surfaceMin = parseInt(d.get('surface') || '0', 10);
-        var visibles = 0;
+    if (form && liste) {
+      const cartes = Array.from(liste.querySelectorAll<HTMLElement>('[data-bien]'));
+      const compte = document.querySelector('[data-compte-biens]');
+      const vide = document.querySelector<HTMLElement>('[data-aucun-resultat]');
 
-        cartes.forEach(function (carte) {
-          var ok =
+      const champ = (d: FormData, nom: string) => String(d.get(nom) ?? '');
+      const nombreChamp = (valeur: string | undefined) => parseInt(valeur ?? '0', 10) || 0;
+
+      const appliquer = () => {
+        const d = new FormData(form);
+        const arrondissement = champ(d, 'arrondissement');
+        const quartier = champ(d, 'quartier');
+        const pieces = nombreChamp(champ(d, 'pieces'));
+        const prixMax = nombreChamp(champ(d, 'prix'));
+        const surfaceMin = nombreChamp(champ(d, 'surface'));
+        let visibles = 0;
+
+        for (const carte of cartes) {
+          const ok =
             (!arrondissement || carte.dataset.arrondissement === arrondissement) &&
             (!quartier || carte.dataset.quartier === quartier) &&
-            (!pieces || parseInt(carte.dataset.pieces, 10) >= pieces) &&
-            (!prixMax || parseInt(carte.dataset.prix, 10) <= prixMax) &&
-            (!surfaceMin || parseInt(carte.dataset.surface, 10) >= surfaceMin);
+            (!pieces || nombreChamp(carte.dataset.pieces) >= pieces) &&
+            (!prixMax || nombreChamp(carte.dataset.prix) <= prixMax) &&
+            (!surfaceMin || nombreChamp(carte.dataset.surface) >= surfaceMin);
           carte.hidden = !ok;
           if (ok) visibles++;
-        });
+        }
 
         if (compte) compte.textContent = visibles + (visibles > 1 ? ' biens' : ' bien');
         if (vide) vide.hidden = visibles !== 0;
-      }
+      };
 
       form.addEventListener('change', appliquer);
-      form.addEventListener('submit', function (e) {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         appliquer();
       });
-    })();
+    }
   </script>
 </Layout>

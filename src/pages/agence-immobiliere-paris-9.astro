@@ -3,11 +3,13 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import BlocAgence from '../components/BlocAgence.astro';
 import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { getSecteur } from '../data/secteurs';
 
 const secteur = getSecteur('paris-9')!;
 const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
-const avis = (await getCollection('avis')).slice(0, 2);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
 
 const services = [
   { titre: 'Vente et mandat', texte: "Mise en marché complète : avis de valeur écrit, photographies, diffusion, visites qualifiées, négociation et suivi jusqu'à l'acte.", href: '/vendre' },
@@ -46,5 +48,5 @@ const services = [
       </p>
     </div>
   </section>
-  <Avis avis={avis} />
+  <Avis avis={avis} agregat={agregatAvis} />
 </Layout>

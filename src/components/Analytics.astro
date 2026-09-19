@@ -1,33 +1,12 @@
 ---
 import { site } from '../data/site';
 const id = site.ga4;
-const amorce = `
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-window.gtag = gtag;
-gtag('consent', 'default', {
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied',
-  analytics_storage: 'denied',
-  wait_for_update: 500
-});
-try {
-  if (localStorage.getItem('trudaines-consentement') === 'accepte') {
-    gtag('consent', 'update', { analytics_storage: 'granted' });
-  }
-} catch (e) {}
-gtag('js', new Date());
-gtag('config', '${id}', { anonymize_ip: true });
-`;
-const stub = `window.trudainesEvent = function (nom, params) {
-  try { if (typeof window.gtag === 'function') window.gtag('event', nom, params || {}); } catch (e) {}
-};`;
 ---
-{id ? (
-  <>
-    <script is:inline set:html={amorce} />
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} is:inline></script>
-  </>
-) : null}
-<script is:inline set:html={stub} />
+{/*
+  Les deux scripts sont servis par une adresse, jamais écrits dans la page :
+  la politique de sécurité du contenu refuse le code inscrit dans le HTML.
+  /js/analytics.js pose window.trudainesEvent même sans identifiant GA4, et
+  n'arme la mesure d'audience que si data-ga4 est renseigné.
+*/}
+<script src="/js/analytics.js" data-ga4={id} is:inline></script>
+{id && <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} is:inline></script>}
