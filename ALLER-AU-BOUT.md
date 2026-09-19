@@ -73,7 +73,7 @@ mise à jour avec la nouvelle adresse.
 
 **Semaine 3. Le site rapporte.**
 Les mandats en cours saisis en annonces avec leurs diagnostics, les mandats
-passés vérifiés un par un, le taux d'honoraires en exclusivité écrit.
+passés vérifiés un par un. Le taux d'honoraires en exclusivité est écrit : un point de moins que le barème de la tranche.
 
 **Semaine 4. Le site est cité.**
 Outil de mesure branché, les trente questions suivies, première liste de ce qui
