@@ -17,7 +17,7 @@ import sharp from 'sharp';
 
 const carnet = JSON.parse(readFileSync('import/photos-source.json', 'utf8'));
 const entrees = Object.entries(carnet);
-const PARALLELE = 6;
+const PARALLELE = 4;
 
 /** curl, qui suit la configuration de mandataire de l'environnement. */
 function telecharger(adresse) {
@@ -28,6 +28,7 @@ function telecharger(adresse) {
 }
 
 let faits = 0;
+let passees = 0;
 let echecs = [];
 let avant = 0;
 let apres = 0;
@@ -36,6 +37,14 @@ async function traiter([destination, source]) {
   const chemin = join('public', destination.replace(/^\//, ''));
   const base = chemin.replace(/\.webp$/, '');
   try {
+    /*
+     * Reprise. Le réencodage de cent soixante dix photographies en quatre
+     * variantes prend du temps et peut être interrompu. Une photographie dont
+     * les quatre fichiers existent déjà est passée : seul ce script produit
+     * des AVIF, leur présence suffit donc à dire qu'elle est faite.
+     */
+    const dejaFait = ['.avif', '-800.avif', '.webp', '-800.webp'].every((x) => existsSync(base + x));
+    if (dejaFait) { passees += 1; return; }
     if (existsSync(chemin)) avant += statSync(chemin).size;
     const brut = telecharger(source);
     if (brut.length < 2048) throw new Error(`réponse de ${brut.length} octets`);
@@ -75,8 +84,8 @@ await Promise.all(
 );
 
 const ko = (o) => Math.round(o / 1024);
-console.log(`\nRéencodées : ${faits} sur ${entrees.length}`);
-console.log(`Poids moyen WebP : ${ko(avant / faits)} ko avant, ${ko(apres / faits)} ko après`);
+console.log(`\nRéencodées : ${faits}, déjà faites : ${passees}, sur ${entrees.length}`);
+if (faits) console.log(`Poids moyen WebP : ${ko(avant / faits)} ko avant, ${ko(apres / faits)} ko après`);
 if (echecs.length) {
   console.log(`Échecs : ${echecs.length}`);
   echecs.slice(0, 10).forEach((e) => console.log('  · ' + e));
