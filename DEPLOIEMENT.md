@@ -30,7 +30,7 @@ pour l'environnement **Production** et pour **Preview**.
 | Variable | Valeur | Type |
 | --- | --- | --- |
 | `BREVO_API_KEY` | Clé API Brevo (SMTP & API, v3) | Secret |
-| `BREVO_SENDER_EMAIL` | `contact@trudaines.com` | Texte |
+| `BREVO_SENDER_EMAIL` | `samy.santamarina@trudaines.com` | Texte |
 | `BREVO_SENDER_NOM` | `Trudaines Immobilier` | Texte |
 | `NOTIFICATION_EMAIL` | `samy.santamarina@trudaines.com` | Texte |
 | `BREVO_LISTE_VENDEURS` | Identifiant numérique de la liste | Texte |
@@ -46,6 +46,13 @@ Sans `PUBLIC_GA4_ID`, le site fonctionne mais n'envoie aucune mesure d'audience 
 l'emplacement de la balise est prêt, il suffira de renseigner l'identifiant.
 
 ### Préparer Brevo
+
+État du compte relevé le 19 septembre 2026 : l'expéditeur « Trudaines »
+(samy.santamarina@trudaines.com) est vérifié et actif ; les quatre listes du
+site restent à créer, les listes existantes étant celles d'opérations
+passées ; les attributs PRENOM et NOM existent déjà, les autres restent à
+créer.
+
 
 1. Dans Brevo, **Contacts** puis **Listes** : créez quatre listes,
    *Vendeurs*, *Acheteurs*, *Candidats*, *Téléchargements*. Notez leur
