@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FormulaireTemoignage from '../components/FormulaireTemoignage.astro';
 import { agrégatAvis, tousLesAvis } from '../lib/avis';
 import { site } from '../data/site';
 
@@ -150,6 +151,33 @@ const donnees = [
           Voir la fiche Google du cabinet
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="deposer-avis">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div class="max-w-xl">
+        <p class="surtitre">Vous avez travaillé avec nous</p>
+        <h2 id="deposer-avis" class="titre-2 mt-6">Déposer un témoignage</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Un avis utile n'est pas un compliment, c'est un récit : ce que vous vouliez, ce qui a été difficile, ce
+          qui s'est passé. Cela vaut mieux qu'une étoile de plus, pour vous comme pour le prochain vendeur qui
+          lira cette page.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Rien n'est publié automatiquement. Je relis, je vous écris, et je ne mets en ligne que si vous avez
+          coché l'accord. Vous pouvez demander le retrait à tout moment.
+        </p>
+        <p class="mt-8 text-sm">
+          Le déposer aussi sur{' '}
+          <a href={site.avis.lienGoogle} target="_blank" rel="noopener nofollow" data-evt="clic_avis_google" class="lien-souligne">
+            la fiche Google du cabinet
+          </a>{' '}
+          aide davantage que tout le reste : c'est là que regardent les vendeurs qui ne nous connaissent pas
+          encore.
+        </p>
+      </div>
+      <FormulaireTemoignage />
     </div>
   </section>
 </Layout>

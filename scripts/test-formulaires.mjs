@@ -41,6 +41,8 @@ const cas = [
   ['guide', '../functions/api/guide.js', { email: 'paul@example.com', telephone: '0601020304', guide: 'guide-prix-2026-9e-nord', titreGuide: 'Guide des prix 2026', horodatage: recent() }, 6],
   ['alerte', '../functions/api/alerte.js', { prenom: 'Léa', email: 'lea@example.com', secteur: 'Paris 9e', pieces: '3', budget: '800000', surface: '60', consentement: 'oui', horodatage: recent() }, 4],
   ['contact', '../functions/api/contact.js', { prenom: 'Marc', nom: 'Petit', email: 'marc@example.com', telephone: '0601020304', sujet: 'Vendre', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 3],
+  ['recommandation', '../functions/api/recommandation.js', { prenom: 'Hélène', nom: 'Girard', email: 'helene@example.com', telephone: '0601020304', contexte: 'Un voisin vend son trois pièces au printemps.', prise_de_contact: 'Je lui donne votre numéro', consentement: 'oui', horodatage: recent() }, 3],
+  ['temoignage', '../functions/api/temoignage.js', { prenom: 'Julien', email: 'julien@example.com', note: '5', texte: 'Vente conclue en trois semaines, comptes rendus après chaque visite.', quartier: 'Montmartre', projet: 'Vente', publication: 'oui', horodatage: recent() }, null],
   ['candidature', '../functions/api/candidature.js', { prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304', profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 5],
 ];
 
@@ -52,7 +54,10 @@ for (const [nom, chemin, donnees, listeAttendue] of cas) {
   const corps = await reponse.clone().json().catch(() => ({}));
   const listes = appels.filter((a) => a.url.endsWith('/contacts')).flatMap((a) => a.corps.listIds || []);
   const emails = appels.filter((a) => a.url.endsWith('/smtp/email')).length;
-  const ok = reponse.status === 200 && corps.ok === true && emails >= 1 && listes.includes(listeAttendue);
+  // listeAttendue à null : le point d'entrée ne doit inscrire personne, comme
+  // le dépôt de témoignage, dont l'auteur n'a pas demandé à recevoir des messages.
+  const listeOk = listeAttendue === null ? listes.length === 0 : listes.includes(listeAttendue);
+  const ok = reponse.status === 200 && corps.ok === true && emails >= 1 && listeOk;
   if (!ok) echecs++;
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} ${nom} · statut ${reponse.status} · emails ${emails} · listes ${JSON.stringify(listes)}`);
 }

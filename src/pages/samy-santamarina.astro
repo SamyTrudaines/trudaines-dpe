@@ -23,7 +23,37 @@ const donnees = [
     email: site.email,
     telephone: site.telephoneLien,
     sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
-    knowsAbout: ['Vente immobilière', 'Estimation immobilière', 'Paris 9e', 'Montmartre'],
+    knowsAbout: [
+      'Vente immobilière',
+      'Estimation immobilière',
+      'Mandat exclusif',
+      'Valeurs foncières et données de marché',
+      'Paris 9e',
+      'Montmartre',
+      'Paris 10e',
+    ],
+    /*
+     * Titre professionnel et retombées presse déclarés aux moteurs. Un moteur
+     * génératif cite d'autant plus volontiers qu'il peut relier une affirmation
+     * à une autorité vérifiable : la carte professionnelle d'un côté, un média
+     * tiers de l'autre.
+     */
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Carte professionnelle de transaction immobilière',
+      identifier: site.legal.carteT,
+      recognizedBy: { '@type': 'Organization', name: 'CCI Paris Île-de-France' },
+      validFrom: '2024-08-22',
+    },
+    subjectOf: presse
+      .filter((p) => p.data.lien)
+      .map((p) => ({
+        '@type': p.data.ecouter ? 'PodcastEpisode' : 'NewsArticle',
+        headline: p.data.titre,
+        url: p.data.lien,
+        datePublished: p.data.date.toISOString().slice(0, 10),
+        publisher: { '@type': 'Organization', name: p.data.media },
+      })),
   },
 ];
 ---
