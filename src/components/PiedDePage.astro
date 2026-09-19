@@ -34,6 +34,7 @@ const annee = new Date().getFullYear();
         {secteurs.map((s) => (
           <li><a href={`/estimation/${s.slug}`} class="inline-block py-1.5 no-underline hover:underline">Estimation {s.nom}</a></li>
         ))}
+        <li><a href="/prix-immobilier" class="inline-block py-1.5 no-underline hover:underline">Prix au m² rue par rue</a></li>
         <li><a href="/honoraires" class="inline-block py-1.5 no-underline hover:underline">Honoraires</a></li>
       </ul>
     </div>

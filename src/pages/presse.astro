@@ -38,14 +38,24 @@ const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTim
               </div>
               <div>
                 <h2 class="titre-3">{p.data.titre}</h2>
-                <blockquote class="mt-4 border-l-2 border-[color:var(--color-nuit)] pl-6 font-[family-name:var(--font-titre)] text-lg">
-                  {p.data.citation}
-                </blockquote>
-                {p.data.lien && (
-                  <p class="mt-4 text-sm">
-                    <a href={p.data.lien} rel="noopener" target="_blank" class="lien-souligne">Lire l'article sur {p.data.media}</a>
-                  </p>
+                {p.data.citation && (
+                  <blockquote class="mt-4 border-l-2 border-[color:var(--color-nuit)] pl-6 font-[family-name:var(--font-titre)] text-lg">
+                    {p.data.citation}
+                  </blockquote>
                 )}
+                {p.data.signature && (
+                  <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{p.data.signature}</p>
+                )}
+                <p class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+                  {p.data.ecouter && (
+                    <a href={p.data.ecouter} rel="noopener" target="_blank" data-evt="clic_podcast" class="lien-souligne">
+                      Écouter l'épisode{p.data.duree ? `, ${p.data.duree}` : ''}
+                    </a>
+                  )}
+                  {p.data.lien && p.data.lien !== p.data.ecouter && (
+                    <a href={p.data.lien} rel="noopener" target="_blank" class="lien-souligne">Lire l'article sur {p.data.media}</a>
+                  )}
+                </p>
               </div>
             </li>
           ))}

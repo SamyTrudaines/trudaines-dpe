@@ -162,6 +162,10 @@ def ventes_appartements(chemin):
             'date': f'{annee}-{mois}-{jour}',
             'commune': COMMUNES[bien['Code commune']],
             'adresse': ' '.join(x for x in (bien['No voie'], bien['Type de voie'], bien['Voie']) if x),
+            # Voie seule et code postal : servent au calcul par rue de
+            # scripts/prix-rues.py, qui réutilise cette extraction.
+            'rue': ' '.join(x for x in (bien['Type de voie'], bien['Voie']) if x).strip(),
+            'code_postal': COMMUNES[bien['Code commune']],
             'valeur': round(valeur),
             'surface': surface,
             'pieces': int(pieces),

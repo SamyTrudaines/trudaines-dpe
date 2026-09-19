@@ -74,6 +74,10 @@ Ce n'est pas du bruit statistique. C'est la valeur mesurable de tout ce qui n'es
 
 Une dernière réserve, technique mais utile : le fichier mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez inscrite dans votre acte.
 
+## Descendre à l'échelle de la rue
+
+Un quartier reste une moyenne. Le prix au mètre carré de 312 voies du 9e, du 10e et du 18e est publié voie par voie, avec le nombre de ventes, la fourchette du premier au neuvième décile et la répartition par typologie : [prix au mètre carré, rue par rue](/prix-immobilier).
+
 ## Utiliser ces chiffres pour votre bien
 
 Situez votre quartier, pas votre arrondissement. Situez votre typologie. Placez vous dans l'étendue, pas sur la médiane : un rez de chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile, un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième. Retranchez ce qui se voit, travaux votés en assemblée, procédure en cours, absence de cave. Puis demandez les comparables : cinq à dix ventes signées dans votre rue ou votre immeuble valent mieux que n'importe quelle médiane de quartier.

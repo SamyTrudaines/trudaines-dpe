@@ -97,8 +97,19 @@ const presse = defineCollection({
     logo: z.string().optional(),
     date: z.coerce.date(),
     titre: z.string(),
-    citation: z.string(),
+    /**
+     * Phrase citée mot pour mot. Facultative : mieux vaut une fiche sans
+     * citation qu'une citation reconstituée de mémoire, qu'un journaliste
+     * pourrait contester.
+     */
+    citation: z.string().optional(),
     lien: z.string().url().optional(),
+    /** Adresse d'écoute quand la retombée est un podcast ou une vidéo. */
+    ecouter: z.string().url().optional(),
+    /** Durée annoncée par le média, « 21 min » par exemple. */
+    duree: z.string().optional(),
+    /** Nom de l'émission ou du journaliste, quand il est connu. */
+    signature: z.string().optional(),
   }),
 });
 
