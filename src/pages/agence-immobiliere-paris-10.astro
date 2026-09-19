@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from '../components/BlocAgence.astro';
+import Avis from '../components/Avis.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { getSecteur } from '../data/secteurs';
+import { arrondissements, periode } from '../lib/rues';
+
+const secteur = getSecteur('paris-10')!;
+const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+const chiffres = arrondissements['75010'];
+
+const services = [
+  { titre: 'Vente et mandat', texte: "Mise en marché complète : avis de valeur écrit, photographies en lumière naturelle, diffusion, visites qualifiées, négociation et suivi jusqu'à l'acte.", href: '/vendre' },
+  { titre: 'Estimation', texte: "Un avis de valeur documenté, remis sous 48 heures après la visite, sans frais et sans engagement.", href: '/estimation/paris-10' },
+  { titre: 'Recherche pour acquéreur', texte: "Mandat de recherche pour les acheteurs du 10e nord, y compris sur des biens non diffusés.", href: '/chasse' },
+  { titre: 'Gestion locative', texte: "Bail, sélection du locataire, quittancement, révision et suivi de copropriété, dans une approche patrimoniale.", href: '/gestion-locative' },
+];
+---
+<Layout
+  titre={secteur.titreAgence}
+  description={secteur.descriptionAgence}
+  filAriane={[{ nom: 'Agence immobilière Paris 10e' }]}
+>
+  <Banniere
+    image={ambiance.cafeDeCoin}
+    surtitre="Paris 10e"
+    titre="Lariboisière, Rocroy, Faubourg Poissonnière"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
+  <BlocAgence
+    h1="Agence immobilière à Paris 10e"
+    intro={secteur.introAgence}
+    secteurNom="le 10e arrondissement"
+    hrefEstimation="/estimation/paris-10"
+    quartiers={quartiers}
+    services={services}
+  />
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Le 10e nord se vend avec les acheteurs du 9e</h2>
+      <p class="mt-8 text-[color:var(--color-ardoise)]">
+        La rue du Faubourg Poissonnière sépare le 9e du 10e sur le papier. Sur le marché, elle ne sépare rien :
+        les acquéreurs qui visitent Rocroy ont presque tous cherché d'abord dans le 9e, avec le même budget et
+        une exigence différente sur le volume. Un agent immobilier qui ne travaille qu'un seul des deux
+        arrondissements se prive de la moitié de la demande.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        C'est aussi l'arrondissement où la fourchette de prix est la plus large de notre secteur. Entre une rue
+        résidentielle de Rocroy et une adresse collée aux gares, l'écart se compte en milliers d'euros au mètre
+        carré. Nous le publions voie par voie plutôt que de vous donner une moyenne qui ne décide rien.
+      </p>
+      <dl class="mt-12 grid gap-8 sm:grid-cols-3">
+        <div class="bloc">
+          <dt class="surtitre">Prix médian</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.mediane.toLocaleString('fr-FR')} € le m²</dd>
+        </div>
+        <div class="bloc">
+          <dt class="surtitre">Ventes analysées</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.ventes.toLocaleString('fr-FR')}</dd>
+        </div>
+        <div class="bloc">
+          <dt class="surtitre">Du 1er au 9e décile</dt>
+          <dd class="mt-3 text-2xl">{chiffres?.d1.toLocaleString('fr-FR')} à {chiffres?.d9.toLocaleString('fr-FR')} €</dd>
+        </div>
+      </dl>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Ventes d'appartements enregistrées devant notaire, {periode}, hors multilots. Source : fichier des
+        demandes de valeurs foncières de la direction générale des finances publiques.
+      </p>
+      <p class="mt-10">
+        <a href="/prix-immobilier" class="lien-souligne">Le prix au mètre carré, rue par rue</a>
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} />
+</Layout>

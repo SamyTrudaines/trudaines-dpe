@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from '../components/BlocAgence.astro';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { getSecteur } from '../data/secteurs';
+
+const secteur = getSecteur('paris-9')!;
+const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+const services = [
+  { titre: 'Vente et mandat', texte: "Mise en marché complète : avis de valeur écrit, photographies, diffusion, visites qualifiées, négociation et suivi jusqu'à l'acte.", href: '/vendre' },
+  { titre: 'Estimation', texte: "Un avis de valeur documenté sous 48 heures après la visite, gratuit et sans engagement.", href: '/estimation/paris-9' },
+  { titre: 'Recherche pour acquéreur', texte: "Mandat de recherche pour les acheteurs qui veulent accéder aux biens avant leur diffusion publique.", href: '/chasse' },
+];
+---
+<Layout
+  titre={secteur.titreAgence}
+  description={secteur.descriptionAgence}
+  filAriane={[{ nom: 'Agence immobilière Paris 9e' }]}
+>
+  <BlocAgence
+    h1="Agence immobilière à Paris 9e, du côté nord de l'arrondissement"
+    intro={secteur.introAgence}
+    secteurNom="le 9e arrondissement"
+    hrefEstimation="/estimation/paris-9"
+    quartiers={quartiers}
+    services={services}
+  />
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Pourquoi quatre arrondissements travaillés au mètre carré</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Une agence qui couvre toute l'Île-de-France connaît mal chaque rue. Nous avons choisi l'inverse : quatre
+        arrondissements limitrophes travaillés au mètre carré, 458 voies suivies en permanence, et la capacité
+        de dire à un vendeur ce qui s'est signé au deuxième étage de l'immeuble d'en face, il y a quatre mois.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        C'est ce qui nous permet d'assumer un prix par écrit et de le défendre devant un acheteur, un notaire ou une
+        banque. Et c'est ce qui nous permet aussi de vous dire, parfois, que votre bien vaut moins que ce que vous
+        espériez.
+      </p>
+      <p class="mt-8">
+        <a href="/trudaines" class="lien-souligne">Découvrir le cabinet</a>
+      </p>
+    </div>
+  </section>
+  <Avis avis={avis} agregat={agregatAvis} />
+</Layout>

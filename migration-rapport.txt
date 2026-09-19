@@ -1,0 +1,50 @@
+Import du 2026-09-18T21:17:43.893Z
+Source : https://www.trudaines.com
+Fiches de biens écrites : 17
+Articles écrits : 4
+Pages de liste écartées : 4
+
+Lignes à ajouter dans public/_redirects, avant les règles à motif
+(slugs des fiches et des articles arrêtés lors de la relecture) :
+/vente/1-paris/appartement/162-appartement-etage-eleve-89m-4-pieces-lumineux-trudaine-75009                                        /bien/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet  301
+/vente/1-paris/appartement/172-appartement-etage-eleve-63m-3-pieces-lumineux-montmartre                                            /bien/appartement-3-pieces-63m2-renove-abbesses                  301
+/vente/1-paris/appartement/180-appartement-2-pieces-43m-renove-rue-vaneau                                                          /bien/appartement-2-pieces-43m2-renove-rue-vaneau                301
+/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d                                               /bien/appartement-3-pieces-64m2-renove-batignolles               301
+/vente/1-paris/appartement/182-appartement-3-chambres-83m-vue-sur-seine-dernier-etage                                              /bien/appartement-4-pieces-83m2-vue-seine-exelmans               301
+/vente/1-paris/appartement/23-a-acheter-a-paris-18-appartement-avec-samy-santamarina                                               /bien/appartement-2-pieces-46m2-balcon-abbesses                  301
+/vente/1-paris/appartement/26-appar                                                                                                /bien/appartement-familial-6-pieces-158m2-montholon-paradis      301
+/vente/1-paris/appartement/41-appartement-3-pieces-65m-renove-traversant-et-en-etage-eleve-brochant-paris-17                       /bien/appartement-3-pieces-65m2-traversant-brochant-epinettes    301
+/vente/1-paris/appartement/53-appartement-de-97m-3-chambres-etage-eleve-avec-2-balcons-ensoleilles                                 /bien/appartement-4-pieces-96m2-deux-balcons-pyrenees            301
+/vente/1-paris/appartement/60-appartement-t3-de-68m-4eme-etage-oriente-sud-secteur-trudaine                                        /bien/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine     301
+/vente/106-vaucresson/maison/67-demeure-de-300m-parcelle-de-980m-environ-6-chambres-jardin-vaucresson-centre-prestige              /bien/demeure-300m2-jardin-vaucresson-centre                     301
+/vente/11-asnieres-sur-seine/appartement/11-appartement-duplex-5-chambres-asnieres-becon-bruyeres                                  /bien/duplex-6-pieces-136m2-becon-les-bruyeres                   301
+/vente/29-bois-colombes/maison/76-maison-familiale-de-130m2                                                                        /bien/maison-familiale-130m2-bois-colombes-centre                301
+/vente/5-boulogne-billancourt/appartement/13-appartement-76m-avec-terrasse-boulogne-billancourt-les-passages                       /bien/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat  301
+/vente/75-colombes/maison/61-grande-maison-moderne-avec-5-chambres-et-3-places-de-parking-dans-le-petit-colombes                   /bien/maison-moderne-145m2-cinq-chambres-petit-colombes          301
+/vente/8-la-garenne-colombes/maison/95-maison-de-charme-avec-jardin-a-la-garenne-colombes-quartier-residentiel-recherche-prestige  /bien/maison-de-charme-226m2-jardin-la-garenne-colombes          301
+/vente/81-bagnolet/maison/48-maison-architecturale-de-5-chambres-avec-terrasse-bagnolet-limite-montreeuil                          /bien/maison-architecte-200m2-terrasse-bagnolet                  301
+/nos-actualites/Estimation75009_agenceimmobiliere75018_A%20propos                                                                  /panorama                                                        301
+/nos-actualites/credit-immobilier-la-bce-frappe-fort-ce-qu-il-faut-comprendre-en-avril-2025.html                                   /panorama/credit-immobilier-decision-bce-avril-2025              301
+/nos-actualites/estimation-immobilier-paris-9-18                                                                                   /panorama                                                        301
+/nos-actualites/immobilier-a-paris-en-avril-2025-retour-du-dynamisme-les-chiffres-qui-comptent.html                                /panorama/immobilier-paris-avril-2025-retour-du-dynamisme        301
+/nos-actualites/immobilier-et-ia-en-2025-les-6-outils-qui-vont-transformer-votre-performance.html                                  /panorama/immobilier-et-ia-2025-six-outils                       301
+/nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html                             /panorama                                                        301
+/nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html                                                             /panorama                                                        301
+/nos-actualites/test.html                                                                                                          /panorama/salon-du-design-matter-and-shape-2025                  301
+/nos-actualites/wdxcdc                                                                                                             /panorama                                                        301
+
+Incidents et points à relire :
+Adresse incompatible avec la syntaxe _redirects, couverte par la règle générique : /nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18 vers /panorama
+Page de liste écartée (pas une fiche) : /vente/1
+Page de liste écartée (pas une fiche) : /vente/appartement/1
+Page de liste écartée (pas une fiche) : /vente/maison/1
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html « Analyse Trudaines Immobilier d'avril 2026 : prix au m² Paris 9e et 18e, taux de crédit, DPE et conseils premium pour vendre, acheter ou louer sereinement. »
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/wdxcdc « Prix immobilier à Paris en avril 2026 : correction du marché et opportunités à Paris dans le 9e et le 18e arrondissement »
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html « Prix immobilier Paris 9e et 18e en 2025 : L'analyse de marché de l'Agence Trudaines »
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/Estimation75009_agenceimmobiliere75018_A%20propos « Analyse Trudaines Immobilier d'avril 2026 : prix au m² Paris 9e et 18e, taux de crédit, DPE et conseils premium pour vendre, acheter ou louer sereinement. »
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18 « Analyse Trudaines Immobilier d'avril 2026 : prix au m² Paris 9e et 18e, taux de crédit, DPE et conseils premium pour vendre, acheter ou louer sereinement. »
+Actualité sans contenu sur l'ancien site, adresse redirigée vers l'index, texte à écrire : /nos-actualites/estimation-immobilier-paris-9-18 « Focus Immobilier 2025 : L'expertise de l'agence Trudaines pour vendre ou louer à la frontière du 9ème et 18ème arrondissement. »
+Page de liste écartée (pas une fiche) : /nos-actualites
+Prix absent de l'ancienne page (bien retiré ou vendu), à saisir : /vente/11-asnieres-sur-seine/appartement/11-appartement-duplex-5-chambres-asnieres-becon-bruyeres
+Titre tronqué reconstruit depuis les données de l'annonce : /vente/1-paris/appartement/26-appar vers « Appartement 6 pièces 158 m², Paris 9e »
+Prix absent de l'ancienne page (bien retiré ou vendu), à saisir : /vente/1-paris/appartement/41-appartement-3-pieces-65m-renove-traversant-et-en-etage-eleve-brochant-paris-17

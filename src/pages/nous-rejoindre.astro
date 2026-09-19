@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormulaireCandidature from '../components/FormulaireCandidature.astro';
+
+const promesses = [
+  { titre: 'Un secteur, pas un département', texte: "Vous travaillez quelques arrondissements limitrophes. Vous connaissez vos rues, vos immeubles et vos syndics au bout de six mois, pas au bout de six ans." },
+  { titre: 'Des outils qui font gagner du temps', texte: "Recherche de comparables, préparation des dossiers, suivi des acheteurs, relances : ce qui peut être automatisé l'est, pour que votre temps aille aux rendez-vous." },
+  { titre: 'Une formation au métier, pas à la prospection seule', texte: "Estimation, droit de la copropriété, diagnostics, négociation, rédaction. Vous êtes accompagné sur vos premiers mandats, en binôme sur les rendez-vous d'estimation." },
+  { titre: 'Une rémunération claire', texte: "Grille de rétrocession écrite, sans palier caché ni condition rétroactive. Nous la présentons dès le premier entretien." },
+];
+---
+<Layout
+  titre="Devenir mandataire immobilier à Paris | Nous rejoindre - Trudaines"
+  description="Devenir mandataire immobilier à Paris ou agent immobilier Paris 9e et 18e au sein du cabinet Trudaines : secteur dédié, formation, outils et rémunération claire."
+  filAriane={[{ nom: 'Nous rejoindre' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Nous rejoindre</p>
+      <h1 class="titre-1 mt-6">Devenir mandataire immobilier à Paris, autrement</h1>
+      <p class="chapo mt-8">
+        Nous cherchons des profils qui veulent apprendre le métier en profondeur sur un territoire restreint, pas
+        courir après le volume. Que vous sortiez d'école, que vous soyez en reconversion ou déjà agent immobilier à
+        Paris, la porte d'entrée est la même : un entretien, un secteur, un accompagnement.
+      </p>
+      <div class="mt-10">
+        <a href="#candidature" class="bouton">Déposer ma candidature</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Ce que nous proposons</h2>
+      <div class="mt-14 grid gap-12 md:grid-cols-2">
+        {promesses.map((p) => (
+          <div class="bloc">
+            <h3 class="titre-3">{p.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{p.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Ce que nous attendons</h2>
+      <ul class="mt-8 space-y-5 text-[color:var(--color-ardoise)]">
+        <li><strong class="text-[color:var(--color-encre)]">De l'écrit.</strong> Un compte rendu de visite mal écrit fait perdre un client. Nous accordons une vraie importance à la qualité rédactionnelle.</li>
+        <li><strong class="text-[color:var(--color-encre)]">De la rigueur.</strong> Les dossiers de copropriété, les diagnostics et les délais ne se traitent pas au dernier moment.</li>
+        <li><strong class="text-[color:var(--color-encre)]">De la présence terrain.</strong> Le travail hybride est possible sur l'administratif, jamais sur les rendez-vous.</li>
+        <li><strong class="text-[color:var(--color-encre)]">De l'honnêteté sur les prix.</strong> Nous ne recrutons pas de profils qui promettent un prix pour rentrer un mandat.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="candidature" class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Votre candidature</h2>
+        <p class="chapo mt-6">
+          CV au format PDF, quelques lignes sur votre parcours et sur le secteur qui vous intéresse. Nous lisons
+          tout et nous répondons sous une semaine, y compris quand la réponse est négative.
+        </p>
+      </div>
+      <FormulaireCandidature />
+    </div>
+  </section>
+</Layout>

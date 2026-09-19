@@ -1,0 +1,73 @@
+---
+/**
+ * Témoignage client. Rien n'est publié automatiquement : le texte arrive par
+ * email, il est relu, et il n'est mis en ligne qu'avec l'accord explicite coché
+ * ici. Un avis publié sans vérification n'a aucune valeur pour celui qui le lit.
+ */
+---
+<form
+  class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
+  method="POST"
+  action="/api/temoignage"
+  data-trudaines
+  data-evenement="temoignage_envoye"
+>
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for="societe-temoignage">Ne pas remplir</label>
+    <input type="text" id="societe-temoignage" name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="temoin-prenom">Prénom</label>
+        <input class="champ" id="temoin-prenom" name="prenom" type="text" autocomplete="given-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="temoin-email">Email</label>
+        <input class="champ" id="temoin-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div>
+        <label class="etiquette" for="temoin-quartier">Quartier du bien</label>
+        <input class="champ" id="temoin-quartier" name="quartier" type="text" placeholder="Montmartre, Trudaine, Martyrs" />
+      </div>
+      <div>
+        <label class="etiquette" for="temoin-projet">Votre projet</label>
+        <select class="champ" id="temoin-projet" name="projet">
+          <option value="Vente">Une vente</option>
+          <option value="Achat">Un achat</option>
+          <option value="Recherche">Une recherche</option>
+          <option value="Location">Une location</option>
+        </select>
+      </div>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="temoin-note">Votre note</label>
+      <select class="champ" id="temoin-note" name="note" required>
+        <option value="5">5 sur 5</option>
+        <option value="4">4 sur 5</option>
+        <option value="3">3 sur 5</option>
+        <option value="2">2 sur 5</option>
+        <option value="1">1 sur 5</option>
+      </select>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="temoin-texte">Votre témoignage</label>
+      <textarea class="champ" id="temoin-texte" name="texte" rows="6" required></textarea>
+    </div>
+    <div class="mt-6 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="temoin-publication" name="publication" type="checkbox" value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for="temoin-publication">
+        J'autorise la publication de ce témoignage sur le site, avec mon prénom et l'initiale de mon nom.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-8">Envoyer mon témoignage</button>
+    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <div data-confirmation hidden class="py-2">
+    <h2 class="titre-3">Merci</h2>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">
+      Je le relis et je vous écris. Il ne sera publié que si vous avez coché l'accord.
+    </p>
+  </div>
+</form>

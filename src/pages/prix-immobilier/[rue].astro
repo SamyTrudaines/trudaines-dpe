@@ -1,0 +1,253 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import { nombre, prix as prixFr, enPhrase } from '../../lib/format';
+import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, type Rue } from '../../lib/rues';
+import { site } from '../../data/site';
+import { secteurs } from '../../data/secteurs';
+import Banniere from '../../components/Banniere.astro';
+import { ambianceDeVoie } from '../../data/ambiance';
+
+interface Props { rue: Rue }
+
+export const getStaticPaths: GetStaticPaths = async () =>
+  rues.map((rue) => ({ params: { rue: rue.slug }, props: { rue } }));
+
+const { rue } = Astro.props;
+const arrondissement = arrondissements[rue.codePostal];
+const proches = voisines(rue);
+const etendue = rue.d9 - rue.d1;
+const dispersion = heterogeneite(rue);
+const secteur = secteurs.find((s) => s.arrondissement === rue.codePostal);
+
+const euros = (valeur: number) => `${nombre(valeur)} €`;
+
+/* Lecture du positionnement, construite à partir des chiffres de la rue. */
+const position =
+  rue.ecartArrondissement > 4
+    ? `Cette voie se situe ${rue.ecartArrondissement} % au dessus de la médiane de ${rue.arrondissement}.`
+    : rue.ecartArrondissement < -4
+      ? `Cette voie se situe ${Math.abs(rue.ecartArrondissement)} % en dessous de la médiane de ${rue.arrondissement}.`
+      : `Cette voie suit la médiane de ${rue.arrondissement}, à ${Math.abs(rue.ecartArrondissement)} % près.`;
+
+const lectureDispersion = {
+  resserre:
+    "L'écart entre les ventes les moins chères et les plus chères y est resserré : les biens s'y ressemblent, et le prix dépend surtout de l'état et de l'étage.",
+  ordinaire:
+    "L'écart entre les ventes les moins chères et les plus chères y est celui d'une rue parisienne ordinaire : l'étage, l'ascenseur et l'exposition font la différence.",
+  large:
+    "L'écart entre les ventes les moins chères et les plus chères y est large : la rue mélange des biens très différents, et une estimation à la médiane s'y trompe presque à coup sûr.",
+}[dispersion];
+
+const nomEnPhrase = enPhrase(rue.nom);
+
+const assezDeVentes = rue.ventes >= 10;
+const libelleDeciles = assezDeVentes ? 'Huit ventes sur dix' : 'Hors ventes extrêmes';
+const phraseDeciles = assezDeVentes
+  ? `Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`
+  : `Une fois écartées les ventes extrêmes, les prix constatés s'étagent de ${euros(rue.d1)} à ${euros(rue.d9)} le mètre carré.`;
+
+const questions = [
+  {
+    '@type': 'Question',
+    name: `Quel est le prix au m² ${nomEnPhrase}, ${rue.arrondissement} ?`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: `Le prix médian constaté ${nomEnPhrase} est de ${euros(rue.mediane)} le mètre carré, sur ${rue.ventes} ventes d'appartements signées de ${periode}. ${phraseDeciles}`,
+    },
+  },
+  {
+    '@type': 'Question',
+    name: `Quelle agence immobilière vend ${nomEnPhrase} ?`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. Le cabinet ne détient aucun fonds.`,
+    },
+  },
+  {
+    '@type': 'Question',
+    name: `D'où vient ce prix au m² ${nomEnPhrase} ?`,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: "Du fichier des demandes de valeurs foncières publié par la direction générale des finances publiques, qui recense les ventes enregistrées devant notaire. Appartements seuls, ventes hors multilots. Aucune estimation, aucune annonce, uniquement des ventes signées.",
+    },
+  },
+];
+
+const vue = ambianceDeVoie(rue.arrondissement, rue.slug);
+
+const donnees = [
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: questions },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: `Prix au mètre carré ${rue.nom}, ${rue.arrondissement}`,
+    description: `Médiane et déciles du prix au mètre carré des appartements vendus ${nomEnPhrase}, sur ${rue.ventes} ventes de ${periode}.`,
+    creator: { '@id': `${site.url}/#cabinet` },
+    isBasedOn: 'https://www.data.gouv.fr/datasets/5c4ae55a634f4117716d5656/',
+    temporalCoverage: '2024-01-01/2025-12-31',
+    spatialCoverage: { '@type': 'Place', address: { '@type': 'PostalAddress', streetAddress: rue.nom, postalCode: rue.codePostal, addressLocality: 'Paris', addressCountry: 'FR' } },
+  },
+];
+---
+<Layout
+  titre={`Prix au m² ${rue.nom}, ${rue.arrondissement} | Trudaines`}
+  description={`${rue.nom}, ${rue.arrondissement} : ${euros(rue.mediane)} le m² médian sur ${rue.ventes} ventes signées de 2024 et 2025. Fourchette, typologies, méthode.`}
+  filAriane={[{ nom: 'Prix par rue', href: '/prix-immobilier' }, { nom: rue.nom }]}
+  donnees={donnees}
+>
+  {vue && (
+    <Banniere
+      image={vue}
+      surtitre={rue.arrondissement}
+      titre={rue.nom}
+      hauteur="moyen"
+      balise="div"
+      premiere
+    />
+  )}
+
+  <section class="section pt-12">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">{rue.arrondissement} · {rue.ventes} ventes analysées</p>
+      <h1 class="titre-1 mt-6">Prix au m² {rue.nom}</h1>
+      <p class="chapo mt-8">
+        {euros(rue.mediane)} le mètre carré, prix médian des appartements vendus {nomEnPhrase} de {periode}.
+        {' '}{position}
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Ce chiffre est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
+        {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
+        Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les trois arrondissements
+        voisins.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet pt-0">
+    <div class="conteneur">
+      <dl class="grid gap-8 border-y border-[color:var(--color-trait)] py-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <dt class="surtitre">Prix médian au m²</dt>
+          <dd class="mt-3 text-2xl font-semibold text-[color:var(--color-encre)]">{euros(rue.mediane)}</dd>
+        </div>
+        <div>
+          <dt class="surtitre">{libelleDeciles}</dt>
+          <dd class="mt-3 text-lg">{euros(rue.d1)} à {euros(rue.d9)}</dd>
+        </div>
+        <div>
+          <dt class="surtitre">Surface médiane vendue</dt>
+          <dd class="mt-3 text-lg">{nombre(rue.surface)} m²</dd>
+        </div>
+        <div>
+          <dt class="surtitre">Prix de vente médian</dt>
+          <dd class="mt-3 text-lg">{prixFr(rue.prix)}</dd>
+        </div>
+      </dl>
+
+      <div class="mt-12 grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <h2 class="titre-2">Ce que ces chiffres disent</h2>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {nomEnPhrase}.
+            La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
+            mètre carré, la moitié au dessus. {position}
+          </p>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            {lectureDispersion} Sur un appartement de {nombre(rue.surface)} m², la surface médiane vendue dans
+            cette rue, {euros(etendue)} d'écart au mètre carré représentent {prixFr(etendue * rue.surface)}.
+          </p>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Classée {rue.rang}<sup>e</sup> sur {rue.ruesClassees} voies de {rue.arrondissement} disposant
+            d'assez de ventes pour être mesurées, contre une médiane d'arrondissement de {euros(arrondissement.mediane)}.
+          </p>
+
+          {rue.typologies.length > 1 && (
+            <>
+              <h2 class="titre-2 mt-14">Par typologie</h2>
+              <table class="mt-8 w-full border-collapse text-sm">
+                <thead class="border-b border-[color:var(--color-encre)]">
+                  <tr>
+                    <th class="py-3 pr-4 text-left font-semibold">Typologie</th>
+                    <th class="py-3 pr-4 text-right font-semibold">Ventes</th>
+                    <th class="py-3 pr-4 text-right font-semibold">Surface</th>
+                    <th class="py-3 text-right font-semibold">Prix médian</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rue.typologies.map((t) => (
+                    <tr class="border-b border-[color:var(--color-trait)]">
+                      <td class="py-3 pr-4 text-[color:var(--color-ardoise)]">{libellePieces(t.pieces)}</td>
+                      <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{t.ventes}</td>
+                      <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{nombre(t.surface)} m²</td>
+                      <td class="py-3 text-right">{prixFr(t.prix)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+                Les typologies de moins de trois ventes ne sont pas publiées : une médiane sur deux ventes ne
+                mesure rien.
+              </p>
+            </>
+          )}
+
+          <h2 class="titre-2 mt-14">Ce que ces chiffres ne disent pas</h2>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Ni l'étage, ni l'ascenseur, ni la vue, ni l'exposition, ni l'état du bien, ni celui de la
+            copropriété, ni les travaux votés en assemblée générale. Le fichier des valeurs foncières ne les
+            contient pas. Ils se lisent seulement dans l'écart entre {euros(rue.d1)} et {euros(rue.d9)}, et ils
+            se tranchent sur place, en visite.
+          </p>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Il ne dit pas non plus les délais de vente, qui n'y figurent pas, ni la classe énergie. Et il
+            mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez
+            inscrite dans votre acte.
+          </p>
+        </div>
+
+        <div class="lg:sticky lg:top-28">
+          <FormulaireEstimation
+            secteur={secteur?.slug ?? 'paris-9'}
+            quartier={rue.nom}
+            identifiant={`estimation-${rue.slug}`}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Des voies au même niveau de prix</h2>
+      <div class="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+        {proches.map((r) => (
+          <a href={`/prix-immobilier/${r.slug}`} class="flex items-baseline justify-between gap-4 border-t border-[color:var(--color-trait)] py-4 no-underline">
+            <span class="text-[color:var(--color-encre)]">{r.nom}</span>
+            <span class="whitespace-nowrap text-sm text-[color:var(--color-ardoise)]">{euros(r.mediane)}</span>
+          </a>
+        ))}
+      </div>
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <a href="/prix-immobilier" class="lien-souligne">Toutes les voies mesurées</a>
+        {secteur && <a href={`/estimation/${secteur.slug}`} class="lien-souligne">Estimation {secteur.nom}</a>}
+        <a href="/panorama/prix-immobilier-paris-9-18-analyse" class="lien-souligne">L'analyse de marché complète</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-3">Méthode</h2>
+      <p class="mt-5 text-sm text-[color:var(--color-ardoise)]">
+        Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques,
+        qui recense les ventes enregistrées devant notaire. Appartements seuls, ventes hors multilots, période
+        de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes : en dessous, une médiane
+        ne mesure rien. Les prix au mètre carré inférieurs à 2 000 € et supérieurs à 30 000 € sont écartés,
+        ce qui retire les cessions familiales et les erreurs de saisie les plus visibles, pas toutes.
+        Le calcul est refait à chaque parution de la base, en avril et en octobre.
+      </p>
+    </div>
+  </section>
+</Layout>

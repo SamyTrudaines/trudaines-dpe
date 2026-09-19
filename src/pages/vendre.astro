@@ -1,0 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { secteurs } from '../data/secteurs';
+
+const situations = (await getCollection('situations')).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+const engagements = [
+  {
+    titre: 'Une estimation écrite, jamais flattée',
+    texte:
+      "Nous remettons un avis de valeur daté, qui cite ses comparables et assume une fourchette. Si votre bien vaut moins que ce que vous espériez, vous l'apprenez lors du premier rendez-vous, pas au bout de quatre mois d'annonce immobile.",
+  },
+  {
+    titre: 'Un prix de mise en marché décidé ensemble, avec ses paliers',
+    texte:
+      "Dès le mandat, nous écrivons le prix de départ, la date de la première revue et le palier suivant si le rythme de visites ne suit pas. Cette règle protège votre calendrier autant que votre prix, parce qu'elle évite la baisse subie dans l'urgence.",
+  },
+  {
+    titre: 'Un bien préparé avant la première visite',
+    texte:
+      "Diagnostics commandés, procès-verbaux d'assemblée réunis, appels de fonds clarifiés, photographies faites en lumière naturelle, plan de surfaces établi. Tout ce que l'acheteur découvrira de toute façon, il le découvre par nous et au bon moment.",
+  },
+  {
+    titre: 'Des acheteurs vérifiés avant de franchir votre porte',
+    texte:
+      "Apport, accord de principe bancaire, situation professionnelle, état d'avancement du projet : nous demandons ces éléments avant la visite. Moins de visites, plus d'offres, et votre appartement reste votre domicile.",
+  },
+  {
+    titre: 'Un compte rendu après chaque visite, un point chaque semaine',
+    texte:
+      "Vous recevez par écrit ce que l'acheteur a dit, ce qui l'a retenu, ce qui l'a fait reculer. Le vendredi, une synthèse : nombre de contacts, visites réalisées, offres, position par rapport à la concurrence.",
+  },
+  {
+    titre: 'Une négociation menée, documentée, jamais improvisée',
+    texte:
+      "Toute offre est présentée par écrit, avec le profil de l'acheteur, son financement et son calendrier. Nous vous donnons notre recommandation et ses raisons. La décision reste la vôtre, elle n'est jamais prise sous pression téléphonique.",
+  },
+  {
+    titre: "Un accompagnement jusqu'à la signature",
+    texte:
+      "Compromis, conditions suspensives, obtention du prêt, levée des délais, date de libération des lieux : nous suivons chaque échéance avec le notaire et nous vous prévenons avant que l'échéance devienne un problème.",
+  },
+];
+
+const questions = [
+  {
+    titre: 'Vendre pour racheter : dans quel ordre ?',
+    texte:
+      "Vendre d'abord protège presque toujours mieux. Vous achetez sans prêt relais, sans condition suspensive de vente, donc avec un pouvoir de négociation réel. La peur d'être sans logement se traite par la date de libération des lieux, que nous négocions dans le compromis.",
+  },
+  {
+    titre: 'Faut-il refuser la première offre ?',
+    texte:
+      "Non, par principe en tout cas. Statistiquement, les premières offres arrivent des acheteurs les mieux informés du marché, ceux qui cherchent depuis des mois. Une offre précoce n'est pas le signe d'un prix trop bas, c'est souvent le signe d'un prix juste.",
+  },
+  {
+    titre: 'Mandat simple ou mandat exclusif ?',
+    texte:
+      "Nous travaillons majoritairement en exclusivité, parce qu'un bien diffusé par cinq agences à cinq prix différents perd sa crédibilité en trois semaines. Nous ne l'imposons pas. Nous vous expliquons ce que chaque formule change pour vous, puis vous choisissez.",
+  },
+  {
+    titre: 'Et si je ne veux pas que cela se sache ?',
+    texte:
+      "La vente confidentielle existe : aucune diffusion sur les portails, pas de panneau, aucune mention publique. Le bien est présenté aux seuls acheteurs qualifiés de notre fichier. Le délai est généralement plus long, l'exposition beaucoup plus faible, vous choisissez en connaissance de cause.",
+  },
+];
+---
+<Layout
+  titre="Vendre un appartement à Paris 9e et Montmartre | La méthode Trudaines"
+  description="Sept engagements écrits pour vendre à Paris 9e, 18e ou 10e : estimation argumentée, paliers de prix décidés ensemble, comptes rendus."
+  filAriane={[{ nom: 'Vendre' }]}
+>
+  <Banniere
+    image={ambiance.fenetreSurLesToits}
+    cadrage="bas"
+    surtitre="Vendre"
+    titre="Sept engagements, tenus par écrit"
+    chapo="Les acheteurs comparent tout, et ils disposent de plus d'informations qu'il y a cinq ans. La seule réponse crédible est la méthode. Voici la nôtre, dans l'ordre où vous la vivrez."
+    premiere
+  >
+    <a href="/estimation" class="bouton bouton-clair">Demander une estimation</a>
+    <a href="/honoraires" class="bouton bouton-contour-clair">Voir les honoraires</a>
+  </Banniere>
+
+  <section class="section filet" aria-labelledby="engagements">
+    <div class="conteneur">
+      <h2 id="engagements" class="sr-only">Les sept engagements</h2>
+      <ol class="grid gap-x-12 gap-y-14 md:grid-cols-2">
+        {engagements.map((e, i) => (
+          <li class="grid grid-cols-[auto_1fr] gap-x-6">
+            <p class="chiffre" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
+            <div>
+              <h3 class="titre-3">{e.titre}</h3>
+              <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="situations">
+    <div class="conteneur">
+      <p class="surtitre">Situations particulières</p>
+      <h2 id="situations" class="titre-2 mt-6 max-w-2xl">Votre vente n'est pas une vente ordinaire ? Nous avons écrit la fiche</h2>
+      <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+        Succession, indivision, divorce, bien occupé, travaux votés, expatriation : chaque situation a ses règles,
+        ses délais et ses pièges. Une fiche par cas, avec les textes cités et ce qui se décide vraiment.
+      </p>
+      <div class="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {situations.map((s) => (
+          <a href={`/vendre/${s.id}`} class="bloc block no-underline">
+            <h3 class="titre-3 text-[color:var(--color-encre)]">{s.data.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{s.data.question}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="inquietudes">
+    <div class="conteneur">
+      <h2 id="inquietudes" class="titre-2 max-w-2xl">Les questions que vous vous posez sans forcément les poser</h2>
+      <div class="mt-14 grid gap-12 md:grid-cols-2">
+        {questions.map((q) => (
+          <div>
+            <h3 class="titre-3">{q.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{q.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="dpe">
+    <div class="conteneur max-w-3xl">
+      <h2 id="dpe" class="titre-2">DPE, travaux, copropriété : traiter le sujet avant l'acheteur</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Un diagnostic défavorable ne se cache pas, il se documente. Nous lisons le rapport avec vous, nous repérons
+        les postes qui pèsent réellement sur la valeur, isolation, menuiseries, mode de chauffage, et nous faisons
+        établir des devis par des entreprises et des diagnostiqueurs que nous connaissons. L'acheteur arrive alors
+        devant un chiffre, pas devant un vide qu'il comblera toujours à votre désavantage.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Même logique pour la copropriété : travaux votés, appels de fonds, procédures éventuelles. Tout figure dans
+        le dossier remis à l'acheteur dès la deuxième visite.
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} />
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Commencer par une estimation</h2>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <a href="/estimation" class="lien-souligne">Estimation, la méthode</a>
+        {secteurs.map((s) => (
+          <a href={`/estimation/${s.slug}`} class="lien-souligne">Estimation {s.nom}</a>
+        ))}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <a href="/mandat-exclusif" class="lien-souligne">Le mandat exclusif, et ce qu'il vous doit en retour</a>
+        <a href="/choisir-son-agence-immobiliere-paris" class="lien-souligne">Huit questions à poser avant de signer</a>
+      </div>
+    </div>
+  </section>
+</Layout>

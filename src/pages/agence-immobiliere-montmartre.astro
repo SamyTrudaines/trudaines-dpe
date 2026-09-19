@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from '../components/BlocAgence.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+
+const quartiers = (await getCollection('quartiers')).filter((q) => q.id === 'montmartre');
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+const services = [
+  { titre: 'Vente à Montmartre', texte: "Présentation soignée, photographies en lumière naturelle, visites organisées aux heures où le bien se montre le mieux.", href: '/vendre' },
+  { titre: 'Estimation', texte: "Estimation d'un appartement montmartrois : étage, escalier, vue, exposition et état de l'immeuble pèsent autant que la surface.", href: '/estimation/paris-18' },
+  { titre: 'Vente confidentielle', texte: "Sur la Butte, beaucoup de propriétaires ne souhaitent aucune diffusion publique. Nous travaillons ces ventes en off market.", href: '/vendre' },
+];
+---
+<Layout
+  titre="Agence immobilière Montmartre | Vente et estimation - Trudaines"
+  description="Trudaines, cabinet de vente immobilière à Montmartre : Abbesses, Lamarck Caulaincourt, avenue Junot, Sacré-Cœur. Estimation écrite, vente confidentielle possible."
+  filAriane={[{ nom: 'Agence immobilière Montmartre' }]}
+>
+  <Banniere
+    image={ambiance.maisonRose}
+    surtitre="Paris 18e"
+    titre="Montmartre"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
+  <BlocAgence
+    h1="Agence immobilière à Montmartre"
+    intro="Montmartre est un marché à part : des acheteurs venus de tout Paris et d'ailleurs, un bâti ancien exigeant, des immeubles sans ascenseur, des vues qui valent parfois plus que vingt mètres carrés supplémentaires. Nous vendons sur la Butte avec cette grille de lecture, et notre bureau est à dix minutes à pied."
+    secteurNom="Montmartre"
+    hrefEstimation="/estimation/paris-18"
+    quartiers={quartiers}
+    services={services}
+  />
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Ce qui fait le prix sur la Butte</h2>
+      <ul class="mt-8 space-y-5 text-[color:var(--color-ardoise)]">
+        <li><strong class="text-[color:var(--color-encre)]">La vue.</strong> Dégagée, sur toits, sur monument : l'écart entre deux appartements identiques peut atteindre plusieurs centaines d'euros au mètre carré.</li>
+        <li><strong class="text-[color:var(--color-encre)]">L'étage et l'escalier.</strong> Un quatrième sans ascenseur ne se compare pas à un deuxième. La décote est réelle, mais elle est chiffrable et elle se compense.</li>
+        <li><strong class="text-[color:var(--color-encre)]">L'état de la copropriété.</strong> Ravalement voté, colonnes montantes, toiture : les acheteurs demandent les procès-verbaux dès la deuxième visite.</li>
+        <li><strong class="text-[color:var(--color-encre)]">Le calme.</strong> Une rue touristique le week-end n'a pas la même valeur d'usage qu'une rue résidentielle à cent mètres.</li>
+      </ul>
+      <p class="mt-8"><a href="/quartiers/montmartre" class="lien-souligne">Le quartier Montmartre en détail</a></p>
+    </div>
+  </section>
+  <Avis avis={avis} agregat={agregatAvis} />
+</Layout>

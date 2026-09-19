@@ -1,0 +1,77 @@
+# Recalcul des prix au mètre carré, voie par voie.
+#
+# La direction générale des finances publiques publie le fichier des demandes
+# de valeurs foncières deux fois par an, en avril et en octobre. Ce workflow
+# relit la base quelques jours après chaque parution, régénère src/data/rues.json
+# et ouvre une pull request si les chiffres ont bougé. Les 458 pages de voie
+# sont reconstruites à partir de ce seul fichier : le contenu du site se met
+# donc à jour tout seul, avec des ventes signées et non des estimations.
+#
+# Déclenchement manuel possible depuis l'onglet Actions.
+name: Prix au m² par voie
+
+on:
+  schedule:
+    # 15 avril et 15 octobre, 6 h UTC.
+    - cron: '0 6 15 4 *'
+    - cron: '0 6 15 10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  recalcul:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Espace disque
+        # Les deux millésimes pèsent près d'un gigaoctet une fois décompressés.
+        run: df -h /
+
+      - name: Recalcul depuis le fichier des valeurs foncières
+        run: python3 scripts/prix-rues.py
+
+      - name: Installation et construction
+        run: |
+          npm ci
+          npm run build
+          npm run verifier
+
+      - name: Pull request si les prix ont bougé
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: prix-rues/millesime
+          title: "Prix au m² par voie, nouveau millésime des valeurs foncières"
+          commit-message: |
+            Prix au m² par voie, nouveau millésime
+
+            Recalcul automatique à partir du fichier des demandes de valeurs
+            foncières de la direction générale des finances publiques. Seul
+            src/data/rues.json change : les pages de voie sont reconstruites
+            à partir de lui.
+          body: |
+            Recalcul automatique des prix au mètre carré voie par voie, à partir
+            du dernier millésime publié par la direction générale des finances
+            publiques.
+
+            À vérifier avant de fusionner :
+
+            - le nombre de voies publiables, qui doit rester du même ordre ;
+            - les médianes par arrondissement, qui ne doivent pas bouger de plus
+              de quelques pour cent d'un semestre à l'autre ;
+            - `npm run verifier`, qui a déjà tourné dans ce workflow.
+          add-paths: |
+            src/data/rues.json

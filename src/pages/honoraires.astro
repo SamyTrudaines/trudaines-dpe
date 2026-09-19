@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { honoraires, site } from '../data/site';
+
+const tableaux = [
+  { titre: 'Mandat de vente, honoraires à la charge du vendeur', lignes: honoraires.vente },
+  { titre: "Mandat de recherche, honoraires à la charge de l'acquéreur", lignes: honoraires.chasse },
+  { titre: 'Mandat de gestion, honoraires à la charge du bailleur', lignes: honoraires.gestion },
+];
+---
+<Layout
+  titre="Honoraires | Trudaines, cabinet immobilier Paris"
+  description="Barème maximum des honoraires de Trudaines : mandat de vente, mandat de recherche, gestion locative. Montants TTC et charge du paiement indiquée."
+  filAriane={[{ nom: 'Honoraires' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Honoraires</p>
+      <h1 class="titre-1 mt-6">Notre barème, en clair</h1>
+      <p class="chapo mt-8">
+        Les honoraires ne sont dus qu'en cas de réalisation effective de l'opération. Ils sont indiqués toutes taxes
+        comprises et figurent en toutes lettres dans le mandat que vous signez.
+      </p>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Ce barème est un barème maximum. Nous pouvons pratiquer un taux inférieur, jamais supérieur. En mandat
+        exclusif, le taux de votre tranche est réduit d'un point, par exemple 6 % au lieu de 7 %. Le taux retenu
+        pour votre bien est arrêté avec vous avant la signature du mandat et y figure en toutes lettres.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur">
+      {tableaux.map((t) => (
+        <div class="mb-16">
+          <h2 class="titre-2">{t.titre}</h2>
+          <div class="mt-8 overflow-x-auto">
+            <table class="w-full border-collapse text-left text-sm">
+              <thead>
+                <tr class="border-b border-[color:var(--color-encre)]">
+                  <th scope="col" class="py-4 pr-6 font-semibold">Tranche</th>
+                  <th scope="col" class="py-4 pr-6 font-semibold">Honoraires TTC</th>
+                  <th scope="col" class="py-4 font-semibold">Minimum</th>
+                </tr>
+              </thead>
+              <tbody>
+                {t.lignes.map((l) => (
+                  <tr class="border-b border-[color:var(--color-trait)]">
+                    <th scope="row" class="py-4 pr-6 font-medium">{l.tranche}</th>
+                    <td class="py-4 pr-6">{l.taux}</td>
+                    <td class="py-4 text-[color:var(--color-ardoise)]">{l.minimum ?? 'Sans minimum'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+
+      <div class="max-w-3xl border-t border-[color:var(--color-trait)] pt-8 text-sm text-[color:var(--color-ardoise)]">
+        <p>
+          Les honoraires de vente sont calculés sur le prix de vente hors honoraires. Lorsqu'ils sont à la charge de
+          l'acquéreur, le prix affiché dans l'annonce est indiqué honoraires inclus et hors honoraires, conformément
+          à la réglementation.
+        </p>
+        <p class="mt-4">
+          {site.nomLong}, {site.legal.rcs}. Carte professionnelle {site.legal.carteT}. Garantie financière
+          {' '}{site.legal.garantie}, {site.legal.garantieMontant}. {site.legal.detentionFonds}
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

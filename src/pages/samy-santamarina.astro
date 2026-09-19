@@ -1,0 +1,184 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+
+const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Samy Santamarina',
+    jobTitle: 'Président fondateur',
+    worksFor: { '@id': `${site.url}/#cabinet` },
+    url: `${site.url}/samy-santamarina`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: site.adresse.rue,
+      postalCode: site.adresse.codePostal,
+      addressLocality: site.adresse.ville,
+      addressCountry: 'FR',
+    },
+    email: site.email,
+    telephone: site.telephoneLien,
+    sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
+    knowsAbout: [
+      'Vente immobilière',
+      'Estimation immobilière',
+      'Mandat exclusif',
+      'Valeurs foncières et données de marché',
+      'Paris 9e',
+      'Montmartre',
+      'Paris 10e',
+    ],
+    /*
+     * Titre professionnel et retombées presse déclarés aux moteurs. Un moteur
+     * génératif cite d'autant plus volontiers qu'il peut relier une affirmation
+     * à une autorité vérifiable : la carte professionnelle d'un côté, un média
+     * tiers de l'autre.
+     */
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Carte professionnelle de transaction immobilière',
+      identifier: site.legal.carteT,
+      recognizedBy: { '@type': 'Organization', name: 'CCI Paris Île-de-France' },
+      validFrom: '2024-08-22',
+    },
+    subjectOf: presse
+      .filter((p) => p.data.lien)
+      .map((p) => ({
+        '@type': p.data.ecouter ? 'PodcastEpisode' : 'NewsArticle',
+        headline: p.data.titre,
+        url: p.data.lien,
+        datePublished: p.data.date.toISOString().slice(0, 10),
+        publisher: { '@type': 'Organization', name: p.data.media },
+      })),
+  },
+];
+---
+<Layout
+  titre="Samy Santamarina | Fondateur de Trudaines, cabinet immobilier Paris 9e"
+  description="Samy Santamarina, président fondateur de Trudaines. Vente immobilière à Paris 9e nord, Montmartre et 10e. Carte professionnelle CPI 9201 2024 000 000 114."
+  filAriane={[{ nom: 'Samy Santamarina' }]}
+  donnees={donnees}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-4xl">
+      <div>
+        <p class="surtitre">Fondateur</p>
+        <h1 class="titre-1 mt-6">Samy Santamarina</h1>
+        <p class="chapo mt-8">
+          J'ai fondé Trudaines en septembre 2024, après avoir constaté que les vendeurs parisiens recevaient beaucoup
+          de promesses et peu de documents. Mon métier consiste à estimer juste, à préparer un bien sérieusement, et
+          à rendre compte de ce que je fais, semaine après semaine.
+        </p>
+        <div class="mt-10 space-y-6 text-[color:var(--color-ardoise)]">
+          <p>
+            Je visite moi-même chaque bien que je prends en mandat. Je conduis les visites, je mène les négociations
+            et je suis le dossier jusqu'à l'acte. Cela limite mécaniquement le nombre de ventes que je peux traiter
+            en parallèle, et c'est un choix assumé.
+          </p>
+          <p>
+            Le cabinet s'appuie sur la donnée publique des transactions, sur des outils d'analyse que nous
+            développons en interne, et sur une connaissance de terrain limitée à trois arrondissements. Je préfère
+            dire non à un mandat lointain plutôt que de découvrir un marché en même temps que mon client.
+          </p>
+        </div>
+        <figure class="mt-12">
+          <img
+            src="/images/presse/immomatin-samy-santamarina.webp"
+            srcset="/images/presse/immomatin-samy-santamarina-400.webp 400w, /images/presse/immomatin-samy-santamarina.webp 620w"
+            sizes="(min-width: 768px) 620px, 92vw"
+            alt="Samy Santamarina, au centre, fondateur de Trudaines"
+            width="620"
+            height="349"
+            loading="lazy"
+            decoding="async"
+            class="w-full max-w-2xl"
+          />
+          <figcaption class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+            Photographie publiée par Immo Matin en octobre 2024, droits réservés.
+          </figcaption>
+        </figure>
+
+        <dl class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Carte professionnelle</dt>
+            <dd class="mt-2 text-sm">{site.legal.carteT}, CCI Paris Île-de-France, {site.legal.carteTDate}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Garantie financière</dt>
+            <dd class="mt-2 text-sm">{site.legal.garantie}, {site.legal.garantieMontant}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Territoire</dt>
+            <dd class="mt-2 text-sm">Paris 9e nord, Montmartre et 18e sud, Paris 10e nord</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-trait)] pt-4">
+            <dt class="surtitre">Contact direct</dt>
+            <dd class="mt-2 text-sm">
+              <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a><br />
+              <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="parcours">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Le parcours</p>
+      <h2 id="parcours" class="titre-2 mt-6">Dix ans d'événementiel, un appartement à Montmartre, puis l'immobilier</h2>
+      <div class="mt-10 space-y-6 text-[color:var(--color-ardoise)]">
+        <p>
+          École de commerce à Marseille, Kedge Business School, master Entertainment and Media Management
+          obtenu en 2008. Puis dix années en agences de communication événementielle, sur des productions qui
+          comptaient, jusqu'à des cérémonies des Jeux olympiques et paralympiques.
+        </p>
+        <p>
+          En 2018, avec mon épouse, nous achetons un appartement familial à Montmartre et nous le rénovons
+          entièrement, un peu à la manière d'un marchand de biens. Cet univers a été une révélation. Le Covid a
+          arrêté net l'événementiel, et cette révélation est devenue une reconversion.
+        </p>
+        <p>
+          Quatre années comme mandataire au sein du réseau iad, où le digital est partout et où j'ai beaucoup
+          appris, jusqu'en août 2024. Puis la décision de voler de mes propres ailes et de fonder Trudaines, en
+          septembre 2024, en référence à l'avenue Trudaine, qui borde le quartier de Montmartre.
+        </p>
+        <p>
+          Ce parcours explique deux choses du cabinet. La première, l'obsession du dossier préparé avant la
+          première visite, qui vient de l'événementiel, où rien ne se rattrape le jour J. La seconde, le refus
+          de traiter un marché que je ne connais pas, qui vient d'avoir rénové moi même un appartement et
+          d'avoir mesuré tout ce qu'une visite apprend et qu'aucune base de données ne contient.
+        </p>
+      </div>
+      <p class="mt-8 text-xs text-[color:var(--color-ardoise)]">
+        Parcours tel qu'il a été publié dans l'entretien accordé à Immo Matin le 10 octobre 2024.
+      </p>
+    </div>
+  </section>
+
+  {presse.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">Citations et interventions</h2>
+        <div class="mt-12 grid gap-10 md:grid-cols-2">
+          {presse.slice(0, 4).map((p) => (
+            <figure class="bloc">
+              <blockquote class="font-[family-name:var(--font-titre)] text-lg">{p.data.citation}</blockquote>
+              <figcaption class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+                {p.data.media}
+                {p.data.lien && (
+                  <> · <a href={p.data.lien} rel="noopener" target="_blank" class="lien-souligne">Lire</a></>
+                )}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p class="mt-10 text-sm"><a href="/presse" class="lien-souligne">Toutes les retombées presse</a></p>
+      </div>
+    </section>
+  )}
+</Layout>

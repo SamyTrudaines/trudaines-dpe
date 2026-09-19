@@ -1,0 +1,43 @@
+---
+/**
+ * Ouverture de l'accueil : la photographie du square d'Anvers, pleine largeur.
+ *
+ * Deux cadrages, un par forme d'écran. Sur un ordinateur le bandeau fait
+ * 100vw sur 72svh, soit un rapport voisin de 2,4 ; sur un téléphone il fait
+ * 100vw sur 56svh, soit un rapport voisin de 0,87. Servir une seule image en
+ * trois deux revient à laisser le navigateur jeter quarante pour cent des
+ * pixels sur l'un, et rogner les côtés sur l'autre jusqu'à perdre la coupole.
+ * Chaque forme reçoit donc son fichier, recadré à la production.
+ *
+ * WebP seulement, et à qualité élevée. C'est la page qui vend : l'AVIF y
+ * lisse le feuillage des platanes, exactement le détail qui donne envie.
+ * L'AVIF reste sur les pages de volume, où son gain de poids compte plus.
+ *
+ * L'original mesure 1500 px de large. L'agrandissement au Lanczos jusqu'à
+ * 2400 px n'ajoute pas de détail, mais il évite que le navigateur étire lui
+ * même le fichier avec son filtre bilinéaire, ce qui se voit.
+ */
+const alt = "Le square d'Anvers et le Sacré-Cœur vus du boulevard de Rochechouart, Paris 9e";
+const large = [1200, 1600, 2000, 2400]
+  .map((l) => `/images/marque/anvers-large-${l}.webp ${l}w`)
+  .join(', ');
+const haut = [640, 900, 1200]
+  .map((l) => `/images/marque/anvers-haut-${l}.webp ${l}w`)
+  .join(', ');
+---
+<div class="w-full overflow-hidden bg-[color:var(--color-papier)]">
+  <picture>
+    <source media="(min-width: 768px)" srcset={large} sizes="100vw" />
+    <source srcset={haut} sizes="100vw" />
+    <img
+      src="/images/marque/anvers-large-2000.webp"
+      alt={alt}
+      width="2000"
+      height="830"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="h-[56svh] w-full object-cover object-center md:h-[64svh] lg:h-[72svh]"
+    />
+  </picture>
+</div>

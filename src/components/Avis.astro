@@ -1,0 +1,79 @@
+---
+import type { Avis, AgrégatAvis } from '../lib/avis';
+import { site } from '../data/site';
+
+interface Props {
+  avis: Avis[];
+  agregat: AgrégatAvis;
+  titre?: string;
+  /** Faux sur la page /avis, qui affiche déjà tout. */
+  lienListe?: boolean;
+}
+
+const { avis, agregat, titre = 'Ce que disent les clients', lienListe = true } = Astro.props;
+const aDesCitations = avis.some((a) => a.data.texte);
+---
+{aDesCitations && (
+  <section class="section filet" aria-labelledby="avis-clients">
+    <div class="conteneur">
+      <div class="flex flex-wrap items-end justify-between gap-8">
+        <div>
+          <p class="surtitre">Avis vérifiés</p>
+          <h2 id="avis-clients" class="titre-2 mt-6 max-w-xl">{titre}</h2>
+        </div>
+        <p class="text-sm text-[color:var(--color-ardoise)] md:text-right">
+          <span class="block font-[family-name:var(--font-titre)] text-3xl text-[color:var(--color-encre)]">
+            {agregat.noteTexte} <span class="text-lg">/ 5</span>
+          </span>
+          <span class="mt-2 block">
+            {agregat.total} avis clients, aucun en dessous de cinq étoiles.
+          </span>
+          <span class="block">
+            {agregat.parSource.google} sur Google, {agregat.parSource.pagesjaunes} sur Pages Jaunes,
+            relevés en {site.avis.releve}.
+          </span>
+        </p>
+      </div>
+
+      <div class="mt-16 grid gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {avis.filter((a) => a.data.texte).map((a) => (
+          <figure class="flex flex-col bloc">
+            <span aria-hidden="true" class="text-sm tracking-[0.3em] text-[color:var(--color-or-fonce)]">
+              {'★'.repeat(a.data.note)}
+            </span>
+            <blockquote class="mt-6 grow font-[family-name:var(--font-titre)] text-[1.0625rem] leading-[1.75]">
+              {a.data.texte}
+            </blockquote>
+            <figcaption class="mt-6 text-xs leading-relaxed text-[color:var(--color-ardoise)]">
+              <span class="block font-medium uppercase tracking-[0.12em] text-[color:var(--color-encre)]">
+                {a.data.auteur}
+              </span>
+              <span class="mt-1 block">
+                <span class="sr-only">Note de {a.data.note} sur 5. </span>
+                {[a.data.typeProjet, a.data.quartier].filter(Boolean).join(' · ')}
+              </span>
+              <span class="mt-1 block">
+                {a.data.source === 'google' ? 'Avis Google' : a.data.source === 'pagesjaunes' ? 'Avis Pages Jaunes' : 'Avis recueilli par le cabinet'}
+                {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
+                {a.data.dateVisite ? ` · ${a.data.dateVisite}` : ''}
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div class="mt-16 flex flex-wrap items-center gap-x-10 gap-y-4 text-sm">
+        {lienListe && <a href="/avis" class="lien-souligne">Lire les {agregat.total} avis</a>}
+        <a
+          href={site.avis.lienGoogle}
+          target="_blank"
+          rel="noopener nofollow"
+          data-evt="clic_avis_google"
+          class="lien-souligne"
+        >
+          Vérifier sur Google
+        </a>
+      </div>
+    </div>
+  </section>
+)}

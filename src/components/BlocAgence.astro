@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { site } from '../data/site';
+interface Props {
+  h1: string;
+  intro: string;
+  secteurNom: string;
+  hrefEstimation: string;
+  quartiers: CollectionEntry<'quartiers'>[];
+  services: { titre: string; texte: string; href: string }[];
+}
+const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.props;
+---
+<section class="section pt-10">
+  <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <div>
+      <p class="surtitre">Le cabinet sur le terrain</p>
+      <h1 class="titre-1 mt-6">{h1}</h1>
+      <p class="chapo mt-8">{intro}</p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a href={hrefEstimation} class="bouton">Estimer mon bien</a>
+        <a href="/contact" class="bouton bouton-secondaire">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <aside class="border border-[color:var(--color-trait)] p-8">
+      <h2 class="titre-3">Nous joindre</h2>
+      <p class="mt-6 text-sm">
+        {site.adresse.rue}<br />{site.adresse.codePostal} {site.adresse.ville}
+      </p>
+      <p class="mt-4 text-sm">
+        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a><br />
+        <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a>
+      </p>
+      <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{site.horairesTexte}</p>
+      <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">
+        Carte professionnelle {site.legal.carteT}. Garantie financière {site.legal.garantieMontant}.
+        {site.legal.detentionFonds}
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section class="section filet" aria-labelledby="services-secteur">
+  <div class="conteneur">
+    <h2 id="services-secteur" class="titre-2">Nos services sur {secteurNom}</h2>
+    <div class="mt-12 grid gap-10 md:grid-cols-3">
+      {services.map((s) => (
+        <div class="bloc">
+          <h3 class="titre-3"><a href={s.href} class="no-underline hover:underline">{s.titre}</a></h3>
+          <p class="mt-4 text-[color:var(--color-ardoise)]">{s.texte}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{quartiers.length > 0 && (
+  <section class="section" aria-labelledby="quartiers-secteur">
+    <div class="conteneur">
+      <h2 id="quartiers-secteur" class="titre-2">Les quartiers que nous couvrons</h2>
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {quartiers.map((q) => (
+          <div class="bloc">
+            <h3 class="titre-3"><a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a></h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
+            <p class="mt-4 text-sm">{q.data.prixMoyenM2}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

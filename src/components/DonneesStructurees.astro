@@ -1,0 +1,7 @@
+---
+interface Props {
+  donnees: Record<string, unknown> | Record<string, unknown>[];
+}
+const { donnees } = Astro.props;
+---
+<script type="application/ld+json" set:html={JSON.stringify(donnees)} is:inline />

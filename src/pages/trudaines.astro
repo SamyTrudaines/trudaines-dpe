@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Avis from '../components/Avis.astro';
+import Logo from '../components/Logo.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { site } from '../data/site';
+
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+/*
+ * Le manifeste et les sept engagements sont ceux que le cabinet publie depuis
+ * sa création. Ils sont repris tels quels, à deux détails près : les tournures
+ * au pluriel qui évoquaient plusieurs consultants sont ramenées au cabinet,
+ * puisque le site s'engage par ailleurs sur un interlocuteur unique.
+ */
+const manifeste = [
+  "Trudaines repense les codes de l'immobilier haut de gamme.",
+  "À l'avant-garde des évolutions technologiques, nous intégrons les dernières innovations pour les appliquer au secteur de l'immobilier.",
+  "Notre engagement garantit un accompagnement performant, éthique et ultra personnalisé de chaque client.",
+  "Inspirés par le design, l'architecture et l'art de vivre, nous révélons le plein potentiel de vos projets par une approche expérientielle de l'immobilier.",
+];
+
+const engagements = [
+  { titre: 'Engagement', texte: "Nous accompagnons nos clients avec éthique et engagement, pour leur offrir un suivi ultra personnalisé." },
+  { titre: 'Modernité', texte: "Tirer parti des meilleures technologies pour fluidifier et valoriser chaque projet immobilier, tout en conservant une approche humaine et intuitive." },
+  { titre: 'Émotions', texte: "L'immobilier ne se limite pas aux biens, c'est une expérience. Nous valorisons les savoir-faire, design, architecture, décoration, qui enrichissent chaque réalisation." },
+  { titre: 'Authenticité', texte: "Une approche premium, mais décontractée et accessible, où l'humain reste au cœur de chaque initiative, sans artifice ni formalisme inutile." },
+  { titre: 'Expérientiel', texte: "Transformer l'immobilier en une expérience mémorable, où chaque projet est pensé pour être vécu pleinement." },
+  { titre: 'Premium', texte: "Une exigence d'excellence, tant dans la qualité des biens que de l'accompagnement, avec un service sur mesure et exclusif." },
+  { titre: 'Audace', texte: "Animés par une approche proactive et orientée solution, nous relevons les défis avec ingéniosité pour concrétiser chaque projet." },
+];
+
+const concret = [
+  { titre: 'Dire le prix, même quand il déplaît', texte: "Un cabinet qui flatte pour prendre un mandat vous fait perdre trois mois et finit par vous faire vendre plus bas. Nous préférons perdre le mandat." },
+  { titre: 'Un territoire, pas une couverture', texte: "Trois arrondissements limitrophes travaillés rue par rue. Nous refusons les biens hors de ce périmètre plutôt que de promettre une connaissance que nous n'avons pas." },
+  { titre: 'La donnée au service du jugement', texte: "Les ventes signées cadrent la discussion, la visite la tranche. Un algorithme ne sent pas une cage d'escalier ni le bruit d'une cour à 18 heures." },
+  { titre: "L'écrit plutôt que la promesse", texte: "Avis de valeur, comptes rendus de visite, offres, points hebdomadaires : ce qui est écrit peut être vérifié, discuté, et reproché. C'est le but." },
+];
+---
+<Layout
+  titre="Le cabinet Trudaines | Vente immobilière Paris 9e et Montmartre"
+  description="Cabinet de vente immobilière fondé en 2024 par Samy Santamarina : un territoire restreint, une méthode écrite, un interlocuteur unique."
+  filAriane={[{ nom: 'Le cabinet' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">L'immobilier au-delà des murs</p>
+      <h1 class="titre-1 mt-6">Un cabinet de vente, pas une vitrine de plus</h1>
+      <p class="chapo mt-8">
+        Trudaines est né en septembre 2024 d'un constat simple : entre les réseaux qui multiplient les mandats et
+        les maisons d'image qui vendent surtout leur nom, il manquait un cabinet qui fasse le travail de fond et qui
+        l'écrive.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="manifeste">
+    <div class="conteneur max-w-3xl">
+      <h2 id="manifeste" class="surtitre">Notre manifeste</h2>
+      <div class="mt-10 grid gap-8">
+        {manifeste.map((phrase, index) => (
+          <p class={index === 0 ? 'titre-2' : 'text-lg text-[color:var(--color-ardoise)]'}>{phrase}</p>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="le-nom">
+    <div class="conteneur">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="surtitre">Le nom</p>
+        <div class="mt-10 flex justify-center">
+          <Logo taille="grand" />
+        </div>
+        <h2 id="le-nom" class="titre-2 mt-12">Deux lettres en orange, au milieu du mot</h2>
+        <p class="mt-8 text-[color:var(--color-ardoise)]">
+          Trudaine est une avenue du 9e nord, bordée d'arbres, face au lycée Jacques Decour, entre Anvers et
+          Pigalle. C'est le territoire du cabinet, et c'est de là que vient son nom.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Au milieu de ce nom de rue, deux lettres se détachent en orange. AI, pour l'intelligence
+          artificielle. Elles sont à l'intérieur du mot, pas posées à côté, et c'est volontaire : la
+          technologie est dans le travail, elle n'est pas sur l'enseigne. Un vendeur n'achète pas un outil,
+          il achète un prix tenu et un calendrier respecté.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 grid max-w-4xl gap-10 sm:grid-cols-3">
+        <div class="border-t border-[color:var(--color-trait)] pt-5">
+          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">5 498</p>
+          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            ventes d'appartements dépouillées pour établir les prix publiés sur ce site, quartier par
+            quartier, au lieu d'une moyenne d'arrondissement.
+          </p>
+        </div>
+        <div class="border-t border-[color:var(--color-trait)] pt-5">
+          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">48 h</p>
+          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            pour un avis de valeur écrit après visite. Le temps que la machine prend sur la recherche de
+            comparables et la mise en forme revient au vendeur.
+          </p>
+        </div>
+        <div class="border-t border-[color:var(--color-trait)] pt-5">
+          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">0</p>
+          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            visite, négociation ou conversation difficile déléguée à un algorithme. Ce qui se décide dans
+            une cage d'escalier se décide sur place.
+          </p>
+        </div>
+      </div>
+      <p class="mt-14 text-center text-sm">
+        <a href="/quartiers" class="lien-souligne">Les prix au mètre carré, quartier par quartier</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="engagements">
+    <div class="conteneur">
+      <h2 id="engagements" class="titre-2 max-w-2xl">Nos engagements</h2>
+      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {engagements.map((e) => (
+          <div class="border-t border-[color:var(--color-trait)] pt-5">
+            <h3 class="titre-3">{e.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{e.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-2">
+      <div>
+        <h2 class="titre-2">La méthode</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Nous travaillons peu de mandats à la fois, volontairement. Chaque bien est estimé sur la base des ventes
+          réellement signées dans sa rue, préparé avant la première visite, présenté à des acheteurs vérifiés, et
+          suivi par un compte rendu écrit après chaque visite.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          La technologie sert à gagner du temps sur ce qui peut l'être : recherche de comparables, mise en forme des
+          dossiers, suivi des acheteurs, relances. Elle ne remplace jamais la visite, la négociation, ni la
+          conversation difficile qu'il faut parfois avoir avec un vendeur.
+        </p>
+        <p class="mt-8 text-sm"><a href="/vendre" class="lien-souligne">Les sept engagements de vente</a></p>
+      </div>
+      <div>
+        <h2 class="titre-2">Ce que cela veut dire concrètement</h2>
+        <div class="mt-8 grid gap-8">
+          {concret.map((v) => (
+            <div class="border-t border-[color:var(--color-trait)] pt-5">
+              <h3 class="titre-3">{v.titre}</h3>
+              <p class="mt-3 text-[color:var(--color-ardoise)]">{v.texte}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Le cadre réglementaire</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        {site.nomLong} est exploité par {site.raisonSociale} {site.formeJuridique}, {site.legal.rcs}, dont le siège
+        est au {site.adresse.rue}, {site.adresse.codePostal} {site.adresse.ville}. {site.legal.carteTDetail}
+        Garantie financière {site.legal.garantie}, à hauteur de {site.legal.garantieMontant},
+        numéro de sociétaire {site.legal.garantieSocietaire}. {site.legal.detentionFonds}
+      </p>
+      <p class="mt-6 text-sm">
+        <a href="/mentions-legales" class="lien-souligne">Mentions légales complètes</a>
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} />
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Aller plus loin</h2>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <a href="/references" class="lien-souligne">Nos références</a>
+        <a href="/samy-santamarina" class="lien-souligne">Samy Santamarina, fondateur</a>
+        <a href="/presse" class="lien-souligne">Ce que la presse en dit</a>
+        <a href="/nous-rejoindre" class="lien-souligne">Nous rejoindre</a>
+        <a href="/honoraires" class="lien-souligne">Honoraires</a>
+      </div>
+    </div>
+  </section>
+</Layout>
