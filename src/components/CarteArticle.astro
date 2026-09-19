@@ -1,5 +1,5 @@
 ---
-import { srcsetCarte, TAILLES_CARTE } from '../lib/images';
+import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
 import { dateFr } from '../lib/format';
 interface Props { id: string; titre: string; date: Date; chapo: string; image?: string; imageAlt?: string; }
 const { id, titre, date, chapo, image, imageAlt = '' } = Astro.props;
@@ -9,8 +9,8 @@ const { id, titre, date, chapo, image, imageAlt = '' } = Astro.props;
     {image && (
       <div class="aspect-[16/10] overflow-hidden bg-[color:var(--color-papier)]">
         <img
-          src={image}
-          srcset={srcsetCarte(image)}
+          src={jeuPhoto(image).src}
+          srcset={jeuPhoto(image).srcset}
           sizes={TAILLES_CARTE}
           alt={imageAlt}
           width="800"

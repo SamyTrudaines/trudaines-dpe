@@ -8,6 +8,9 @@ chapo: De la place des Abbesses à l'avenue Junot, un marché où la vue, l'éta
 ordre: 4
 titreSeo: Immobilier Montmartre, Paris 18e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré à Montmartre, physionomie du marché et vente accompagnée par le cabinet Trudaines, installé au pied de la Butte.
+photos:
+  - src: /images/quartiers/montmartre.webp
+    alt: Séjour d'un deux pièces avec balcon, Abbesses, Paris 18e
 faits:
   - titre: Typologies dominantes
     valeur: Studios et deux pièces de caractère, maisons et grands appartements avenue Junot

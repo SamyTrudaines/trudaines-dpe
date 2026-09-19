@@ -8,7 +8,7 @@ import CarteBien from '../../components/CarteBien.astro';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
 import { site } from '../../data/site';
 import { titreSeo, descriptionSeo } from '../../lib/seo';
-import { vignette } from '../../lib/images';
+import { jeuPhoto } from '../../lib/images';
 
 interface Props { bien: CollectionEntry<'biens'> }
 
@@ -32,6 +32,14 @@ const similaires = archive
   ? (await getCollection('biens', (b) => b.id !== bien.id && b.data.archive && b.data.ville === d.ville)).slice(0, 3)
   : (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
 const echelle = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+/*
+ * Le titre d'une page de référence porte le nom du cabinet tant que la balise
+ * reste sous les 70 caractères utiles en résultat de recherche. Au delà, le
+ * titre du bien seul vaut mieux qu'une marque tronquée par Google.
+ */
+const titreAvecMarque = `${d.titre} | Trudaines`;
+const titreArchive = titreAvecMarque.length <= 70 ? titreAvecMarque : d.titre;
 
 const dpeConnu = d.dpe !== 'Vierge';
 const gesConnu = d.ges !== 'Vierge';
@@ -75,10 +83,10 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={titreSeo([d.titre, archive ? 'Référence' : `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
+  titre={titreSeo([d.titre, !archive && `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
   description={descriptionSeo(
     archive
-      ? `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. Mandat présenté par le cabinet Trudaines, bien non disponible.`
+      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par le cabinet Trudaines, bien non disponible.`
       : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`,
   )}
   image={d.photos[0]?.src}
@@ -135,7 +143,9 @@ const donnees = [
               <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 {d.photos.slice(1).map((p) => (
                   <img
-                    src={vignette(p.src) ?? p.src}
+                    src={jeuPhoto(p.src).src}
+                    srcset={jeuPhoto(p.src).srcset}
+                    sizes="(min-width: 768px) 260px, 45vw"
                     alt={p.alt}
                     width="600"
                     height="400"

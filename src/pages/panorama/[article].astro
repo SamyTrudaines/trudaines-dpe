@@ -38,8 +38,8 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={titreSeo([article.data.titre, 'Panorama Trudaines'])}
-  description={descriptionSeo(article.data.chapo)}
+  titre={article.data.titreSeo ?? titreSeo([article.data.titre, 'Trudaines'])}
+  description={descriptionSeo(article.data.descriptionSeo ?? article.data.chapo)}
   image={article.data.image}
   type="article"
   filAriane={[{ nom: 'Panorama', href: '/panorama' }, { nom: article.data.titre }]}

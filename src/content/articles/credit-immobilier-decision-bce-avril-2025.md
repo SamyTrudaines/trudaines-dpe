@@ -2,6 +2,8 @@
 titre: "Crédit immobilier : ce que la décision de la BCE change en avril 2025"
 date: 2025-05-05
 chapo: "Le 17 avril 2025, la Banque centrale européenne (BCE) envoie un signal clair : pour la troisième fois de l’année, elle abaisse ses trois taux directeurs de 25 points de base."
+descriptionSeo: "Ce que la baisse des taux directeurs de la BCE change concrètement pour un emprunteur parisien, et ce qu'elle ne change pas."
+titreSeo: "Crédit immobilier et décision de la BCE | Trudaines"
 image: /images/panorama/credit-immobilier-decision-bce-avril-2025.webp
 imageAlt: "Crédit immobilier : ce que la décision de la BCE change en avril 2025"
 motsCles: ['crédit immobilier', 'taux BCE', 'financement', 'Paris 9e', 'Paris 18e']
@@ -12,11 +14,11 @@ Le 17 avril 2025, la Banque centrale européenne (BCE) envoie un signal clair : 
 
 - Les nouveaux taux directeurs de la BCE (en vigueur depuis le 23 avril 2025)
 
-Opérations principales de refinancement : 2,40 %
+Opérations principales de refinancement : 2,40 %
 
-Facilité de prêt marginal : 2,65 %
+Facilité de prêt marginal : 2,65 %
 
-Facilité de dépôt : 2,25 %
+Facilité de dépôt : 2,25 %
 
 - C’est la 7ᵉ baisse depuis juin 2024, confirmant une stratégie monétaire résolument accommodante.
 
@@ -24,11 +26,11 @@ Facilité de dépôt : 2,25 %
 
 Malgré la baisse des taux BCE, les taux moyens immobiliers restent stables en avril :
 
-15 ans : 3,00 %
+15 ans : 3,00 %
 
-20 ans : 3,20 %
+20 ans : 3,20 %
 
-25 ans : 3,40 %
+25 ans : 3,40 %
 
 Certaines banques maintiennent des hausses modérées, liées aux tensions économiques mondiales (droits de douane US, incertitudes sur la croissance).
 
