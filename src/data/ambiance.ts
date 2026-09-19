@@ -23,14 +23,6 @@ export type Ambiance = {
   source: string;
 };
 
-/** Photographie de marque, square d'Anvers, au pied de l'avenue Trudaine. */
-export const marque = {
-  fichier: '/images/marque/anvers-sacre-coeur',
-  alt: "Le square d'Anvers et le Sacré-Cœur vus du boulevard de Rochechouart, Paris 9e",
-  largeur: 1500,
-  hauteur: 1001,
-};
-
 /*
  * Les photographies ci dessous viennent de la collection « Site WEB » réunie
  * par Samy Santamarina sur Unsplash. Le choix des images est donc le sien ;

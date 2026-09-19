@@ -91,12 +91,14 @@ const questions = [
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
       <h2 id="engagements" class="sr-only">Les sept engagements</h2>
-      <ol class="grid gap-12 md:grid-cols-2">
+      <ol class="grid gap-x-12 gap-y-14 md:grid-cols-2">
         {engagements.map((e, i) => (
-          <li class="border-t border-[color:var(--color-encre)] pt-6">
-            <p class="surtitre">Engagement {String(i + 1).padStart(2, '0')}</p>
-            <h3 class="titre-3 mt-3">{e.titre}</h3>
-            <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+          <li class="grid grid-cols-[auto_1fr] gap-x-6">
+            <p class="chiffre" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
+            <div>
+              <h3 class="titre-3">{e.titre}</h3>
+              <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+            </div>
           </li>
         ))}
       </ol>
@@ -108,7 +110,7 @@ const questions = [
       <h2 id="inquietudes" class="titre-2 max-w-2xl">Les questions que vous vous posez sans forcément les poser</h2>
       <div class="mt-14 grid gap-12 md:grid-cols-2">
         {questions.map((q) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-6">
+          <div>
             <h3 class="titre-3">{q.titre}</h3>
             <p class="mt-4 text-[color:var(--color-ardoise)]">{q.texte}</p>
           </div>

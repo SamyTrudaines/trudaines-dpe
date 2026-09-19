@@ -75,7 +75,7 @@ const donnees = [
       <h2 id="avis-commentes" class="sr-only">Avis commentés</h2>
       <div class="grid gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {commentés.map((a) => (
-          <figure class="flex flex-col border-t border-[color:var(--color-encre)] pt-6">
+          <figure class="flex flex-col bloc">
             <span aria-hidden="true" class="text-sm tracking-[0.3em] text-[color:var(--color-or-fonce)]">
               {'★'.repeat(a.data.note)}
             </span>

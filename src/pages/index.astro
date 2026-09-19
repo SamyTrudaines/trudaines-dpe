@@ -80,11 +80,14 @@ const engagements = [
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
       <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
-      <div class="mt-14 grid gap-12 md:grid-cols-3">
-        {engagements.map((e) => (
-          <div class="border-t border-[color:var(--color-encre)] pt-6">
-            <h3 class="titre-3">{e.titre}</h3>
-            <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+      <div class="mt-14 grid gap-x-12 gap-y-14 md:grid-cols-3">
+        {engagements.map((e, n) => (
+          <div class="grid grid-cols-[auto_1fr] gap-x-5">
+            <p class="chiffre" aria-hidden="true">{String(n + 1).padStart(2, '0')}</p>
+            <div>
+              <h3 class="titre-3">{e.titre}</h3>
+              <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+            </div>
           </div>
         ))}
       </div>
