@@ -15,7 +15,7 @@ const etapes = [
   {
     titre: 'Les ventes réellement signées',
     texte:
-      "Nous partons de la base des valeurs foncières publiée par l'administration fiscale, qui recense les transactions enregistrées chez le notaire. Nous isolons votre rue, votre typologie et les douze derniers mois, puis nous écartons les ventes atypiques qui fausseraient la moyenne.",
+      "Nous partons de la base Demandes de valeurs foncières, dite DVF, publiée par l'administration fiscale à partir des actes enregistrés chez le notaire. C'est la seule source qui contienne des prix signés et non des prix demandés ; elle paraît en avril et en octobre, avec six mois de recul environ, et nous corrigeons ce décalage avec la tendance du moment. Nous isolons votre rue, votre typologie, puis nous écartons les ventes atypiques qui fausseraient la lecture.",
   },
   {
     titre: 'La concurrence du moment',
@@ -80,14 +80,14 @@ const donnees = [
     name: 'Estimation immobilière',
     serviceType: "Estimation et avis de valeur d'un bien immobilier",
     provider: { '@id': 'https://www.trudaines.com/#cabinet' },
-    areaServed: ['Paris 9e', 'Paris 18e', 'Paris 10e'],
+    areaServed: ['Paris 9e', 'Paris 10e', 'Paris 17e', 'Paris 18e'],
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Avis de valeur écrit, remis après visite sous 48 heures, sans engagement" },
   },
 ];
 ---
 <Layout
   titre="Estimation immobilière à Paris 9e et 18e | Trudaines"
-  description="Estimation immobilière à Paris 9e, 18e et 10e : ventes signées, visite sur place et avis de valeur écrit sous 48 heures, sans engagement."
+  description="Estimation immobilière à Paris 9e, 10e, 17e et 18e : ventes signées, visite sur place et avis de valeur écrit sous 48 heures, sans engagement."
   filAriane={[{ nom: 'Estimation' }]}
   donnees={donnees}
 >
