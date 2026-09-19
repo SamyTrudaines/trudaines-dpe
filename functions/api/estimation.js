@@ -24,6 +24,9 @@ export async function onRequestPost({ request, env }) {
       ['Pièces', valeur('pieces')],
       ['Étage', valeur('etage')],
       ['Horizon de vente', valeur('horizon')],
+      // Fourchette affichée par le calculateur immédiat, le cas échéant : savoir
+      // ce que le propriétaire a eu sous les yeux change la première phrase de l'appel.
+      ['Fourchette vue sur le site', valeur('fourchette') || 'Non calculée'],
       ['Secteur', valeur('secteur')],
       ['Quartier', valeur('quartier')],
       ['Nom', `${prenom} ${valeur('nom')}`],

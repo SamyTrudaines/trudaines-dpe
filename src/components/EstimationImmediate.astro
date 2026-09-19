@@ -1,0 +1,132 @@
+---
+import { rues, periode } from '../lib/rues';
+
+/**
+ * Calculateur immédiat, adossé aux ventes signées de la voie.
+ *
+ * Il ne remplace pas l'avis de valeur, il sert à le déclencher : un propriétaire
+ * qui vient de voir une fourchette adossée à sa rue accepte la visite bien plus
+ * volontiers qu'un propriétaire à qui l'on a seulement promis un rappel.
+ */
+const total = rues.length;
+---
+<section class="section filet" aria-labelledby="estimation-immediate" data-estimation-immediate>
+  <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+    <div>
+      <p class="surtitre">Estimation immédiate</p>
+      <h2 id="estimation-immediate" class="titre-2 mt-6">
+        Une fourchette tirée des ventes de votre rue, tout de suite
+      </h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Nous n'appliquons aucun pourcentage inventé à un prix moyen. Le calcul part des ventes réellement
+        signées dans votre voie, {total} voies mesurées sur les 9e, 10e et 18e, période de {periode}, et place
+        votre bien à l'intérieur de cette distribution selon ce que vous en dites.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Chaque élément qui déplace le curseur vous est montré, avec son sens. Aucune boîte noire, et aucune
+        inscription pour voir le résultat.
+      </p>
+
+      <div class="mt-10 grid gap-6">
+        <div>
+          <label class="etiquette" for="estimation-immediate-adresse">Adresse du bien</label>
+          <input
+            class="champ"
+            id="estimation-immediate-adresse"
+            list="estimation-immediate-adresses"
+            type="text"
+            autocomplete="off"
+            placeholder="12 avenue Trudaine, 75009 Paris"
+            data-adresse
+          />
+          <datalist id="estimation-immediate-adresses"></datalist>
+          <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+            Choisissez une proposition de la liste. L'adresse reste dans votre navigateur tant que vous ne
+            demandez rien.
+          </p>
+        </div>
+        <p class="text-sm text-[color:var(--color-ardoise)]" data-contexte hidden></p>
+
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div>
+            <label class="etiquette" for="estimation-immediate-surface">Surface en m²</label>
+            <input class="champ" id="estimation-immediate-surface" name="surface" type="number" min="9" max="500" inputmode="numeric" />
+          </div>
+          <div>
+            <label class="etiquette" for="estimation-immediate-pieces">Nombre de pièces</label>
+            <select class="champ" id="estimation-immediate-pieces" name="pieces">
+              <option value="1">1 pièce</option>
+              <option value="2" selected>2 pièces</option>
+              <option value="3">3 pièces</option>
+              <option value="4">4 pièces et plus</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for="estimation-immediate-etage">Étage</label>
+            <select class="champ" id="estimation-immediate-etage" name="etage">
+              <option>Rez-de-chaussée</option>
+              <option>1er</option>
+              <option selected>2e à 4e</option>
+              <option>5e et plus</option>
+              <option>Dernier étage</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for="estimation-immediate-ascenseur">Ascenseur</label>
+            <select class="champ" id="estimation-immediate-ascenseur" name="ascenseur">
+              <option>Oui</option>
+              <option selected>Non</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for="estimation-immediate-etat">État général</label>
+            <select class="champ" id="estimation-immediate-etat" name="etat">
+              <option>À rénover</option>
+              <option>À rafraîchir</option>
+              <option selected>Bon état</option>
+              <option>Refait à neuf</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for="estimation-immediate-exterieur">Extérieur</label>
+            <select class="champ" id="estimation-immediate-exterieur" name="exterieur">
+              <option selected>Aucun</option>
+              <option>Balcon</option>
+              <option>Terrasse ou jardin</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="etiquette" for="estimation-immediate-lumiere">Lumière et vue</label>
+            <select class="champ" id="estimation-immediate-lumiere" name="lumiere">
+              <option>Sombre ou sur cour étroite</option>
+              <option selected>Normale</option>
+              <option>Très lumineux ou vue dégagée</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="bouton" data-calculer>Voir la fourchette</button>
+      </div>
+    </div>
+
+    <div class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10">
+      <div data-resultat hidden></div>
+      <div data-resultat-vide>
+        <p class="surtitre">Ce que vous allez obtenir</p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Une fourchette en euros, le prix au mètre carré correspondant, le nombre de ventes de votre voie sur
+          lesquelles elle repose, et la liste de ce qui a déplacé le curseur.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Ce que vous n'obtiendrez pas : un chiffre unique. Personne ne peut en donner un sans avoir vu le bien,
+          et celui qui vous en donne un cherche un mandat, pas votre intérêt.
+        </p>
+      </div>
+      <p class="mt-8 text-sm" data-vers-formulaire hidden>
+        <a href="#avis-de-valeur" class="lien-souligne">Recevoir l'avis de valeur écrit, avec les ventes comparables</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="/js/estimation-immediate.js" defer></script>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import EstimationImmediate from '../../components/EstimationImmediate.astro';
 import { secteurs } from '../../data/secteurs';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
@@ -106,9 +107,11 @@ const donnees = [
           <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Rappel sous 24 heures ouvrées par Samy Santamarina. Sans frais.</li>
         </ul>
       </div>
-      <FormulaireEstimation identifiant="estimation-hub" />
+      <FormulaireEstimation identifiant="avis-de-valeur" />
     </div>
   </section>
+
+  <EstimationImmediate />
 
   <section class="section filet" aria-labelledby="livrable">
     <div class="conteneur">

@@ -13,6 +13,37 @@ const TYPES_ACCEPTES = new Set([
 ]);
 const SIGNATURES = { 'application/pdf': [0x25, 0x50, 0x44, 0x46] };
 
+/*
+ * Note vocale tenant lieu de lettre de motivation.
+ *
+ * Le navigateur enregistre en webm ou en mp4 selon la plateforme, jamais en
+ * autre chose : la liste ci dessous est donc close, et un fichier annoncé audio
+ * qui n'en est pas un est refusé comme l'est un faux PDF. Trois minutes au
+ * format opus tiennent largement sous les deux mégaoctets.
+ */
+const AUDIO_ACCEPTE = new Map([
+  ['audio/webm', 'webm'],
+  ['video/webm', 'webm'],
+  ['audio/mp4', 'm4a'],
+  ['audio/mpeg', 'mp3'],
+  ['audio/ogg', 'ogg'],
+]);
+const TAILLE_AUDIO_MAX = 6 * 1024 * 1024;
+// Signatures de conteneur : EBML pour webm, ftyp pour mp4, OggS pour ogg.
+const SIGNATURES_AUDIO = {
+  webm: [0x1a, 0x45, 0xdf, 0xa3],
+  ogg: [0x4f, 0x67, 0x67, 0x53],
+};
+
+/** Adresse de profil LinkedIn, ou chaîne vide. Rien d'autre n'est accepté. */
+function lienLinkedin(valeur) {
+  const propre = String(valeur || '').trim();
+  if (!propre) return '';
+  return /^https:\/\/([a-z]{2,3}\.)?linkedin\.com\/(in|pub)\/[A-Za-z0-9\-_%]{3,100}\/?$/.test(propre)
+    ? propre
+    : '';
+}
+
 function base64(tampon) {
   const octets = new Uint8Array(tampon);
   let binaire = '';
@@ -60,6 +91,34 @@ export async function onRequestPost({ request, env }) {
       piecesJointes.push({ name: nom, content: base64(tampon) });
     }
 
+    const voix = donnees.get('note_vocale');
+    let dureeVoix = '';
+    if (voix && typeof voix === 'object' && voix.size > 0) {
+      if (voix.size > TAILLE_AUDIO_MAX) {
+        return reponse(request, { ok: false, message: 'La note vocale dépasse 6 Mo.' }, 400);
+      }
+      const type = String(voix.type || '').split(';')[0];
+      const extension = AUDIO_ACCEPTE.get(type);
+      if (!extension) {
+        return reponse(request, { ok: false, message: 'Le format de la note vocale n’est pas accepté.' }, 400);
+      }
+      const tampon = await voix.arrayBuffer();
+      const attendue = SIGNATURES_AUDIO[extension];
+      if (attendue) {
+        const debut = new Uint8Array(tampon.slice(0, attendue.length));
+        if (attendue.some((octet, index) => debut[index] !== octet)) {
+          return reponse(request, { ok: false, message: 'Le fichier audio transmis est invalide.' }, 400);
+        }
+      }
+      const nom = `note-vocale-${valeur('prenom')}-${valeur('nom')}.${extension}`
+        .toLowerCase()
+        .replace(/[^a-z0-9.-]+/g, '-');
+      piecesJointes.push({ name: nom, content: base64(tampon) });
+      dureeVoix = valeur('duree_vocale') || 'durée non transmise';
+    }
+
+    const linkedin = lienLinkedin(donnees.get('linkedin'));
+
     await envoyerEmail(env, {
       sujet: `Candidature · ${valeur('prenom')} ${valeur('nom')} · ${valeur('profil')}`,
       html: gabaritNotification('Nouvelle candidature', [
@@ -68,6 +127,8 @@ export async function onRequestPost({ request, env }) {
         ['Téléphone', valeur('telephone')],
         ['Profil', valeur('profil')],
         ['Secteur souhaité', valeur('secteurSouhaite')],
+        ['LinkedIn', linkedin || 'Non transmis'],
+        ['Note vocale', dureeVoix ? `En pièce jointe, ${dureeVoix}` : 'Non transmise'],
         ['Message', valeur('message')],
         ['CV', piecesJointes.length ? 'En pièce jointe' : 'Non transmis'],
       ]),

@@ -11,11 +11,14 @@ const listeId = `adresses-${identifiant}`;
   data-trudaines
   data-evenement="estimation_envoyee"
   data-evenement-etape="estimation_etape1"
+  data-formulaire-avis
   novalidate={false}
 >
   <input type="hidden" name="secteur" value={secteur} />
   <input type="hidden" name="quartier" value={quartier} />
   <input type="hidden" name="horodatage" value="" />
+  {/* Rempli par le calculateur immédiat : le cabinet voit la fourchette que le visiteur a eue sous les yeux. */}
+  <input type="hidden" name="fourchette" value="" />
   <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
     <label for={`societe-${identifiant}`}>Ne pas remplir</label>
     <input type="text" id={`societe-${identifiant}`} name="societe" tabindex="-1" autocomplete="off" />

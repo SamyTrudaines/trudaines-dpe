@@ -190,5 +190,57 @@ verifier(
   `statut ${pdfMenteur.status}`
 );
 
+/* Note vocale : le conteneur annoncé doit être celui du fichier. */
+function candidatureAvecVoix(fichier) {
+  const formulaire = new FormData();
+  for (const [cle, valeur] of Object.entries({
+    prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304',
+    profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour',
+    consentement: 'oui', horodatage: recent(),
+  })) formulaire.append(cle, valeur);
+  formulaire.append('note_vocale', fichier);
+  formulaire.append('duree_vocale', '42 secondes');
+  return new Request('https://www.trudaines.com/api/candidature', {
+    method: 'POST', body: formulaire, headers: { Accept: 'application/json' },
+  });
+}
+
+appels.length = 0;
+const voixMenteuse = await candidature.onRequestPost({
+  request: candidatureAvecVoix(new File(['<html>pas un son</html>'], 'voix.webm', { type: 'audio/webm' })),
+  env,
+});
+verifier(
+  'note vocale annoncée webm sans signature EBML refusée',
+  voixMenteuse.status === 400 && appels.length === 0,
+  `statut ${voixMenteuse.status}`
+);
+
+appels.length = 0;
+const voixExecutable = await candidature.onRequestPost({
+  request: candidatureAvecVoix(new File(['MZ'], 'voix.exe', { type: 'application/x-msdownload' })),
+  env,
+});
+verifier(
+  'note vocale de type non autorisé refusée',
+  voixExecutable.status === 400 && appels.length === 0,
+  `statut ${voixExecutable.status}`
+);
+
+appels.length = 0;
+const webm = new Uint8Array([0x1a, 0x45, 0xdf, 0xa3, 0x01, 0x02, 0x03, 0x04]);
+const voixValide = await candidature.onRequestPost({
+  request: candidatureAvecVoix(new File([webm], 'voix.webm', { type: 'audio/webm;codecs=opus' })),
+  env,
+});
+const piecesVoix = appels
+  .filter((a) => a.url.endsWith('/smtp/email'))
+  .flatMap((a) => a.corps.attachment || []);
+verifier(
+  'note vocale valide jointe à la notification',
+  voixValide.status === 200 && piecesVoix.some((p) => String(p.name).endsWith('.webm')),
+  `statut ${voixValide.status}, pièces ${JSON.stringify(piecesVoix.map((p) => p.name))}`
+);
+
 console.log(echecs ? `${echecs} échec(s)` : 'Tous les formulaires répondent correctement.');
 process.exit(echecs ? 1 : 0);
