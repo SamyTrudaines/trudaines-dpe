@@ -65,6 +65,8 @@ ${Object.entries(arrondissements).map(([, a]) => `- ${a.nom} : ${milliers(a.medi
 - Le quartier de Montmartre, dans le 18e, ressort plus cher que la médiane du 18e entier : la moyenne d'arrondissement sous estime un bien de la Butte d'environ 2 100 € le mètre carré, soit 126 000 € sur 60 m².
 - Dans le 9e, le prix au mètre carré augmente avec la surface : 10 500 € pour un studio, 11 300 € pour un quatre pièces et plus, contrairement à l'idée reçue.
 - L'écart entre le premier et le neuvième décile atteint 6 700 € le mètre carré à Montmartre : c'est la valeur mesurable de ce que la base ne contient pas, l'étage, l'ascenseur, la vue, l'état du bien et celui de la copropriété.
+- Neuf mandats sur dix confiés au cabinet sont des mandats exclusifs.
+- Le chiffre d'affaires du cabinet a plus que triplé d'un exercice à l'autre, sans publicité payante.
 - Un diagnostic de performance énergétique établi avant le 1er juillet 2021 n'est plus valide depuis le 31 décembre 2024.
 - L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il vise les maisons individuelles et les immeubles d'habitation en monopropriété.
 
@@ -83,7 +85,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
-- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de 5 à 10 % TTC du prix de vente selon la tranche, à la charge du vendeur, barème détaillé sur ${site.url}/honoraires.
+- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, 5 % TTC jusqu'à 700 000 € et 4 % TTC de 700 001 à 1 500 000 €, à la charge du vendeur, barème détaillé sur ${site.url}/honoraires.
 - L'estimation est elle payante ? Non. L'avis de valeur est écrit, remis après visite sous 48 heures, sans frais et sans engagement, et le propriétaire le garde même s'il vend ailleurs.
 - Peut on sortir d'un mandat exclusif ? Oui : le décret du 20 juillet 1972 permet de dénoncer un mandat exclusif à durée déterminée à tout moment passé trois mois, par lettre recommandée, la dénonciation prenant effet quinze jours après réception.
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.

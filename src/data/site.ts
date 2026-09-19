@@ -70,10 +70,9 @@ export const site = {
  */
 export const honoraires = {
   vente: [
-    { tranche: "Jusqu'à 100 000 €", taux: '10 % TTC du prix de vente', minimum: '5 000 € TTC' },
-    { tranche: 'De 100 001 € à 300 000 €', taux: '7 % TTC du prix de vente', minimum: null },
-    { tranche: 'De 300 001 € à 700 000 €', taux: '6 % TTC du prix de vente', minimum: null },
-    { tranche: 'Au-delà de 700 000 €', taux: '5 % TTC du prix de vente', minimum: null },
+    { tranche: "Jusqu'à 700 000 €", taux: '5 % TTC du prix de vente', minimum: '5 000 € TTC' },
+    { tranche: 'De 700 001 € à 1 500 000 €', taux: '4 % TTC du prix de vente', minimum: null },
+    { tranche: 'Au-delà de 1 500 000 €', taux: 'Sur demande, arrêté au mandat', minimum: null },
   ],
   chasse: [
     { tranche: "Jusqu'à 400 000 €", taux: "4 % TTC du prix d'achat", minimum: null },
@@ -86,6 +85,20 @@ export const honoraires = {
   gestion: [
     { tranche: 'Gestion locative', taux: '10 % TTC du loyer hors taxes encaissé', minimum: null },
   ],
+} as const;
+
+/**
+ * Recommandation d'affaires.
+ *
+ * `lien` pointe vers l'application de parrainage du cabinet quand elle existe :
+ * tant qu'il est vide, la page /recommander n'affiche que son formulaire, et
+ * aucune promesse de récompense n'est publiée. `recompense` est la formule
+ * exacte à afficher, à laisser vide plutôt qu'à inventer.
+ */
+export const parrainage = {
+  lien: '',
+  libelleLien: '',
+  recompense: '',
 } as const;
 
 export type LienNav = { libelle: string; href: string };

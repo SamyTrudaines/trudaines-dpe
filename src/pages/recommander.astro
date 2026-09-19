@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FormulaireRecommandation from '../components/FormulaireRecommandation.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
-import { site } from '../data/site';
+import { site, parrainage } from '../data/site';
 
 const avis = (await avisCommentés()).slice(0, 3);
 const agregatAvis = await agrégatAvis();
@@ -29,8 +29,9 @@ const etapes = [
 const faq = [
   {
     question: 'Est ce que je touche quelque chose ?',
-    reponse:
-      "Non, et personne de sérieux ne devrait vous le proposer. Rémunérer un particulier pour avoir amené une affaire immobilière expose les deux parties : l'entremise immobilière est réservée aux titulaires d'une carte professionnelle par la loi du 2 janvier 1970, dite loi Hoguet. Ce que je peux faire, c'est vous remercier autrement, et surtout faire un travail dont vous n'aurez pas à rougir auprès de la personne que vous m'avez envoyée.",
+    reponse: parrainage.recompense
+      ? `${parrainage.recompense} Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation. Dans ce cas là, il faut une carte professionnelle.`
+      : "Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Un remerciement est donc possible et il est d'usage, nous en convenons au cas par cas. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation : il faut alors une carte professionnelle.",
   },
   {
     question: 'Et si la personne ne veut pas être contactée ?',
@@ -94,7 +95,21 @@ const donnees = [
           ))}
         </ol>
       </div>
-      <FormulaireRecommandation />
+      <div>
+        {parrainage.lien && (
+          <div class="mb-8 border border-[color:var(--color-trait)] bg-[color:var(--color-papier)] p-6">
+            <p class="surtitre">En un clic</p>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+              Si vous recommandez régulièrement, l'application du cabinet suit vos recommandations et leur
+              avancement sans que vous ayez à me relancer.
+            </p>
+            <a href={parrainage.lien} rel="noopener" target="_blank" data-evt="clic_parrainage" class="bouton mt-6">
+              {parrainage.libelleLien || 'Ouvrir l’application'}
+            </a>
+          </div>
+        )}
+        <FormulaireRecommandation />
+      </div>
     </div>
   </section>
 
