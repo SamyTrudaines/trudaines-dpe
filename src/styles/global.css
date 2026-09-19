@@ -186,6 +186,33 @@
     color: var(--color-encre);
   }
 
+  /*
+   * Boutons posés sur une photographie. Le blanc plein porte l'encre, donc un
+   * contraste de 17:1, et la version au contour garde un fond translucide
+   * plutôt que transparent : sur un ciel clair, un simple filet blanc disparaît.
+   */
+  .bouton-clair {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--color-encre);
+  }
+  .bouton-clair:hover {
+    background-color: var(--color-or);
+    border-color: var(--color-or);
+    color: var(--color-encre);
+  }
+  .bouton-contour-clair {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+    backdrop-filter: blur(2px);
+  }
+  .bouton-contour-clair:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: var(--color-encre);
+  }
+
   .lien-souligne {
     color: var(--color-encre);
     text-decoration: underline;

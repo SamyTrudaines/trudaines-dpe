@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { secteurs } from '../data/secteurs';
@@ -74,21 +76,16 @@ const questions = [
   description="Sept engagements écrits pour vendre à Paris 9e, 18e ou 10e : estimation argumentée, paliers de prix décidés ensemble, comptes rendus."
   filAriane={[{ nom: 'Vendre' }]}
 >
-  <section class="section pt-10">
-    <div class="conteneur max-w-3xl">
-      <p class="surtitre">Vendre</p>
-      <h1 class="titre-1 mt-6">Sept engagements, tenus par écrit</h1>
-      <p class="chapo mt-8">
-        Vendre un appartement parisien aujourd'hui, c'est accepter deux vérités : les acheteurs comparent tout, et
-        ils disposent de plus d'informations qu'il y a cinq ans. La seule réponse crédible est la méthode. Voici la
-        nôtre, dans l'ordre où vous la vivrez.
-      </p>
-      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-        <a href="/estimation" class="bouton">Demander une estimation</a>
-        <a href="/honoraires" class="bouton bouton-secondaire">Voir les honoraires</a>
-      </div>
-    </div>
-  </section>
+  <Banniere
+    image={ambiance.toitsDeParis}
+    surtitre="Vendre"
+    titre="Sept engagements, tenus par écrit"
+    chapo="Les acheteurs comparent tout, et ils disposent de plus d'informations qu'il y a cinq ans. La seule réponse crédible est la méthode. Voici la nôtre, dans l'ordre où vous la vivrez."
+    premiere
+  >
+    <a href="/estimation" class="bouton bouton-clair">Demander une estimation</a>
+    <a href="/honoraires" class="bouton bouton-contour-clair">Voir les honoraires</a>
+  </Banniere>
 
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">

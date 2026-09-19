@@ -34,3 +34,12 @@ Conformément à l'article L612-1 du code de la consommation, tout consommateur 
 ## Données personnelles
 
 Le traitement des données collectées sur ce site est décrit dans la [politique de confidentialité](/politique-de-confidentialite).
+
+## Crédits photographiques
+
+Les photographies de biens, de quartiers et de références sont celles du
+cabinet. Les photographies d'ambiance sont publiées sous licence Unsplash :
+toits de Paris et toits haussmanniens par Clément Dellandrea et Mario Gogh,
+rue de l'Abreuvoir par Nathan Staz, La Maison Rose par Bastien Nvs.
+La photographie du fondateur accompagnant l'article d'Immo Matin est publiée
+par ce média, droits réservés.

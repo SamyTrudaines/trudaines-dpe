@@ -1,0 +1,61 @@
+---
+import type { Ambiance } from '../data/ambiance';
+
+/**
+ * Bandeau pleine largeur.
+ *
+ * Une image portée par un dégradé sombre, un titre en blanc, rien d'autre.
+ * Le dégradé n'est pas un effet : sans lui, un texte blanc posé sur une photo
+ * devient illisible dès que le ciel s'éclaircit. Il monte jusqu'à 72 % de
+ * l'encre en bas, ce qui tient le contraste au delà de 7:1 sur toute la zone
+ * de texte, quelle que soit la photographie.
+ */
+interface Props {
+  image: Ambiance;
+  surtitre?: string;
+  titre: string;
+  chapo?: string;
+  hauteur?: 'grand' | 'moyen';
+  premiere?: boolean;
+}
+
+const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false } = Astro.props;
+const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : 'min-h-[48svh]';
+---
+<section class={`relative isolate flex items-end overflow-hidden bg-[color:var(--color-encre)] ${classeHauteur}`}>
+  <img
+    src={`${image.fichier}.webp`}
+    srcset={`${image.fichier}-1200.webp 1200w, ${image.fichier}.webp 2000w`}
+    sizes="100vw"
+    alt={image.alt}
+    width="2000"
+    height="1333"
+    fetchpriority={premiere ? 'high' : undefined}
+    loading={premiere ? 'eager' : 'lazy'}
+    decoding="async"
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
+  />
+  <div
+    class="absolute inset-0 -z-10"
+    aria-hidden="true"
+    style="background: linear-gradient(to top, rgba(29,29,27,0.86) 0%, rgba(29,29,27,0.68) 32%, rgba(29,29,27,0.38) 62%, rgba(29,29,27,0.22) 100%)"
+  >
+  </div>
+
+  <div class="conteneur w-full pb-16 pt-24 md:pb-24 md:pt-32">
+    <div class="max-w-3xl">
+      {surtitre && (
+        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-or)]">
+          {surtitre}
+        </p>
+      )}
+      <h1 class="mt-6 font-[family-name:var(--font-titre)] text-[2.25rem] leading-[1.08] text-white sm:text-5xl md:text-6xl">
+        {titre}
+      </h1>
+      {chapo && <p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/85">{chapo}</p>}
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

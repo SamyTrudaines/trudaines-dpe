@@ -7,6 +7,8 @@ import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -50,38 +52,24 @@ const engagements = [
   titre="Trudaines | Cabinet immobilier Paris 9e et Montmartre"
   description="Cabinet de vente immobilière à Paris 9e nord, Montmartre et 10e. Estimation écrite sous 48 heures et compte rendu après chaque visite."
 >
-  <section class="section pt-12 md:pt-20">
-    <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-      <div>
-        <p class="surtitre">Paris 9e nord · Montmartre · Paris 10e</p>
-        <h1 class="titre-1 mt-6">
-          Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
-        </h1>
-        <p class="chapo mt-8 max-w-xl">
-          Trudaines est un cabinet de vente immobilière installé au pied de la Butte. Nous travaillons un périmètre
-          restreint, rue par rue, avec les données des ventes réellement signées et le regard d'un professionnel qui
-          visite lui-même chaque bien.
-        </p>
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a href="/estimation" class="bouton">Estimer mon bien</a>
-          <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
-        </div>
-        <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
-          Estimation gratuite et sans engagement. Réponse sous 24 heures ouvrées, au{' '}
-          <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
-        </p>
-      </div>
-      <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
-        <img
-          src="/images/accueil-fenetre-abbesses.webp"
-          alt="Fenêtre ouverte sur une façade aux volets pâles, appartement présenté par Trudaines aux Abbesses"
-          width="1000"
-          height="1250"
-          fetchpriority="high"
-          decoding="async"
-          class="h-full w-full object-cover"
-        />
-      </div>
+  <Banniere
+    image={ambiance.toitsHaussmanniens}
+    surtitre="Paris 9e nord · Montmartre · Paris 10e"
+    titre="Vendre un appartement parisien sans y laisser ni son prix ni son calendrier"
+    chapo="Cabinet de vente immobilière installé au pied de la Butte. Un périmètre restreint, travaillé rue par rue, avec les ventes réellement signées et le regard d'un professionnel qui visite lui même chaque bien."
+    premiere
+  >
+    <a href="/estimation" class="bouton bouton-clair">Estimer mon bien</a>
+    <a href="/vendre" class="bouton bouton-contour-clair">Notre méthode de vente</a>
+  </Banniere>
+
+  <section class="section pt-12">
+    <div class="conteneur">
+      <p class="max-w-3xl text-[color:var(--color-ardoise)]">
+        Estimation sans frais et sans engagement, avis de valeur écrit remis après visite sous 48 heures.
+        Réponse sous 24 heures ouvrées, au{' '}
+        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
+      </p>
     </div>
   </section>
 
