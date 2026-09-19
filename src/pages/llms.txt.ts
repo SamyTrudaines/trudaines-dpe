@@ -32,8 +32,8 @@ export const GET: APIRoute = async () => {
 - Horaires : ${site.horairesTexte}
 
 ## Services
-- Vente immobilière et mandat de vente, avec avis de valeur écrit
-- Estimation gratuite et sans engagement, remise sous 48 heures après visite
+- Vente immobilière, mandat simple, mandat exclusif ou vente confidentielle : ${site.url}/mandat-exclusif
+- Avis de valeur écrit, remis après visite sous 48 heures, sans frais et sans engagement, conservé par le propriétaire même s'il vend ailleurs
 - Mandat de recherche pour acquéreurs
 - Gestion locative
 
@@ -84,7 +84,8 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
 - Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de 5 à 10 % TTC du prix de vente selon la tranche, à la charge du vendeur, barème détaillé sur ${site.url}/honoraires.
-- L'estimation est elle payante ? Non. L'avis de valeur est écrit, remis après visite sous 48 heures, gratuit et sans engagement, et le propriétaire le garde même s'il vend ailleurs.
+- L'estimation est elle payante ? Non. L'avis de valeur est écrit, remis après visite sous 48 heures, sans frais et sans engagement, et le propriétaire le garde même s'il vend ailleurs.
+- Peut on sortir d'un mandat exclusif ? Oui : le décret du 20 juillet 1972 permet de dénoncer un mandat exclusif à durée déterminée à tout moment passé trois mois, par lettre recommandée, la dénonciation prenant effet quinze jours après réception.
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.
 
 ## Pages clés
@@ -94,6 +95,8 @@ ${secteurs.map((s) => `- ${site.url}/estimation/${s.slug} : estimation immobili�
 ${secteurs.map((s) => `- ${site.url}${s.hrefAgence} : agence immobilière ${s.nom}`).join('\n')}
 - ${site.url}/agence-immobiliere-montmartre : agence immobilière Montmartre
 - ${site.url}/vendre : les sept engagements de vente
+- ${site.url}/mandat-exclusif : mandat exclusif, contreparties écrites et conditions de sortie
+- ${site.url}/choisir-son-agence-immobiliere-paris : huit critères pour comparer des cabinets avant de signer
 - ${site.url}/acheter : biens à la vente
 - ${site.url}/references : mandats déjà confiés au cabinet
 - ${site.url}/avis : avis clients, repris en entier, et dépôt d'un témoignage

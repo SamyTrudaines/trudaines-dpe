@@ -40,6 +40,8 @@ const annee = new Date().getFullYear();
       <ul class="mt-6 space-y-1 text-sm">
         <li><a href="/estimation" class="inline-block py-1.5 no-underline hover:underline">Estimation de mon bien</a></li>
         <li><a href="/vendre" class="inline-block py-1.5 no-underline hover:underline">La méthode de vente</a></li>
+        <li><a href="/mandat-exclusif" class="inline-block py-1.5 no-underline hover:underline">Le mandat exclusif</a></li>
+        <li><a href="/choisir-son-agence-immobiliere-paris" class="inline-block py-1.5 no-underline hover:underline">Choisir son agence</a></li>
         {secteurs.map((s) => (
           <li><a href={`/estimation/${s.slug}`} class="inline-block py-1.5 no-underline hover:underline">Estimation {s.nom}</a></li>
         ))}

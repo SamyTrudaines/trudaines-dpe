@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlocCta from '../components/BlocCta.astro';
+import { site } from '../data/site';
+
+/*
+ * Page de comparaison, sans citer aucun concurrent.
+ *
+ * Un vendeur qui hésite entre trois cabinets ne cherche pas un avis sur eux, il
+ * cherche des critères. Nommer un concurrent, ou pire glisser son nom dans le
+ * texte pour capter ses recherches, expose à deux titres : l'usage de la marque
+ * d'autrui dans un contenu commercial relève de la contrefaçon et du
+ * parasitisme, et la publicité comparative n'est licite, aux termes de
+ * l'article L122-1 du code de la consommation, que si elle est objective,
+ * vérifiable et loyale. Un texte dissimulé ne peut être ni l'un ni l'autre, et
+ * les moteurs de recherche sanctionnent le procédé par le déclassement.
+ *
+ * Les critères ci dessous sont donc opposables à n'importe quel cabinet, y
+ * compris Trudaines.
+ */
+const criteres = [
+  {
+    titre: "Sur quoi repose le prix qu'on vous annonce",
+    demander: "« Sur combien de ventes signées, dans quelle rue, sur quelle période ? »",
+    bonneReponse:
+      "Des ventes enregistrées devant notaire, citées une par une, avec leur date et leur surface. La base des valeurs foncières est publique : n'importe qui peut la vérifier.",
+    signal:
+      "Un chiffre annoncé au téléphone, avant toute visite, ou une moyenne d'arrondissement présentée comme une estimation.",
+  },
+  {
+    titre: 'Ce que vous repartez avec',
+    demander: '« Qu’est ce que je garde, par écrit, à la fin du rendez vous ? »',
+    bonneReponse:
+      "Un document écrit, remis sous quelques jours, qui liste les comparables, les ajustements et une fourchette. Vous le gardez même si vous ne signez pas.",
+    signal: "Rien d'écrit, ou un document qui apparaît seulement après la signature du mandat.",
+  },
+  {
+    titre: 'Le périmètre réellement travaillé',
+    demander: '« Combien de ventes avez vous conclues dans ce quartier ces douze derniers mois ? »',
+    bonneReponse:
+      "Une réponse chiffrée et vérifiable, et un refus assumé des secteurs que le cabinet ne connaît pas.",
+    signal:
+      "Une couverture qui s'étend à toute l'Île-de-France. Personne ne connaît les cages d'escalier de cent quartiers.",
+  },
+  {
+    titre: 'La forme du mandat, et sa sortie',
+    demander: '« Quelle durée, quelle irrévocabilité, comment j’en sors ? »',
+    bonneReponse:
+      "Un mandat écrit, numéroté, inscrit au registre des mandats, avec sa durée. Et le rappel que la loi permet de dénoncer un mandat exclusif à durée déterminée passé trois mois, par lettre recommandée, avec effet quinze jours après réception.",
+    signal: "Une pression à signer le jour même, ou une durée présentée comme non négociable.",
+  },
+  {
+    titre: 'Les honoraires, et qui les paie',
+    demander: '« Quel taux, sur quelle tranche, à la charge de qui ? »',
+    bonneReponse:
+      "Un barème affiché, toutes taxes comprises, avec la charge du paiement indiquée pour chaque prestation. C'est une obligation, pas une faveur : arrêté du 10 janvier 2017 et arrêté du 26 janvier 2022.",
+    signal: "Un taux annoncé oralement, une fourchette d'honoraires, ou un barème introuvable sur le site.",
+  },
+  {
+    titre: 'La carte professionnelle et la garantie',
+    demander: '« Quel est votre numéro de carte T et votre garant financier ? »',
+    bonneReponse:
+      "Un numéro de carte professionnelle délivré par la chambre de commerce, un garant nommé et un montant de garantie. Les deux figurent obligatoirement sur les documents et le site.",
+    signal: "Une réponse évasive. L'entremise immobilière sans carte professionnelle est un délit.",
+  },
+  {
+    titre: 'Le suivi pendant la commercialisation',
+    demander: '« Qu’est ce que je reçois après chaque visite, et à quel rythme ? »',
+    bonneReponse:
+      "Un compte rendu écrit après chaque visite et un point de synthèse hebdomadaire. Au bout de six visites, ces comptes rendus disent s'il faut corriger le prix ou la présentation.",
+    signal: "Un rappel seulement quand il y a une offre, ou des retours donnés de mémoire au téléphone.",
+  },
+  {
+    titre: 'Qui fera le travail',
+    demander: '« Qui visite, qui négocie, qui me suit jusqu’à la signature ? »',
+    bonneReponse:
+      "Un nom, et la même personne d'un bout à l'autre. Savoir qui vous appellera un samedi à 19 heures vaut mieux qu'un organigramme.",
+    signal: "Un interlocuteur pour l'estimation, un autre pour les visites, un troisième pour la négociation.",
+  },
+];
+
+const faq = [
+  {
+    question: 'Faut il choisir une grande enseigne ou un cabinet indépendant ?',
+    reponse:
+      "La question utile n'est pas la taille mais le nombre de mandats traités en même temps par la personne qui s'occupera du vôtre. Un cabinet indépendant qui suit huit mandats et une agence de réseau qui en suit huit font le même travail ; à trente, ni l'un ni l'autre ne tient ses engagements de suivi.",
+  },
+  {
+    question: 'Faut il faire estimer son bien par plusieurs agences ?',
+    reponse:
+      "Oui, deux ou trois, et il faut comparer les documents écrits plutôt que les chiffres annoncés. Le cabinet qui annonce le prix le plus élevé n'est pas celui qui vendra le plus cher : un bien surévalué se vend plus bas après deux corrections.",
+  },
+  {
+    question: 'Les honoraires se négocient ils ?',
+    reponse:
+      "Le barème affiché est un maximum au sens de l'arrêté du 26 janvier 2022 : un cabinet peut pratiquer moins, jamais plus. Ce qui se négocie utilement, ce sont les contreparties écrites dans le mandat, pas seulement le taux.",
+  },
+  {
+    question: 'Une estimation en ligne suffit elle ?',
+    reponse:
+      "Elle situe un ordre de grandeur, elle ne remplace pas la visite. Dans un même quartier parisien, l'écart entre le premier et le neuvième décile atteint plusieurs milliers d'euros au mètre carré : cet écart mesure exactement ce qu'aucun formulaire ne voit, l'étage, l'ascenseur, la vue, le calme réel et l'état de la copropriété.",
+  },
+];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Choisir son agence immobilière à Paris',
+    description: 'Huit critères vérifiables pour comparer des cabinets immobiliers parisiens avant de signer un mandat.',
+    step: criteres.map((c) => ({ '@type': 'HowToStep', name: c.titre, text: c.demander })),
+  },
+];
+---
+<Layout
+  titre="Choisir son agence immobilière à Paris | Trudaines"
+  description="Huit questions à poser avant de signer un mandat à Paris 9e, 10e ou 18e, la bonne réponse attendue et le signal qui doit alerter."
+  filAriane={[{ nom: 'Choisir son agence' }]}
+  donnees={donnees}
+  cta={false}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Avant de signer</p>
+      <h1 class="titre-1 mt-6">Comment choisir son agence immobilière à Paris</h1>
+      <p class="chapo mt-8">
+        Trois cabinets, trois chiffres, parfois cent mille euros d'écart. Voici les huit questions qui
+        départagent, la réponse qu'un professionnel sérieux donne, et le signal qui doit vous faire reposer le
+        stylo. Ces critères valent pour n'importe quel cabinet, Trudaines compris.
+      </p>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Aucun concurrent n'est nommé sur cette page, et ce n'est pas de la prudence : un classement d'agences
+        écrit par une agence ne vaut rien. Les critères, eux, sont vérifiables.
+      </p>
+    </div>
+  </section>
+
+  {criteres.map((c, index) => (
+    <section class="section filet pb-0 last:pb-24">
+      <div class="conteneur grid gap-10 lg:grid-cols-[0.55fr_1.45fr] lg:items-start">
+        <div>
+          <p class="surtitre">Critère {String(index + 1).padStart(2, '0')}</p>
+          <h2 class="titre-3 mt-4">{c.titre}</h2>
+        </div>
+        <div class="grid gap-6">
+          <p class="font-[family-name:var(--font-titre)] text-lg text-[color:var(--color-encre)]">{c.demander}</p>
+          <div class="border-l-2 border-[color:var(--color-encre)] pl-6">
+            <p class="surtitre">Ce qu'une bonne réponse contient</p>
+            <p class="mt-3 text-[color:var(--color-ardoise)]">{c.bonneReponse}</p>
+          </div>
+          <div class="border-l-2 border-[color:var(--color-or)] pl-6">
+            <p class="surtitre">Ce qui doit alerter</p>
+            <p class="mt-3 text-[color:var(--color-ardoise)]">{c.signal}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="section filet" aria-labelledby="questions">
+    <div class="conteneur max-w-3xl">
+      <h2 id="questions" class="titre-2">Quatre questions qui reviennent</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        <a href="/honoraires" class="lien-souligne">Notre barème, affiché</a>
+        <a href="/mandat-exclusif" class="lien-souligne">Notre mandat exclusif, et sa sortie</a>
+        <a href="/prix-immobilier" class="lien-souligne">Nos prix au mètre carré, rue par rue</a>
+        <a href="/avis" class="lien-souligne">Nos avis clients, avec leur source</a>
+      </p>
+      <p class="mt-8 text-xs text-[color:var(--color-ardoise)]">
+        {site.nomLong}, carte professionnelle {site.legal.carteT}, garantie financière {site.legal.garantie},
+        {' '}{site.legal.garantieMontant}. Cette page n'est pas un conseil juridique personnalisé.
+      </p>
+    </div>
+  </section>
+
+  <BlocCta
+    titre="Posez nous ces huit questions"
+    texte="Nous y répondons par écrit, avant toute signature, et vous gardez le document quoi qu'il arrive."
+  />
+</Layout>
