@@ -7,6 +7,7 @@ import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import CarteBien from '../../components/CarteBien.astro';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
 import { site } from '../../data/site';
+import { titreSeo, descriptionSeo } from '../../lib/seo';
 import { jeuPhoto } from '../../lib/images';
 
 interface Props { bien: CollectionEntry<'biens'> }
@@ -82,12 +83,12 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={archive
-    ? titreArchive
-    : `${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
-  description={archive
-    ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par le cabinet Trudaines, bien non disponible.`
-    : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
+  titre={titreSeo([d.titre, !archive && `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
+  description={descriptionSeo(
+    archive
+      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par le cabinet Trudaines, bien non disponible.`
+      : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`,
+  )}
   image={d.photos[0]?.src}
   filAriane={archive
     ? [{ nom: 'Nos références', href: '/references' }, { nom: d.titre }]

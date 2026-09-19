@@ -23,8 +23,9 @@ const articles = (await getCollection('articles', (a) => !a.data.brouillon)).sor
     </div>
   </section>
 
-  <section class="section pt-0">
+  <section class="section pt-0" aria-labelledby="tous-les-articles">
     <div class="conteneur">
+      <h2 id="tous-les-articles" class="sr-only">Tous les articles</h2>
       {articles.length === 0 ? (
         <p class="text-[color:var(--color-ardoise)]">Les premiers articles arrivent prochainement.</p>
       ) : (

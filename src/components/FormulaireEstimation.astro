@@ -121,7 +121,7 @@ const listeId = `adresses-${identifiant}`;
       <div class="mt-6 flex items-start gap-3">
         <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
         <label class="text-sm text-[color:var(--color-ardoise)]" for={`consentement-${identifiant}`}>
-          J'accepte d'être recontacté par Trudaines au sujet de ma demande. Mes données ne sont ni vendues ni cédées.
+          J'accepte d'être recontacté par Trudaines au sujet de ma demande. Mes données ne sont ni vendues ni cédées.{' '}
           <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
         </label>
       </div>
@@ -139,7 +139,7 @@ const listeId = `adresses-${identifiant}`;
 
   <div data-confirmation hidden class="py-4">
     <p class="surtitre">Demande envoyée</p>
-    <h3 class="titre-3 mt-4">Merci, votre demande est enregistrée.</h3>
+    <h2 class="titre-3 mt-4">Merci, votre demande est enregistrée.</h2>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
       Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
       Un email de confirmation vient de partir vers votre boîte.

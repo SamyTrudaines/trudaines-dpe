@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { titreSeo, descriptionSeo } from '../../lib/seo';
 import CarteArticle from '../../components/CarteArticle.astro';
 import { dateFr, dateIso } from '../../lib/format';
 import { site } from '../../data/site';
@@ -37,8 +38,8 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={article.data.titreSeo ?? `${article.data.titre} | Trudaines`}
-  description={article.data.descriptionSeo ?? article.data.chapo}
+  titre={article.data.titreSeo ?? titreSeo([article.data.titre, 'Trudaines'])}
+  description={descriptionSeo(article.data.descriptionSeo ?? article.data.chapo)}
   image={article.data.image}
   type="article"
   filAriane={[{ nom: 'Panorama', href: '/panorama' }, { nom: article.data.titre }]}
@@ -72,7 +73,7 @@ const donnees = [
       </div>
       <div class="conteneur-texte mt-16 border-t border-[color:var(--color-trait)] pt-8">
         <p class="text-sm text-[color:var(--color-ardoise)]">
-          Article rédigé par Samy Santamarina, fondateur de Trudaines.
+          Article rédigé par Samy Santamarina, fondateur de Trudaines.{' '}
           <a href="/estimation" class="lien-souligne">Faire estimer mon bien</a>.
         </p>
         {article.data.motsCles.length > 0 && (

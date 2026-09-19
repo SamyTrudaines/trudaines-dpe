@@ -28,7 +28,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 9e | Appartement et maison - Trudaines',
+    titre: 'Estimation immobilière Paris 9e | Trudaines',
     description:
       "Estimation immobilière à Paris 9e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet du secteur.",
     titreAgence: 'Agence immobilière Paris 9e | Vente et estimation - Trudaines',
@@ -134,7 +134,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75010',
     nom: 'Paris 10e',
     nomLong: '10e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 10e | Lariboisière Rocroy - Trudaines',
+    titre: 'Estimation immobilière Paris 10e | Trudaines',
     description:
       "Estimation immobilière à Paris 10e, secteur Lariboisière Rocroy. Estimation appartement Paris 10e, vente maison Paris 10e par un cabinet voisin du quartier.",
     titreAgence: 'Agence immobilière Paris 10e | Lariboisière Rocroy - Trudaines',

@@ -1,18 +1,26 @@
 /**
- * Jeu de sources d'une photographie de bien.
+ * Jeu de sources d'une photographie.
  *
- * Les photographies rapatriées existent en 1600 px et, depuis
- * scripts/variantes-photos.mjs, en 800 px sous le nom `NN-800.webp`. Une carte
- * ou une vignette n'a jamais besoin de la grande : le srcset laisse le
- * navigateur choisir. Toute autre adresse, une image ajoutée à la main par
- * exemple, est renvoyée telle quelle, sans srcset.
+ * Les photographies rapatriées font 1600 px de large et existent aussi en
+ * 800 px sous le nom `NN-800.webp`, produites par scripts/variantes-photos.mjs.
+ * Une carte n'a jamais besoin de la grande : le srcset laisse le navigateur
+ * choisir selon la place réelle et la densité de l'écran. Toute autre adresse,
+ * une image ajoutée à la main par exemple, est renvoyée telle quelle.
  */
-const PHOTO_BIEN = /^\/images\/biens\/[^/]+\/\d\d\.webp$/;
+const AVEC_VARIANTE = [
+  /^\/images\/biens\/[^/]+\/\d\d\.webp$/,
+  /^\/images\/panorama\/[^/]+\.webp$/,
+];
 
 export function jeuPhoto(src: string): { src: string; srcset?: string } {
-  if (!PHOTO_BIEN.test(src)) return { src };
+  if (!AVEC_VARIANTE.some((motif) => motif.test(src))) return { src };
   return { src, srcset: `${src.replace('.webp', '-800.webp')} 800w, ${src} 1600w` };
 }
 
-/** Largeurs d'affichage d'une grille de trois cartes, du mobile au bureau. */
-export const TAILLES_CARTE = '(min-width: 1024px) 420px, (min-width: 640px) 45vw, 92vw';
+/**
+ * Place réellement occupée par une carte dans une grille de trois colonnes :
+ * conteneur de 78 rem moins ses marges de 4 rem, moins deux gouttières de 3 rem,
+ * divisé par trois, soit 341 px. Annoncer plus large ferait descendre le
+ * fichier de 1600 px sur un écran à haute densité, ce que la variante évite.
+ */
+export const TAILLES_CARTE = '(min-width: 1024px) 341px, (min-width: 640px) 45vw, 92vw';
