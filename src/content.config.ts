@@ -169,6 +169,33 @@ const guides = defineCollection({
   }),
 });
 
+/*
+ * Situations de vente. Les questions de prix font le volume, les questions de
+ * situation font les mandats : succession, indivision, divorce, congé pour
+ * vendre. Chaque fiche répond à une question que le vendeur concerné doit
+ * résoudre avant de pouvoir vendre, avec ses sources citées dans le texte.
+ * Ces pages servent deux fois : citées par les moteurs, puis envoyées par
+ * mail au vendeur après le premier appel.
+ */
+const situations = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/situations' }),
+  schema: z.object({
+    titre: z.string(),
+    question: z.string(),
+    chapo: z.string(),
+    titreSeo: z.string(),
+    descriptionSeo: z.string(),
+    dateMaj: z.coerce.date(),
+    ordre: z.number(),
+    motsCles: z.array(z.string()).default([]),
+    faq: z
+      .array(z.object({ question: z.string(), reponse: z.string() }))
+      .default([]),
+    /* Ce que le lecteur doit retenir, affiché en tête et repris par les moteurs. */
+    essentiel: z.array(z.string()).default([]),
+  }),
+});
+
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
   schema: z.object({
@@ -179,4 +206,4 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { biens, quartiers, articles, presse, avis, guides, pages };
+export const collections = { biens, quartiers, articles, presse, avis, guides, pages, situations };

@@ -1,7 +1,7 @@
 ---
 titre: "Appartement 3 pièces 65 m² traversant, Brochant Épinettes"
 reference: "T-2407"
-quartier: "Brochant Épinettes"
+quartier: "Épinettes"
 ville: "Paris"
 arrondissement: "75017"
 prix: 0

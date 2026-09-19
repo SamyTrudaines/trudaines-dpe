@@ -198,7 +198,7 @@ export const secteurs: Secteur[] = [
       "Le 17e se lit en trois marchés qui n'ont presque rien en commun. Les Batignolles et leur square, où la demande familiale est constante. Les Épinettes et Brochant, plus abordables, portés par le prolongement du tramway et par Clichy Batignolles. Et la plaine Monceau, qui relève d'un autre budget. Estimer ici suppose de savoir dans lequel des trois se trouve votre rue.",
     introAgence:
       "Le 17e nord prolonge naturellement notre terrain : même bassin d'acheteurs que le 9e et le 18e ouest, mêmes immeubles de rapport de la fin du XIXe, et des vendeurs qui arbitrent souvent entre les deux rives de la place de Clichy.",
-    quartiers: [],
+    quartiers: ['batignolles', 'epinettes'],
     prixMoyen: '10 130 € le m², prix médian',
     fourchette:
       "7 375 à 13 246 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",

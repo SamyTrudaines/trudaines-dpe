@@ -1,0 +1,122 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import { dateFr, dateIso } from '../../lib/format';
+import { site } from '../../data/site';
+
+interface Props { situation: CollectionEntry<'situations'> }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const situations = await getCollection('situations');
+  return situations.map((s) => ({ params: { situation: s.id }, props: { situation: s } }));
+};
+
+const { situation } = Astro.props;
+const d = situation.data;
+const { Content } = await render(situation);
+
+const autres = (await getCollection('situations'))
+  .filter((s) => s.id !== situation.id)
+  .sort((a, b) => a.data.ordre - b.data.ordre);
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: d.question,
+        acceptedAnswer: { '@type': 'Answer', text: d.chapo },
+      },
+      ...d.faq.map((q) => ({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+      })),
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.titre,
+    description: d.chapo,
+    dateModified: dateIso(d.dateMaj),
+    author: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
+    publisher: { '@id': `${site.url}/#cabinet` },
+    mainEntityOfPage: `${site.url}/vendre/${situation.id}`,
+  },
+];
+---
+<Layout
+  titre={d.titreSeo}
+  description={d.descriptionSeo}
+  filAriane={[{ nom: 'Vendre', href: '/vendre' }, { nom: d.titre }]}
+  donnees={donnees}
+>
+  <article>
+    <section class="section pt-10">
+      <div class="conteneur-texte">
+        <p class="surtitre">Situations de vente · mis à jour en {dateFr(d.dateMaj)}</p>
+        <h1 class="titre-1 mt-6">{d.titre}</h1>
+        <p class="chapo mt-8">{d.chapo}</p>
+
+        {d.essentiel.length > 0 && (
+          <div class="bloc mt-12">
+            <h2 class="titre-3">L'essentiel</h2>
+            <ul class="mt-5 space-y-3 text-[color:var(--color-ardoise)]">
+              {d.essentiel.map((point) => (
+                <li class="flex gap-3">
+                  <span aria-hidden="true" class="text-[color:var(--color-or-fonce)]">·</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section class="pb-8">
+      <div class="conteneur-texte prose-trudaines">
+        <Content />
+      </div>
+      <div class="conteneur-texte mt-16 pt-8">
+        <p class="text-sm text-[color:var(--color-ardoise)]">
+          Cette page décrit des règles générales à sa date de mise à jour. Elle ne remplace ni votre notaire ni
+          votre avocat : votre situation peut relever d'exceptions qu'un texte général ne couvre pas.
+          Rédigée par Samy Santamarina, agent immobilier titulaire de la carte professionnelle {site.legal.carteT}.
+        </p>
+      </div>
+    </section>
+  </article>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Dans cette situation, commencez par un avis de valeur</h2>
+        <p class="chapo mt-6">
+          Écrit, remis après visite sous 48 heures, sans frais et sans engagement. C'est le document qui met
+          d'accord des héritiers, des époux ou des indivisaires : un chiffre argumenté, opposable, que chacun
+          peut lire.
+        </p>
+      </div>
+      <FormulaireEstimation identifiant={`estimation-${situation.id}`} />
+    </div>
+  </section>
+
+  {autres.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">Les autres situations</h2>
+        <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          {autres.map((s) => (
+            <a href={`/vendre/${s.id}`} class="lien-souligne">{s.data.titre}</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
