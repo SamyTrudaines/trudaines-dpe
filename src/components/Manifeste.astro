@@ -1,0 +1,73 @@
+---
+/**
+ * Le manifeste, posé sur la moulure.
+ *
+ * L'image vient de l'ancien site du cabinet : un panneau de plâtre mouluré,
+ * blanc sur blanc. Elle ne sert pas d'illustration mais de matière, comme un
+ * papier à grain. Le texte reste en encre par dessus, à plus de quinze pour
+ * un de contraste, et l'image porte un voile blanc pour que ce rapport tienne
+ * quel que soit l'endroit où elle est recadrée.
+ */
+const mots = [
+  {
+    titre: 'Un métier, pas trois',
+    texte:
+      "La transaction résidentielle, la recherche pour un acquéreur, la gestion d'un bien loué. Rien d'autre. L'immobilier commercial, la promotion et la gestion de patrimoine appartiennent à d'autres maisons, qui les font mieux.",
+  },
+  {
+    titre: 'Le réseau plutôt que la vitrine',
+    texte:
+      "La moitié des ventes du cabinet vient d'une recommandation : un courtier, un notaire, un client, un confrère. Une adresse se transmet de personne à personne bien avant d'apparaître sur un portail.",
+  },
+  {
+    titre: 'La donnée au service du jugement',
+    texte:
+      "Ventes signées, outils d'analyse développés en interne, intelligence artificielle sur les tâches répétitives. Ce temps gagné retourne là où il compte : la visite, la préparation du dossier, la négociation.",
+  },
+];
+---
+<section class="relative isolate overflow-hidden" aria-labelledby="manifeste">
+  <picture>
+    <source type="image/avif" srcset="/images/marque/moulure-1200.avif 1200w, /images/marque/moulure-2000.avif 2000w" sizes="100vw" />
+    <source type="image/webp" srcset="/images/marque/moulure-1200.webp 1200w, /images/marque/moulure-2000.webp 2000w" sizes="100vw" />
+    <img
+      src="/images/marque/moulure-2000.webp"
+      alt=""
+      aria-hidden="true"
+      width="2000"
+      height="1125"
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+    />
+  </picture>
+  <div class="conteneur py-12 md:py-20 lg:py-28">
+    <div class="mx-auto max-w-6xl bg-white px-6 py-14 sm:px-10 md:px-14 md:py-20">
+    <div class="max-w-3xl">
+      <p class="surtitre">Notre vision</p>
+      <h2 id="manifeste" class="titre-1 mt-8">
+        Trudaines repense l'immobilier en conjuguant l'expertise, le réseau et la donnée
+      </h2>
+      <p class="chapo mt-10">
+        Nous sommes une maison numérique. Pas d'agence en pied d'immeuble, pas de vitrine à remplir, pas de
+        portefeuille à faire tourner. Un professionnel qui visite lui même, qui conduit lui même, et qui rend
+        compte par écrit. Le reste, les outils s'en chargent.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Nos clients placent l'humain et l'éthique au cœur de leur projet. Nous faisons pareil, et nous le
+        prouvons avec des documents, pas avec des promesses.
+      </p>
+    </div>
+
+    <div class="mt-20 grid gap-x-14 gap-y-14 md:grid-cols-3">
+      {mots.map((m, n) => (
+        <div>
+          <p class="chiffre" aria-hidden="true">{String(n + 1).padStart(2, '0')}</p>
+          <h3 class="titre-3 mt-4">{m.titre}</h3>
+          <p class="mt-4 text-[color:var(--color-ardoise)]">{m.texte}</p>
+        </div>
+      ))}
+    </div>
+    </div>
+  </div>
+</section>

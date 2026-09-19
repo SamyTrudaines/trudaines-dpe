@@ -159,7 +159,7 @@ const donnees = [
       <h2 id="angoisses" class="titre-2 max-w-2xl">Les quatre inquiétudes que nous entendons le plus</h2>
       <div class="mt-14 grid gap-12 md:grid-cols-2">
         {angoisses.map((a) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-6">
+          <div class="bloc">
             <h3 class="titre-3">{a.titre}</h3>
             <p class="mt-4 text-[color:var(--color-ardoise)]">{a.texte}</p>
           </div>
@@ -173,7 +173,7 @@ const donnees = [
       <h2 id="secteurs" class="titre-2">Estimation par arrondissement</h2>
       <div class="mt-12 grid gap-10 md:grid-cols-3">
         {secteurs.map((s) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-6">
+          <div class="bloc">
             <h3 class="titre-3">
               <a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a>
             </h3>

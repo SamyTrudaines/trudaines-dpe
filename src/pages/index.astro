@@ -8,6 +8,7 @@ import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 import Ouverture from '../components/Ouverture.astro';
+import Manifeste from '../components/Manifeste.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -48,28 +49,29 @@ const engagements = [
 ];
 ---
 <Layout
-  titre="Trudaines | Cabinet immobilier Paris 9e et Montmartre"
-  description="Cabinet de vente immobilière à Paris 9e nord, Montmartre et 10e. Estimation écrite sous 48 heures et compte rendu après chaque visite."
+  titre="Trudaines | Cabinet de vente immobilière à Paris et en Île-de-France"
+  description="Vente, recherche et gestion locative à Paris et en Île-de-France. Maison numérique qui travaille par le réseau et par la donnée. Avis de valeur écrit sous 48 heures."
 >
   <Ouverture />
 
   <section class="section pt-14 md:pt-20">
     <div class="conteneur">
-      <p class="surtitre">Paris 9e nord · Montmartre · Paris 10e</p>
+      <p class="surtitre">Paris et Île-de-France</p>
       <h1 class="titre-1 mt-8 max-w-4xl">
         Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
       </h1>
       <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
         <p class="chapo max-w-2xl">
-          Cabinet de vente immobilière installé au pied de la Butte. Un périmètre restreint, travaillé rue par rue,
-          avec les ventes réellement signées et le regard d'un professionnel qui visite lui même chaque bien.
+          Maison numérique de vente immobilière. Nous travaillons par le réseau, par la recommandation et par la
+          donnée, sur toute l'Île-de-France, avec une connaissance au mètre carré du nord de Paris. Vente,
+          recherche pour acquéreur, gestion locative.
         </p>
         <div class="flex flex-col gap-4 sm:flex-row">
           <a href="/estimation" class="bouton">Estimer mon bien</a>
           <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
         </div>
       </div>
-      <p class="mt-12 max-w-3xl border-t border-[color:var(--color-trait)] pt-6 text-sm text-[color:var(--color-ardoise)]">
+      <p class="mt-14 max-w-3xl text-sm text-[color:var(--color-ardoise)]">
         Estimation sans frais et sans engagement, avis de valeur écrit remis après visite sous 48 heures.
         Réponse sous 24 heures ouvrées, au{' '}
         <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
@@ -94,6 +96,8 @@ const engagements = [
       <a href="/vendre" class="lien-souligne mt-12 inline-block text-sm">Les sept engagements de la méthode Trudaines</a>
     </div>
   </section>
+
+  <Manifeste />
 
   {biens.length > 0 && (
     <section class="section" aria-labelledby="biens-accueil">
@@ -163,7 +167,7 @@ const engagements = [
       </p>
       <div class="mt-12 grid gap-10 md:grid-cols-3">
         {secteurs.map((s) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-6">
+          <div class="bloc">
             <h3 class="titre-3">{s.nom}</h3>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
             <ul class="mt-6 space-y-2 text-sm">

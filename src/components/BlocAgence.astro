@@ -45,7 +45,7 @@ const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.pro
     <h2 id="services-secteur" class="titre-2">Nos services sur {secteurNom}</h2>
     <div class="mt-12 grid gap-10 md:grid-cols-3">
       {services.map((s) => (
-        <div class="border-t border-[color:var(--color-trait)] pt-6">
+        <div class="bloc">
           <h3 class="titre-3"><a href={s.href} class="no-underline hover:underline">{s.titre}</a></h3>
           <p class="mt-4 text-[color:var(--color-ardoise)]">{s.texte}</p>
         </div>
@@ -60,7 +60,7 @@ const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.pro
       <h2 id="quartiers-secteur" class="titre-2">Les quartiers que nous couvrons</h2>
       <div class="mt-12 grid gap-10 md:grid-cols-3">
         {quartiers.map((q) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-6">
+          <div class="bloc">
             <h3 class="titre-3"><a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a></h3>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
             <p class="mt-4 text-sm">{q.data.prixMoyenM2}</p>

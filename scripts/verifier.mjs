@@ -90,7 +90,7 @@ for (const page of pages) {
   if (h1.length === 0) erreurs.push(`${url} : aucun h1`);
   if (h1.length > 1) erreurs.push(`${url} : ${h1.length} balises h1`);
 
-  if (/Île-de-France|Ile-de-France/.test(titre || '')) {
+  if (url !== '/' && /Île-de-France|Ile-de-France/.test(titre || '')) {
     erreurs.push(`${url} : localisation trop large dans le title`);
   }
 
@@ -114,8 +114,11 @@ for (const page of pages) {
     const balise = image[0];
     const src = /src="([^"]+)"/.exec(balise)?.[1];
     const alt = /alt="([^"]*)"/.exec(balise);
+    const decorative = /aria-hidden="true"/.test(balise);
     if (!alt) erreurs.push(`${url} : image sans attribut alt (${src})`);
-    else if (!alt[1].trim()) avertissements.push(`${url} : attribut alt vide (${src})`);
+    else if (!alt[1].trim() && !decorative) {
+      avertissements.push(`${url} : attribut alt vide sans aria-hidden (${src})`);
+    }
     if (src && src.startsWith('/') && !cheminsPublics.has(src.split('?')[0])) {
       erreurs.push(`${url} : image introuvable ${src}`);
     }

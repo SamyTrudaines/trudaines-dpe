@@ -276,8 +276,11 @@
     background-color: var(--color-or-fonce);
   }
 
-  .section { padding-block: clamp(3rem, 2rem + 4vw, 6rem); }
-  .filet { border-top: 1px solid var(--color-trait); }
+  .section { padding-block: clamp(3.5rem, 2rem + 5vw, 7rem); }
+  .filet { padding-top: clamp(3.5rem, 2rem + 5vw, 7rem); }
+
+  /* Fond crème, pour marquer un changement de propos sans tracer de ligne. */
+  .section-creme { background-color: var(--color-papier); }
 
   .prose-trudaines :where(p, ul, ol) { margin-block: 1.25rem; }
   .prose-trudaines :where(h2) { font-family: var(--font-titre); font-size: 1.625rem; margin-top: 3rem; margin-bottom: 1rem; }

@@ -1,18 +1,18 @@
 ---
 /**
- * Ouverture de l'accueil : la photographie du square d'Anvers, seule, pleine
- * largeur.
+ * Ouverture de l'accueil : la photographie du square d'Anvers, pleine largeur.
  *
- * Pas de texte posé dessus. L'image parle, le titre vient juste en dessous sur
- * blanc, où il se lit sans qu'il faille assombrir un ciel bleu pour y arriver.
+ * L'original mesure 1500 px. Il est agrandi ici, au Lanczos, avec une
+ * accentuation légère, plutôt que laissé au filtre bilinéaire du navigateur :
+ * à l'examen à l'échelle 1 sur un écran de 1920, c'est la seule méthode
+ * testée qui garde le détail du feuillage et l'arête des coupoles. La
+ * variante de 2000 px couvre exactement un écran de 1920, qui reçoit donc
+ * l'image sans le moindre étirement.
  *
- * L'original mesure 1500 pixels de large. C'est la limite dure : aucun
- * agrandissement n'ajoute de détail, il ne fait qu'adoucir. Le fichier est donc
- * servi à sa taille native, encodé haut, en AVIF d'abord et en WebP ensuite.
- * À qualité perçue égale l'AVIF pèse ici 46 % de moins que le WebP, ce qui
- * permet de monter la qualité sans allonger l'affichage.
+ * Encodage haut, AVIF d'abord : à ce niveau de qualité il pèse un tiers de
+ * moins que le WebP, ce qui paie l'agrandissement.
  */
-const largeurs = [640, 960, 1200, 1500];
+const largeurs = [768, 1200, 1600, 2000, 2560];
 const jeu = (ext: string) => largeurs.map((l) => `/images/marque/anvers-${l}.${ext} ${l}w`).join(', ');
 const alt = "Le square d'Anvers et le Sacré-Cœur vus du boulevard de Rochechouart, Paris 9e";
 ---
@@ -21,10 +21,10 @@ const alt = "Le square d'Anvers et le Sacré-Cœur vus du boulevard de Rochechou
     <source type="image/avif" srcset={jeu('avif')} sizes="100vw" />
     <source type="image/webp" srcset={jeu('webp')} sizes="100vw" />
     <img
-      src="/images/marque/anvers-1500.webp"
+      src="/images/marque/anvers-2000.webp"
       alt={alt}
-      width="1500"
-      height="1001"
+      width="2560"
+      height="1708"
       fetchpriority="high"
       loading="eager"
       decoding="async"

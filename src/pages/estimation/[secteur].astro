@@ -81,12 +81,12 @@ const donnees = [
     <div class="conteneur">
       <h2 id="ailleurs" class="titre-2">Continuer</h2>
       <div class="mt-10 grid gap-8 md:grid-cols-3">
-        <a href={secteur.hrefAgence} class="border-t border-[color:var(--color-trait)] pt-6 no-underline">
+        <a href={secteur.hrefAgence} class="bloc no-underline">
           <span class="titre-3 block">Agence immobilière {secteur.nom}</span>
           <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Qui nous sommes sur ce secteur</span>
         </a>
         {autresSecteurs.map((s) => (
-          <a href={`/estimation/${s.slug}`} class="border-t border-[color:var(--color-trait)] pt-6 no-underline">
+          <a href={`/estimation/${s.slug}`} class="bloc no-underline">
             <span class="titre-3 block">Estimation {s.nom}</span>
             <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">{s.fourchette}</span>
           </a>
