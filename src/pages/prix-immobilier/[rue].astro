@@ -42,13 +42,19 @@ const lectureDispersion = {
 
 const nomEnPhrase = enPhrase(rue.nom);
 
+const assezDeVentes = rue.ventes >= 10;
+const libelleDeciles = assezDeVentes ? 'Huit ventes sur dix' : 'Hors ventes extrêmes';
+const phraseDeciles = assezDeVentes
+  ? `Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`
+  : `Une fois écartées les ventes extrêmes, les prix constatés s'étagent de ${euros(rue.d1)} à ${euros(rue.d9)} le mètre carré.`;
+
 const questions = [
   {
     '@type': 'Question',
     name: `Quel est le prix au m² ${nomEnPhrase}, ${rue.arrondissement} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `Le prix médian constaté ${nomEnPhrase} est de ${euros(rue.mediane)} le mètre carré, sur ${rue.ventes} ventes d'appartements signées de ${periode}. Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`,
+      text: `Le prix médian constaté ${nomEnPhrase} est de ${euros(rue.mediane)} le mètre carré, sur ${rue.ventes} ventes d'appartements signées de ${periode}. ${phraseDeciles}`,
     },
   },
   {
@@ -127,7 +133,7 @@ const donnees = [
           <dd class="mt-3 text-2xl font-semibold text-[color:var(--color-encre)]">{euros(rue.mediane)}</dd>
         </div>
         <div>
-          <dt class="surtitre">Huit ventes sur dix</dt>
+          <dt class="surtitre">{libelleDeciles}</dt>
           <dd class="mt-3 text-lg">{euros(rue.d1)} à {euros(rue.d9)}</dd>
         </div>
         <div>
