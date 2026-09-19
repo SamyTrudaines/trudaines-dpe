@@ -6,6 +6,8 @@ import { nombre, prix as prixFr } from '../../lib/format';
 import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, type Rue } from '../../lib/rues';
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
+import Banniere from '../../components/Banniere.astro';
+import { ambianceDeVoie } from '../../data/ambiance';
 
 interface Props { rue: Rue }
 
@@ -57,6 +59,8 @@ const questions = [
   },
 ];
 
+const vue = ambianceDeVoie(rue.arrondissement, rue.slug);
+
 const donnees = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: questions },
   {
@@ -77,7 +81,18 @@ const donnees = [
   filAriane={[{ nom: 'Prix par rue', href: '/prix-immobilier' }, { nom: rue.nom }]}
   donnees={donnees}
 >
-  <section class="section pt-10">
+  {vue && (
+    <Banniere
+      image={vue}
+      surtitre={rue.arrondissement}
+      titre={rue.nom}
+      hauteur="moyen"
+      balise="div"
+      premiere
+    />
+  )}
+
+  <section class="section pt-12">
     <div class="conteneur max-w-3xl">
       <p class="surtitre">{rue.arrondissement} · {rue.ventes} ventes analysées</p>
       <h1 class="titre-1 mt-6">Prix au m² {rue.nom}</h1>

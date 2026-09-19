@@ -75,6 +75,13 @@ export const ambiance: Record<string, Ambiance> = {
     profil: 'https://unsplash.com/@kmile_ch',
     source: 'https://unsplash.com/photos/black-and-white-restaurant-with-chairs-and-tables-p5IyIl4wIfU',
   },
+  facadeParis: {
+    fichier: '/images/ambiance/facade-paris',
+    alt: 'Façade haussmannienne parisienne, pierre de taille et balcons filants',
+    auteur: 'Fonds du précédent site du cabinet',
+    profil: '',
+    source: '',
+  },
   maisonRose: {
     fichier: '/images/ambiance/maison-rose-montmartre',
     alt: 'La Maison Rose, Montmartre, Paris 18e',
@@ -83,3 +90,28 @@ export const ambiance: Record<string, Ambiance> = {
     source: 'https://unsplash.com/photos/people-walking-on-street-near-buildings-during-daytime-CKn6fbGPOpE',
   },
 };
+
+/**
+ * Photographies d'atmosphère des pages de voie.
+ *
+ * Quatre cent cinquante huit pages ne peuvent pas porter quatre cent
+ * cinquante huit photographies justes : il n'existe pas de vue publiable de
+ * chaque rue, et en inventer serait pire que de n'en mettre aucune. Chaque
+ * arrondissement a donc ses images, et la voie tire la sienne à partir de son
+ * nom. Le tirage est stable, deux voies voisines reçoivent des vues
+ * différentes, et aucune page ne montre un cliché d'un autre arrondissement.
+ */
+const parArrondissement: Record<string, string[]> = {
+  'Paris 9e': ['fenetreSurLesToits', 'facadeParis'],
+  'Paris 10e': ['cafeDeCoin', 'ruePavee'],
+  'Paris 17e': ['facadeParis', 'fenetreSurLesToits', 'ruePavee'],
+  'Paris 18e': ['montmartreDepuisLesToits', 'maisonRose', 'brasserieAbbesses'],
+};
+
+export function ambianceDeVoie(arrondissement: string, slug: string): Ambiance | undefined {
+  const jeu = parArrondissement[arrondissement];
+  if (!jeu) return undefined;
+  let somme = 0;
+  for (let i = 0; i < slug.length; i += 1) somme = (somme * 31 + slug.charCodeAt(i)) % 100000;
+  return ambiance[jeu[somme % jeu.length]];
+}
