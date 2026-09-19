@@ -85,7 +85,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
-- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, 5 % TTC jusqu'à 700 000 € et 4 % TTC de 700 001 à 1 500 000 €, à la charge du vendeur, barème détaillé sur ${site.url}/honoraires.
+- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de 5 à 10 % TTC du prix de vente selon la tranche, à la charge du vendeur. Ce barème est un maximum au sens de l'arrêté du 26 janvier 2022, le cabinet pratique souvent moins. Détail sur ${site.url}/honoraires.
 - L'estimation est elle payante ? Non. L'avis de valeur est écrit, remis après visite sous 48 heures, sans frais et sans engagement, et le propriétaire le garde même s'il vend ailleurs.
 - Peut on sortir d'un mandat exclusif ? Oui : le décret du 20 juillet 1972 permet de dénoncer un mandat exclusif à durée déterminée à tout moment passé trois mois, par lettre recommandée, la dénonciation prenant effet quinze jours après réception.
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.

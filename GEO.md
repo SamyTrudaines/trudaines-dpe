@@ -24,16 +24,29 @@ Un moteur génératif ne remplit pas de journal de visites : la seule façon de
 savoir si le cabinet est cité est d'interroger les moteurs avec les mêmes
 questions, régulièrement, et de relever les réponses.
 
-Deux outils tiennent dans le budget, d'après les comparatifs publiés, prix non
-vérifiés sur les pages des éditeurs :
+Quatre outils tiennent dans le budget, d'après les comparatifs français publiés.
+Les prix n'ont pas pu être vérifiés sur les pages des éditeurs, elles sont
+refusées par la politique de sortie de l'environnement de construction.
 
-| Outil | Prix annoncé | Ce qu'il fait |
-| --- | --- | --- |
-| Rankscale, formule d'entrée | environ 20 $ par mois | suivi de prompts, citations relevées, concurrents |
-| Otterly, formule Lite | environ 29 $ par mois | suivi de prompts, citations, audit de 25 critères |
+| Outil | Origine | Prix annoncé | Remarque |
+| --- | --- | --- | --- |
+| Qwairy | éditeur français | non publié dans les comparatifs | score de visibilité, suivi de prompts, analyse concurrentielle |
+| Rank Prompt | français | à partir de 20 € par mois | multi moteurs, multi localisation, interface FR et EN |
+| Rankscale | anglophone | environ 20 $ par mois | suivi de prompts et de citations |
+| Otterly | anglophone | environ 29 $ par mois | suivi de prompts, audit de 25 critères |
 
-Un seul suffit. Prendre le moins cher, brancher les prompts ci dessous, demander
-le rapport hebdomadaire par email, et ne plus y toucher.
+Pour une agence parisienne, un outil français a un avantage concret : il suit
+Mistral et les aperçus IA de Google, que les outils anglophones couvrent mal ou
+pas. Les clients du cabinet posent leurs questions en français, depuis la France.
+
+Trois questions à poser avant de payer, elles suffisent à départager :
+combien de questions suivies dans la formule d'entrée, quels moteurs exactement,
+et le rapport arrive t il par email sans avoir à ouvrir l'outil. Si la réponse à
+la troisième est non, passer au suivant : un tableau de bord qu'il faut penser à
+consulter n'est jamais consulté.
+
+Un seul outil suffit. Brancher les prompts ci dessous, demander le rapport
+hebdomadaire par email, et ne plus y toucher.
 
 La solution à zéro euro existe aussi : poser soi même les dix premières
 questions à ChatGPT et à Perplexity, le premier lundi de chaque mois, et noter

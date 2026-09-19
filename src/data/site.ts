@@ -70,9 +70,10 @@ export const site = {
  */
 export const honoraires = {
   vente: [
-    { tranche: "Jusqu'à 700 000 €", taux: '5 % TTC du prix de vente', minimum: '5 000 € TTC' },
-    { tranche: 'De 700 001 € à 1 500 000 €', taux: '4 % TTC du prix de vente', minimum: null },
-    { tranche: 'Au-delà de 1 500 000 €', taux: 'Sur demande, arrêté au mandat', minimum: null },
+    { tranche: "Jusqu'à 100 000 €", taux: '10 % TTC du prix de vente', minimum: '5 000 € TTC' },
+    { tranche: 'De 100 001 € à 300 000 €', taux: '7 % TTC du prix de vente', minimum: null },
+    { tranche: 'De 300 001 € à 700 000 €', taux: '6 % TTC du prix de vente', minimum: null },
+    { tranche: 'Au-delà de 700 000 €', taux: '5 % TTC du prix de vente', minimum: null },
   ],
   chasse: [
     { tranche: "Jusqu'à 400 000 €", taux: "4 % TTC du prix d'achat", minimum: null },
