@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import { ambiance } from '../data/ambiance';
+import FormulaireEstimation from '../components/FormulaireEstimation.astro';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { site } from '../data/site';
+
+const avis = (await avisCommentés()).slice(0, 3);
+const agregatAvis = await agrégatAvis();
+
+/*
+ * Les quatre promesses reprennent celles que le cabinet publie depuis sa
+ * création, « créez la rareté, profitez de l'engagement, optimisez la
+ * rentabilité, diminuez le délai ». Deux formules de l'ancienne page ne sont
+ * pas reprises : « le meilleur algorithme estimatif du marché », superlatif
+ * invérifiable, et « 0 % de refus de prêts », promesse absolue qu'aucun
+ * intermédiaire ne peut tenir. L'une comme l'autre relèveraient de la pratique
+ * commerciale trompeuse de l'article L121-2 du code de la consommation.
+ */
+const leviers = [
+  {
+    verbe: 'Créez',
+    suite: 'la rareté',
+    texte:
+      "Un bien affiché par quatre intermédiaires à quatre prix différents dit à l'acheteur qu'il y a de la marge. Le même bien, présenté une fois, par une seule personne qui l'a visité, se négocie sur ses qualités et non sur le désordre de sa diffusion.",
+  },
+  {
+    verbe: 'Profitez',
+    suite: "d'un engagement total",
+    texte:
+      "Personne n'investit sérieusement sur un mandat qu'il a une chance sur quatre de conclure. L'exclusivité est ce qui rend possible le reportage photographique, le dossier complet, la présélection des acheteurs et le compte rendu écrit après chaque visite.",
+  },
+  {
+    verbe: 'Optimisez',
+    suite: 'le résultat net',
+    texte:
+      "Le coût d'une vente mal engagée ne se mesure pas en honoraires mais en baisses de prix successives. Un bien qui s'installe dans le paysage se vend après deux corrections, plus bas qu'un bien correctement positionné dès le premier jour.",
+  },
+  {
+    verbe: 'Diminuez',
+    suite: 'le délai et les frais de portage',
+    texte:
+      "Chaque mois de vente supplémentaire coûte des charges, une taxe foncière au prorata, parfois un crédit relais. Ce coût là ne figure sur aucun devis, et il dépasse souvent l'écart d'honoraires entre deux cabinets.",
+  },
+];
+
+const contreparties = [
+  {
+    titre: 'Un avis de valeur écrit avant toute signature',
+    texte:
+      "Les ventes signées comparables de votre rue, les ajustements appliqués, une fourchette assumée et un prix de mise en marché conseillé. Vous le gardez même si vous ne signez pas.",
+  },
+  {
+    titre: 'Les canaux de diffusion nommés dans le mandat',
+    texte:
+      "Portails, fichier acquéreurs du cabinet, confrères du secteur, diffusion confidentielle le cas échéant. Ce qui est écrit peut être vérifié.",
+  },
+  {
+    titre: 'Un compte rendu écrit après chaque visite',
+    texte:
+      "Ce que l'acheteur a aimé, ce qui l'a arrêté, son budget, sa suite. Le jour même, et un point de synthèse chaque semaine.",
+  },
+  {
+    titre: 'Un rendez vous chiffré en semaine 5',
+    texte:
+      "Visites, offres, rapport entre les deux. On confirme le prix ou on le corrige, ensemble, chiffres sous les yeux. Cette date figure dans le mandat.",
+  },
+  {
+    titre: 'Un seul interlocuteur',
+    texte:
+      "Samy Santamarina fait l'estimation, les visites, la négociation et le suivi jusqu'à la signature. Personne ne reprend le dossier en cours de route.",
+  },
+  {
+    titre: 'Des honoraires réduits en exclusivité',
+    texte:
+      "Le barème affiché est un maximum au sens de l'arrêté du 26 janvier 2022. L'exclusivité permet de travailler moins de mandats et mieux : la remise consentie est écrite dans le mandat, pas promise oralement.",
+  },
+];
+
+const formes = [
+  {
+    nom: 'Mandat simple',
+    apporte: 'Vous gardez toutes les portes ouvertes et pouvez vendre vous même.',
+    coute: "Aucun intermédiaire n'investit vraiment, et le bien apparaît à plusieurs prix.",
+  },
+  {
+    nom: 'Mandat exclusif',
+    apporte: 'Un engagement écrit, un interlocuteur, un dossier complet.',
+    coute: "Une durée d'irrévocabilité de trois mois à assumer.",
+  },
+  {
+    nom: 'Vente confidentielle',
+    apporte: 'Aucune diffusion, aucun panneau, présentation aux seuls acheteurs qualifiés.',
+    coute: 'Un délai souvent nettement plus long, à accepter dès le départ.',
+  },
+];
+
+const faq = [
+  {
+    question: 'Peut on sortir d’un mandat exclusif ?',
+    reponse:
+      "Oui. Le décret du 20 juillet 1972, pris pour l'application de la loi Hoguet, prévoit qu'un mandat à durée déterminée comportant une clause d'exclusivité ou une clause pénale peut être dénoncé à tout moment passé un délai de trois mois à compter de sa signature, par lettre recommandée avec demande d'avis de réception ou par courrier électronique. La dénonciation prend effet quinze jours après sa réception. Aucun cabinet ne peut vous enfermer au delà.",
+  },
+  {
+    question: 'Combien de temps dure le mandat ?',
+    reponse:
+      "Un mandat de vente est écrit, numéroté, inscrit sur un registre des mandats, et sa durée y est indiquée. Chez Trudaines, la durée proposée est de trois mois d'irrévocabilité puis une reconduction que vous pouvez interrompre à quinze jours. Un mandat sans date de fin n'existe pas légalement.",
+  },
+  {
+    question: 'Qui paie les honoraires ?',
+    reponse:
+      "Le vendeur, sur les mandats de vente du cabinet. Le montant et la charge du paiement figurent dans le mandat et sur le barème affiché, conformément à l'arrêté du 10 janvier 2017. Aucun honoraire n'est dû si la vente ne se fait pas.",
+  },
+  {
+    question: 'Et si je trouve moi même mon acheteur ?',
+    reponse:
+      "Dites le avant de signer. C'est un cas fréquent, il se traite par une clause écrite, pas par un malentendu trois mois plus tard. Une clause aux termes de laquelle une commission serait due même si l'opération est conclue sans nos soins ne s'applique que si elle est expressément stipulée dans le mandat remis au vendeur.",
+  },
+  {
+    question: 'L’exclusivité fait elle vendre plus cher ?',
+    reponse:
+      "Elle ne garantit aucun prix, et personne de sérieux ne le promettra. Ce qu'elle change est mesurable : un seul prix affiché, un dossier préparé avant la première visite, des acheteurs vérifiés, et une décision de correction prise sur des chiffres en semaine 5 plutôt que sur une impression au troisième mois.",
+  },
+];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Mandat de vente exclusif',
+    serviceType: 'Mandat exclusif de vente immobilière',
+    provider: { '@id': `${site.url}/#cabinet` },
+    areaServed: ['Paris 9e', 'Paris 18e', 'Paris 10e'],
+  },
+];
+---
+<Layout
+  titre="Le mandat exclusif | Trudaines, cabinet immobilier Paris 9e"
+  description="Ce que l'exclusivité change pour un vendeur parisien, ce que le cabinet s'engage à faire en échange, et ce que la loi prévoit pour en sortir."
+  filAriane={[{ nom: 'Le mandat exclusif' }]}
+  donnees={donnees}
+>
+  <Banniere
+    image={ambiance.brasserieAbbesses}
+    surtitre="L'exclusivité comme levier"
+    titre="Le mandat exclusif"
+    hauteur="moyen"
+    balise="div"
+    premiere
+  />
+
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <h1 class="titre-1">Le mandat exclusif, et ce qu'il vous doit en retour</h1>
+      <p class="chapo mt-8">
+        Confier un bien à un seul cabinet n'a de sens que si ce cabinet s'engage par écrit en face. Voici les
+        quatre choses que l'exclusivité change pour un vendeur, les six engagements qui l'accompagnent chez
+        Trudaines, et ce que la loi prévoit si vous voulez en sortir.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet pb-0" aria-labelledby="chiffres">
+    <div class="conteneur">
+      <h2 id="chiffres" class="sr-only">Le cabinet en trois chiffres</h2>
+      <dl class="grid gap-10 border-y border-[color:var(--color-trait)] py-12 sm:grid-cols-3">
+        <div>
+          <dt class="surtitre">Part des mandats en exclusivité</dt>
+          <dd class="mt-4 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">9 sur 10</dd>
+          <dd class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            Neuf propriétaires sur dix confient leur bien en exclusivité au cabinet. Le taux n'est pas obtenu
+            par la pression : il l'est parce que les contreparties sont écrites.
+          </dd>
+        </div>
+        <div>
+          <dt class="surtitre">Ventes dépouillées</dt>
+          <dd class="mt-4 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">10 131</dd>
+          <dd class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            Ventes signées devant notaire analysées pour établir les prix publiés sur ce site, voie par voie.
+            Un prix de mise en marché se défend avec des comparables, pas avec une conviction.
+          </dd>
+        </div>
+        <div>
+          <dt class="surtitre">Activité</dt>
+          <dd class="mt-4 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">× 3</dd>
+          <dd class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+            Le chiffre d'affaires du cabinet a plus que triplé d'un exercice à l'autre, sans publicité payante
+            et sans jamais avoir signé un mandat le jour de la première visite.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="leviers">
+    <div class="conteneur">
+      <h2 id="leviers" class="titre-2 max-w-2xl">Ce que l'exclusivité change</h2>
+      <div class="mt-14 grid gap-12 md:grid-cols-2">
+        {leviers.map((l) => (
+          <div class="bloc">
+            <h3 class="titre-3">
+              <span class="uppercase tracking-[0.06em]">{l.verbe}</span> {l.suite}
+            </h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{l.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="contreparties">
+    <div class="conteneur">
+      <div class="max-w-2xl">
+        <h2 id="contreparties" class="titre-2">Ce que le cabinet écrit en face</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Un mandat exclusif sans obligations en face est un mauvais contrat. Les six points qui suivent
+          figurent dans le mandat, pas dans une conversation.
+        </p>
+      </div>
+      <div class="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        {contreparties.map((c, index) => (
+          <div class="border-t border-[color:var(--color-trait)] pt-5">
+            <p class="surtitre">{String(index + 1).padStart(2, '0')}</p>
+            <h3 class="titre-3 mt-3">{c.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{c.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="formes">
+    <div class="conteneur max-w-3xl">
+      <h2 id="formes" class="titre-2">Les trois formes, sans plaidoyer</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Les trois se défendent, pour des situations différentes. Un cabinet qui ne vous présente que
+        l'exclusivité vous vend son confort, pas votre intérêt.
+      </p>
+      <dl class="mt-12 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {formes.map((f) => (
+          <div class="grid gap-4 py-8 sm:grid-cols-[180px_1fr]">
+            <dt class="titre-3">{f.nom}</dt>
+            <dd>
+              <p class="text-[color:var(--color-ardoise)]">{f.apporte}</p>
+              <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Ce qu'elle coûte : {f.coute}</p>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="questions">
+    <div class="conteneur max-w-3xl">
+      <h2 id="questions" class="titre-2">Les questions qu'il faut poser avant de signer</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-8 text-xs text-[color:var(--color-ardoise)]">
+        Références : loi du 2 janvier 1970 dite loi Hoguet, décret du 20 juillet 1972, arrêté du 10 janvier
+        2017 sur l'information des consommateurs, arrêté du 26 janvier 2022 sur l'affichage des prix. Cette
+        page n'est pas un conseil juridique personnalisé.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="commencer">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 id="commencer" class="titre-2">Commencer par l'avis de valeur</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Aucune signature le jour de la visite. Vous recevez d'abord un avis de valeur écrit, avec les ventes
+          comparables et le calendrier de décision. Le mandat vient après, s'il vient.
+        </p>
+        <p class="mt-8 text-sm">
+          <a href="/vendre" class="lien-souligne">Les sept engagements de vente</a>
+        </p>
+        <p class="mt-3 text-sm">
+          <a href="/honoraires" class="lien-souligne">Le barème des honoraires</a>
+        </p>
+      </div>
+      <FormulaireEstimation identifiant="estimation-mandat-exclusif" />
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} titre="Des vendeurs qui ont signé" />
+</Layout>

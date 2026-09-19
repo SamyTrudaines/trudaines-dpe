@@ -1,0 +1,43 @@
+---
+interface Props { guide: string; titreGuide: string; identifiant?: string; }
+const { guide, titreGuide, identifiant = guide } = Astro.props;
+---
+<form
+  class="border border-[color:var(--color-trait)] bg-white p-6"
+  method="POST"
+  action="/api/guide"
+  data-trudaines
+  data-evenement="guide_telecharge"
+>
+  <input type="hidden" name="guide" value={guide} />
+  <input type="hidden" name="titreGuide" value={titreGuide} />
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for={`societe-${identifiant}`}>Ne pas remplir</label>
+    <input type="text" id={`societe-${identifiant}`} name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for={`guide-email-${identifiant}`}>Email</label>
+        <input class="champ" id={`guide-email-${identifiant}`} name="email" type="email" autocomplete="email" required />
+      </div>
+      <div>
+        <label class="etiquette" for={`guide-tel-${identifiant}`}>Téléphone</label>
+        <input class="champ" id={`guide-tel-${identifiant}`} name="telephone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+    <div class="mt-4 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`guide-consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for={`guide-consentement-${identifiant}`}>
+        J'accepte de recevoir ce guide et les points de marché du secteur. Désinscription en un clic.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Recevoir le guide</button>
+    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <div data-confirmation hidden class="py-2">
+    <h3 class="titre-3">Guide envoyé</h3>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">{titreGuide} arrive dans votre boîte email dans quelques secondes.</p>
+  </div>
+</form>

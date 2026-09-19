@@ -1,0 +1,32 @@
+{
+  "name": "trudaines-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/generate-pdfs.mjs && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "fiches": "node scripts/generate-pdfs.mjs",
+    "verifier": "node scripts/verifier.mjs",
+    "test-formulaires": "node scripts/test-formulaires.mjs",
+    "avis-google": "node scripts/importer-avis-google.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/libre-baskerville": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@pdf-lib/fontkit": "^1.1.1",
+    "gray-matter": "^4.0.3",
+    "pdf-lib": "^1.17.1",
+    "sharp": "^0.35.4",
+    "typescript": "^6.0.3"
+  }
+}

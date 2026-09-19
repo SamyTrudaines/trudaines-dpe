@@ -1,0 +1,72 @@
+---
+import { prixAffiche, nombre, libelleStatut } from '../lib/format';
+import { jeuPhoto, TAILLES_CARTE, TAILLES_VITRINE } from '../lib/images';
+interface Props {
+  id: string;
+  titre: string;
+  quartier: string;
+  arrondissement: string;
+  prixBien: number;
+  surface: number;
+  pieces: number;
+  statut: string;
+  photo?: { src: string; alt: string };
+  chargement?: 'lazy' | 'eager';
+  /** Vrai pour un mandat archivé : la carte ne porte alors aucun prix. */
+  sansPrix?: boolean;
+  /** Vrai dans la vitrine de l'accueil : image plus grande, format plus large. */
+  vitrine?: boolean;
+  /**
+   * Portée de la page qui affiche la carte. Une page profonde, quartier ou
+   * voie, reçoit l'AVIF ; une page de vitrine reçoit la plus grande
+   * définition en WebP.
+   */
+  portee?: 'vitrine' | 'profonde';
+}
+const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine' } = Astro.props;
+const jeu = photo ? jeuPhoto(photo.src, portee) : undefined;
+const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
+---
+<article class="group">
+  <a href={`/bien/${id}`} class="block no-underline">
+    <div class={`relative overflow-hidden bg-[color:var(--color-papier)] ${vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
+      {photo && jeu ? (
+        <picture>
+          {jeu.avif && <source type="image/avif" srcset={jeu.avif} sizes={tailles} />}
+        <img
+          src={jeu.src}
+          srcset={jeu.srcset}
+          sizes={tailles}
+          alt={photo.alt}
+          width={vitrine ? 1600 : 800}
+          height={vitrine ? 1067 : 600}
+          loading={chargement}
+          decoding="async"
+          class="h-full w-full object-cover transition-opacity duration-200 group-hover:opacity-90"
+        />
+        </picture>
+      ) : (
+        <span class="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
+          Photographies à venir
+        </span>
+      )}
+      {statut !== 'a-vendre' && (
+        <span class="absolute left-0 top-0 bg-[color:var(--color-nuit)] px-3 py-2 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-white">
+          {libelleStatut[statut]}
+        </span>
+      )}
+    </div>
+    <p class="surtitre mt-5">{quartier} · {arrondissement}</p>
+    <h3 class={`titre-3 mt-2 text-[color:var(--color-encre)] ${vitrine ? 'text-[1.35rem] md:text-[1.6rem]' : ''}`}>{titre}</h3>
+    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+      {nombre(surface)} m² · {pieces} {pieces > 1 ? 'pièces' : 'pièce'}
+    </p>
+    {sansPrix ? (
+      <p class="mt-2 text-sm uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">
+        {statut === 'vendu' ? 'Vendu' : 'Mandat présenté'}
+      </p>
+    ) : (
+      <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(prixBien)}</p>
+    )}
+  </a>
+</article>

@@ -1,0 +1,261 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import CarteBien from '../components/CarteBien.astro';
+import CarteArticle from '../components/CarteArticle.astro';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { site } from '../data/site';
+import { secteurs } from '../data/secteurs';
+import Ouverture from '../components/Ouverture.astro';
+import Manifeste from '../components/Manifeste.astro';
+
+const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
+  .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
+  .slice(0, 3);
+
+/** Mandats passés : la preuve du travail accompli, sans prix ni disponibilité. */
+const mandats = await getCollection('biens', (b) => b.data.archive);
+const totalReferences = mandats.length;
+const references = mandats
+  .filter((b) => b.data.ville === 'Paris')
+  .sort((a, b) => b.data.surface - a.data.surface)
+  .slice(0, 3);
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const articles = (await getCollection('articles', (a) => !a.data.brouillon))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
+
+const engagements = [
+  {
+    titre: 'Un prix argumenté par écrit',
+    texte:
+      "Vous recevez un avis de valeur qui cite les ventes signées comparables, explique chaque ajustement et assume une fourchette. Pas un chiffre lancé au téléphone pour emporter le mandat.",
+  },
+  {
+    titre: 'Un compte rendu après chaque visite',
+    texte:
+      "Ce que l'acheteur a dit, ce qui l'a retenu, ce qui l'a fait reculer. Par écrit, le jour même, avec un point de synthèse chaque semaine.",
+  },
+  {
+    titre: 'Un seul interlocuteur',
+    texte:
+      "Samy Santamarina fait l'estimation, les visites, la négociation et le suivi jusqu'à la signature. Personne ne reprend votre dossier en cours de route.",
+  },
+];
+---
+<Layout
+  titre="Trudaines | Agence immobilière à Paris, vente, recherche et gestion"
+  description="Agence immobilière à Paris : vente, recherche pour acquéreur et gestion locative. Avis de valeur écrit sous 48 heures, compte rendu après chaque visite."
+>
+  <Ouverture />
+
+  <section class="section pt-14 md:pt-20">
+    <div class="conteneur">
+      <p class="surtitre">Paris</p>
+      <h1 class="titre-1 mt-8 max-w-4xl">
+        Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
+      </h1>
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
+        <p class="chapo max-w-2xl">
+          Agence immobilière parisienne, numérique et sans vitrine. Nous vendons, nous recherchons pour des
+          acquéreurs et nous gérons des biens loués. Le réseau amène les affaires, la donnée fixe le prix, un
+          seul professionnel conduit le dossier du premier rendez vous à la signature.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <a href="/estimation" class="bouton">Estimer mon bien</a>
+          <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
+        </div>
+      </div>
+      <p class="mt-14 max-w-3xl text-sm text-[color:var(--color-ardoise)]">
+        Estimation sans frais et sans engagement, avis de valeur écrit remis après visite sous 48 heures.
+        Réponse sous 24 heures ouvrées, au{' '}
+        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
+      </p>
+    </div>
+  </section>
+
+  {biens.length > 0 ? (
+    <section class="section" aria-labelledby="biens-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="biens-accueil" class="titre-2">Nos biens à vendre à Paris</h2>
+          <a href="/acheter" class="lien-souligne text-sm">Tous les biens à la vente</a>
+        </div>
+        <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
+          {biens.map((b, n) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              chargement={n === 0 ? 'eager' : 'lazy'}
+              vitrine
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (
+    references.length > 0 && (
+      <section class="section" aria-labelledby="biens-accueil">
+        <div class="conteneur">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <h2 id="biens-accueil" class="titre-2">Les appartements que nous avons vendus</h2>
+            <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
+          </div>
+          <p class="chapo mt-6 max-w-2xl">
+            Aucun mandat n'est ouvert à la diffusion en ce moment : une partie de nos ventes se conclut avant
+            d'être publiée. Voici ce qui nous a été confié jusqu'ici.
+          </p>
+          <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
+            {references.slice(0, 2).map((b, n) => (
+              <CarteBien
+                id={b.id}
+                titre={b.data.titre}
+                quartier={b.data.quartier}
+                arrondissement={b.data.arrondissement}
+                prixBien={b.data.prix}
+                surface={b.data.surface}
+                pieces={b.data.pieces}
+                statut={b.data.statut}
+                photo={b.data.photos[0]}
+                chargement={n === 0 ? 'eager' : 'lazy'}
+                sansPrix
+                vitrine
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  )}
+
+
+  <section class="section filet" aria-labelledby="engagements">
+    <div class="conteneur">
+      <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
+      <div class="mt-14 grid gap-x-12 gap-y-14 md:grid-cols-3">
+        {engagements.map((e, n) => (
+          <div class="grid grid-cols-[auto_1fr] gap-x-5">
+            <p class="chiffre" aria-hidden="true">{String(n + 1).padStart(2, '0')}</p>
+            <div>
+              <h3 class="titre-3">{e.titre}</h3>
+              <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <a href="/vendre" class="lien-souligne mt-12 inline-block text-sm">Les sept engagements de la méthode Trudaines</a>
+    </div>
+  </section>
+
+  <Manifeste />
+
+
+  {references.length > 0 && (
+    <section class="section filet" aria-labelledby="references-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <h2 id="references-accueil" class="titre-2">Ce qui nous a été confié</h2>
+            <p class="mt-6 text-[color:var(--color-ardoise)]">
+              {totalReferences} mandats depuis septembre 2024, du deux pièces de la Butte à la demeure avec
+              jardin. Les photographies sont celles des dossiers du cabinet.
+            </p>
+          </div>
+          <a href="/references" class="lien-souligne text-sm">Voir toutes nos références</a>
+        </div>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {references.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              sansPrix
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section filet" aria-labelledby="territoire">
+    <div class="conteneur">
+      <h2 id="territoire" class="titre-2 max-w-2xl">Notre territoire</h2>
+      <p class="chapo mt-6 max-w-2xl">
+        Trois arrondissements qui se touchent, un seul bassin d'acheteurs. Nous refusons les mandats hors de ce
+        périmètre plutôt que de promettre une expertise que nous n'aurions pas.
+      </p>
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {secteurs.map((s) => (
+          <div class="bloc">
+            <h3 class="titre-3">{s.nom}</h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
+            <ul class="mt-6 space-y-2 text-sm">
+              <li><a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a></li>
+              <li><a href={s.hrefAgence} class="no-underline hover:underline">Agence immobilière {s.nom}</a></li>
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {quartiers.map((q) => (
+          <a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} />
+
+  {presse.length > 0 && (
+    <section class="section filet" aria-labelledby="presse-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="presse-accueil" class="titre-2">Ils parlent de nous</h2>
+          <a href="/presse" class="lien-souligne text-sm">Toutes les retombées</a>
+        </div>
+        <div class="mt-12 grid gap-10 md:grid-cols-4">
+          {presse.map((p) => (
+            <div>
+              <p class="surtitre">{p.data.media}</p>
+              <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{p.data.citation}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {articles.length > 0 && (
+    <section class="section" aria-labelledby="panorama-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="panorama-accueil" class="titre-2">Panorama</h2>
+          <a href="/panorama" class="lien-souligne text-sm">Tous les articles</a>
+        </div>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {articles.map((a) => (
+            <CarteArticle id={a.id} titre={a.data.titre} date={a.data.date} chapo={a.data.chapo} image={a.data.image} imageAlt={a.data.imageAlt} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

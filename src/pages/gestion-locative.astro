@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormulaireContact from '../components/FormulaireContact.astro';
+import { honoraires } from '../data/site';
+---
+<Layout
+  titre="Gestion locative Paris 9e et 18e | Trudaines"
+  description="Gestion locative à Paris 9e, 18e et 10e : sélection du locataire, bail conforme, encaissement, suivi technique et comptes propriétaire clairs."
+  filAriane={[{ nom: 'Gestion locative' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Gestion locative</p>
+      <h1 class="titre-1 mt-6">Déléguer la gestion sans perdre la main sur les décisions</h1>
+      <p class="chapo mt-8">
+        Un bien loué rapporte surtout quand il est bien loué : un locataire solide, un bail conforme, des travaux
+        traités vite et une comptabilité lisible au moment de la déclaration. C'est le périmètre de notre gestion.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-12 md:grid-cols-2">
+      <div class="bloc">
+        <h2 class="titre-3">Mise en location</h2>
+        <p class="mt-4 text-[color:var(--color-ardoise)]">
+          Estimation du loyer au regard de l'encadrement en vigueur, photographies, diffusion, sélection et
+          vérification des dossiers, état des lieux d'entrée détaillé, bail conforme aux dernières obligations.
+        </p>
+      </div>
+      <div class="bloc">
+        <h2 class="titre-3">Gestion courante</h2>
+        <p class="mt-4 text-[color:var(--color-ardoise)]">
+          Appels de loyer, quittances, régularisation des charges, révision annuelle, relation avec le syndic,
+          gestion des incidents techniques avec nos artisans, compte rendu annuel prêt pour votre déclaration.
+        </p>
+      </div>
+      <div class="bloc">
+        <h2 class="titre-3">Ce que nous ne faisons pas</h2>
+        <p class="mt-4 text-[color:var(--color-ardoise)]">
+          Nous ne détenons aucun fonds pour le compte de nos clients. Les flux passent par les circuits bancaires
+          convenus avec vous et documentés dans le mandat.
+        </p>
+      </div>
+      <div class="bloc">
+        <h2 class="titre-3">Honoraires</h2>
+        <ul class="mt-4 space-y-3 text-[color:var(--color-ardoise)]">
+          {honoraires.gestion.map((h) => (
+            <li>{h.tranche} : {h.taux}</li>
+          ))}
+        </ul>
+        <p class="mt-4 text-sm"><a href="/honoraires" class="lien-souligne">Barème complet</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Parler de votre bien</h2>
+        <p class="chapo mt-6">
+          Décrivez votre situation en quelques lignes : localisation, surface, statut actuel du bien, échéance.
+          Nous vous rappelons sous 24 heures ouvrées.
+        </p>
+      </div>
+      <FormulaireContact />
+    </div>
+  </section>
+</Layout>

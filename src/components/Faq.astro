@@ -1,0 +1,20 @@
+---
+interface Props { questions: { question: string; reponse: string }[]; titre?: string; }
+const { questions, titre = 'Questions de vendeurs' } = Astro.props;
+---
+<section class="section" aria-labelledby="faq">
+  <div class="conteneur">
+    <h2 id="faq" class="titre-2">{titre}</h2>
+    <div class="mt-12 max-w-3xl divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+      {questions.map((q) => (
+        <details class="group py-6">
+          <summary class="flex cursor-pointer list-none items-start justify-between gap-6 font-[family-name:var(--font-titre)] text-lg">
+            <span>{q.question}</span>
+            <span aria-hidden="true" class="mt-1 shrink-0 text-[color:var(--color-nuit)] group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-4 max-w-2xl text-[color:var(--color-ardoise)]">{q.reponse}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

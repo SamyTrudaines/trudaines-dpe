@@ -1,0 +1,159 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CarteBien from '../../components/CarteBien.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import { secteurs } from '../../data/secteurs';
+
+interface Props { quartier: CollectionEntry<'quartiers'> }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const quartiers = await getCollection('quartiers');
+  return quartiers.map((q) => ({ params: { quartier: q.id }, props: { quartier: q } }));
+};
+
+const { quartier } = Astro.props;
+const { Content } = await render(quartier);
+
+const biens = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
+/** Mandats passés du quartier : la preuve que le cabinet y a déjà travaillé. */
+const mandats = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.archive)).slice(0, 3);
+const autres = (await getCollection('quartiers')).filter((q) => q.id !== quartier.id).sort((a, b) => a.data.ordre - b.data.ordre);
+const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
+const photo = quartier.data.photos[0];
+---
+<Layout
+  titre={quartier.data.titreSeo}
+  description={quartier.data.descriptionSeo}
+  filAriane={[{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom }]}
+>
+  <section class="section pt-10">
+    <div class={`conteneur grid gap-16 lg:items-start ${photo ? 'lg:grid-cols-[1fr_1fr]' : 'max-w-4xl'}`}>
+      <div>
+        <p class="surtitre">{quartier.data.arrondissement}</p>
+        <h1 class="titre-1 mt-6">{quartier.data.nom}</h1>
+        <p class="chapo mt-8">{quartier.data.chapo}</p>
+        <dl class="mt-10 grid gap-6 sm:grid-cols-2">
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Prix médian au m²</dt>
+            <dd class="mt-2 text-lg">{quartier.data.prixMoyenM2}</dd>
+          </div>
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="surtitre">Fourchette observée</dt>
+            <dd class="mt-2 text-lg">{quartier.data.fourchette}</dd>
+          </div>
+          {quartier.data.faits.map((f) => (
+            <div class="border-t border-[color:var(--color-trait)] pt-4">
+              <dt class="surtitre">{f.titre}</dt>
+              <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{f.valeur}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      {photo && (
+        <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
+          <img src={photo.src} alt={photo.alt} width="900" height="1125" loading="eager" decoding="async" class="h-full w-full object-cover" />
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur-texte prose-trudaines">
+      <Content />
+    </div>
+  </section>
+
+  {biens.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <h2 class="titre-2">Nos biens dans ce quartier</h2>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {biens.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              portee="profonde"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {mandats.length > 0 && (
+    <section class="section filet">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 class="titre-2">Nos références dans ce quartier</h2>
+          <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
+        </div>
+        <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+          Des mandats déjà conduits ici. Ces biens ne sont plus disponibles, leurs fiches restent
+          consultables.
+        </p>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {mandats.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              portee="profonde"
+              sansPrix
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Faire estimer un bien {quartier.data.nom}</h2>
+        <p class="chapo mt-6">
+          Deux appartements de la même surface, dans la même rue, peuvent se vendre à dix pour cent d'écart.
+          Nous venons voir le vôtre et nous vous remettons un avis de valeur écrit sous 48 heures.
+        </p>
+        {secteur && (
+          <p class="mt-8 text-sm">
+            <a href={`/estimation/${secteur.slug}`} class="lien-souligne">Estimation {secteur.nom}</a>
+          </p>
+        )}
+      </div>
+      <FormulaireEstimation
+        secteur={quartier.data.secteur}
+        quartier={quartier.data.nom}
+        identifiant={`estimation-${quartier.id}`}
+      />
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur">
+      <h2 class="titre-2">Les autres quartiers</h2>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {autres.map((q) => (
+          <a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}</a>
+        ))}
+      </div>
+      <p class="mt-10 text-sm">
+        <a href="/prix-immobilier" class="lien-souligne">Le prix au mètre carré, rue par rue</a>
+      </p>
+    </div>
+  </section>
+</Layout>

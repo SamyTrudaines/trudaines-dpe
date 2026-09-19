@@ -1,0 +1,107 @@
+---
+---
+<form
+  class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
+  method="POST"
+  action="/api/candidature"
+  enctype="multipart/form-data"
+  data-trudaines
+  data-evenement="cv_envoye"
+>
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for="societe-candidature">Ne pas remplir</label>
+    <input type="text" id="societe-candidature" name="societe" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="cand-prenom">Prénom</label>
+        <input class="champ" id="cand-prenom" name="prenom" type="text" autocomplete="given-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-nom">Nom</label>
+        <input class="champ" id="cand-nom" name="nom" type="text" autocomplete="family-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-email">Email</label>
+        <input class="champ" id="cand-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div>
+        <label class="etiquette" for="cand-telephone">Téléphone</label>
+        <input class="champ" id="cand-telephone" name="telephone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for="cand-profil">Votre situation</label>
+        <select class="champ" id="cand-profil" name="profil" required>
+          <option value="Étudiant ou jeune diplômé">Étudiant ou jeune diplômé</option>
+          <option value="Débutant en immobilier">Débutant en immobilier</option>
+          <option value="Agent ou mandataire expérimenté">Agent ou mandataire expérimenté</option>
+          <option value="Reconversion">En reconversion</option>
+        </select>
+      </div>
+      <div>
+        <label class="etiquette" for="cand-secteur">Secteur souhaité</label>
+        <input class="champ" id="cand-secteur" name="secteurSouhaite" type="text" placeholder="Paris 9e, Paris 18e" required />
+      </div>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="cand-message">Quelques lignes sur vous</label>
+      <textarea class="champ" id="cand-message" name="message" rows="4" required></textarea>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="cand-linkedin">Votre profil LinkedIn</label>
+      <input
+        class="champ"
+        id="cand-linkedin"
+        name="linkedin"
+        type="url"
+        inputmode="url"
+        placeholder="https://www.linkedin.com/in/votre-profil"
+        pattern="https://([a-z]{2,3}\.)?linkedin\.com/(in|pub)/.+"
+      />
+      <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+        Facultatif, et suffisant : un profil à jour remplace un CV. Collez l'adresse de votre page.
+      </p>
+    </div>
+
+    <div class="mt-6" data-note-vocale>
+      <p class="etiquette">Votre lettre de motivation, à la voix</p>
+      <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
+        Trois minutes au maximum, enregistrées ici. Dites nous pourquoi ce métier, ce secteur, et ce que vous
+        avez déjà vendu, même si ce n'était pas de l'immobilier. Ce que l'on entend d'une voix ne s'écrit pas.
+      </p>
+      <input type="file" name="note_vocale" accept="audio/*" class="sr-only" tabindex="-1" aria-hidden="true" />
+      <input type="hidden" name="duree_vocale" value="" />
+      <button type="button" class="bouton mt-5" data-enregistrer>Enregistrer ma note vocale</button>
+      <button type="button" class="bouton bouton-secondaire mt-5 ml-3" data-refaire hidden>Recommencer</button>
+      <audio class="mt-5 w-full" controls hidden></audio>
+      <p class="mt-3 text-sm text-[color:var(--color-ardoise)]" data-etat>
+        Rien n'est envoyé avant que vous validiez le formulaire. Vous pouvez réécouter et recommencer.
+      </p>
+    </div>
+
+    <div class="mt-6">
+      <label class="etiquette" for="cand-cv">Votre CV, PDF de 4 Mo maximum</label>
+      <input class="champ py-3" id="cand-cv" name="cv" type="file" accept="application/pdf,.pdf" data-max-octets="4000000" />
+      <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+        Facultatif si vous avez renseigné votre profil LinkedIn.
+      </p>
+    </div>
+    <div class="mt-6 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="cand-consentement" name="consentement" type="checkbox" required value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for="cand-consentement">
+        J'accepte que ma candidature soit conservée pendant deux ans.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-8">Envoyer ma candidature</button>
+    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <script is:inline src="/js/note-vocale.js" defer></script>
+  <div data-confirmation hidden class="py-2">
+    <h2 class="titre-3">Candidature reçue</h2>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">Nous lisons chaque candidature et répondons sous une semaine.</p>
+  </div>
+</form>

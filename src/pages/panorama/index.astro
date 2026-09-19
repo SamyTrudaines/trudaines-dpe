@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import CarteArticle from '../../components/CarteArticle.astro';
+
+const articles = (await getCollection('articles', (a) => !a.data.brouillon)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+<Layout
+  titre="Panorama | Analyses du marché immobilier parisien - Trudaines"
+  description="Analyses de marché, conseils de vente et lecture des prix à Paris 9e, 18e et 10e par le cabinet Trudaines."
+  filAriane={[{ nom: 'Panorama' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Panorama</p>
+      <h1 class="titre-1 mt-6">Ce que nous observons sur le terrain</h1>
+      <p class="chapo mt-8">
+        Pas de revue de presse recopiée. Des analyses fondées sur les biens que nous visitons, les offres que nous
+        recevons et les ventes que nous signons dans nos quatre arrondissements.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0" aria-labelledby="tous-les-articles">
+    <div class="conteneur">
+      <h2 id="tous-les-articles" class="sr-only">Tous les articles</h2>
+      {articles.length === 0 ? (
+        <p class="text-[color:var(--color-ardoise)]">Les premiers articles arrivent prochainement.</p>
+      ) : (
+        <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-3">
+          {articles.map((a) => (
+            <CarteArticle id={a.id} titre={a.data.titre} date={a.data.date} chapo={a.data.chapo} image={a.data.image} imageAlt={a.data.imageAlt} />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Layout>

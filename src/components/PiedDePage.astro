@@ -1,0 +1,101 @@
+---
+interface Props {
+  /*
+   * Vrai quand la page se termine par le bloc d'appel à l'action, dont le fond
+   * ivoire touche alors directement le pied de page. Sans lui, le filet et la
+   * marge sont nécessaires pour détacher le pied du dernier paragraphe.
+   */
+  colleAuBloc?: boolean;
+}
+const { colleAuBloc = false } = Astro.props;
+import Logo from './Logo.astro';
+import { site } from '../data/site';
+import { secteurs } from '../data/secteurs';
+
+const quartiers = [
+  { nom: 'Trudaine Maubeuge', href: '/quartiers/trudaine-maubeuge' },
+  { nom: 'Martyrs Lorette', href: '/quartiers/martyrs-lorette' },
+  { nom: 'Clichy Trinité', href: '/quartiers/clichy-trinite' },
+  { nom: 'Montmartre', href: '/quartiers/montmartre' },
+  { nom: 'Lariboisière Rocroy', href: '/quartiers/lariboisiere-rocroy' },
+];
+const annee = new Date().getFullYear();
+---
+<footer class={`bg-white ${colleAuBloc ? '' : 'filet mt-24'}`}>
+  <div class="conteneur grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <Logo />
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        {site.adresse.rue}<br />{site.adresse.codePostal} {site.adresse.ville}
+      </p>
+      <p class="mt-4 text-sm">
+        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="inline-block py-2 no-underline hover:underline">{site.telephone}</a><br />
+        <a href={`mailto:${site.email}`} class="inline-block py-2 no-underline hover:underline">{site.email}</a>
+      </p>
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">{site.horairesTexte}</p>
+      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+        Agence immobilière à Paris. Vente, recherche pour acquéreur et gestion locative, dans les 9e, 10e,
+        17e et 18e arrondissements et partout ailleurs dans la capitale.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="surtitre">Vendre</h2>
+      <ul class="mt-6 space-y-1 text-sm">
+        <li><a href="/estimation" class="inline-block py-1.5 no-underline hover:underline">Estimation de mon bien</a></li>
+        <li><a href="/vendre" class="inline-block py-1.5 no-underline hover:underline">La méthode de vente</a></li>
+        <li><a href="/mandat-exclusif" class="inline-block py-1.5 no-underline hover:underline">Le mandat exclusif</a></li>
+        <li><a href="/choisir-son-agence-immobiliere-paris" class="inline-block py-1.5 no-underline hover:underline">Choisir son agence</a></li>
+        {secteurs.map((s) => (
+          <li><a href={`/estimation/${s.slug}`} class="inline-block py-1.5 no-underline hover:underline">Estimation {s.nom}</a></li>
+        ))}
+        <li><a href="/prix-immobilier" class="inline-block py-1.5 no-underline hover:underline">Prix au m² rue par rue</a></li>
+        <li><a href="/honoraires" class="inline-block py-1.5 no-underline hover:underline">Honoraires</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="surtitre">Quartiers</h2>
+      <ul class="mt-6 space-y-1 text-sm">
+        {quartiers.map((q) => (
+          <li><a href={q.href} class="inline-block py-1.5 no-underline hover:underline">{q.nom}</a></li>
+        ))}
+        <li><a href="/agence-immobiliere-paris-9" class="inline-block py-1.5 no-underline hover:underline">Agence immobilière Paris 9e</a></li>
+        <li><a href="/agence-immobiliere-paris-18" class="inline-block py-1.5 no-underline hover:underline">Agence immobilière Paris 18e</a></li>
+        <li><a href="/agence-immobiliere-montmartre" class="inline-block py-1.5 no-underline hover:underline">Agence immobilière Montmartre</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="surtitre">Le cabinet</h2>
+      <ul class="mt-6 space-y-1 text-sm">
+        <li><a href="/trudaines" class="inline-block py-1.5 no-underline hover:underline">La maison</a></li>
+        <li><a href="/references" class="inline-block py-1.5 no-underline hover:underline">Nos références</a></li>
+        <li><a href="/samy-santamarina" class="inline-block py-1.5 no-underline hover:underline">Samy Santamarina</a></li>
+        <li><a href="/avis" class="inline-block py-1.5 no-underline hover:underline">Avis clients</a></li>
+        <li><a href="/recommander" class="inline-block py-1.5 no-underline hover:underline">Recommander le cabinet</a></li>
+        <li><a href="/presse" class="inline-block py-1.5 no-underline hover:underline">Presse</a></li>
+        <li><a href="/panorama" class="inline-block py-1.5 no-underline hover:underline">Panorama</a></li>
+        <li><a href="/guides" class="inline-block py-1.5 no-underline hover:underline">Guides</a></li>
+        <li><a href="/chasse" class="inline-block py-1.5 no-underline hover:underline">Chasse immobilière</a></li>
+        <li><a href="/gestion-locative" class="inline-block py-1.5 no-underline hover:underline">Gestion locative</a></li>
+        <li><a href="/nous-rejoindre" class="inline-block py-1.5 no-underline hover:underline">Nous rejoindre</a></li>
+        <li><a href="/contact" class="inline-block py-1.5 no-underline hover:underline">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="filet">
+    <div class="conteneur flex flex-col gap-4 py-8 text-xs text-[color:var(--color-ardoise)] md:flex-row md:items-center md:justify-between">
+      <p>
+        {site.nomLong}, {site.raisonSociale} {site.formeJuridique}, {site.legal.rcs}. Carte professionnelle {site.legal.carteT},
+        CCI Paris Île-de-France. Garantie financière {site.legal.garantie}, {site.legal.garantieMontant}. {site.legal.detentionFonds}
+      </p>
+      <p class="flex flex-wrap gap-6">
+        <a href="/mentions-legales" class="inline-block py-1.5 no-underline hover:underline">Mentions légales</a>
+        <a href="/politique-de-confidentialite" class="inline-block py-1.5 no-underline hover:underline">Confidentialité</a>
+        <span>© {annee}</span>
+      </p>
+    </div>
+  </div>
+</footer>

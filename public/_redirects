@@ -1,0 +1,113 @@
+# Redirections 301 de l'ancien site vers la nouvelle arborescence.
+# Format Cloudflare Pages : source destination code.
+# Les règles sont évaluées dans l'ordre : les adresses exactes reprises de
+# l'ancien site viennent donc AVANT les règles à motif, sinon /nos-actualites/:slug
+# capterait les anciennes adresses avant qu'elles trouvent leur article.
+# La canonicalisation https et www se règle dans le tableau de bord Cloudflare,
+# voir DEPLOIEMENT.md, section « Règles de redirection ».
+
+# --- Anciennes annonces, adresses exactes ----------------------------------
+# Produites par scripts/importer-ancien-site.mjs, slugs arrêtés à la relecture.
+/vente/1-paris/appartement/162-appartement-etage-eleve-89m-4-pieces-lumineux-trudaine-75009                                        /bien/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet  301
+/vente/1-paris/appartement/172-appartement-etage-eleve-63m-3-pieces-lumineux-montmartre                                            /bien/appartement-3-pieces-63m2-renove-abbesses                  301
+/vente/1-paris/appartement/180-appartement-2-pieces-43m-renove-rue-vaneau                                                          /bien/appartement-2-pieces-43m2-renove-rue-vaneau                301
+/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d                                               /bien/appartement-3-pieces-64m2-renove-batignolles               301
+/vente/1-paris/appartement/182-appartement-3-chambres-83m-vue-sur-seine-dernier-etage                                              /bien/appartement-4-pieces-83m2-vue-seine-exelmans               301
+/vente/1-paris/appartement/23-a-acheter-a-paris-18-appartement-avec-samy-santamarina                                               /bien/appartement-2-pieces-46m2-balcon-abbesses                  301
+/vente/1-paris/appartement/26-appar                                                                                                /bien/appartement-familial-6-pieces-158m2-montholon-paradis      301
+/vente/1-paris/appartement/41-appartement-3-pieces-65m-renove-traversant-et-en-etage-eleve-brochant-paris-17                       /bien/appartement-3-pieces-65m2-traversant-brochant-epinettes    301
+/vente/1-paris/appartement/53-appartement-de-97m-3-chambres-etage-eleve-avec-2-balcons-ensoleilles                                 /bien/appartement-4-pieces-96m2-deux-balcons-pyrenees            301
+/vente/1-paris/appartement/60-appartement-t3-de-68m-4eme-etage-oriente-sud-secteur-trudaine                                        /bien/appartement-3-pieces-68m2-oriente-sud-secteur-trudaine     301
+/vente/106-vaucresson/maison/67-demeure-de-300m-parcelle-de-980m-environ-6-chambres-jardin-vaucresson-centre-prestige              /bien/demeure-300m2-jardin-vaucresson-centre                     301
+/vente/11-asnieres-sur-seine/appartement/11-appartement-duplex-5-chambres-asnieres-becon-bruyeres                                  /bien/duplex-6-pieces-136m2-becon-les-bruyeres                   301
+/vente/29-bois-colombes/maison/76-maison-familiale-de-130m2                                                                        /bien/maison-familiale-130m2-bois-colombes-centre                301
+/vente/5-boulogne-billancourt/appartement/13-appartement-76m-avec-terrasse-boulogne-billancourt-les-passages                       /bien/appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat  301
+/vente/75-colombes/maison/61-grande-maison-moderne-avec-5-chambres-et-3-places-de-parking-dans-le-petit-colombes                   /bien/maison-moderne-145m2-cinq-chambres-petit-colombes          301
+/vente/8-la-garenne-colombes/maison/95-maison-de-charme-avec-jardin-a-la-garenne-colombes-quartier-residentiel-recherche-prestige  /bien/maison-de-charme-226m2-jardin-la-garenne-colombes          301
+/vente/81-bagnolet/maison/48-maison-architecturale-de-5-chambres-avec-terrasse-bagnolet-limite-montreeuil                          /bien/maison-architecte-200m2-terrasse-bagnolet                  301
+
+# --- Ancien blog, adresses exactes ------------------------------------------
+# Les quatre adresses pointant vers /panorama correspondent à des actualités
+# restées vides sur l'ancien site : seul le titre existait, il n'y avait rien
+# à reprendre. Elles renvoient vers l'index en attendant d'être écrites.
+/nos-actualites/credit-immobilier-la-bce-frappe-fort-ce-qu-il-faut-comprendre-en-avril-2025.html                                   /panorama/credit-immobilier-decision-bce-avril-2025              301
+/nos-actualites/immobilier-a-paris-en-avril-2025-retour-du-dynamisme-les-chiffres-qui-comptent.html                                /panorama/immobilier-paris-avril-2025-retour-du-dynamisme        301
+/nos-actualites/immobilier-et-ia-en-2025-les-6-outils-qui-vont-transformer-votre-performance.html                                  /panorama/immobilier-et-ia-2025-six-outils                       301
+/nos-actualites/test.html                                                                                                          /panorama/salon-du-design-matter-and-shape-2025                  301
+/nos-actualites/Estimation75009_agenceimmobiliere75018_A%20propos  /panorama/frontiere-9e-18e-estimation  301
+/nos-actualites/estimation-immobilier-paris-9-18  /panorama/frontiere-9e-18e-estimation  301
+/nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html  /panorama/prix-immobilier-paris-9-18-analyse  301
+/nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html  /panorama/prix-immobilier-paris-9-18-analyse  301
+/nos-actualites/wdxcdc  /panorama/prix-immobilier-paris-9-18-analyse  301
+
+# --- Anciennes annonces, motifs ---------------------------------------------
+/vente/:slug                    /bien/:slug             301
+/vente                          /acheter                301
+/vente/*                        /acheter                301
+/nos-biens/:slug                /bien/:slug             301
+/nos-biens                      /acheter                301
+/biens/:slug                    /bien/:slug             301
+/biens                          /acheter                301
+/annonces/*                     /acheter                301
+
+# --- Ancien blog, motifs ----------------------------------------------------
+/nos-actualites/:slug           /panorama/:slug         301
+/nos-actualites                 /panorama               301
+/nos-actualites/*               /panorama               301
+/actualites/:slug               /panorama/:slug         301
+/actualites                     /panorama               301
+/blog/:slug                     /panorama/:slug         301
+/blog                           /panorama               301
+
+# --- Anciennes pages fixes --------------------------------------------------
+/estimer                        /estimation             301
+/estimation-immobiliere         /estimation             301
+/estimation-en-ligne            /estimation             301
+/vendre-son-bien                /vendre                 301
+/vendre-mon-bien                /vendre                 301
+/acheter-un-bien                /acheter                301
+/chasse-immobiliere             /chasse                 301
+/gestion                        /gestion-locative       301
+/gestion-de-patrimoine          /gestion-locative       301
+/qui-sommes-nous                /trudaines              301
+/a-propos                       /trudaines              301
+/notre-agence                   /trudaines              301
+/agence                         /trudaines              301
+/equipe                         /samy-santamarina       301
+/notre-equipe                   /samy-santamarina       301
+/fondateur                      /samy-santamarina       301
+/nos-honoraires                 /honoraires             301
+/bareme-honoraires              /honoraires             301
+/recrutement                    /nous-rejoindre         301
+/rejoindre                      /nous-rejoindre         301
+/carriere                       /nous-rejoindre         301
+/nous-contacter                 /contact                301
+/contactez-nous                 /contact                301
+/mentions                       /mentions-legales       301
+/confidentialite                /politique-de-confidentialite 301
+/rgpd                           /politique-de-confidentialite 301
+/presse-medias                  /presse                 301
+/telechargements                /guides                 301
+/livres-blancs                  /guides                 301
+
+# --- Anciens secteurs -------------------------------------------------------
+/immobilier-paris-9             /agence-immobiliere-paris-9    301
+/immobilier-paris-18            /agence-immobiliere-paris-18   301
+/immobilier-montmartre          /agence-immobiliere-montmartre 301
+/paris-9                        /agence-immobiliere-paris-9    301
+/paris-18                       /agence-immobiliere-paris-18   301
+/montmartre                     /agence-immobiliere-montmartre 301
+/quartier/:slug                 /quartiers/:slug        301
+/quartier                       /quartiers              301
+/ile-de-france                  /                       301
+
+# --- À COMPLÉTER ------------------------------------------------------------
+# Ajouter ici les URLs de l'ancien site qui ne rentrent pas dans les motifs
+# ci-dessus, une ligne par URL, en conservant le code 301.
+# Une adresse contenant « : » ou « * » ne peut pas s'écrire en ligne exacte,
+# la syntaxe _redirects réserve ces caractères aux motifs : la règle
+# /nos-actualites/* la couvre. C'est le cas de l'adresse fautive
+# /nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18,
+# signalée dans migration-rapport.txt.
+# L'abréviation St-Cyr a été développée en Saint-Cyr à la relecture du 17e.
+/prix-immobilier/boulevard-gouvion-st-cyr-17  /prix-immobilier/boulevard-gouvion-saint-cyr-17  301

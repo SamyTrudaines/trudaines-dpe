@@ -1,0 +1,194 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import EstimationImmediate from '../../components/EstimationImmediate.astro';
+import { secteurs } from '../../data/secteurs';
+import { getCollection } from 'astro:content';
+import Avis from '../../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../../lib/avis';
+
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+const etapes = [
+  {
+    titre: 'Les ventes réellement signées',
+    texte:
+      "Nous partons de la base des valeurs foncières publiée par l'administration fiscale, qui recense les transactions enregistrées chez le notaire. Nous isolons votre rue, votre typologie et les douze derniers mois, puis nous écartons les ventes atypiques qui fausseraient la moyenne.",
+  },
+  {
+    titre: 'La concurrence du moment',
+    texte:
+      "Un acheteur ne compare pas votre bien aux ventes de l'an dernier, il le compare à ce qu'il peut visiter samedi. Nous relevons les biens en concurrence directe, leur prix affiché, leur ancienneté d'annonce et leurs baisses successives.",
+  },
+  {
+    titre: 'La visite',
+    texte:
+      "Aucune donnée ne décrit la lumière de 17 heures, le bruit de la cour, l'état de la cage d'escalier ou la qualité d'un plan. Nous visitons systématiquement avant de remettre un chiffre. Comptez quarante-cinq minutes.",
+  },
+  {
+    titre: "L'avis de valeur écrit",
+    texte:
+      "Vous recevez un document daté et signé : fourchette de valeur, prix de mise en marché conseillé, comparables cités, points forts et points faibles assumés, calendrier prévisionnel. Il est à vous, sans contrepartie.",
+  },
+];
+
+const angoisses = [
+  {
+    titre: 'Vendre sous le prix dans un marché qui a corrigé',
+    texte:
+      "La correction n'a pas touché tous les biens de la même façon : les produits rares tiennent, les produits moyens se négocient. Notre travail consiste à situer précisément votre bien dans cette hiérarchie, à l'écrit, plutôt qu'à vous rassurer avec un chiffre haut qui se corrigera de toute façon dans trois mois, en position de faiblesse.",
+  },
+  {
+    titre: 'Vendre trop lentement quand on doit racheter',
+    texte:
+      "Nous décidons avec vous, dès le mandat, une stratégie de prix par paliers : le niveau de départ, la date de la première revue, le palier suivant si le volume de visites ne suit pas. Vous n'avez pas à négocier avec vous-même chaque semaine, la règle est écrite d'avance.",
+  },
+  {
+    titre: 'Un DPE défavorable et des travaux à prévoir',
+    texte:
+      "Nous lisons le diagnostic ligne par ligne, nous identifions les postes qui pèsent réellement sur la valeur, et nous faisons chiffrer par des entreprises et des diagnostiqueurs que nous connaissons. Un devis précis dans les mains de l'acheteur vaut toujours mieux qu'une inquiétude sans chiffre.",
+  },
+  {
+    titre: 'La discrétion, quand la vente ne regarde personne',
+    texte:
+      "Séparation, succession, mutation, voisinage : les raisons de ne pas afficher sa vente sont nombreuses et légitimes. Nous proposons une mise en vente confidentielle, sans portail ni panneau, réservée aux acheteurs qualifiés de notre fichier.",
+  },
+];
+
+/*
+ * Le livrable porte un nom et un sommaire. Une prestation nommée ne se brade
+ * pas, et un vendeur qui sait ce qu'il va recevoir accepte plus volontiers la
+ * visite, qui est le vrai point de bascule.
+ */
+const livrable = [
+  { titre: 'Les ventes comparables', texte: "Cinq à dix ventes signées de votre rue ou de votre immeuble sur douze mois, avec leur date, leur surface et leur prix au mètre carré." },
+  { titre: 'Les ajustements', texte: "Étage, ascenseur, exposition, vue, état, plan : chaque écart appliqué à la médiane est chiffré et justifié, pas laissé à l'intuition." },
+  { titre: 'La fourchette assumée', texte: "Un prix bas et un prix haut, et ce qui fait passer de l'un à l'autre. Un chiffre unique n'est jamais honnête." },
+  { titre: 'Le prix de mise en marché', texte: "Le prix conseillé au premier jour, qui n'est ni la fourchette haute ni une moyenne, avec la raison du choix." },
+  { titre: "L'état de la concurrence", texte: "Les biens que votre acheteur visitera juste avant ou juste après le vôtre, et ce qui vous en distingue." },
+  { titre: 'Le calendrier de décision', texte: "La date du point chiffré en semaine 5, et les seuils qui déclencheront une correction de prix." },
+  { titre: 'Les pièces à réunir', texte: "Diagnostics, documents de copropriété, devis à faire établir. La liste, dans l'ordre, avec les délais." },
+  { titre: 'Ce que nous ignorons', texte: "Les limites de l'exercice, écrites noir sur blanc. Une estimation sans réserves est une estimation qui se trompe en silence." },
+];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Estimation immobilière',
+    serviceType: "Estimation et avis de valeur d'un bien immobilier",
+    provider: { '@id': 'https://www.trudaines.com/#cabinet' },
+    areaServed: ['Paris 9e', 'Paris 18e', 'Paris 10e'],
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Avis de valeur écrit, remis après visite sous 48 heures, sans engagement" },
+  },
+];
+---
+<Layout
+  titre="Estimation immobilière à Paris 9e et 18e | Trudaines"
+  description="Estimation immobilière à Paris 9e, 18e et 10e : ventes signées, visite sur place et avis de valeur écrit sous 48 heures, sans engagement."
+  filAriane={[{ nom: 'Estimation' }]}
+  donnees={donnees}
+>
+  <section class="section pt-10">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <p class="surtitre">Estimation</p>
+        <h1 class="titre-1 mt-6">Savoir ce que vaut votre bien, avant d'en parler à qui que ce soit</h1>
+        <p class="chapo mt-8">
+          Ce que nous remettons porte un nom : l'avis de valeur. Un document écrit, remis après visite sous
+          48 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et assume
+          une fourchette. Ce n'est pas un chiffre lancé au téléphone pour emporter un mandat.
+        </p>
+        <ul class="mt-10 space-y-4 text-sm">
+          <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Un document que vous gardez, même si vous vendez ailleurs ou plus tard.</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Aucune signature le jour de la visite.</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Rappel sous 24 heures ouvrées par Samy Santamarina. Sans frais.</li>
+        </ul>
+      </div>
+      <FormulaireEstimation identifiant="avis-de-valeur" />
+    </div>
+  </section>
+
+  <EstimationImmediate />
+
+  <section class="section filet" aria-labelledby="livrable">
+    <div class="conteneur">
+      <div class="max-w-2xl">
+        <p class="surtitre">Le livrable</p>
+        <h2 id="livrable" class="titre-2 mt-6">Ce que contient un avis de valeur Trudaines</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Huit rubriques, quatre à six pages, votre nom sur la couverture. C'est le document que vous
+          présenterez à votre conjoint, à votre notaire ou à vos cohéritiers, et celui que vous opposerez au
+          premier acheteur qui négociera.
+        </p>
+      </div>
+      <ol class="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        {livrable.map((item, index) => (
+          <li class="border-t border-[color:var(--color-trait)] pt-5">
+            <p class="surtitre">{String(index + 1).padStart(2, '0')}</p>
+            <h3 class="titre-3 mt-3">{item.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{item.texte}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="mt-12 text-sm">
+        <a href="/mandat-exclusif" class="lien-souligne">Ce qui se passe après, si vous décidez de vendre</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="methode">
+    <div class="conteneur">
+      <h2 id="methode" class="titre-2 max-w-2xl">Quatre étapes, aucune approximation</h2>
+      <ol class="mt-14 grid gap-12 md:grid-cols-2">
+        {etapes.map((e, i) => (
+          <li class="border-t border-[color:var(--color-encre)] pt-6">
+            <p class="surtitre">Étape {i + 1}</p>
+            <h3 class="titre-3 mt-3">{e.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{e.texte}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="angoisses">
+    <div class="conteneur">
+      <h2 id="angoisses" class="titre-2 max-w-2xl">Les quatre inquiétudes que nous entendons le plus</h2>
+      <div class="mt-14 grid gap-12 md:grid-cols-2">
+        {angoisses.map((a) => (
+          <div class="bloc">
+            <h3 class="titre-3">{a.titre}</h3>
+            <p class="mt-4 text-[color:var(--color-ardoise)]">{a.texte}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="secteurs">
+    <div class="conteneur">
+      <h2 id="secteurs" class="titre-2">Estimation par arrondissement</h2>
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {secteurs.map((s) => (
+          <div class="bloc">
+            <h3 class="titre-3">
+              <a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a>
+            </h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.fourchette}</p>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {quartiers.map((q) => (
+          <a href={`/quartiers/${q.id}`} class="lien-souligne">Prix {q.data.nom}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} titre="Ce qu'en disent les propriétaires" />
+</Layout>

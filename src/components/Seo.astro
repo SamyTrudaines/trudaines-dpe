@@ -1,0 +1,42 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  titre: string;
+  description: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const { titre, description, image = '/images/og-trudaines.png', type = 'website', noindex = false } = Astro.props;
+/*
+ * Adresse canonique. La construction en fichiers nomme l'accueil index.html :
+ * sans ce nettoyage, l'accueil se déclarait canonique sur /index.html alors que
+ * les visiteurs et les liens entrants pointent la racine, ce qui dédouble le
+ * signal aux moteurs.
+ */
+const chemin = Astro.url.pathname
+  .replace(/\/index\.html$/, '/')
+  .replace(/\.html$/, '')
+  .replace(/(.)\/$/, '$1');
+const canonique = new URL(chemin || '/', site.url).href;
+const imageAbsolue = new URL(image, site.url).href;
+---
+<title>{titre}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonique} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={site.nomLong} />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content={titre} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonique} />
+<meta property="og:image" content={imageAbsolue} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={titre} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageAbsolue} />
+<meta name="geo.region" content="FR-75" />
+<meta name="geo.placename" content="Paris" />

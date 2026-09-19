@@ -1,0 +1,21 @@
+---
+import { getEntry, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const page = await getEntry('pages', 'mentions-legales');
+if (!page) throw new Error('Page mentions-legales introuvable dans src/content/pages');
+const { Content } = await render(page);
+---
+<Layout
+  titre={page.data.titreSeo}
+  description={page.data.descriptionSeo}
+  filAriane={[{ nom: page.data.titre }]}
+  cta={false}
+>
+  <section class="section pt-10">
+    <div class="conteneur-texte prose-trudaines">
+      <h1 class="titre-1">{page.data.titre}</h1>
+      <Content />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormulaireRecommandation from '../components/FormulaireRecommandation.astro';
+import Avis from '../components/Avis.astro';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { site, parrainage } from '../data/site';
+
+const avis = (await avisCommentés()).slice(0, 3);
+const agregatAvis = await agrégatAvis();
+
+const etapes = [
+  {
+    titre: 'Vous me dites ce que vous savez',
+    texte:
+      "Un quartier, un type de bien, un calendrier. Pas de nom, pas de numéro : la personne ne m'a rien demandé, et ce n'est pas à moi de l'appeler la première fois.",
+  },
+  {
+    titre: 'Je vous rappelle avant tout contact',
+    texte:
+      "Nous décidons ensemble de la façon de faire les présentations. Vous lui donnez mon numéro, ou vous nous mettez en relation par email. Rien ne part sans votre feu vert.",
+  },
+  {
+    titre: 'Vous savez où en est le dossier',
+    texte:
+      "Vous saurez si le rendez vous a eu lieu et si le mandat est signé. Vous ne saurez rien de ce qui ne vous regarde pas : le prix, la situation, les raisons de la vente restent entre elle et moi.",
+  },
+];
+
+const faq = [
+  {
+    question: 'Est ce que je touche quelque chose ?',
+    reponse: parrainage.recompense
+      ? `${parrainage.recompense} Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation. Dans ce cas là, il faut une carte professionnelle.`
+      : "Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Un remerciement est donc possible et il est d'usage, nous en convenons au cas par cas. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation : il faut alors une carte professionnelle.",
+  },
+  {
+    question: 'Et si la personne ne veut pas être contactée ?',
+    reponse:
+      "Il ne se passe rien. Je n'écris ni n'appelle jamais quelqu'un qui ne m'a pas été présenté. C'est la raison pour laquelle le formulaire ne demande ni son nom ni son numéro.",
+  },
+  {
+    question: 'Est ce que vous prenez tous les biens ?',
+    reponse:
+      "Le cabinet travaille Paris, avec une connaissance au mètre carré des 9e, 10e, 17e et 18e. Pour un bien parisien hors de ces quatre arrondissements, je prends le rendez vous et je m'appuie sur la même méthode. Hors de Paris, je le dis franchement et j'oriente vers quelqu'un dont c'est le terrain, sans rien demander en retour.",
+  },
+  {
+    question: 'Que se passe t il si le prix demandé est trop haut ?',
+    reponse:
+      "Je le dis, chiffres à l'appui, et je perds parfois le mandat. C'est la seule façon de ne pas vous mettre en porte à faux avec quelqu'un que vous connaissez.",
+  },
+];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+    })),
+  },
+];
+---
+<Layout
+  titre="Recommander Trudaines à un proche | Cabinet immobilier Paris"
+  description="Vous connaissez quelqu'un qui vend dans le 9e, à Montmartre ou dans le 10e ? Voici comment se passe une recommandation, et ce qui ne se passe pas."
+  filAriane={[{ nom: 'Recommander' }]}
+  donnees={donnees}
+  cta={false}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Recommandation</p>
+      <h1 class="titre-1 mt-6">Quelqu'un autour de vous vend ?</h1>
+      <p class="chapo mt-8">
+        La plus grande partie des mandats du cabinet vient de personnes qui en ont parlé à quelqu'un. C'est
+        flatteur et c'est engageant : recommander un professionnel, c'est mettre sa propre parole en jeu. Voici
+        exactement ce qui se passe quand vous le faites.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+      <div>
+        <h2 class="titre-2">Comment cela se passe</h2>
+        <ol class="mt-10 grid gap-10">
+          {etapes.map((e, index) => (
+            <li class="border-t border-[color:var(--color-encre)] pt-5">
+              <p class="surtitre">Étape {index + 1}</p>
+              <h3 class="titre-3 mt-3">{e.titre}</h3>
+              <p class="mt-3 text-[color:var(--color-ardoise)]">{e.texte}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div>
+        {parrainage.lien && (
+          <div class="mb-8 border border-[color:var(--color-trait)] bg-[color:var(--color-papier)] p-6">
+            <p class="surtitre">En un clic</p>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+              Si vous recommandez régulièrement, l'application du cabinet suit vos recommandations et leur
+              avancement sans que vous ayez à me relancer.
+            </p>
+            <a href={parrainage.lien} rel="noopener" target="_blank" data-evt="clic_parrainage" class="bouton mt-6">
+              {parrainage.libelleLien || 'Ouvrir l’application'}
+            </a>
+          </div>
+        )}
+        <FormulaireRecommandation />
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Les questions que l'on me pose</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-10 text-sm">
+        Une question qui n'est pas là ? Écrivez moi à{' '}
+        <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a> ou appelez le{' '}
+        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregatAvis} titre="Ce qu'en disent ceux qui ont déjà recommandé" />
+</Layout>

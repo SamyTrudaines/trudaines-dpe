@@ -1,0 +1,29 @@
+---
+import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
+import { dateFr } from '../lib/format';
+interface Props { id: string; titre: string; date: Date; chapo: string; image?: string; imageAlt?: string; }
+const { id, titre, date, chapo, image, imageAlt = '' } = Astro.props;
+---
+<article>
+  <a href={`/panorama/${id}`} class="block no-underline">
+    {image && (
+      <div class="aspect-[16/10] overflow-hidden bg-[color:var(--color-papier)]">
+        <img
+          src={jeuPhoto(image).src}
+          srcset={jeuPhoto(image).srcset}
+          sizes={TAILLES_CARTE}
+          alt={imageAlt}
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </div>
+    )}
+    <p class="surtitre mt-5">{dateFr(date)}</p>
+    <h3 class="titre-3 mt-2 text-[color:var(--color-encre)]">{titre}</h3>
+    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{chapo}</p>
+    <p class="mt-4 text-sm font-medium text-[color:var(--color-nuit)]">Lire l'article</p>
+  </a>
+</article>
