@@ -1,4 +1,5 @@
 ---
+import { srcsetCarte, TAILLES_CARTE } from '../lib/images';
 import { prixAffiche, nombre, libelleStatut } from '../lib/format';
 interface Props {
   id: string;
@@ -22,6 +23,8 @@ const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, 
       {photo ? (
         <img
           src={photo.src}
+          srcset={srcsetCarte(photo.src)}
+          sizes={TAILLES_CARTE}
           alt={photo.alt}
           width="800"
           height="600"

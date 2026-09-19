@@ -7,6 +7,8 @@ import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import CarteBien from '../../components/CarteBien.astro';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
 import { site } from '../../data/site';
+import { titreSeo, descriptionSeo } from '../../lib/seo';
+import { vignette } from '../../lib/images';
 
 interface Props { bien: CollectionEntry<'biens'> }
 
@@ -73,12 +75,12 @@ const donnees = [
 ];
 ---
 <Layout
-  titre={archive
-    ? `${d.titre} | Référence Trudaines, ${d.quartier} ${d.arrondissement}`
-    : `${d.titre} | ${d.quartier} ${d.arrondissement} - Trudaines`}
-  description={archive
-    ? `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. Mandat présenté par le cabinet Trudaines, bien non disponible.`
-    : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`}
+  titre={titreSeo([d.titre, archive ? 'Référence' : `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
+  description={descriptionSeo(
+    archive
+      ? `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. Mandat présenté par le cabinet Trudaines, bien non disponible.`
+      : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`,
+  )}
   image={d.photos[0]?.src}
   filAriane={archive
     ? [{ nom: 'Nos références', href: '/references' }, { nom: d.titre }]
@@ -132,7 +134,15 @@ const donnees = [
             {d.photos.length > 1 && (
               <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
                 {d.photos.slice(1).map((p) => (
-                  <img src={p.src} alt={p.alt} width="600" height="400" loading="lazy" decoding="async" class="aspect-[3/2] w-full object-cover" />
+                  <img
+                    src={vignette(p.src) ?? p.src}
+                    alt={p.alt}
+                    width="600"
+                    height="400"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[3/2] w-full object-cover"
+                  />
                 ))}
               </div>
             )}

@@ -63,6 +63,16 @@ for (const page of pages) {
 
   if (!/<link rel="canonical"/.test(html)) erreurs.push(`${url} : lien canonique absent`);
 
+  /*
+   * Espace mangée avant ou après un lien. Astro supprime le retour à la ligne
+   * qui sépare un texte d'une balise voisine : « votre demande.<a>Politique de
+   * confidentialité</a> » s'affiche alors collé. La parade est d'écrire {' '}
+   * en fin de ligne, encore faut-il le voir. Ce contrôle le voit.
+   */
+  for (const collé of html.matchAll(/[a-zéèêàçùôîA-Z.,;:)]<a [^>]*>|<\/a>[a-zA-ZéèêàçùôîÉ]/g)) {
+    erreurs.push(`${url} : espace manquante autour d'un lien, « ${collé[0].slice(0, 60)} »`);
+  }
+
   const h1 = html.match(/<h1[\s>]/g) || [];
   if (h1.length === 0) erreurs.push(`${url} : aucun h1`);
   if (h1.length > 1) erreurs.push(`${url} : ${h1.length} balises h1`);
@@ -175,6 +185,44 @@ if (existsSync(dossierBiens)) {
       const rendu = existsSync(page) ? readFileSync(page, 'utf8') : '';
       if (!/Logement à consommation énergétique excessive/i.test(rendu)) {
         erreurs.push(`${fiche} : classe ${data.dpe} sans la mention « Logement à consommation énergétique excessive »`);
+      }
+    }
+  }
+}
+
+/*
+ * Cohérence des avis. Un chiffre d'avis annoncé sur une page d'accroche, ou
+ * déclaré aux moteurs par AggregateRating, doit correspondre au nombre d'avis
+ * que le visiteur peut réellement compter sur /avis. C'est la condition posée
+ * par Google pour ce balisage, et c'est surtout la seule façon de garantir
+ * qu'une promesse de réputation reste vérifiable quand le contenu bouge.
+ */
+const pageAvis = join(dist, 'avis.html');
+if (!existsSync(pageAvis)) {
+  erreurs.push('Page /avis absente du build');
+} else {
+  const html = readFileSync(pageAvis, 'utf8');
+  const publiés = (html.match(/Note de \d+ sur 5\./g) ?? []).length;
+
+  if (publiés === 0) {
+    erreurs.push('/avis : aucun avis publié sur la page');
+  } else {
+    for (const page of pages) {
+      const url = '/' + relative(dist, page).replace(/index\.html$/, '').replace(/\.html$/, '');
+      const contenu = readFileSync(page, 'utf8');
+
+      const annoncés = [...contenu.matchAll(/(\d+)\s+avis\b/g)].map((m) => Number(m[1]));
+      for (const n of new Set(annoncés)) {
+        if (n !== publiés) {
+          erreurs.push(`${url} : annonce ${n} avis alors que /avis en publie ${publiés}`);
+        }
+      }
+
+      const déclaré = /"reviewCount":\s*(\d+)/.exec(contenu);
+      if (déclaré && Number(déclaré[1]) !== publiés) {
+        erreurs.push(
+          `${url} : AggregateRating déclare ${déclaré[1]} avis aux moteurs alors que /avis en publie ${publiés}`
+        );
       }
     }
   }

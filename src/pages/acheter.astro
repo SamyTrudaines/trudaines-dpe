@@ -1,4 +1,5 @@
 ---
+import { srcsetCarte, TAILLES_CARTE } from '../lib/images';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
@@ -113,6 +114,8 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
                   {b.data.photos[0] ? (
                     <img
                       src={b.data.photos[0].src}
+                      srcset={srcsetCarte(b.data.photos[0].src)}
+                      sizes={TAILLES_CARTE}
                       alt={b.data.photos[0].alt}
                       width="800"
                       height="600"

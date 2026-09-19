@@ -1,4 +1,13 @@
 ---
+interface Props {
+  /*
+   * Vrai quand la page se termine par le bloc d'appel à l'action, dont le fond
+   * ivoire touche alors directement le pied de page. Sans lui, le filet et la
+   * marge sont nécessaires pour détacher le pied du dernier paragraphe.
+   */
+  colleAuBloc?: boolean;
+}
+const { colleAuBloc = false } = Astro.props;
 import Logo from './Logo.astro';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
@@ -12,7 +21,7 @@ const quartiers = [
 ];
 const annee = new Date().getFullYear();
 ---
-<footer class="filet mt-24 bg-white">
+<footer class={`bg-white ${colleAuBloc ? '' : 'filet mt-24'}`}>
   <div class="conteneur grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
     <div>
       <Logo />

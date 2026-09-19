@@ -1,4 +1,5 @@
 ---
+import { srcsetCarte, TAILLES_CARTE } from '../lib/images';
 import { dateFr } from '../lib/format';
 interface Props { id: string; titre: string; date: Date; chapo: string; image?: string; imageAlt?: string; }
 const { id, titre, date, chapo, image, imageAlt = '' } = Astro.props;
@@ -7,7 +8,17 @@ const { id, titre, date, chapo, image, imageAlt = '' } = Astro.props;
   <a href={`/panorama/${id}`} class="block no-underline">
     {image && (
       <div class="aspect-[16/10] overflow-hidden bg-[color:var(--color-papier)]">
-        <img src={image} alt={imageAlt} width="800" height="500" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+        <img
+          src={image}
+          srcset={srcsetCarte(image)}
+          sizes={TAILLES_CARTE}
+          alt={imageAlt}
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
       </div>
     )}
     <p class="surtitre mt-5">{dateFr(date)}</p>

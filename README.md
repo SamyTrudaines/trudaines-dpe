@@ -138,6 +138,7 @@ scripts/         génération des PDF, import de l'ancien site, recette
 | `python3 scripts/prix-dvf.py` | Recalcule les prix au m² par quartier sur les ventes signées |
 | `npm run avis-google` | Reprend les avis de la fiche Google dans `src/content/avis` |
 | `node scripts/placeholders.mjs` | Régénère la carte de partage des réseaux sociaux |
+| `node scripts/vignettes.mjs` | Écrit la version 800 px des photographies, servie aux cartes |
 
 ### D'où viennent les prix au m² publiés
 

@@ -2,9 +2,12 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
+import { agrégatAvis } from '../lib/avis';
 
 export const GET: APIRoute = async () => {
   const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
+  const avis = await agrégatAvis();
+  const références = (await getCollection('biens', (b) => b.data.archive)).length;
   const articles = (await getCollection('articles', (a) => !a.data.brouillon)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime()
   );
@@ -29,6 +32,14 @@ export const GET: APIRoute = async () => {
 - Mandat de recherche pour acquéreurs
 - Gestion locative
 
+## Réputation
+- Note ${avis.noteTexte} sur 5 sur ${avis.total} avis clients publiés, aucun en dessous de cinq étoiles
+- ${avis.parSource.google} avis sur Google, ${avis.parSource.pagesjaunes} sur Pages Jaunes, relevés en ${site.avis.releve}
+- Tous les avis sont repris en entier sur ${site.url}/avis, avec leur source et leur ancienneté
+
+## Références
+- ${références} mandats présentés depuis la création du cabinet, détaillés sur ${site.url}/references
+
 ## Méthode d'estimation
 Croisement des ventes signées issues de la base des valeurs foncières, analyse de la concurrence en ligne,
 visite systématique du bien, puis avis de valeur écrit citant ses comparables.
@@ -41,6 +52,8 @@ ${secteurs.map((s) => `- ${site.url}${s.hrefAgence} : agence immobilière ${s.no
 - ${site.url}/agence-immobiliere-montmartre : agence immobilière Montmartre
 - ${site.url}/vendre : les sept engagements de vente
 - ${site.url}/acheter : biens à la vente
+- ${site.url}/references : mandats déjà confiés au cabinet
+- ${site.url}/avis : avis clients, repris en entier
 - ${site.url}/chasse : mandat de recherche
 - ${site.url}/gestion-locative : gestion locative
 - ${site.url}/samy-santamarina : fondateur
