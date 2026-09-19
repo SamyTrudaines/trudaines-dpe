@@ -92,7 +92,8 @@ const avis = defineCollection({
     auteur: z.string(),
     quartier: z.string(),
     secteur: z.string().optional(),
-    typeProjet: z.enum(['Vente', 'Achat', 'Recherche', 'Location']),
+    /** Renseigné seulement quand l'avis dit lui même de quel projet il s'agit. */
+    typeProjet: z.enum(['Vente', 'Achat', 'Recherche', 'Location']).optional(),
     texte: z.string(),
     note: z.number().min(1).max(5),
     date: z.coerce.date().optional(),
@@ -102,7 +103,7 @@ const avis = defineCollection({
      * la source et renvoyer vers l'avis d'origine, comme l'exigent les conditions
      * d'utilisation de Google Maps Platform.
      */
-    source: z.enum(['google', 'direct']).default('direct'),
+    source: z.enum(['google', 'pagesjaunes', 'direct']).default('direct'),
     lienSource: z.string().url().optional(),
     /** Ancienneté telle que Google la publie, « il y a 2 mois » par exemple. */
     anciennete: z.string().optional(),

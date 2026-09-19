@@ -15,14 +15,15 @@ const { avis, titre = 'Ils nous ont confié leur vente' } = Astro.props;
             </blockquote>
             <figcaption class="mt-6 text-sm text-[color:var(--color-ardoise)]">
               <span aria-label={`Note de ${a.data.note} sur 5`}>{'★'.repeat(a.data.note)}{'☆'.repeat(5 - a.data.note)}</span>
-              <span class="ml-3">{a.data.auteur}, {a.data.quartier} · {a.data.typeProjet}</span>
-              {a.data.source === 'google' && (
+              <span class="ml-3">{a.data.auteur}, {a.data.quartier}{a.data.typeProjet ? ` · ${a.data.typeProjet}` : ''}</span>
+              {a.data.source !== 'direct' && (
                 <span class="ml-3">
-                  Avis Google{a.data.anciennete ? `, ${a.data.anciennete}` : ''}
+                  Avis {a.data.source === 'google' ? 'Google' : 'Pages Jaunes'}
+                  {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
                   {a.data.lienSource && (
                     <>
                       {' · '}
-                      <a href={a.data.lienSource} target="_blank" rel="noopener nofollow" class="lien-souligne">voir sur Google</a>
+                      <a href={a.data.lienSource} target="_blank" rel="noopener nofollow" class="lien-souligne">voir la fiche</a>
                     </>
                   )}
                 </span>
