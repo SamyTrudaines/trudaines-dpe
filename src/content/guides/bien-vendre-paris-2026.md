@@ -9,7 +9,7 @@ sommaire:
   - Conduire les visites et qualifier les acheteurs
   - Négocier, puis sécuriser la signature
   - Le calendrier réel d'une vente
-pages: 5
+pages: 8
 fichier: /guides/bien-vendre-paris-2026.pdf
 listeBrevo: telechargements
 disponible: true

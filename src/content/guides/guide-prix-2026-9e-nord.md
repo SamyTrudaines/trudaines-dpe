@@ -9,7 +9,7 @@ sommaire:
   - Ce que mesure l'écart entre le premier et le neuvième décile
   - Ce que cette base ne dit pas
   - Comment utiliser ces chiffres pour votre bien
-pages: 0
+pages: 9
 fichier: /guides/guide-prix-2026-9e-nord.pdf
 listeBrevo: telechargements
 disponible: true
