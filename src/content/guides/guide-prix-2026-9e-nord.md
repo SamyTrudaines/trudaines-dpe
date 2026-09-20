@@ -1,7 +1,7 @@
 ---
 titre: Guide des prix 2026 du 9e nord
 slug: guide-prix-2026-9e-nord
-chapo: Les niveaux de prix par quartier et par typologie dans le 9e nord, Montmartre et le 10e nord, tirés des ventes réellement signées, avec la méthode pour les lire sans se tromper.
+chapo: Les prix réellement signés du 9e nord, de Montmartre et du 10e nord, quartier par quartier et typologie par typologie, calculés par le cabinet sur les ventes notariées. Et la méthode, honnête, pour les lire sans se tromper.
 sommaire:
   - Les prix constatés par quartier
   - Les prix constatés par typologie

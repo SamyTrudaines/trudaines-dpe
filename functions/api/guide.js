@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
@@ -29,11 +29,17 @@ export async function onRequestPost({ request, env }) {
       .split('-')
       .join(' ')
       .replace(/^./, (lettre) => lettre.toUpperCase());
-    const base = env.SITE_URL || new URL(request.url).origin;
+    /*
+     * Le PDF est joint depuis le déploiement qui sert la page : cette adresse
+     * répond toujours, prévisualisation comprise, quand SITE_URL peut désigner
+     * un domaine pas encore relié. Fichier inaccessible : l'email part quand
+     * même, avec le lien à la place de la pièce jointe.
+     */
+    const base = new URL(request.url).origin;
     const urlGuide = `${base}/guides/${encodeURIComponent(guide)}.pdf`;
 
-    const fichier = await fetch(urlGuide);
-    const piecesJointes = fichier.ok ? [{ url: urlGuide, name: `${guide}.pdf` }] : [];
+    const fichier = await fetch(urlGuide).catch(() => null);
+    const piecesJointes = fichier && fichier.ok ? [{ url: urlGuide, name: `${guide}.pdf` }] : [];
 
     await envoyerEmail(env, {
       destinataire: email,
@@ -59,14 +65,15 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await enregistrerContact(env, {
+    await embaser(env, {
       email,
-      attributs: { SMS: valeur('telephone'), GUIDE: titreGuide, ORIGINE: 'Téléchargement de guide' },
+      attributs: { SMS: valeur('telephone'), GUIDE: titreGuide, ORIGINE: 'Téléchargement de guide', ...optIn(donnees) },
       listes: liste(env, 'telechargements'),
     });
 
     return reponse(request, { ok: true, message: 'Guide envoyé' });
   } catch (erreur) {
+    console.error('api/guide', erreur);
     return reponse(request, { ok: false, message: 'L’envoi a échoué. Appelez-nous au 06 20 46 59 12.' }, 500);
   }
 }

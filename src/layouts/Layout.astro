@@ -12,6 +12,8 @@ import { site } from '../data/site';
 import { agrégatAvis } from '../lib/avis';
 
 interface Props {
+  /** Ancre du formulaire local : la barre mobile y mène au lieu de /estimation. */
+  ancreEstimation?: string;
   titre: string;
   description: string;
   image?: string;
@@ -22,7 +24,7 @@ interface Props {
   cta?: boolean;
 }
 
-const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true } = Astro.props;
+const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true , ancreEstimation } = Astro.props;
 
 /*
  * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
@@ -88,7 +90,9 @@ const agence = {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="/fonts/libre-baskerville-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/montserrat-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#ffffff" />
     <Seo titre={titre} description={description} image={image} type={type} noindex={noindex} />
@@ -104,7 +108,7 @@ const agence = {
       {cta && <BlocCta />}
     </main>
     <PiedDePage colleAuBloc={cta} />
-    <BarreMobile />
+    <BarreMobile ancreEstimation={ancreEstimation} />
     <BandeauCookies />
     <script src="/js/formulaires.js" defer is:inline></script>
     <script>

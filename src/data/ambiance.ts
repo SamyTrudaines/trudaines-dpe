@@ -75,6 +75,13 @@ export const ambiance: Record<string, Ambiance> = {
     profil: 'https://unsplash.com/@kmile_ch',
     source: 'https://unsplash.com/photos/black-and-white-restaurant-with-chairs-and-tables-p5IyIl4wIfU',
   },
+  squareAnvers: {
+    fichier: '/images/ambiance/square-anvers',
+    alt: "Le square d'Anvers et le Sacré-Cœur, au pied de l'avenue Trudaine, Paris 9e",
+    auteur: 'Photographie du cabinet',
+    profil: '',
+    source: '',
+  },
   facadeParis: {
     fichier: '/images/ambiance/facade-paris',
     alt: 'Façade haussmannienne parisienne, pierre de taille et balcons filants',
@@ -102,7 +109,7 @@ export const ambiance: Record<string, Ambiance> = {
  * différentes, et aucune page ne montre un cliché d'un autre arrondissement.
  */
 const parArrondissement: Record<string, string[]> = {
-  'Paris 9e': ['fenetreSurLesToits', 'facadeParis'],
+  'Paris 9e': ['squareAnvers', 'fenetreSurLesToits'],
   'Paris 10e': ['cafeDeCoin', 'ruePavee'],
   'Paris 17e': ['facadeParis', 'fenetreSurLesToits', 'ruePavee'],
   'Paris 18e': ['montmartreDepuisLesToits', 'maisonRose', 'brasserieAbbesses'],

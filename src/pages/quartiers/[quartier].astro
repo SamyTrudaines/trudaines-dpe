@@ -24,6 +24,7 @@ const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
 const photo = quartier.data.photos[0];
 ---
 <Layout
+  ancreEstimation={`#estimation-${quartier.id}`}
   titre={quartier.data.titreSeo}
   description={quartier.data.descriptionSeo}
   filAriane={[{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom }]}
@@ -142,6 +143,7 @@ const photo = quartier.data.photos[0];
       />
     </div>
   </section>
+
 
   <section class="section filet">
     <div class="conteneur">

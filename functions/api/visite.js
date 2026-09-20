@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, enregistrerContact,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide,
 } from '../_lib/brevo.js';
 
@@ -33,7 +33,7 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await enregistrerContact(env, {
+    await embaser(env, {
       email,
       attributs: {
         PRENOM: valeur('prenom'),
@@ -41,6 +41,7 @@ export async function onRequestPost({ request, env }) {
         SMS: valeur('telephone'),
         BIEN_REFERENCE: valeur('reference'),
         ORIGINE: 'Demande de visite',
+        ...optIn(donnees),
       },
       listes: liste(env, 'acheteurs'),
     });
@@ -63,6 +64,7 @@ export async function onRequestPost({ request, env }) {
 
     return reponse(request, { ok: true, message: 'Demande transmise' });
   } catch (erreur) {
+    console.error('api/visite', erreur);
     return reponse(request, { ok: false, message: 'L’envoi a échoué. Appelez-nous au 06 20 46 59 12.' }, 500);
   }
 }

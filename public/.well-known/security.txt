@@ -1,0 +1,6 @@
+# Signalement d'une faille de sécurité concernant trudaines.com (RFC 9116).
+# Merci de décrire le problème sans l'exploiter au delà de la démonstration.
+Contact: mailto:samy.santamarina@trudaines.com
+Expires: 2027-09-19T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://www.trudaines.com/.well-known/security.txt
