@@ -123,6 +123,7 @@ src/data/        coordonnées, honoraires, secteurs et questions fréquentes
 functions/api/   traitement des formulaires côté Cloudflare
 public/          images, polices, _redirects, _headers, back office /admin
 scripts/         génération des PDF, import de l'ancien site, recette
+scripts/visites/ envoi automatique du dossier et de l'avis Google après chaque visite (voir LISEZMOI)
 ```
 
 ### Scripts fournis
