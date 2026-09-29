@@ -6,8 +6,8 @@ const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
 <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">
   Aller au contenu
 </a>
-<header class="sticky top-0 z-40 border-b border-[color:var(--color-trait)] bg-white/95 backdrop-blur">
-  <div class="conteneur-large flex items-center justify-between gap-4 py-4 2xl:gap-8">
+<header class="entete sticky top-0 z-40 border-b border-[color:var(--color-trait)] bg-white/95 backdrop-blur" data-entete>
+  <div class="entete-barre conteneur-large flex items-center justify-between gap-4 2xl:gap-8">
     <a href="/" class="no-underline">
       <Logo />
     </a>
@@ -83,5 +83,30 @@ const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
       bouton.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
       menu.hidden = ouvert;
     });
+  }
+
+  /*
+   * Passé le haut de page, la barre s'assombrit et le logo change de couleur.
+   * L'attribut est posé sans attendre le premier défilement : une arrivée par
+   * ancre au milieu d'une page doit trouver la barre déjà dans le bon état.
+   */
+  const entete = document.querySelector<HTMLElement>('[data-entete]');
+  if (entete) {
+    let prevu = false;
+    const ajuster = () => {
+      prevu = false;
+      entete.toggleAttribute('data-defile', window.scrollY > 24);
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!prevu) {
+          prevu = true;
+          requestAnimationFrame(ajuster);
+        }
+      },
+      { passive: true }
+    );
+    ajuster();
   }
 </script>

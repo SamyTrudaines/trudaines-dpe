@@ -320,6 +320,47 @@
   .section { padding-block: clamp(3.5rem, 2rem + 5vw, 7rem); }
   .filet { padding-top: clamp(3.5rem, 2rem + 5vw, 7rem); }
 
+  /*
+   * Le mouvement du site, réglé une fois pour toutes. Trois gestes seulement :
+   * les sections apparaissent en montant quand elles entrent dans l'écran,
+   * la photographie d'ouverture respire lentement, et les cartes réagissent
+   * au survol. L'attribut d'apparition est posé par le script du gabarit,
+   * jamais dans la page : sans JavaScript, tout est visible d'emblée, et le
+   * réglage du système qui demande moins de mouvement est respecté.
+   */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-apparait] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    [data-apparait].est-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .ouverture-photo {
+      animation: approche-lente 8s ease-out both;
+    }
+    @keyframes approche-lente {
+      from { transform: scale(1.05); }
+      to { transform: scale(1); }
+    }
+
+    @media (hover: hover) {
+      main article a img,
+      main a.bloc {
+        transition: transform 0.45s ease, box-shadow 0.45s ease;
+      }
+      main article a:hover img { transform: scale(1.03); }
+      main a.bloc:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 34px rgba(29, 29, 27, 0.09);
+      }
+      .lien-souligne { transition: text-decoration-color 0.2s ease; }
+    }
+  }
+
   /* Fond crème, pour marquer un changement de propos sans tracer de ligne. */
   .section-creme { background-color: var(--color-papier); }
 
@@ -379,3 +420,49 @@
 @media (max-width: 767px) {
   body { padding-bottom: 4.5rem; }
 }
+
+/*
+ * La barre d'en-tête. Fine au repos, elle se resserre encore et passe à
+ * l'encre dès que la page défile : le logo bascule alors du noir au blanc,
+ * ses deux lettres restant à l'orange. Un logotype échappe au critère de
+ * contraste ; tout le reste, liens et bouton, passe au blanc sur encre, où
+ * le contraste monte à 15,6:1. Ce bloc vit hors des couches : l'état défilé
+ * doit l'emporter sur les classes utilitaires posées dans le balisage.
+ */
+.entete-barre {
+  padding-block: 0.75rem;
+  transition: padding 0.35s ease;
+}
+.entete {
+  transition: background-color 0.35s ease, border-color 0.35s ease;
+}
+.entete .logo-mot,
+.entete .logo-sous,
+.entete nav a,
+.entete [data-menu-bouton],
+.entete [data-menu-bouton] span span {
+  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+.entete[data-defile] {
+  background-color: var(--color-encre);
+  border-color: var(--color-encre);
+}
+.entete[data-defile] .entete-barre { padding-block: 0.5rem; }
+.entete[data-defile] .logo-mot { color: #ffffff; }
+.entete[data-defile] .logo-sous { color: rgba(255, 255, 255, 0.6); }
+.entete[data-defile] .entete-barre nav a,
+.entete[data-defile] .entete-barre a[href^='tel'] {
+  color: #ffffff;
+}
+.entete[data-defile] .entete-barre .bouton {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+}
+.entete[data-defile] .entete-barre .bouton:hover {
+  background-color: var(--color-or);
+  border-color: var(--color-or);
+  color: var(--color-encre);
+}
+.entete[data-defile] [data-menu-bouton] { border-color: rgba(255, 255, 255, 0.4); }
+.entete[data-defile] [data-menu-bouton] span span { background-color: #ffffff; }

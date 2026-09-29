@@ -118,5 +118,35 @@ const agence = {
         if (nom) window.trudainesEvent?.(nom);
       });
     </script>
+    <script>
+      /*
+       * Apparition des sections au défilement. L'attribut est posé ici, jamais
+       * dans le HTML : un navigateur sans JavaScript, un moteur de recherche
+       * ou un lecteur d'écran voient la page entière d'emblée. Seules les
+       * sections encore sous le pli sont marquées, pour ne rien faire
+       * clignoter au chargement, et l'écouteur se coupe une fois passé.
+       */
+      if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+        const sections = document.querySelectorAll('main .section, main .conteneur > .vitrine');
+        const seuil = window.innerHeight * 0.92;
+        const guetteur = new IntersectionObserver(
+          (entrees) => {
+            for (const entree of entrees) {
+              if (entree.isIntersecting) {
+                entree.target.classList.add('est-visible');
+                guetteur.unobserve(entree.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px' }
+        );
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top > seuil) {
+            section.setAttribute('data-apparait', '');
+            guetteur.observe(section);
+          }
+        }
+      }
+    </script>
   </body>
 </html>
