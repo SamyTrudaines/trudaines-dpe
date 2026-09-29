@@ -87,7 +87,10 @@ export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, 
 
   const corps = {
     sender: {
-      email: env.BREVO_SENDER_EMAIL || 'contact@trudaines.com',
+      // Le repli est le seul expéditeur validé du compte Brevo : avec lui,
+      // BREVO_API_KEY est la seule variable indispensable pour que les
+      // formulaires fonctionnent, tout le reste ayant une valeur par défaut.
+      email: env.BREVO_SENDER_EMAIL || 'samy.santamarina@trudaines.com',
       name: env.BREVO_SENDER_NOM || 'Trudaines Immobilier',
     },
     to: [{ email: destinataire || env.NOTIFICATION_EMAIL || 'samy.santamarina@trudaines.com' }],
