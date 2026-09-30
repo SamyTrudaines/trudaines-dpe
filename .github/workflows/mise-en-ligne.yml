@@ -1,0 +1,66 @@
+# Mise en ligne de trudaines.com.
+#
+# Le mode se lit dans .mise-en-ligne/ordre.json : chaque ordre est un commit,
+# daté et relisible. audit ne fait que lire ; appliquer exige en plus la phrase
+# de confirmation écrite dans l'ordre. Les trois jetons viennent des secrets du
+# dépôt et ne quittent jamais la machine d'exécution.
+#
+# Détail des étapes et des garde-fous : scripts/mise-en-ligne/index.mjs.
+name: Mise en ligne
+
+on:
+  push:
+    branches: ['claude/**', 'main']
+    paths:
+      - '.mise-en-ligne/ordre.json'
+      - 'scripts/mise-en-ligne/**'
+      - '.github/workflows/mise-en-ligne.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'audit, appliquer, recette ou retablir'
+        type: choice
+        options: [audit, appliquer, recette, retablir]
+        default: audit
+      confirmation:
+        description: 'Pour appliquer : METTRE EN LIGNE trudaines.com'
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mise-en-ligne
+  cancel-in-progress: false
+
+jobs:
+  mise-en-ligne:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Tests des garde-fous
+        run: node scripts/test-mise-en-ligne.mjs
+
+      - name: Exécution de l'ordre
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          GANDI_PAT: ${{ secrets.GANDI_PAT }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MODE_DEMANDE: ${{ github.event.inputs.mode }}
+          CONFIRMATION_DEMANDEE: ${{ github.event.inputs.confirmation }}
+        run: node scripts/mise-en-ligne/index.mjs
+
+      - name: Rapport
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapport-mise-en-ligne
+          path: rapport-mise-en-ligne/
+          retention-days: 90
+          if-no-files-found: ignore

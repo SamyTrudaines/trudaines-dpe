@@ -111,58 +111,56 @@ Sur l'adresse `.pages.dev`, vérifiez dans l'ordre :
 
 ---
 
-## 4. Basculer le domaine chez Gandi
+## 4. Basculer le domaine, automatiquement
 
-### 4.1 Déclarer le domaine dans Cloudflare Pages
+La bascule est outillée : `scripts/mise-en-ligne/` l'exécute depuis GitHub
+Actions (workflow **Mise en ligne**), piloté par `.mise-en-ligne/ordre.json`.
 
-1. Projet Pages, onglet **Custom domains**, **Set up a domain**.
-2. Ajoutez `www.trudaines.com`, puis `trudaines.com`.
-3. Cloudflare affiche les enregistrements à créer. Notez la cible du CNAME,
-   du type `trudaines-dpe.pages.dev`.
+### Architecture retenue
 
-### 4.2 Modifier les deux enregistrements chez Gandi
+- Les DNS restent chez Gandi : la messagerie du domaine n'est pas touchée.
+  MX, SPF et DKIM existants sont intouchables par construction, et les tests
+  `npm run test-mise-en-ligne` le vérifient à chaque exécution.
+- `www.trudaines.com` devient un CNAME vers `trudaines-dpe.pages.dev`, déclaré
+  au préalable dans Cloudflare Pages, qui émet le certificat.
+- La racine `trudaines.com` est redirigée en 301 vers `https://www.trudaines.com`
+  par la redirection web de Gandi. Cloudflare Pages n'accepte un domaine
+  racine que si toute la zone est hébergée chez Cloudflare : un ALIAS vers
+  `pages.dev` depuis Gandi ne fonctionnerait pas.
+- Brevo reçoit ses listes, ses attributs et l'authentification DKIM du
+  domaine d'envoi ; Cloudflare reçoit les variables des formulaires, la clé
+  Brevo en secret, puis reconstruit la production avant la bascule.
 
-Connectez-vous sur **admin.gandi.net**, **Noms de domaine**, `trudaines.com`,
-onglet **Enregistrements DNS**.
+### Accès, une seule fois
 
-**Enregistrement 1, le sous-domaine www**
+Trois secrets du dépôt GitHub, **Settings**, **Secrets and variables**,
+**Actions** : `BREVO_API_KEY`, `CLOUDFLARE_API_TOKEN` (droit Cloudflare Pages,
+Modifier) et `GANDI_PAT` (configuration technique du domaine). Dans Brevo,
+**Sécurité**, **IP autorisées** : désactiver le blocage, sans quoi Brevo
+refuse les serveurs de Cloudflare, dont l'adresse change en permanence.
+Donner aux jetons une expiration courte et les révoquer après la mise en ligne.
 
-- Repérez la ligne dont le nom est `www`.
-- Cliquez sur le crayon pour la modifier.
-- Type : `CNAME`
-- Nom : `www`
-- Valeur : `trudaines-dpe.pages.dev.` (avec le point final)
-- TTL : `300` pendant la bascule, à remonter à `10800` une semaine plus tard.
-- Enregistrer.
+### Déroulé
 
-**Enregistrement 2, le domaine racine**
-
-- Repérez la ligne dont le nom est `@`, de type `A` ou `ALIAS`.
-- Deux cas possibles :
-  - Gandi propose le type **ALIAS** : mettez la valeur
-    `trudaines-dpe.pages.dev.` et supprimez les anciens enregistrements `A` de `@`.
-  - Sinon, créez deux enregistrements `A` sur `@` avec les adresses IP indiquées
-    par Cloudflare dans l'écran **Custom domains**, et supprimez les anciennes.
-- TTL : `300`.
-- Enregistrer.
-
-Ne touchez à aucun autre enregistrement : les lignes `MX`, `TXT` et celles de
-Brevo ou de Google restent en place, sinon la messagerie s'arrête.
-
-### 4.3 Vérifier
-
-- Dans Cloudflare Pages, les deux domaines passent en **Active** sous quelques
-  minutes, une heure au plus.
-- Testez `http://trudaines.com`, `http://www.trudaines.com`,
-  `https://trudaines.com` et `https://www.trudaines.com` : les quatre doivent
-  aboutir sur `https://www.trudaines.com`.
+1. `mode: audit` : lecture seule, plan détaillé, aucune écriture.
+2. `mode: appliquer` avec `confirmation: METTRE EN LIGNE trudaines.com` :
+   Brevo, variables et reconstruction Cloudflare, déclaration du domaine,
+   DNS Gandi, redirection de la racine, puis recette de production avec un
+   envoi réel de formulaire vers la boîte du cabinet.
+3. `mode: recette` : contrôle de production à la demande.
+4. `mode: retablir` : remet `www` et la racine dans leur état d'avant bascule,
+   à partir de la ligne `SAUVEGARDE_RETABLISSEMENT` du journal d'application,
+   recopiée dans le champ `sauvegarde` de l'ordre.
 
 ---
 
 ## 5. Forcer une seule adresse canonique
 
-Le fichier `public/_redirects` gère les redirections de chemins. La
-canonicalisation du domaine se règle dans Cloudflare, une seule fois :
+Tant que les DNS restent chez Gandi, la redirection web de Gandi assure la
+racine et Cloudflare Pages passe `www` en https de lui-même : rien à faire.
+Les réglages ci-dessous ne valent qu'après un éventuel transfert de la zone
+chez Cloudflare. Le fichier `public/_redirects` gère les redirections de
+chemins. La canonicalisation du domaine se règle alors dans Cloudflare :
 
 1. Tableau de bord Cloudflare, sélectionnez le domaine `trudaines.com`.
 2. **Rules** puis **Redirect Rules**, **Create rule**.
