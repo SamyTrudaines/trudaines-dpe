@@ -79,6 +79,15 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   noter('DNS', 'info', `www aujourd'hui : ${[...audit.dns.wwwCNAME.map((c) => `CNAME ${c}`), ...audit.dns.wwwA.map((a) => `A ${a}`)].join(', ') || 'rien'}`);
   noter('DNS', 'info', `racine aujourd'hui : ${[...audit.dns.racineA, ...audit.dns.racineAAAA].join(', ') || 'rien'} ; DNSSEC ${audit.dnssec}`);
   noter('DNS', 'info', `DKIM trouvés : ${Object.keys(audit.dns.dkim).join(', ') || 'aucun'} ; DMARC ${audit.dns.dmarc.length ? audit.dns.dmarc.join(' ') : 'absent'}`);
+  const spf = audit.dns.txt.filter((t) => /v=spf1/i.test(t));
+  noter('DNS', spf.length === 1 ? 'info' : 'alerte', spf.length === 1 ? `SPF : ${spf[0]}` : spf.length ? `${spf.length} SPF publiés, un seul est permis : les serveurs de réception les rejettent tous` : 'aucun SPF publié');
+  if (audit.messagerie === 'Google Workspace' && spf.length && !spf.some((s) => s.includes('_spf.google.com'))) {
+    noter('DNS', 'alerte', "le SPF n'autorise pas Google Workspace, qui envoie pourtant le courrier du domaine");
+  }
+  const rua = (audit.dns.dmarc.join(' ').match(/rua=mailto:([^;"\s]+)/i) || [])[1];
+  if (rua && !rua.toLowerCase().endsWith(`@${C.DOMAINE}`)) {
+    noter('DNS', 'alerte', `les rapports DMARC du domaine partent chez ${rua.split('@')[1]}, un tiers : à rapatrier vers une adresse du cabinet`);
+  }
   for (const b of verifierServeursDeNoms(audit.dns.ns)) noter('DNS', 'bloquant', b);
   for (const b of verifierCaa(audit.dns.caa)) noter('DNS', 'bloquant', b);
   const ancien = audit.http[`https://${C.HOTE_SITE}/`].page;
