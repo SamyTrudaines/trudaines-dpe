@@ -9,6 +9,7 @@ import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 import Ouverture from '../components/Ouverture.astro';
 import Manifeste from '../components/Manifeste.astro';
+import ReferencesAccueil from '../components/ReferencesAccueil.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -22,7 +23,6 @@ const references = mandats
   .sort((a, b) => b.data.surface - a.data.surface)
   .slice(0, 3);
 
-const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
 const articles = (await getCollection('articles', (a) => !a.data.brouillon))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
@@ -51,35 +51,43 @@ const engagements = [
 <Layout
   titre="Trudaines | Agence immobilière à Paris, vente, recherche et gestion"
   description="Agence immobilière à Paris : vente, recherche pour acquéreur et gestion locative. Avis de valeur écrit sous 48 heures, compte rendu après chaque visite."
+  enteteSurPhoto
 >
   <Ouverture />
 
   <section class="section pt-14 md:pt-20">
     <div class="conteneur">
-      <p class="surtitre">Paris</p>
+      <p class="surtitre marque-filet">Paris</p>
       <h1 class="titre-1 mt-8 max-w-4xl">
         Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
       </h1>
       <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
         <p class="chapo max-w-2xl">
-          Maison immobilière parisienne, numérique et sans vitrine, née d'une conviction : vous rendre du
-          temps, de la clarté et un conseil vraiment personnel. La donnée éclaire chaque décision, le réseau
-          ouvre les bonnes portes, et un seul professionnel vous accompagne, du premier rendez vous à la
-          signature.
+          Maison immobilière parisienne née d'une conviction : vous rendre du temps, de la clarté et un
+          conseil vraiment personnel.
         </p>
         <div class="flex flex-col gap-4 sm:flex-row">
           <a href="/estimation" class="bouton">Estimer mon bien</a>
           <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
         </div>
       </div>
-      <p class="mt-12 font-[family-name:var(--font-titre)] text-2xl italic text-[color:var(--color-encre)]">
-        L'immobilier au-delà des murs.
-      </p>
-      <p class="mt-14 max-w-3xl text-sm text-[color:var(--color-ardoise)]">
-        Estimation sans frais et sans engagement, avis de valeur écrit remis après visite sous 48 heures.
-        Réponse sous 24 heures ouvrées, au{' '}
-        <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
-      </p>
+      <ul class="reperes mt-16 md:mt-20" aria-label="Estimation : conditions et délais">
+        <li>
+          <span class="reperes-chiffre">0 €</span>
+          <span class="reperes-texte">Estimation sans frais et sans engagement</span>
+        </li>
+        <li>
+          <span class="reperes-chiffre">48 h</span>
+          <span class="reperes-texte">Avis de valeur écrit, remis après la visite</span>
+        </li>
+        <li>
+          <span class="reperes-chiffre">24 h</span>
+          <span class="reperes-texte">
+            Réponse en jours ouvrés, au{' '}
+            <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne whitespace-nowrap">{site.telephone}</a>
+          </span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -110,40 +118,8 @@ const engagements = [
       </div>
     </section>
   ) : (
-    references.length > 0 && (
-      <section class="section" aria-labelledby="biens-accueil">
-        <div class="conteneur">
-          <div class="flex flex-wrap items-end justify-between gap-6">
-            <h2 id="biens-accueil" class="titre-2">Les appartements que nous avons vendus</h2>
-            <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
-          </div>
-          <p class="chapo mt-6 max-w-2xl">
-            Aucun mandat n'est ouvert à la diffusion en ce moment : une partie de nos ventes se conclut avant
-            d'être publiée. Voici ce qui nous a été confié jusqu'ici.
-          </p>
-          <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
-            {references.slice(0, 2).map((b, n) => (
-              <CarteBien
-                id={b.id}
-                titre={b.data.titre}
-                quartier={b.data.quartier}
-                arrondissement={b.data.arrondissement}
-                prixBien={b.data.prix}
-                surface={b.data.surface}
-                pieces={b.data.pieces}
-                statut={b.data.statut}
-                photo={b.data.photos[0]}
-                chargement={n === 0 ? 'eager' : 'lazy'}
-                sansPrix
-                vitrine
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    )
+    references.length > 0 && <ReferencesAccueil references={references} total={totalReferences} />
   )}
-
 
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
@@ -166,61 +142,23 @@ const engagements = [
   <Manifeste />
 
 
-  {references.length > 0 && (
-    <section class="section filet" aria-labelledby="references-accueil">
-      <div class="conteneur">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <div class="max-w-2xl">
-            <h2 id="references-accueil" class="titre-2">Ce qui nous a été confié</h2>
-            <p class="mt-6 text-[color:var(--color-ardoise)]">
-              {totalReferences} mandats depuis septembre 2024, du deux pièces de la Butte à la demeure avec
-              jardin. Les photographies sont celles des dossiers du cabinet.
-            </p>
-          </div>
-          <a href="/references" class="lien-souligne text-sm">Voir toutes nos références</a>
-        </div>
-        <div class="mt-12 grid gap-12 md:grid-cols-3">
-          {references.map((b) => (
-            <CarteBien
-              id={b.id}
-              titre={b.data.titre}
-              quartier={b.data.quartier}
-              arrondissement={b.data.arrondissement}
-              prixBien={b.data.prix}
-              surface={b.data.surface}
-              pieces={b.data.pieces}
-              statut={b.data.statut}
-              photo={b.data.photos[0]}
-              sansPrix
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+  {biens.length > 0 && references.length > 0 && (
+    <ReferencesAccueil references={references} total={totalReferences} />
   )}
 
   <section class="section filet" aria-labelledby="territoire">
     <div class="conteneur">
       <h2 id="territoire" class="titre-2 max-w-2xl">Notre territoire</h2>
       <p class="chapo mt-6 max-w-2xl">
-        Trois arrondissements qui se touchent, un seul bassin d'acheteurs. Nous refusons les mandats hors de ce
-        périmètre plutôt que de promettre une expertise que nous n'aurions pas.
+        Quatre arrondissements contigus, un seul bassin d'acheteurs. Chaque estimation s'y appuie sur les
+        ventes signées des rues voisines, pas sur une moyenne de ville.
       </p>
-      <div class="mt-12 grid gap-10 md:grid-cols-3">
+      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {secteurs.map((s) => (
-          <div class="bloc">
-            <h3 class="titre-3">{s.nom}</h3>
+          <a href={s.hrefAgence} class="bloc group block no-underline">
+            <h3 class="titre-3 group-hover:underline group-hover:decoration-[color:var(--color-or)] group-hover:decoration-1 group-hover:underline-offset-4">{s.nom}</h3>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
-            <ul class="mt-6 space-y-2 text-sm">
-              <li><a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a></li>
-              <li><a href={s.hrefAgence} class="no-underline hover:underline">Agence immobilière {s.nom}</a></li>
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div class="mt-14 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        {quartiers.map((q) => (
-          <a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}</a>
+          </a>
         ))}
       </div>
     </div>

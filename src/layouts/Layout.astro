@@ -22,9 +22,11 @@ interface Props {
   filAriane?: { nom: string; href?: string }[];
   donnees?: Record<string, unknown>[];
   cta?: boolean;
+  /** La page s'ouvre sur une photographie pleine largeur, sous une barre transparente. */
+  enteteSurPhoto?: boolean;
 }
 
-const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true , ancreEstimation } = Astro.props;
+const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true , ancreEstimation, enteteSurPhoto = false } = Astro.props;
 
 /*
  * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
@@ -101,7 +103,7 @@ const agence = {
     <Analytics />
   </head>
   <body>
-    <Entete />
+    <Entete surPhoto={enteteSurPhoto} />
     {filAriane.length > 0 && <FilAriane etapes={filAriane} />}
     <main id="contenu">
       <slot />

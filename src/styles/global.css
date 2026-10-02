@@ -422,47 +422,356 @@
 }
 
 /*
- * La barre d'en-tête. Fine au repos, elle se resserre encore et passe à
- * l'encre dès que la page défile : le logo bascule alors du noir au blanc,
- * ses deux lettres restant à l'orange. Un logotype échappe au critère de
- * contraste ; tout le reste, liens et bouton, passe au blanc sur encre, où
- * le contraste monte à 15,6:1. Ce bloc vit hors des couches : l'état défilé
- * doit l'emporter sur les classes utilitaires posées dans le balisage.
+ * La barre d'en-tête.
+ *
+ * Fixe, et en trois temps. Au sommet de la page, elle est haute, aérée, et
+ * le logo porte sa ligne IMMOBILIER ; posée sur la photographie de l'accueil,
+ * elle est transparente et son texte est blanc. Dès que la page défile, elle
+ * passe au blanc, se resserre, replie IMMOBILIER et tire sous elle le filet
+ * orange des signatures de la marque, qui s'allonge avec la lecture. En
+ * descente franche elle s'efface et ne laisse que ce filet ; elle revient à
+ * la moindre remontée. Ce bloc vit hors des couches : ses états doivent
+ * l'emporter sur les classes utilitaires.
  */
-.entete-barre {
-  padding-block: 0.75rem;
-  transition: padding 0.35s ease;
+:root {
+  --entete-haut: 5.5rem;
+  --entete-compact: 4rem;
+  --entete-courbe: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+@media (max-width: 767px) {
+  :root {
+    --entete-haut: 4.5rem;
+    --entete-compact: 3.75rem;
+  }
+}
+html { scroll-padding-top: calc(var(--entete-compact) + 1rem); }
+html.menu-ouvert { overflow: hidden; }
+
+.logo { display: inline-block; line-height: 0; }
+.logo svg { display: block; width: 10.5rem; height: auto; }
+.logo-grand svg { width: min(20rem, 72vw); }
+.logo-ai { fill: var(--color-or); }
+
 .entete {
-  transition: background-color 0.35s ease, border-color 0.35s ease;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  color: var(--color-encre);
+  background-color: #ffffff;
+  transition:
+    transform 0.5s var(--entete-courbe),
+    background-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease;
 }
-.entete .logo-mot,
-.entete .logo-sous,
-.entete nav a,
-.entete [data-menu-bouton],
-.entete [data-menu-bouton] span span {
-  transition: color 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+.entete-cale { height: var(--entete-haut); }
+
+.entete-barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--entete-haut);
+  transition: height 0.5s var(--entete-courbe);
 }
-.entete[data-defile] {
-  background-color: var(--color-encre);
-  border-color: var(--color-encre);
+
+.entete-logo { display: block; flex: none; color: inherit; text-decoration: none; }
+.entete .logo {
+  --l: 9.25rem;
+  display: block;
+  height: calc(var(--l) * 0.2131);
+  overflow: hidden;
+  transition: height 0.5s var(--entete-courbe);
 }
-.entete[data-defile] .entete-barre { padding-block: 0.5rem; }
-.entete[data-defile] .logo-mot { color: #ffffff; }
-.entete[data-defile] .logo-sous { color: rgba(255, 255, 255, 0.6); }
-.entete[data-defile] .entete-barre nav a,
-.entete[data-defile] .entete-barre a[href^='tel'] {
-  color: #ffffff;
+.entete .logo svg { width: var(--l); transition: width 0.5s var(--entete-courbe); }
+.entete .logo-sous { transition: opacity 0.3s ease; }
+@media (min-width: 768px) {
+  .entete .logo { --l: 11rem; }
 }
-.entete[data-defile] .entete-barre .bouton {
-  background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.7);
-  color: #ffffff;
+
+.entete-nav { display: none; }
+@media (min-width: 1280px) {
+  .entete-nav { display: block; }
 }
-.entete[data-defile] .entete-barre .bouton:hover {
+.entete-nav ul { display: flex; align-items: center; gap: clamp(1.25rem, 1.9vw, 2.5rem); }
+.entete-nav a {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-size: 0.71875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: inherit;
+  text-decoration: none;
+}
+.entete-nav a::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0.2rem;
+  height: 1px;
   background-color: var(--color-or);
-  border-color: var(--color-or);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.4s var(--entete-courbe);
+}
+.entete-nav a:hover::after,
+.entete-nav a:focus-visible::after,
+.entete-nav a[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+.entete-actions { display: flex; flex: none; align-items: center; gap: 1.5rem; }
+.entete-tel {
+  display: none;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: inherit;
+  text-decoration: none;
+}
+.entete-tel:hover { text-decoration: underline; text-decoration-color: var(--color-or); text-underline-offset: 0.35em; }
+@media (min-width: 1536px) {
+  .entete-tel { display: inline-block; }
+}
+
+.entete-cta {
+  display: none;
+  align-items: center;
+  height: 2.75rem;
+  padding-inline: 1.375rem;
+  font-size: 0.71875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: var(--color-encre);
+  border: 1px solid var(--color-encre);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    opacity 0.3s ease,
+    visibility 0s linear 0s;
+}
+.entete-cta:hover { background-color: var(--color-or); border-color: var(--color-or); color: var(--color-encre); }
+@media (min-width: 768px) {
+  .entete-cta { display: inline-flex; }
+}
+.entete[data-cta-visible] .entete-cta {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.entete-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0 0.25rem 0 0.5rem;
+  font-family: var(--font-texte);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+@media (min-width: 1280px) {
+  .entete-menu { display: none; }
+}
+.entete-menu-traits { display: flex; flex-direction: column; gap: 6px; width: 1.625rem; }
+.entete-menu-traits span {
+  display: block;
+  height: 1px;
+  background-color: currentColor;
+  transition: transform 0.35s var(--entete-courbe);
+}
+.entete-menu[aria-expanded='true'] .entete-menu-traits span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.entete-menu[aria-expanded='true'] .entete-menu-traits span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+
+.entete-progression {
+  position: absolute;
+  inset: auto 0 -2px;
+  height: 2px;
+  background-color: var(--color-or);
+  transform: scaleX(var(--progression, 0));
+  transform-origin: left center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Page défilée : fond blanc voilé, barre resserrée, IMMOBILIER replié. */
+.entete[data-compact],
+.entete[data-menu-ouvert] {
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1px 0 var(--color-trait);
+}
+@supports (backdrop-filter: blur(1px)) {
+  .entete[data-compact]:not([data-menu-ouvert]) {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: saturate(1.6) blur(14px);
+  }
+}
+.entete[data-compact] .entete-barre { height: var(--entete-compact); }
+.entete[data-compact] .logo { --l: 8.5rem; height: calc(var(--l) * 0.0989); }
+.entete[data-compact] .logo-sous { opacity: 0; }
+@media (min-width: 768px) {
+  .entete[data-compact] .logo { --l: 9.75rem; }
+}
+.entete[data-compact] .entete-progression { opacity: 1; }
+.entete[data-cache]:not([data-menu-ouvert]) { transform: translateY(-100%); }
+
+/* Sur la photographie d'ouverture : transparente, texte blanc. */
+.entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) {
+  color: #ffffff;
+  background-color: transparent;
+}
+.entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) .entete-cta {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+.entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) .entete-cta:hover {
+  color: var(--color-encre);
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Voile en haut de la photographie, pour que la barre blanche reste lisible. */
+.ouverture-voile {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 11rem;
+  background: linear-gradient(to bottom, rgba(18, 18, 16, 0.6), rgba(18, 18, 16, 0.22) 55%, rgba(18, 18, 16, 0));
+  pointer-events: none;
+}
+
+/*
+ * Menu plein écran, sous la barre qui reste visible pour le refermer, et au
+ * dessus du bandeau des cookies comme de la barre mobile.
+ */
+.menu-plein {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-top: calc(var(--entete-compact) + 2.5rem);
+  padding-bottom: 2rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.menu-plein[hidden] { display: none; }
+.menu-plein[data-ouvert] { opacity: 1; }
+.menu-plein-liens a {
+  display: inline-block;
+  padding-block: 0.3rem;
+  font-family: var(--font-titre);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--color-encre);
+  text-decoration: none;
+}
+.menu-plein-liens a[aria-current] {
+  text-decoration: underline;
+  text-decoration-color: var(--color-or);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.menu-plein-secondaires { display: flex; flex-wrap: wrap; gap: 0.25rem 1.75rem; margin-top: 2.25rem; }
+.menu-plein-secondaires a {
+  display: inline-block;
+  padding-block: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ardoise);
+  text-decoration: none;
+}
+.menu-plein-liens a,
+.menu-plein-secondaires a {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  transition: opacity 0.5s ease, transform 0.5s var(--entete-courbe);
+  transition-delay: calc(var(--i, 0) * 40ms + 60ms);
+}
+.menu-plein[data-ouvert] .menu-plein-liens a,
+.menu-plein[data-ouvert] .menu-plein-secondaires a {
+  opacity: 1;
+  transform: none;
+}
+.menu-plein-pied { display: grid; gap: 1.25rem; }
+.menu-plein-pied p { font-size: 0.875rem; color: var(--color-ardoise); }
+.menu-plein-pied p a { font-weight: 500; color: var(--color-encre); text-decoration: none; }
+.menu-plein-pied p span { margin-inline: 0.5rem; }
+
+/*
+ * Le filet orange des signatures de la marque : 2,5 rem sur 2 px, posé au
+ * dessus d'un surtitre, d'une signature ou d'un repère chiffré.
+ */
+.marque-filet::before,
+.signature::before,
+.reperes > li::before {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: 1.25rem;
+  background-color: var(--color-or);
+}
+.signature {
+  font-family: var(--font-titre);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
+  line-height: 1.2;
   color: var(--color-encre);
 }
-.entete[data-defile] [data-menu-bouton] { border-color: rgba(255, 255, 255, 0.4); }
-.entete[data-defile] [data-menu-bouton] span span { background-color: #ffffff; }
+
+/* Repères chiffrés de l'accueil : trois colonnes séparées par un filet. */
+.reperes {
+  display: grid;
+  gap: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-trait);
+}
+@media (min-width: 768px) {
+  .reperes { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+  .reperes > li { padding-inline: 2.5rem; border-left: 1px solid var(--color-trait); }
+  .reperes > li:first-child { padding-left: 0; border-left: 0; }
+}
+.reperes-chiffre {
+  display: block;
+  font-family: var(--font-titre);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.75rem, 2.1rem + 2.2vw, 3.75rem);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--color-encre);
+}
+.reperes-texte {
+  display: block;
+  max-width: 17rem;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-ardoise);
+}
