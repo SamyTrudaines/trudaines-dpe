@@ -152,7 +152,7 @@
     } else {
       contexte.hidden = false;
       contexte.textContent =
-        "Cette adresse est hors du périmètre mesuré, le 9e, le 10e et le 18e. Nous pouvons quand même passer voir le bien, mais le calcul immédiat ne s'applique pas.";
+        "Cette adresse est hors du périmètre mesuré, le 9e, le 10e, le 17e et le 18e. Nous pouvons quand même passer voir le bien, mais le calcul immédiat ne s'applique pas.";
     }
   }
 
@@ -241,4 +241,27 @@
 
     if (window.trudainesEvent) window.trudainesEvent('estimation_immediate');
   });
+
+  /*
+   * Arrivée depuis l'accueil avec ?adresse= : l'adresse est retrouvée dans la
+   * Base adresse nationale, comme si le visiteur l'avait choisie dans la liste.
+   * Il ne reste qu'à décrire le bien.
+   */
+  var adresseDemandee = (new URLSearchParams(window.location.search).get('adresse') || '').trim();
+  if (adresseDemandee.length >= 5) {
+    champAdresse.value = adresseDemandee;
+    var requete = /paris/i.test(adresseDemandee) ? adresseDemandee : adresseDemandee + ' Paris';
+    fetch('https://api-adresse.data.gouv.fr/search/?limit=1&q=' + encodeURIComponent(requete))
+      .then(function (r) {
+        return r.ok ? r.json() : null;
+      })
+      .then(function (data) {
+        var trouve = data && data.features && data.features[0];
+        if (!trouve || trouve.properties.score < 0.4) return;
+        propositions[trouve.properties.label] = trouve.properties;
+        champAdresse.value = trouve.properties.label;
+        champAdresse.dispatchEvent(new Event('change'));
+      })
+      .catch(function () {});
+  }
 })();

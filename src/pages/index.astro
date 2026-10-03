@@ -28,6 +28,11 @@ const articles = (await getCollection('articles', (a) => !a.data.brouillon))
   .slice(0, 3);
 const avis = await avisCommentés(3);
 const agregatAvis = await agrégatAvis();
+/* Toutes les notes relevées à cinq étoiles, et chaque avis noté : alors seulement « tous à cinq étoiles ». */
+const toutCinq = agregatAvis.toutesCinq && agregatAvis.notés === agregatAvis.total;
+const preuveAvis = toutCinq
+  ? `${agregatAvis.total} avis clients, tous à cinq étoiles`
+  : `${agregatAvis.total} avis clients, note moyenne de ${agregatAvis.noteTexte} sur 5`;
 const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
 
 const engagements = [
@@ -61,15 +66,38 @@ const engagements = [
         <span class="surtitre marque-filet block">Agence immobilière à Paris</span>
         <span class="titre-1 mt-5 block">L'immobilier <span class="whitespace-nowrap">au-delà des murs.</span></span>
       </h1>
-      <div class="mt-8 grid gap-8 lg:grid-cols-[1.1fr_auto] lg:items-end">
-        <p class="chapo max-w-2xl">
-          Derrière chaque adresse, il y a une rue, un marché, une vie. Nous lisons les trois par la donnée
-          et défendons votre prix en personne.
-        </p>
-        <div class="flex flex-col gap-4 sm:flex-row">
-          <a href="/estimation" class="bouton">Estimer mon bien</a>
-          <a href="/vendre" class="bouton bouton-secondaire">Notre méthode de vente</a>
+      <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,29rem)] lg:items-end lg:gap-16">
+        <div>
+          <p class="chapo max-w-2xl">
+            Derrière chaque adresse, il y a une rue, un marché, une vie. Nous lisons les trois par la donnée
+            et défendons votre prix en personne.
+          </p>
+          {agregatAvis.total > 0 && (
+            <a href="/avis" class="preuve-avis" data-evt="accueil_avis">
+              {toutCinq && <span class="preuve-avis-etoiles" aria-hidden="true">★★★★★</span>}
+              <span>{preuveAvis}</span>
+            </a>
+          )}
         </div>
+        <form action="/estimation#estimation-immediate" method="get" class="estimer-adresse" data-cta-estimation>
+          <label for="accueil-adresse" class="etiquette">Combien vaut votre bien ?</label>
+          <div class="estimer-adresse-ligne">
+            <input
+              id="accueil-adresse"
+              name="adresse"
+              class="champ"
+              type="text"
+              autocomplete="street-address"
+              placeholder="12 avenue Trudaine, 75009 Paris"
+              required
+            />
+            <button type="submit" class="bouton" data-evt="accueil_estimer_adresse">Estimer</button>
+          </div>
+          <p class="estimer-adresse-note">
+            Une fourchette tirée des ventes signées dans votre rue, sans inscription.{' '}
+            <a href="/vendre" class="lien-souligne whitespace-nowrap">Notre méthode de vente</a>
+          </p>
+        </form>
       </div>
       <ul class="reperes mt-16 md:mt-20" aria-label="Estimation : conditions et délais">
         <li>
@@ -107,6 +135,10 @@ const engagements = [
     references.length > 0 && <ReferencesAccueil references={references} total={totalReferences} />
   )}
 
+  {biens.length > 0 && references.length > 0 && (
+    <ReferencesAccueil references={references} total={totalReferences} />
+  )}
+
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
       <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
@@ -125,12 +157,9 @@ const engagements = [
     </div>
   </section>
 
+  <Avis avis={avis} agregat={agregatAvis} />
+
   <Manifeste />
-
-
-  {biens.length > 0 && references.length > 0 && (
-    <ReferencesAccueil references={references} total={totalReferences} />
-  )}
 
   <section class="section filet" aria-labelledby="territoire">
     <div class="conteneur">
@@ -149,8 +178,6 @@ const engagements = [
       </div>
     </div>
   </section>
-
-  <Avis avis={avis} agregat={agregatAvis} />
 
   {presse.length > 0 && (
     <section class="section filet" aria-labelledby="presse-accueil">
@@ -175,7 +202,7 @@ const engagements = [
     <section class="section" aria-labelledby="panorama-accueil">
       <div class="conteneur">
         <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 id="panorama-accueil" class="titre-2">Panorama</h2>
+          <h2 id="panorama-accueil" class="titre-2">L'actu du marché</h2>
           <a href="/panorama" class="lien-souligne text-sm">Tous les articles</a>
         </div>
         <div class="mt-12 grid gap-12 md:grid-cols-3">

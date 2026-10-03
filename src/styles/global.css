@@ -1095,3 +1095,44 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   text-decoration-color: var(--color-or);
   text-underline-offset: 0.35em;
 }
+
+/*
+ * Accueil : la preuve sous le chapô (les avis, d'un clic) et l'adresse à
+ * estimer, qui ouvre le calculateur de /estimation déjà renseigné.
+ */
+.preuve-avis {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin-top: 1.5rem;
+  padding-block: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-encre);
+  text-decoration: none;
+}
+.preuve-avis:hover span:last-child {
+  text-decoration: underline;
+  text-decoration-color: var(--color-or);
+  text-underline-offset: 0.35em;
+}
+.preuve-avis-etoiles { letter-spacing: 0.25em; color: var(--color-or-fonce); }
+.estimer-adresse .etiquette {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.estimer-adresse-ligne { display: grid; gap: 0.75rem; }
+@media (min-width: 640px) {
+  .estimer-adresse-ligne { grid-template-columns: minmax(0, 1fr) auto; gap: 0; }
+  .estimer-adresse-ligne .champ { border-right: 0; }
+}
+.estimer-adresse-ligne .bouton { min-height: 3rem; }
+.estimer-adresse-note {
+  margin-top: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-ardoise);
+}
