@@ -1,4 +1,5 @@
 ---
+brouillon: true
 titre: "Paris 17e : plaine Monceau, Batignolles, Épinettes, un mètre carré à trois niveaux"
 date: 2026-10-03
 image: /images/panorama/prix-m2-rues-paris-17.webp

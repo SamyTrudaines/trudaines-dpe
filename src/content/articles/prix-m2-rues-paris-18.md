@@ -1,4 +1,5 @@
 ---
+brouillon: true
 titre: "Paris 18e : entre Montmartre et la Chapelle, le mètre carré peut valoir plus du double"
 date: 2026-10-03
 image: /images/panorama/prix-m2-rues-paris-18.webp

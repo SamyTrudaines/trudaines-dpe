@@ -1,4 +1,5 @@
 ---
+brouillon: true
 titre: "Copropriété : les documents à réunir avant de vendre"
 date: 2026-10-03
 image: /images/panorama/documents-copropriete-vendre-appartement.webp

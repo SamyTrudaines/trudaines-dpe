@@ -1,4 +1,5 @@
 ---
+brouillon: true
 titre: "Paris 9e : de la place d'Anvers à la rue de Bruxelles, 5 470 € d'écart au mètre carré"
 date: 2026-10-03
 image: /images/panorama/prix-m2-rues-paris-9.webp

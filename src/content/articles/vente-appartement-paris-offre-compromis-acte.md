@@ -1,4 +1,5 @@
 ---
+brouillon: true
 titre: "De l'offre à l'acte : le calendrier d'une vente à Paris"
 date: 2026-10-03
 image: /images/panorama/vente-appartement-paris-offre-compromis-acte.webp
