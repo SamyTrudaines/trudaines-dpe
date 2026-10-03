@@ -37,9 +37,8 @@ Le traitement des données collectées sur ce site est décrit dans la [politiqu
 
 ## Crédits photographiques
 
-Les photographies de biens, de quartiers et de références sont celles du
-cabinet, de même que la vue du square d'Anvers et du Sacré-Cœur qui ouvre la
-page d'accueil.
+Les photographies de biens et de références sont celles du cabinet, de même
+que la vue du square d'Anvers et du Sacré-Cœur qui ouvre la page d'accueil.
 
 Les photographies d'atmosphère sont publiées sous licence Unsplash, et
 choisies par le cabinet : la butte Montmartre vue des toits par Henrique
@@ -47,6 +46,12 @@ Ferreira, la fenêtre ouverte sur les toits par Isaiah B, la rue pavée par
 Clément Dellandrea, la terrasse sous la glycine par Alex Harmuth, le café de
 coin par Caleb Maxwell, la brasserie de quartier par Camille Brodard, les
 toits de Paris par Francisco Mamani, La Maison Rose par Bastien Nvs.
+
+Les photographies des pages quartiers et des articles sont publiées sous la
+même licence. Elles sont signées notamment Ruben Hanssen, Louis Paulin, dano
+Banano, Nikita Pishchugin, John Towner, Adeline Moutier, Renan Matias, Yann
+Maignan, Jozsef Hocza, Février Photography, Maryline Waldy, William Dmytrow,
+Lens by Benji, Catrina Carrigan et Jelle van Leest.
 
 La photographie du fondateur accompagnant l'article d'Immo Matin est publiée
 par ce média, droits réservés.
