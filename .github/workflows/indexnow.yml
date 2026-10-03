@@ -1,0 +1,35 @@
+# Signalement IndexNow des pages changées par chaque fusion sur main, dès que
+# la production les sert. Détail : scripts/indexnow.mjs. Aucun secret : la clé
+# du protocole est publique, servie à la racine du site.
+name: IndexNow
+
+on:
+  push:
+    branches: ['main']
+    paths: ['src/**', 'public/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  signaler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Signalement IndexNow
+        env:
+          AVANT: ${{ github.event.before }}
+          APRES: ${{ github.sha }}
+        run: node scripts/indexnow.mjs

@@ -9,8 +9,8 @@ ordre: 6
 titreSeo: Immobilier Batignolles, Paris 17e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier des Batignolles, Paris 17e, calculés sur 738 ventes signées. Estimation écrite par le cabinet Trudaines.
 photos:
-  - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/01.webp
-    alt: Séjour d'un trois pièces rénové rue des Dames, aux Batignolles
+  - src: /images/quartiers/batignolles-rue.webp
+    alt: Immeuble de pierre ouvragée, arbres et ciel bleu
 faits:
   - titre: Typologies dominantes
     valeur: Deux et trois pièces d'immeubles faubouriens et haussmanniens, surface médiane de 40 m²

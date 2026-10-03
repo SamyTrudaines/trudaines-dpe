@@ -123,7 +123,7 @@ const secondaires = [
     window.addEventListener('resize', ajuster, { passive: true });
     ajuster();
 
-    const boutonsPage = document.querySelectorAll('main a.bouton[href="/estimation"]');
+    const boutonsPage = document.querySelectorAll('main a.bouton[href="/estimation"], main [data-cta-estimation]');
     if (boutonsPage.length && 'IntersectionObserver' in window) {
       const visibles = new Set<Element>();
       const guetteur = new IntersectionObserver(

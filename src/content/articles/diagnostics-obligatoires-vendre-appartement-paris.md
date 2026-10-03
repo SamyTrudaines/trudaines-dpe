@@ -1,5 +1,4 @@
 ---
-brouillon: true
 titre: "Les diagnostics à fournir pour vendre un appartement à Paris"
 date: 2026-10-03
 image: /images/panorama/diagnostics-obligatoires-vendre-appartement-paris.webp
@@ -18,46 +17,50 @@ Vendre un appartement suppose de réunir un dossier de diagnostics. La loi fixe 
 
 ## Ce que la loi vous demande de fournir
 
-Le vendeur remet un dossier de diagnostic technique. Il est annexé à l'avant-contrat (compromis ou promesse de vente) ou, s'il n'y a pas d'avant-contrat, à l'acte de vente. C'est le vendeur qui le fait établir et qui en supporte le coût. Le professionnel doit être certifié, assuré et indépendant, du vendeur comme de l'agence.
+Le vendeur remet un dossier de diagnostic technique. Il est annexé à l'avant-contrat (compromis ou promesse de vente) ou, s'il n'y a pas d'avant-contrat, à l'acte de vente (article L271-4 du code de la construction et de l'habitation). Le vendeur le fait établir et en supporte le coût, sauf accord différent avec l'acquéreur. Les diagnostics techniques sont établis par un professionnel certifié, assuré et indépendant, du vendeur comme de l'agence (article L271-6).
 
 Le contenu dépend de l'immeuble. Pour un appartement parisien, voici les cas courants.
 
 | Diagnostic | Exigé si | Validité |
 | --- | --- | --- |
 | DPE | toujours | 10 ans |
-| Amiante | permis de construire avant le 1er juillet 1997 | illimitée si absence, contrôle sous 3 ans sinon |
-| Plomb | immeuble construit avant le 1er janvier 1949 | illimitée si absence, 1 an sinon |
+| Amiante | permis de construire avant le 1er juillet 1997 | illimitée si absence d'amiante (rapport postérieur au 1er avril 2013), sinon contrôle de l'état de conservation sous 3 ans |
+| Plomb | immeuble construit avant le 1er janvier 1949 | illimitée si le constat est négatif, 1 an si du plomb dépasse le seuil |
 | Termites | tout bien à Paris | 6 mois |
-| Gaz | installation de plus de 15 ans | 3 ans |
-| Électricité | installation de plus de 15 ans | 3 ans |
+| Gaz | installation intérieure de plus de 15 ans | 3 ans |
+| Électricité | installation intérieure de plus de 15 ans | 3 ans |
 | État des risques et pollutions | à Paris, toujours | 6 mois |
 | Superficie (loi Carrez) | lot de copropriété | illimitée tant que le lot ne change pas |
+
+Les durées de l'état termites, du plomb, du gaz et de l'électricité figurent à l'article D271-5 du code de la construction et de l'habitation. Celle de l'état des risques figure à l'article R125-26 du code de l'environnement.
+
+Deux informations s'ajoutent selon l'adresse du bien. Dans une zone de risque de mérule délimitée par arrêté préfectoral, le vendeur informe l'acquéreur de ce risque. Dans une zone de bruit d'un plan d'exposition au bruit d'aérodrome, un document le signale (article L112-11 du code de l'urbanisme). Demandez à votre notaire de vérifier ces deux cas pour l'adresse du bien.
 
 Si votre DPE est classé F ou G, lisez aussi [Vendre un appartement classé F ou G à Paris](/panorama/dpe-f-et-g-vendre).
 
 ## Ce qui est propre à Paris
 
-Trois points tiennent à la capitale. Tout le département est classé en zone termites par arrêté préfectoral : l'état termites est exigé quel que soit l'arrondissement. Le parc est ancien, ce qui déclenche souvent le diagnostic plomb (immeubles d'avant 1949) et le diagnostic amiante (permis d'avant juillet 1997).
+Trois points tiennent à la capitale. Tout le département est classé en zone termites par [l'arrêté du préfet de Paris n° 2003-80-1 du 21 mars 2003](https://www.paris.fr/pages/lutte-contre-les-termites-8103) : l'état termites est exigé quel que soit l'arrondissement. Il reste valable six mois (article D271-5), et non trois mois comme l'indiquent d'anciens textes. Le parc est ancien, ce qui déclenche souvent le diagnostic plomb (immeubles d'avant 1949) et le diagnostic amiante (permis d'avant juillet 1997).
 
 Enfin, l'état des risques et pollutions dépend de l'adresse. Il peut mentionner le risque d'inondation de la Seine, qui ne concerne pas tous les arrondissements, et les risques de mouvements de terrain liés aux anciennes carrières et au gypse. Le vendeur peut l'établir lui-même, à partir des données publiques de Géorisques.
 
 ## Qui commande, et quand
 
-Le vendeur commande, et le plus tôt possible. Retrouvez d'abord la date de construction de l'immeuble et celle de son permis, qui décident du plomb et de l'amiante : le syndic peut vous les confirmer. Le DPE doit exister avant la publication de l'annonce, puisque la classe énergétique y figure. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
+Le vendeur commande, et le plus tôt possible. Retrouvez d'abord la date de construction de l'immeuble et celle de son permis, qui décident du plomb et de l'amiante : le syndic peut vous les confirmer. Le DPE doit exister avant la diffusion de l'annonce : celle-ci doit indiquer la classe énergie, la classe climat et le montant estimé des dépenses annuelles d'énergie (article L126-33 du code de la construction et de l'habitation). Le vendeur tient le DPE à la disposition de tout candidat acquéreur (article L126-26), et l'état des risques et pollutions se remet dès la première visite. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
 
 ## Le piège des dates de validité
 
-Les durées du tableau s'apprécient deux fois : à la date de l'avant-contrat, puis à celle de l'acte. Un diagnostic remis à l'avant-contrat qui a expiré le jour de l'acte est remplacé par un nouveau (article L271-5 du code de la construction et de l'habitation). Les notaires comptent en général de deux à trois mois entre les deux signatures.
+Les durées du tableau s'apprécient deux fois : à la date de l'avant-contrat, puis à celle de l'acte. Un diagnostic remis à l'avant-contrat qui a expiré le jour de l'acte est remplacé par un nouveau (article L271-5 du code de la construction et de l'habitation). Les notaires comptent en général de deux à trois mois entre les deux signatures ([Chambre des notaires de Paris](https://paris.notaires.fr/fr/actualites/achat-vente-immobiliere-comprendre-les-delais)).
 
 L'état termites et l'état des risques, valables six mois, sont les plus exposés. Un état termites de cinq mois le jour du compromis aura expiré avant l'acte.
 
 ## Les erreurs les plus courantes
 
-Un DPE ancien. Un DPE établi avant le 1er juillet 2021 n'est plus valable : il a expiré au plus tard le 31 décembre 2024. S'il figure encore dans vos papiers, il faut en faire établir un nouveau.
+Un DPE ancien. Un DPE établi avant le 1er juillet 2021 n'est plus valable : il a expiré au plus tard le 31 décembre 2024 (décret du 17 décembre 2020). S'il figure encore dans vos papiers, il faut en faire établir un nouveau.
 
-Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur sous plafond est inférieure à 1,80 m, ce qui concerne les combles et les mansardes. Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix pendant un an à compter de la signature.
+Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur sous plafond est inférieure à 1,80 m, ce qui concerne les combles et les mansardes. Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix dans l'année qui suit l'acte authentique de vente (article 46 de la loi du 10 juillet 1965).
 
-Un diagnostic manquant ou périmé. Cela vaut pour le plomb, l'amiante, les termites, le gaz et l'électricité. Un diagnostic absent le jour de l'acte, ou qui n'est plus en cours de validité, interdit au vendeur de s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation).
+Un diagnostic manquant ou périmé. Cela vaut pour le plomb, l'amiante, les termites, le gaz et l'électricité. Un diagnostic absent le jour de l'acte interdit au vendeur de s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation). Un diagnostic expiré entre l'avant-contrat et l'acte doit être remplacé (article L271-5).
 
 Un état des risques trop ancien. Il doit avoir été établi moins de six mois avant l'avant-contrat et avant l'acte, même quand le vendeur l'a rempli lui-même.
 
@@ -79,7 +82,7 @@ Non. Le dossier est annexé à l'avant-contrat ou, à défaut, à l'acte de vent
 
 ### Qui choisit le diagnostiqueur et qui paie ?
 
-Le vendeur choisit et paie. Le professionnel doit être certifié, assuré et indépendant du vendeur comme de l'agence.
+Le vendeur choisit et paie, sauf accord différent avec l'acquéreur. Le professionnel des diagnostics techniques doit être certifié, assuré et indépendant du vendeur comme de l'agence.
 
 ### Un diagnostic valable le jour du compromis suffit-il ?
 
@@ -91,6 +94,6 @@ Non. Un diagnostic reste utilisable tant que sa durée de validité n'est pas é
 
 Si vous préparez la vente de votre appartement, le cabinet Trudaines peut dresser avec vous la liste des pièces à réunir : [demandez une estimation](/estimation).
 
-Sources : [Légifrance, articles L271-4 à L271-6 du code de la construction et de l'habitation](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006176358) ; [ANIL, les diagnostics pour devenir propriétaire](https://www.anil.org/votre-besoin/acheter/diagnostics/quels-diagnostics/) ; [ANIL, le diagnostic de performance énergétique](https://www.anil.org/aj-dpe/) ; [economie.gouv.fr, le diagnostic immobilier](https://www.economie.gouv.fr/le-diagnostic-immobilier-comment-ca-marche) ; [Légifrance, article 46 de la loi du 10 juillet 1965](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000029946555) ; [Légifrance, article 4-1 du décret du 17 mars 1967](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488230) ; [Géorisques, information des acquéreurs et des locataires](https://www.georisques.gouv.fr/information-des-acquereurs-et-locataires) ; [Ville de Paris, prévention et réglementation contre les termites](https://cdn.paris.fr/paris/2019/07/24/deb078ed42028eeb265e36ba5a6a5e5a.pdf) ; [notaires.fr, avant-contrat et acte authentique](https://www.notaires.fr/fr/article/avant-contrat-et-acte-authentique-la-signature-des-actes-de-vente-immobiliere).
+Sources : [Légifrance, articles L271-4 à L271-6 du code de la construction et de l'habitation](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006176358) ; [Légifrance, article D271-5 du même code](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038967784) ; [Légifrance, articles L126-26 à L126-33 du même code (DPE)](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043967326/) ; [Légifrance, décret n° 2020-1610 du 17 décembre 2020](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000042695187) ; [Légifrance, articles R125-23 à R125-27 du code de l'environnement](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074220/LEGISCTA000006176683/) ; [Légifrance, article L112-11 du code de l'urbanisme](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039785320) ; [Légifrance, article 46 de la loi du 10 juillet 1965](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000029946555) ; [Légifrance, article 4-1 du décret du 17 mars 1967](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006488230) ; [ANIL, les diagnostics pour devenir propriétaire](https://www.anil.org/votre-besoin/acheter/diagnostics/quels-diagnostics/) ; [ANIL, le diagnostic de performance énergétique](https://www.anil.org/aj-dpe/) ; [economie.gouv.fr, le diagnostic immobilier](https://www.economie.gouv.fr/le-diagnostic-immobilier-comment-ca-marche) ; [Géorisques, information des acquéreurs et des locataires](https://www.georisques.gouv.fr/information-des-acquereurs-et-locataires) ; [Ville de Paris, lutte contre les termites](https://www.paris.fr/pages/lutte-contre-les-termites-8103) ; [ecologie.gouv.fr, lutte contre les termites, les insectes xylophages et les mérules](https://www.ecologie.gouv.fr/lutte-contre-termites-insectes-xylophages-merules-et-champignons-lignivores) ; [Chambre des notaires de Paris, comprendre les délais d'une vente](https://paris.notaires.fr/fr/actualites/achat-vente-immobiliere-comprendre-les-delais).
 
 <!-- Photographie : Rachel Calvo, Unsplash, https://unsplash.com/photos/a-row-of-buildings-with-balconies-and-windows-FOFIWsW9euc -->

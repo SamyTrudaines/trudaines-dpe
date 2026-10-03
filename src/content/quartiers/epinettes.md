@@ -9,8 +9,8 @@ ordre: 7
 titreSeo: Immobilier Épinettes, Paris 17e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier des Épinettes, Paris 17e, calculés sur 558 ventes signées. Estimation écrite par le cabinet Trudaines.
 photos:
-  - src: /images/biens/appartement-3-pieces-65m2-traversant-brochant-epinettes/01.webp
-    alt: Séjour traversant d'un trois pièces du secteur Brochant Épinettes
+  - src: /images/quartiers/epinettes-rue.webp
+    alt: Façade claire aux jardinières fleuries et réverbère
 faits:
   - titre: Typologies dominantes
     valeur: Studios et deux pièces d'anciens immeubles ouvriers, surface médiane de 34 m²
