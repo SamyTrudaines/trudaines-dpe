@@ -32,11 +32,17 @@ Le contenu dépend de l'immeuble. Pour un appartement parisien, voici les cas co
 | État des risques et pollutions | à Paris, toujours | 6 mois |
 | Superficie (loi Carrez) | lot de copropriété | illimitée tant que le lot ne change pas |
 
-À Paris, tout le département est classé en zone termites par arrêté préfectoral, quel que soit l'arrondissement. Le plomb concerne tous les immeubles d'avant 1949, nombreux dans la capitale. L'état des risques et pollutions peut être établi par le vendeur lui-même, à partir des données publiques de Géorisques. Si votre DPE est classé F ou G, lisez aussi [Vendre un appartement classé F ou G à Paris](/panorama/dpe-f-et-g-vendre).
+Si votre DPE est classé F ou G, lisez aussi [Vendre un appartement classé F ou G à Paris](/panorama/dpe-f-et-g-vendre).
+
+## Ce qui est propre à Paris
+
+Trois points tiennent à la capitale. Tout le département est classé en zone termites par arrêté préfectoral : l'état termites est exigé quel que soit l'arrondissement. Le parc est ancien, ce qui déclenche souvent le diagnostic plomb (immeubles d'avant 1949) et le diagnostic amiante (permis d'avant juillet 1997).
+
+Enfin, l'état des risques et pollutions dépend de l'adresse. Il peut mentionner le risque d'inondation de la Seine, qui ne concerne pas tous les arrondissements, et les risques de mouvements de terrain liés aux anciennes carrières et au gypse. Le vendeur peut l'établir lui-même, à partir des données publiques de Géorisques.
 
 ## Qui commande, et quand
 
-Le vendeur commande, et le plus tôt possible. Le DPE doit exister avant la publication de l'annonce, puisque la classe énergétique y figure. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
+Le vendeur commande, et le plus tôt possible. Retrouvez d'abord la date de construction de l'immeuble, qui décide de l'amiante et du plomb : le syndic peut vous la confirmer. Le DPE doit exister avant la publication de l'annonce, puisque la classe énergétique y figure. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
 
 ## Le piège des dates de validité
 
@@ -48,11 +54,17 @@ L'état termites et l'état des risques, valables six mois, sont les plus expos�
 
 Un DPE ancien. Un DPE établi avant le 1er juillet 2021 n'est plus valable : il a expiré au plus tard le 31 décembre 2024. S'il figure encore dans vos papiers, il faut en faire établir un nouveau.
 
-Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur sous plafond est inférieure à 1,80 m, ce qui concerne les combles et les mansardes. Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix pendant un an à compter de la signature.
+Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur sous plafond est inférieure à 1,80 m, ce qui concerne les combles et les mansardes. Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix pendant un an à compter de la signature.
 
 Un diagnostic manquant ou périmé. Si le diagnostic plomb, amiante, termites, gaz ou électricité est absent, ou n'est plus en cours de validité le jour de l'acte, le vendeur ne peut pas s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation).
 
 Un professionnel sans les titres requis. Vérifiez sa certification et son assurance avant de lui confier le dossier : la loi les exige.
+
+## Relire le dossier avant de le remettre
+
+Relisez chaque rapport avant de le transmettre. Vérifiez l'adresse, le numéro de lot, l'étage, la date de réalisation et la signature du diagnostiqueur. Une erreur sur le lot ou sur l'adresse se corrige mieux avant le compromis que devant le notaire.
+
+Dressez ensuite une liste des dates d'expiration, en face de la date d'avant-contrat que vous visez, puis de cette date augmentée de trois mois. Tout diagnostic qui expire dans cet intervalle est à refaire avant l'acte, autant le commander en même temps que les autres.
 
 ## Questions fréquentes
 

@@ -5,7 +5,7 @@ image: /images/panorama/acheter-a-montmartre-points-a-verifier.webp
 imageAlt: "Rue de l'Abreuvoir à Montmartre, maisons anciennes le long d'une rue pavée en pente"
 chapo: "À Montmartre, le charme d'une rue ne dit rien de l'état de la copropriété. Voici ce qu'il faut regarder, dans l'ordre, avant de faire une offre."
 titreSeo: "Acheter à Montmartre : points à vérifier avant l'offre | Trudaines"
-descriptionSeo: "Escaliers, ascenseur, travaux votés, ravalement, vues, pentes, rues touristiques, location meublée : ce qu'il faut vérifier avant d'acheter à Montmartre."
+descriptionSeo: "Escaliers, ascenseur, copropriété, ravalement, vues, pentes, location meublée : les points à vérifier avant d'acheter à Montmartre."
 motsCles:
   - acheter à Montmartre
   - copropriété Montmartre

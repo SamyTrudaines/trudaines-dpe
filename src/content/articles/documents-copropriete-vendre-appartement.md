@@ -23,13 +23,15 @@ Sur l'immeuble : la fiche synthétique de la copropriété, le règlement de cop
 
 Sur les finances : les charges courantes et hors budget que vous avez payées au titre des deux derniers exercices, les sommes que vous pourriez encore devoir au syndicat et celles dont l'acquéreur pourrait être débiteur, l'état global des impayés de charges et des dettes envers les fournisseurs, la quote-part du fonds de travaux attachée à votre lot et votre dernière cotisation. Le pré-état daté, que le syndic établit le plus souvent, rassemble ces informations dans un seul document.
 
+La superficie de la partie privative (loi Carrez) doit aussi figurer dans l'avant-contrat et dans l'acte.
+
 Le plan pluriannuel de travaux mérite une précision. Depuis 2023, 2024 ou 2025 selon le nombre de lots, les copropriétés de plus de quinze ans doivent en élaborer un projet. Il programme les travaux à prévoir sur dix ans et, une fois adopté par l'assemblée, il est remis à l'acquéreur.
 
 ## Les délais du syndic
 
-Le syndic détient la plupart de ces pièces. Pour la fiche synthétique, la loi lui laisse un mois à compter de la demande d'un copropriétaire, avec une pénalité de 15 € par jour de retard imputée sur sa rémunération. Un syndic peut donc légalement mettre un mois à répondre sur ce seul document.
+Le syndic détient la plupart de ces pièces. Pour la fiche synthétique, la loi lui laisse un mois à compter de la demande d'un copropriétaire, avec une pénalité de 15 € par jour de retard imputée sur sa rémunération. Un syndic peut donc légalement mettre un mois à répondre sur ce seul document.
 
-Le pré-état daté a son propre coût. Aucun plafond légal ne l'encadre, à la différence de l'état daté établi pour l'acte, dont les honoraires sont limités à 380 € TTC depuis le 1er juin 2020 et supportés par le vendeur. Demandez le montant avant de commander.
+Le pré-état daté a son propre coût. Aucun plafond légal ne l'encadre, à la différence de l'état daté établi pour l'acte, dont les honoraires sont limités à 380 € TTC depuis le 1er juin 2020 et supportés par le vendeur. Demandez le montant avant de commander.
 
 ## Pourquoi réunir le dossier dès la mise en vente
 
@@ -38,6 +40,10 @@ Réunir les pièces à la mise en vente retire de votre calendrier tout ce qui d
 La loi donne une raison de plus. Si les documents sur l'organisation de l'immeuble et les informations financières ne sont pas remis au plus tard à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur ne commence qu'au lendemain de leur remise (article L721-3). Vous êtes engagé, lui peut encore revenir sur sa décision, et la date à laquelle la vente devient ferme dépend du syndic.
 
 Un acquéreur qui reçoit le dossier complet avant son offre la fait en connaissance de cause, travaux votés compris. Il ne découvre rien chez le notaire. Chez Trudaines, nous réunissons ces pièces avant la mise en vente, et chaque acquéreur sérieux reçoit le dossier complet avant son offre.
+
+## Dans quel ordre s'y prendre
+
+Commencez par ce qui dépend du syndic : la fiche synthétique, le pré-état daté, les informations sur le fonds de travaux, les procès-verbaux que vous n'auriez pas conservés. Rassemblez ensuite ce que vous détenez déjà : le règlement de copropriété, les appels de charges des deux derniers exercices, les procès-verbaux reçus. Faites relire le tout par la personne qui rédigera l'avant-contrat, avant la première visite. Une pièce manquante se repère alors à froid, et non le jour d'une offre.
 
 ## Les travaux votés et le fonds de travaux
 
@@ -57,7 +63,7 @@ C'est le document qui rassemble les informations financières à remettre à l'a
 
 ### Qui paie l'état daté, et combien ?
 
-Le vendeur. Les honoraires du syndic pour l'état daté ne peuvent pas dépasser 380 € TTC depuis le 1er juin 2020.
+Le vendeur. Les honoraires du syndic pour l'état daté ne peuvent pas dépasser 380 € TTC depuis le 1er juin 2020.
 
 ### Récupère-t-on le fonds de travaux à la vente ?
 
