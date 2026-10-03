@@ -55,7 +55,7 @@ export const site = {
   avis: {
     lienGoogle:
       'https://www.google.com/maps/search/?api=1&query=Trudaines+Immobilier+2+rue+Livingstone+75018+Paris',
-    releve: 'septembre 2026',
+    releve: 'octobre 2026',
   },
   /**
    * Identifiant GA4, renseigné dans les variables Cloudflare Pages (PUBLIC_GA4_ID).
@@ -125,6 +125,7 @@ export const navigationPrincipale: LienNav[] = [
   { libelle: 'Acheter', href: '/acheter' },
   { libelle: 'Références', href: '/references' },
   { libelle: 'Quartiers', href: '/quartiers' },
-  { libelle: 'Le cabinet', href: '/trudaines' },
+  { libelle: 'Actu', href: '/panorama' },
+  { libelle: "L'agence", href: '/trudaines' },
   { libelle: 'Contact', href: '/contact' },
 ];

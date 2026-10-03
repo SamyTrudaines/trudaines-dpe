@@ -41,7 +41,12 @@ export async function avisCommentés(limite?: number): Promise<Avis[]> {
 }
 
 export type AgrégatAvis = {
+  /** Avis publiés sur /avis, notés ou non. */
   total: number;
+  /** Avis dont la note a été relevée : la moyenne porte sur eux seuls. */
+  notés: number;
+  /** Vrai quand toutes les notes relevées sont de cinq étoiles. */
+  toutesCinq: boolean;
   note: number;
   /** Note formatée à la française, « 5 » ou « 4,9 ». */
   noteTexte: string;
@@ -56,10 +61,13 @@ export type AgrégatAvis = {
 export async function agrégatAvis(): Promise<AgrégatAvis> {
   const liste = await getCollection('avis');
   const total = liste.length;
-  const note = total === 0 ? 0 : liste.reduce((somme, a) => somme + a.data.note, 0) / total;
+  const notes = liste.map((a) => a.data.note).filter((n): n is number => typeof n === 'number');
+  const note = notes.length === 0 ? 0 : notes.reduce((somme, n) => somme + n, 0) / notes.length;
   const arrondie = Math.round(note * 10) / 10;
   return {
     total,
+    notés: notes.length,
+    toutesCinq: notes.length > 0 && notes.every((n) => n === 5),
     note: arrondie,
     noteTexte: String(arrondie).replace('.', ','),
     parSource: {

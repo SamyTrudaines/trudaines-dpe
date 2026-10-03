@@ -38,6 +38,15 @@ const { titre, description, image, type = 'website', noindex = false, filAriane 
  */
 const avis = await agrégatAvis();
 
+/*
+ * Version construite, posée par Cloudflare Pages au moment du build (branche et
+ * commit). L'audit de mise en ligne la lit sur l'adresse de production : c'est
+ * ainsi qu'on sait si la production sert bien la dernière fusion.
+ */
+const version = process.env.CF_PAGES_COMMIT_SHA
+  ? `${process.env.CF_PAGES_BRANCH ?? '?'}@${process.env.CF_PAGES_COMMIT_SHA.slice(0, 7)}`
+  : 'local';
+
 const agence = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
@@ -77,13 +86,14 @@ const agence = {
   })),
   founder: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
   sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
-  ...(avis.total > 0
+  ...(avis.notés > 0
     ? {
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: avis.note,
           bestRating: 5,
           worstRating: 1,
+          ratingCount: avis.notés,
           reviewCount: avis.total,
         },
       }
@@ -95,6 +105,7 @@ const agence = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="trudaines-version" content={version} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preload" href="/fonts/cormorant-garamond-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />

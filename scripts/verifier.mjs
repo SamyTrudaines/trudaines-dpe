@@ -247,7 +247,10 @@ if (!existsSync(pageAvis)) {
   erreurs.push('Page /avis absente du build');
 } else {
   const html = readFileSync(pageAvis, 'utf8');
-  const publiés = (html.match(/Note de \d+ sur 5\./g) ?? []).length;
+  // Un avis publié porte data-avis ; seuls ceux dont la note a été relevée
+  // portent la mention « Note de N sur 5 ».
+  const publiés = (html.match(/data-avis\b/g) ?? []).length;
+  const notés = (html.match(/Note de \d+ sur 5\./g) ?? []).length;
 
   if (publiés === 0) {
     erreurs.push('/avis : aucun avis publié sur la page');
@@ -267,6 +270,12 @@ if (!existsSync(pageAvis)) {
       if (déclaré && Number(déclaré[1]) !== publiés) {
         erreurs.push(
           `${url} : AggregateRating déclare ${déclaré[1]} avis aux moteurs alors que /avis en publie ${publiés}`
+        );
+      }
+      const notesDéclarées = /"ratingCount":\s*(\d+)/.exec(contenu);
+      if (notesDéclarées && Number(notesDéclarées[1]) !== notés) {
+        erreurs.push(
+          `${url} : AggregateRating déclare ${notesDéclarées[1]} notes alors que /avis en affiche ${notés}`
         );
       }
     }
