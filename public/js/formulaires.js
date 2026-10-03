@@ -107,9 +107,17 @@
         .then(function (reponse) {
           if (reponse && reponse.ok) {
             if (form.dataset.evenement) evt(form.dataset.evenement, { formulaire: form.dataset.evenement });
+            /* data-evt : un ou plusieurs noms d'événements, séparés par une espace, qui disent
+               de quelle page et de quel livre blanc vient l'envoi. */
+            (form.getAttribute('data-evt') || '').split(/\s+/).forEach(function (nom) {
+              if (nom) evt(nom, { formulaire: form.dataset.evenement || '' });
+            });
             var confirmation = form.querySelector('[data-confirmation]');
             var corps = form.querySelector('[data-corps]');
             if (confirmation && corps) {
+              /* Double opt-in lancé par le serveur : le visiteur doit savoir qu'un second email l'attend. */
+              var doi = confirmation.querySelector('[data-confirmation-doi]');
+              if (doi) doi.hidden = !reponse.doi;
               corps.hidden = true;
               confirmation.hidden = false;
               confirmation.setAttribute('tabindex', '-1');

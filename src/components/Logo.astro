@@ -1,31 +1,27 @@
 ---
 /**
- * Logo de la marque : TRUD, AI en orange, NES, puis IMMOBILIER en dessous.
+ * Logo de la marque, tracé depuis le fichier vectoriel de la charte : TRUD, AI
+ * en orange, NES, puis IMMOBILIER en dessous.
  *
- * L'orange est celui du fichier de marque, sans correction de contraste : un
- * logotype échappe au critère de contraste des WCAG, et le mot reste entier et
- * lisible sans la couleur.
- *
- * Les deux lettres colorées se lisent « AI » par accident heureux du nom : c'est
- * le sens du logo, il est donc conservé tel quel. L'orange n'y porte pas
- * d'information, le mot reste entier et lisible sans lui, et l'attribut de
- * libellé accessible donne le nom complet aux lecteurs d'écran.
+ * Le mot suit la couleur du texte qui l'entoure : encre sur fond clair, blanc
+ * sur une photographie, sans second fichier. Le AI garde l'orange de la marque
+ * en toutes circonstances. Un logotype échappe au critère de contraste des
+ * WCAG ; le nom complet est donné aux lecteurs d'écran par le libellé.
  */
+import { logo } from '../data/logo';
+
 interface Props { taille?: 'normal' | 'grand'; sousTitre?: boolean; }
 const { taille = 'normal', sousTitre = true } = Astro.props;
-const classeMot = taille === 'grand' ? 'text-3xl md:text-4xl' : 'text-lg md:text-xl';
 ---
-<span class="inline-flex flex-col leading-none" aria-label="Trudaines Immobilier" role="img">
-  <span
-    class={`logo-mot font-[family-name:var(--font-texte)] font-semibold tracking-[0.2em] text-[color:var(--color-encre)] ${classeMot}`}
-    aria-hidden="true"
-  >TRUD<span class="logo-ai text-[color:var(--color-or)]">AI</span>NES</span>
-  {sousTitre && (
-    <span
-      class="logo-sous mt-1 self-center text-[0.5rem] font-medium uppercase tracking-[0.42em] text-[color:var(--color-ardoise)] md:text-[0.5625rem]"
-      aria-hidden="true"
-    >
-      Immobilier
-    </span>
-  )}
+<span class={`logo ${taille === 'grand' ? 'logo-grand' : ''}`}>
+  <svg
+    viewBox={sousTitre ? logo.cadreTout : logo.cadreMot}
+    role="img"
+    aria-label="Trudaines Immobilier"
+    focusable="false"
+  >
+    <path class="logo-mot" fill="currentColor" fill-rule="evenodd" d={logo.mot} />
+    <path class="logo-ai" fill-rule="evenodd" d={logo.ai} />
+    {sousTitre && <path class="logo-sous" fill="currentColor" fill-rule="evenodd" d={logo.sous} />}
+  </svg>
 </span>

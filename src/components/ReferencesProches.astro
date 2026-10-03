@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import CarteBien from './CarteBien.astro';
+import type { PorteeReferences } from '../lib/entonnoir';
+
+/**
+ * Les mandats passés du cabinet près de la page, sans prix : la preuve que le
+ * cabinet a déjà travaillé là. La portée dit d'où viennent les mandats montrés,
+ * du quartier à Paris, et le texte le dit sans détour quand il n'y en a pas
+ * dans le quartier même.
+ */
+interface Props {
+  mandats: CollectionEntry<'biens'>[];
+  portee: PorteeReferences;
+  /** « Martyrs Lorette », « le quartier Batignolles » : complète « Nos références dans ... ». */
+  quartier?: string;
+  /** « Paris 9e » */
+  arrondissement: string;
+  /** Où le cabinet n'a pas de mandat à montrer : « dans ce quartier » (défaut), « près de cette rue ». */
+  ici?: string;
+  /** Événement (data-evt) du clic sur une référence. */
+  evt: string;
+  evtToutes: string;
+}
+const { mandats, portee, quartier, arrondissement, ici = 'dans ce quartier', evt, evtToutes } = Astro.props;
+
+const numero = /(\d+)\s*(e|er)\b/.exec(arrondissement);
+const dansArrondissement = numero ? `le ${numero[1]}${numero[2]} arrondissement` : arrondissement;
+const duArrondissement = numero ? `du ${numero[1]}${numero[2]} arrondissement` : `de ${arrondissement}`;
+
+const titre =
+  portee === 'quartier'
+    ? `Nos références ${quartier ? `dans ${quartier}` : 'dans ce quartier'}`
+    : portee === 'arrondissement'
+      ? `Nos références dans ${dansArrondissement}`
+      : 'Nos références à Paris';
+const intro =
+  portee === 'quartier'
+    ? "Des mandats déjà conduits ici. Ces biens ne sont plus disponibles, leurs fiches restent consultables."
+    : portee === 'arrondissement'
+      ? `Aucun mandat du cabinet n'est encore présenté ${ici}. Voici ceux ${duArrondissement}.`
+      : `Aucun mandat du cabinet n'est encore présenté dans ${dansArrondissement}. Voici des mandats conduits à Paris.`;
+---
+{mandats.length > 0 && (
+  <section class="section filet" aria-labelledby="references-proches">
+    <div class="conteneur">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <h2 id="references-proches" class="titre-2">{titre}</h2>
+        <a href="/references" data-evt={evtToutes} class="lien-souligne text-sm">Toutes nos références</a>
+      </div>
+      <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">{intro}</p>
+      <div class="mt-12 grid gap-12 md:grid-cols-3">
+        {mandats.map((b) => (
+          <CarteBien
+            id={b.id}
+            titre={b.data.titre}
+            quartier={b.data.quartier}
+            arrondissement={b.data.arrondissement}
+            prixBien={b.data.prix}
+            surface={b.data.surface}
+            pieces={b.data.pieces}
+            statut={b.data.statut}
+            photo={b.data.photos[0]}
+            portee="profonde"
+            evt={evt}
+            sansPrix
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+)}

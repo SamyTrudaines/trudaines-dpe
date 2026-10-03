@@ -1,4 +1,5 @@
 import donnees from '../data/rues.json';
+import { TYPES_DE_VOIE } from './format';
 
 export type Typologie = {
   pieces: number;
@@ -65,3 +66,73 @@ export function heterogeneite(rue: Rue): 'resserre' | 'ordinaire' | 'large' {
   if (etendue > 7000) return 'large';
   return 'ordinaire';
 }
+
+/* -------------------------------------------------------------------------
+   Noms de voie : tri alphabétique et recherche
+------------------------------------------------------------------------- */
+
+/** Minuscules, sans accents ni ponctuation : la forme sous laquelle on compare deux noms de voie. */
+export function normaliser(texte: string): string {
+  return texte
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+/**
+ * Abréviations de la base des valeurs foncières, développées pour la recherche
+ * et pour le tri : « Rue du Fbg Saint-Denis » se trouve en tapant « faubourg ».
+ * Le nom affiché, lui, reste celui de rues.json.
+ */
+const ABREVIATIONS: Record<string, string> = {
+  fbg: 'faubourg',
+  fg: 'faubourg',
+  fbourg: 'faubourg',
+  pte: 'porte',
+  dr: 'docteur',
+  chev: 'chevalier',
+  chauss: 'chaussee',
+  st: 'saint',
+  ste: 'sainte',
+  gal: 'general',
+  mal: 'marechal',
+  cdt: 'commandant',
+  pdt: 'president',
+  bd: 'boulevard',
+  av: 'avenue',
+  imp: 'impasse',
+  pl: 'place',
+};
+
+function developper(nom: string): string {
+  return normaliser(nom)
+    .split(' ')
+    .map((mot) => ABREVIATIONS[mot] ?? mot)
+    .join(' ');
+}
+
+const ARTICLES_EN_TETE = /^(?:de la|de l|du|des|de|d|la|le|les|l) /;
+
+/**
+ * Clé de rangement d'un index de voies : « Rue des Martyrs » se range à
+ * Martyrs, comme dans un annuaire, sans type de voie ni article en tête.
+ */
+export function cleDeTri(nom: string): string {
+  const mots = developper(nom).split(' ');
+  if (mots.length > 1 && TYPES_NORMALISES.has(mots[0])) mots.shift();
+  return mots.join(' ').replace(ARTICLES_EN_TETE, '');
+}
+
+/**
+ * Texte sur lequel porte le champ « Trouvez votre rue » : le nom normalisé,
+ * suivi de sa forme développée quand la base foncière a abrégé un mot.
+ */
+export function termesDeRecherche(nom: string): string {
+  const court = normaliser(nom);
+  const long = developper(nom);
+  return long === court ? court : `${court} ${long}`;
+}
+
+const TYPES_NORMALISES = new Set([...TYPES_DE_VOIE].map((type) => normaliser(type)));

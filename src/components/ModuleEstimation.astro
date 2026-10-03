@@ -1,0 +1,63 @@
+---
+import FormulaireEstimation from './FormulaireEstimation.astro';
+
+/**
+ * Module d'estimation des pages quartier et rue : l'argument, puis le
+ * formulaire en deux étapes. L'argument tient en une idée, la médiane d'une
+ * rue n'est pas le prix d'un appartement, et en une promesse : un avis de
+ * valeur écrit sous 48 heures après la visite, sans frais.
+ *
+ * `donnee` porte la phrase chiffrée de la page, tirée de rues.json : l'écart
+ * entre les rues d'un quartier, ou entre les ventes d'une rue.
+ */
+interface Props {
+  /** Identifiant du formulaire, cible de l'ancre #estimation-... */
+  identifiant: string;
+  secteur: string;
+  quartier?: string;
+  /** Page d'origine transmise au cabinet. */
+  origine: string;
+  /** Événement (data-evt) de l'envoi réussi. */
+  evt: string;
+  /** Phrase chiffrée, déjà rédigée par la page. */
+  donnee: string;
+  /** Lien vers la page d'estimation du secteur, avec son événement. */
+  lienSecteur?: { href: string; libelle: string; evt: string };
+  /** Deux colonnes (texte, formulaire) ou empilé, pour une colonne étroite. */
+  disposition?: 'colonnes' | 'empile';
+}
+const { identifiant, secteur, quartier = '', origine, evt, donnee, lienSecteur, disposition = 'colonnes' } = Astro.props;
+const colonnes = disposition === 'colonnes';
+---
+<div class={colonnes ? 'grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start' : ''}>
+  <div>
+    <p class="surtitre marque-filet">Estimation</p>
+    <h2 class="titre-2 mt-6">Votre appartement n'est pas une médiane</h2>
+    <p class={colonnes ? 'chapo mt-6' : 'mt-6 text-[color:var(--color-encre)]'}>
+      Le prix médian d'une rue mélange des rez-de-chaussée sur cour et des derniers étages avec vue. Ce qui place
+      votre appartement au dessus ou en dessous, c'est l'étage, l'ascenseur, l'exposition, l'état du bien et celui de
+      la copropriété.
+    </p>
+    {donnee && <p class="mt-6 text-[color:var(--color-ardoise)]">{donnee}</p>}
+    {colonnes ? (
+      <ul class="mt-6 space-y-2 text-[color:var(--color-ardoise)]">
+        <li>Nous visitons votre bien.</li>
+        <li>Vous recevez un avis de valeur écrit sous 48 heures après la visite.</li>
+        <li>Sans frais et sans engagement.</li>
+      </ul>
+    ) : (
+      <p class="mt-6 text-[color:var(--color-encre)]">
+        Nous visitons votre bien et vous remettons un avis de valeur écrit sous 48 heures après la visite. Sans frais
+        et sans engagement.
+      </p>
+    )}
+    {lienSecteur && (
+      <p class="mt-8 text-sm">
+        <a href={lienSecteur.href} data-evt={lienSecteur.evt} class="lien-souligne">{lienSecteur.libelle}</a>
+      </p>
+    )}
+  </div>
+  <div class={colonnes ? '' : 'mt-8'}>
+    <FormulaireEstimation secteur={secteur} quartier={quartier} identifiant={identifiant} evt={evt} origine={origine} />
+  </div>
+</div>

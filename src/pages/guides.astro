@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import FormulaireGuide from '../components/FormulaireGuide.astro';
+import { moisAnnee } from '../lib/entonnoir';
 
 const guides = await getCollection('guides');
 ---
@@ -35,8 +36,13 @@ const guides = await getCollection('guides');
             </ul>
           )}
           <p class="mt-6 text-xs uppercase tracking-[0.12em] text-[color:var(--color-ardoise)]">
-            {g.data.pages > 0 ? `${g.data.pages} pages · PDF` : 'PDF'}
+            {g.data.pages > 0 ? `${g.data.pages} pages · PDF` : 'PDF'}{g.data.edition ? ` · Édition de ${moisAnnee(g.data.edition)}` : ''}
           </p>
+          {g.data.disponible && (
+            <p class="mt-3 text-sm text-[color:var(--color-encre)]">
+              {g.data.prochaineEdition ? `Prochaine édition : ${g.data.prochaineEdition}. ` : ''}Cochez la case du formulaire et vous la recevez dès sa parution.
+            </p>
+          )}
           <div class="mt-8">
             {g.data.disponible ? (
               <FormulaireGuide guide={g.data.slug} titreGuide={g.data.titre} identifiant={g.data.slug} />

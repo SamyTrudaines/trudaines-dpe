@@ -1,102 +1,124 @@
 ---
 import Logo from './Logo.astro';
 import { navigationPrincipale, site } from '../data/site';
+
+/**
+ * `surPhoto` : la barre est posée, transparente, sur la photographie
+ * d'ouverture de la page, et ne prend son fond blanc qu'au premier défilement.
+ * Sans lui, une cale de la hauteur de la barre réserve sa place.
+ */
+interface Props { surPhoto?: boolean }
+const { surPhoto = false } = Astro.props;
+
 const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
+const courant = (href: string) =>
+  chemin === href ? 'page' : href !== '/' && chemin.startsWith(`${href}/`) ? 'true' : undefined;
+
+const secondaires = [
+  { libelle: 'Avis clients', href: '/avis' },
+  { libelle: 'Panorama', href: '/panorama' },
+  { libelle: 'Honoraires', href: '/honoraires' },
+  { libelle: 'Nous rejoindre', href: '/nous-rejoindre' },
+];
 ---
-<a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2">
+<a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:bg-white focus:px-4 focus:py-2">
   Aller au contenu
 </a>
-<header class="entete sticky top-0 z-40 border-b border-[color:var(--color-trait)] bg-white/95 backdrop-blur" data-entete>
-  <div class="entete-barre conteneur-large flex items-center justify-between gap-4 2xl:gap-8">
-    <a href="/" class="no-underline">
+
+<header class="entete" data-entete data-sur-photo={surPhoto ? '' : undefined}>
+  <div class="entete-barre conteneur-large">
+    <a href="/" class="entete-logo">
       <Logo />
     </a>
 
-    <nav aria-label="Navigation principale" class="hidden xl:block">
-      <ul class="flex items-center gap-4 2xl:gap-7">
+    <nav aria-label="Navigation principale" class="entete-nav">
+      <ul>
         {navigationPrincipale.map((lien) => (
-          <li>
-            <a
-              href={lien.href}
-              aria-current={chemin === lien.href ? 'page' : undefined}
-              class={`whitespace-nowrap text-[0.6875rem] font-medium uppercase tracking-[0.08em] no-underline transition-colors xl:text-[0.75rem] ${
-                chemin.startsWith(lien.href) && lien.href !== '/'
-                  ? 'text-[color:var(--color-nuit)]'
-                  : 'text-[color:var(--color-encre)] hover:text-[color:var(--color-nuit)]'
-              }`}
-            >
-              {lien.libelle}
-            </a>
-          </li>
+          <li><a href={lien.href} aria-current={courant(lien.href)}>{lien.libelle}</a></li>
         ))}
       </ul>
     </nav>
 
-    <div class="hidden items-center gap-4 xl:flex 2xl:gap-6">
-      <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="hidden whitespace-nowrap text-sm font-medium no-underline text-[color:var(--color-encre)] hover:text-[color:var(--color-nuit)] 2xl:block">
-        {site.telephone}
-      </a>
-      <a href="/estimation" class="bouton whitespace-nowrap px-5 2xl:px-7">Estimer mon bien</a>
+    <div class="entete-actions">
+      <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="entete-tel">{site.telephone}</a>
+      <a href="/estimation" class="entete-cta">Estimer mon bien</a>
+      <button
+        type="button"
+        class="entete-menu"
+        aria-expanded="false"
+        aria-controls="menu-mobile"
+        data-menu-bouton
+      >
+        <span class="entete-menu-libelle">Menu</span>
+        <span class="entete-menu-traits" aria-hidden="true"><span></span><span></span></span>
+      </button>
     </div>
-
-    <button
-      type="button"
-      class="xl:hidden inline-flex h-12 w-12 items-center justify-center border border-[color:var(--color-trait)]"
-      aria-expanded="false"
-      aria-controls="menu-mobile"
-      aria-label="Ouvrir le menu"
-      data-menu-bouton
-    >
-      <span aria-hidden="true" class="flex w-6 flex-col gap-[5px]">
-        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
-        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
-        <span class="block h-px w-6 bg-[color:var(--color-encre)]"></span>
-      </span>
-    </button>
   </div>
-
-  <div id="menu-mobile" hidden class="border-t border-[color:var(--color-trait)] bg-white xl:hidden">
-    <nav aria-label="Navigation mobile" class="conteneur-large py-6">
-      <ul class="space-y-1">
-        {navigationPrincipale.map((lien) => (
-          <li>
-            <a href={lien.href} class="block py-3 text-base no-underline text-[color:var(--color-encre)]">{lien.libelle}</a>
-          </li>
-        ))}
-        <li><a href="/avis" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Avis clients</a></li>
-        <li><a href="/panorama" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Panorama</a></li>
-        <li><a href="/nous-rejoindre" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Nous rejoindre</a></li>
-        <li><a href="/honoraires" class="block py-3 text-base no-underline text-[color:var(--color-encre)]">Honoraires</a></li>
-      </ul>
-      <a href="/estimation" class="bouton mt-6 w-full">Estimer mon bien</a>
-    </nav>
-  </div>
+  <span class="entete-progression" aria-hidden="true"></span>
 </header>
+{!surPhoto && <div class="entete-cale" aria-hidden="true"></div>}
+
+<div id="menu-mobile" class="menu-plein" hidden>
+  <nav aria-label="Navigation mobile" class="conteneur-large">
+    <ul class="menu-plein-liens">
+      {navigationPrincipale.map((lien, i) => (
+        <li><a href={lien.href} aria-current={courant(lien.href)} style={`--i: ${i}`}>{lien.libelle}</a></li>
+      ))}
+    </ul>
+    <ul class="menu-plein-secondaires">
+      {secondaires.map((lien, i) => (
+        <li><a href={lien.href} aria-current={courant(lien.href)} style={`--i: ${navigationPrincipale.length + i}`}>{lien.libelle}</a></li>
+      ))}
+    </ul>
+  </nav>
+  <div class="menu-plein-pied conteneur-large">
+    <a href="/estimation" class="bouton w-full">Estimer mon bien</a>
+    <p>
+      <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone">{site.telephone}</a>
+      <span aria-hidden="true">·</span>
+      {site.adresse.rue}, Paris 18e
+    </p>
+  </div>
+</div>
 
 <script>
+  const entete = document.querySelector<HTMLElement>('[data-entete]');
   const bouton = document.querySelector<HTMLButtonElement>('[data-menu-bouton]');
   const menu = document.getElementById('menu-mobile');
-  if (bouton && menu) {
-    bouton.addEventListener('click', () => {
-      const ouvert = bouton.getAttribute('aria-expanded') === 'true';
-      bouton.setAttribute('aria-expanded', String(!ouvert));
-      bouton.setAttribute('aria-label', ouvert ? 'Ouvrir le menu' : 'Fermer le menu');
-      menu.hidden = ouvert;
-    });
-  }
 
-  /*
-   * Passé le haut de page, la barre s'assombrit et le logo change de couleur.
-   * L'attribut est posé sans attendre le premier défilement : une arrivée par
-   * ancre au milieu d'une page doit trouver la barre déjà dans le bon état.
-   */
-  const entete = document.querySelector<HTMLElement>('[data-entete]');
   if (entete) {
+    /*
+     * Trois états, posés par attributs pour que la feuille de style garde la
+     * main sur le rendu :
+     * data-compact  dès que la page quitte son sommet : fond blanc, barre
+     *               resserrée, ligne IMMOBILIER repliée, filet de lecture ;
+     * data-cache    en descente franche, loin du haut : la barre s'efface et
+     *               ne laisse que le filet orange ; elle revient à la remontée ;
+     * data-cta-visible  quand un bouton « Estimer » de la page est à l'écran :
+     *               celui de la barre s'efface, jamais deux à la fois.
+     * Tout est posé avant le premier défilement : une arrivée par ancre au
+     * milieu d'une page trouve la barre déjà dans le bon état.
+     */
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const racine = document.documentElement;
+    let dernierY = window.scrollY;
     let prevu = false;
+
     const ajuster = () => {
       prevu = false;
-      entete.toggleAttribute('data-defile', window.scrollY > 24);
+      const y = Math.max(0, window.scrollY);
+      entete.toggleAttribute('data-compact', y > 24);
+
+      const ecart = y - dernierY;
+      const libre = !reduit.matches && !entete.hasAttribute('data-menu-ouvert') && !entete.contains(document.activeElement);
+      if (y < 480 || ecart < -6 || !libre) entete.removeAttribute('data-cache');
+      else if (ecart > 6) entete.setAttribute('data-cache', '');
+      dernierY = y;
+
+      const course = racine.scrollHeight - window.innerHeight;
+      entete.style.setProperty('--progression', course > 0 ? Math.min(1, y / course).toFixed(4) : '0');
     };
+
     window.addEventListener(
       'scroll',
       () => {
@@ -107,6 +129,58 @@ const chemin = Astro.url.pathname.replace(/\/$/, '') || '/';
       },
       { passive: true }
     );
+    window.addEventListener('resize', ajuster, { passive: true });
+    entete.addEventListener('focusin', () => entete.removeAttribute('data-cache'));
     ajuster();
+
+    const boutonsPage = document.querySelectorAll('main a.bouton[href="/estimation"]');
+    if (boutonsPage.length && 'IntersectionObserver' in window) {
+      const visibles = new Set<Element>();
+      const guetteur = new IntersectionObserver(
+        (entrees) => {
+          for (const e of entrees) e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target);
+          entete.toggleAttribute('data-cta-visible', visibles.size > 0);
+        },
+        { rootMargin: '-64px 0px 0px 0px' }
+      );
+      boutonsPage.forEach((b) => guetteur.observe(b));
+    }
+  }
+
+  if (entete && bouton && menu) {
+    const libelle = bouton.querySelector('.entete-menu-libelle');
+    const basculer = (ouvert: boolean) => {
+      bouton.setAttribute('aria-expanded', String(ouvert));
+      if (libelle) libelle.textContent = ouvert ? 'Fermer' : 'Menu';
+      entete.toggleAttribute('data-menu-ouvert', ouvert);
+      document.documentElement.classList.toggle('menu-ouvert', ouvert);
+      // Le reste de la page sort de l'ordre de tabulation tant que le menu le recouvre.
+      for (const el of Array.from(document.body.children)) {
+        if (el !== entete && el !== menu && el.tagName !== 'SCRIPT') (el as HTMLElement).inert = ouvert;
+      }
+      if (ouvert) {
+        menu.hidden = false;
+        requestAnimationFrame(() => requestAnimationFrame(() => menu.setAttribute('data-ouvert', '')));
+        menu.querySelector<HTMLAnchorElement>('a')?.focus({ preventScroll: true });
+      } else {
+        menu.removeAttribute('data-ouvert');
+        window.setTimeout(() => {
+          if (bouton.getAttribute('aria-expanded') === 'false') menu.hidden = true;
+        }, 350);
+      }
+    };
+    bouton.addEventListener('click', () => basculer(bouton.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (evt) => {
+      if (evt.target instanceof Element && evt.target.closest('a')) basculer(false);
+    });
+    document.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Escape' && bouton.getAttribute('aria-expanded') === 'true') {
+        basculer(false);
+        bouton.focus();
+      }
+    });
+    window.matchMedia('(min-width: 1280px)').addEventListener('change', (m) => {
+      if (m.matches && bouton.getAttribute('aria-expanded') === 'true') basculer(false);
+    });
   }
 </script>

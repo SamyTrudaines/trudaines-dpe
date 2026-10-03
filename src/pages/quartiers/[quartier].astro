@@ -3,8 +3,17 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import CarteBien from '../../components/CarteBien.astro';
-import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import RechercheRue from '../../components/RechercheRue.astro';
+import ListeRues from '../../components/ListeRues.astro';
+import ModuleEstimation from '../../components/ModuleEstimation.astro';
+import ReferencesProches from '../../components/ReferencesProches.astro';
+import LivreBlanc from '../../components/LivreBlanc.astro';
 import { secteurs } from '../../data/secteurs';
+import { site } from '../../data/site';
+import { nombre } from '../../lib/format';
+import { periode, ventesMinimum } from '../../lib/rues';
+import { zones, ruesDuQuartier } from '../../lib/quartiers';
+import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
 
 interface Props { quartier: CollectionEntry<'quartiers'> }
 
@@ -15,35 +24,190 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const { quartier } = Astro.props;
 const { Content } = await render(quartier);
-
-const biens = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
-/** Mandats passés du quartier : la preuve que le cabinet y a déjà travaillé. */
-const mandats = (await getCollection('biens', (b) => b.data.quartier === quartier.data.nom && b.data.archive)).slice(0, 3);
-const autres = (await getCollection('quartiers')).filter((q) => q.id !== quartier.id).sort((a, b) => a.data.ordre - b.data.ordre);
+const id = quartier.id;
+const nom = quartier.data.nom;
 const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
+const zone = zones[id];
+if (!zone) throw new Error(`Quartier ${id} : aucune définition dans src/data/quartiers-reperes.json`);
+if (secteur && secteur.arrondissement !== zone.codePostal) {
+  throw new Error(`Quartier ${id} : code postal ${zone.codePostal} dans quartiers-reperes.json, ${secteur.arrondissement} dans secteurs.ts`);
+}
+const codePostal = zone.codePostal;
+const arrondissement = quartier.data.arrondissement;
+
+/* Les rues du quartier, et ce que leur liste dit en un coup d'œil. */
+const liste = ruesDuQuartier(id);
+const medianes = liste.map((r) => r.mediane);
+const moinsChere = Math.min(...medianes);
+const plusChere = Math.max(...medianes);
+const ventes = liste.reduce((somme, r) => somme + r.ventes, 0);
+const etendues = liste.map((r) => r.d9 - r.d1).sort((a, b) => a - b);
+const etendueMediane = etendues.length ? etendues[Math.floor(etendues.length / 2)] : 0;
+const euros = (valeur: number) => `${nombre(valeur)} €`;
+const mois = dureeEnMois(periode);
+
+/* « 11 150 € le m², ... » : le chiffre en grand, la suite en légende. */
+const lecture = /^(.+?€)\s*(.*)$/.exec(quartier.data.prixMoyenM2);
+const prixMedian = lecture ? lecture[1] : quartier.data.prixMoyenM2;
+const legendePrix = lecture ? lecture[2] : '';
+
+const biens = (await getCollection('biens', (b) => b.data.quartier === nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
+const archives = await getCollection('biens', (b) => b.data.archive);
+const references = referencesProches(archives, { quartier: nom, codePostal });
+const guide = guidePertinent(await getCollection('guides'), codePostal);
+const autres = (await getCollection('quartiers')).filter((q) => q.id !== id).sort((a, b) => a.data.ordre - b.data.ordre);
 const photo = quartier.data.photos[0];
+
+/* Exemple du champ de recherche : la rue la plus vendue du quartier, que chacun reconnaît. */
+const exemple = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? b : a)).nom : '';
+const identifiantListe = `rues-${id}`;
+const ancreArrondissement = `/prix-immobilier#arr-${codePostal}`;
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Prix au mètre carré des rues de ${nom}, ${arrondissement}`,
+    numberOfItems: liste.length,
+    itemListElement: liste.map((r, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: r.nom,
+      url: `${site.url}/prix-immobilier/${r.slug}`,
+    })),
+  },
+];
+
+const donneeEstimation = liste.length
+  ? `Dans ce quartier, la médiane va de ${euros(moinsChere)} à ${euros(plusChere)} le mètre carré d'une rue à l'autre. Dans la moitié des rues, huit ventes sur dix s'étalent même sur plus de ${euros(etendueMediane)} le mètre carré.`
+  : '';
 ---
 <Layout
-  ancreEstimation={`#estimation-${quartier.id}`}
+  ancreEstimation={`#estimation-${id}`}
+  evtEstimation={evt('quartier', 'estimer', id)}
   titre={quartier.data.titreSeo}
   description={quartier.data.descriptionSeo}
-  filAriane={[{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom }]}
+  filAriane={[{ nom: 'Quartiers', href: '/quartiers' }, { nom }]}
+  donnees={donnees}
+  ctaProps={{
+    titre: 'Parlons de votre bien',
+    texte: "Un avis de valeur écrit, le livre blanc des prix, ou simplement une conversation. Sans engagement, et sans relance commerciale insistante.",
+    hrefEstimer: `#estimation-${id}`,
+    hrefGuide: '#livre-blanc',
+    libelleGuide: 'Recevoir le livre blanc',
+    evtEstimer: evt('quartier', 'estimer', id),
+    evtGuide: evt('quartier', 'guide', id),
+    evtRdv: evt('quartier', 'rdv', id),
+  }}
 >
-  <section class="section pt-10">
+  <section class="section pb-0 pt-4" aria-labelledby="titre-quartier">
+    <div class="conteneur">
+      <p class="surtitre">{arrondissement}</p>
+      <h1 id="titre-quartier" class="titre-1 mt-2">{nom}</h1>
+      <p class="mt-2 max-w-2xl text-[color:var(--color-ardoise)]">
+        {liste.length > 0
+          ? `${liste.length} rues, d'après les ventes d'appartements signées de ${periode}.`
+          : "Les prix au mètre carré du quartier, d'après les ventes d'appartements signées."}
+      </p>
+
+      {/*
+        Sur téléphone : le prix médian, puis le champ de recherche, puis le reste des chiffres.
+        Dès sm : les trois chiffres sur une ligne, le champ dessous.
+      */}
+      <div class="mt-5 grid gap-x-6 gap-y-4 sm:grid-cols-3 lg:max-w-4xl">
+        <dl class="sm:col-start-1 sm:row-start-1">
+          <div class="border-t border-[color:var(--color-encre)] pt-2">
+            <dt class="surtitre">Prix médian au m²</dt>
+            <dd class="mt-2">
+              <span class="block font-[family-name:var(--font-titre)] text-[2.75rem] font-semibold italic leading-none text-[color:var(--color-encre)] lining-nums">{prixMedian}</span>
+              {legendePrix && <span class="mt-1 block text-sm text-[color:var(--color-ardoise)]">{legendePrix}</span>}
+            </dd>
+          </div>
+        </dl>
+
+        {liste.length > 0 && (
+          <div class="sm:col-span-3 sm:row-start-2 sm:mt-2">
+            <RechercheRue
+              identifiant={`recherche-${id}`}
+              liste={identifiantListe}
+              evtSaisie={evt('quartier', 'recherche', id)}
+              exemple={exemple}
+            />
+          </div>
+        )}
+
+        <dl class="grid gap-x-6 gap-y-4 sm:col-span-2 sm:col-start-2 sm:row-start-1 sm:grid-cols-2">
+          <div class="border-t border-[color:var(--color-encre)] pt-2">
+            <dt class="surtitre">Fourchette observée</dt>
+            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{quartier.data.fourchette}</dd>
+          </div>
+          {liste.length > 0 && (
+            <div class="border-t border-[color:var(--color-encre)] pt-2">
+              <dt class="surtitre">D'une rue à l'autre</dt>
+              <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">
+                De {euros(moinsChere)} à {euros(plusChere)} le m², médiane de chaque rue
+              </dd>
+            </div>
+          )}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="rues" class="section pt-8" aria-labelledby="titre-rues">
+    <div class="conteneur">
+      <h2 id="titre-rues" class="titre-2">Le prix de chaque rue</h2>
+
+      {liste.length > 0 ? (
+        <div class="mt-4 max-w-3xl">
+          <ListeRues
+            rues={liste}
+            identifiant={identifiantListe}
+            evtRue={evt('quartier', 'rue', id)}
+            legende={`Prix médian au m² et nombre de ventes de chaque rue de ${nom}, ventes de ${periode}`}
+            vers={{ href: ancreArrondissement, libelle: `Cherchez dans toutes les rues de ${arrondissement}` }}
+          />
+        </div>
+      ) : (
+        <p class="mt-8 max-w-2xl text-[color:var(--color-ardoise)]">
+          Aucune rue n'est rattachée à ce quartier pour l'instant.{' '}
+          <a href={ancreArrondissement} class="lien-souligne">Toutes les rues de {arrondissement}</a>.
+        </p>
+      )}
+
+      <div class="mt-8 max-w-3xl space-y-3 text-sm text-[color:var(--color-ardoise)]">
+        <p>
+          Prix médian au m² des appartements vendus, ventes signées de {periode}{mois ? `, soit ${mois} mois` : ''}.
+          Source : fichier des demandes de valeurs foncières (DVF) de la direction générale des finances publiques.
+          Une rue n'est publiée qu'à partir de {ventesMinimum} ventes sur la période{liste.length > 0 ? `, ${nombre(ventes)} ventes au total ici` : ''}.
+        </p>
+        <details>
+          <summary class="cursor-pointer text-[color:var(--color-encre)] underline decoration-[color:var(--color-or-fonce)] underline-offset-4">
+            Comment les rues sont rattachées au quartier
+          </summary>
+          <p class="mt-3">
+            Le centre du quartier est la moyenne de ses rues repères{zone.reperes.length > 0 ? ` : ${zone.reperes.join(', ')}` : ''}.
+            Une rue de {arrondissement} y est rattachée quand son centre est à moins de {zone.rayon} m de ce centre,
+            et que ce quartier est le plus proche. Les autres rues de l'arrondissement sont listées{' '}
+            <a href={ancreArrondissement} class="lien-souligne">avec toutes les voies de {arrondissement}</a>.
+          </p>
+        </details>
+      </div>
+
+      <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-[color:var(--color-trait)] pt-8">
+        <p class="max-w-xl text-[color:var(--color-encre)]">La médiane de votre rue n'est pas le prix de votre appartement.</p>
+        <a href={`#estimation-${id}`} data-evt={evt('quartier', 'estimer', id)} class="bouton bouton-secondaire">Faire estimer mon bien</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="le-quartier">
     <div class={`conteneur grid gap-16 lg:items-start ${photo ? 'lg:grid-cols-[1fr_1fr]' : 'max-w-4xl'}`}>
       <div>
-        <p class="surtitre">{quartier.data.arrondissement}</p>
-        <h1 class="titre-1 mt-6">{quartier.data.nom}</h1>
-        <p class="chapo mt-8">{quartier.data.chapo}</p>
+        <p class="surtitre marque-filet">Le quartier</p>
+        <h2 id="le-quartier" class="titre-2 mt-6">{nom} en bref</h2>
+        <p class="chapo mt-6">{quartier.data.chapo}</p>
         <dl class="mt-10 grid gap-6 sm:grid-cols-2">
-          <div class="border-t border-[color:var(--color-encre)] pt-4">
-            <dt class="surtitre">Prix médian au m²</dt>
-            <dd class="mt-2 text-lg">{quartier.data.prixMoyenM2}</dd>
-          </div>
-          <div class="border-t border-[color:var(--color-encre)] pt-4">
-            <dt class="surtitre">Fourchette observée</dt>
-            <dd class="mt-2 text-lg">{quartier.data.fourchette}</dd>
-          </div>
           {quartier.data.faits.map((f) => (
             <div class="border-t border-[color:var(--color-trait)] pt-4">
               <dt class="surtitre">{f.titre}</dt>
@@ -54,7 +218,7 @@ const photo = quartier.data.photos[0];
       </div>
       {photo && (
         <div class="aspect-[4/5] bg-[color:var(--color-papier)]">
-          <img src={photo.src} alt={photo.alt} width="900" height="1125" loading="eager" decoding="async" class="h-full w-full object-cover" />
+          <img src={photo.src} alt={photo.alt} width="900" height="1125" loading="lazy" decoding="async" class="h-full w-full object-cover" />
         </div>
       )}
     </div>
@@ -83,6 +247,7 @@ const photo = quartier.data.photos[0];
               statut={b.data.statut}
               photo={b.data.photos[0]}
               portee="profonde"
+              evt={evt('quartier', 'bien', id)}
             />
           ))}
         </div>
@@ -90,60 +255,36 @@ const photo = quartier.data.photos[0];
     </section>
   )}
 
-  {mandats.length > 0 && (
-    <section class="section filet">
-      <div class="conteneur">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 class="titre-2">Nos références dans ce quartier</h2>
-          <a href="/references" class="lien-souligne text-sm">Toutes nos références</a>
-        </div>
-        <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
-          Des mandats déjà conduits ici. Ces biens ne sont plus disponibles, leurs fiches restent
-          consultables.
-        </p>
-        <div class="mt-12 grid gap-12 md:grid-cols-3">
-          {mandats.map((b) => (
-            <CarteBien
-              id={b.id}
-              titre={b.data.titre}
-              quartier={b.data.quartier}
-              arrondissement={b.data.arrondissement}
-              prixBien={b.data.prix}
-              surface={b.data.surface}
-              pieces={b.data.pieces}
-              statut={b.data.statut}
-              photo={b.data.photos[0]}
-              portee="profonde"
-              sansPrix
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
-
-  <section class="section filet">
-    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
-      <div>
-        <h2 class="titre-2">Faire estimer un bien {quartier.data.nom}</h2>
-        <p class="chapo mt-6">
-          Deux appartements de la même surface, dans la même rue, peuvent se vendre à dix pour cent d'écart.
-          Nous venons voir le vôtre et nous vous remettons un avis de valeur écrit sous 48 heures.
-        </p>
-        {secteur && (
-          <p class="mt-8 text-sm">
-            <a href={`/estimation/${secteur.slug}`} class="lien-souligne">Estimation {secteur.nom}</a>
-          </p>
-        )}
-      </div>
-      <FormulaireEstimation
+  <section class="section filet" aria-label="Estimation">
+    <div class="conteneur">
+      <ModuleEstimation
+        identifiant={`estimation-${id}`}
         secteur={quartier.data.secteur}
-        quartier={quartier.data.nom}
-        identifiant={`estimation-${quartier.id}`}
+        quartier={nom}
+        origine={`Quartier ${nom}, ${arrondissement}`}
+        evt={evt('quartier', 'estimation', id)}
+        donnee={donneeEstimation}
+        lienSecteur={secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('quartier', 'estimer', id) } : undefined}
       />
     </div>
   </section>
 
+  <ReferencesProches
+    mandats={references.mandats}
+    portee={references.portee}
+    arrondissement={arrondissement}
+    evt={evt('quartier', 'reference', id)}
+    evtToutes={evt('quartier', 'references', id)}
+  />
+
+  {guide && (
+    <LivreBlanc
+      guide={guide}
+      contexte={`Quartier ${nom}, ${arrondissement}`}
+      evt={`${evt('quartier', 'livreblanc', id)} ${evt('livreblanc', guide.data.slug)}`}
+      identifiant={`guide-${id}`}
+    />
+  )}
 
   <section class="section filet">
     <div class="conteneur">
@@ -158,4 +299,6 @@ const photo = quartier.data.photos[0];
       </p>
     </div>
   </section>
+
+  <script is:inline src="/js/filtre-rues.js"></script>
 </Layout>

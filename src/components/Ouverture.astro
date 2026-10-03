@@ -25,7 +25,7 @@ const haut = [640, 900, 1200]
   .map((l) => `/images/marque/anvers-haut-${l}.webp ${l}w`)
   .join(', ');
 ---
-<div class="w-full overflow-hidden bg-[color:var(--color-papier)]">
+<div class="relative w-full overflow-hidden bg-[color:var(--color-papier)]">
   <picture>
     <source media="(min-width: 768px)" srcset={large} sizes="100vw" />
     <source srcset={haut} sizes="100vw" />
@@ -37,7 +37,8 @@ const haut = [640, 900, 1200]
       fetchpriority="high"
       loading="eager"
       decoding="async"
-      class="ouverture-photo h-[56svh] w-full object-cover object-center md:h-[64svh] lg:h-[72svh]"
+      class="ouverture-photo h-[56svh] w-full object-cover object-center md:h-[64svh] lg:h-[74svh]"
     />
   </picture>
+  <div class="ouverture-voile" aria-hidden="true"></div>
 </div>

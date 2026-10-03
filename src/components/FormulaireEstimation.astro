@@ -1,6 +1,14 @@
 ---
-interface Props { secteur?: string; quartier?: string; identifiant?: string; }
-const { secteur = '', quartier = '', identifiant = 'estimation' } = Astro.props;
+interface Props {
+  secteur?: string;
+  quartier?: string;
+  identifiant?: string;
+  /** Nom d'événement (data-evt), envoyé quand la demande aboutit. */
+  evt?: string;
+  /** Page d'où part la demande, transmise au cabinet : « Rue des Dames, Paris 17e ». */
+  origine?: string;
+}
+const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
 const listeId = `adresses-${identifiant}`;
 ---
 <form
@@ -10,12 +18,14 @@ const listeId = `adresses-${identifiant}`;
   action="/api/estimation"
   data-trudaines
   data-evenement="estimation_envoyee"
+  data-evt={evt}
   data-evenement-etape="estimation_etape1"
   data-formulaire-avis
   novalidate={false}
 >
   <input type="hidden" name="secteur" value={secteur} />
   <input type="hidden" name="quartier" value={quartier} />
+  <input type="hidden" name="origine" value={origine} />
   <input type="hidden" name="horodatage" value="" />
   {/* Rempli par le calculateur immédiat : le cabinet voit la fourchette que le visiteur a eue sous les yeux. */}
   <input type="hidden" name="fourchette" value="" />

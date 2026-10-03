@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  titre="Inscription confirmée | Trudaines"
+  description="Votre inscription aux prochaines éditions des livres blancs du cabinet Trudaines est confirmée."
+  noindex={true}
+  cta={false}
+>
+  <section class="section pt-20">
+    <div class="conteneur-texte text-center">
+      <p class="surtitre">Inscription confirmée</p>
+      <h1 class="titre-1 mt-6">Merci, c'est confirmé</h1>
+      <p class="chapo mt-8">
+        Vous recevrez la prochaine édition de nos livres blancs dès sa parution, et rien d'autre.
+        Chaque message porte un lien de désinscription en un clic.
+      </p>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">
+        Le guide que vous avez demandé est déjà dans votre boîte email. S'il n'y est pas, regardez dans les
+        courriers indésirables, ou écrivez-nous.
+      </p>
+      <div class="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="/prix-immobilier" class="bouton">Le prix de votre rue</a>
+        <a href="/panorama" class="bouton bouton-secondaire">Lire nos analyses</a>
+      </div>
+    </div>
+  </section>
+</Layout>

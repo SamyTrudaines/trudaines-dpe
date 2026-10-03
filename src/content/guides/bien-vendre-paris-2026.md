@@ -13,6 +13,7 @@ pages: 8
 fichier: /guides/bien-vendre-paris-2026.pdf
 listeBrevo: telechargements
 disponible: true
+edition: 2026-09-19
 ---
 
 Une vente parisienne se gagne ou se perd dans les quinze premiers jours. Passé ce délai, l'annonce vieillit, les acheteurs demandent pourquoi le bien est toujours disponible, et la négociation part d'un cran plus bas. Tout ce qui suit sert à être prêt le premier jour.

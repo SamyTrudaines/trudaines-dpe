@@ -312,6 +312,178 @@ verifier(
 globalThis.fetch = fetchNormal;
 console.error = erreurNormale;
 
+/* ------------------------------------------------ double opt-in des guides ----
+ *
+ * Deux chemins. Sans BREVO_DOI_MODELE et BREVO_DOI_REDIRECTION, le contact entre
+ * dans la liste des téléchargements tout de suite, comme avant. Avec les deux,
+ * le guide part toujours immédiatement, mais la liste n'est visée que par la
+ * demande de confirmation de Brevo : le contact n'y entre qu'au clic.
+ */
+
+const envDoi = {
+  ...env,
+  BREVO_DOI_MODELE: '12',
+  BREVO_DOI_REDIRECTION: 'https://www.trudaines.com/merci-abonnement',
+};
+const donneesGuide = (supplement = {}) => ({
+  email: 'abonne@example.com',
+  telephone: '0601020304',
+  guide: 'guide-prix-2026-9e-nord',
+  horodatage: recent(),
+  ...supplement,
+});
+const appelsConfirmation = () => appels.filter((a) => a.url.endsWith('/contacts/doubleOptinConfirmation'));
+const appelsContacts = () => appels.filter((a) => a.url.endsWith('/contacts'));
+const emailsEnvoyes = () => appels.filter((a) => a.url.endsWith('/smtp/email'));
+
+/* Chemin historique : double opt-in non configuré, la case cochée inscrit directement. */
+appels.length = 0;
+const sansDoi = await guide.onRequestPost({ request: requete(donneesGuide({ consentement: 'oui' })), env });
+const sansDoiCorps = await sansDoi.json();
+verifier(
+  'sans configuration, aucune demande de confirmation et inscription directe à la liste du site',
+  sansDoi.status === 200 && sansDoiCorps.doi === undefined && appelsConfirmation().length === 0 &&
+    appelsContacts().some((a) => a.corps.listIds.join() === '6' && a.corps.attributes.OPT_IN === true),
+  `listes ${JSON.stringify(appelsContacts().map((a) => a.corps.listIds))}`
+);
+
+/* Une configuration à moitié faite n'allume rien : modèle sans redirection, puis redirection non sécurisée. */
+for (const [nom, partiel] of [
+  ['modèle sans adresse de redirection', { ...env, BREVO_DOI_MODELE: '12' }],
+  ['adresse de redirection sans modèle', { ...env, BREVO_DOI_REDIRECTION: 'https://www.trudaines.com/merci-abonnement' }],
+  ['redirection hors https', { ...env, BREVO_DOI_MODELE: '12', BREVO_DOI_REDIRECTION: 'http://www.trudaines.com/merci-abonnement' }],
+]) {
+  appels.length = 0;
+  await guide.onRequestPost({ request: requete(donneesGuide({ consentement: 'oui' })), env: partiel });
+  verifier(
+    `double opt-in mal configuré (${nom}) : parcours historique conservé`,
+    appelsConfirmation().length === 0 && appelsContacts().some((a) => a.corps.listIds.join() === '6'),
+    `confirmations ${appelsConfirmation().length}`
+  );
+}
+
+/* Double opt-in configuré, case cochée : guide immédiat, confirmation demandée, liste intacte. */
+appels.length = 0;
+const avecDoi = await guide.onRequestPost({
+  request: requete(donneesGuide({ consentement: 'oui', contexte: 'Quartier Martyrs Lorette' })),
+  env: envDoi,
+});
+const avecDoiCorps = await avecDoi.json();
+const demande = appelsConfirmation()[0];
+const premierEmail = emailsEnvoyes()[0];
+verifier(
+  'double opt-in : le guide part tout de suite, avec son PDF, avant toute confirmation',
+  avecDoi.status === 200 && avecDoiCorps.ok === true && emailsEnvoyes().length >= 2 &&
+    premierEmail.corps.to[0].email === 'abonne@example.com' && (premierEmail.corps.attachment || []).length === 1,
+  `${emailsEnvoyes().length} email(s)`
+);
+verifier(
+  'double opt-in : une demande de confirmation avec modèle, redirection et attributs',
+  appelsConfirmation().length === 1 && demande.corps.email === 'abonne@example.com' &&
+    demande.corps.templateId === 12 &&
+    demande.corps.redirectionUrl === 'https://www.trudaines.com/merci-abonnement' &&
+    demande.corps.attributes.GUIDE === 'Guide prix 2026 9e nord' &&
+    demande.corps.attributes.OPT_IN === true,
+  demande ? JSON.stringify(demande.corps).slice(0, 160) : 'aucun appel'
+);
+verifier(
+  'double opt-in : seule la liste du site est visée, et le contact n’y entre pas avant le clic',
+  demande && demande.corps.includeListIds.join() === '6' && appelsContacts().length === 0,
+  `includeListIds ${demande ? JSON.stringify(demande.corps.includeListIds) : '-'}, inscriptions directes ${appelsContacts().length}`
+);
+verifier(
+  'double opt-in : la réponse prévient la page qu’un second email arrive',
+  avecDoiCorps.doi === true,
+  JSON.stringify(avecDoiCorps)
+);
+verifier(
+  'double opt-in : la notification dit l’état de l’abonnement et la page d’origine',
+  emailsEnvoyes().some((a) => /en attente du clic de confirmation/.test(a.corps.htmlContent) && /Quartier Martyrs Lorette/.test(a.corps.htmlContent)),
+  'notification interne'
+);
+
+/* Double opt-in configuré, case non cochée : guide seul, contact sans liste, consentement non touché. */
+appels.length = 0;
+const sansCase = await guide.onRequestPost({ request: requete(donneesGuide()), env: envDoi });
+const sansCaseCorps = await sansCase.json();
+const contactSansListe = appelsContacts()[0];
+verifier(
+  'double opt-in, case non cochée : guide envoyé, aucune confirmation, contact enregistré sans liste',
+  sansCase.status === 200 && sansCaseCorps.doi === undefined && appelsConfirmation().length === 0 &&
+    emailsEnvoyes().length >= 2 && contactSansListe && contactSansListe.corps.listIds.length === 0,
+  `listes ${contactSansListe ? JSON.stringify(contactSansListe.corps.listIds) : 'aucun contact'}`
+);
+verifier(
+  'case non cochée : OPT_IN n’est pas écrit, un abonné existant garde son consentement',
+  contactSansListe && !('OPT_IN' in contactSansListe.corps.attributes),
+  contactSansListe ? JSON.stringify(Object.keys(contactSansListe.corps.attributes)) : '-'
+);
+
+/* Brevo refuse la demande de confirmation : le visiteur a son guide, le contact est gardé sans liste. */
+{
+  const fetchAvant = globalThis.fetch;
+  const erreurAvant = console.error;
+  console.error = () => {};
+  globalThis.fetch = async (url, options = {}) => {
+    if (String(url).endsWith('/contacts/doubleOptinConfirmation')) {
+      appels.push({ url: String(url), corps: JSON.parse(options.body) });
+      return new Response('modèle introuvable', { status: 404 });
+    }
+    return fetchAvant(url, options);
+  };
+  appels.length = 0;
+  const refus = await guide.onRequestPost({ request: requete(donneesGuide({ consentement: 'oui' })), env: envDoi });
+  const refusCorps = await refus.json();
+  const repli = appelsContacts()[0];
+  verifier(
+    'double opt-in refusé par Brevo : le guide est parti, pas de faux message de confirmation, contact sans liste',
+    refus.status === 200 && refusCorps.ok === true && refusCorps.doi === undefined &&
+      emailsEnvoyes().length >= 2 && repli && repli.corps.listIds.length === 0 &&
+      emailsEnvoyes().some((a) => /n’a pas pu partir/.test(a.corps.htmlContent)),
+    `statut ${refus.status}`
+  );
+
+  /* Attribut inconnu ou téléphone refusé : la demande repart avec moins d'attributs, jamais avec d'autres listes. */
+  const essaisConfirmation = [];
+  globalThis.fetch = async (url, options = {}) => {
+    if (String(url).endsWith('/contacts/doubleOptinConfirmation')) {
+      const corps = JSON.parse(options.body);
+      essaisConfirmation.push(corps);
+      appels.push({ url: String(url), corps });
+      return essaisConfirmation.length < 3
+        ? new Response(JSON.stringify({ code: 'invalid_parameter', message: 'attribut refusé' }), { status: 400 })
+        : new Response(null, { status: 201 });
+    }
+    return fetchAvant(url, options);
+  };
+  appels.length = 0;
+  const repliAttributs = await guide.onRequestPost({ request: requete(donneesGuide({ consentement: 'oui' })), env: envDoi });
+  const repliCorps = await repliAttributs.json();
+  verifier(
+    'double opt-in : trois essais, du complet aux seuls attributs natifs puis au seul consentement',
+    essaisConfirmation.length === 3 && 'GUIDE' in essaisConfirmation[0].attributes &&
+      !('GUIDE' in essaisConfirmation[1].attributes) && essaisConfirmation[1].attributes.SMS === '0601020304' &&
+      Object.keys(essaisConfirmation[2].attributes).join() === 'OPT_IN' &&
+      essaisConfirmation.every((c) => c.includeListIds.join() === '6') && repliCorps.doi === true,
+    `${essaisConfirmation.length} essai(s)`
+  );
+
+  globalThis.fetch = fetchAvant;
+  console.error = erreurAvant;
+}
+
+/* La page d'où part une demande d'estimation arrive dans la notification du cabinet. */
+appels.length = 0;
+await estimation.onRequestPost({
+  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', origine: 'Rue des Dames, Paris 17e', quartier: 'Batignolles', horodatage: recent() }),
+  env,
+});
+verifier(
+  'estimation : la page d’origine figure dans la notification',
+  emailsEnvoyes().some((a) => /Rue des Dames, Paris 17e/.test(a.corps.htmlContent)),
+  'notification interne'
+);
+
 /*
  * Le garde commun des fonctions /api : un POST portant l'Origin d'un autre
  * site est refusé avant même d'atteindre la fonction ; un POST de notre

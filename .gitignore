@@ -14,3 +14,4 @@ public/guides/*.pdf
 
 # Cache des fichiers de valeurs foncières téléchargés par scripts/prix-dvf.py
 .cache/
+rapport-mise-en-ligne/

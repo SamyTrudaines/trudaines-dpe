@@ -39,9 +39,14 @@
 /nos-actualites/prix-immobilier-paris-9e-et-18e-en-2025-l-analyse-de-marche-de-l-agence-trudaines.html  /panorama/prix-immobilier-paris-9-18-analyse  301
 /nos-actualites/priximmobilierventeparis9eparis18etauxdecreditDPE.html  /panorama/prix-immobilier-paris-9-18-analyse  301
 /nos-actualites/wdxcdc  /panorama/prix-immobilier-paris-9-18-analyse  301
+# Adresse fautive de l'ancien site : le « : » y est suivi d'un « _ », pas d'une
+# lettre, Cloudflare le lit donc tel quel et non comme un paramètre.
+/nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18  /nous-rejoindre  301
 
 # --- Anciennes annonces, motifs ---------------------------------------------
-/vente/:slug                    /bien/:slug             301
+# Un seul segment après /vente désignait une page de liste de l'ancien site,
+# /vente/1 pour la première : les fiches, elles, en comptaient trois.
+/vente/:page                    /acheter                301
 /vente                          /acheter                301
 /vente/*                        /acheter                301
 /nos-biens/:slug                /bien/:slug             301
@@ -49,6 +54,10 @@
 /biens/:slug                    /bien/:slug             301
 /biens                          /acheter                301
 /annonces/*                     /acheter                301
+/location                       /gestion-locative       301
+/location/*                     /gestion-locative       301
+/vente-pro                      /acheter                301
+/vente-pro/*                    /acheter                301
 
 # --- Ancien blog, motifs ----------------------------------------------------
 /nos-actualites/:slug           /panorama/:slug         301
@@ -89,6 +98,11 @@
 /presse-medias                  /presse                 301
 /telechargements                /guides                 301
 /livres-blancs                  /guides                 301
+/nos-liens                      /                       301
+/selection                      /acheter                301
+/alerte-email                   /acheter                301
+/nos-consultants                /trudaines              301
+/nos-consultants/*              /trudaines              301
 
 # --- Anciens secteurs -------------------------------------------------------
 /immobilier-paris-9             /agence-immobiliere-paris-9    301
@@ -104,10 +118,5 @@
 # --- À COMPLÉTER ------------------------------------------------------------
 # Ajouter ici les URLs de l'ancien site qui ne rentrent pas dans les motifs
 # ci-dessus, une ligne par URL, en conservant le code 301.
-# Une adresse contenant « : » ou « * » ne peut pas s'écrire en ligne exacte,
-# la syntaxe _redirects réserve ces caractères aux motifs : la règle
-# /nos-actualites/* la couvre. C'est le cas de l'adresse fautive
-# /nos-actualites/https:__www.trudaines.fr_rejoindre-les-experts-9-18,
-# signalée dans migration-rapport.txt.
 # L'abréviation St-Cyr a été développée en Saint-Cyr à la relecture du 17e.
 /prix-immobilier/boulevard-gouvion-st-cyr-17  /prix-immobilier/boulevard-gouvion-saint-cyr-17  301

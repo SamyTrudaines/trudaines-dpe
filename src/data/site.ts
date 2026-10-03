@@ -104,9 +104,13 @@ export const parrainage = {
 
 export type LienNav = { libelle: string; href: string };
 
+/**
+ * Pas d'entrée « Estimation » : le bouton « Estimer mon bien » de la barre
+ * mène déjà à la même page, et deux chemins identiques côte à côte se lisent
+ * comme deux offres différentes.
+ */
 export const navigationPrincipale: LienNav[] = [
   { libelle: 'Vendre', href: '/vendre' },
-  { libelle: 'Estimation', href: '/estimation' },
   { libelle: 'Acheter', href: '/acheter' },
   { libelle: 'Références', href: '/references' },
   { libelle: 'Quartiers', href: '/quartiers' },
