@@ -23,7 +23,9 @@ function messagerie(mx) {
 function resumePage(r) {
   const titre = (r.corps.match(/<title[^>]*>([^<]*)<\/title>/i) || [])[1]?.trim() || null;
   const generateur = (r.corps.match(/<meta[^>]+name=["']generator["'][^>]+content=["']([^"']+)/i) || [])[1] || null;
+  const version = (r.corps.match(/<meta[^>]+name=["']trudaines-version["'][^>]+content=["']([^"']+)/i) || [])[1] || null;
   return {
+    version,
     statut: r.statut,
     serveur: r.serveur || r.entetes?.server || null,
     propulse: r.entetes?.['x-powered-by'] || null,

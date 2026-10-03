@@ -94,6 +94,13 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   noter('Ancien site', 'info', `statut ${ancien.statut}, serveur ${ancien.serveur || '?'}, moteur ${ancien.generateur || ancien.propulse || '?'}, titre « ${ancien.titre || '?'} »`);
   const nouveau = audit.nouveau;
   noter('Nouveau site', nouveau.accueil.statut === 200 && nouveau.accueil.nouveauSite ? 'ok' : 'bloquant', `accueil ${C.CIBLE_PAGES} : statut ${nouveau.accueil.statut}${nouveau.accueil.nouveauSite ? ', nouveau site reconnu' : ', nouveau site non reconnu'}`);
+  noter(
+    'Nouveau site',
+    nouveau.accueil.version?.startsWith(`${C.BRANCHE_PRODUCTION}@`) ? 'info' : 'alerte',
+    nouveau.accueil.version
+      ? `version servie en production : ${nouveau.accueil.version}`
+      : "version servie en production inconnue : la production n'a pas été reconstruite depuis l'ajout du marqueur de version"
+  );
   noter('Nouveau site', nouveau.gardeOrigine === 403 ? 'ok' : 'alerte', `garde des formulaires : statut ${nouveau.gardeOrigine} face à un site tiers, 403 attendu`);
   noter('Nouveau site', nouveau.pieges === 200 ? 'ok' : 'alerte', `fonctions actives : piège à robots en ${nouveau.pieges}`);
   const aa = audit.ancienSite;
