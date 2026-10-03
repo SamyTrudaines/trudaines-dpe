@@ -26,7 +26,7 @@ Sur les finances, vous indiquez les charges courantes et hors budget payées au 
 
 La superficie de la partie privative (loi Carrez) doit aussi figurer dans l'avant-contrat et dans l'acte (article 46 de la loi du 10 juillet 1965).
 
-Le plan pluriannuel de travaux est une obligation récente. Il programme sur dix ans les travaux à prévoir. Les copropriétés de plus de quinze ans doivent en élaborer un projet : depuis le 1er janvier 2023 au-delà de 200 lots, depuis le 1er janvier 2024 de 51 à 200 lots, depuis le 1er janvier 2025 pour les autres. La remise à l'acquéreur suit le même calendrier avec un an de décalage (1er janvier 2024, 2025 ou 2026) : elle s'applique donc aujourd'hui à toutes les copropriétés soumises à l'obligation. Vous remettez le plan adopté par l'assemblée générale ou, à défaut, son projet s'il a été élaboré.
+Le plan pluriannuel de travaux est une obligation récente. Il programme sur dix ans les travaux à prévoir. Les copropriétés de plus de quinze ans doivent en élaborer un projet : depuis le 1er janvier 2023 au-delà de 200 lots, depuis le 1er janvier 2024 de 51 à 200 lots, depuis le 1er janvier 2025 pour les autres. La remise à l'acquéreur suit le même calendrier avec un an de décalage (1er janvier 2024, 2025 ou 2026) : elle s'applique donc aujourd'hui à toutes les copropriétés soumises à l'obligation. Vous remettez le plan adopté par l'assemblée générale ou, à défaut, son projet s'il a été élaboré (articles L721-2 du code et 14-2 de la loi du 10 juillet 1965).
 
 Le DPE collectif porte sur l'immeuble entier. Il est obligatoire pour les immeubles d'habitation dont le permis de construire a été déposé avant le 1er janvier 2013 : depuis le 1er janvier 2024 au-delà de 200 lots, depuis le 1er janvier 2025 de 51 à 200 lots, depuis le 1er janvier 2026 pour les autres. Il ne remplace pas le DPE de votre lot.
 
@@ -42,7 +42,7 @@ Réunir les pièces à la mise en vente retire de votre calendrier tout ce qui d
 
 La loi donne une raison de plus. Si les documents sur l'organisation de l'immeuble et les informations financières manquent à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur (article L271-1) ne commence pas. Il ne court qu'à partir du lendemain de leur remise (article L721-3). Vous êtes engagé, lui peut encore revenir sur sa décision, et la date à laquelle la vente devient ferme dépend du syndic.
 
-Un acquéreur qui reçoit le dossier complet avant son offre la fait en connaissance de cause, travaux votés compris. Il ne découvre rien chez le notaire. Chez Trudaines, nous réunissons ces pièces avant la mise en vente, et chaque acquéreur sérieux reçoit le dossier complet avant son offre.
+Un acquéreur qui reçoit le dossier complet avant son offre la fait en connaissance de cause, travaux votés compris. Il ne découvre rien chez le notaire. Chez Trudaines, nous réunissons ces pièces avant la mise en vente, et le dossier est remis à l'acheteur dès la deuxième visite.
 
 ## Dans quel ordre s'y prendre
 
