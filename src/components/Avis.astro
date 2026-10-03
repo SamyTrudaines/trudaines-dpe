@@ -26,7 +26,7 @@ const aDesCitations = avis.some((a) => a.data.texte);
             {agregat.noteTexte} <span class="text-lg">/ 5</span>
           </span>
           <span class="mt-2 block">
-            {agregat.total} avis clients, aucun en dessous de cinq étoiles.
+            {agregat.total} avis clients{agregat.toutesCinq ? ", et toutes les notes relevées sont de cinq étoiles." : '.'}
           </span>
           <span class="block">
             {agregat.parSource.google} sur Google, {agregat.parSource.pagesjaunes} sur Pages Jaunes,
@@ -38,9 +38,11 @@ const aDesCitations = avis.some((a) => a.data.texte);
       <div class="mt-16 grid gap-x-12 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
         {avis.filter((a) => a.data.texte).map((a) => (
           <figure class="flex flex-col bloc">
-            <span aria-hidden="true" class="text-sm tracking-[0.3em] text-[color:var(--color-or-fonce)]">
-              {'★'.repeat(a.data.note)}
-            </span>
+            {a.data.note && (
+              <span aria-hidden="true" class="text-sm tracking-[0.3em] text-[color:var(--color-or-fonce)]">
+                {'★'.repeat(a.data.note)}
+              </span>
+            )}
             <blockquote class="mt-6 grow font-[family-name:var(--font-titre)] text-[1.0625rem] leading-[1.75]">
               {a.data.texte}
             </blockquote>
@@ -49,7 +51,7 @@ const aDesCitations = avis.some((a) => a.data.texte);
                 {a.data.auteur}
               </span>
               <span class="mt-1 block">
-                <span class="sr-only">Note de {a.data.note} sur 5. </span>
+                {a.data.note && <span class="sr-only">Note de {a.data.note} sur 5. </span>}
                 {[a.data.typeProjet, a.data.quartier].filter(Boolean).join(' · ')}
               </span>
               <span class="mt-1 block">

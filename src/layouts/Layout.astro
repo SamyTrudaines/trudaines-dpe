@@ -77,13 +77,14 @@ const agence = {
   })),
   founder: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
   sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
-  ...(avis.total > 0
+  ...(avis.notés > 0
     ? {
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: avis.note,
           bestRating: 5,
           worstRating: 1,
+          ratingCount: avis.notés,
           reviewCount: avis.total,
         },
       }

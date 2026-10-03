@@ -154,7 +154,12 @@ const avis = defineCollection({
      * compte alors dans la moyenne et dans le total, sans vignette citation.
      */
     texte: z.string().optional(),
-    note: z.number().min(1).max(5),
+    /**
+     * Absente quand l'avis a été relevé sans ses étoiles (copie de la fiche
+     * Google, où la note n'est qu'une image) : l'avis est cité sans étoiles et
+     * n'entre pas dans la moyenne. Jamais devinée.
+     */
+    note: z.number().min(1).max(5).optional(),
     date: z.coerce.date().optional(),
     /**
      * Origine de l'avis. « google » signifie repris de la fiche d'établissement
