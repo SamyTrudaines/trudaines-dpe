@@ -47,6 +47,13 @@ const biens = defineCollection({
      * par exemple "Nouveau prix". Un fait, jamais un argument de vente.
      */
     mention: z.string().max(24).optional(),
+    /**
+     * Accroche de vitrine, sans chiffre ni lieu : ce qui distingue le bien
+     * ("Vue Seine, au dernier étage"). Le titre complet reste celui de la fiche ;
+     * les cartes et le carrousel montrent l'accroche, puis pièces, chambres et
+     * surface une seule fois.
+     */
+    accroche: z.string().max(48).optional(),
     visiteVirtuelle: z.string().url().optional(),
     offMarket: z.boolean().default(false),
     /**

@@ -1,6 +1,6 @@
 ---
-import { prixAffiche, nombre, libelleStatut, lieuBien } from '../lib/format';
-import { jeuPhoto, TAILLES_CARTE, TAILLES_VITRINE, TAILLES_FICHE } from '../lib/images';
+import { prixAffiche, libelleStatut, lieuBien, faitsBien } from '../lib/format';
+import { jeuPhoto, TAILLES_CARTE, TAILLES_VITRINE } from '../lib/images';
 interface Props {
   id: string;
   titre: string;
@@ -10,6 +10,9 @@ interface Props {
   prixBien: number;
   surface: number;
   pieces: number;
+  chambres?: number;
+  /** Accroche de vitrine : remplace le titre, qui répète pièces, surface et lieu. */
+  accroche?: string;
   statut: string;
   photo?: { src: string; alt: string };
   chargement?: 'lazy' | 'eager';
@@ -17,11 +20,7 @@ interface Props {
   sansPrix?: boolean;
   /** Vrai dans la vitrine de l'accueil : image plus grande, format plus large. */
   vitrine?: boolean;
-  /**
-   * Carte à la une, sur toute la largeur de la vitrine quand le nombre de biens
-   * est impair : photographie plus large et plus basse, servie en pleine définition.
-   */
-  une?: boolean;
+
   /**
    * Portée de la page qui affiche la carte. Une page profonde, quartier ou
    * voie, reçoit l'AVIF ; une page de vitrine reçoit la plus grande
@@ -33,11 +32,13 @@ interface Props {
   /** Mention courte d'un bien à vendre, « Nouveau prix » par exemple. */
   mention?: string;
 }
-const { id, titre, quartier, arrondissement, ville = 'Paris', prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, une = false, portee = 'vitrine', evt, mention } = Astro.props;
+const { id, titre, quartier, arrondissement, ville = 'Paris', prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine', evt, mention, chambres, accroche } = Astro.props;
 const pastille = statut !== 'a-vendre' ? libelleStatut[statut] : sansPrix ? undefined : mention;
 const jeu = photo ? jeuPhoto(photo.src, portee) : undefined;
-const tailles = une ? TAILLES_FICHE : vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
-const cadre = une ? 'aspect-[3/2] md:aspect-[2/1]' : vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]';
+const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
+const cadre = vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]';
+const intitule = accroche ?? titre;
+const faits = faitsBien({ pieces, chambres, surface }, accroche ? '' : titre);
 ---
 <article class="group">
   <a href={`/bien/${id}`} data-evt={evt} class="block no-underline">
@@ -69,10 +70,8 @@ const cadre = une ? 'aspect-[3/2] md:aspect-[2/1]' : vitrine ? 'aspect-[3/2]' : 
       )}
     </div>
     <p class="surtitre mt-5">{quartier} · {lieuBien(arrondissement, ville)}</p>
-    <h3 class={`titre-3 mt-2 text-[color:var(--color-encre)] ${une ? 'text-[1.35rem] md:text-[2rem]' : vitrine ? 'text-[1.35rem] md:text-[1.6rem]' : ''}`}>{titre}</h3>
-    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-      {nombre(surface)} m² · {pieces} {pieces > 1 ? 'pièces' : 'pièce'}
-    </p>
+    <h3 class={`titre-3 mt-2 text-[color:var(--color-encre)] ${vitrine ? 'text-[1.35rem] md:text-[1.6rem]' : ''}`}>{intitule}</h3>
+    {faits && <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{faits}</p>}
     {sansPrix ? (
       <p class="mt-2 text-sm uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">
         {statut === 'vendu' ? 'Vendu' : 'Mandat présenté'}

@@ -1,5 +1,6 @@
 ---
 titre: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
+accroche: "Vue Seine, au dernier étage"
 reference: "T-2630"
 quartier: "Auteuil Sud"
 ville: "Paris"

@@ -1,5 +1,6 @@
 ---
 titre: "Appartement 2 pièces 43 m² rénové, rue Vaneau"
+accroche: "Cheminée, moulures et rosace"
 reference: "T-2626"
 quartier: "Babylone Vaneau"
 ville: "Paris"

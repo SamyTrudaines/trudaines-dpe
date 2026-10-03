@@ -26,6 +26,22 @@ export function lieuBien(arrondissement: string, ville = 'Paris'): string {
   return `Paris ${n}${n === 1 ? 'er' : 'e'}`;
 }
 
+/**
+ * Pièces, chambres et surface en une ligne, sans répéter ce que le titre dit
+ * déjà : un titre qui annonce « 3 pièces 64 m² » n'est pas suivi des mêmes
+ * chiffres.
+ */
+export function faitsBien(
+  b: { pieces: number; chambres?: number; surface: number },
+  titre = ''
+): string {
+  const faits: string[] = [];
+  if (!/pi[eè]ces?\b/i.test(titre)) faits.push(`${b.pieces} ${b.pieces > 1 ? 'pièces' : 'pièce'}`);
+  if (b.chambres && !/chambres?\b/i.test(titre)) faits.push(`${b.chambres} ${b.chambres > 1 ? 'chambres' : 'chambre'}`);
+  if (!/m²/.test(titre)) faits.push(`${nombre(b.surface)} m²`);
+  return faits.join(' · ');
+}
+
 /** Phrase de référence des prix de l'énergie, telle qu'elle figure sur le DPE. */
 export const referencePrixEnergie = (annee: number | string) =>
   typeof annee === 'number'
