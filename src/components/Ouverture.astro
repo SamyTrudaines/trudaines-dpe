@@ -1,28 +1,27 @@
 ---
 /**
- * Ouverture de l'accueil : la photographie du square d'Anvers, pleine largeur.
+ * Ouverture de l'accueil : immeubles parisiens et, au loin, le Sacré-Cœur,
+ * pleine largeur.
  *
- * Deux cadrages, un par forme d'écran. Sur un ordinateur le bandeau fait
- * 100vw sur 72svh, soit un rapport voisin de 2,4 ; sur un téléphone il fait
- * 100vw sur 56svh, soit un rapport voisin de 0,87. Servir une seule image en
- * trois deux revient à laisser le navigateur jeter quarante pour cent des
- * pixels sur l'un, et rogner les côtés sur l'autre jusqu'à perdre la coupole.
- * Chaque forme reçoit donc son fichier, recadré à la production.
+ * Photographie de Francisco Mamani, collection « Site WEB » du cabinet sur
+ * Unsplash (licence Unsplash : usage commercial libre, sans attribution
+ * obligatoire), https://unsplash.com/photos/gray-and-beige-buildings-YGH2qAQIbCc.
+ * L'original mesure 6000 px sur 4000 : chaque fichier servi est une réduction,
+ * jamais un agrandissement. L'ancienne photographie ne faisait que 1500 px de
+ * large, d'où le flou sur les écrans haute densité, où une page de 1440 px en
+ * demande 2880.
  *
- * WebP seulement, et à qualité élevée. C'est la page qui vend : l'AVIF y
- * lisse le feuillage des platanes, exactement le détail qui donne envie.
- * L'AVIF reste sur les pages de volume, où son gain de poids compte plus.
- *
- * L'original mesure 1500 px de large. L'agrandissement au Lanczos jusqu'à
- * 2400 px n'ajoute pas de détail, mais il évite que le navigateur étire lui
- * même le fichier avec son filtre bilinéaire, ce qui se voit.
+ * Deux cadrages, un par forme d'écran, recadrés à la production : une bande
+ * large (rapport 2,2) sur ordinateur, une coupe verticale (0,87) centrée sur la
+ * basilique sur téléphone. Jusqu'à 3840 px de large, pour les écrans Retina et
+ * 4K. WebP à qualité élevée : c'est la page qui vend.
  */
-const alt = "Le square d'Anvers et le Sacré-Cœur vus du boulevard de Rochechouart, Paris 9e";
-const large = [1200, 1600, 2000, 2400]
-  .map((l) => `/images/marque/anvers-large-${l}.webp ${l}w`)
+const alt = 'Immeubles parisiens et, au loin, la basilique du Sacré-Cœur';
+const large = [1200, 1600, 2000, 2400, 3200, 3840]
+  .map((l) => `/images/marque/ouverture-large-${l}.webp ${l}w`)
   .join(', ');
-const haut = [640, 900, 1200]
-  .map((l) => `/images/marque/anvers-haut-${l}.webp ${l}w`)
+const haut = [640, 900, 1200, 1600]
+  .map((l) => `/images/marque/ouverture-haut-${l}.webp ${l}w`)
   .join(', ');
 ---
 <div class="relative w-full overflow-hidden bg-[color:var(--color-papier)]">
@@ -30,10 +29,10 @@ const haut = [640, 900, 1200]
     <source media="(min-width: 768px)" srcset={large} sizes="100vw" />
     <source srcset={haut} sizes="100vw" />
     <img
-      src="/images/marque/anvers-large-2000.webp"
+      src="/images/marque/ouverture-large-2400.webp"
       alt={alt}
-      width="2000"
-      height="830"
+      width="2400"
+      height="1091"
       fetchpriority="high"
       loading="eager"
       decoding="async"
