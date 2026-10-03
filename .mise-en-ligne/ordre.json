@@ -1,5 +1,5 @@
 {
   "mode": "audit",
-  "motif": "Reconnaissance publique avant mise en ligne : DNS, messagerie, ancien site, nouveau site",
+  "motif": "Contrôle avec les trois jetons, demandé par Samy le 3 octobre 2026 avant la mise en ligne",
   "confirmation": ""
 }
