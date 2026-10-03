@@ -25,7 +25,7 @@ Sur les finances, vous indiquez les charges courantes et hors budget payées au 
 
 La superficie de la partie privative (loi Carrez) doit aussi figurer dans l'avant-contrat et dans l'acte.
 
-Le plan pluriannuel de travaux mérite une précision. Depuis 2023, 2024 ou 2025 selon le nombre de lots, les copropriétés de plus de quinze ans doivent en élaborer un projet. Il programme les travaux à prévoir sur dix ans et, une fois adopté par l'assemblée, il est remis à l'acquéreur.
+Le plan pluriannuel de travaux est une obligation récente. Depuis 2023, 2024 ou 2025 selon le nombre de lots, les copropriétés de plus de quinze ans doivent en élaborer un projet. Il programme les travaux à prévoir sur dix ans et, une fois adopté par l'assemblée, il est remis à l'acquéreur.
 
 ## Les délais du syndic
 
