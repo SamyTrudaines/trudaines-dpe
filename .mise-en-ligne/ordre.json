@@ -1,6 +1,6 @@
 {
-  "mode": "audit",
-  "motif": "Contrôle après la redirection de la racine posée par Samy dans Gandi, le 3 octobre 2026",
+  "mode": "recette",
+  "motif": "Recette de production après la mise en ligne du 3 octobre 2026",
   "confirmation": "",
   "sauvegarde": {
     "www": [
