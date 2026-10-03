@@ -25,7 +25,7 @@ Une vente de logement suit un ordre fixe : offre, avant-contrat, levée des cond
 
 ## L'offre d'achat
 
-L'offre d'achat n'est pas obligatoire, mais elle se fait de préférence par écrit. Elle indique le prix proposé, le financement, les conditions éventuelles et sa durée de validité, que fixe l'acheteur. Acceptée par le vendeur, elle l'engage. Une offre complète évite les renégociations : le plan de financement et la date de signature souhaitée y ont leur place.
+L'offre d'achat n'est pas obligatoire, mais elle se fait de préférence par écrit. Elle indique le prix proposé, le financement, les conditions éventuelles et sa durée de validité, que fixe l'acheteur. Acceptée par le vendeur, elle l'engage. Une offre complète limite les renégociations : le plan de financement et la date de signature souhaitée y ont leur place.
 
 ## L'avant-contrat
 
@@ -37,7 +37,7 @@ Il se signe chez le notaire ou sous seing privé, par exemple avec l'agence. Le 
 
 L'acquéreur non professionnel d'un logement peut se rétracter dans un délai de dix jours, sans motif et sans pénalité (article L271-1 du code de la construction et de l'habitation). Le délai court à partir du lendemain de la première présentation de la lettre recommandée qui lui notifie l'avant-contrat, ou d'un moyen offrant des garanties équivalentes. Il se compte en jours calendaires. S'il expire un samedi, un dimanche ou un jour férié, il est prolongé jusqu'au premier jour ouvrable suivant.
 
-Si l'acquéreur se rétracte, les sommes versées lui sont restituées dans les vingt et un jours (article L271-2). Le vendeur, lui, n'a pas de droit de rétractation : il est engagé dès la signature. Pour un lot de copropriété, le délai ne commence qu'une fois remis les documents d'information sur l'immeuble (article L721-3).
+Si l'acquéreur se rétracte, les sommes versées lui sont restituées dans les vingt et un jours (article L271-2). Le vendeur, lui, n'a pas de droit de rétractation : il est engagé dès la signature. Pour un lot de copropriété, le délai ne commence qu'une fois les documents d'information sur l'immeuble remis à l'acquéreur (article L721-3).
 
 ## Les conditions suspensives
 
