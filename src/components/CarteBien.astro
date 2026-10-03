@@ -22,13 +22,15 @@ interface Props {
    * définition en WebP.
    */
   portee?: 'vitrine' | 'profonde';
+  /** Nom d'événement (data-evt) du clic sur la carte. */
+  evt?: string;
 }
-const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine' } = Astro.props;
+const { id, titre, quartier, arrondissement, prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine', evt } = Astro.props;
 const jeu = photo ? jeuPhoto(photo.src, portee) : undefined;
 const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
 ---
 <article class="group">
-  <a href={`/bien/${id}`} class="block no-underline">
+  <a href={`/bien/${id}`} data-evt={evt} class="block no-underline">
     <div class={`relative overflow-hidden bg-[color:var(--color-papier)] ${vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]'}`}>
       {photo && jeu ? (
         <picture>

@@ -37,6 +37,8 @@ pour l'environnement **Production** et pour **Preview**.
 | `BREVO_LISTE_ACHETEURS` | Identifiant numérique de la liste | Texte |
 | `BREVO_LISTE_CANDIDATS` | Identifiant numérique de la liste | Texte |
 | `BREVO_LISTE_TELECHARGEMENTS` | Identifiant numérique de la liste | Texte |
+| `BREVO_DOI_MODELE` | Identifiant numérique du modèle de confirmation (double opt-in) | Texte |
+| `BREVO_DOI_REDIRECTION` | `https://www.trudaines.com/merci-abonnement` | Texte |
 | `SITE_URL` | `https://www.trudaines.com` | Texte |
 | `PUBLIC_GA4_ID` | `G-XXXXXXXXXX` | Texte |
 | `GITHUB_OAUTH_ID` | Identifiant de l'application OAuth GitHub | Texte |
@@ -44,6 +46,24 @@ pour l'environnement **Production** et pour **Preview**.
 
 Sans `PUBLIC_GA4_ID`, le site fonctionne mais n'envoie aucune mesure d'audience :
 l'emplacement de la balise est prêt, il suffira de renseigner l'identifiant.
+
+### Double opt-in des livres blancs
+
+Le formulaire de livre blanc envoie toujours le guide tout de suite. Sa case
+« Prévenez-moi à chaque nouvelle édition » est facultative. Avec `BREVO_DOI_MODELE`
+et `BREVO_DOI_REDIRECTION` renseignées toutes les deux, cocher la case lance le
+double opt-in : Brevo envoie un email de confirmation, et le contact n'entre dans
+la liste `BREVO_LISTE_TELECHARGEMENTS` qu'au clic sur son lien. Si l'une des deux
+variables manque, le parcours d'avant reste en place : inscription directe à la
+liste, sans confirmation.
+
+1. Dans Brevo, **Campagnes**, **Modèles**, créer un modèle de **confirmation
+   d'inscription (double opt-in)**. Il doit contenir le lien `{{ params.DOIurl }}`.
+   Noter son identifiant numérique : c'est `BREVO_DOI_MODELE`.
+2. Renseigner `BREVO_DOI_REDIRECTION` avec l'adresse de la page de remerciement
+   `/merci-abonnement`, que Brevo ouvre après le clic de confirmation.
+3. Seule la liste `BREVO_LISTE_TELECHARGEMENTS` est visée par la demande. Les listes
+   de salon du compte ne sont jamais utilisées par le site.
 
 ### Préparer Brevo
 

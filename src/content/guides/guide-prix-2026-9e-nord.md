@@ -13,6 +13,12 @@ pages: 9
 fichier: /guides/guide-prix-2026-9e-nord.pdf
 listeBrevo: telechargements
 disponible: true
+edition: 2026-09-19
+prochaineEdition: à la prochaine parution du fichier des valeurs foncières, en avril ou en octobre
+perimetre:
+  - '75009'
+  - '75010'
+  - '75018'
 ---
 
 Ce guide ne contient aucune estimation. Il contient des ventes signées, devant notaire, enregistrées par l'administration fiscale, et la manière de les lire.

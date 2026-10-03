@@ -15,7 +15,7 @@ interface Props {
   surtitre?: string;
   titre: string;
   chapo?: string;
-  hauteur?: 'grand' | 'moyen';
+  hauteur?: 'grand' | 'moyen' | 'compact';
   premiere?: boolean;
   /** 'h1' par défaut ; 'div' quand la page porte son h1 ailleurs. */
   balise?: 'h1' | 'div';
@@ -30,7 +30,9 @@ interface Props {
 const { image, surtitre, titre, chapo, hauteur = 'grand', premiere = false, balise = 'h1', cadrage = 'centre' } = Astro.props;
 const Titre = balise;
 const ancrage = { centre: 'object-center', bas: 'object-bottom', haut: 'object-top' }[cadrage];
-const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : 'min-h-[48svh]';
+const classeHauteur = { grand: 'min-h-[78svh] md:min-h-[82svh]', moyen: 'min-h-[48svh]', compact: 'min-h-[20svh]' }[hauteur];
+/* Compact : un bandeau mince, titre seul, pour les pages dont les chiffres doivent rester dans le premier écran. */
+const compact = hauteur === 'compact';
 ---
 <section class={`relative isolate flex items-end overflow-hidden bg-[color:var(--color-encre)] ${classeHauteur}`}>
   <img
@@ -52,20 +54,22 @@ const classeHauteur = hauteur === 'grand' ? 'min-h-[78svh] md:min-h-[82svh]' : '
   >
   </div>
 
-  <div class="conteneur w-full pb-16 pt-24 md:pb-24 md:pt-32">
+  <div class={`conteneur w-full ${compact ? 'pb-6 pt-12 md:pb-8 md:pt-16' : 'pb-16 pt-24 md:pb-24 md:pt-32'}`}>
     <div class="max-w-3xl">
       {surtitre && (
         <p class="text-[0.9375rem] font-semibold uppercase tracking-[0.26em] text-[color:var(--color-or)]">
           {surtitre}
         </p>
       )}
-      <Titre class="mt-6 font-[family-name:var(--font-titre)] text-[2.25rem] leading-[1.08] text-white sm:text-5xl md:text-6xl">
+      <Titre class={`${compact ? 'mt-3' : 'mt-6'} font-[family-name:var(--font-titre)] text-[2.25rem] leading-[1.08] text-white sm:text-5xl md:text-6xl`}>
         {titre}
       </Titre>
       {chapo && <p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/85">{chapo}</p>}
-      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-        <slot />
-      </div>
+      {(!compact || Astro.slots.has('default')) && (
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <slot />
+        </div>
+      )}
     </div>
   </div>
 </section>

@@ -1,19 +1,35 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import BlocCta from '../../components/BlocCta.astro';
+import RechercheRue from '../../components/RechercheRue.astro';
 import { nombre } from '../../lib/format';
-import { rues, arrondissements, periode, ventesMinimum } from '../../lib/rues';
+import { rues, arrondissements, periode, ventesMinimum, termesDeRecherche, type Rue } from '../../lib/rues';
+import { ruesDuQuartier, ruesHorsQuartier, quartiersDeLArrondissement } from '../../lib/quartiers';
+import { evt } from '../../lib/entonnoir';
 import { site } from '../../data/site';
 
 const euros = (valeur: number) => `${nombre(valeur)} €`;
 
+const quartiers = await getCollection('quartiers');
+
+/*
+ * Un arrondissement se lit en deux temps : les rues de chacun de ses quartiers,
+ * puis les autres rues, celles que le rattachement par distance laisse hors de
+ * tout quartier. Aucune rue n'est perdue : elles y sont toutes.
+ */
 const groupes = Object.entries(arrondissements)
   .map(([code, a]) => ({
     code,
     ...a,
-    rues: rues.filter((r) => r.codePostal === code),
+    nombreDeRues: rues.filter((r) => r.codePostal === code).length,
+    quartiers: quartiersDeLArrondissement(code)
+      .map((slug) => ({ slug, entree: quartiers.find((q) => q.id === slug), rues: ruesDuQuartier(slug) }))
+      .filter((q) => q.entree && q.rues.length > 0)
+      .sort((a, b) => (a.entree?.data.ordre ?? 0) - (b.entree?.data.ordre ?? 0)),
+    autres: ruesHorsQuartier(code),
   }))
-  .filter((g) => g.rues.length > 0)
+  .filter((g) => g.nombreDeRues > 0)
   .sort((a, b) => a.code.localeCompare(b.code));
 
 const totalVentes = rues.reduce((somme, r) => somme + r.ventes, 0);
@@ -22,57 +38,124 @@ const donnees = [
   {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Prix immobilier rue par rue, Paris 9e, 10e et 18e',
+    name: 'Prix immobilier rue par rue, Paris 9e, 10e, 17e et 18e',
     description: `Prix au mètre carré de ${rues.length} voies de Paris, calculés sur ${nombre(totalVentes)} ventes d'appartements.`,
     url: `${site.url}/prix-immobilier`,
   },
 ];
 ---
 <Layout
-  titre="Prix immobilier rue par rue, Paris 9e, 10e et 18e | Trudaines"
-  description={`Le prix au m² de ${rues.length} voies de Paris 9e, 10e et 18e, calculé sur ${nombre(totalVentes)} ventes d'appartements signées devant notaire.`}
+  titre="Prix immobilier rue par rue, Paris 9e, 10e, 17e et 18e | Trudaines"
+  description={`Le prix au m² de ${rues.length} voies de Paris 9e, 10e, 17e et 18e, calculé sur ${nombre(totalVentes)} ventes d'appartements signées devant notaire.`}
   filAriane={[{ nom: 'Prix par rue' }]}
   donnees={donnees}
   cta={false}
 >
-  <section class="section pt-10">
+  <section class="section pb-10 pt-10 md:pb-14">
     <div class="conteneur max-w-3xl">
       <p class="surtitre">Ventes signées, {periode}</p>
       <h1 class="titre-1 mt-6">Le prix au mètre carré, rue par rue</h1>
       <p class="chapo mt-8">
-        {rues.length} voies de Paris 9e, 10e et 18e, mesurées sur {nombre(totalVentes)} ventes d'appartements
+        {rues.length} voies de Paris 9e, 10e, 17e et 18e, mesurées sur {nombre(totalVentes)} ventes d'appartements
         enregistrées devant notaire. Pas une estimation, pas une annonce : des ventes signées.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Une voie n'apparaît ici qu'à partir de {ventesMinimum} ventes sur la période. En dessous, une médiane
         ne mesure rien et nous préférons ne rien publier.
       </p>
+      <div class="mt-10">
+        <RechercheRue
+          identifiant="recherche-index"
+          liste="rues-index"
+          evtSaisie={evt('prix_rues', 'recherche')}
+          exemple="Rue Lepic"
+        />
+      </div>
     </div>
   </section>
 
-  {groupes.map((groupe) => (
-    <section class="section filet" aria-labelledby={`arr-${groupe.code}`}>
-      <div class="conteneur">
-        <div class="flex flex-wrap items-baseline justify-between gap-6">
-          <h2 id={`arr-${groupe.code}`} class="titre-2">{groupe.nom}</h2>
-          <p class="text-sm text-[color:var(--color-ardoise)]">
-            Médiane {euros(groupe.mediane)} le m² · {groupe.rues.length} voies mesurées · {nombre(groupe.ventes)} ventes
-          </p>
-        </div>
-        <div class="mt-10 grid gap-x-10 gap-y-0 sm:grid-cols-2 lg:grid-cols-3">
-          {groupe.rues.map((r) => (
-            <a href={`/prix-immobilier/${r.slug}`} class="flex items-baseline justify-between gap-4 border-t border-[color:var(--color-trait)] py-3.5 no-underline">
-              <span class="text-[color:var(--color-encre)]">{r.nom}</span>
-              <span class="whitespace-nowrap text-sm text-[color:var(--color-ardoise)]">{euros(r.mediane)}</span>
-            </a>
+  <div id="rues-index">
+    <div class="conteneur">
+      <p class="text-sm text-[color:var(--color-ardoise)]" data-compte aria-live="polite">{rues.length} rues</p>
+    </div>
+
+    {groupes.map((groupe) => (
+      <section class="section filet" aria-labelledby={`arr-${groupe.code}`} data-groupe>
+        <div class="conteneur">
+          <div class="flex flex-wrap items-baseline justify-between gap-6">
+            <h2 id={`arr-${groupe.code}`} class="titre-2">{groupe.nom}</h2>
+            <p class="text-sm text-[color:var(--color-ardoise)]">
+              Médiane {euros(groupe.mediane)} le m² · {groupe.nombreDeRues} voies mesurées · {nombre(groupe.ventes)} ventes
+            </p>
+          </div>
+
+          {groupe.quartiers.map((q) => (
+            <div class="mt-14" data-groupe>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                <h3 class="titre-3">
+                  <a href={`/quartiers/${q.slug}`} class="no-underline hover:underline">{q.entree?.data.nom}</a>
+                </h3>
+                <p class="text-sm text-[color:var(--color-ardoise)]">
+                  {q.rues.length} rues ·{' '}
+                  <a href={`/quartiers/${q.slug}`} class="lien-souligne">Voir le quartier</a>
+                </p>
+              </div>
+              <div class="mt-6 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+                {q.rues.map((r: Rue) => (
+                  <a
+                    href={`/prix-immobilier/${r.slug}`}
+                    data-rue
+                    data-nom={termesDeRecherche(r.nom)}
+                    class="flex items-baseline justify-between gap-4 border-t border-[color:var(--color-trait)] py-3.5 no-underline hover:bg-[color:var(--color-papier)]"
+                  >
+                    <span class="text-[color:var(--color-encre)]">{r.nom}</span>
+                    <span class="whitespace-nowrap text-sm text-[color:var(--color-ardoise)]">{euros(r.mediane)}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
+
+          {groupe.autres.length > 0 && (
+            <div class="mt-14" data-groupe>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                <h3 class="titre-3">{groupe.quartiers.length > 0 ? `Autres rues de ${groupe.nom}` : `Les rues de ${groupe.nom}`}</h3>
+                <p class="text-sm text-[color:var(--color-ardoise)]">{groupe.autres.length} rues</p>
+              </div>
+              <div class="mt-6 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+                {groupe.autres.map((r: Rue) => (
+                  <a
+                    href={`/prix-immobilier/${r.slug}`}
+                    data-rue
+                    data-nom={termesDeRecherche(r.nom)}
+                    class="flex items-baseline justify-between gap-4 border-t border-[color:var(--color-trait)] py-3.5 no-underline hover:bg-[color:var(--color-papier)]"
+                  >
+                    <span class="text-[color:var(--color-encre)]">{r.nom}</span>
+                    <span class="whitespace-nowrap text-sm text-[color:var(--color-ardoise)]">{euros(r.mediane)}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
-    </section>
-  ))}
+      </section>
+    ))}
+
+    <div class="conteneur">
+      <p data-vide hidden class="mt-10 border-t border-[color:var(--color-trait)] pt-6 text-[color:var(--color-ardoise)]">
+        Aucune rue mesurée ne porte ce nom. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes : la vôtre
+        n'a peut-être pas assez de ventes sur la période pour qu'une médiane ait un sens.
+      </p>
+    </div>
+  </div>
 
   <BlocCta
     titre="Votre rue n'est pas la médiane de votre rue"
     texte="L'étage, l'ascenseur, la vue et l'état du bien valent plusieurs milliers d'euros au mètre carré. Nous venons voir, et nous écrivons le chiffre."
+    evtEstimer={evt('prix_rues', 'estimer')}
+    evtGuide={evt('prix_rues', 'guide')}
+    evtRdv={evt('prix_rues', 'rdv')}
   />
+
+  <script is:inline src="/js/filtre-rues.js"></script>
 </Layout>

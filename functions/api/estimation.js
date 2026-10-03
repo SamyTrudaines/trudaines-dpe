@@ -29,6 +29,8 @@ export async function onRequestPost({ request, env }) {
       ['Fourchette vue sur le site', valeur('fourchette') || 'Non calculée'],
       ['Secteur', valeur('secteur')],
       ['Quartier', valeur('quartier')],
+      // Page quartier ou rue d'où part la demande : dit au cabinet ce que le visiteur lisait.
+      ['Page d’origine', valeur('origine')],
       ['Nom', `${prenom} ${valeur('nom')}`],
       ['Email', email],
       ['Téléphone', valeur('telephone')],

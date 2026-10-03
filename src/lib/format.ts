@@ -30,7 +30,7 @@ export const libelleStatut: Record<string, string> = {
  * Seul le premier mot est abaissé, et seulement s'il est un type de voie :
  * les noms propres qui suivent gardent leur capitale.
  */
-const TYPES_DE_VOIE = new Set([
+export const TYPES_DE_VOIE = new Set([
   'Rue', 'Avenue', 'Boulevard', 'Place', 'Passage', 'Impasse', 'Villa',
   'Cité', 'Square', 'Quai', 'Allée', 'Chemin', 'Cour', 'Galerie', 'Hameau',
   'Sente', 'Route', 'Voie', 'Rond-point', 'Esplanade', 'Parvis',

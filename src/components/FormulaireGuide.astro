@@ -1,6 +1,20 @@
 ---
-interface Props { guide: string; titreGuide: string; identifiant?: string; }
-const { guide, titreGuide, identifiant = guide } = Astro.props;
+import { evt as nomEvenement } from '../lib/entonnoir';
+
+interface Props {
+  guide: string;
+  titreGuide: string;
+  identifiant?: string;
+  /**
+   * Noms d'événements (data-evt), séparés par une espace, envoyés quand le guide
+   * part. Par défaut, un événement par livre blanc : livreblanc_<slug>.
+   */
+  evt?: string;
+  /** Page d'où part la demande, transmise au cabinet : « Quartier Martyrs Lorette ». */
+  contexte?: string;
+}
+const { guide, titreGuide, identifiant = guide, evt, contexte = '' } = Astro.props;
+const evenements = evt ?? nomEvenement('livreblanc', guide);
 ---
 <form
   class="border border-[color:var(--color-trait)] bg-white p-6"
@@ -8,9 +22,11 @@ const { guide, titreGuide, identifiant = guide } = Astro.props;
   action="/api/guide"
   data-trudaines
   data-evenement="guide_telecharge"
+  data-evt={evenements}
 >
   <input type="hidden" name="guide" value={guide} />
   <input type="hidden" name="titreGuide" value={titreGuide} />
+  <input type="hidden" name="contexte" value={contexte} />
   <input type="hidden" name="horodatage" value="" />
   <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
     <label for={`societe-${identifiant}`}>Ne pas remplir</label>
@@ -28,9 +44,10 @@ const { guide, titreGuide, identifiant = guide } = Astro.props;
       </div>
     </div>
     <div class="mt-4 flex items-start gap-3">
-      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`guide-consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`guide-consentement-${identifiant}`} name="consentement" type="checkbox" value="oui" />
       <label class="text-sm text-[color:var(--color-ardoise)]" for={`guide-consentement-${identifiant}`}>
-        J'accepte de recevoir ce guide et les points de marché du secteur. Désinscription en un clic.
+        Prévenez-moi à chaque nouvelle édition de ce livre blanc. Facultatif, le guide part dans tous les cas.
+        Désinscription en un clic.
       </label>
     </div>
     <button type="submit" class="bouton mt-6 w-full sm:w-auto">Recevoir le guide</button>
@@ -39,5 +56,10 @@ const { guide, titreGuide, identifiant = guide } = Astro.props;
   <div data-confirmation hidden class="py-2">
     <h3 class="titre-3">Guide envoyé</h3>
     <p class="mt-4 text-[color:var(--color-ardoise)]">{titreGuide} arrive dans votre boîte email dans quelques secondes.</p>
+    {/* Affiché par public/js/formulaires.js quand le serveur a lancé le double opt-in. */}
+    <p class="mt-4 text-[color:var(--color-ardoise)]" data-confirmation-doi hidden>
+      Un second email vous demande de confirmer votre inscription aux prochaines éditions. Tant que vous n'avez pas
+      cliqué sur son lien, vous ne recevez rien d'autre que ce guide.
+    </p>
   </div>
 </form>

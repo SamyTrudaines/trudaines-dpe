@@ -1,13 +1,17 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import Banniere from '../../components/Banniere.astro';
+import ModuleEstimation from '../../components/ModuleEstimation.astro';
+import ReferencesProches from '../../components/ReferencesProches.astro';
+import LivreBlanc from '../../components/LivreBlanc.astro';
 import { nombre, prix as prixFr, enPhrase } from '../../lib/format';
 import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, type Rue } from '../../lib/rues';
+import { quartierDeRue, ruesVoisines, memeVoie, position as positionDeRue } from '../../lib/quartiers';
+import { evt, referencesProches, guidePertinent } from '../../lib/entonnoir';
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
-import Banniere from '../../components/Banniere.astro';
-import FormulaireGuide from '../../components/FormulaireGuide.astro';
 import { ambianceDeVoie } from '../../data/ambiance';
 
 interface Props { rue: Rue }
@@ -17,10 +21,24 @@ export const getStaticPaths: GetStaticPaths = async () =>
 
 const { rue } = Astro.props;
 const arrondissement = arrondissements[rue.codePostal];
-const proches = voisines(rue);
 const etendue = rue.d9 - rue.d1;
 const dispersion = heterogeneite(rue);
 const secteur = secteurs.find((s) => s.arrondissement === rue.codePostal);
+
+/* Le quartier de la rue, quand elle y est rattachée, et les rues les plus proches. */
+const slugQuartier = quartierDeRue(rue);
+const quartier = slugQuartier ? (await getCollection('quartiers')).find((q) => q.id === slugQuartier) : undefined;
+const voisinesProches = ruesVoisines(rue);
+const autresGraphies = memeVoie(rue);
+const memeNiveau = voisines(rue);
+/* Contexte des événements de mesure : le quartier, ou l'arrondissement d'une rue sans quartier. */
+const contexte = quartier ? quartier.id : `arr_${rue.codePostal.slice(-2)}`;
+const lieu = quartier ? `${rue.arrondissement}, quartier ${quartier.data.nom}` : rue.arrondissement;
+const ancreArrondissement = `/prix-immobilier#arr-${rue.codePostal}`;
+
+const archives = await getCollection('biens', (b) => b.data.archive);
+const references = referencesProches(archives, { quartier: quartier?.data.nom, codePostal: rue.codePostal });
+const guide = guidePertinent(await getCollection('guides'), rue.codePostal);
 
 const euros = (valeur: number) => `${nombre(valeur)} €`;
 
@@ -31,6 +49,13 @@ const position =
     : rue.ecartArrondissement < -4
       ? `Cette voie se situe ${Math.abs(rue.ecartArrondissement)} % en dessous de la médiane de ${rue.arrondissement}.`
       : `Cette voie suit la médiane de ${rue.arrondissement}, à ${Math.abs(rue.ecartArrondissement)} % près.`;
+
+const ecartCourt =
+  rue.ecartArrondissement > 4
+    ? `${rue.ecartArrondissement} % au dessus`
+    : rue.ecartArrondissement < -4
+      ? `${Math.abs(rue.ecartArrondissement)} % en dessous`
+      : `Dans la médiane, à ${Math.abs(rue.ecartArrondissement)} % près`;
 
 const lectureDispersion = {
   resserre:
@@ -48,6 +73,8 @@ const libelleDeciles = assezDeVentes ? 'Huit ventes sur dix' : 'Hors ventes extr
 const phraseDeciles = assezDeVentes
   ? `Huit ventes sur dix se sont faites entre ${euros(rue.d1)} et ${euros(rue.d9)} le mètre carré.`
   : `Une fois écartées les ventes extrêmes, les prix constatés s'étagent de ${euros(rue.d1)} à ${euros(rue.d9)} le mètre carré.`;
+
+const donneeEstimation = `${phraseDeciles} Cet écart représente ${prixFr(etendue * rue.surface)} pour ${nombre(rue.surface)} m², la surface médiane vendue ici.`;
 
 const questions = [
   {
@@ -77,6 +104,7 @@ const questions = [
 ];
 
 const vue = ambianceDeVoie(rue.arrondissement, rue.slug);
+const centre = positionDeRue(rue);
 
 const donnees = [
   { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: questions },
@@ -88,147 +116,256 @@ const donnees = [
     creator: { '@id': `${site.url}/#cabinet` },
     isBasedOn: 'https://www.data.gouv.fr/datasets/5c4ae55a634f4117716d5656/',
     temporalCoverage: '2024-01-01/2025-12-31',
-    spatialCoverage: { '@type': 'Place', address: { '@type': 'PostalAddress', streetAddress: rue.nom, postalCode: rue.codePostal, addressLocality: 'Paris', addressCountry: 'FR' } },
+    spatialCoverage: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', streetAddress: rue.nom, postalCode: rue.codePostal, addressLocality: 'Paris', addressCountry: 'FR' },
+      ...(centre ? { geo: { '@type': 'GeoCoordinates', latitude: centre.lat, longitude: centre.lon } } : {}),
+    },
   },
 ];
+
+const chapo = `${euros(rue.mediane)} le mètre carré, prix médian des appartements vendus ${nomEnPhrase} de ${periode}. ${position}`;
+const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : rue.arrondissement;
 ---
 <Layout
   ancreEstimation={`#estimation-${rue.slug}`}
+  evtEstimation={evt('rue', 'estimer', contexte)}
   titre={`Prix au m² ${rue.nom}, ${rue.arrondissement} | Trudaines`}
   description={`${rue.nom}, ${rue.arrondissement} : ${euros(rue.mediane)} le m² médian sur ${rue.ventes} ventes signées de 2024 et 2025. Fourchette, typologies, méthode.`}
-  filAriane={[{ nom: 'Prix par rue', href: '/prix-immobilier' }, { nom: rue.nom }]}
+  filAriane={quartier
+    ? [{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom, href: `/quartiers/${quartier.id}` }, { nom: rue.nom }]
+    : [{ nom: 'Prix par rue', href: '/prix-immobilier' }, { nom: rue.nom }]}
   donnees={donnees}
+  ctaProps={{
+    titre: 'Parlons de votre bien',
+    texte: "Un avis de valeur écrit, le livre blanc des prix, ou simplement une conversation. Sans engagement, et sans relance commerciale insistante.",
+    hrefEstimer: `#estimation-${rue.slug}`,
+    hrefGuide: '#livre-blanc',
+    libelleGuide: 'Recevoir le livre blanc',
+    evtEstimer: evt('rue', 'estimer', contexte),
+    evtGuide: evt('rue', 'guide', contexte),
+    evtRdv: evt('rue', 'rdv', contexte),
+  }}
 >
-  {vue && (
-    <Banniere
-      image={vue}
-      surtitre={rue.arrondissement}
-      titre={rue.nom}
-      hauteur="moyen"
-      balise="div"
-      premiere
-    />
+  {vue ? (
+    <Banniere image={vue} surtitre={surtitre} titre={`Prix au m² ${rue.nom}`} hauteur="compact" premiere />
+  ) : (
+    <section class="section pb-0 pt-6">
+      <div class="conteneur max-w-3xl">
+        <p class="surtitre">{surtitre}</p>
+        <h1 class="titre-1 mt-3">Prix au m² {rue.nom}</h1>
+      </div>
+    </section>
   )}
 
-  <section class="section pt-12">
-    <div class="conteneur max-w-3xl">
-      <p class="surtitre">{rue.arrondissement} · {rue.ventes} ventes analysées</p>
-      <h1 class="titre-1 mt-6">Prix au m² {rue.nom}</h1>
-      <p class="chapo mt-8">
-        {euros(rue.mediane)} le mètre carré, prix médian des appartements vendus {nomEnPhrase} de {periode}.
-        {' '}{position}
+  <section class="section pb-0 pt-6 md:pt-8" aria-label="Les chiffres de la rue">
+    <div class="conteneur">
+      <p class="chapo max-w-4xl">{chapo}</p>
+      <dl class="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[color:var(--color-trait)] py-6 lg:grid-cols-4 lg:gap-x-8">
+        <div class="col-span-2 lg:col-span-1">
+          <dt class="surtitre">Prix médian au m²</dt>
+          <dd class="mt-2 font-[family-name:var(--font-titre)] text-[2.5rem] font-semibold italic leading-none text-[color:var(--color-encre)] lining-nums">{euros(rue.mediane)}</dd>
+        </div>
+        <div>
+          <dt class="surtitre">{libelleDeciles}</dt>
+          <dd class="mt-2 text-lg">{euros(rue.d1)} à {euros(rue.d9)}</dd>
+          <dd class="mt-1 text-sm text-[color:var(--color-ardoise)]">le m², du premier au neuvième décile</dd>
+        </div>
+        <div>
+          <dt class="surtitre">Ventes signées</dt>
+          <dd class="mt-2 text-lg">{rue.ventes} ventes</dd>
+          <dd class="mt-1 text-sm text-[color:var(--color-ardoise)]">{periode}</dd>
+        </div>
+        <div class="col-span-2 lg:col-span-1">
+          <dt class="surtitre">Comparé à {rue.arrondissement}</dt>
+          <dd class="mt-2 text-lg">{ecartCourt}</dd>
+          <dd class="mt-1 text-sm text-[color:var(--color-ardoise)]">Médiane de l'arrondissement : {euros(arrondissement.mediane)} le m²</dd>
+        </div>
+      </dl>
+      <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+        Surface médiane vendue : {nombre(rue.surface)} m². Prix de vente médian : {prixFr(rue.prix)}.
       </p>
-      <p class="mt-6 text-[color:var(--color-ardoise)]">
-        Ce chiffre est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
-        {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
-        Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les trois arrondissements
-        voisins.
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+        Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques, ventes
+        d'appartements signées de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes.
       </p>
     </div>
   </section>
 
-  <section class="section filet pt-0">
+  <section class="section filet" aria-labelledby="rues-voisines">
     <div class="conteneur">
-      <dl class="grid gap-8 border-y border-[color:var(--color-trait)] py-10 sm:grid-cols-2 lg:grid-cols-5">
-        <div>
-          <dt class="surtitre">Prix médian au m²</dt>
-          <dd class="mt-3 text-2xl font-semibold text-[color:var(--color-encre)]">{euros(rue.mediane)}</dd>
-        </div>
-        <div>
-          <dt class="surtitre">Ventes signées</dt>
-          <dd class="mt-3 text-base leading-snug">{rue.ventes} ventes,<br />{periode}</dd>
-        </div>
-        <div>
-          <dt class="surtitre">{libelleDeciles}</dt>
-          <dd class="mt-3 text-lg">{euros(rue.d1)} à {euros(rue.d9)}</dd>
-        </div>
-        <div>
-          <dt class="surtitre">Surface médiane vendue</dt>
-          <dd class="mt-3 text-lg">{nombre(rue.surface)} m²</dd>
-        </div>
-        <div>
-          <dt class="surtitre">Prix de vente médian</dt>
-          <dd class="mt-3 text-lg">{prixFr(rue.prix)}</dd>
-        </div>
-      </dl>
+      <h2 id="rues-voisines" class="titre-2">Les rues voisines</h2>
+      {voisinesProches.length > 0 ? (
+        <>
+          <p class="mt-4 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
+            Les rues les plus proches, à moins de 600 m, mesurées du centre d'une rue au centre de l'autre, avec leur
+            prix médian au mètre carré sur la même période. La proximité est une distance, pas une mitoyenneté.
+          </p>
+          <ul class="mt-6 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+            {voisinesProches.map(({ rue: r }) => {
+              const ecart = Math.round(((r.mediane - rue.mediane) / rue.mediane) * 100);
+              return (
+                <li class="border-t border-[color:var(--color-trait)]">
+                  <a
+                    href={`/prix-immobilier/${r.slug}`}
+                    data-evt={evt('rue', 'voisine', contexte)}
+                    class="flex items-baseline justify-between gap-3 py-3 no-underline hover:bg-[color:var(--color-papier)]"
+                  >
+                    <span class="text-[color:var(--color-encre)]">
+                      {r.nom}
+                      {r.codePostal !== rue.codePostal && <span class="block text-xs text-[color:var(--color-ardoise)]">{r.arrondissement}</span>}
+                    </span>
+                    <span class="whitespace-nowrap text-right tabular-nums">
+                      <span class="font-semibold text-[color:var(--color-encre)]">{euros(r.mediane)}</span>
+                      <span class="block text-xs text-[color:var(--color-ardoise)]">{r.ventes} ventes, {ecart > 0 ? `+${ecart}` : ecart} %</span>
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <p class="mt-3 text-xs text-[color:var(--color-ardoise)]">Le pourcentage compare la médiane de chaque rue voisine à celle de cette rue.</p>
+        </>
+      ) : (
+        <p class="mt-4 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
+          Aucune autre rue mesurée ne se trouve à moins de 600 m du centre de {rue.nom}.
+        </p>
+      )}
+      {autresGraphies.length > 0 && (
+        <p class="mt-6 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
+          La base foncière enregistre aussi cette voie sous {autresGraphies.length > 1 ? 'les noms' : 'le nom'}{' '}
+          {autresGraphies.map((a, i) => (<>{i > 0 && ', '}<a href={`/prix-immobilier/${a.slug}`} class="lien-souligne">{a.nom}</a>{` (${a.ventes} ventes, ${euros(a.mediane)} le m²)`}</>))}{'. '}Les deux séries de ventes ne sont pas additionnées.
+        </p>
+      )}
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {quartier ? (
+          <a href={`/quartiers/${quartier.id}`} data-evt={evt('rue', 'quartier', contexte)} class="lien-souligne">Toutes les rues du quartier {quartier.data.nom}</a>
+        ) : (
+          <a href={ancreArrondissement} data-evt={evt('rue', 'quartier', contexte)} class="lien-souligne">Toutes les rues de {rue.arrondissement}</a>
+        )}
+        <a href="/prix-immobilier" class="lien-souligne">Toutes les voies mesurées</a>
+      </p>
+    </div>
+  </section>
 
-      <div class="mt-12 grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <h2 class="titre-2">Ce que ces chiffres disent</h2>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {nomEnPhrase}.
-            La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
-            mètre carré, la moitié au dessus. {position}
-          </p>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            {lectureDispersion} Sur un appartement de {nombre(rue.surface)} m², la surface médiane vendue dans
-            cette rue, {euros(etendue)} d'écart au mètre carré représentent {prixFr(etendue * rue.surface)}.
-          </p>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            Classée {rue.rang}<sup>e</sup> sur {rue.ruesClassees} voies de {rue.arrondissement} disposant
-            d'assez de ventes pour être mesurées, contre une médiane d'arrondissement de {euros(arrondissement.mediane)}.
-          </p>
+  <section class="section filet" aria-label="Analyse de la rue et estimation">
+    <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <p class="text-[color:var(--color-ardoise)]">
+          Le prix médian est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
+          {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
+          Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les trois arrondissements
+          voisins.
+        </p>
 
-          {rue.typologies.length > 1 && (
-            <>
-              <h2 class="titre-2 mt-14">Par typologie</h2>
-              <table class="mt-8 w-full border-collapse text-sm">
-                <thead class="border-b border-[color:var(--color-encre)]">
-                  <tr>
-                    <th class="py-3 pr-4 text-left font-semibold">Typologie</th>
-                    <th class="py-3 pr-4 text-right font-semibold">Ventes</th>
-                    <th class="py-3 pr-4 text-right font-semibold">Surface</th>
-                    <th class="py-3 text-right font-semibold">Prix médian</th>
+        <h2 class="titre-2 mt-14">Ce que ces chiffres disent</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {nomEnPhrase}.
+          La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
+          mètre carré, la moitié au dessus. {position}
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          {lectureDispersion} Sur un appartement de {nombre(rue.surface)} m², la surface médiane vendue dans
+          cette rue, {euros(etendue)} d'écart au mètre carré représentent {prixFr(etendue * rue.surface)}.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Classée {rue.rang}<sup>e</sup> sur {rue.ruesClassees} voies de {rue.arrondissement} disposant
+          d'assez de ventes pour être mesurées, contre une médiane d'arrondissement de {euros(arrondissement.mediane)}.
+        </p>
+
+        {rue.typologies.length > 1 && (
+          <>
+            <h2 class="titre-2 mt-14">Par typologie</h2>
+            <table class="mt-8 w-full border-collapse text-sm">
+              <thead class="border-b border-[color:var(--color-encre)]">
+                <tr>
+                  <th class="py-3 pr-4 text-left font-semibold">Typologie</th>
+                  <th class="py-3 pr-4 text-right font-semibold">Ventes</th>
+                  <th class="py-3 pr-4 text-right font-semibold">Surface</th>
+                  <th class="py-3 text-right font-semibold">Prix médian</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rue.typologies.map((t) => (
+                  <tr class="border-b border-[color:var(--color-trait)]">
+                    <td class="py-3 pr-4 text-[color:var(--color-ardoise)]">{libellePieces(t.pieces)}</td>
+                    <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{t.ventes}</td>
+                    <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{nombre(t.surface)} m²</td>
+                    <td class="py-3 text-right">{prixFr(t.prix)}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {rue.typologies.map((t) => (
-                    <tr class="border-b border-[color:var(--color-trait)]">
-                      <td class="py-3 pr-4 text-[color:var(--color-ardoise)]">{libellePieces(t.pieces)}</td>
-                      <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{t.ventes}</td>
-                      <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{nombre(t.surface)} m²</td>
-                      <td class="py-3 text-right">{prixFr(t.prix)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
-                Les typologies de moins de trois ventes ne sont pas publiées : une médiane sur deux ventes ne
-                mesure rien.
-              </p>
-            </>
-          )}
+                ))}
+              </tbody>
+            </table>
+            <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+              Les typologies de moins de trois ventes ne sont pas publiées : une médiane sur deux ventes ne
+              mesure rien.
+            </p>
+          </>
+        )}
 
-          <h2 class="titre-2 mt-14">Ce que ces chiffres ne disent pas</h2>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            Ni l'étage, ni l'ascenseur, ni la vue, ni l'exposition, ni l'état du bien, ni celui de la
-            copropriété, ni les travaux votés en assemblée générale. Le fichier des valeurs foncières ne les
-            contient pas. Ils se lisent seulement dans l'écart entre {euros(rue.d1)} et {euros(rue.d9)}, et ils
-            se tranchent sur place, en visite.
-          </p>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            Il ne dit pas non plus les délais de vente, qui n'y figurent pas, ni la classe énergie. Et il
-            mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez
-            inscrite dans votre acte.
-          </p>
-        </div>
+        <h2 class="titre-2 mt-14">Ce que ces chiffres ne disent pas</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Ni l'étage, ni l'ascenseur, ni la vue, ni l'exposition, ni l'état du bien, ni celui de la
+          copropriété, ni les travaux votés en assemblée générale. Le fichier des valeurs foncières ne les
+          contient pas. Ils se lisent seulement dans l'écart entre {euros(rue.d1)} et {euros(rue.d9)}, et ils
+          se tranchent sur place, en visite.
+        </p>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Il ne dit pas non plus les délais de vente, qui n'y figurent pas, ni la classe énergie. Et il
+          mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez
+          inscrite dans votre acte.
+        </p>
 
-        <div class="lg:sticky lg:top-28">
-          <FormulaireEstimation
-            secteur={secteur?.slug ?? 'paris-9'}
-            quartier={rue.nom}
-            identifiant={`estimation-${rue.slug}`}
-          />
-        </div>
+        <h2 class="titre-3 mt-14">Méthode</h2>
+        <p class="mt-5 text-sm text-[color:var(--color-ardoise)]">
+          Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques,
+          qui recense les ventes enregistrées devant notaire. Appartements seuls, ventes hors multilots, période
+          de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes : en dessous, une médiane
+          ne mesure rien. Les prix au mètre carré inférieurs à 2 000 € et supérieurs à 30 000 € sont écartés,
+          ce qui retire les cessions familiales et les erreurs de saisie les plus visibles, pas toutes.
+          Le calcul est refait à chaque parution de la base, en avril et en octobre. Les rues voisines et le
+          quartier se déduisent de la position géographique des voies, donnée par la Base Adresse Nationale.
+        </p>
+      </div>
+
+      <div class="lg:self-start">
+        <ModuleEstimation
+          disposition="empile"
+          identifiant={`estimation-${rue.slug}`}
+          secteur={secteur?.slug ?? 'paris-9'}
+          quartier={quartier?.data.nom ?? ''}
+          origine={`${rue.nom}, ${lieu}`}
+          evt={evt('rue', 'estimation', contexte)}
+          donnee={donneeEstimation}
+        />
       </div>
     </div>
   </section>
 
+  <ReferencesProches
+    mandats={references.mandats}
+    portee={references.portee}
+    quartier={quartier ? `le quartier ${quartier.data.nom}` : undefined}
+    arrondissement={rue.arrondissement}
+    ici={quartier ? 'dans ce quartier' : 'près de cette rue'}
+    evt={evt('rue', 'reference', contexte)}
+    evtToutes={evt('rue', 'references', contexte)}
+  />
+
+  {guide && (
+    <LivreBlanc
+      guide={guide}
+      contexte={`Rue ${rue.nom}, ${lieu}`}
+      evt={`${evt('rue', 'livreblanc', contexte)} ${evt('livreblanc', guide.data.slug)}`}
+      identifiant={`guide-${rue.slug}`}
+    />
+  )}
+
   <section class="section filet">
     <div class="conteneur">
-      <h2 class="titre-2">Des voies au même niveau de prix</h2>
+      <h2 class="titre-3">Des voies au même niveau de prix</h2>
       <div class="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-        {proches.map((r) => (
+        {memeNiveau.map((r) => (
           <a href={`/prix-immobilier/${r.slug}`} class="flex items-baseline justify-between gap-4 border-t border-[color:var(--color-trait)] py-4 no-underline">
             <span class="text-[color:var(--color-encre)]">{r.nom}</span>
             <span class="whitespace-nowrap text-sm text-[color:var(--color-ardoise)]">{euros(r.mediane)}</span>
@@ -236,42 +373,9 @@ const donnees = [
         ))}
       </div>
       <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        <a href="/prix-immobilier" class="lien-souligne">Toutes les voies mesurées</a>
         {secteur && <a href={`/estimation/${secteur.slug}`} class="lien-souligne">Estimation {secteur.nom}</a>}
         <a href="/panorama/prix-immobilier-paris-9-18-analyse" class="lien-souligne">L'analyse de marché complète</a>
       </p>
     </div>
   </section>
-
-  <section class="section filet">
-    <div class="conteneur max-w-3xl">
-      <h2 class="titre-3">Méthode</h2>
-      <p class="mt-5 text-sm text-[color:var(--color-ardoise)]">
-        Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques,
-        qui recense les ventes enregistrées devant notaire. Appartements seuls, ventes hors multilots, période
-        de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes : en dessous, une médiane
-        ne mesure rien. Les prix au mètre carré inférieurs à 2 000 € et supérieurs à 30 000 € sont écartés,
-        ce qui retire les cessions familiales et les erreurs de saisie les plus visibles, pas toutes.
-        Le calcul est refait à chaque parution de la base, en avril et en octobre.
-      </p>
-    </div>
-  </section>
-  <section class="section filet">
-    <div class="conteneur grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-      <div>
-        <p class="surtitre">Le livre blanc</p>
-        <h2 class="titre-2 mt-6">Bien vendre à Paris en 2026</h2>
-        <p class="chapo mt-6">
-          La préparation, le prix de départ, le mandat, les visites, la négociation. Le déroulé complet d'une
-          vente parisienne, écrit par le cabinet, envoyé par email en une minute.
-        </p>
-      </div>
-      <FormulaireGuide
-        guide="bien-vendre-paris-2026"
-        titreGuide="Bien vendre à Paris en 2026"
-        identifiant={`guide-${rue.slug}`}
-      />
-    </div>
-  </section>
-
 </Layout>

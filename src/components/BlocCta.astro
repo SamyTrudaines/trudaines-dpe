@@ -1,8 +1,25 @@
 ---
-interface Props { titre?: string; texte?: string; }
+interface Props {
+  titre?: string;
+  texte?: string;
+  /** Destinations des trois boutons : une page quartier ou rue renvoie vers ses propres blocs. */
+  hrefEstimer?: string;
+  hrefGuide?: string;
+  libelleGuide?: string;
+  /** Noms d'événements (data-evt) des trois boutons, pour mesurer d'où vient le clic. */
+  evtEstimer?: string;
+  evtGuide?: string;
+  evtRdv?: string;
+}
 const {
   titre = 'Trois façons de commencer',
   texte = "Une estimation, un guide de prix, ou simplement une conversation. Sans engagement, et sans relance commerciale insistante.",
+  hrefEstimer = '/estimation',
+  hrefGuide = '/guides',
+  libelleGuide = 'Recevoir le guide des prix',
+  evtEstimer,
+  evtGuide,
+  evtRdv,
 } = Astro.props;
 ---
 <section class="section bg-[color:var(--color-papier)]" aria-labelledby="cta-final">
@@ -12,9 +29,9 @@ const {
       <p class="chapo mt-6">{texte}</p>
     </div>
     <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-      <a href="/estimation" class="bouton">Estimer mon bien</a>
-      <a href="/guides" class="bouton bouton-secondaire">Recevoir le guide des prix</a>
-      <a href="/contact" class="bouton bouton-secondaire">Prendre rendez-vous</a>
+      <a href={hrefEstimer} data-evt={evtEstimer} class="bouton">Estimer mon bien</a>
+      <a href={hrefGuide} data-evt={evtGuide} class="bouton bouton-secondaire">{libelleGuide}</a>
+      <a href="/contact" data-evt={evtRdv} class="bouton bouton-secondaire">Prendre rendez-vous</a>
     </div>
   </div>
 </section>

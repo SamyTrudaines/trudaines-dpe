@@ -5,6 +5,7 @@ import Banniere from '../../components/Banniere.astro';
 import { ambiance } from '../../data/ambiance';
 import TableauPrix from '../../components/TableauPrix.astro';
 import { secteurs } from '../../data/secteurs';
+import { ruesDuQuartier } from '../../lib/quartiers';
 
 const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
 ---
@@ -36,6 +37,11 @@ const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre
           </h2>
           <p class="mt-4 text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
           <p class="mt-4 text-sm">{q.data.prixMoyenM2}</p>
+          {ruesDuQuartier(q.id).length > 0 && (
+            <p class="mt-4 text-sm">
+              <a href={`/quartiers/${q.id}#rues`} class="lien-souligne">Le prix de ses {ruesDuQuartier(q.id).length} rues</a>
+            </p>
+          )}
         </article>
       ))}
     </div>

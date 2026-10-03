@@ -166,6 +166,19 @@ const guides = defineCollection({
     fichier: z.string(),
     listeBrevo: z.string().default('telechargements'),
     disponible: z.boolean().default(true),
+    /** Date d'édition, affichée là où le livre blanc est proposé. */
+    edition: z.coerce.date().optional(),
+    /**
+     * Promesse de la prochaine édition, complétant « Prochaine édition : ».
+     * Absente, la page promet seulement l'envoi de la prochaine édition à sa
+     * parution, sans date.
+     */
+    prochaineEdition: z.string().optional(),
+    /**
+     * Codes postaux d'arrondissement que le livre blanc chiffre. Vide : document
+     * général sur Paris, proposé quand aucun livre blanc ne couvre la page.
+     */
+    perimetre: z.array(z.string()).default([]),
   }),
 });
 

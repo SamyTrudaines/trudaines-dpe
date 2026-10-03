@@ -50,11 +50,15 @@ export function identifiantValide(valeur, longueur = 64) {
   return new RegExp(`^[a-z0-9][a-z0-9-]{0,${longueur - 1}}$`).test(String(valeur || '').trim().toLowerCase());
 }
 
-/** Réponse JSON pour les envois en fetch, redirection 303 pour les envois sans JavaScript. */
-export function reponse(request, { ok, message, redirection = '/merci' }, statut = 200) {
+/**
+ * Réponse JSON pour les envois en fetch, redirection 303 pour les envois sans
+ * JavaScript. `complements` ajoute des champs à la réponse JSON, par exemple
+ * { doi: true } quand une confirmation d'inscription vient de partir.
+ */
+export function reponse(request, { ok, message, redirection = '/merci', complements = {} }, statut = 200) {
   const accepte = request.headers.get('Accept') || '';
   if (accepte.includes('application/json')) {
-    return new Response(JSON.stringify({ ok, message }), {
+    return new Response(JSON.stringify({ ok, message, ...complements }), {
       status: ok ? statut : statut,
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
     });
@@ -174,6 +178,85 @@ export async function enregistrerContact(env, { email, attributs = {}, listes = 
   if (!reponseApi.ok && reponseApi.status !== 204) {
     const detail = await reponseApi.text();
     throw new Error(`Brevo contacts ${reponseApi.status} ${detail}`);
+  }
+  return true;
+}
+
+/**
+ * Double opt-in Brevo pour l'abonnement aux mises à jour d'un livre blanc.
+ *
+ * Il n'est actif que si BREVO_DOI_MODELE (identifiant numérique du modèle de
+ * confirmation, créé dans Brevo) et BREVO_DOI_REDIRECTION (adresse absolue de la
+ * page de remerciement, https) sont toutes les deux renseignées. Sinon la
+ * fonction renvoie null et le parcours historique reste en place : inscription
+ * directe à la liste. Une configuration à moitié faite n'allume donc rien.
+ */
+export function configurationDoubleOptIn(env) {
+  const modele = parseInt(env.BREVO_DOI_MODELE, 10);
+  const redirection = String(env.BREVO_DOI_REDIRECTION || '').trim();
+  if (!Number.isInteger(modele) || modele <= 0) return null;
+  if (!/^https:\/\/[^\s]+$/.test(redirection)) return null;
+  return { modele, redirection };
+}
+
+/**
+ * Demande de confirmation d'inscription : POST /v3/contacts/doubleOptinConfirmation.
+ * Brevo envoie au visiteur le modèle de confirmation, et ne crée le contact dans
+ * les listes demandées qu'au clic sur le lien. Avant ce clic, la liste ne
+ * contient donc personne de plus : c'est tout l'intérêt.
+ *
+ * Seules les listes passées en paramètre sont concernées, celles du site
+ * (variables BREVO_LISTE_*). Les listes de salon présentes dans le compte
+ * n'ont rien à voir avec ce formulaire et ne sont jamais nommées ici.
+ *
+ * Même repli que l'enregistrement d'un contact, en un cran de plus : si Brevo
+ * refuse la demande à cause d'un attribut (un attribut métier qui n'existe pas
+ * encore dans le compte, puis un numéro de téléphone qu'il juge mal formé), elle
+ * repart avec les seuls attributs natifs, puis avec la seule trace du
+ * consentement. Mieux vaut une inscription sans téléphone qu'une inscription
+ * perdue : le numéro reste dans la notification interne.
+ */
+export async function demanderConfirmation(env, { email, attributs = {}, listes = [] }) {
+  const configuration = configurationDoubleOptIn(env);
+  if (!configuration) throw new Error('Double opt-in non configuré');
+  if (!env.BREVO_API_KEY) throw new Error('BREVO_API_KEY absente');
+
+  const includeListIds = listes
+    .map((liste) => parseInt(liste, 10))
+    .filter((identifiant) => Number.isInteger(identifiant) && identifiant > 0);
+  if (!includeListIds.length) throw new Error('Aucune liste du site pour le double opt-in');
+
+  const envoyer = (retenus) =>
+    fetch(`${API}/contacts/doubleOptinConfirmation`, {
+      method: 'POST',
+      headers: {
+        'api-key': env.BREVO_API_KEY,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        attributes: retenus,
+        includeListIds,
+        templateId: configuration.modele,
+        redirectionUrl: configuration.redirection,
+      }),
+    });
+
+  const natifs = Object.fromEntries(Object.entries(attributs).filter(([nom]) => ATTRIBUTS_NATIFS.has(nom)));
+  const consentement = Object.fromEntries(Object.entries(attributs).filter(([nom]) => nom === 'OPT_IN'));
+  let reponseApi = null;
+  let detail = '';
+  for (const retenus of [attributs, natifs, consentement]) {
+    reponseApi = await envoyer(retenus);
+    if (reponseApi.status !== 400) break;
+    detail = await reponseApi.text();
+    console.error(`Brevo doubleOptinConfirmation 400, nouvel essai avec moins d'attributs : ${detail}`);
+  }
+
+  if (!reponseApi.ok) {
+    if (!reponseApi.bodyUsed) detail = await reponseApi.text();
+    throw new Error(`Brevo doubleOptinConfirmation ${reponseApi.status} ${detail}`);
   }
   return true;
 }

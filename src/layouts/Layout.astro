@@ -22,11 +22,15 @@ interface Props {
   filAriane?: { nom: string; href?: string }[];
   donnees?: Record<string, unknown>[];
   cta?: boolean;
+  /** Réglages du bloc d'appel à l'action de fin de page, quand `cta` est vrai. */
+  ctaProps?: Record<string, string | undefined>;
+  /** Nom d'événement du bouton « Estimer » de la barre mobile (data-evt). */
+  evtEstimation?: string;
   /** La page s'ouvre sur une photographie pleine largeur, sous une barre transparente. */
   enteteSurPhoto?: boolean;
 }
 
-const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true , ancreEstimation, enteteSurPhoto = false } = Astro.props;
+const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true, ctaProps = {}, ancreEstimation, evtEstimation, enteteSurPhoto = false } = Astro.props;
 
 /*
  * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
@@ -107,15 +111,21 @@ const agence = {
     {filAriane.length > 0 && <FilAriane etapes={filAriane} />}
     <main id="contenu">
       <slot />
-      {cta && <BlocCta />}
+      {cta && <BlocCta {...ctaProps} />}
     </main>
     <PiedDePage colleAuBloc={cta} />
-    <BarreMobile ancreEstimation={ancreEstimation} />
+    <BarreMobile ancreEstimation={ancreEstimation} evtEstimation={evtEstimation} />
     <BandeauCookies />
     <script src="/js/formulaires.js" defer is:inline></script>
     <script>
+      /*
+       * Un clic sur un élément portant data-evt envoie l'événement du même nom.
+       * Un formulaire peut porter data-evt lui aussi : l'événement part alors
+       * à l'envoi réussi (public/js/formulaires.js), pas à chaque clic dans un
+       * champ, d'où l'exclusion des formulaires ici.
+       */
       document.addEventListener('click', (evt) => {
-        const cible = evt.target instanceof Element ? evt.target.closest('[data-evt]') : null;
+        const cible = evt.target instanceof Element ? evt.target.closest('[data-evt]:not(form)') : null;
         const nom = cible?.getAttribute('data-evt');
         if (nom) window.trudainesEvent?.(nom);
       });

@@ -1,0 +1,85 @@
+{
+  "methode": "Le centre d'un quartier est la moyenne des coordonnées de ses rues repères, géocodées par scripts/geocoder-rues.mjs. Une rue de rues.json est rattachée au quartier le plus proche de son arrondissement quand son centre est à moins de rayon mètres du centre de ce quartier. Une rue repère doit être plus proche du centre de son quartier que de celui d'un autre quartier du même arrondissement, sinon elle serait rattachée ailleurs : celles qui ne remplissent pas cette condition sont listées dans ecartes et ne servent pas au calcul du centre. Le calcul est dans src/lib/quartiers.ts.",
+  "quartiers": {
+    "trudaine-maubeuge": {
+      "codePostal": "75009",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Avenue Trudaine", "motif": "porte le nom du quartier, et repère de ses prix publiés" },
+        { "voie": "Rue de Maubeuge", "motif": "porte le nom du quartier" },
+        { "voie": "Rue Turgot", "motif": "citée par le texte : calme recherché par les familles" },
+        { "voie": "Rue Lallier", "motif": "citée par le texte : calme recherché par les familles" },
+        { "voie": "Rue Bochart de Saron", "motif": "citée par le texte : calme recherché par les familles" }
+      ],
+      "ecartes": [
+        { "voie": "Rue Manuel", "motif": "citée par le texte, mais plus proche du centre de Martyrs Lorette que de celui de Trudaine Maubeuge : elle serait rattachée à Martyrs Lorette" }
+      ]
+    },
+    "martyrs-lorette": {
+      "codePostal": "75009",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Rue des Martyrs", "motif": "porte le nom du quartier, et repère de ses prix publiés" },
+        { "voie": "Rue Notre-Dame de Lorette", "motif": "porte le nom du quartier (Lorette), l'église est citée par le texte" },
+        { "voie": "Rue Fléchier", "motif": "citée par le texte : immeubles haussmanniens autour de l'église" },
+        { "voie": "Rue Laferrière", "motif": "citée par le texte : immeubles haussmanniens autour de l'église" }
+      ],
+      "ecartes": [
+        { "voie": "Rue Saint-Lazare", "motif": "citée par le texte, mais plus proche du centre de Clichy Trinité que de celui de Martyrs Lorette : elle serait rattachée à Clichy Trinité" }
+      ]
+    },
+    "clichy-trinite": {
+      "codePostal": "75009",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Place d'Estienne d'Orves", "motif": "devant l'église de la Trinité, repère de ses prix publiés" },
+        { "voie": "Rue de la Trinité", "motif": "porte le nom du quartier (Trinité)" },
+        { "voie": "Rue de Clichy", "motif": "porte le nom du quartier (Clichy), citée par le texte" },
+        { "voie": "Rue Blanche", "motif": "citée par le texte : les axes du secteur" },
+        { "voie": "Rue de Londres", "motif": "citée par le texte : les axes du secteur" }
+      ]
+    },
+    "montmartre": {
+      "codePostal": "75018",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Place des Abbesses", "motif": "début du chapô : de la place des Abbesses à l'avenue Junot, repère de ses prix publiés" },
+        { "voie": "Avenue Junot", "motif": "fin du chapô : de la place des Abbesses à l'avenue Junot" }
+      ]
+    },
+    "lariboisiere-rocroy": {
+      "codePostal": "75010",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Rue de Rocroy", "motif": "porte le nom du quartier (Rocroy), repère de ses prix publiés" },
+        { "voie": "Rue d'Abbeville", "motif": "citée par le texte : le secteur Rocroy, le plus résidentiel" },
+        { "voie": "Rue de Belzunce", "motif": "citée par le texte : le secteur Rocroy, le plus résidentiel" },
+        { "voie": "Rue Bossuet", "motif": "citée par le texte : le secteur Rocroy, le plus résidentiel" }
+      ]
+    },
+    "batignolles": {
+      "codePostal": "75017",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Place du Docteur Félix Lobligeois", "motif": "citée par le texte : les terrasses du village, repère de ses prix publiés" },
+        { "voie": "Rue des Dames", "motif": "citée par le texte : le haut du quartier" },
+        { "voie": "Rue Nollet", "motif": "citée par le texte : le haut du quartier" },
+        { "voie": "Rue Lemercier", "motif": "citée par le texte : le haut du quartier" },
+        { "voie": "Rue des Moines", "motif": "citée par le texte : la partie commerçante du quartier" },
+        { "voie": "Boulevard des Batignolles", "motif": "porte le nom du quartier, citée par le texte" },
+        { "voie": "Rue des Batignolles", "motif": "porte le nom du quartier" }
+      ]
+    },
+    "epinettes": {
+      "codePostal": "75017",
+      "rayon": 500,
+      "reperes": [
+        { "voie": "Rue des Épinettes", "motif": "porte le nom du quartier, et repère de ses prix publiés" },
+        { "voie": "Rue de la Jonquière", "motif": "citée par le texte : le quotidien du quartier" },
+        { "voie": "Rue Jean Leclaire", "motif": "citée par le texte : voie la plus chère du quartier" },
+        { "voie": "Boulevard Bessières", "motif": "citée par le texte : limite nord du quartier" },
+        { "voie": "Cité des Fleurs", "motif": "citée par le texte : voie privée plantée du quartier" }
+      ]
+    }
+  }
+}
