@@ -85,7 +85,9 @@ const agence = {
     closes: h.fermeture,
   })),
   founder: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
-  sameAs: [site.reseaux.linkedin, site.reseaux.instagram],
+  /* La fiche Google relie le site à l'établissement que Google et les assistants connaissent déjà. */
+  hasMap: site.reseaux.google,
+  sameAs: [site.reseaux.linkedin, site.reseaux.instagram, site.reseaux.google],
   ...(avis.notés > 0
     ? {
         aggregateRating: {

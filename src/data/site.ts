@@ -2,6 +2,10 @@
  * Données de référence du cabinet.
  * Un seul endroit à modifier pour les coordonnées et les mentions légales.
  */
+
+/** Fiche Google du cabinet (Google Business Profile), lien de partage fourni par Samy. */
+const ficheGoogle = 'https://share.google/HkXUbdomV9hgp6Kda';
+
 export const site = {
   nom: 'Trudaines',
   nomLong: 'Trudaines Immobilier',
@@ -45,6 +49,7 @@ export const site = {
   reseaux: {
     linkedin: 'https://www.linkedin.com/in/samysantamarina',
     instagram: 'https://www.instagram.com/trudaines.immobilier',
+    google: ficheGoogle,
   },
   /**
    * Avis clients. Le total et la moyenne ne sont pas écrits ici : ils sont
@@ -53,8 +58,7 @@ export const site = {
    * Seule la date de relevé est tenue à la main, à changer à chaque import.
    */
   avis: {
-    lienGoogle:
-      'https://www.google.com/maps/search/?api=1&query=Trudaines+Immobilier+2+rue+Livingstone+75018+Paris',
+    lienGoogle: ficheGoogle,
     releve: 'octobre 2026',
   },
   /**

@@ -105,10 +105,25 @@ if (!(await productionServie(commit))) {
 }
 if (!urls) urls = await planDuSite();
 
-const reponse = await fetch('https://api.indexnow.org/indexnow', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  body: JSON.stringify({ host: new URL(SITE).host, key: cle, keyLocation: `${SITE}/${cle}.txt`, urlList: urls.slice(0, 10000) }),
-});
-console.log(`IndexNow : ${urls.length} adresses signalées, réponse ${reponse.status}.`);
-if (reponse.status >= 400) console.log(`::warning::IndexNow a répondu ${reponse.status} : ${await reponse.text()}`);
+/*
+ * Au premier envoi avec une clé, Bing répond 403 le temps de lire le fichier de
+ * clé sur le site (SiteVerificationNotCompleted) ; 429 signale un envoi trop
+ * rapproché. Dans ces deux cas, nouvel essai toutes les trois minutes.
+ */
+const corps = JSON.stringify({ host: new URL(SITE).host, key: cle, keyLocation: `${SITE}/${cle}.txt`, urlList: urls.slice(0, 10000) });
+for (let tentative = 1; tentative <= 5; tentative++) {
+  const reponse = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: corps,
+  });
+  console.log(`IndexNow, essai ${tentative} : ${urls.length} adresses signalées, réponse ${reponse.status}.`);
+  if (reponse.status < 400) break;
+  const detail = await reponse.text();
+  if (![403, 429].includes(reponse.status) || tentative === 5) {
+    console.log(`::warning::IndexNow a répondu ${reponse.status} : ${detail}`);
+    break;
+  }
+  console.log(`Réponse ${reponse.status} (${detail.slice(0, 120)}), nouvel essai dans trois minutes.`);
+  await new Promise((r) => setTimeout(r, 180000));
+}

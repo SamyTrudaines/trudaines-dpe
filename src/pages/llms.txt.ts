@@ -32,6 +32,8 @@ export const GET: APIRoute = async () => {
 - Garantie financière : ${site.legal.garantie}, ${site.legal.garantieMontant}
 - Contact : ${site.email}, ${site.telephone}
 - Horaires : ${site.horairesTexte}
+- Fiche Google de l'établissement : ${site.reseaux.google}
+- LinkedIn du fondateur : ${site.reseaux.linkedin}
 
 ## Services
 - Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle : ${site.url}/mandat-exclusif
