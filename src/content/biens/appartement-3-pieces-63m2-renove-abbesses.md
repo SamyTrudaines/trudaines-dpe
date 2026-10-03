@@ -1,5 +1,6 @@
 ---
 titre: "Appartement 3 pièces 63 m² rénové, Abbesses"
+accroche: "Double réception, rue des Trois Frères"
 reference: "T-2619"
 quartier: "Montmartre"
 ville: "Paris"

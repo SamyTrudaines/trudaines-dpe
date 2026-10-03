@@ -1,0 +1,147 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { prixAffiche, lieuBien, faitsBien, nombre } from '../lib/format';
+import { jeuPhoto } from '../lib/images';
+
+/**
+ * Vitrine de l'accueil : les biens à vendre en carrousel, un bien à la fois,
+ * photographie en grand.
+ *
+ * La piste défile d'elle-même au doigt et au pavé (défilement magnétique) :
+ * sans JavaScript, tout reste lisible et cliquable. Le script ne fait
+ * qu'ajouter les flèches, le compteur, le filet de progression et les
+ * vignettes. Pas de défilement automatique : le visiteur garde la main.
+ * Deux clics au plus vers une demande de visite : « Demander une visite »
+ * ouvre la fiche directement sur son formulaire.
+ */
+interface Props { biens: CollectionEntry<'biens'>[] }
+const { biens } = Astro.props;
+const total = biens.length;
+const deux = (n: number) => String(n).padStart(2, '0');
+const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
+---
+<div class="vitrine" data-vitrine role="region" aria-roledescription="carrousel" aria-label="Nos biens à vendre">
+  <ul class="vitrine-piste" data-piste>
+    {biens.map((b, i) => {
+      const d = b.data;
+      const titre = d.accroche ?? d.titre;
+      const photo = d.photos[0];
+      const jeu = photo ? jeuPhoto(photo.src) : undefined;
+      const fiche = `/bien/${b.id}`;
+      return (
+        <li class="vitrine-diapo" role="group" aria-roledescription="diapositive" aria-label={`${i + 1} sur ${total}`}>
+          <a href={fiche} class="vitrine-photo" tabindex="-1" aria-hidden="true">
+            {photo && jeu && (
+              <img
+                src={jeu.src}
+                srcset={jeu.srcset}
+                sizes={TAILLES_DIAPO}
+                alt={photo.alt}
+                width="1600"
+                height="1067"
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            )}
+            {d.mention && <span class="vitrine-mention">{d.mention}</span>}
+          </a>
+          <div class="vitrine-texte">
+            <p class="surtitre">{lieuBien(d.arrondissement, d.ville)} · {d.quartier}</p>
+            <h3 class="vitrine-titre"><a href={fiche}>{titre}</a></h3>
+            <p class="vitrine-faits">{faitsBien(d, d.accroche ? '' : d.titre)}</p>
+            <p class="vitrine-prix">{prixAffiche(d.prix)}</p>
+            <div class="vitrine-actions">
+              <a href={fiche} class="bouton" data-evt="vitrine_fiche">Découvrir le bien</a>
+              <a href={`${fiche}#demande-visite`} class="lien-souligne text-sm" data-evt="vitrine_visite">Demander une visite</a>
+            </div>
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+
+  {total > 1 && (
+    <>
+      <div class="vitrine-commandes">
+        <button type="button" class="vitrine-fleche" data-precedent aria-label="Bien précédent">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+        <p class="vitrine-compteur" aria-hidden="true"><span data-courant>01</span> / {deux(total)}</p>
+        <button type="button" class="vitrine-fleche" data-suivant aria-label="Bien suivant">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+        </button>
+        <span class="vitrine-filet" aria-hidden="true"><span data-filet style={`--part: ${1 / total}`}></span></span>
+      </div>
+
+      <ul class="vitrine-vignettes" style={`--colonnes: ${Math.min(total, 4)}`}>
+        {biens.map((b, i) => {
+          const d = b.data;
+          const photo = d.photos[0];
+          return (
+            <li>
+              <button type="button" data-vignette={i} aria-current={i === 0 ? 'true' : undefined} aria-label={`${d.accroche ?? d.titre}, ${prixAffiche(d.prix)}`}>
+                {photo && (
+                  <img src={photo.src.replace('.webp', '-800.webp')} alt="" aria-hidden="true" width="800" height="533" loading="lazy" decoding="async" />
+                )}
+                <span class="vitrine-vignette-lieu">{lieuBien(d.arrondissement, d.ville)}</span>
+                <span class="vitrine-vignette-prix">{prixAffiche(d.prix)}</span>
+                <span class="vitrine-vignette-surface">{nombre(d.surface)} m²</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  )}
+</div>
+
+<script>
+  for (const vitrine of document.querySelectorAll<HTMLElement>('[data-vitrine]')) {
+    const piste = vitrine.querySelector<HTMLElement>('[data-piste]');
+    if (!piste) continue;
+    const diapos = Array.from(piste.children) as HTMLElement[];
+    const total = diapos.length;
+    if (total < 2) continue;
+
+    const courant = vitrine.querySelector('[data-courant]');
+    const filet = vitrine.querySelector<HTMLElement>('[data-filet]');
+    const vignettes = Array.from(vitrine.querySelectorAll<HTMLButtonElement>('[data-vignette]'));
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let attente = 0;
+
+    const afficher = () => {
+      if (courant) courant.textContent = String(index + 1).padStart(2, '0');
+      filet?.style.setProperty('--part', String((index + 1) / total));
+      vignettes.forEach((v, n) => (n === index ? v.setAttribute('aria-current', 'true') : v.removeAttribute('aria-current')));
+    };
+
+    // La cible est retenue tout de suite : deux clics rapprochés avancent bien de deux biens.
+    const aller = (i: number) => {
+      index = (i + total) % total;
+      afficher();
+      piste.scrollTo({ left: index * piste.clientWidth, behavior: reduit.matches ? 'auto' : 'smooth' });
+    };
+
+    // Après un glissement au doigt, la position se lit une fois la piste immobile.
+    piste.addEventListener(
+      'scroll',
+      () => {
+        window.clearTimeout(attente);
+        attente = window.setTimeout(() => {
+          index = Math.min(total - 1, Math.max(0, Math.round(piste.scrollLeft / Math.max(1, piste.clientWidth))));
+          afficher();
+        }, 120);
+      },
+      { passive: true }
+    );
+    vitrine.querySelector('[data-precedent]')?.addEventListener('click', () => aller(index - 1));
+    vitrine.querySelector('[data-suivant]')?.addEventListener('click', () => aller(index + 1));
+    vignettes.forEach((v, n) => v.addEventListener('click', () => aller(n)));
+    piste.addEventListener('keydown', (evt) => {
+      if (evt.key === 'ArrowRight') { evt.preventDefault(); aller(index + 1); }
+      if (evt.key === 'ArrowLeft') { evt.preventDefault(); aller(index - 1); }
+    });
+    window.addEventListener('resize', () => aller(index), { passive: true });
+  }
+</script>

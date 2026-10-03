@@ -1,5 +1,6 @@
 ---
 titre: "Appartement 3 pièces 64 m² rénové, Batignolles"
+accroche: "Traversant, deux entrées, rue des Dames"
 reference: "T-2627"
 quartier: "Batignolles"
 ville: "Paris"

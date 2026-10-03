@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import CarteBien from '../components/CarteBien.astro';
 import CarteArticle from '../components/CarteArticle.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
@@ -10,10 +9,11 @@ import { secteurs } from '../data/secteurs';
 import Ouverture from '../components/Ouverture.astro';
 import Manifeste from '../components/Manifeste.astro';
 import ReferencesAccueil from '../components/ReferencesAccueil.astro';
+import VitrineBiens from '../components/VitrineBiens.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
-  .slice(0, 4);
+  .slice(0, 8);
 
 /** Mandats passés : la preuve du travail accompli, sans prix ni disponibilité. */
 const mandats = await getCollection('biens', (b) => b.data.archive);
@@ -57,14 +57,14 @@ const engagements = [
 
   <section class="section pt-14 md:pt-20">
     <div class="conteneur">
-      <p class="surtitre marque-filet">Paris</p>
-      <h1 class="titre-1 mt-8 max-w-4xl">
-        Vendre un appartement parisien sans y laisser ni son prix ni son calendrier
+      <h1 class="max-w-4xl">
+        <span class="surtitre marque-filet block">Agence immobilière à Paris</span>
+        <span class="titre-1 mt-8 block">L'immobilier <span class="whitespace-nowrap">au-delà des murs.</span></span>
       </h1>
       <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_auto] lg:items-end">
         <p class="chapo max-w-2xl">
-          Maison immobilière parisienne née d'une conviction : vous rendre du temps, de la clarté et un
-          conseil vraiment personnel.
+          Derrière chaque adresse, il y a une rue, un marché, une vie. Nous lisons les trois par la donnée
+          et défendons votre prix en personne.
         </p>
         <div class="flex flex-col gap-4 sm:flex-row">
           <a href="/estimation" class="bouton">Estimer mon bien</a>
@@ -98,27 +98,8 @@ const engagements = [
           <h2 id="biens-accueil" class="titre-2">Nos biens à vendre à Paris</h2>
           <a href="/acheter" class="lien-souligne text-sm">Tous les biens à la vente</a>
         </div>
-        <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
-          {biens.map((b, n) => (
-            <div class={biens.length % 2 === 1 && n === 0 ? 'md:col-span-2' : undefined}>
-              <CarteBien
-                id={b.id}
-                titre={b.data.titre}
-                quartier={b.data.quartier}
-                arrondissement={b.data.arrondissement}
-                ville={b.data.ville}
-                prixBien={b.data.prix}
-                surface={b.data.surface}
-                pieces={b.data.pieces}
-                statut={b.data.statut}
-                photo={b.data.photos[0]}
-                chargement={n === 0 ? 'eager' : 'lazy'}
-                mention={b.data.mention}
-                vitrine
-                une={biens.length % 2 === 1 && n === 0}
-              />
-            </div>
-          ))}
+        <div class="mt-12">
+          <VitrineBiens biens={biens} />
         </div>
       </div>
     </section>

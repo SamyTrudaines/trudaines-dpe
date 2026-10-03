@@ -88,32 +88,24 @@ const secondaires = [
 
   if (entete) {
     /*
-     * Trois états, posés par attributs pour que la feuille de style garde la
+     * Deux états, posés par attributs pour que la feuille de style garde la
      * main sur le rendu :
      * data-compact  dès que la page quitte son sommet : fond blanc, barre
      *               resserrée, ligne IMMOBILIER repliée, filet de lecture ;
-     * data-cache    en descente franche, loin du haut : la barre s'efface et
-     *               ne laisse que le filet orange ; elle revient à la remontée ;
      * data-cta-visible  quand un bouton « Estimer » de la page est à l'écran :
      *               celui de la barre s'efface, jamais deux à la fois.
+     * La barre reste toujours visible, à tout niveau de défilement : le
+     * téléphone, l'estimation et le menu sont à un clic, partout.
      * Tout est posé avant le premier défilement : une arrivée par ancre au
      * milieu d'une page trouve la barre déjà dans le bon état.
      */
-    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)');
     const racine = document.documentElement;
-    let dernierY = window.scrollY;
     let prevu = false;
 
     const ajuster = () => {
       prevu = false;
       const y = Math.max(0, window.scrollY);
       entete.toggleAttribute('data-compact', y > 24);
-
-      const ecart = y - dernierY;
-      const libre = !reduit.matches && !entete.hasAttribute('data-menu-ouvert') && !entete.contains(document.activeElement);
-      if (y < 480 || ecart < -6 || !libre) entete.removeAttribute('data-cache');
-      else if (ecart > 6) entete.setAttribute('data-cache', '');
-      dernierY = y;
 
       const course = racine.scrollHeight - window.innerHeight;
       entete.style.setProperty('--progression', course > 0 ? Math.min(1, y / course).toFixed(4) : '0');
@@ -130,7 +122,6 @@ const secondaires = [
       { passive: true }
     );
     window.addEventListener('resize', ajuster, { passive: true });
-    entete.addEventListener('focusin', () => entete.removeAttribute('data-cache'));
     ajuster();
 
     const boutonsPage = document.querySelectorAll('main a.bouton[href="/estimation"]');
