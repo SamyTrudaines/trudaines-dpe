@@ -10,7 +10,9 @@
  * dans le dépôt.
  *
  * Deux cadrages : l'image entière sur ordinateur, une coupe verticale centrée
- * sur le dôme sur téléphone. Les noms de fichiers changent avec la photographie,
+ * sur le dôme sur téléphone. La photographie s'arrête un peu au-dessus de la
+ * moitié de l'écran, pour que le titre de la page se lise dès l'arrivée ; sur
+ * ordinateur, la coupe descend vers le bas de l'image pour garder le dôme. Les noms de fichiers changent avec la photographie,
  * les images étant gardées trente jours en cache.
  */
 const alt = "Le square d'Anvers et, au loin, la basilique du Sacré-Cœur";
@@ -33,7 +35,7 @@ const haut = [640, 900, 1200, 1462]
       fetchpriority="high"
       loading="eager"
       decoding="async"
-      class="ouverture-photo h-[56svh] w-full object-cover object-center md:h-[64svh] lg:h-[74svh]"
+      class="ouverture-photo h-[52svh] w-full object-cover object-center md:h-[54svh] md:object-[50%_70%] lg:h-[56svh]"
     />
   </picture>
   <div class="ouverture-voile" aria-hidden="true"></div>

@@ -219,7 +219,11 @@ function internet({ blocageIp = false } = {}) {
     if (url.hostname === 'api.cloudflare.com') {
       trace('cloudflare');
       const p = chemin.replace(/^\/client\/v4\/accounts\/[^/]+\/pages\/projects\/trudaines-dpe/, '');
-      if (p === '' && methode === 'GET') return json({ result: { name: 'trudaines-dpe', production_branch: 'main', deployment_configs: { production: { env_vars: etat.variables || {} } } } });
+      if (p === '' && methode === 'GET') return json({ result: { name: 'trudaines-dpe', production_branch: etat.brancheProduction ?? 'main', deployment_configs: { production: { env_vars: etat.variables || {} } } } });
+      if (p === '' && methode === 'PATCH' && corps.production_branch) {
+        etat.brancheProduction = corps.production_branch;
+        return json({ result: {} });
+      }
       if (p === '' && methode === 'PATCH') {
         etat.variables = corps.deployment_configs.production.env_vars;
         return json({ result: {} });
@@ -299,11 +303,18 @@ const CONFIRMATION = 'METTRE EN LIGNE trudaines.com';
 
 {
   const etat = internet();
+  // Cas réel du 3 octobre 2026 : la production Cloudflare ne suivait pas main.
+  etat.brancheProduction = 'ancienne-branche';
   const mxAvant = JSON.stringify(etat.zone.find((e) => e.rrset_type === 'MX'));
   const r = await executer({ mode: 'appliquer', confirmation: CONFIRMATION, secrets });
   const ordre = etat.ecritures.map((e) => `${e.service} ${e.methode} ${e.chemin.split('/').slice(-2).join('/')}`);
   const indice = (motif) => ordre.findIndex((o) => o.includes(motif));
   verifier('Mise en ligne complète : recette verte', r.reussite === true, r.journal.filter((l) => ['echec', 'bloquant', 'alerte'].includes(l.statut)).map((l) => l.texte).join(' | '));
+  const brancheFixee = etat.ecritures.findIndex((e) => e.corps?.production_branch === 'main');
+  verifier(
+    'Branche de production remise sur main avant la reconstruction',
+    etat.brancheProduction === 'main' && brancheFixee > -1 && brancheFixee < indice('cloudflare POST trudaines-dpe/deployments')
+  );
   verifier('Variables posées avant toute bascule DNS', indice('cloudflare PATCH') > -1 && indice('cloudflare PATCH') < indice('www/CNAME'));
   verifier('Production reconstruite avant la bascule', indice('cloudflare POST trudaines-dpe/deployments') > -1 && indice('cloudflare POST trudaines-dpe/deployments') < indice('www/CNAME'));
   verifier('Domaine déclaré chez Cloudflare avant le CNAME', indice('cloudflare POST trudaines-dpe/domains') > -1 && indice('cloudflare POST trudaines-dpe/domains') < indice('www/CNAME'));

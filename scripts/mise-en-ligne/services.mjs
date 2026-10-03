@@ -17,6 +17,11 @@ export function cloudflare(jeton) {
       appel('PATCH', projet, {
         deployment_configs: { production: { env_vars: variables }, preview: { env_vars: variables } },
       }),
+    /*
+     * Le domaine s'attache au déploiement de production : il doit venir de
+     * main, la branche où les pull requests sont fusionnées.
+     */
+    fixerBrancheProduction: () => appel('PATCH', projet, { production_branch: BRANCHE_PRODUCTION }),
     listerDomaines: async () => (await resultat('GET', `${projet}/domains`)) || [],
     ajouterDomaine: (nom) => resultat('POST', `${projet}/domains`, { name: nom }),
     lireDomaine: (nom) => resultat('GET', `${projet}/domains/${nom}`),
