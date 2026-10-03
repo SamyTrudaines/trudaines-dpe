@@ -42,7 +42,7 @@ Enfin, l'état des risques et pollutions dépend de l'adresse. Il peut mentionne
 
 ## Qui commande, et quand
 
-Le vendeur commande, et le plus tôt possible. Retrouvez d'abord la date de construction de l'immeuble, qui décide de l'amiante et du plomb : le syndic peut vous la confirmer. Le DPE doit exister avant la publication de l'annonce, puisque la classe énergétique y figure. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
+Le vendeur commande, et le plus tôt possible. Retrouvez d'abord la date de construction de l'immeuble et celle de son permis, qui décident du plomb et de l'amiante : le syndic peut vous les confirmer. Le DPE doit exister avant la publication de l'annonce, puisque la classe énergétique y figure. Les autres diagnostics doivent être remis au plus tard à la signature de l'avant-contrat. Les commander à la mise en vente évite de retarder le compromis le jour où une offre arrive.
 
 ## Le piège des dates de validité
 
@@ -58,13 +58,17 @@ Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur
 
 Un diagnostic manquant ou périmé. Si le diagnostic plomb, amiante, termites, gaz ou électricité est absent, ou n'est plus en cours de validité le jour de l'acte, le vendeur ne peut pas s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation).
 
+Un état des risques trop ancien. Il doit avoir été établi moins de six mois avant l'avant-contrat et avant l'acte, même quand le vendeur l'a rempli lui-même.
+
+Une surface qui n'a pas suivi les travaux. Après le déplacement d'une cloison ou l'aménagement des combles, l'ancien mesurage ne vaut plus : il faut en faire établir un nouveau.
+
 Un professionnel sans les titres requis. Vérifiez sa certification et son assurance avant de lui confier le dossier : la loi les exige.
 
 ## Relire le dossier avant de le remettre
 
 Relisez chaque rapport avant de le transmettre. Vérifiez l'adresse, le numéro de lot, l'étage, la date de réalisation et la signature du diagnostiqueur. Une erreur sur le lot ou sur l'adresse se corrige mieux avant le compromis que devant le notaire.
 
-Dressez ensuite une liste des dates d'expiration, en face de la date d'avant-contrat que vous visez, puis de cette date augmentée de trois mois. Tout diagnostic qui expire dans cet intervalle est à refaire avant l'acte, autant le commander en même temps que les autres.
+Dressez ensuite une liste des dates d'expiration, en face de la date d'avant-contrat que vous visez, puis de cette date augmentée de trois mois. Tout diagnostic qui expire dans cet intervalle mérite d'être refait avant l'avant-contrat : le nouveau rapport couvrira aussi la date de l'acte.
 
 ## Questions fréquentes
 
