@@ -1,5 +1,6 @@
 {
-  "mode": "appliquer",
-  "motif": "Mise en ligne de trudaines.com sur l'ordre de Samy du 3 octobre 2026 (« C'est fait, lance »), après un audit prêt",
-  "confirmation": "METTRE EN LIGNE trudaines.com"
+  "mode": "audit",
+  "motif": "Après la mise en ligne du 3 octobre 2026 : www basculé, redirection de la racine à poser dans Gandi (le jeton n'a pas le droit des certificats)",
+  "confirmation": "",
+  "sauvegarde": {"www":[{"rrset_type":"CNAME","rrset_ttl":10800,"rrset_values":["trudaines.com."]}],"racine":[{"rrset_type":"A","rrset_ttl":300,"rrset_values":["92.222.237.145"]}],"redirectionRacine":null}
 }
