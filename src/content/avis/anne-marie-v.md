@@ -1,6 +1,7 @@
 ---
 auteur: "Anne-Marie V."
 quartier: "Paris"
+note: 5
 source: google
 anciennete: "il y a 5 ans"
 dateVisite: "Visité en février 2021"

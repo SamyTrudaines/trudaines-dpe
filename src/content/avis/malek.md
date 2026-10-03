@@ -1,6 +1,7 @@
 ---
 auteur: "Malek"
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a un an"
 dateVisite: "Visité en janvier 2025"

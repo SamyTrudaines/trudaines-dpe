@@ -26,7 +26,7 @@ const aDesCitations = avis.some((a) => a.data.texte);
             {agregat.noteTexte} <span class="text-lg">/ 5</span>
           </span>
           <span class="mt-2 block">
-            {agregat.total} avis clients{agregat.toutesCinq ? ", et toutes les notes relevées sont de cinq étoiles." : '.'}
+            {agregat.total} avis clients{!agregat.toutesCinq ? '.' : agregat.notés === agregat.total ? ', aucun en dessous de cinq étoiles.' : ', et toutes les notes relevées sont de cinq étoiles.'}
           </span>
           <span class="block">
             {agregat.parSource.google} sur Google, {agregat.parSource.pagesjaunes} sur Pages Jaunes,

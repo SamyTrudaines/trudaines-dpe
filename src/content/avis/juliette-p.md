@@ -1,6 +1,7 @@
 ---
 auteur: "Juliette P."
 quartier: "Paris 17e"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en janvier 2022"

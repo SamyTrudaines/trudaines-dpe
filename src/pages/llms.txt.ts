@@ -40,7 +40,7 @@ export const GET: APIRoute = async () => {
 - Gestion locative
 
 ## Réputation
-- ${avis.total} avis clients publiés ; note ${avis.noteTexte} sur 5 sur les ${avis.notés} notes relevées${avis.toutesCinq ? ', toutes de cinq étoiles' : ''}
+- ${avis.total} avis clients publiés, note ${avis.noteTexte} sur 5${avis.notés === avis.total ? '' : ` sur les ${avis.notés} notes relevées`}${avis.toutesCinq ? ', toutes de cinq étoiles' : ''}
 - ${avis.parSource.google} avis sur Google, ${avis.parSource.pagesjaunes} sur Pages Jaunes, relevés en ${site.avis.releve}
 - Les avis sont repris sur ${site.url}/avis avec leur source et leur ancienneté ; un texte tronqué sur Google l'est aussi sur le site
 

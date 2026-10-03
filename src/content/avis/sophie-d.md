@@ -1,6 +1,7 @@
 ---
 auteur: "Sophie D."
 quartier: "Paris 18e"
+note: 5
 source: google
 anciennete: "il y a 2 ans"
 dateVisite: "Visité en janvier 2024"

@@ -1,6 +1,7 @@
 ---
 auteur: "Laure S."
 quartier: "Paris 1er"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en octobre 2022"

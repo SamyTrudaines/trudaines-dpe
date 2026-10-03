@@ -1,6 +1,7 @@
 ---
 auteur: "Léa S."
 quartier: "Montrouge"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en novembre 2021"

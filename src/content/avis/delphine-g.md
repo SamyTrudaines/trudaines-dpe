@@ -1,6 +1,7 @@
 ---
 auteur: "Delphine G."
 quartier: "Paris 9e"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en mars 2023"

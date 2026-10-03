@@ -1,6 +1,7 @@
 ---
 auteur: "Aymeric A."
 quartier: "Paris 8e"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en juillet 2022"

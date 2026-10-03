@@ -1,6 +1,7 @@
 ---
 auteur: "Elisabeth M."
 quartier: "Hauts-de-Seine"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en avril 2023"

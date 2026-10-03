@@ -1,6 +1,7 @@
 ---
 auteur: "Nathalie B."
 quartier: "Asnières-sur-Seine"
+note: 5
 source: google
 anciennete: "il y a 2 ans"
 dateVisite: "Visité en octobre 2023"

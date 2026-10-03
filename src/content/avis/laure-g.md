@@ -1,6 +1,7 @@
 ---
 auteur: "Laure G."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 5 ans"
 dateVisite: "Visité en mars 2021"

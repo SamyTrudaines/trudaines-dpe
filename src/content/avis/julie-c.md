@@ -1,6 +1,7 @@
 ---
 auteur: "Julie C."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 5 ans"
 dateVisite: "Visité en avril 2021"

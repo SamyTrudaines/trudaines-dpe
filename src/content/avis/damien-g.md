@@ -1,6 +1,7 @@
 ---
 auteur: "Damien G."
 quartier: "Paris 18e"
+note: 5
 source: google
 anciennete: "il y a 5 ans"
 dateVisite: "Visité en juin 2021"

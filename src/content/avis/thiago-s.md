@@ -1,6 +1,7 @@
 ---
 auteur: "Thiago S."
 quartier: "Paris"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en mars 2022"

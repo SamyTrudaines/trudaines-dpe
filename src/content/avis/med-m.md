@@ -1,6 +1,7 @@
 ---
 auteur: "Med M."
 quartier: "Paris 18e"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en avril 2023"

@@ -1,6 +1,7 @@
 ---
 auteur: "Johannes H."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en juin 2023"

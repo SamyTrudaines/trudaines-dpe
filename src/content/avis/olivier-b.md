@@ -1,6 +1,7 @@
 ---
 auteur: "Olivier B."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en mai 2022"

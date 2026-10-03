@@ -1,6 +1,7 @@
 ---
 auteur: "Tam K."
 quartier: "Paris 17e"
+note: 5
 source: google
 anciennete: "il y a 2 ans"
 dateVisite: "Visité en juin 2023"

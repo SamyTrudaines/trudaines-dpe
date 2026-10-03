@@ -1,6 +1,7 @@
 ---
 auteur: "Catherine R."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en novembre 2021"

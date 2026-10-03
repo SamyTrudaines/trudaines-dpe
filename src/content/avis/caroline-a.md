@@ -1,6 +1,7 @@
 ---
 auteur: "Caroline A."
 quartier: "Montreuil"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en septembre 2021"

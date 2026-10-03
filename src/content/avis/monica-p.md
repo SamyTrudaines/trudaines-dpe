@@ -1,6 +1,7 @@
 ---
 auteur: "Monica P."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en mars 2022"

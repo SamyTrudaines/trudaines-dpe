@@ -1,6 +1,7 @@
 ---
 auteur: "Pierre-Emmanuel E."
 quartier: "Paris 9e"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en février 2022"

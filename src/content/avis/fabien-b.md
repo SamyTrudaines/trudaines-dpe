@@ -1,6 +1,7 @@
 ---
 auteur: "Fabien B."
 quartier: "Paris 17e"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en février 2023"

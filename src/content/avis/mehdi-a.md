@@ -1,6 +1,7 @@
 ---
 auteur: "Mehdi A."
 quartier: "Nanterre"
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en janvier 2022"

@@ -1,6 +1,7 @@
 ---
 auteur: "Marco G."
 quartier: "Aubervilliers"
+note: 5
 source: google
 anciennete: "il y a 3 ans"
 dateVisite: "Visité en novembre 2022"

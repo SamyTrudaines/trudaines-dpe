@@ -1,6 +1,7 @@
 ---
 auteur: "Jade S."
 quartier: ""
+note: 5
 source: google
 anciennete: "il y a 4 ans"
 dateVisite: "Visité en octobre 2021"
