@@ -153,6 +153,11 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   if (!process.env.MISE_EN_LIGNE_SILENCE) console.log(`SAUVEGARDE_RETABLISSEMENT ${JSON.stringify(rapport.sauvegarde)}`);
 
   const idsListes = await appliquerBrevo(services.brevo, etat.brevo, noter);
+  const brancheAvant = etat.cloudflare?.projet?.production_branch;
+  if (brancheAvant !== C.BRANCHE_PRODUCTION) {
+    await services.cloudflare.fixerBrancheProduction();
+    noter('Cloudflare', 'fait', `branche de production : ${brancheAvant || 'inconnue'} remplacée par ${C.BRANCHE_PRODUCTION}`);
+  }
   await appliquerVariables(services.cloudflare, secrets.brevo, idsListes, noter);
   await attendreDeploiement(services.cloudflare, noter);
   const domaine = await declarerDomaine(services.cloudflare, etat.cloudflare, noter);
@@ -260,7 +265,12 @@ async function lireCloudflare(cf, noter) {
     const projet = await cf.lireProjet();
     const domaines = await cf.listerDomaines();
     const variables = Object.keys(projet?.deployment_configs?.production?.env_vars || {});
-    noter('Cloudflare', projet?.production_branch === C.BRANCHE_PRODUCTION ? 'ok' : 'alerte', `projet ${projet?.name}, branche de production ${projet?.production_branch}`);
+    const brancheOk = projet?.production_branch === C.BRANCHE_PRODUCTION;
+    noter(
+      'Cloudflare',
+      brancheOk ? 'ok' : 'alerte',
+      `projet ${projet?.name}, branche de production ${projet?.production_branch}${brancheOk ? '' : ` : la mise en ligne la remettra sur ${C.BRANCHE_PRODUCTION} avant de reconstruire`}`
+    );
     noter('Cloudflare', 'info', `variables en place : ${variables.join(', ') || 'aucune'} ; domaines : ${domaines.map((d) => `${d.name} (${d.status})`).join(', ') || 'aucun'}`);
     return { projet, domaines, variables };
   } catch (erreur) {
