@@ -641,7 +641,6 @@ html.menu-ouvert { overflow: hidden; }
   .entete[data-compact] .logo { --l: 9.75rem; }
 }
 .entete[data-compact] .entete-progression { opacity: 1; }
-.entete[data-cache]:not([data-menu-ouvert]) { transform: translateY(-100%); }
 
 /* Sur la photographie d'ouverture : transparente, texte blanc. */
 .entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) {

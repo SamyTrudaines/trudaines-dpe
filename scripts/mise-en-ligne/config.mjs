@@ -67,4 +67,6 @@ export const EMAIL_RECETTE = 'samy.santamarina@trudaines.com';
 export const GUIDE_RECETTE = 'bien-vendre-paris-2026';
 
 /* Phrase présente sur l'accueil du nouveau site, absente de l'ancien. */
-export const MARQUEUR_NOUVEAU_SITE = "L'immobilier au-delà des murs.";
+// Fin du titre de l'accueil, d'un seul tenant dans le HTML (« au-delà » ne doit
+// pas se couper en fin de ligne). L'ancien site l'écrit en capitales, sans point.
+export const MARQUEUR_NOUVEAU_SITE = 'au-delà des murs.';

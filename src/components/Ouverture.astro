@@ -1,27 +1,24 @@
 ---
 /**
- * Ouverture de l'accueil : immeubles parisiens et, au loin, le Sacré-Cœur,
- * pleine largeur.
+ * Ouverture de l'accueil : le square d'Anvers et, au loin, le Sacré-Cœur,
+ * pleine largeur. Photographie du cabinet.
  *
- * Photographie de Francisco Mamani, collection « Site WEB » du cabinet sur
- * Unsplash (licence Unsplash : usage commercial libre, sans attribution
- * obligatoire), https://unsplash.com/photos/gray-and-beige-buildings-YGH2qAQIbCc.
- * L'original mesure 6000 px sur 4000 : chaque fichier servi est une réduction,
- * jamais un agrandissement. L'ancienne photographie ne faisait que 1500 px de
- * large, d'où le flou sur les écrans haute densité, où une page de 1440 px en
- * demande 2880.
+ * Le fichier reçu mesure 1500 px sur 840. Il a été agrandi deux fois par
+ * super-résolution (modèle EDSR), plus net qu'un simple agrandissement :
+ * la version la plus large fait 3000 px, de quoi servir un écran Retina de
+ * 1440 px. À remplacer par l'original, environ 6000 px, dès qu'il est déposé
+ * dans le dépôt.
  *
- * Deux cadrages, un par forme d'écran, recadrés à la production : une bande
- * large (rapport 2,2) sur ordinateur, une coupe verticale (0,87) centrée sur la
- * basilique sur téléphone. Jusqu'à 3840 px de large, pour les écrans Retina et
- * 4K. WebP à qualité élevée : c'est la page qui vend.
+ * Deux cadrages : l'image entière sur ordinateur, une coupe verticale centrée
+ * sur le dôme sur téléphone. Les noms de fichiers changent avec la photographie,
+ * les images étant gardées trente jours en cache.
  */
-const alt = 'Immeubles parisiens et, au loin, la basilique du Sacré-Cœur';
-const large = [1200, 1600, 2000, 2400, 3200, 3840]
-  .map((l) => `/images/marque/ouverture-large-${l}.webp ${l}w`)
+const alt = "Le square d'Anvers et, au loin, la basilique du Sacré-Cœur";
+const large = [1200, 1600, 2000, 2400, 3000]
+  .map((l) => `/images/marque/square-anvers-large-${l}.webp ${l}w`)
   .join(', ');
-const haut = [640, 900, 1200, 1600]
-  .map((l) => `/images/marque/ouverture-haut-${l}.webp ${l}w`)
+const haut = [640, 900, 1200, 1462]
+  .map((l) => `/images/marque/square-anvers-haut-${l}.webp ${l}w`)
   .join(', ');
 ---
 <div class="relative w-full overflow-hidden bg-[color:var(--color-papier)]">
@@ -29,10 +26,10 @@ const haut = [640, 900, 1200, 1600]
     <source media="(min-width: 768px)" srcset={large} sizes="100vw" />
     <source srcset={haut} sizes="100vw" />
     <img
-      src="/images/marque/ouverture-large-2400.webp"
+      src="/images/marque/square-anvers-large-2400.webp"
       alt={alt}
-      width="2400"
-      height="1091"
+      width="3000"
+      height="1680"
       fetchpriority="high"
       loading="eager"
       decoding="async"
