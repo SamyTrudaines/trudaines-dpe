@@ -22,37 +22,37 @@ Une vente de logement suit un ordre fixe : offre, avant-contrat, levée des cond
 | Rétractation | 10 jours | acquéreur |
 | Condition de prêt | 1 mois au minimum | acquéreur, banque |
 | Droit de préemption | 2 mois | Ville de Paris |
-| De l'avant-contrat à l'acte | 2 à 3 mois en général | notaire |
+| De l'avant-contrat à l'acte | 3 mois environ, 2 sans prêt | notaire |
 
 ## L'offre d'achat
 
-L'offre d'achat n'est pas obligatoire, mais elle se fait de préférence par écrit. Elle indique le prix proposé, le financement, les conditions éventuelles et sa durée de validité, que fixe l'acheteur. Acceptée par le vendeur, elle l'engage. Une offre complète limite les renégociations : le plan de financement et la date de signature souhaitée y ont leur place.
+L'offre d'achat n'est pas obligatoire, mais elle se fait de préférence par écrit. Elle indique le prix proposé, le financement, les conditions éventuelles et sa durée de validité, que fixe l'acheteur. Acceptée sans réserve par le vendeur, elle l'engage : il ne peut plus vendre le bien à un autre acquéreur. Une offre complète limite les renégociations : le plan de financement et la date de signature souhaitée y ont leur place.
 
 ## L'avant-contrat
 
 L'avant-contrat fixe le prix, la date limite de signature de l'acte et les conditions suspensives. Il prend deux formes. Dans le compromis de vente, le vendeur et l'acquéreur s'engagent tous les deux. Dans la promesse unilatérale de vente, seul le vendeur s'engage, et l'acquéreur dispose d'une option contre une indemnité d'immobilisation.
 
-Il se signe chez le notaire ou sous seing privé, par exemple avec l'agence. Le dépôt de garantie, ou l'indemnité d'immobilisation, est versé en général chez le notaire.
+Il se signe chez le notaire ou sous seing privé, par exemple avec l'agence. Le dépôt de garantie, ou l'indemnité d'immobilisation, est versé en général chez le notaire, qui le conserve en séquestre. Dans un compromis, son montant est fixé librement par les parties ; en pratique, il se situe entre 5 et 10 % du prix.
 
 ## Les dix jours de rétractation
 
-L'acquéreur non professionnel d'un logement peut se rétracter dans un délai de dix jours, sans motif et sans pénalité (article L271-1 du code de la construction et de l'habitation). Le délai court à partir du lendemain de la première présentation de la lettre recommandée qui lui notifie l'avant-contrat, ou d'un moyen offrant des garanties équivalentes. Il se compte en jours calendaires. S'il expire un samedi, un dimanche ou un jour férié, il est prolongé jusqu'au premier jour ouvrable suivant.
+L'acquéreur non professionnel d'un logement peut se rétracter dans un délai de dix jours, sans motif et sans pénalité (article L271-1 du code de la construction et de l'habitation). Le délai court à partir du lendemain de la première présentation de la lettre recommandée qui lui notifie l'avant-contrat, ou d'un moyen offrant des garanties équivalentes. Lorsque l'avant-contrat est conclu par l'intermédiaire d'un professionnel mandaté pour la vente, comme une agence, il peut aussi être remis directement à l'acquéreur : le délai court alors à partir du lendemain de la remise, attestée selon des modalités fixées par décret. Il se compte en jours calendaires. S'il expire un samedi, un dimanche ou un jour férié, il est prolongé jusqu'au premier jour ouvrable suivant. La rétractation s'exerce dans les mêmes formes que cette notification, par lettre recommandée avec avis de réception ou par un moyen offrant des garanties équivalentes.
 
-Si l'acquéreur se rétracte, les sommes versées lui sont restituées dans les vingt et un jours (article L271-2). Le vendeur, lui, n'a pas de droit de rétractation : il est engagé dès la signature. Pour un lot de copropriété, le délai ne commence qu'une fois les documents d'information sur l'immeuble remis à l'acquéreur (article L721-3).
+Si l'acquéreur se rétracte, le professionnel qui détient les sommes versées les lui restitue dans les vingt et un jours à compter du lendemain de la rétractation (article L271-2). Le vendeur, lui, n'a pas de droit de rétractation : il est engagé dès la signature. Pour un lot de copropriété, si les documents d'information sur l'immeuble n'ont pas été remis à l'acquéreur au plus tard à la signature de l'avant-contrat, le délai ne court qu'à partir du lendemain de leur communication (article L721-3).
 
 ## Les conditions suspensives
 
 L'avant-contrat est le plus souvent signé sous conditions. La plus courante est l'obtention du prêt. Lorsque le prix est financé, même en partie, par un crédit, l'acte est conclu sous la condition suspensive de son obtention. Cette condition dure au moins un mois à compter de la signature (article L313-41 du code de la consommation). Si le prêt est refusé, les sommes versées par l'acquéreur lui sont remboursées sans retenue. Un acquéreur qui n'emprunte pas le déclare par une mention manuscrite, et renonce à cette protection.
 
-À Paris, le droit de préemption pèse aussi sur le calendrier. Le notaire adresse à la Ville une déclaration d'intention d'aliéner. La Ville dispose de deux mois pour exercer son droit, et son silence vaut renonciation. Ce délai peut être prolongé si elle demande des documents ou une visite. D'autres conditions existent selon les cas, comme la vente préalable du bien de l'acquéreur.
+À Paris, le droit de préemption pèse aussi sur le calendrier. Le notaire adresse à la Ville une déclaration d'intention d'aliéner. La Ville dispose de deux mois à compter de la réception de cette déclaration pour exercer son droit, et son silence vaut renonciation. Ce délai est suspendu si elle demande des documents ou à visiter le bien. D'autres conditions existent selon les cas, comme la vente préalable du bien de l'acquéreur.
 
 ## Le financement
 
-Le financement suit son propre calendrier, qui doit tenir dans celui de l'avant-contrat. Une fois le dossier accepté, la banque envoie l'offre de prêt. L'emprunteur ne peut l'accepter que dix jours après l'avoir reçue, et la banque doit maintenir ses conditions pendant au moins trente jours (article L313-34 du code de la consommation). Ces délais s'ajoutent à la condition suspensive : mieux vaut déposer les demandes de prêt dès la signature de l'avant-contrat, voire avant. Le déblocage des fonds se prépare ensuite avec le notaire, avant la signature de l'acte.
+Le financement suit son propre calendrier, qui doit tenir dans celui de l'avant-contrat. Une fois le dossier accepté, la banque envoie l'offre de prêt. L'emprunteur ne peut l'accepter que dix jours après l'avoir reçue, et la banque doit maintenir ses conditions pendant au moins trente jours (article L313-34 du code de la consommation). Ces délais courent à partir de la réception de l'offre et pèsent sur le calendrier : mieux vaut déposer les demandes de prêt dès la signature de l'avant-contrat, voire avant. Le déblocage des fonds se prépare ensuite avec le notaire, avant la signature de l'acte.
 
 ## De l'avant-contrat à l'acte
 
-Pendant ce temps, le notaire réunit les pièces, interroge les services d'urbanisme et la publicité foncière, purge le droit de préemption et vérifie le financement. Les notaires comptent en général de deux à trois mois entre l'avant-contrat et l'acte, deux mois en l'absence de prêt. La date de signature fixée dans l'avant-contrat peut être repoussée par avenant, avec l'accord des deux parties, si un événement indépendant de leur volonté empêche la signature.
+Pendant ce temps, le notaire réunit les pièces, interroge les services d'urbanisme et la publicité foncière, purge le droit de préemption et vérifie le financement. Les notaires comptent en général trois mois entre l'avant-contrat et l'acte, deux mois en l'absence de prêt. La date de signature fixée dans l'avant-contrat est une date limite : elle peut être repoussée par avenant, avec l'accord des deux parties, notamment lorsqu'un événement indépendant de leur volonté empêche la signature.
 
 ## L'acte authentique, le paiement et les clés
 
@@ -66,15 +66,15 @@ Le notaire publie ensuite l'acte au service de la publicité foncière et reçoi
 
 ### Le vendeur peut-il renoncer après avoir signé le compromis ?
 
-Non. Il n'a pas de droit de rétractation. S'il refuse de signer l'acte, l'acquéreur peut saisir la justice pour faire prononcer la vente ou obtenir des dommages et intérêts.
+Non. Il n'a pas de droit de rétractation. S'il refuse de signer l'acte, l'acquéreur peut saisir la justice pour obtenir l'exécution forcée de la vente ou des dommages et intérêts.
 
 ### Que se passe-t-il si le prêt est refusé ?
 
-La condition suspensive n'est pas réalisée : la vente ne se fait pas et les sommes versées par l'acquéreur lui sont remboursées sans retenue (article L313-41 du code de la consommation). Pensez à déposer les demandes de prêt dans le délai prévu à l'avant-contrat.
+La condition suspensive n'est pas réalisée : la vente ne se fait pas et les sommes versées par l'acquéreur lui sont remboursées sans retenue (article L313-41 du code de la consommation), sauf si l'échec du prêt lui est imputable. Pensez à déposer les demandes de prêt dans le délai prévu à l'avant-contrat.
 
 ### Qui paie les frais de notaire ?
 
-L'acquéreur, en plus du prix, sauf convention contraire (article 1593 du code civil). Ces frais d'acquisition comprennent la rémunération du notaire, des taxes collectées pour le compte de l'État et des frais administratifs.
+L'acquéreur, en plus du prix, sauf convention contraire (article 1593 du code civil). Ces frais d'acquisition comprennent, pour la plus grande part, des droits et taxes reversés à l'État et aux collectivités locales, puis la rémunération du notaire, fixée par un tarif réglementé, et les frais qu'il avance pour les formalités.
 
 ### Quand le vendeur doit-il libérer le logement ?
 
@@ -82,6 +82,6 @@ En principe à la signature de l'acte, sauf accord contraire écrit dans l'avant
 
 Pour préparer une vente, [demandez une estimation](/estimation) ; pour un achat à Paris, [écrivez-nous](/contact). Le cabinet Trudaines vous accompagne à chacune de ces étapes.
 
-Sources : [economie.gouv.fr, les cinq étapes clés d'un achat immobilier](https://www.economie.gouv.fr/particuliers/gerer-mon-argent/investir-dans-limmobilier/achat-immobilier-quelles-sont-les-cinq-etapes-cles) ; [notaires.fr, avant-contrat et acte authentique](https://www.notaires.fr/fr/article/avant-contrat-et-acte-authentique-la-signature-des-actes-de-vente-immobiliere) ; [notaires.fr, l'acceptation d'une offre d'achat engage le vendeur](https://www.immobilier.notaires.fr/node/483) ; [Légifrance, articles L271-1 à L271-3 du code de la construction et de l'habitation](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006176357) ; [economie.gouv.fr, délais de réflexion et de rétractation](https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques-et-les-faq/les-delais-de-reflexion-ou-de-retractation) ; [Légifrance, article L721-3 du même code](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031110572) ; [Légifrance, article L313-34 du code de la consommation](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032433173) ; [Légifrance, article L313-41 du même code](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032433227) ; [Légifrance, droit de préemption urbain, code de l'urbanisme](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074075/LEGISCTA000006158572/) ; [Ville de Paris, déclarations d'intention d'aliéner](https://www.paris.fr/pages/mutation-immobiliere-3548) ; [Légifrance, article 1593 du code civil](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006441351).
+Sources : [economie.gouv.fr, les cinq étapes clés d'un achat immobilier](https://www.economie.gouv.fr/particuliers/gerer-mon-argent/investir-dans-limmobilier/achat-immobilier-quelles-sont-les-cinq-etapes-cles) ; [notaires.fr, avant-contrat et acte authentique](https://www.notaires.fr/fr/article/avant-contrat-et-acte-authentique-la-signature-des-actes-de-vente-immobiliere) ; [notaires.fr, l'acceptation d'une offre d'achat engage le vendeur](https://www.immobilier.notaires.fr/node/483) ; [Légifrance, articles L271-1 à L271-3 du code de la construction et de l'habitation](https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006176357) ; [economie.gouv.fr, délais de réflexion et de rétractation](https://www.economie.gouv.fr/dgccrf/les-fiches-pratiques/les-delais-de-reflexion-ou-de-retractation) ; [economie.gouv.fr, frais de notaire d'un achat immobilier](https://www.economie.gouv.fr/particuliers/frais-notaire-achat-immobilier) ; [Chambre des notaires de Paris, comprendre les délais d'un achat ou d'une vente](https://paris.notaires.fr/fr/actualites/achat-vente-immobiliere-comprendre-les-delais) ; [Chambre des notaires de Paris, les sommes versées par l'acquéreur lors de l'avant-contrat](https://paris.notaires.fr/fr/actualites/les-sommes-versees-par-lacquereur-lors-de-lavant-contrat) ; [notaires.fr, sort du dépôt de garantie en cas de non-réalisation de la vente](https://www.notaires.fr/fr/article/compromis-de-vente-sort-du-depot-de-garantie-en-cas-de-non-realisation-de-la-vente) ; [notaires.fr, à quel moment le nouveau propriétaire reçoit-il les clés](https://fourez.notaires.fr/informations-et-conseils/nouveau-proprietaire-a-quel-moment-avez-vous-les-cles-de-chez-vous/692) ; [Légifrance, article L721-3 du code de la construction et de l'habitation](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000031110572) ; [Légifrance, article L313-34 du code de la consommation](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032433173) ; [Légifrance, article L313-41 du code de la consommation](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032433227) ; [Légifrance, droit de préemption urbain, code de l'urbanisme](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074075/LEGISCTA000006158572/) ; [Ville de Paris, déclarations d'intention d'aliéner](https://www.paris.fr/pages/mutation-immobiliere-3548) ; [Légifrance, article 1593 du code civil](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006441351).
 
 <!-- Photographie : Scott Graham, Unsplash, https://unsplash.com/photos/man-writing-on-paper-OQMZwNd3ThU -->
