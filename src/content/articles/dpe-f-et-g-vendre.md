@@ -1,8 +1,8 @@
 ---
 titre: Vendre un appartement classé F ou G à Paris
 date: 2026-04-22
-image: /images/panorama/dpe-f-et-g-vendre.webp
-imageAlt: Séjour d'un deux pièces aux Abbesses, Paris 18e
+image: /images/panorama/dpe-f-et-g-vendre-photo.webp
+imageAlt: Fenêtre ouverte sur les toits de zinc et les cheminées de Paris
 chapo: Le diagnostic énergétique est devenu un sujet de négociation à part entière. Le traiter avant la mise en vente vaut mieux que de le subir en deuxième visite.
 motsCles:
   - DPE

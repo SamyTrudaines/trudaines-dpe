@@ -1,8 +1,8 @@
 ---
 titre: "Vendre à la frontière du 9e et du 18e : ce que le boulevard change vraiment"
 date: 2026-04-28
-image: /images/quartiers/montmartre.webp
-imageAlt: Séjour d'un deux pièces avec balcon, Abbesses, Paris 18e
+image: /images/panorama/frontiere-9e-18e-estimation-photo.webp
+imageAlt: Basilique blanche à coupoles vue d'en bas, entre les arbres
 chapo: Anvers, Abbesses, Trudaine, Rochechouart. Deux arrondissements séparés par un boulevard, des prix que tout le monde croit connaître, et un écart qui ne se situe pas là où on l'attend.
 titreSeo: "Vendre entre le 9e et le 18e | Trudaines"
 descriptionSeo: "Montmartre se vend au dessus de la médiane du 9e. Ce que le boulevard change vraiment pour estimer un bien, chiffres à l'appui."
