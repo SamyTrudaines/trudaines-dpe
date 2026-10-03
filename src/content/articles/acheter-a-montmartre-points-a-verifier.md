@@ -27,7 +27,7 @@ L'âge de l'immeuble se lit aussi dans les diagnostics de l'avant-contrat : plom
 
 ## La copropriété : procès-verbaux, travaux, fonds de travaux
 
-Les documents de copropriété disent ce que vous paierez après l'achat. Le vendeur doit vous remettre, au plus tard à la signature de l'avant-contrat, les procès-verbaux des trois dernières assemblées, le carnet d'entretien, la fiche synthétique et les informations financières (article L721-2 du code de la construction et de l'habitation). Demandez-les avant l'offre. Cherchez-y les travaux votés, leur échéancier, les procédures en cours et le montant du fonds de travaux.
+Les documents de copropriété disent ce que vous paierez après l'achat. Le vendeur doit vous les remettre au plus tard à la signature de l'avant-contrat (article L721-2 du code de la construction et de l'habitation). Il s'agit des procès-verbaux des trois dernières assemblées, du carnet d'entretien, de la fiche synthétique et des informations financières. Demandez-les avant l'offre. Cherchez-y les travaux votés, leur échéancier, les procédures en cours et le montant du fonds de travaux.
 
 Les appels de fonds pour travaux hors budget sont dus par celui qui est copropriétaire au moment où ils deviennent exigibles (article 6-2 du décret du 17 mars 1967) : ceux qui tombent après l'acte sont pour vous. Les sommes versées au fonds de travaux restent attachées au lot et ne sont pas remboursées au vendeur, ce qui se discute dans le prix.
 
@@ -59,7 +59,7 @@ Si vous comptez louer en courte durée, trois vérifications s'imposent avant l'
 
 La règle de la Ville d'abord. À Paris, tout meublé de tourisme doit être déclaré et porter un numéro d'enregistrement. Depuis le 1er janvier 2025, une résidence principale ne peut être louée en meublé de tourisme que 90 jours par an. Tout autre logement exige une autorisation de changement d'usage, qui peut être assortie d'une compensation.
 
-Le règlement de copropriété ensuite. Depuis la loi du 19 novembre 2024, une assemblée générale peut interdire la location en meublé de tourisme des logements qui ne sont pas des résidences principales, à la majorité des copropriétaires représentant au moins les deux tiers des voix, dans les copropriétés dont le règlement interdit déjà toute activité commerciale. Le Conseil constitutionnel a jugé cette règle conforme à la Constitution le 19 mars 2026.
+Le règlement de copropriété ensuite. Depuis la loi du 19 novembre 2024, une assemblée générale peut interdire la location en meublé de tourisme des logements qui ne sont pas des résidences principales. Elle vote à la majorité des copropriétaires représentant au moins les deux tiers des voix. La règle joue dans les copropriétés dont le règlement interdit déjà toute activité commerciale. Le Conseil constitutionnel l'a jugée conforme à la Constitution le 19 mars 2026.
 
 Les procès-verbaux enfin : une interdiction peut avoir été votée, ou être à l'ordre du jour.
 
@@ -67,7 +67,7 @@ Les procès-verbaux enfin : une interdiction peut avoir été votée, ou être �
 
 ### Un dernier étage sans ascenseur est-il un mauvais achat ?
 
-Pas en soi. Il convient à certains acquéreurs, pas à d'autres. Comparez la vue et la lumière à l'effort quotidien, vérifiez la surface Carrez, qui exclut les parties sous 1,80 m, et cherchez dans les procès-verbaux si un ascenseur est envisagé.
+Pas en soi. Il correspond à certains acquéreurs, pas à d'autres. Comparez la vue et la lumière à l'effort quotidien, vérifiez la surface Carrez, qui exclut les parties sous 1,80 m, et cherchez dans les procès-verbaux si un ascenseur est envisagé.
 
 ### Faut-il éviter les rues touristiques ?
 

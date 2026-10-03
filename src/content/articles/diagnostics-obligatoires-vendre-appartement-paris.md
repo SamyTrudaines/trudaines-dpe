@@ -56,7 +56,7 @@ Un DPE ancien. Un DPE établi avant le 1er juillet 2021 n'est plus valable : il 
 
 Une surface surestimée. La loi Carrez ne compte pas les parties dont la hauteur sous plafond est inférieure à 1,80 m, ce qui concerne les combles et les mansardes. Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix pendant un an à compter de la signature.
 
-Un diagnostic manquant ou périmé. Si le diagnostic plomb, amiante, termites, gaz ou électricité est absent, ou n'est plus en cours de validité le jour de l'acte, le vendeur ne peut pas s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation).
+Un diagnostic manquant ou périmé. Cela vaut pour le plomb, l'amiante, les termites, le gaz et l'électricité. Un diagnostic absent le jour de l'acte, ou qui n'est plus en cours de validité, interdit au vendeur de s'exonérer de la garantie des vices cachés correspondante (article L271-4 du code de la construction et de l'habitation).
 
 Un état des risques trop ancien. Il doit avoir été établi moins de six mois avant l'avant-contrat et avant l'acte, même quand le vendeur l'a rempli lui-même.
 

@@ -17,11 +17,11 @@ Quand une offre arrive, l'avant-contrat doit être accompagné du dossier de cop
 
 ## Ce que la loi impose de remettre
 
-Pour la vente d'un lot de copropriété à usage d'habitation, la loi impose de remettre à l'acquéreur plusieurs documents au plus tard à la signature de l'avant-contrat (article L721-2 du code de la construction et de l'habitation). Ils peuvent être transmis sur tout support, y compris par voie dématérialisée si l'acquéreur l'accepte expressément.
+Pour la vente d'un lot de copropriété à usage d'habitation, la loi impose de remettre plusieurs documents à l'acquéreur. Ils doivent lui parvenir au plus tard à la signature de l'avant-contrat (article L721-2 du code de la construction et de l'habitation). Ils peuvent être transmis sur tout support, y compris par voie dématérialisée si l'acquéreur l'accepte expressément.
 
-Sur l'immeuble : la fiche synthétique de la copropriété, le règlement de copropriété et l'état descriptif de division avec leurs modificatifs publiés, les procès-verbaux des assemblées générales des trois dernières années, le carnet d'entretien et la notice d'information sur les droits et obligations des copropriétaires. Le diagnostic technique global et le plan pluriannuel de travaux s'y ajoutent quand ils existent.
+Sur l'immeuble, vous remettez la fiche synthétique, le règlement de copropriété et l'état descriptif de division, avec leurs modificatifs publiés. Vous remettez aussi les procès-verbaux des trois dernières assemblées générales et le carnet d'entretien. La notice d'information sur les droits et obligations des copropriétaires complète le dossier, tout comme le diagnostic technique global et le plan pluriannuel de travaux quand ils existent.
 
-Sur les finances : les charges courantes et hors budget que vous avez payées au titre des deux derniers exercices, les sommes que vous pourriez encore devoir au syndicat et celles dont l'acquéreur pourrait être débiteur, l'état global des impayés de charges et des dettes envers les fournisseurs, la quote-part du fonds de travaux attachée à votre lot et votre dernière cotisation. Le pré-état daté, que le syndic établit le plus souvent, rassemble ces informations dans un seul document.
+Sur les finances, vous indiquez les charges courantes et hors budget payées au titre des deux derniers exercices. Vous indiquez les sommes que vous pourriez encore devoir au syndicat, et celles dont l'acquéreur pourrait être débiteur. S'ajoutent l'état global des impayés de charges et des dettes envers les fournisseurs, puis la quote-part du fonds de travaux attachée à votre lot et votre dernière cotisation. Le pré-état daté, que le syndic établit le plus souvent, rassemble ces informations dans un seul document.
 
 La superficie de la partie privative (loi Carrez) doit aussi figurer dans l'avant-contrat et dans l'acte.
 
@@ -37,7 +37,7 @@ Le pré-état daté a son propre coût. Aucun plafond légal ne l'encadre, à la
 
 Réunir les pièces à la mise en vente retire de votre calendrier tout ce qui dépend d'un tiers. Le jour de l'offre, le compromis peut être rédigé sans attendre.
 
-La loi donne une raison de plus. Si les documents sur l'organisation de l'immeuble et les informations financières ne sont pas remis au plus tard à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur ne commence qu'au lendemain de leur remise (article L721-3). Vous êtes engagé, lui peut encore revenir sur sa décision, et la date à laquelle la vente devient ferme dépend du syndic.
+La loi donne une raison de plus. Si les documents sur l'organisation de l'immeuble et les informations financières manquent à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur ne commence pas. Il ne court qu'à partir du lendemain de leur remise (article L721-3). Vous êtes engagé, lui peut encore revenir sur sa décision, et la date à laquelle la vente devient ferme dépend du syndic.
 
 Un acquéreur qui reçoit le dossier complet avant son offre la fait en connaissance de cause, travaux votés compris. Il ne découvre rien chez le notaire. Chez Trudaines, nous réunissons ces pièces avant la mise en vente, et chaque acquéreur sérieux reçoit le dossier complet avant son offre.
 

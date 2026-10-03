@@ -41,7 +41,7 @@ Si l'acquéreur se rétracte, les sommes versées lui sont restituées dans les 
 
 ## Les conditions suspensives
 
-L'avant-contrat est le plus souvent signé sous conditions. La plus courante est l'obtention du prêt. Lorsque le prix est financé, même en partie, par un crédit, l'acte est conclu sous la condition suspensive de son obtention, pour une durée d'au moins un mois à compter de la signature (article L313-41 du code de la consommation). Si le prêt est refusé, les sommes versées par l'acquéreur lui sont remboursées sans retenue. Un acquéreur qui n'emprunte pas le déclare par une mention manuscrite, et renonce à cette protection.
+L'avant-contrat est le plus souvent signé sous conditions. La plus courante est l'obtention du prêt. Lorsque le prix est financé, même en partie, par un crédit, l'acte est conclu sous la condition suspensive de son obtention. Cette condition dure au moins un mois à compter de la signature (article L313-41 du code de la consommation). Si le prêt est refusé, les sommes versées par l'acquéreur lui sont remboursées sans retenue. Un acquéreur qui n'emprunte pas le déclare par une mention manuscrite, et renonce à cette protection.
 
 À Paris, le droit de préemption pèse aussi sur le calendrier. Le notaire adresse à la Ville une déclaration d'intention d'aliéner. La Ville dispose de deux mois pour exercer son droit, et son silence vaut renonciation. Ce délai peut être prolongé si elle demande des documents ou une visite. D'autres conditions existent selon les cas, comme la vente préalable du bien de l'acquéreur.
 
