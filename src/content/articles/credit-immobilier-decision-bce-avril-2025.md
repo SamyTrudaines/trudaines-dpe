@@ -22,7 +22,7 @@ Facilité de dépôt : 2,25 %
 
 - C’est la 7ᵉ baisse depuis juin 2024, confirmant une stratégie monétaire résolument accommodante.
 
-- Taux de crédit immobilier – Des marges de manœuvre à surveiller
+- Taux de crédit immobilier : Des marges de manœuvre à surveiller
 
 Malgré la baisse des taux BCE, les taux moyens immobiliers restent stables en avril :
 

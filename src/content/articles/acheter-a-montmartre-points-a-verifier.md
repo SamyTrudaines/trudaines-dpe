@@ -1,5 +1,4 @@
 ---
-brouillon: true
 titre: "Acheter à Montmartre : les points à vérifier avant l'offre"
 date: 2026-10-03
 image: /images/panorama/acheter-a-montmartre-points-a-verifier.webp

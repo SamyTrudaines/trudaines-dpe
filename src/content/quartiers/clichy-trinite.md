@@ -10,7 +10,7 @@ titreSeo: Immobilier Clichy Trinité, Paris 9e | Prix et vente - Trudaines
 descriptionSeo: "Marché immobilier du secteur Clichy Trinité, Paris 9e : prix au mètre carré, typologies et vente accompagnée par le cabinet Trudaines."
 photos:
   - src: /images/quartiers/clichy-trinite-rue.webp
-    alt: Immeuble haussmannien d'angle à rotonde et coupole, Paris
+    alt: Immeuble haussmannien d'angle à rotonde, Paris
 faits:
   - titre: Typologies dominantes
     valeur: Deux et trois pièces, quelques immeubles de rapport

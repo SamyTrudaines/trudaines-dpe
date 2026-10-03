@@ -10,7 +10,7 @@ titreSeo: Immobilier Trudaine Maubeuge, Paris 9e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine Maubeuge, Paris 9e. Estimation écrite par le cabinet Trudaines.
 photos:
   - src: /images/quartiers/trudaine-maubeuge-rue.webp
-    alt: Vélo appuyé à un réverbère devant une façade aux balcons fleuris
+    alt: Vélo contre un réverbère devant une façade fleurie
 faits:
   - titre: Typologies dominantes
     valeur: Deux, trois et quatre pièces familiaux, quelques grands appartements sur l'avenue

@@ -1,9 +1,8 @@
 ---
-brouillon: true
 titre: "Paris 17e : plaine Monceau, Batignolles, Épinettes, un mètre carré à trois niveaux"
 date: 2026-10-03
-image: /images/panorama/prix-m2-rues-paris-17.webp
-imageAlt: "Pont à balustrade de pierre blanche au-dessus de l'eau, parc Monceau (8e arrondissement), en limite du 17e"
+image: /images/panorama/prix-m2-rues-paris-17-photo.webp
+imageAlt: "Immeuble haussmannien d'angle en lumière dorée"
 chapo: "De la rue de Thann, voisine du parc Monceau, à la rue des Épinettes, la médiane du mètre carré passe de 13 830 € à 8 430 €. Les ventes signées en 2024 et 2025 situent chaque rue avec son nombre de ventes, pour vendre ou acheter au bon niveau."
 titreSeo: "Prix au m² Paris 17e : rue par rue, de Monceau aux Épinettes"
 descriptionSeo: "Prix au m² du 17e rue par rue : de 13 830 € rue de Thann à 5 690 € rue Gustave Charpentier, médianes de ventes signées en 2024 et 2025."

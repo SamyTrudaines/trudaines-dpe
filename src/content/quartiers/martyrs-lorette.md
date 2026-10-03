@@ -10,7 +10,7 @@ titreSeo: Immobilier Martyrs Lorette, Paris 9e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier Martyrs Lorette, Paris 9e. Estimation écrite et vente accompagnée par le cabinet Trudaines.
 photos:
   - src: /images/quartiers/martyrs-lorette-rue.webp
-    alt: Terrasse de café sur le trottoir d'une rue de Paris
+    alt: Terrasse de café dans une rue de Paris
 faits:
   - titre: Typologies dominantes
     valeur: Studios et deux pièces en haut de rue, trois et quatre pièces vers Saint Georges

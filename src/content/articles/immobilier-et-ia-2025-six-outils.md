@@ -4,7 +4,7 @@ date: 2025-05-04
 chapo: "L'intelligence artificielle n'est plus un gadget. En 2025, elle est le moteur de la nouvelle productivité immobilière."
 titreSeo: "Immobilier et IA, six outils en 2025 | Trudaines"
 image: /images/panorama/immobilier-et-ia-2025-six-outils-photo.webp
-imageAlt: Ordinateur portable fermé posé sur un bureau en bois
+imageAlt: Ordinateur portable fermé sur un bureau en bois
 motsCles: ['intelligence artificielle', 'outils immobiliers', 'productivité']
 brouillon: false
 ---
@@ -27,7 +27,7 @@ Décupler leur visibilité et leur efficacité commerciale
 
 - Les 6 IA à intégrer à votre stack en 2025
 
-1. Maket – Le plan 3D en quelques clics
+1. Maket : Le plan 3D en quelques clics
 
 Utilité : Génération automatique de plans, rendus 3D, zoning.
 
@@ -35,7 +35,7 @@ Pourquoi l’utiliser : Pour présenter un projet plus vite que la concurrence. 
 
 Ciblé pour : Promoteurs, architectes, agences haut de gamme.
 
-2. Dreamhouse AI – La mise en scène virtuelle à grande échelle
+2. Dreamhouse AI : La mise en scène virtuelle à grande échelle
 
 Utilité : Refonte esthétique instantanée d’intérieurs via simple photo.
 
@@ -43,7 +43,7 @@ Pourquoi l’utiliser : Pour magnifier les biens sans travaux. Augmente le taux 
 
 Ciblé pour : Agences premium, homestagers, vendeurs pressés.
 
-3. Likely.AI – La prospection prédictive, enfin concrète
+3. Likely.AI : La prospection prédictive, enfin concrète
 
 Utilité : Prédire les intentions de vente dans une base de contacts.
 
@@ -51,7 +51,7 @@ Pourquoi l’utiliser : Pour être le premier à contacter les bons prospects. P
 
 Ciblé pour : Négociateurs, réseaux qui veulent industrialiser le recrutement ou la chasse.
 
-4. Kurby – L’IA locale ultra-contextuelle
+4. Kurby : L’IA locale ultra-contextuelle
 
 Utilité : Analyse de marché sur plus de 150 millions de propriétés, ciblage d’opportunités méconnues.
 
@@ -59,7 +59,7 @@ Pourquoi l’utiliser : Pour générer des leads qualifiés et sourcer des biens
 
 Ciblé pour : Chasseurs immobiliers, investisseurs, analystes.
 
-5. InteriorAI – Le design d’intérieur intelligent
+5. InteriorAI : Le design d’intérieur intelligent
 
 Utilité : Simulation visuelle de 16 styles de décoration à partir de photos.
 
@@ -67,7 +67,7 @@ Pourquoi l’utiliser : Pour accompagner un client dans son projet de rénovatio
 
 Ciblé pour : Agents, décorateurs, réseaux de home staging.
 
-6. Jurny – L’IA dédiée à la location courte durée
+6. Jurny : L’IA dédiée à la location courte durée
 
 Utilité : Centralisation et automatisation de toute la gestion locative.
 

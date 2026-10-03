@@ -50,7 +50,9 @@ for (const page of pages) {
   else {
     if (titres.has(titre)) erreurs.push(`${url} : title identique à ${titres.get(titre)}`);
     titres.set(titre, url);
-    if (titre.length > 70) avertissements.push(`${url} : title de ${titre.length} caractères`);
+    // Longueur lue comme le moteur l'affiche : entités HTML décodées (&#39; compte pour une apostrophe).
+    const longueur = titre.replace(/&(#\d+|#x[\da-f]+|[a-z]+);/gi, '_').length;
+    if (longueur > 70) avertissements.push(`${url} : title de ${longueur} caractères`);
   }
 
   const description = /<meta name="description" content="([\s\S]*?)"/.exec(html)?.[1]?.trim();

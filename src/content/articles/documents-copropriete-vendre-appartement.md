@@ -1,9 +1,8 @@
 ---
-brouillon: true
 titre: "Copropriété : les documents à réunir avant de vendre"
 date: 2026-10-03
-image: /images/panorama/documents-copropriete-vendre-appartement.webp
-imageAlt: "Dossier de documents posés sur une table en bois, avec un stylo"
+image: /images/panorama/documents-copropriete-vendre-appartement-photo.webp
+imageAlt: "Escalier de pierre à rampes en fer forgé dans un immeuble ancien"
 chapo: "Un dossier de copropriété complet dès la mise en vente évite d'attendre le syndic le jour où une offre arrive. Voici les documents à réunir, les délais que la loi prévoit et ce qui se passe s'il en manque."
 titreSeo: "Documents de copropriété à réunir pour vendre | Trudaines"
 descriptionSeo: "Pré-état daté, procès-verbaux, fiche synthétique, carnet d'entretien, DTG : les documents de copropriété à réunir avant le compromis, et pourquoi."

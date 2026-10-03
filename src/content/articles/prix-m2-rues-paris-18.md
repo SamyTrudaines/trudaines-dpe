@@ -1,9 +1,8 @@
 ---
-brouillon: true
 titre: "Paris 18e : entre Montmartre et la Chapelle, le mètre carré peut valoir plus du double"
 date: 2026-10-03
-image: /images/panorama/prix-m2-rues-paris-18.webp
-imageAlt: "Rue pavée en pente à Montmartre, bordée de maisons anciennes dont une maison rose"
+image: /images/panorama/prix-m2-rues-paris-18-photo.webp
+imageAlt: "Moulin à vent en bois entre des immeubles clairs"
 chapo: "Du passage Lepic à l'avenue de la Porte des Poissonniers, la médiane du mètre carré passe de 12 850 € à 5 720 € dans le 18e. Ces médianes de ventes signées situent une rue avant de vendre ou d'acheter, sans remplacer la visite."
 titreSeo: "Prix au m² Paris 18e : rue par rue, de Montmartre à la Chapelle"
 descriptionSeo: "Prix au m² du 18e rue par rue : du passage Lepic (12 850 €) à la porte des Poissonniers (5 720 €), médianes de ventes signées en 2024 et 2025."

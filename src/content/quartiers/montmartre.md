@@ -10,7 +10,7 @@ titreSeo: Immobilier Montmartre, Paris 18e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré à Montmartre, physionomie du marché et vente accompagnée par le cabinet Trudaines, installé au pied de la Butte.
 photos:
   - src: /images/quartiers/montmartre-rue.webp
-    alt: Église de pierre claire aux abords du Sacré-Cœur, Montmartre
+    alt: Église de pierre près du Sacré-Cœur, Montmartre
 faits:
   - titre: Typologies dominantes
     valeur: Studios et deux pièces de caractère, maisons et grands appartements avenue Junot

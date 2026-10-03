@@ -1,5 +1,4 @@
 ---
-brouillon: true
 titre: "Les diagnostics à fournir pour vendre un appartement à Paris"
 date: 2026-10-03
 image: /images/panorama/diagnostics-obligatoires-vendre-appartement-paris.webp

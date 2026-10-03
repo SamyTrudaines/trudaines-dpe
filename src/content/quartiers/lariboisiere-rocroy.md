@@ -10,7 +10,7 @@ titreSeo: Immobilier Lariboisière Rocroy, Paris 10e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier Lariboisière Rocroy, Paris 10e. Estimation écrite et vente accompagnée par le cabinet Trudaines.
 photos:
   - src: /images/quartiers/lariboisiere-rocroy-rue.webp
-    alt: Façade monumentale en pierre claire d'une gare, horloge et statues
+    alt: Façade de gare en pierre, horloge et statues
 faits:
   - titre: Typologies dominantes
     valeur: Trois et quatre pièces, beaux volumes dans des immeubles de la fin du dix neuvième
