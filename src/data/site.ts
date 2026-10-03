@@ -57,8 +57,19 @@ export const site = {
       'https://www.google.com/maps/search/?api=1&query=Trudaines+Immobilier+2+rue+Livingstone+75018+Paris',
     releve: 'septembre 2026',
   },
-  /** Identifiant GA4, renseigné dans les variables Cloudflare Pages (PUBLIC_GA4_ID). */
+  /**
+   * Identifiant GA4, renseigné dans les variables Cloudflare Pages (PUBLIC_GA4_ID).
+   * Sans lui, aucun traceur n'est posé et le bandeau des cookies ne s'affiche pas.
+   */
   ga4: import.meta.env.PUBLIC_GA4_ID ?? '',
+  /**
+   * Adresse de la page de réservation en ligne d'un créneau d'estimation (agenda
+   * du cabinet), en https. Tant qu'elle est vide, aucun bouton « Choisir un
+   * créneau » ne s'affiche. Elle ne sert qu'à la visite d'estimation : les visites
+   * de biens restent une demande par formulaire, le cabinet vérifiant chaque
+   * acheteur avant de le recevoir.
+   */
+  reservationEstimation: '' as string,
 } as const;
 
 /**

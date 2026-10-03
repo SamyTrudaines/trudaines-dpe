@@ -45,7 +45,17 @@ pour l'environnement **Production** et pour **Preview**.
 | `GITHUB_OAUTH_SECRET` | Secret de l'application OAuth GitHub | Secret |
 
 Sans `PUBLIC_GA4_ID`, le site fonctionne mais n'envoie aucune mesure d'audience :
-l'emplacement de la balise est prêt, il suffira de renseigner l'identifiant.
+l'emplacement de la balise est prêt, il suffira de renseigner l'identifiant. Le
+bandeau des cookies reste alors absent des pages : aucun traceur n'étant posé,
+il n'y a aucun consentement à demander. Il apparaît dès que l'identifiant est
+renseigné.
+
+Pour ouvrir la prise de rendez-vous en ligne, renseignez `reservationEstimation`
+dans `src/data/site.ts` avec l'adresse https de la page de réservation de
+l'agenda du cabinet. Le bouton « Choisir un créneau » s'affiche alors à côté des
+formulaires d'estimation (pages quartier, rue, estimation et contact). Laissé
+vide, rien ne s'affiche. Cette réservation ne concerne que la visite
+d'estimation : les visites de biens restent une demande par formulaire.
 
 ### Double opt-in des livres blancs
 

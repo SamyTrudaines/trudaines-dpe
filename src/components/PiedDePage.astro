@@ -94,6 +94,9 @@ const annee = new Date().getFullYear();
       <p class="flex flex-wrap gap-6">
         <a href="/mentions-legales" class="inline-block py-1.5 no-underline hover:underline">Mentions légales</a>
         <a href="/politique-de-confidentialite" class="inline-block py-1.5 no-underline hover:underline">Confidentialité</a>
+        {site.ga4 && (
+          <button type="button" data-cookies-ouvrir class="inline-block cursor-pointer py-1.5 hover:underline">Gérer les cookies</button>
+        )}
         <span>© {annee}</span>
       </p>
     </div>

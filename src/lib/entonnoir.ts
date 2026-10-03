@@ -16,6 +16,7 @@ import type { CollectionEntry } from 'astro:content';
  *   quartier_estimer_martyrs_lorette     clic sur un bouton « Estimer »
  *   quartier_guide_martyrs_lorette       clic sur un bouton vers le livre blanc
  *   quartier_rdv_martyrs_lorette         clic sur « Prendre rendez-vous »
+ *   quartier_creneau_martyrs_lorette     clic sur « Choisir un créneau », si la réservation est ouverte
  *   quartier_reference_martyrs_lorette   clic sur une référence
  *   quartier_estimation_martyrs_lorette  formulaire d'estimation envoyé
  *   quartier_livreblanc_martyrs_lorette  formulaire de livre blanc envoyé
