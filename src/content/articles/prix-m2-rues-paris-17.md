@@ -18,7 +18,7 @@ Le 17e se lit en trois niveaux. Sur les ventes d'appartements signées de janvie
 
 Il s'agit de médianes de ventes d'appartements signées, c'est-à-dire du prix qui sépare les ventes en deux moitiés égales. Ce qui fait le prix d'un bien, c'est d'abord l'étage, la lumière, l'état et l'immeuble. D'où l'intérêt d'une estimation sur place : la médiane d'une rue situe un appartement, elle ne le chiffre pas.
 
-## La plaine Monceau : de grandes surfaces
+## La plaine Monceau : des budgets d'un autre ordre
 
 La plaine Monceau s'étend au nord du parc Monceau. La rue de Thann, voisine du parc, ressort à 13 830 €, et le [boulevard de Courcelles](/prix-immobilier/boulevard-de-courcelles-17), qui longe le parc, à 13 230 € sur 18 ventes. Dans ces deux voies, la vente médiane porte sur de grandes surfaces : 110 m² pour 1 542 000 € boulevard de Courcelles, 112 m² pour 1 310 000 € rue de Thann. C'est un budget d'un autre ordre, pas seulement un prix au mètre carré plus haut.
 
