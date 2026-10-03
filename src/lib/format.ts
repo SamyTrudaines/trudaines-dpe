@@ -15,6 +15,23 @@ export const prixM2 = (prixBien: number, surface: number) =>
  */
 export const prixAffiche = (valeur: number) => (valeur > 0 ? prix(valeur) : 'Prix non communiqué');
 
+/**
+ * Lieu d'un bien en clair : « Paris 17e » plutôt que le code postal 75017.
+ * Hors de Paris, la commune.
+ */
+export function lieuBien(arrondissement: string, ville = 'Paris'): string {
+  const m = /^750(\d{2})$/.exec(arrondissement);
+  if (!m) return ville === 'Paris' ? arrondissement : ville;
+  const n = Number(m[1]);
+  return `Paris ${n}${n === 1 ? 'er' : 'e'}`;
+}
+
+/** Phrase de référence des prix de l'énergie, telle qu'elle figure sur le DPE. */
+export const referencePrixEnergie = (annee: number | string) =>
+  typeof annee === 'number'
+    ? `Prix moyens des énergies indexés au 1er janvier ${annee}.`
+    : `Prix moyens des énergies indexés sur les années ${annee} (abonnements compris).`;
+
 export const libelleStatut: Record<string, string> = {
   'a-vendre': 'À vendre',
   'sous-offre': 'Sous offre',

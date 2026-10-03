@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Banniere from '../components/Banniere.astro';
 import { ambiance } from '../data/ambiance';
 import FormulaireAlerte from '../components/FormulaireAlerte.astro';
-import { prixAffiche, nombre, libelleStatut } from '../lib/format';
+import { prixAffiche, nombre, libelleStatut, lieuBien } from '../lib/format';
 
 const biens = (await getCollection('biens', (b) => !b.data.offMarket && !b.data.archive)).sort(
   (a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix
@@ -15,8 +15,8 @@ const arrondissements = [...new Set(biens.map((b) => b.data.arrondissement))].so
 const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
 ---
 <Layout
-  titre="Appartements à vendre Paris 9e, 10e, 17e, 18e | Trudaines"
-  description="Les biens à la vente du cabinet Trudaines : Paris 9e nord, Montmartre, 10e et 17e. Filtrez par arrondissement, quartier, prix, surface et nombre de pièces."
+  titre="Appartements à vendre à Paris | Trudaines"
+  description="Les appartements à vendre du cabinet Trudaines à Paris : prix, surface, diagnostic énergétique et photographies, à filtrer par quartier, budget et pièces."
   filAriane={[{ nom: 'Acheter' }]}
 >
   <Banniere
@@ -48,7 +48,7 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
           <label class="etiquette" for="f-arrondissement">Arrondissement</label>
           <select class="champ" id="f-arrondissement" name="arrondissement">
             <option value="">Tous</option>
-            {arrondissements.map((a) => <option value={a}>{a}</option>)}
+            {arrondissements.map((a) => <option value={a}>{lieuBien(a)}</option>)}
           </select>
         </div>
         <div>
@@ -139,13 +139,13 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
                       Photographies à venir
                     </span>
                   )}
-                  {b.data.statut !== 'a-vendre' && (
+                  {(b.data.statut !== 'a-vendre' || b.data.mention) && (
                     <span class="absolute left-0 top-0 bg-[color:var(--color-nuit)] px-3 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-white">
-                      {libelleStatut[b.data.statut]}
+                      {b.data.statut !== 'a-vendre' ? libelleStatut[b.data.statut] : b.data.mention}
                     </span>
                   )}
                 </div>
-                <p class="surtitre mt-5">{b.data.quartier} · {b.data.arrondissement}</p>
+                <p class="surtitre mt-5">{b.data.quartier} · {lieuBien(b.data.arrondissement, b.data.ville)}</p>
                 <h2 class="titre-3 mt-2 text-[color:var(--color-encre)]">{b.data.titre}</h2>
                 <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
                   {nombre(b.data.surface)} m² · {b.data.pieces} {b.data.pieces > 1 ? 'pièces' : 'pièce'}

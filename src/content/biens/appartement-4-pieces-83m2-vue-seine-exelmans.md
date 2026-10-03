@@ -1,22 +1,28 @@
 ---
 titre: "Appartement 4 pièces 83 m² vue Seine, Exelmans"
 reference: "T-2630"
-quartier: "Exelmans"
+quartier: "Auteuil Sud"
 ville: "Paris"
 arrondissement: "75016"
-prix: 990000
+prix: 950000
 surface: 83
 pieces: 4
 chambres: 3
 etage: "7e et dernier étage"
 ascenseur: true
 dpe: D
-ges: Vierge
+ges: B
 statut: a-vendre
-offMarket: true
-archive: true
+offMarket: false
+archive: false
 ordre: 50
 honorairesCharge: vendeur
+depensesEnergieAnnee: "2021, 2022 et 2023"
+depensesEnergieMax: 2500
+depensesEnergieMin: 1810
+taxeFonciere: 1737
+charges: 3000
+mention: "Nouveau prix"
 description: "Appartement 4 pièces de 83m², 3 chambres, lumineux, traversant, en dernier étage avec vue sur la Seine, plan optimisé et DPE D, à Exelmans Paris 16e."
 photos:
   - src: /images/biens/appartement-4-pieces-83m2-vue-seine-exelmans/01.webp
@@ -53,16 +59,15 @@ Le salon dessert côté rue une cuisine dinatoire entièrement équipée et amé
 
 L’entrée dessert de l’autre côté un WC suspendu séparé avec rince mains invités, une salle d’eau rénovée avec faïence style carrelage de métro, douche à l’italienne, meuble sur mesure avec double vasque avec plan en marbre. La cabine de douche est dotée d'une alcôve de rangement sur mesure.
 
-Le dégagement conduit à une deuxième chambre bureau avec vue sur les toits et soleil du matin. Ce même dégagement dessert au fond une troisième chambre, après la salle d’eau et la chambre deux, au fond côté cour, une troisième chambre.
+Le dégagement conduit à une deuxième chambre bureau avec vue sur les toits et soleil du matin, puis, au fond côté cour, à une troisième chambre.
 
 L’appartement est confortable par son double vitrage et ses doublages d’isolation.
 
-DPE D avec chauffage électrique (237Kwh/m²/an. Local à vélos et cave. Charges basses à seulement 750€ par trimestre.
+DPE D avec chauffage électrique (237 kWh/m²/an). Local à vélos et cave. Charges basses à seulement 750€ par trimestre.
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/182-appartement-3-chambres-83m-vue-sur-seine-dernier-etage le 2026-09-18.
-     Statut affiché sur l'ancien site : Coup de coeur.
-     Titre d'origine sur l'ancien site : « Appartement 3 chambres 83m², vue sur Seine, dernier étage ».
-     À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
-     taxe foncière, lots de copropriété, puis passer offMarket à false. -->
+     Remis en vente sur le site le 2026-10-03 : prix ramené de 990 000 à 950 000 euros ce jour.
+     DPE, dépenses d'énergie, charges et taxe foncière relevés sur l'annonce en ligne le 2026-10-03.
+     À compléter : nombre de lots de la copropriété, procédure en cours ou non. -->
