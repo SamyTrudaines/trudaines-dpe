@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { prixAffiche, lieuBien, faitsBien } from '../lib/format';
+import { prixAffiche, lieuBien, faitsBien, nombre } from '../lib/format';
 import { jeuPhoto } from '../lib/images';
 
 /**
@@ -85,6 +85,7 @@ const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
                 )}
                 <span class="vitrine-vignette-lieu">{lieuBien(d.arrondissement, d.ville)}</span>
                 <span class="vitrine-vignette-prix">{prixAffiche(d.prix)}</span>
+                <span class="vitrine-vignette-surface">{nombre(d.surface)} m²</span>
               </button>
             </li>
           );

@@ -992,3 +992,4 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 .vitrine-vignettes img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
 .vitrine-vignette-lieu { font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-ardoise); }
 .vitrine-vignette-prix { font-size: 0.9rem; font-weight: 600; color: var(--color-encre); }
+.vitrine-vignette-surface { margin-top: -0.25rem; font-size: 0.8rem; color: var(--color-ardoise); }
