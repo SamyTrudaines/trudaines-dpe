@@ -28,14 +28,25 @@ const biens = defineCollection({
      */
     depensesEnergieMin: z.number().optional(),
     depensesEnergieMax: z.number().optional(),
-    depensesEnergieAnnee: z.number().optional(),
+    /**
+     * Référence des prix de l'énergie, recopiée du DPE : une année quand les prix
+     * sont indexés au 1er janvier de cette année (2022), un texte quand ils le
+     * sont sur plusieurs années ("2021, 2022 et 2023").
+     */
+    depensesEnergieAnnee: z.union([z.number(), z.string()]).optional(),
     lotsCopropriete: z.number().optional(),
-    procedureCopropriete: z.boolean().default(false),
+    /** Laissé vide tant que l'état de la copropriété n'a pas été vérifié : rien n'est alors affiché. */
+    procedureCopropriete: z.boolean().optional(),
     honorairesCharge: z.enum(['vendeur', 'acquéreur']).default('vendeur'),
     honorairesTaux: z.string().optional(),
     description: z.string(),
     photos: z.array(z.object({ src: z.string(), alt: z.string() })).default([]),
     statut: z.enum(['a-vendre', 'sous-offre', 'vendu']).default('a-vendre'),
+    /**
+     * Courte mention posée sur la photographie et la fiche d'un bien à vendre,
+     * par exemple "Nouveau prix". Un fait, jamais un argument de vente.
+     */
+    mention: z.string().max(24).optional(),
     visiteVirtuelle: z.string().url().optional(),
     offMarket: z.boolean().default(false),
     /**

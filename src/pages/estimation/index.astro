@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import EstimationImmediate from '../../components/EstimationImmediate.astro';
+import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import { secteurs } from '../../data/secteurs';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
@@ -106,6 +107,11 @@ const donnees = [
           <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Aucune signature le jour de la visite.</li>
           <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Rappel sous 24 heures ouvrées par Samy Santamarina. Sans frais.</li>
         </ul>
+        <BoutonCreneau
+          class="mt-10"
+          evt="estimation_creneau"
+          intro="Vous préférez choisir le jour et l'heure de la visite d'estimation ?"
+        />
       </div>
       <FormulaireEstimation identifiant="avis-de-valeur" />
     </div>

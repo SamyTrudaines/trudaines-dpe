@@ -1,47 +1,89 @@
 ---
+import { site } from '../data/site';
+
+/**
+ * Bandeau de consentement à la mesure d'audience.
+ *
+ * Il n'existe que si la mesure d'audience existe : sans identifiant GA4
+ * (site.ga4), aucun traceur n'est posé, donc rien à consentir, et ni le
+ * bandeau ni son script ne sont écrits dans la page.
+ *
+ * Il doit se faire oublier : une barre fine sur téléphone, juste au dessus de
+ * la barre mobile, une petite carte en bas à droite sur ordinateur, à l'écart
+ * des boutons des pages, alignés à gauche (styles .cookies de
+ * src/styles/global.css). « Refuser » et « Accepter » portent le
+ * même style, la même taille et la même ligne.
+ *
+ * Le choix est lu par public/js/analytics.js : même clé de localStorage
+ * (trudaines-consentement), mêmes valeurs (accepte, refuse).
+ */
+const actif = Boolean(site.ga4);
 ---
-<div
-  id="bandeau-cookies"
-  hidden
-  role="dialog"
-  aria-live="polite"
-  aria-label="Gestion des cookies"
-  class="fixed bottom-[4.5rem] left-0 right-0 z-50 border-y border-[color:var(--color-trait)] bg-white md:bottom-6 md:left-6 md:right-auto md:max-w-md md:border"
->
-  <div class="p-6">
-    <p class="text-sm text-[color:var(--color-encre)]">
-      Nous utilisons une mesure d'audience anonyme pour comprendre ce qui est utile sur ce site. Aucun cookie publicitaire.
-      Vous pouvez refuser sans conséquence sur votre navigation.
-    </p>
-    <div class="mt-6 flex flex-wrap gap-3">
-      <button type="button" class="bouton" data-cookies="accepte">Accepter</button>
-      <button type="button" class="bouton bouton-secondaire" data-cookies="refuse">Refuser</button>
-      <a href="/politique-de-confidentialite" class="self-center text-xs lien-souligne">En savoir plus</a>
+{actif && (
+  <>
+    <div
+      id="bandeau-cookies"
+      class="cookies"
+      hidden
+      role="region"
+      aria-label="Mesure d'audience et cookies"
+    >
+      <p class="cookies-texte">
+        Ce site mesure son audience de façon anonyme, sans publicité.{' '}
+        <a href="/politique-de-confidentialite" class="lien-souligne">En savoir plus</a>
+      </p>
+      <div class="cookies-boutons">
+        <button type="button" class="bouton bouton-secondaire" data-cookies="accepte">Accepter</button>
+        <button type="button" class="bouton bouton-secondaire" data-cookies="refuse">Refuser</button>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
-  const cle = 'trudaines-consentement';
-  const bandeau = document.getElementById('bandeau-cookies');
-  if (bandeau) {
-    let choix: string | null = null;
-    try {
-      choix = localStorage.getItem(cle);
-    } catch (e) {}
-    if (!choix) bandeau.hidden = false;
+    <script>
+      const cle = 'trudaines-consentement';
+      const bandeau = document.getElementById('bandeau-cookies');
+      if (bandeau) {
+        let choix: string | null = null;
+        try {
+          choix = localStorage.getItem(cle);
+        } catch (e) {}
 
-    bandeau.addEventListener('click', (evt) => {
-      const cible = evt.target instanceof Element ? evt.target.closest('[data-cookies]') : null;
-      const valeur = cible?.getAttribute('data-cookies');
-      if (!valeur) return;
-      try {
-        localStorage.setItem(cle, valeur);
-      } catch (e) {}
-      if (valeur === 'accepte') {
-        window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
+        const racine = document.documentElement;
+        // Tant que le bandeau est ouvert, sa hauteur est réservée en bas de page : le pied reste lisible.
+        const reserver = () => racine.style.setProperty('--cookies-hauteur', `${bandeau.offsetHeight}px`);
+
+        const montrer = () => {
+          bandeau.hidden = false;
+          racine.setAttribute('data-cookies-ouvert', '');
+          reserver();
+          window.addEventListener('resize', reserver, { passive: true });
+          // Deux images plus tard, pour que la transition parte de l'état masqué.
+          requestAnimationFrame(() => requestAnimationFrame(() => bandeau.setAttribute('data-visible', '')));
+        };
+
+        // Un court délai : le visiteur voit d'abord la page, le bandeau vient ensuite.
+        if (!choix) window.setTimeout(montrer, 1200);
+
+        // « Gérer les cookies », en pied de page : revenir sur son choix aussi simplement qu'on l'a donné.
+        document.addEventListener('click', (evt) => {
+          if (evt.target instanceof Element && evt.target.closest('[data-cookies-ouvrir]') && bandeau.hidden) montrer();
+        });
+
+        bandeau.addEventListener('click', (evt) => {
+          const cible = evt.target instanceof Element ? evt.target.closest('[data-cookies]') : null;
+          const valeur = cible?.getAttribute('data-cookies');
+          if (!valeur) return;
+          try {
+            localStorage.setItem(cle, valeur);
+          } catch (e) {}
+          // Le choix vaut dans les deux sens : un refus après un accord retire la mesure aussitôt.
+          window.gtag?.('consent', 'update', { analytics_storage: valeur === 'accepte' ? 'granted' : 'denied' });
+          bandeau.hidden = true;
+          bandeau.removeAttribute('data-visible');
+          racine.removeAttribute('data-cookies-ouvert');
+          racine.style.removeProperty('--cookies-hauteur');
+          window.removeEventListener('resize', reserver);
+        });
       }
-      bandeau.hidden = true;
-    });
-  }
-</script>
+    </script>
+  </>
+)}

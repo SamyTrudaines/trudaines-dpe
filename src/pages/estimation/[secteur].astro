@@ -3,11 +3,13 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import TableauPrix from '../../components/TableauPrix.astro';
 import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
+import { evt } from '../../lib/entonnoir';
 
 interface Props { secteur: Secteur }
 
@@ -66,6 +68,11 @@ const donnees = [
           Estimation appartement {secteur.nom}, estimation maison et immeuble, vente maison {secteur.nom} :
           la méthode est la même, seule la base de comparaison change.
         </p>
+        <BoutonCreneau
+          class="mt-10"
+          evt={evt('estimation', 'creneau', secteur.slug)}
+          intro="Vous préférez choisir le jour et l'heure de la visite d'estimation ?"
+        />
       </div>
       <FormulaireEstimation secteur={secteur.slug} identifiant={`estimation-${secteur.slug}`} />
     </div>

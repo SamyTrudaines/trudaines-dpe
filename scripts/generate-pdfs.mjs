@@ -433,7 +433,9 @@ async function genererFiche(fichier) {
       ...(data.charges ? [['Charges annuelles', euros.format(data.charges)]] : []),
       ...(data.taxeFonciere ? [['Taxe foncière', euros.format(data.taxeFonciere)]] : []),
       ...(data.lotsCopropriete ? [['Lots de la copropriété', String(data.lotsCopropriete)]] : []),
-      ['Procédure en cours dans la copropriété', data.procedureCopropriete ? 'Oui' : 'Non'],
+      ...(typeof data.procedureCopropriete === 'boolean'
+        ? [['Procédure en cours dans la copropriété', data.procedureCopropriete ? 'Oui' : 'Non']]
+        : []),
       ['Classe énergie', data.dpe === 'Vierge' ? 'Non communiquée' : data.dpe],
       ['Classe climat', data.ges === 'Vierge' ? 'Non communiquée' : data.ges],
     ],
@@ -446,7 +448,7 @@ async function genererFiche(fichier) {
     'Performance énergétique',
     `Classe énergie ${data.dpe === 'Vierge' ? 'non communiquée' : data.dpe}, classe climat ${data.ges === 'Vierge' ? 'non communiquée' : data.ges}. ` +
       (depensesConnues
-        ? `Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre ${nombres.format(data.depensesEnergieMin)} et ${nombres.format(data.depensesEnergieMax)} € par an, prix moyens des énergies indexés au 1er janvier ${data.depensesEnergieAnnee}.`
+        ? `Montant estimé des dépenses annuelles d’énergie pour un usage standard : entre ${nombres.format(data.depensesEnergieMin)} et ${nombres.format(data.depensesEnergieMax)} € par an, prix moyens des énergies indexés ${typeof data.depensesEnergieAnnee === 'number' ? `au 1er janvier ${data.depensesEnergieAnnee}` : `sur les années ${data.depensesEnergieAnnee} (abonnements compris)`}.`
         : 'Montant estimé des dépenses annuelles d’énergie non communiqué à ce stade, remis avec le diagnostic complet.') +
       (['F', 'G'].includes(data.dpe) ? ' Logement à consommation énergétique excessive.' : '')
   );
@@ -479,7 +481,9 @@ async function principal() {
     const chemin = join(dossierBiens, nom);
     // Un mandat archivé n'a pas de dossier à envoyer : le bien n'est plus
     // proposé, et un PDF qui porte encore un prix redeviendrait une annonce.
-    if (/^archive:\s*true$/m.test(readFileSync(chemin, 'utf8'))) continue;
+    // Un bien encore en relecture (offMarket) n'en a pas non plus.
+    const texte = readFileSync(chemin, 'utf8');
+    if (/^archive:\s*true$/m.test(texte) || /^offMarket:\s*true$/m.test(texte)) continue;
     produits.push(await genererFiche(chemin));
   }
   for (const nom of readdirSync(dossierGuides).filter((f) => f.endsWith('.md'))) {

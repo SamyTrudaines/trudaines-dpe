@@ -1,0 +1,41 @@
+---
+import { site } from '../data/site';
+
+/**
+ * « Choisir un créneau » : réservation en ligne de la visite d'estimation,
+ * posée à côté du formulaire d'estimation et jamais à sa place. Tant que
+ * site.reservationEstimation est vide, rien n'est rendu.
+ *
+ * Elle ne concerne que l'estimation. Les visites de biens restent une demande
+ * par formulaire : le cabinet vérifie chaque acheteur avant de le recevoir, une
+ * réservation libre irait contre cette promesse.
+ */
+interface Props {
+  /** Nom d'événement (data-evt) du clic, dans la convention de src/lib/entonnoir.ts. */
+  evt: string;
+  /** Phrase propre à la page, posée avant le bouton. */
+  intro?: string;
+  class?: string;
+}
+const { evt, intro, class: classe } = Astro.props;
+
+const adresse = site.reservationEstimation.trim();
+// Une adresse sans https:// deviendrait un lien relatif cassé : mieux vaut arrêter la construction.
+if (adresse && !/^https:\/\/\S+$/.test(adresse)) {
+  throw new Error(`site.reservationEstimation doit être une adresse en https://, reçu : ${adresse}`);
+}
+---
+{adresse && (
+  <div class={classe}>
+    {intro && <p class="text-sm text-[color:var(--color-ardoise)]">{intro}</p>}
+    <a
+      href={adresse}
+      target="_blank"
+      rel="noopener"
+      data-evt={evt}
+      class:list={['bouton bouton-secondaire w-full sm:w-auto', intro && 'mt-4']}
+    >
+      Choisir un créneau<span class="sr-only"> (s'ouvre dans un nouvel onglet)</span>
+    </a>
+  </div>
+)}

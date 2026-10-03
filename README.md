@@ -133,6 +133,7 @@ scripts/         génération des PDF, import de l'ancien site, recette
 | `npm run fiches` | Régénère uniquement les PDF des biens et des guides |
 | `npm run verifier` | Vérifie liens, images, balises SEO, données structurées, redirections |
 | `npm run test-formulaires` | Teste les sept formulaires sans appel réseau réel |
+| `npm run verifier-mobile` | Ouvre vingt pages à 360, 390, 768, 1024 et 1440 px : débordements (erreur), textes sous 12 px et cibles tactiles sous 40 px (avertissements). Demande `npm run build` d'abord |
 | `npm run check` | Contrôle les types, zéro erreur attendue |
 | `node scripts/importer-ancien-site.mjs` | Importe les annonces et articles de l'ancien site |
 | `python3 scripts/prix-dvf.py` | Recalcule les prix au m² par quartier sur les ventes signées |

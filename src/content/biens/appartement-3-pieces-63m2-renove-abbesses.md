@@ -10,14 +10,17 @@ pieces: 3
 chambres: 1
 etage: "3e étage"
 ascenseur: false
-dpe: Vierge
-ges: Vierge
+dpe: D
+ges: B
 statut: a-vendre
-offMarket: true
-archive: true
+offMarket: false
+archive: false
 ordre: 50
 honorairesCharge: vendeur
-description: "Appartement 3 pièces lumnieux, rénové et modulable, 61 m², Paris 18e, Abbesses, cœur de Montmartre Idéalement situé à environ 3 min à pied du métro Abbesses (ligne 12), rue des Trois Frères, l'une des plus jolies rues de Montmartre, à deux pas de la place des Abbesses, de la Halle Saint-Pierre et…"
+depensesEnergieAnnee: 2022
+depensesEnergieMax: 1300
+depensesEnergieMin: 1000
+description: "Appartement 3 pièces lumineux, rénové et modulable, 61 m², Paris 18e, Abbesses, cœur de Montmartre Idéalement situé à environ 3 min à pied du métro Abbesses (ligne 12), rue des Trois Frères, l'une des plus jolies rues de Montmartre, à deux pas de la place des Abbesses, de la Halle Saint-Pierre et…"
 photos:
   - src: /images/biens/appartement-3-pieces-63m2-renove-abbesses/01.webp
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
@@ -41,7 +44,7 @@ photos:
     alt: "Appartement 3 pièces 63 m² rénové, Abbesses"
 ---
 
-Appartement 3 pièces lumnieux, rénové et modulable, 61 m², Paris 18e, Abbesses, cœur de Montmartre
+Appartement 3 pièces lumineux, rénové et modulable, 61 m², Paris 18e, Abbesses, cœur de Montmartre
 
 Idéalement situé à environ 3 min à pied du métro Abbesses (ligne 12), rue des Trois Frères, l'une des plus jolies rues de Montmartre, à deux pas de la place des Abbesses, de la Halle Saint-Pierre et de tous les commerces.
 
@@ -57,7 +60,6 @@ Ses + :
 7. Sécurité & confort : Porte blindée 3 points, compteur neuf, double vitrage
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/172-appartement-etage-eleve-63m-3-pieces-lumineux-montmartre le 2026-09-18.
-     Statut affiché sur l'ancien site : Nouveauté.
-     Titre d'origine sur l'ancien site : « Appartement étage élevé, 63m², 3 pièces, lumineux, Montmartre ».
-     À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
-     taxe foncière, lots de copropriété, puis passer offMarket à false. -->
+     Remis en vente sur le site le 2026-10-03, DPE et dépenses d'énergie relevés sur l'annonce en ligne ce jour.
+     À vérifier : surface (63 m² au titre, 61 m² dans le texte), étage (2 sur l'ancienne fiche,
+     3e dans le texte), charges, taxe foncière, lots de la copropriété, procédure en cours ou non. -->

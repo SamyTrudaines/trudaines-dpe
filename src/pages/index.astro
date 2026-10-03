@@ -13,7 +13,7 @@ import ReferencesAccueil from '../components/ReferencesAccueil.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
-  .slice(0, 3);
+  .slice(0, 4);
 
 /** Mandats passés : la preuve du travail accompli, sans prix ni disponibilité. */
 const mandats = await getCollection('biens', (b) => b.data.archive);
@@ -100,19 +100,24 @@ const engagements = [
         </div>
         <div class="mt-12 grid gap-x-12 gap-y-16 md:grid-cols-2">
           {biens.map((b, n) => (
-            <CarteBien
-              id={b.id}
-              titre={b.data.titre}
-              quartier={b.data.quartier}
-              arrondissement={b.data.arrondissement}
-              prixBien={b.data.prix}
-              surface={b.data.surface}
-              pieces={b.data.pieces}
-              statut={b.data.statut}
-              photo={b.data.photos[0]}
-              chargement={n === 0 ? 'eager' : 'lazy'}
-              vitrine
-            />
+            <div class={biens.length % 2 === 1 && n === 0 ? 'md:col-span-2' : undefined}>
+              <CarteBien
+                id={b.id}
+                titre={b.data.titre}
+                quartier={b.data.quartier}
+                arrondissement={b.data.arrondissement}
+                ville={b.data.ville}
+                prixBien={b.data.prix}
+                surface={b.data.surface}
+                pieces={b.data.pieces}
+                statut={b.data.statut}
+                photo={b.data.photos[0]}
+                chargement={n === 0 ? 'eager' : 'lazy'}
+                mention={b.data.mention}
+                vitrine
+                une={biens.length % 2 === 1 && n === 0}
+              />
+            </div>
           ))}
         </div>
       </div>

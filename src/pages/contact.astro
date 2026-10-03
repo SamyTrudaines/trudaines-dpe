@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormulaireContact from '../components/FormulaireContact.astro';
+import BoutonCreneau from '../components/BoutonCreneau.astro';
 import { site } from '../data/site';
 ---
 <Layout
@@ -17,6 +18,11 @@ import { site } from '../data/site';
           Un appel de quinze minutes suffit souvent à y voir clair. Nous répondons sous 24 heures ouvrées, y compris
           aux demandes qui ne débouchent pas sur un mandat.
         </p>
+        <BoutonCreneau
+          class="mt-8"
+          evt="contact_creneau"
+          intro="Pour faire estimer un bien, vous pouvez aussi choisir vous-même le jour et l'heure de la visite."
+        />
         <dl class="mt-12 space-y-8">
           <div class="border-t border-[color:var(--color-encre)] pt-4">
             <dt class="surtitre">Adresse</dt>

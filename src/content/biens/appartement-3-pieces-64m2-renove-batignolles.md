@@ -11,12 +11,13 @@ chambres: 1
 etage: "2e étage"
 ascenseur: false
 dpe: D
-ges: Vierge
+ges: B
 statut: a-vendre
 offMarket: true
-archive: true
+archive: false
 ordre: 50
 honorairesCharge: vendeur
+taxeFonciere: 1750
 description: "Trudaines vous présente en exclusivité, au cœur du village des Batignolles, rue des Dames, un trois pièces de 64 m² au deuxième étage par escalier d'un immeuble ancien, dans une copropriété à taille humaine."
 photos:
   - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/01.webp
@@ -60,7 +61,8 @@ Emplacement recherché, rénovation intégrale, et rareté du double accès : un
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d le 2026-09-18.
-     Statut affiché sur l'ancien site : Exclusif.
-     Titre d'origine sur l'ancien site : « Appartement 3 pièces, 64m², Batignolles, Paris 17, rénové DPE D ».
-     À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
-     taxe foncière, lots de copropriété, puis passer offMarket à false. -->
+     En vente au 2026-10-03, mais pas encore diffusé : l'annonce doit porter le montant estimé des
+     dépenses annuelles d'énergie du DPE établi après la réunion des deux lots (classe D, 226 kWh,
+     classe climat B, 8 kg). Le DPE de 2024 du seul lot 5 (37 m², classe F) ne vaut pas pour ce bien.
+     Renseigner depensesEnergieMin, depensesEnergieMax, depensesEnergieAnnee, passer offMarket à false
+     et rétablir dans public/_redirects la redirection 301 de l'ancienne adresse vers cette fiche. -->

@@ -5,15 +5,20 @@ import Layout from '../../layouts/Layout.astro';
 import FormulaireVisite from '../../components/FormulaireVisite.astro';
 import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import CarteBien from '../../components/CarteBien.astro';
-import { prix, prixAffiche, nombre, prixM2, libelleStatut } from '../../lib/format';
+import { prix, prixAffiche, nombre, prixM2, libelleStatut, lieuBien, referencePrixEnergie } from '../../lib/format';
 import { site } from '../../data/site';
 import { titreSeo, descriptionSeo } from '../../lib/seo';
 import { jeuPhoto, TAILLES_FICHE, TAILLES_GALERIE } from '../../lib/images';
 
 interface Props { bien: CollectionEntry<'biens'> }
 
+/*
+ * Un bien en vente encore en relecture (offMarket) n'a pas de page : tant que
+ * ses mentions obligatoires ne sont pas réunies, il ne doit pas être publié,
+ * même à une adresse que personne ne connaît.
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const biens = await getCollection('biens');
+  const biens = await getCollection('biens', (b) => b.data.archive || !b.data.offMarket);
   return biens.map((b) => ({ params: { bien: b.id }, props: { bien: b } }));
 };
 
@@ -98,7 +103,7 @@ const donnees = [
   <section class="section pt-10">
     <div class="conteneur grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
       <div>
-        <p class="surtitre">{d.quartier} · {d.ville} {d.arrondissement} · Réf. {d.reference}</p>
+        <p class="surtitre">{d.quartier} · {lieuBien(d.arrondissement, d.ville)} · Réf. {d.reference}</p>
         <h1 class="titre-1 mt-5">{d.titre}</h1>
         {archive ? (
           <>
@@ -114,9 +119,9 @@ const donnees = [
           <>
             <p class="mt-6 text-2xl font-semibold text-[color:var(--color-nuit)]">
               {prixAffiche(d.prix)}
-              {d.statut !== 'a-vendre' && (
+              {(d.statut !== 'a-vendre' || d.mention) && (
                 <span class="ml-4 align-middle text-xs font-semibold uppercase tracking-[0.16em] text-[color:var(--color-ardoise)]">
-                  {libelleStatut[d.statut]}
+                  {d.statut !== 'a-vendre' ? libelleStatut[d.statut] : d.mention}
                 </span>
               )}
             </p>
@@ -231,10 +236,12 @@ const donnees = [
           {d.lotsCopropriete !== undefined && (
             <div class="flex justify-between gap-6 py-3"><dt class="text-[color:var(--color-ardoise)]">Lots dans la copropriété</dt><dd>{d.lotsCopropriete}</dd></div>
           )}
-          <div class="flex justify-between gap-6 py-3">
-            <dt class="text-[color:var(--color-ardoise)]">Procédure en cours</dt>
-            <dd>{d.procedureCopropriete ? 'Oui' : 'Non'}</dd>
-          </div>
+          {d.procedureCopropriete !== undefined && (
+            <div class="flex justify-between gap-6 py-3">
+              <dt class="text-[color:var(--color-ardoise)]">Procédure en cours</dt>
+              <dd>{d.procedureCopropriete ? 'Oui' : 'Non'}</dd>
+            </div>
+          )}
         </dl>
 
         {archive ? (
@@ -281,7 +288,7 @@ const donnees = [
         )}
         <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
           {depensesConnues
-            ? `Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre ${nombre(d.depensesEnergieMin!)} et ${nombre(d.depensesEnergieMax!)} € par an. Prix moyens des énergies indexés au 1er janvier ${d.depensesEnergieAnnee}.`
+            ? `Montant estimé des dépenses annuelles d'énergie pour un usage standard : entre ${nombre(d.depensesEnergieMin!)} et ${nombre(d.depensesEnergieMax!)} € par an. ${referencePrixEnergie(d.depensesEnergieAnnee!)}`
             : "Montant estimé des dépenses annuelles d'énergie : non communiqué à ce stade. Il vous est remis avec le diagnostic complet, sur demande."}
         </p>
         {['F', 'G'].includes(d.dpe) && (
@@ -312,10 +319,12 @@ const donnees = [
               titre={b.data.titre}
               quartier={b.data.quartier}
               arrondissement={b.data.arrondissement}
+              ville={b.data.ville}
               prixBien={b.data.prix}
               surface={b.data.surface}
               pieces={b.data.pieces}
               statut={b.data.statut}
+              mention={b.data.mention}
               photo={b.data.photos[0]}
               sansPrix={archive}
             />

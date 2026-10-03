@@ -3,7 +3,7 @@ import { site } from '../data/site';
 interface Props { ancreEstimation?: string; evtEstimation?: string }
 const { ancreEstimation, evtEstimation } = Astro.props;
 ---
-<div class="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 border-t border-[color:var(--color-trait)] bg-white md:hidden">
+<div data-barre-mobile class="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 border-t border-[color:var(--color-trait)] bg-white md:hidden">
   <a href={ancreEstimation ?? '/estimation'} data-evt={evtEstimation} class="flex min-h-[4rem] items-center justify-center bg-[color:var(--color-nuit)] px-2 text-center text-[0.8125rem] font-semibold text-white no-underline">
     Estimer
   </a>

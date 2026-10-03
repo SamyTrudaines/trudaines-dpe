@@ -29,8 +29,8 @@ const euros = (valeur: number) => `${nombre(valeur)} €`;
     <p class="text-sm text-[color:var(--color-ardoise)]" data-compte aria-live="polite">{rues.length} {rues.length > 1 ? 'rues' : 'rue'}</p>
     <div data-tris hidden aria-controls={identifiant} class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
       <span class="text-[color:var(--color-ardoise)]">Trier</span>
-      <button type="button" data-tri="nom" aria-pressed="true" class="border-b border-transparent py-1 aria-pressed:border-[color:var(--color-encre)] aria-pressed:font-semibold">De A à Z</button>
-      <button type="button" data-tri="prix" aria-pressed="false" class="border-b border-transparent py-1 aria-pressed:border-[color:var(--color-encre)] aria-pressed:font-semibold">Du plus cher au moins cher</button>
+      <button type="button" data-tri="nom" aria-pressed="true" class="border-b border-transparent py-2 aria-pressed:border-[color:var(--color-encre)] aria-pressed:font-semibold">De A à Z</button>
+      <button type="button" data-tri="prix" aria-pressed="false" class="border-b border-transparent py-2 aria-pressed:border-[color:var(--color-encre)] aria-pressed:font-semibold">Du plus cher au moins cher</button>
     </div>
   </div>
 

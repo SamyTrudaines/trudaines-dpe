@@ -1,5 +1,6 @@
 ---
 import FormulaireEstimation from './FormulaireEstimation.astro';
+import BoutonCreneau from './BoutonCreneau.astro';
 
 /**
  * Module d'estimation des pages quartier et rue : l'argument, puis le
@@ -19,6 +20,8 @@ interface Props {
   origine: string;
   /** Événement (data-evt) de l'envoi réussi. */
   evt: string;
+  /** Événement (data-evt) du clic sur « Choisir un créneau », quand la réservation en ligne est ouverte. */
+  evtCreneau: string;
   /** Phrase chiffrée, déjà rédigée par la page. */
   donnee: string;
   /** Lien vers la page d'estimation du secteur, avec son événement. */
@@ -26,7 +29,7 @@ interface Props {
   /** Deux colonnes (texte, formulaire) ou empilé, pour une colonne étroite. */
   disposition?: 'colonnes' | 'empile';
 }
-const { identifiant, secteur, quartier = '', origine, evt, donnee, lienSecteur, disposition = 'colonnes' } = Astro.props;
+const { identifiant, secteur, quartier = '', origine, evt, evtCreneau, donnee, lienSecteur, disposition = 'colonnes' } = Astro.props;
 const colonnes = disposition === 'colonnes';
 ---
 <div class={colonnes ? 'grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start' : ''}>
@@ -51,6 +54,11 @@ const colonnes = disposition === 'colonnes';
         et sans engagement.
       </p>
     )}
+    <BoutonCreneau
+      class="mt-8"
+      evt={evtCreneau}
+      intro="Vous préférez choisir le jour et l'heure de la visite d'estimation ?"
+    />
     {lienSecteur && (
       <p class="mt-8 text-sm">
         <a href={lienSecteur.href} data-evt={lienSecteur.evt} class="lien-souligne">{lienSecteur.libelle}</a>

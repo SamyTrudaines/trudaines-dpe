@@ -10,6 +10,7 @@
     "check": "astro check",
     "fiches": "node scripts/generate-pdfs.mjs",
     "verifier": "node scripts/verifier.mjs",
+    "verifier-mobile": "node scripts/verifier-mobile.mjs",
     "test-formulaires": "node scripts/test-formulaires.mjs",
     "avis-google": "node scripts/importer-avis-google.mjs",
     "test-mise-en-ligne": "node scripts/test-mise-en-ligne.mjs",
@@ -29,6 +30,7 @@
     "@pdf-lib/fontkit": "^1.1.1",
     "gray-matter": "^4.0.3",
     "pdf-lib": "^1.17.1",
+    "playwright-core": "1.63.0",
     "sharp": "^0.35.4",
     "typescript": "^6.0.3"
   }
