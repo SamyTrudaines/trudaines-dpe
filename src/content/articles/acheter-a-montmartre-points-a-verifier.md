@@ -19,7 +19,7 @@ Le marché du quartier est décrit sur [la page Montmartre](/quartiers/montmartr
 
 ## L'immeuble : escaliers, ascenseur, diagnostics
 
-Les immeubles anciens de la Butte ont des escaliers étroits et rarement un ascenseur. Montez à pied, chargé, et demandez-vous si le trajet vous convient dans dix ans.
+Les immeubles anciens de la Butte ont souvent des escaliers étroits et rarement un ascenseur. Montez à pied, chargé, et demandez-vous si le trajet vous convient dans dix ans.
 
 Si l'immeuble a un ascenseur, demandez le rapport du dernier contrôle technique, qui doit être refait tous les cinq ans, et le contrat d'entretien. S'il n'en a pas, ne comptez pas sur un ascenseur à venir : l'installer suppose une décision de l'assemblée générale, de la place et un financement.
 
@@ -47,7 +47,7 @@ Sur une pente, le niveau d'un rez-de-chaussée peut différer entre la rue et la
 
 ## Pentes et accès
 
-La Butte se monte. Testez le trajet depuis la station de métro, chargé, puis par temps de pluie. Certaines voies sont des escaliers et aucun véhicule n'y passe : pour un déménagement ou une livraison, vérifiez qu'un camion peut approcher l'immeuble et qu'un meuble passe dans l'escalier. À Paris, un déménagement qui occupe la voie publique se déclare à l'avance auprès de la Ville.
+La Butte se monte. Testez le trajet depuis la station de métro, chargé, puis par temps de pluie. Certaines voies sont des escaliers et aucun véhicule n'y passe : pour un déménagement ou une livraison, vérifiez qu'un camion peut approcher l'immeuble et qu'un meuble passe dans l'escalier. À Paris, un déménagement qui occupe la voie publique fait l'objet d'une demande préalable auprès de la Ville.
 
 ## Les rues très fréquentées
 
@@ -57,7 +57,7 @@ Les abords du Sacré-Cœur et de la place du Tertre sont des lieux de visite. Le
 
 Si vous comptez louer en courte durée, trois vérifications s'imposent avant l'offre.
 
-La règle de la Ville d'abord. À Paris, tout meublé de tourisme doit être déclaré et porter un numéro d'enregistrement. Depuis le 1er janvier 2025, une résidence principale ne peut être louée que 90 jours par an. Tout autre logement exige une autorisation de changement d'usage, qui peut être assortie d'une compensation.
+La règle de la Ville d'abord. À Paris, tout meublé de tourisme doit être déclaré et porter un numéro d'enregistrement. Depuis le 1er janvier 2025, une résidence principale ne peut être louée en meublé de tourisme que 90 jours par an. Tout autre logement exige une autorisation de changement d'usage, qui peut être assortie d'une compensation.
 
 Le règlement de copropriété ensuite. Depuis la loi du 19 novembre 2024, une assemblée générale peut interdire la location en meublé de tourisme des logements qui ne sont pas des résidences principales, à la majorité des copropriétaires représentant au moins les deux tiers des voix, dans les copropriétés dont le règlement interdit déjà toute activité commerciale. Le Conseil constitutionnel a jugé cette règle conforme à la Constitution le 19 mars 2026.
 
@@ -75,7 +75,7 @@ Pas forcément, mais il faut les tester. Visitez à plusieurs moments de la sema
 
 ### Le sous-sol de la Butte pose-t-il un risque ?
 
-La Butte a été exploitée pour son gypse, à ciel ouvert et en souterrain. La Ville de Paris suit les anciennes carrières par son Inspection générale des carrières, qui prévient aussi les risques liés à la dissolution du gypse. L'état des risques joint à l'avant-contrat indique si l'adresse est concernée par un plan de prévention des risques. Lisez-le, et posez la question au notaire si un point reste flou.
+C'est un point à vérifier, comme les autres. La Butte a été exploitée pour son gypse, à ciel ouvert et en souterrain. La Ville de Paris suit les anciennes carrières par son Inspection générale des carrières, qui prévient aussi les risques liés à la dissolution du gypse. L'état des risques joint à l'avant-contrat indique si l'adresse est concernée par un plan de prévention des risques. Lisez-le, et posez la question au notaire si un point reste flou.
 
 ### Que lire en priorité dans les procès-verbaux ?
 
