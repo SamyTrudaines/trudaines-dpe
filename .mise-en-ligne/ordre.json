@@ -1,6 +1,6 @@
 {
-  "mode": "recette",
-  "motif": "Recette de production après la mise en ligne du 3 octobre 2026",
+  "mode": "audit",
+  "motif": "trudaines.com en ligne depuis le 3 octobre 2026, recette réussie : lecture seule par défaut",
   "confirmation": "",
   "sauvegarde": {
     "www": [

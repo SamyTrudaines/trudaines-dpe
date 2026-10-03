@@ -25,6 +25,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   marqueur que la recette de mise en ligne cherche sur la page (`scripts/mise-en-ligne/config.mjs`).
 
 ## Repères
+- trudaines.com est en ligne depuis le 3 octobre 2026 (recette réussie) : www sur Cloudflare Pages,
+  racine redirigée en 301 par Gandi, production Cloudflare sur la branche main. La clé Brevo des
+  secrets GitHub est aussi celle des formulaires dans Cloudflare : ne pas la révoquer sans la remplacer.
 - Coordonnées, navigation, réglages : `src/data/site.ts`.
 - Rues : `src/data/rues.json`, `src/data/rues-geo.json` (`scripts/geocoder-rues.mjs`),
   rattachement aux quartiers dans `src/lib/quartiers.ts`.
