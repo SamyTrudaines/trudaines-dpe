@@ -655,7 +655,7 @@ page('visites', () => `
 
 /* 20. Négocier, puis signer */
 page('signer', () => `
-  ${photo('cles', 'photo-droite', { position: '50% 50%' })}
+  ${photo('signature', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
     ${tete(numero('signer'), 'Négocier, puis signer', 'La première offre est rarement la meilleure. Elle est souvent la plus sûre.')}
     <div class="texte deux empile-grille">
