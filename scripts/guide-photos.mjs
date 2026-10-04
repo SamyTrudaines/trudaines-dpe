@@ -39,7 +39,7 @@ const FORMATS = {
 };
 const EMPLACEMENTS = {
   couverture: 'couverture',
-  marche: 'demi', prix: 'demi', preparer: 'demi', repeindre: 'demi', reparations: 'demi',
+  estimation: 'demi', marche: 'demi', prix: 'demi', preparer: 'demi', repeindre: 'demi', reparations: 'demi',
   diagnostics: 'demi', photos: 'demi', diffusion: 'demi', visites: 'demi', signature: 'demi',
   edito: 'tiers', escalier: 'tiers', lumiere: 'tiers', quartier: 'tiers', dos: 'tiers',
 };

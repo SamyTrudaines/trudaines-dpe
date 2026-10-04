@@ -131,6 +131,9 @@ function photo(nom, classe, { position = '50% 50%' } = {}) {
   return `<figure class="photo ${classe}">${source ? `<img src="${source}" alt="" style="object-position:${position}">` : ''}</figure>`;
 }
 
+const bandeau = (surtitre, titre = '') =>
+  `<div class="bandeau"><p class="surtitre">${surtitre}</p>${titre ? `<h2 class="titre-moyen">${titre}</h2>` : ''}</div>`;
+
 const bloc = (titre, texte) => `<div class="bloc"><h3 class="intertitre">${titre}</h3><p>${texte}</p></div>`;
 
 const tete = (numero, titre, chapo) =>
@@ -419,6 +422,10 @@ page('actualites', () => `
         <p class="source">${a.source}</p>
       </div>`).join('')}
     </div>
+    <div class="liste-appel">
+      <p>Et votre bien, combien vaut-il aujourd’hui ?</p>
+      ${appel('Demander mon estimation', lienEstimation('actualites'), { clair: true })}
+    </div>
   </div>`);
 
 /* 6. Le juste prix, ouverture */
@@ -439,22 +446,44 @@ page('prix', () => `
 
 /* 7. Le juste prix, réflexes et dispersion */
 page('prix-reflexes', () => `
-  <div class="cadre deux-asymetrique">
-    <div class="texte empile">
-      <p class="surtitre">${numero('prix')} · Le juste prix</p>
-      <h2 class="titre-moyen">Trois réflexes qui protègent votre prix</h2>
-      ${bloc('Ne pas surévaluer', 'Trop cher, un bien ne se vend pas plus lentement : il se vend plus bas, après une ou deux baisses.')}
-      ${bloc('Respecter les paliers de recherche', 'Affiché à 1 010 000 €, un appartement disparaît des recherches plafonnées à 1 000 000 €. Le prix se cale sous le palier.')}
-      ${bloc('Lire les visites et les offres', 'Beaucoup de visites sans offre : trop cher. Peu de visites : prix ou diffusion à revoir. Ce point se fait chaque semaine, par écrit.')}
+  <div class="cadre">
+    ${bandeau(`${numero('prix')} · Le juste prix`, 'Trois réflexes qui protègent votre prix')}
+    <div class="deux-asymetrique">
+      <div class="texte empile">
+        ${bloc('Ne pas surévaluer', 'Trop cher, un bien ne se vend pas plus lentement : il se vend plus bas, après une ou deux baisses.')}
+        ${bloc('Respecter les paliers de recherche', 'Affiché à 1 010 000 €, un appartement disparaît des recherches plafonnées à 1 000 000 €. Le prix se cale sous le palier.')}
+        ${bloc('Lire les visites et les offres', 'Beaucoup de visites sans offre : trop cher. Peu de visites : prix ou diffusion à revoir. Le point se fait chaque semaine, par écrit.')}
+      </div>
+      <div class="graphique prix-deciles">
+        <h3 class="intertitre">Une moyenne ne suffit pas</h3>
+        <p class="graphique-sous-titre">Prix au m² des appartements vendus en 2024 et 2025. Huit ventes sur dix entre les deux bornes ; le point orange marque la médiane.</p>
+        ${decilesArrondissements()}
+        <p class="texte prix-deciles-lecture">Plus de ${nombre.format(ecartDeciles)} € le m² d’écart dans chaque arrondissement. La rue, l’étage et la lumière font le prix : nous publions celui de ${nombre.format(rues.rues.length)} rues.</p>
+        ${appel('Voir le prix de votre rue', lien('/prix-immobilier', 'prix-rues'), { clair: true })}
+        <p class="source">Source : DVF, DGFiP, ventes de ${rues.periode}.</p>
+      </div>
     </div>
-    <div class="graphique prix-deciles">
-      <p class="surtitre">Une moyenne ne suffit pas</p>
-      <p class="graphique-titre prix-deciles-titre">Prix au m² des appartements, de janvier 2024 à décembre 2025</p>
-      <p class="graphique-sous-titre">Huit ventes sur dix se situent entre les deux bornes. Le point orange marque la médiane.</p>
-      ${decilesArrondissements()}
-      <p class="texte prix-deciles-lecture">Plus de ${nombre.format(ecartDeciles)} € le m² d’écart dans chaque arrondissement. La rue, l’étage et la lumière font le prix : nous publions celui de ${nombre.format(rues.rues.length)} rues.</p>
-      ${appel('Voir le prix de votre rue', lien('/prix-immobilier', 'prix-rues'), { clair: true })}
-      <p class="source">Source : DVF, DGFiP, ventes de ${rues.periode}. Premier et neuvième décile.</p>
+  </div>`);
+
+/* 8 bis. Appel à l'estimation, au moment où le lecteur pense au prix de son bien. */
+page('estimation', () => `
+  ${photo('estimation', 'photo-gauche', { position: '50% 50%' })}
+  <div class="colonne colonne-droite appel-page">
+    <p class="surtitre">Votre estimation</p>
+    <p class="appel-grand">48&nbsp;h</p>
+    <h2 class="titre-moyen">Votre avis de valeur écrit, avec les ventes signées de votre rue</h2>
+    <ul class="coches texte">
+      <li>Les ventes comparables, citées et datées</li>
+      <li>Une fourchette assumée, un prix de mise en marché conseillé</li>
+      <li>Aucune signature le jour de la visite</li>
+      <li>Gratuit, sans engagement : le document vous reste</li>
+    </ul>
+    <div class="appel-actions">
+      <div>
+        ${appel('Demander mon estimation', lienEstimation('milieu'))}
+        <p class="appel-tel">ou appelez Samy au <a href="${telephone}">${contact.telephone}</a></p>
+      </div>
+      <a class="qr qr-petit" href="${lienEstimation('qr-milieu')}">${lire('assets/guide/qr-estimation.svg').replace(/<\?xml[^>]*>/, '')}<span>Scannez avec votre téléphone</span></a>
     </div>
   </div>`);
 
@@ -529,25 +558,24 @@ page('reparations', () => `
 
 /* 12. Investir où cela se voit */
 page('investir', () => `
-  <div class="cadre deux-asymetrique investir">
-    <div>
-      <p class="surtitre">${numero('reparations')} · Les petites réparations</p>
-      <h2 class="titre-moyen">Avant de vendre, investir là où cela se voit</h2>
+  <div class="cadre">
+    ${bandeau(`${numero('reparations')} · Les petites réparations`, 'Avant de vendre, investir là où cela se voit')}
+    <div class="deux-asymetrique investir">
       <table class="investir-tableau">
-        <thead><tr><th>Se rentabilise presque toujours</th><th>Ne se rentabilise presque jamais</th></tr></thead>
+        <thead><tr><th>Se rentabilise presque toujours</th><th>Presque jamais</th></tr></thead>
         <tbody>
-          <tr><td>Désencombrement et nettoyage à fond</td><td>Cuisine neuve</td></tr>
-          <tr><td>Peinture neutre sur des murs sains</td><td>Salle de bains refaite à votre goût</td></tr>
-          <tr><td>Petites réparations visibles</td><td>Rénovation lourde à quelques mois de la vente</td></tr>
-          <tr><td>Mise en lumière des pièces</td><td>Matériaux haut de gamme dans un bien à rafraîchir</td></tr>
-          <tr><td>Devis chiffré des gros travaux</td><td>Peinture posée sur un support abîmé</td></tr>
+          <tr><td>Désencombrement et nettoyage</td><td>Cuisine neuve</td></tr>
+          <tr><td>Peinture neutre, murs sains</td><td>Salle de bains à votre goût</td></tr>
+          <tr><td>Petites réparations visibles</td><td>Gros travaux juste avant la vente</td></tr>
+          <tr><td>Mise en lumière</td><td>Matériaux de luxe dans un bien à rafraîchir</td></tr>
+          <tr><td>Devis chiffré des gros travaux</td><td>Peinture sur un support abîmé</td></tr>
         </tbody>
       </table>
-    </div>
-    <div class="investir-droite">
-      <p class="citation">L’acheteur ne paie pas vos choix. Il paie l’absence de travaux à faire.</p>
-      <div class="texte investir-texte">
-        ${bloc('Le devis plutôt que les travaux', 'Pour une cuisine datée, une salle de bains à reprendre, une électricité à remettre aux normes, faites établir un devis par une entreprise et joignez-le au dossier remis à l’acheteur. Il voit le montant réel au lieu de l’imaginer, et ne peut plus s’en servir comme argument flou de négociation. Son imagination coûte toujours plus cher que le devis.')}
+      <div class="investir-droite">
+        <p class="citation">L’acheteur ne paie pas vos choix. Il paie l’absence de travaux à faire.</p>
+        <div class="texte investir-texte">
+          ${bloc('Le devis plutôt que les travaux', 'Cuisine datée, salle de bains à reprendre : joignez un devis au dossier. L’acheteur voit le montant réel au lieu de l’imaginer. Son imagination coûte toujours plus cher que le devis.')}
+        </div>
       </div>
     </div>
   </div>`);
@@ -587,21 +615,23 @@ const piecesCopro = [
   'La quote-part du fonds de travaux attachée à votre lot',
 ];
 page('copropriete', () => `
-  <div class="cadre deux copro">
-    <div>
-      <p class="surtitre">${numero('diagnostics')} · Les diagnostics et le dossier</p>
-      <h2 class="titre-moyen">Le dossier de copropriété</h2>
-      <p class="texte copro-intro">À remettre au plus tard à l’avant-contrat. Nous les réunissons avant la mise en vente.</p>
-      <ul class="liste texte">${piecesCopro.map((p) => `<li>${p}</li>`).join('')}</ul>
-      <p class="petit discret copro-note">Le pré-état daté, souvent établi par le syndic, rassemble les informations financières. L’état daté, demandé au moment de la vente, est plafonné à 380 € TTC et payé par le vendeur.</p>
-    </div>
-    <div class="empile texte">
-      <h2 class="titre-moyen copro-dpe-titre">Le DPE en 2026</h2>
-      ${bloc('Chauffage électrique', 'Votre étiquette a peut-être gagné une classe le 1er janvier 2026. L’attestation actualisée se télécharge gratuitement sur l’observatoire DPE de l’ADEME.')}
-      ${bloc('Location', 'G interdits depuis 2025, F en 2028, E en 2034. Un investisseur regarde l’étiquette avant le prix.')}
-      <div class="encart encart-papier">
-        <h3 class="intertitre">L’audit énergétique, une idée reçue à écarter</h3>
-        <p>Un appartement en copropriété n’y est pas soumis. Classé F ou G ? Nous faisons chiffrer les travaux et joignons les devis au dossier.</p>
+  <div class="cadre">
+    ${bandeau(`${numero('diagnostics')} · Les diagnostics et le dossier`)}
+    <div class="deux copro">
+      <div>
+        <h2 class="titre-moyen">Le dossier de copropriété</h2>
+        <p class="texte copro-intro">À remettre au plus tard à l’avant-contrat. Nous les réunissons avant la mise en vente.</p>
+        <ul class="liste texte">${piecesCopro.map((p) => `<li>${p}</li>`).join('')}</ul>
+        <p class="petit discret copro-note">L’état daté, demandé au moment de la vente, est plafonné à 380 € TTC et payé par le vendeur.</p>
+      </div>
+      <div class="empile texte">
+        <h2 class="titre-moyen">Le DPE en 2026</h2>
+        ${bloc('Chauffage électrique', 'Votre étiquette a peut-être gagné une classe le 1er janvier 2026. L’attestation actualisée se télécharge gratuitement sur l’observatoire DPE de l’ADEME.')}
+        ${bloc('Location', 'G interdits depuis 2025, F en 2028, E en 2034. Un investisseur regarde l’étiquette avant le prix.')}
+        <div class="encart encart-papier">
+          <h3 class="intertitre">L’audit énergétique, une idée reçue</h3>
+          <p>Un appartement en copropriété n’y est pas soumis. Classé F ou G ? Nous faisons chiffrer les travaux et joignons les devis au dossier.</p>
+        </div>
       </div>
     </div>
   </div>`);
@@ -621,24 +651,24 @@ page('photos', () => `
 
 /* 16. L'annonce */
 page('annonce', () => `
-  <div class="cadre deux annonce">
-    <div class="texte">
-      <p class="surtitre">${numero('photos')} · Les photos et l’annonce</p>
-      <h2 class="titre-moyen">Une annonce précise vaut mieux qu’une annonce flatteuse</h2>
-      <h3 class="intertitre annonce-intertitre">Ce que la loi impose</h3>
-      <ul class="liste">
-        <li>Le prix honoraires inclus, et quand l’acquéreur les paie, le prix hors honoraires et leur pourcentage.</li>
-        <li>La classe énergie, la classe climat et le montant estimé des dépenses annuelles d’énergie.</li>
-        <li>Pour un logement classé F ou G, la mention « logement à consommation énergétique excessive ».</li>
-        <li>Pour un lot de copropriété, le nombre de lots, le montant moyen annuel des charges courantes et, le cas échéant, la procédure dont fait l’objet le syndicat des copropriétaires.</li>
-      </ul>
-    </div>
-    <div class="texte empile annonce-droite">
-      <h3 class="intertitre">Ce qui fait venir les bons acheteurs</h3>
-      ${bloc('Un titre factuel', 'Le nombre de pièces, la surface, l’étage, la rue ou le quartier. Les acheteurs filtrent d’abord, ils lisent ensuite.')}
-      ${bloc('Les premières lignes', 'Ce qui distingue le bien : l’étage et l’ascenseur, la lumière et l’exposition, le calme, un balcon, la cave. Ce sont elles qui s’affichent dans les résultats.')}
-      ${bloc('Des faits plutôt que des adjectifs', '« Lumineux » ne dit rien. « Séjour plein sud au troisième étage, sur une rue arborée » dit tout.')}
-      ${bloc('Les défauts assumés', 'Un cinquième étage sans ascenseur annoncé dès l’annonce attire les acheteurs pour qui ce n’est pas un problème, et épargne les visites inutiles.')}
+  <div class="cadre">
+    ${bandeau(`${numero('photos')} · Les photos et l’annonce`, 'Une annonce précise vaut mieux qu’une annonce flatteuse')}
+    <div class="deux annonce">
+      <div class="texte">
+        <h3 class="colonne-titre">Ce que la loi impose</h3>
+        <ul class="liste">
+          <li>Le prix honoraires inclus ; s’ils sont à la charge de l’acquéreur, le prix hors honoraires et leur pourcentage.</li>
+          <li>Les classes énergie et climat, et l’estimation des dépenses annuelles d’énergie.</li>
+          <li>Classé F ou G : la mention « logement à consommation énergétique excessive ».</li>
+          <li>En copropriété : le nombre de lots, les charges courantes annuelles et toute procédure visant le syndicat.</li>
+        </ul>
+      </div>
+      <div class="texte empile">
+        <h3 class="colonne-titre">Ce qui fait venir les bons acheteurs</h3>
+        ${bloc('Un titre factuel', 'Pièces, surface, étage, rue. Les acheteurs filtrent d’abord, ils lisent ensuite.')}
+        ${bloc('Des faits, pas des adjectifs', '« Lumineux » ne dit rien. « Séjour plein sud au troisième, sur rue arborée » dit tout.')}
+        ${bloc('Les défauts assumés', 'Un cinquième sans ascenseur, annoncé, attire ceux que cela ne gêne pas.')}
+      </div>
     </div>
   </div>`);
 
@@ -657,12 +687,14 @@ page('diffusion', () => `
   </div>`);
 
 /* 18. Le mandat */
-const baremes = [
-  ['Jusqu’à 100 000 €', '10 % TTC, minimum 5 000 € TTC'],
-  ['De 100 001 € à 300 000 €', '7 % TTC'],
-  ['De 300 001 € à 700 000 €', '6 % TTC'],
-  ['Au-delà de 700 000 €', '5 % TTC'],
-];
+const baremes = (() => {
+  const bloc = /honoraires\s*=\s*\{\s*vente:\s*\[([\s\S]*?)\]/.exec(siteTs)?.[1] ?? '';
+  const lignes = [...bloc.matchAll(/tranche:\s*(['"])(.*?)\1,\s*taux:\s*(['"])(.*?)\3,\s*minimum:\s*(?:(['"])(.*?)\5|null)/g)]
+    .map((m) => ({ tranche: m[2], taux: m[4].replace(/ du prix de vente$/, ''), minimum: m[6] || null }));
+  if (lignes.length < 2) throw new Error('barème de vente introuvable dans src/data/site.ts');
+  return lignes;
+})();
+const minimumCommun = baremes.every((b) => b.minimum && b.minimum === baremes[0].minimum) ? baremes[0].minimum : null;
 page('mandat', () => `
   <div class="cadre mandat">
     <div class="mandat-tete">
@@ -682,7 +714,7 @@ page('mandat', () => `
     <div class="mandat-honoraires">
       <h3 class="intertitre">Nos honoraires</h3>
       <table class="honoraires">
-        <tbody>${baremes.map(([t, h]) => `<tr><td>${t}</td><td class="nombre">${h}</td></tr>`).join('')}</tbody>
+        <tbody>${baremes.map((b) => `<tr><td>${b.tranche}</td><td class="nombre">${b.taux}${!minimumCommun && b.minimum ? `, minimum ${b.minimum}` : ''}</td></tr>`).join('')}${minimumCommun ? `<tr class="total"><td>Minimum</td><td class="nombre">${minimumCommun}</td></tr>` : ''}</tbody>
       </table>
       <p class="petit discret">Barème maximum, à la charge du vendeur, calculé sur le prix de vente hors honoraires. Dus seulement si la vente se fait. En mandat exclusif, le taux de votre tranche baisse d’un point, et la remise est écrite dans le mandat.</p>
     </div>
@@ -803,6 +835,12 @@ page('methode', () => `
     <ol class="methode-temps">
       ${temps.map(([t, x], i) => `<li><p class="methode-numero">${String(i + 1).padStart(2, '0')}</p><h3 class="intertitre">${t}</h3><p>${x}</p></li>`).join('')}
     </ol>
+    <div class="preuves">
+      <div><p class="chiffre-valeur">48 h</p><p class="chiffre-libelle">pour votre avis de valeur écrit</p></div>
+      <div><p class="chiffre-valeur">${nombre.format(rues.rues.length)}</p><p class="chiffre-libelle">rues analysées, vente par vente</p></div>
+      <div><p class="chiffre-valeur">1</p><p class="chiffre-libelle">interlocuteur, de l’estimation à l’acte</p></div>
+      <div><p class="chiffre-valeur">${avis.length}</p><p class="chiffre-libelle">avis clients${toutCinq ? ', tous à cinq étoiles' : ''}</p></div>
+    </div>
     <div class="liste-appel">
       <p>Votre seule démarche : le premier appel.</p>
       ${appel(`Appeler le ${contact.telephone}`, telephone, { clair: true })}
@@ -846,7 +884,7 @@ page('estimer', () => `
     <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 48 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste. C'est moi qui vous réponds.</p>
     <div class="dos-grille">
       <ul class="dos-appels">
-        <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Demander une visite d’estimation</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>
+        <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Prendre rendez-vous pour une estimation</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>
         <li><a href="${telephone}"><span class="dos-appel-titre">Appeler Samy Santamarina</span><span class="dos-appel-detail">${contact.telephone}, du lundi au samedi</span></a></li>
         <li><a href="${courriel}"><span class="dos-appel-titre">Écrire</span><span class="dos-appel-detail">${contact.email}</span></a></li>
         <li><a href="${lien('/estimation#estimation-immediate', 'dos-en-ligne')}"><span class="dos-appel-titre">Estimer en ligne</span><span class="dos-appel-detail">Une première fourchette tirée des ventes de votre rue</span></a></li>

@@ -81,14 +81,16 @@ export const site = {
  * peut pratiquer moins, jamais plus. Prix toutes taxes comprises et charge du
  * paiement indiquée pour chaque prestation, comme l'impose l'arrêté du
  * 10 janvier 2017. Les fourchettes de prix ne sont pas admises : un taux par
- * tranche, et un minimum forfaitaire quand il existe.
+ * tranche, et un minimum forfaitaire quand il existe. Le minimum de vente,
+ * 8 000 € HT, s'affiche toutes taxes comprises (TVA à 20 %) comme l'impose
+ * l'arrêté, le hors taxes entre parenthèses ; il vaut quel que soit le prix.
  */
 export const honoraires = {
   vente: [
-    { tranche: "Jusqu'à 100 000 €", taux: '10 % TTC du prix de vente', minimum: '5 000 € TTC' },
-    { tranche: 'De 100 001 € à 300 000 €', taux: '7 % TTC du prix de vente', minimum: null },
-    { tranche: 'De 300 001 € à 700 000 €', taux: '6 % TTC du prix de vente', minimum: null },
-    { tranche: 'Au-delà de 700 000 €', taux: '5 % TTC du prix de vente', minimum: null },
+    { tranche: "Jusqu'à 100 000 €", taux: '10 % TTC du prix de vente', minimum: '9 600 € TTC (8 000 € HT)' },
+    { tranche: 'De 100 001 € à 300 000 €', taux: '7 % TTC du prix de vente', minimum: '9 600 € TTC (8 000 € HT)' },
+    { tranche: 'De 300 001 € à 700 000 €', taux: '6 % TTC du prix de vente', minimum: '9 600 € TTC (8 000 € HT)' },
+    { tranche: 'Au-delà de 700 000 €', taux: '5 % TTC du prix de vente', minimum: '9 600 € TTC (8 000 € HT)' },
   ],
   chasse: [
     { tranche: "Jusqu'à 400 000 €", taux: "4 % TTC du prix d'achat", minimum: null },
