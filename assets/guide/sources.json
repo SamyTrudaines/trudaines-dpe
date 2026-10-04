@@ -1,0 +1,178 @@
+[
+ {
+  "emplacement": "couverture",
+  "id": "uO0i6ECaHbY",
+  "photographe": "Elena Kloppenburg",
+  "page": "https://unsplash.com/photos/white-wooden-chair-near-white-wooden-door-uO0i6ECaHbY",
+  "description": "Salon blanc très lumineux : hautes fenêtres à la française, boiseries claires, parquet miel avec filet de bordure, palmier et petite table pliante.",
+  "cadrage": [
+   0.5,
+   0.55
+  ]
+ },
+ {
+  "emplacement": "cles",
+  "id": "ThbDT7-woYw",
+  "photographe": "Rupinder Singh",
+  "page": "https://unsplash.com/photos/a-person-handing-another-person-something-with-their-hand-ThbDT7-woYw",
+  "description": "Remise d’une clé de main à main, lumière chaude et arrière-plan flou, sans visage.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "escalier",
+  "id": "ufFqp2J5AGA",
+  "photographe": "Wolfgang Weiser",
+  "page": "https://unsplash.com/photos/a-beautiful-spiral-staircase-with-an-ornate-black-railing-ufFqp2J5AGA",
+  "description": "Escalier en spirale aux marches claires et à la rampe en fer forgé noir ouvragé.",
+  "cadrage": [
+   0.36,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "marche",
+  "id": "7ALBvhBz3N8",
+  "photographe": "Léonard Cotte",
+  "page": "https://unsplash.com/photos/brown-concrete-building-close-up-photography-7ALBvhBz3N8",
+  "description": "Toits de Paris en zinc avec une grosse souche de cheminée au premier plan, tour Eiffel au loin, lumière douce de fin de journée.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "prix",
+  "id": "UPosJHMEwOA",
+  "photographe": "dariana",
+  "page": "https://unsplash.com/photos/a-building-with-a-balcony-with-a-clock-on-it-UPosJHMEwOA",
+  "description": "Façade en pierre de taille : haute fenêtre encadrée de moulures sculptées et balcon en fer forgé, lumière chaude.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "preparer",
+  "id": "fGo-xyuwv84",
+  "photographe": "Sunguk Kim",
+  "page": "https://unsplash.com/photos/a-living-room-with-a-couch-and-two-windows-fGo-xyuwv84",
+  "description": "Séjour épuré aux murs blancs, deux hautes fenêtres, canapé gris clair capitonné et parquet à chevrons en chêne clair.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "lumiere",
+  "id": "fX3zdRRhOEM",
+  "photographe": "Arsen Vivcharyk",
+  "page": "https://unsplash.com/photos/a-room-with-a-window-and-curtains-fX3zdRRhOEM",
+  "description": "Fenêtre ancienne au voilage noué, soubassement à panneaux et tache de lumière du jour sur un parquet en damier.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "repeindre",
+  "id": "rMVjOX8nm2U",
+  "photographe": "Andrew Itaga",
+  "page": "https://unsplash.com/photos/a-person-using-a-paint-roller-to-paint-a-wall-rMVjOX8nm2U",
+  "description": "Rouleau à peinture passé sur un mur blanc cassé, moitié repeinte, geste net et propre.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "reparations",
+  "id": "XG8_6EgS12A",
+  "photographe": "Christina Radevich",
+  "page": "https://unsplash.com/photos/a-door-with-a-lock-XG8_6EgS12A",
+  "description": "Porte ancienne à panneaux moulurés peinte en blanc, avec sa poignée à levier en laiton patiné sur platine.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "diagnostics",
+  "id": "Miw3wnv8U9U",
+  "photographe": "Kelly Sikkema",
+  "page": "https://unsplash.com/photos/a-pen-sitting-on-top-of-a-piece-of-paper-on-top-of-a-wooden-table-Miw3wnv8U9U",
+  "description": "Bloc de papier vierge et stylo posés sur une table ronde en bois sombre, lumière de fenêtre rasante.",
+  "cadrage": [
+   0.55,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "photos",
+  "id": "CWh9mMFirlc",
+  "photographe": "Seyed Amir Mohammad Tabatabaee",
+  "page": "https://unsplash.com/photos/a-camera-on-a-tripod-in-a-bright-living-room-CWh9mMFirlc",
+  "description": "Appareil photo sur trépied dans un salon clair, près d’une fenêtre aux voilages blancs.",
+  "cadrage": [
+   0.6,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "diffusion",
+  "id": "Fib54p12bl4",
+  "photographe": "Romain V",
+  "page": "https://unsplash.com/photos/white-and-black-striped-chair-near-window-Fib54p12bl4",
+  "description": "Ordinateur portable ouvert sur une table blanche près d’une fenêtre à garde-corps en fer forgé, plante au premier plan.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "visites",
+  "id": "RAam2wzeMeE",
+  "photographe": "Lisa Anna",
+  "page": "https://unsplash.com/photos/an-open-door-leading-to-a-living-room-RAam2wzeMeE",
+  "description": "Portes doubles blanches grandes ouvertes sur un salon lumineux : parquet clair, rosace au plafond, fenêtre et lustre au fond.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "negociation",
+  "id": "mgvCv7Ht5hw",
+  "photographe": "Tim Mossholder",
+  "page": "https://unsplash.com/photos/two-cups-of-coffee-sit-on-a-table-mgvCv7Ht5hw",
+  "description": "Deux tasses de café blanches posées sur des documents, une main appuyée sur la feuille, sans visage.",
+  "cadrage": [
+   0.5,
+   0.55
+  ]
+ },
+ {
+  "emplacement": "quartier",
+  "id": "dTDLVlVDic4",
+  "photographe": "Giuseppe Mondì",
+  "page": "https://unsplash.com/photos/man-walking-near-concrete-building-dTDLVlVDic4",
+  "description": "Ruelle pavée de Montmartre bordée de façades blanches, réverbère et dôme du Sacré-Cœur au bout de la rue, passant de dos.",
+  "cadrage": [
+   0.5,
+   0.5
+  ]
+ },
+ {
+  "emplacement": "dos",
+  "id": "jzQ3s0R83BU",
+  "photographe": "Rémy Penet",
+  "page": "https://unsplash.com/photos/aerial-view-of-city-buildings-during-daytime-jzQ3s0R83BU",
+  "description": "Toits de Paris au crépuscule, butte Montmartre et Sacré-Cœur à l’horizon dans une lumière rosée.",
+  "cadrage": [
+   0.8,
+   0.5
+  ]
+ }
+]

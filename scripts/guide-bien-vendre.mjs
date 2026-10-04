@@ -15,8 +15,8 @@
  * avis clients de src/content/avis/. Aucun chiffre n'est saisi à la main : ils
  * sont lus dans ces fichiers au moment de la composition.
  *
- * Photographies : assets/guide/<emplacement>.jpg, licence Unsplash, crédits
- * dans assets/guide/credits.json et en dernière page. Code QR :
+ * Photographies : assets/guide/<emplacement>.jpg (scripts/guide-photos.mjs),
+ * licence Unsplash, crédits dans assets/guide/sources.json et en dernière page. Code QR :
  * assets/guide/qr-estimation.svg (segno, Python, correction M, sans marge).
  *
  * Sorties : public/guides/bien-vendre-paris-2026.pdf
@@ -122,9 +122,8 @@ const logoSvg = (sousTitre = true) =>
   (sousTitre ? `<path class="sous" fill-rule="evenodd" d="${logo.sous}"/>` : '') +
   '</svg>';
 
-const credits = existsSync(join(racine, 'assets/guide/credits.json'))
-  ? JSON.parse(lire('assets/guide/credits.json'))
-  : [];
+const credits = JSON.parse(lire('assets/guide/sources.json'))
+  .filter((s) => existsSync(join(racine, 'assets/guide', `${s.emplacement}.jpg`)));
 
 function photo(nom, classe, { position = '50% 50%' } = {}) {
   const chemin = join(racine, 'assets/guide', `${nom}.jpg`);
