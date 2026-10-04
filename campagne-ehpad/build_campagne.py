@@ -814,6 +814,8 @@ def body_text(r):
 {paras[-1]}
 {AGENDA}
 
+Vous pouvez aussi découvrir notre approche sur https://trudaines.com/.
+
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
@@ -824,7 +826,9 @@ Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
 LinkedIn : https://www.linkedin.com/in/samysantamarina/
 https://trudaines.com/
 
-Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop »."""
+Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop ».
+
+CLAUDE 2 $"""
 
 # Signature de marque RÉELLE de Samy (récupérée de ses emails) : liens véritables.
 SIGNATURE_HTML = """<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;color:#2d2d2d;font-family:Arial,Helvetica,sans-serif;margin-top:14px;">
@@ -855,10 +859,12 @@ def body_html(r):
     for para in paras[:-1]:                      # salutation, accroche, paragraphes du corps
         parts.append(p(para))
     parts.append(p(paras[-1] + "<br>" + CTA_LINK))  # la question + le lien de RDV
+    parts.append(p('Vous pouvez aussi découvrir notre approche sur <a href="https://trudaines.com/" style="color:#b08d57;font-weight:bold;">trudaines.com</a>.'))
     parts.append(p("Avec toute mon admiration pour ce que vous portez au quotidien,"))
     parts.append(SIGNATURE_HTML)
     parts.append('<p style="font-size:11px;color:#9a9a9a;margin:16px 0 4px 0;">Message professionnel adressé à '
                  + r['nom'] + ' (' + r['adresse'] + ', ' + r['cp'] + ' Paris). Pour ne plus être contacté, répondez « stop ».</p>')
+    parts.append('<p style="font-size:11px;color:#9a9a9a;margin:0;">CLAUDE 2 $</p>')
     parts.append('</div>')
     return "\n".join(parts)
 
