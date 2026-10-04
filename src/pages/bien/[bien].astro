@@ -33,6 +33,15 @@ const d = bien.data;
  */
 const archive = d.archive;
 
+/*
+ * Message du bouton WhatsApp. Une annonce renvoie vers elle-même, pour que Samy
+ * sache de quel bien on parle. Une référence n'est plus à vendre : le visiteur
+ * qui l'ouvre pense plutôt à son propre bien.
+ */
+const messageWhatsapp = archive
+  ? `Bonjour Samy, j'ai vu votre référence « ${d.titre} » sur votre site. Je pense vendre un appartement dans le secteur et je souhaite le faire estimer.`
+  : `Bonjour Samy, je souhaite des informations sur ce bien (réf. ${d.reference}) : ${site.url}/bien/${bien.id}`;
+
 const similaires = archive
   ? (await getCollection('biens', (b) => b.id !== bien.id && b.data.archive && b.data.ville === d.ville)).slice(0, 3)
   : (await getCollection('biens', (b) => b.id !== bien.id && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
@@ -99,6 +108,7 @@ const donnees = [
     ? [{ nom: 'Nos références', href: '/references' }, { nom: d.titre }]
     : [{ nom: 'Acheter', href: '/acheter' }, { nom: d.titre }]}
   donnees={donnees}
+  messageWhatsapp={messageWhatsapp}
 >
   <section class="section pt-10">
     <div class="conteneur grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">

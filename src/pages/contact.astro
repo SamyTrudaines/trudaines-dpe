@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import FormulaireContact from '../components/FormulaireContact.astro';
 import BoutonCreneau from '../components/BoutonCreneau.astro';
 import { site } from '../data/site';
+import { lienWhatsapp } from '../lib/whatsapp';
 ---
 <Layout
   titre="Contact | Trudaines, cabinet immobilier Paris 9e et Montmartre"
@@ -38,7 +39,7 @@ import { site } from '../data/site';
           </div>
           <div class="border-t border-[color:var(--color-trait)] pt-4">
             <dt class="surtitre">WhatsApp</dt>
-            <dd class="mt-2"><a href={site.whatsapp} data-evt="clic_whatsapp" rel="noopener" target="_blank" class="lien-souligne">Écrire sur WhatsApp</a></dd>
+            <dd class="mt-2"><a href={lienWhatsapp('/contact')} data-evt="clic_whatsapp" rel="noopener" target="_blank" class="lien-souligne">Écrire sur WhatsApp</a></dd>
           </div>
           <div class="border-t border-[color:var(--color-trait)] pt-4">
             <dt class="surtitre">Horaires</dt>
