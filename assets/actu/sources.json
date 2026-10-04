@@ -1,0 +1,34 @@
+[
+  {
+    "article": "prix-immobilier-paris-2e-trimestre-2026",
+    "id": "YcT0Cb34Rgc",
+    "photographe": "Howard Walsh",
+    "description": "Toits haussmanniens et avenue arborée vus d'en haut",
+    "original": "https://images.unsplash.com/photo-1776625722702-1279728a34b1",
+    "cadrage": [0.5, 0.55]
+  },
+  {
+    "article": "credit-immobilier-hausse-bce-septembre-2026",
+    "id": "3v0aQxhZtVk",
+    "photographe": "Wyatt Simpson",
+    "description": "Immeuble d'angle haussmannien et ses balcons filants",
+    "original": "https://images.unsplash.com/photo-1697994391342-dda8bdff0211",
+    "cadrage": [0.45, 0.45]
+  },
+  {
+    "article": "dpe-2026-chauffage-electrique-coefficient",
+    "id": "ihx1LdtnGXw",
+    "photographe": "Julian Hochgesang",
+    "description": "Radiateur en fonte sous une fenêtre à croisillons",
+    "original": "https://images.unsplash.com/photo-1599028274511-e02a767949a3",
+    "cadrage": [0.55, 0.5]
+  },
+  {
+    "article": "droits-de-mutation-paris-5-pourcent-2028",
+    "id": "A-tIJXrKNQw",
+    "photographe": "Prateek Katyal",
+    "description": "Façade blanche à toit mansardé et garde-corps en fer forgé",
+    "original": "https://images.unsplash.com/photo-1768577087735-ed8cca82245c",
+    "cadrage": [0.5, 0.45]
+  }
+]
