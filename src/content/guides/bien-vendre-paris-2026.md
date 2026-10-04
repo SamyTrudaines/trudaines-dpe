@@ -4,7 +4,7 @@ slug: bien-vendre-paris-2026
 chapo: Préparer le bien, fixer le juste prix, convaincre dès la première visite. La méthode que nous appliquons à chaque vente, les prix des ventes signées à Paris de 2021 à 2025, et la liste des vingt-quatre points à cocher avant de vendre.
 sommaire:
   - Où en est le marché parisien, ventes signées de 2021 à 2025
-  - Ce qui a changé en 2026 : marché, crédit, DPE, frais d'achat
+  - "Ce qui a changé en 2026 : marché, crédit, DPE, frais d'achat"
   - Le juste prix, la méthode et les paliers de recherche
   - Préparer le bien, pièce par pièce
   - Repeindre avant de vendre, et les petites réparations qui comptent
