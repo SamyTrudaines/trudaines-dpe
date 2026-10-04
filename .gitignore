@@ -11,6 +11,7 @@ npm-debug.log*
 # PDF générés à la construction
 public/fiches/*.pdf
 public/guides/*.pdf
+!public/guides/bien-vendre-paris-2026.pdf
 
 # Cache des fichiers de valeurs foncières téléchargés par scripts/prix-dvf.py
 .cache/

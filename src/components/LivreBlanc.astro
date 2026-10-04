@@ -18,13 +18,24 @@ interface Props {
   identifiant: string;
 }
 const { guide, contexte, evt, identifiant } = Astro.props;
-const { titre, chapo, sommaire, pages, edition, prochaineEdition, slug } = guide.data;
+const { titre, chapo, sommaire, pages, edition, prochaineEdition, slug, couverture } = guide.data;
 ---
 <section id="livre-blanc" class="section filet" aria-labelledby="titre-livre-blanc">
   <div class="conteneur grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
     <div>
       <p class="surtitre marque-filet">Le livre blanc</p>
       <h2 id="titre-livre-blanc" class="titre-2 mt-6">{titre}</h2>
+      {couverture && (
+        <img
+          src={couverture}
+          alt={`Couverture du guide ${titre}`}
+          width="1200"
+          height="849"
+          loading="lazy"
+          decoding="async"
+          class="mt-6 h-auto w-full border border-[color:var(--color-trait)]"
+        />
+      )}
       <p class="mt-6 text-[color:var(--color-ardoise)]">{chapo}</p>
       {sommaire.length > 0 && (
         <ul class="mt-6 space-y-2 text-sm text-[color:var(--color-ardoise)]">

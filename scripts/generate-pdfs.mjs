@@ -143,7 +143,8 @@ function quatriemeDeCouverture(c) {
     'Gratuit, sans engagement, et le document vous reste.',
   ];
   for (const promesse of promesses) {
-    c.ecrire('—', { x: MARGE.gauche, y, police: c.p.light, taille: 8, couleur: COULEURS.orange });
+    // Repère carré orange, comme les listes du site : jamais de tiret.
+    c.rectangle(MARGE.gauche, y + 2.4, 3.4, 3.4, { couleur: COULEURS.orange });
     for (const ligne of c.decouper(promesse, c.p.light, 10, COLONNE - 100)) {
       c.ecrire(ligne, { x: MARGE.gauche + 18, y, police: c.p.light, taille: 10 });
       y -= 16;
@@ -397,7 +398,7 @@ async function genererFiche(fichier) {
     { valeur: `${nombres.format(data.surface)} m²`, libelle: 'Surface Carrez' },
     { valeur: String(data.pieces), libelle: 'Pièces', note: `${data.chambres ?? 0} chambre${(data.chambres ?? 0) > 1 ? 's' : ''}` },
     { valeur: data.etage || 'Non précisé', libelle: 'Étage', note: data.ascenseur ? 'Avec ascenseur' : 'Sans ascenseur' },
-    { valeur: data.dpe === 'Vierge' ? '—' : data.dpe, libelle: 'Classe énergie', note: `Classe climat ${data.ges}` },
+    { valeur: data.dpe, libelle: 'Classe énergie', note: `Classe climat ${data.ges}` },
   ]);
 
   c.sectionOuverture(1, 'Le bien');
@@ -487,6 +488,12 @@ async function principal() {
     produits.push(await genererFiche(chemin));
   }
   for (const nom of readdirSync(dossierGuides).filter((f) => f.endsWith('.md'))) {
+    // Un guide en maquette paysage est composé par Chromium (npm run guide) et
+    // son PDF est versionné : le régénérer ici l'écraserait par l'ancienne maquette.
+    if (/^maquette:\s*paysage$/m.test(readFileSync(join(dossierGuides, nom), 'utf8'))) {
+      console.log(`  guide ${nom.replace(/\.md$/, '.pdf')} · maquette paysage, conservé tel quel`);
+      continue;
+    }
     const resultat = await genererGuide(join(dossierGuides, nom));
     produits.push(resultat);
     console.log(`  guide ${resultat.fichier} · ${resultat.pages} pages`);

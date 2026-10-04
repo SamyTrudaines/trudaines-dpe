@@ -27,6 +27,17 @@ const guides = await getCollection('guides');
       {guides.map((g) => (
         <article class="border-t border-[color:var(--color-encre)] pt-8">
           <h2 class="titre-2">{g.data.titre}</h2>
+          {g.data.couverture && (
+            <img
+              src={g.data.couverture}
+              alt={`Couverture du guide ${g.data.titre}`}
+              width="1200"
+              height="849"
+              loading="lazy"
+              decoding="async"
+              class="mt-6 h-auto w-full border border-[color:var(--color-trait)]"
+            />
+          )}
           <p class="chapo mt-6">{g.data.chapo}</p>
           {g.data.sommaire.length > 0 && (
             <ul class="mt-8 space-y-3 text-sm text-[color:var(--color-ardoise)]">

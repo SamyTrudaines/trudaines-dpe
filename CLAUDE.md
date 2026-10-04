@@ -33,6 +33,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   rattachement aux quartiers dans `src/lib/quartiers.ts`.
 - Mise en ligne outillée : `scripts/mise-en-ligne/`, workflow `.github/workflows/mise-en-ligne.yml`,
   procédure dans `DEPLOIEMENT.md`.
+- Guide « Bien vendre à Paris » : PDF à l'italienne composé par Chromium, texte et mise en page dans
+  `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
+  (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
