@@ -31,8 +31,8 @@ html, body { background: #fff; color: var(--encre); }
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 8.7pt;
-  line-height: 1.62;
+  font-size: 10.4pt;
+  line-height: 1.55;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
   font-kerning: normal;
@@ -103,13 +103,13 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 6mm;
   border-top: 0.25mm solid var(--trait);
-  font-size: 6.6pt;
+  font-size: 7.8pt;
   line-height: 1;
   letter-spacing: 0.03em;
   color: var(--ardoise);
 }
 .pied-gauche { right: calc(50% + 13mm); }
-.pied-logo svg { display: block; height: 2.5mm; width: auto; }
+.pied-logo svg { display: block; height: 3mm; width: auto; }
 .pied-contact { flex: 1; display: flex; gap: 2.2mm; align-items: center; }
 .pied-contact > * + *::before { content: '·'; margin-right: 2.2mm; color: var(--gris); }
 .pied-contact strong { font-weight: 500; color: var(--encre); }
@@ -126,7 +126,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------------------------------------------------------- typographie */
 
 .surtitre {
-  font-size: 6.6pt;
+  font-size: 7.8pt;
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -135,7 +135,7 @@ a { color: inherit; text-decoration: none; }
 .numero {
   font-family: 'Cormorant', serif;
   font-weight: 300;
-  font-size: 46pt;
+  font-size: 54pt;
   line-height: 0.8;
   color: var(--orange);
   font-variant-numeric: lining-nums;
@@ -144,7 +144,7 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Cormorant', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 34pt;
+  font-size: 40pt;
   line-height: 1.02;
   letter-spacing: -0.005em;
   color: var(--encre);
@@ -153,20 +153,20 @@ a { color: inherit; text-decoration: none; }
   font-family: 'Cormorant', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 25pt;
+  font-size: 31pt;
   line-height: 1.06;
 }
 .chapo {
   font-family: 'Cormorant', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 14.5pt;
-  line-height: 1.34;
+  font-size: 17pt;
+  line-height: 1.3;
   color: var(--encre);
 }
 .filet { width: 11mm; height: 0.5mm; background: var(--orange); }
 .intertitre {
-  font-size: 7pt;
+  font-size: 8.4pt;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -177,15 +177,15 @@ p + p { margin-top: 2.4mm; }
 .texte p { text-wrap: pretty; }
 .texte strong { font-weight: 600; }
 .discret { color: var(--ardoise); }
-.petit { font-size: 7.4pt; line-height: 1.55; }
-.source { font-size: 6.3pt; line-height: 1.5; color: var(--ardoise); }
+.petit { font-size: 9pt; line-height: 1.5; }
+.source { font-size: 7.4pt; line-height: 1.45; color: var(--ardoise); }
 
 .citation {
   font-family: 'Cormorant', serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 19pt;
-  line-height: 1.22;
+  font-size: 23pt;
+  line-height: 1.2;
   color: var(--encre);
 }
 .citation::before {
@@ -256,7 +256,7 @@ p + p { margin-top: 2.4mm; }
 .chiffre-valeur {
   font-family: 'Cormorant', serif;
   font-weight: 300;
-  font-size: 34pt;
+  font-size: 40pt;
   line-height: 1;
   color: var(--encre);
   font-variant-numeric: lining-nums;
@@ -264,20 +264,20 @@ p + p { margin-top: 2.4mm; }
 }
 .chiffre-libelle {
   margin-top: 2.2mm;
-  font-size: 6.6pt;
+  font-size: 7.8pt;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
-.chiffre-note { margin-top: 1mm; font-size: 7.2pt; line-height: 1.45; color: var(--ardoise); }
+.chiffre-note { margin-top: 1mm; font-size: 8.6pt; line-height: 1.45; color: var(--ardoise); }
 .chiffres { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; column-gap: 7mm; border-top: 0.25mm solid var(--trait); padding-top: 4.5mm; }
 
 /* ---------------------------------------------------------------- tableaux */
 
-table { width: 100%; border-collapse: collapse; font-size: 7.9pt; line-height: 1.42; }
+table { width: 100%; border-collapse: collapse; font-size: 9.4pt; line-height: 1.4; }
 th {
   text-align: left;
-  font-size: 6.3pt;
+  font-size: 7.4pt;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -294,8 +294,8 @@ tr.total td { font-weight: 600; border-bottom: none; }
 /* ---------------------------------------------------------------- graphiques */
 
 .graphique svg { display: block; width: 100%; height: auto; overflow: visible; }
-.graphique-titre { font-size: 7.6pt; font-weight: 600; margin-bottom: 0.6mm; }
-.graphique-sous-titre { font-size: 7pt; color: var(--ardoise); margin-bottom: 3mm; }
+.graphique-titre { font-size: 9.4pt; font-weight: 600; margin-bottom: 0.6mm; }
+.graphique-sous-titre { font-size: 8.6pt; color: var(--ardoise); margin-bottom: 3mm; }
 svg text { font-family: 'Montserrat', sans-serif; }
 
 /* ---------------------------------------------------------------- appels */
@@ -307,7 +307,7 @@ svg text { font-family: 'Montserrat', sans-serif; }
   padding: 3.2mm 6mm;
   background: var(--encre);
   color: #fff;
-  font-size: 7.2pt;
+  font-size: 8.4pt;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -357,7 +357,7 @@ svg text { font-family: 'Montserrat', sans-serif; }
 .couverture-chapo { font-size: 13.5pt; max-width: 94mm; }
 .couverture-territoire {
   margin-top: 6mm;
-  font-size: 6.6pt;
+  font-size: 7.8pt;
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -368,7 +368,7 @@ svg text { font-family: 'Montserrat', sans-serif; }
 /* Avant-propos */
 .edito { display: flex; flex-direction: column; }
 .edito-titre { font-size: 26pt; margin: 3mm 0 7mm; max-width: 140mm; }
-.edito-texte { font-size: 9.4pt; line-height: 1.66; max-width: 136mm; }
+.edito-texte { font-size: 11.4pt; line-height: 1.6; max-width: 145mm; }
 .edito-texte p + p { margin-top: 3mm; }
 .signature { margin-top: auto; }
 .signature-nom { font-family: 'Cormorant', serif; font-style: italic; font-size: 22pt; line-height: 1; }
@@ -380,8 +380,8 @@ svg text { font-family: 'Montserrat', sans-serif; }
 .sommaire li { break-inside: avoid; border-top: 0.25mm solid var(--trait); }
 .sommaire a { display: grid; grid-template-columns: 10mm 1fr auto; align-items: baseline; padding: 2.5mm 0; }
 .sommaire-numero { font-family: 'Cormorant', serif; font-size: 15pt; line-height: 1; color: var(--orange); }
-.sommaire-libelle { font-size: 9pt; }
-.sommaire-page { font-size: 7.4pt; color: var(--ardoise); font-variant-numeric: tabular-nums; }
+.sommaire-libelle { font-size: 11pt; }
+.sommaire-page { font-size: 9pt; color: var(--ardoise); font-variant-numeric: tabular-nums; }
 .sommaire-annexes { margin-top: 7mm; }
 
 /* Chiffres clés empilés dans une colonne */
@@ -432,14 +432,14 @@ svg text { font-family: 'Montserrat', sans-serif; }
 
 /* Investir où cela se voit */
 .investir { align-content: center; }
-.investir-tableau td { font-size: 9pt; padding: 3.6mm 4mm 3.6mm 0; }
+.investir-tableau td { font-size: 10.6pt; padding: 3.4mm 4mm 3.4mm 0; }
 .investir-tableau td:first-child { font-weight: 500; }
 .investir-droite { padding-top: 16mm; }
 .investir .citation { font-size: 23pt; }
 .investir-texte { margin-top: 8mm; }
 
 /* Diagnostics */
-table.diagnostics { font-size: 7.3pt; line-height: 1.38; }
+table.diagnostics { font-size: 8.8pt; line-height: 1.32; }
 table.diagnostics td { padding: 1.6mm 2.6mm 1.6mm 0; }
 .diagnostics-note { margin-top: 4mm; color: var(--ardoise); }
 
@@ -465,9 +465,9 @@ table.diagnostics td { padding: 1.6mm 2.6mm 1.6mm 0; }
 .mandat-honoraires { grid-column: 1; grid-row: 2; align-self: end; }
 .mandat-tableau { grid-column: 2; grid-row: 1; padding-top: 2mm; }
 .mandat-citation { grid-column: 2; grid-row: 2; align-self: end; max-width: 120mm; }
-.mandat-tableau td { font-size: 8pt; padding: 3.2mm 4mm 3.2mm 0; }
+.mandat-tableau td { font-size: 9.6pt; padding: 3.2mm 4mm 3.2mm 0; }
 .mandat-tableau th:first-child { width: 30mm; }
-table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
+table.honoraires td { font-size: 9.6pt; padding: 1.7mm 0; }
 .mandat-honoraires .petit { margin-top: 3mm; }
 
 /* Calendrier */
@@ -475,17 +475,17 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 .frise { list-style: none; display: grid; grid-template-columns: repeat(7, 1fr); column-gap: 5mm; position: relative; margin-top: 12mm; }
 .frise::before { content: ''; position: absolute; left: 0; right: 0; top: 7.7mm; height: 0.25mm; background: var(--encre); }
 .frise-quand {
-  font-size: 6.4pt;
+  font-size: 7.4pt;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ardoise);
   height: 5mm;
   white-space: nowrap;
 }
 .frise-point { display: block; position: relative; width: 2.6mm; height: 2.6mm; background: var(--orange); margin: 1.4mm 0 5mm; }
-.frise-quoi { font-family: 'Cormorant', serif; font-style: italic; font-size: 15pt; line-height: 1.1; margin-bottom: 2mm; }
-.frise-detail { font-size: 7.6pt; line-height: 1.5; }
+.frise-quoi { font-family: 'Cormorant', serif; font-style: italic; font-size: 18pt; line-height: 1.1; margin-bottom: 2mm; }
+.frise-detail { font-size: 9.4pt; line-height: 1.45; }
 .calendrier-citation { margin-top: 14mm; max-width: 175mm; }
 
 /* Liste prêt à vendre */
@@ -498,11 +498,11 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 
 /* Ce que nous écrivons */
 .engagements { row-gap: 5mm; column-gap: 7mm; margin-top: 6mm; }
-.engagements .bloc p { font-size: 7.8pt; line-height: 1.55; }
+.engagements .bloc p { font-size: 9.6pt; line-height: 1.5; }
 .avis { display: grid; grid-template-columns: 34mm 1fr 1fr; column-gap: 7mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; margin-top: 7mm; }
 .avis .chiffre-libelle { margin-top: 2mm; line-height: 1.5; }
-.avis-citation p { font-family: 'Cormorant', serif; font-style: italic; font-size: 11pt; line-height: 1.3; }
-.avis-citation footer { margin-top: 2mm; font-size: 6.4pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ardoise); }
+.avis-citation p { font-family: 'Cormorant', serif; font-style: italic; font-size: 13.5pt; line-height: 1.3; }
+.avis-citation footer { margin-top: 2mm; font-size: 7.6pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ardoise); }
 
 /* Dernière page */
 .dos { display: flex; flex-direction: column; }
@@ -515,19 +515,19 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 .dos-appels li { border-top: 0.25mm solid var(--trait); }
 .dos-appels li:last-child { border-bottom: 0.25mm solid var(--trait); }
 .dos-appels a { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; padding: 2.7mm 0; }
-.dos-appel-titre { font-size: 8.6pt; font-weight: 600; }
+.dos-appel-titre { font-size: 10.6pt; font-weight: 600; }
 .dos-appel-titre::after { content: ' ›'; color: var(--orange); }
-.dos-appel-detail { font-size: 7.3pt; color: var(--ardoise); text-align: right; }
+.dos-appel-detail { font-size: 9pt; color: var(--ardoise); text-align: right; }
 .qr { display: block; }
 .qr svg { display: block; width: 32mm; height: 32mm; }
-.qr span { display: block; margin-top: 2.4mm; font-size: 6.4pt; line-height: 1.4; color: var(--ardoise); }
-.dos-mentions { margin-top: auto; font-size: 5.8pt; line-height: 1.45; color: var(--ardoise); }
+.qr span { display: block; margin-top: 2.4mm; font-size: 7.6pt; line-height: 1.4; color: var(--ardoise); }
+.dos-mentions { margin-top: auto; font-size: 6.6pt; line-height: 1.45; color: var(--ardoise); }
 .dos-mentions p + p { margin-top: 1.2mm; }
 
-.couverture-auteur { margin-top: 5mm; font-size: 7.4pt; color: var(--ardoise); letter-spacing: 0.02em; }
+.couverture-auteur { margin-top: 5mm; font-size: 9pt; color: var(--ardoise); letter-spacing: 0.02em; }
 .couverture-auteur + .couverture-territoire { margin-top: 2.6mm; }
 .liste-appel { display: flex; align-items: center; justify-content: space-between; gap: 10mm; margin-top: 10mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; }
-.liste-appel p { font-family: 'Cormorant', serif; font-style: italic; font-size: 14pt; }
+.liste-appel p { font-family: 'Cormorant', serif; font-style: italic; font-size: 17pt; }
 
 /* Ce qui a changé en 2026 */
 .actualites { display: flex; flex-direction: column; }
@@ -538,7 +538,7 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 .actualites-grille { column-gap: 9mm; }
 .actu { border-top: 0.25mm solid var(--encre); padding-top: 4mm; display: flex; flex-direction: column; }
 .actu .chiffre-valeur { margin-top: 5mm; font-size: 38pt; }
-.actu-fait { margin-top: 5mm; font-size: 8.9pt; line-height: 1.6; }
+.actu-fait { margin-top: 5mm; font-size: 10pt; line-height: 1.5; }
 .actu-lecture { margin-top: 4mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 14pt; line-height: 1.3; }
 .actu .source { margin-top: auto; padding-top: 4mm; }
 
@@ -549,9 +549,14 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 .methode-temps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 12mm; row-gap: 7mm; }
 .methode-temps li { border-top: 0.25mm solid var(--trait); padding-top: 3mm; }
 .methode-numero { font-family: 'Cormorant', serif; font-size: 26pt; line-height: 1; color: var(--orange); margin-bottom: 2.5mm; }
-.methode-temps li p:last-child { font-size: 8.4pt; line-height: 1.58; }
+.methode-temps li p:last-child { font-size: 10.4pt; line-height: 1.5; }
 
 /* Le conseil de Samy */
 .conseil { margin-top: 6mm; padding-top: 3.4mm; border-top: 0.25mm solid var(--orange); }
 .conseil .surtitre { color: var(--encre); }
-.conseil-texte { margin-top: 1.6mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 13pt; line-height: 1.3; }
+.conseil-texte { margin-top: 1.6mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 15pt; line-height: 1.3; }
+
+/* Pages d'ouverture : textes courts, donc plus grands, pour une lecture sans lunettes. */
+.colonne .bloc p, .colonne .liste li, .colonne .etapes p { font-size: 11.6pt; line-height: 1.5; }
+.colonne .intertitre { font-size: 9pt; }
+.colonne .empile-grille { row-gap: 6mm; }

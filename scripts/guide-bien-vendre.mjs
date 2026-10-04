@@ -168,13 +168,13 @@ function courbePrix(semestres) {
   let svg = '';
   for (let v = 9500; v <= 11000; v += 500) {
     svg += `<line x1="${m.gauche}" x2="${L - m.droite + 14}" y1="${y(v)}" y2="${y(v)}" stroke="${GRILLE}" stroke-width="0.8"/>`;
-    svg += `<text x="${m.gauche - 8}" y="${y(v) + 3}" text-anchor="end" font-size="8.4" fill="${ARDOISE}">${nombre.format(v)}</text>`;
+    svg += `<text x="${m.gauche - 8}" y="${y(v) + 3}" text-anchor="end" font-size="10.5" fill="${ARDOISE}">${nombre.format(v)}</text>`;
   }
-  svg += `<text x="${m.gauche - 8}" y="${m.haut - 14}" text-anchor="end" font-size="8.4" fill="${ARDOISE}">€/m²</text>`;
+  svg += `<text x="${m.gauche - 8}" y="${m.haut - 14}" text-anchor="end" font-size="10.5" fill="${ARDOISE}">€/m²</text>`;
   svg += `<line x1="${m.gauche}" x2="${L - m.droite + 14}" y1="${H - m.bas + 8}" y2="${H - m.bas + 8}" stroke="${ENCRE}" stroke-width="0.6"/>`;
   for (let k = 0; k < valeurs.length; k += 2) {
     const centre = (x(k) + x(k + 1)) / 2;
-    svg += `<text x="${centre}" y="${H - 6}" text-anchor="middle" font-size="9" fill="${ENCRE}">${semestres[k].periode.slice(0, 4)}</text>`;
+    svg += `<text x="${centre}" y="${H - 6}" text-anchor="middle" font-size="11.2" fill="${ENCRE}">${semestres[k].periode.slice(0, 4)}</text>`;
     if (k > 0) svg += `<line x1="${x(k) - pas / 2}" x2="${x(k) - pas / 2}" y1="${H - m.bas + 8}" y2="${H - m.bas + 12}" stroke="${ENCRE}" stroke-width="0.6"/>`;
   }
   svg += `<path d="${valeurs.map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(' ')}" fill="none" stroke="${ENCRE}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>`;
@@ -186,8 +186,8 @@ function courbePrix(semestres) {
     svg += `<circle cx="${x(i)}" cy="${y(v)}" r="${fin ? 4.2 : 2.4}" fill="${fin ? ORANGE : ENCRE}" stroke="#fff" stroke-width="${fin ? 1.8 : 1.2}"/>`;
   });
   const etiquette = (i, dx, dy, ancre) =>
-    `<text x="${x(i) + dx}" y="${y(valeurs[i]) + dy}" text-anchor="${ancre}" font-size="9.4" font-weight="600" fill="${ENCRE}">${euros(valeurs[i])}</text>` +
-    `<text x="${x(i) + dx}" y="${y(valeurs[i]) + dy + 11}" text-anchor="${ancre}" font-size="7.6" fill="${ARDOISE}">${libelle(semestres[i].periode)}</text>`;
+    `<text x="${x(i) + dx}" y="${y(valeurs[i]) + dy}" text-anchor="${ancre}" font-size="11.8" font-weight="600" fill="${ENCRE}">${euros(valeurs[i])}</text>` +
+    `<text x="${x(i) + dx}" y="${y(valeurs[i]) + dy + 11}" text-anchor="${ancre}" font-size="9.5" fill="${ARDOISE}">${libelle(semestres[i].periode)}</text>`;
   svg += etiquette(0, -4, -24, 'start');
   svg += etiquette(iMin, 0, 18, 'middle');
   svg += etiquette(iFin, 9, -2, 'start');
@@ -208,8 +208,8 @@ function barresVentes(liste) {
     const derniereBarre = i === liste.length - 1;
     const cx = m.gauche + (i + 0.5) * pas;
     svg += `<rect x="${cx - largeur / 2}" y="${y(a.paris.ventes)}" width="${largeur}" height="${y(0) - y(a.paris.ventes)}" fill="${derniereBarre ? ORANGE : '#dedcd6'}"/>`;
-    svg += `<text x="${cx}" y="${y(a.paris.ventes) - 6}" text-anchor="middle" font-size="8.6" font-weight="${derniereBarre ? 600 : 400}" fill="${ENCRE}">${nombre.format(a.paris.ventes)}</text>`;
-    svg += `<text x="${cx}" y="${H - 6}" text-anchor="middle" font-size="9" fill="${ENCRE}">${a.annee}</text>`;
+    svg += `<text x="${cx}" y="${y(a.paris.ventes) - 6}" text-anchor="middle" font-size="10.8" font-weight="${derniereBarre ? 600 : 400}" fill="${ENCRE}">${nombre.format(a.paris.ventes)}</text>`;
+    svg += `<text x="${cx}" y="${H - 6}" text-anchor="middle" font-size="11.2" fill="${ENCRE}">${a.annee}</text>`;
   });
   svg += `<line x1="${m.gauche}" x2="${L - m.droite}" y1="${y(0)}" y2="${y(0)}" stroke="${ENCRE}" stroke-width="0.6"/>`;
   return `<svg viewBox="0 0 ${L} ${H}" role="img" aria-label="Nombre de ventes d'appartements à Paris, par an">${svg}</svg>`;
@@ -226,18 +226,18 @@ function decilesArrondissements() {
   let svg = '';
   for (let v = 6000; v <= 14000; v += 2000) {
     svg += `<line x1="${x(v)}" x2="${x(v)}" y1="${m.haut - 6}" y2="${H - m.bas + 2}" stroke="${GRILLE}" stroke-width="0.8"/>`;
-    svg += `<text x="${x(v)}" y="${H - 8}" text-anchor="middle" font-size="8.2" fill="${ARDOISE}">${nombre.format(v)}</text>`;
+    svg += `<text x="${x(v)}" y="${H - 8}" text-anchor="middle" font-size="10.2" fill="${ARDOISE}">${nombre.format(v)}</text>`;
   }
   lignes.forEach((l, i) => {
     const cy = m.haut + i * hauteurLigne + hauteurLigne / 2;
-    svg += `<text x="0" y="${cy + 3.2}" font-size="9" font-weight="600" fill="${ENCRE}">${l.nom}</text>`;
+    svg += `<text x="0" y="${cy + 3.2}" font-size="11.2" font-weight="600" fill="${ENCRE}">${l.nom}</text>`;
     svg += `<line x1="${x(l.d1)}" x2="${x(l.d9)}" y1="${cy}" y2="${cy}" stroke="#cfccc5" stroke-width="2.4"/>`;
-    svg += `<text x="${x(l.d1) - 6}" y="${cy + 3}" text-anchor="end" font-size="8" fill="${ARDOISE}">${nombre.format(l.d1)}</text>`;
-    svg += `<text x="${x(l.d9) + 6}" y="${cy + 3}" text-anchor="start" font-size="8" fill="${ARDOISE}">${nombre.format(l.d9)}</text>`;
+    svg += `<text x="${x(l.d1) - 6}" y="${cy + 3}" text-anchor="end" font-size="10.0" fill="${ARDOISE}">${nombre.format(l.d1)}</text>`;
+    svg += `<text x="${x(l.d9) + 6}" y="${cy + 3}" text-anchor="start" font-size="10.0" fill="${ARDOISE}">${nombre.format(l.d9)}</text>`;
     svg += `<circle cx="${x(l.mediane)}" cy="${cy}" r="4.4" fill="${ORANGE}" stroke="#fff" stroke-width="1.8"/>`;
-    svg += `<text x="${x(l.mediane)}" y="${cy - 9}" text-anchor="middle" font-size="8.6" font-weight="600" fill="${ENCRE}">${nombre.format(l.mediane)}</text>`;
+    svg += `<text x="${x(l.mediane)}" y="${cy - 9}" text-anchor="middle" font-size="10.8" font-weight="600" fill="${ENCRE}">${nombre.format(l.mediane)}</text>`;
   });
-  svg += `<text x="${L - m.droite + 6}" y="${H - 8}" font-size="8.2" fill="${ARDOISE}">€/m²</text>`;
+  svg += `<text x="${L - m.droite + 6}" y="${H - 8}" font-size="10.2" fill="${ARDOISE}">€/m²</text>`;
   return `<svg viewBox="0 0 ${L} ${H}" role="img" aria-label="Fourchette des prix au mètre carré par arrondissement">${svg}</svg>`;
 }
 
@@ -321,7 +321,7 @@ page('sommaire', () => `
 page('marche', () => `
   ${photo('marche', 'photo-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-droite">
-    ${tete(numero('marche'), 'Où en est le marché parisien', 'Trois années de baisse, puis une reprise en 2025. Les acheteurs sont revenus, plus attentifs qu’avant : ils comparent, ils négocient, et ils achètent d’abord les biens prêts et bien placés.')}
+    ${tete(numero('marche'), 'Où en est le marché parisien', 'Trois ans de baisse, puis la reprise en 2025. Les acheteurs reviennent, plus exigeants : ils achètent d’abord les biens prêts et bien placés.')}
     <div class="chiffres chiffres-colonne">
       <div class="chiffre"><p class="chiffre-valeur">${euros(derniere.paris.mediane)}</p><div><p class="chiffre-libelle">Prix médian au m² en ${derniere.annee}</p><p class="chiffre-note">Appartements à Paris, ${nombre.format(derniere.paris.ventes)} ventes</p></div></div>
       <div class="chiffre"><p class="chiffre-valeur">${variation(derniere.paris.ventes / precedente.paris.ventes - 1, 0)}</p><div><p class="chiffre-libelle">Ventes en un an</p><p class="chiffre-note">${nombre.format(derniere.paris.ventes)} en ${derniere.annee}, ${nombre.format(precedente.paris.ventes)} en ${precedente.annee}</p></div></div>
@@ -361,9 +361,9 @@ page('marche-chiffres', () => `
     </div>
     <div class="marche-lecture texte">
       <h3 class="intertitre">Ce que cela change pour vous</h3>
-      <p>Les ventes sont reparties, les prix se sont stabilisés. Les acheteurs ont du choix : ils visitent plusieurs biens avant de se décider et comparent chaque prix aux ventes récentes. Un bien prêt et bien placé dès le premier jour capte leur attention. Un bien trop cher ou mal présenté reste en vitrine, et c’est lui qui finit par baisser.</p>
-      <p>Nos quatre arrondissements ont suivi le même mouvement : un recul de ${reculMin} à ${reculMax} % entre ${premiere.annee} et ${plusBasse.annee}, puis une reprise en ${derniere.annee}.</p>
-      <p class="source">Appartements vendus seuls, un logement par acte. Prix au m² de surface réelle bâtie, retenu entre 2 000 et 30 000 €. Source : DVF, DGFiP.</p>
+      <p>Les ventes repartent, les prix tiennent. L’acheteur a le choix et compare chaque prix aux ventes récentes. Un bien prêt et bien placé part. Un bien trop cher reste en vitrine, puis baisse.</p>
+      <p>Nos quatre arrondissements : de −${reculMax} à −${reculMin}\u202f% entre ${premiere.annee} et ${plusBasse.annee}, puis la reprise.</p>
+      <p class="source">Appartements vendus seuls. Source : DVF, DGFiP.</p>
     </div>
   </div>`);
 
@@ -425,15 +425,14 @@ page('actualites', () => `
 page('prix', () => `
   ${photo('prix', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
-    ${tete(numero('prix'), 'Le juste prix', 'Un prix défendable, c’est un prix que vous savez expliquer, chiffres à l’appui. C’est le seul qui tient face aux acheteurs.')}
-    <h3 class="intertitre">Notre méthode en trois temps</h3>
+    ${tete(numero('prix'), 'Le juste prix', 'Un prix que vous savez expliquer, chiffres à l’appui. Le seul qui tient face aux acheteurs.')}
     <ol class="etapes texte">
-      <li><p><strong>Les ventes signées dans votre rue.</strong> Cinq à dix ventes de votre rue ou de votre immeuble sur douze mois, avec leur date, leur surface et leur prix au mètre carré. Pas les prix affichés : les prix payés.</p></li>
-      <li><p><strong>Les biens en concurrence.</strong> Ceux que votre acheteur visitera juste avant ou juste après le vôtre. C’est à eux qu’il vous compare, pas à une moyenne.</p></li>
-      <li><p><strong>Ce que la visite révèle.</strong> La lumière réelle, la vue, le bruit, l’état des parties communes, la qualité du plan. Aucune base de données ne les contient.</p></li>
+      <li><p><strong>Les ventes signées de votre rue.</strong> Cinq à dix, sur douze mois. Les prix payés, pas les prix affichés.</p></li>
+      <li><p><strong>Les biens en concurrence.</strong> Ceux que votre acheteur visite avant ou après le vôtre.</p></li>
+      <li><p><strong>Ce que la visite révèle.</strong> Lumière, vue, calme, état de l’immeuble : aucune donnée ne les voit.</p></li>
     </ol>
     <div class="encart prix-encart">
-      <p>Vous recevez un avis de valeur écrit sous 48 heures après la visite : une fourchette assumée, un prix de mise en marché conseillé, les ventes comparables citées. Il vous appartient, même si vous ne vendez pas avec nous.</p>
+      <p>Votre avis de valeur écrit sous 48 heures. Il vous appartient, même si vous ne vendez pas avec nous.</p>
       ${appel('Demander mon avis de valeur', lienEstimation('prix'))}
     </div>
   </div>`);
@@ -444,16 +443,16 @@ page('prix-reflexes', () => `
     <div class="texte empile">
       <p class="surtitre">${numero('prix')} · Le juste prix</p>
       <h2 class="titre-moyen">Trois réflexes qui protègent votre prix</h2>
-      ${bloc('Ne pas surévaluer', 'Un bien affiché au-dessus du marché ne se vend pas seulement plus lentement : il se vend plus bas. Il use son capital d’attention sur des visites sans suite, il s’installe dans le paysage, puis se vend après une ou deux baisses, sous le prix qu’un positionnement juste aurait obtenu.')}
-      ${bloc('Respecter les paliers de recherche', 'Les acheteurs filtrent les annonces par prix maximum, presque toujours un chiffre rond. Affiché à 1 010 000 €, un appartement disparaît des recherches plafonnées à 1 000 000 €. Nous fixons le prix en tenant compte de ces paliers.')}
-      ${bloc('Suivre le rapport entre visites et offres', 'Beaucoup de visites sans offre : le prix dépasse ce que le bien offre. Peu de visites : le prix ou la diffusion pèchent. Ce rapport se lit chaque semaine, par écrit, et la date de la première revue du prix est fixée dès le mandat.')}
+      ${bloc('Ne pas surévaluer', 'Trop cher, un bien ne se vend pas plus lentement : il se vend plus bas, après une ou deux baisses.')}
+      ${bloc('Respecter les paliers de recherche', 'Affiché à 1 010 000 €, un appartement disparaît des recherches plafonnées à 1 000 000 €. Le prix se cale sous le palier.')}
+      ${bloc('Lire les visites et les offres', 'Beaucoup de visites sans offre : trop cher. Peu de visites : prix ou diffusion à revoir. Ce point se fait chaque semaine, par écrit.')}
     </div>
     <div class="graphique prix-deciles">
       <p class="surtitre">Une moyenne ne suffit pas</p>
       <p class="graphique-titre prix-deciles-titre">Prix au m² des appartements, de janvier 2024 à décembre 2025</p>
       <p class="graphique-sous-titre">Huit ventes sur dix se situent entre les deux bornes. Le point orange marque la médiane.</p>
       ${decilesArrondissements()}
-      <p class="texte prix-deciles-lecture">Dans chacun de nos arrondissements, plus de ${nombre.format(ecartDeciles)} € le mètre carré séparent le premier du neuvième décile. La rue, l’étage, l’ascenseur, la lumière et l’état de l’immeuble font le prix. C’est pourquoi nous publions les ventes signées de ${nombre.format(rues.rues.length)} rues de nos quartiers, soit ${nombre.format(ventesRues)} ventes analysées.</p>
+      <p class="texte prix-deciles-lecture">Plus de ${nombre.format(ecartDeciles)} € le m² d’écart dans chaque arrondissement. La rue, l’étage et la lumière font le prix : nous publions celui de ${nombre.format(rues.rues.length)} rues.</p>
       ${appel('Voir le prix de votre rue', lien('/prix-immobilier', 'prix-rues'), { clair: true })}
       <p class="source">Source : DVF, DGFiP, ventes de ${rues.periode}. Premier et neuvième décile.</p>
     </div>
@@ -463,24 +462,24 @@ page('prix-reflexes', () => `
 page('preparer', () => `
   ${photo('preparer', 'photo-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-droite">
-    ${tete(numero('preparer'), 'Préparer le bien', 'L’acheteur ne paie pas vos meubles. Il paie l’espace, la lumière et l’absence de travaux. Chaque objet retiré lui laisse la place de se projeter.')}
+    ${tete(numero('preparer'), 'Préparer le bien', 'L’acheteur ne paie pas vos meubles. Il paie l’espace et la lumière.')}
     <div class="texte deux empile-grille">
-      ${bloc('Désencombrer', 'Videz les plans de travail, les dessus de meubles, les sols. Gardez dans chaque pièce ce qui en explique l’usage : un lit et ses chevets, une table et ses chaises, un canapé et une lampe. Le reste part à la cave le temps de la vente.')}
-      ${bloc('Dépersonnaliser', 'Photos de famille, collections, affiches, souvenirs : rangez-les. L’acheteur doit pouvoir s’imaginer chez lui, pas visiter chez vous.')}
-      ${bloc('Nettoyer à fond', 'Vitres, miroirs, joints, plinthes, hotte, intérieur des placards. Les acheteurs ouvrent les placards, et ils regardent sous l’évier.')}
-      ${bloc('Aérer et désodoriser', 'Une odeur de tabac, d’animal ou de cuisine se remarque dès l’entrée et s’oublie mal. Aérez avant chaque visite, sans parfum d’ambiance appuyé.')}
+      ${bloc('Désencombrer', 'Plans de travail, meubles, sols : on vide. Le surplus part à la cave.')}
+      ${bloc('Dépersonnaliser', 'Photos, collections, souvenirs : rangés. L’acheteur doit se voir chez lui.')}
+      ${bloc('Nettoyer à fond', 'Vitres, joints, plinthes, placards. Les acheteurs ouvrent tout.')}
+      ${bloc('Aérer', 'Tabac, animal, cuisine : une odeur se remarque dès l’entrée.')}
     </div>
-    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Faites le tour de votre appartement comme un acheteur, téléphone en main. Photographiez tout ce qui vous gêne : c'est votre liste de travaux.</p></div>
+    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Faites le tour de votre appartement comme un acheteur, téléphone en main. Photographiez tout ce qui vous gêne : c’est votre liste de travaux.</p></div>
   </div>`);
 
 /* 9. Pièce par pièce */
 const pieces = [
-  ['L’entrée', ['Manteaux, chaussures et courrier rangés', 'Un miroir et une lampe allumée', 'Rien qui gêne l’ouverture de la porte']],
-  ['Le séjour', ['Les meubles qui coupent le passage retirés', 'Fenêtres et rebords dégagés', 'Un canapé, une table, une lampe : la pièce s’explique seule']],
-  ['La cuisine', ['Plans de travail vides', 'Électroménager, poignées et joints nets', 'Évier vide, torchons rangés']],
-  ['Les chambres', ['Linge de lit clair et repassé', 'Rien sous le lit ni sur l’armoire', 'Placards à moitié vides : ils paraissent plus grands']],
-  ['La salle de bains', ['Serviettes blanches, produits rangés', 'Joints refaits, calcaire retiré', 'Rideau de douche neuf, ou retiré']],
-  ['Balcon, cave, parking', ['Balcon dégagé : une table, deux chaises', 'Cave accessible, rangée, éclairée', 'Parking ou box vidé s’il est vendu avec le bien']],
+  ['L’entrée', ['Manteaux et courrier rangés', 'Un miroir, une lampe allumée']],
+  ['Le séjour', ['Passages dégagés', 'Fenêtres libres', 'Un canapé, une table, une lampe']],
+  ['La cuisine', ['Plans de travail vides', 'Évier vide, joints nets']],
+  ['Les chambres', ['Linge clair', 'Rien sous le lit', 'Placards à moitié vides']],
+  ['La salle de bains', ['Serviettes blanches', 'Joints refaits, calcaire retiré']],
+  ['Balcon et cave', ['Balcon dégagé', 'Cave rangée et éclairée']],
 ];
 page('pieces', () => `
   ${photo('lumiere', 'photo-tiers-droite', { position: '50% 50%' })}
@@ -492,7 +491,7 @@ page('pieces', () => `
     </div>
     <div class="encart lumiere texte">
       <h3 class="intertitre">La lumière, avant tout</h3>
-      <p>Toutes les ampoules fonctionnent, dans un même blanc chaud. Volets et rideaux ouverts, lampes allumées, même en plein jour. Un plafonnier nu se remplace par une suspension simple : c’est un détail qui change une photo, et une première impression.</p>
+      <p>Toutes les ampoules en blanc chaud. Volets ouverts, lampes allumées, même en plein jour.</p>
     </div>
   </div>`);
 
@@ -500,37 +499,32 @@ page('pieces', () => `
 page('repeindre', () => `
   ${photo('repeindre', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
-    ${tete(numero('repeindre'), 'Repeindre avant de vendre', 'La peinture est souvent la dépense la plus rentable avant une vente. À deux conditions : rester neutre, et ne rien cacher.')}
+    ${tete(numero('repeindre'), 'Repeindre avant de vendre', 'La dépense la plus rentable. À deux conditions : rester neutre, ne rien cacher.')}
     <div class="texte deux empile-grille">
-      ${bloc('Quand repeindre', 'Murs marqués, traces de cadres, éclats autour des interrupteurs. Couleurs vives ou sombres, papier peint daté, plafond jauni. Ce sont les premiers défauts que voit l’acheteur, et les plus simples à effacer.')}
-      ${bloc('Quelle teinte', 'Un blanc chaud ou un blanc cassé, le même dans tout l’appartement : les pièces se répondent et paraissent plus grandes. Plafonds en blanc mat, portes et boiseries en satiné. Évitez le blanc bleuté dans une pièce peu lumineuse, il la refroidit.')}
-      ${bloc('Ce qu’il ne faut jamais faire', 'Repeindre une trace d’humidité sans en avoir traité la cause. Un dégât des eaux masqué expose le vendeur après la vente : la clause qui écarte la garantie des vices cachés ne protège pas celui qui connaissait le défaut (code civil, articles 1641 et 1643).')}
-      ${bloc('Faire ou faire faire', 'Un peintre livre des murs nets, angles et plafonds compris. Si vous peignez vous-même, soignez les finitions : un travail approximatif se voit davantage qu’un mur un peu défraîchi.')}
+      ${bloc('Quand', 'Murs marqués, couleurs vives, papier peint daté, plafond jauni.')}
+      ${bloc('Quelle teinte', 'Un blanc chaud, le même partout : tout paraît plus grand.')}
+      ${bloc('Jamais', 'Repeindre une trace d’humidité sans traiter sa cause. Le vendeur qui savait reste responsable après la vente.')}
+      ${bloc('Qui', 'Un peintre. Un travail approximatif se voit plus qu’un mur défraîchi.')}
     </div>
   </div>`);
 
 /* 11. Petites réparations */
 const reparations = [
-  'Joints de baignoire, de douche et d’évier refaits',
-  'Robinet qui goutte, chasse d’eau qui coule réparés',
-  'Ampoules grillées remplacées, même teinte partout',
-  'Prises, interrupteurs et caches refixés',
-  'Portes et placards qui frottent ou grincent réglés',
-  'Poignées et boutons resserrés ou changés',
-  'Trous de chevilles rebouchés et retouchés',
-  'Plinthes et barres de seuil recollées',
-  'Grilles de ventilation nettoyées',
-  'Vitres, miroirs et fenêtres impeccables',
-  'Volets, stores et persiennes qui fonctionnent',
-  'Sonnette, interphone et boîte aux lettres en état',
+  'Joints de bain et d’évier refaits',
+  'Robinet qui goutte réparé',
+  'Ampoules changées, même teinte',
+  'Prises et interrupteurs refixés',
+  'Portes qui frottent réglées',
+  'Trous de chevilles rebouchés',
+  'Plinthes recollées',
+  'Vitres et miroirs impeccables',
 ];
 page('reparations', () => `
   ${photo('reparations', 'photo-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-droite">
-    ${tete(numero('reparations'), 'Les petites réparations', 'Un petit défaut visible fait douter de tout le reste. L’acheteur qui voit un robinet goutter se demande ce qu’il ne voit pas.')}
+    ${tete(numero('reparations'), 'Les petites réparations', 'Un petit défaut visible fait douter de tout le reste.')}
     <ul class="liste deux reparations texte">${reparations.map((r) => `<li>${r}</li>`).join('')}</ul>
-    <p class="texte reparations-note">La plupart se règlent en une seule intervention. Pour les travaux plus lourds, nous faisons établir des devis par des entreprises que nous connaissons.</p>
-    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Donnez cette liste à un artisan pour une seule matinée, avant les photos. C'est le meilleur investissement de toute la vente.</p></div>
+    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Donnez cette liste à un artisan pour une seule matinée, avant les photos. C’est le meilleur investissement de toute la vente.</p></div>
   </div>`);
 
 /* 12. Investir où cela se voit */
@@ -560,24 +554,24 @@ page('investir', () => `
 
 /* 13. Diagnostics */
 const diagnostics = [
-  ['Performance énergétique (DPE)', 'Tous les logements', '10 ans'],
-  ['Superficie, loi Carrez', 'Lot de copropriété', 'Tant que le lot ne change pas'],
-  ['Plomb (CREP)', 'Immeuble construit avant le 1er janvier 1949', '1 an si du plomb dépasse le seuil, sinon sans limite'],
-  ['Amiante', 'Permis de construire antérieur au 1er juillet 1997', 'Sans limite en l’absence d’amiante (rapport postérieur au 1er avril 2013)'],
+  ['DPE', 'Tous les logements', '10 ans'],
+  ['Surface Carrez', 'Lot de copropriété', 'Sans limite, hors travaux'],
+  ['Plomb', 'Immeuble d’avant 1949', '1 an si plomb, sinon sans limite'],
+  ['Amiante', 'Permis d’avant juillet 1997', 'Sans limite si absent (rapport après avril 2013)'],
   ['Électricité', 'Installation de plus de 15 ans', '3 ans'],
   ['Gaz', 'Installation de plus de 15 ans', '3 ans'],
-  ['Termites', 'Tout bien à Paris', '6 mois'],
-  ['État des risques et pollutions', 'Tout bien à Paris', '6 mois'],
+  ['Termites', 'Tout Paris', '6 mois'],
+  ['Risques et pollutions', 'Tout Paris', '6 mois'],
 ];
 page('diagnostics', () => `
   ${photo('diagnostics', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
-    ${tete(numero('diagnostics'), 'Les diagnostics et le dossier', 'Un dossier complet dès le premier jour fait gagner des semaines le jour où l’acheteur se décide.')}
+    ${tete(numero('diagnostics'), 'Les diagnostics', 'Un dossier complet dès le premier jour fait gagner des semaines.')}
     <table class="diagnostics">
-      <thead><tr><th>Diagnostic</th><th>Exigé pour</th><th>Validité</th></tr></thead>
+      <thead><tr><th>Diagnostic</th><th>Pour</th><th>Validité</th></tr></thead>
       <tbody>${diagnostics.map(([a, b, c]) => `<tr><td class="fort">${a}</td><td>${b}</td><td>${c}</td></tr>`).join('')}</tbody>
     </table>
-    <p class="petit diagnostics-note">Le vendeur les commande auprès d’un diagnostiqueur certifié, indépendant de lui comme de l’agence. Le DPE doit exister avant la parution de l’annonce, l’état des risques se remet dès la première visite, les autres au plus tard à l’avant-contrat. Leur validité s’apprécie à la date de l’avant-contrat, puis à celle de l’acte. Un DPE établi avant le 1er juillet 2021 n’est plus valable.</p>
+    <p class="petit diagnostics-note">Un DPE établi avant le 1er juillet 2021 n’est plus valable.</p>
   </div>`);
 
 /* 14. Copropriété et DPE */
@@ -597,17 +591,17 @@ page('copropriete', () => `
     <div>
       <p class="surtitre">${numero('diagnostics')} · Les diagnostics et le dossier</p>
       <h2 class="titre-moyen">Le dossier de copropriété</h2>
-      <p class="texte copro-intro">Ces pièces doivent parvenir à l’acquéreur au plus tard à la signature de l’avant-contrat. S’il en manque, son délai de rétractation ne court qu’à partir du lendemain de leur communication. Nous les réunissons avant la mise en vente.</p>
+      <p class="texte copro-intro">À remettre au plus tard à l’avant-contrat. Nous les réunissons avant la mise en vente.</p>
       <ul class="liste texte">${piecesCopro.map((p) => `<li>${p}</li>`).join('')}</ul>
       <p class="petit discret copro-note">Le pré-état daté, souvent établi par le syndic, rassemble les informations financières. L’état daté, demandé au moment de la vente, est plafonné à 380 € TTC et payé par le vendeur.</p>
     </div>
     <div class="empile texte">
       <h2 class="titre-moyen copro-dpe-titre">Le DPE en 2026</h2>
-      ${bloc('Chauffage électrique : une classe à regagner', 'Depuis le 1er janvier 2026, le calcul du DPE retient pour l’électricité un coefficient de 1,9 au lieu de 2,3 (arrêté du 13 août 2025). Les DPE existants restent valables. Si votre logement est chauffé à l’électricité, une attestation actualisée de son étiquette se télécharge gratuitement sur l’observatoire DPE de l’ADEME. Le gain peut atteindre une classe.')}
-      ${bloc('Ce que regarde un acheteur investisseur', 'Un logement classé G ne peut plus être mis en location depuis le 1er janvier 2025. Les logements classés F suivront en 2028, les E en 2034. L’étiquette pèse directement sur le prix qu’un investisseur peut proposer.')}
+      ${bloc('Chauffage électrique', 'Votre étiquette a peut-être gagné une classe le 1er janvier 2026. L’attestation actualisée se télécharge gratuitement sur l’observatoire DPE de l’ADEME.')}
+      ${bloc('Location', 'G interdits depuis 2025, F en 2028, E en 2034. Un investisseur regarde l’étiquette avant le prix.')}
       <div class="encart encart-papier">
         <h3 class="intertitre">L’audit énergétique, une idée reçue à écarter</h3>
-        <p>Il ne concerne que les maisons et les immeubles en monopropriété classés E, F ou G. Un appartement en copropriété n’y est pas soumis. Pour un bien classé F ou G, nous faisons établir des devis par des entreprises et des diagnostiqueurs que nous connaissons, et nous les joignons au dossier.</p>
+        <p>Un appartement en copropriété n’y est pas soumis. Classé F ou G ? Nous faisons chiffrer les travaux et joignons les devis au dossier.</p>
       </div>
     </div>
   </div>`);
@@ -616,14 +610,12 @@ page('copropriete', () => `
 page('photos', () => `
   ${photo('photos', 'photo-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-droite">
-    ${tete(numero('photos'), 'Les photos et l’annonce', 'Votre annonce est la première visite. Elle se joue en quelques secondes, souvent sur l’écran d’un téléphone.')}
+    ${tete(numero('photos'), 'Les photos et l’annonce', 'Votre annonce est la première visite. Elle se joue en quelques secondes.')}
     <div class="texte deux empile-grille">
-      ${bloc('En lumière naturelle', 'Chaque pièce se photographie au moment où la lumière y entre, sans soleil direct qui brûle l’image. Un séjour plein sud se photographie en fin de matinée, une pièce sur cour au plus clair du jour.')}
-      ${bloc('Des verticales droites', 'Des murs qui penchent donnent l’impression d’un bien mal tenu. L’appareil reste droit, à hauteur de poitrine.')}
-      ${bloc('Un grand-angle maîtrisé', 'Une pièce étirée par l’objectif déçoit à la visite, et un acheteur déçu négocie. Une photo juste vaut mieux qu’une photo flatteuse.')}
-      ${bloc('La première photo', 'La plus belle pièce, ou la vue. C’est elle qui décide du clic, puis de la visite.')}
-      ${bloc('Un plan de surfaces', 'L’acheteur place ses meubles avant de venir. Les visites qui n’auraient pas abouti n’ont pas lieu.')}
-      ${bloc('La mise en scène virtuelle', 'Utile pour un bien vide, à condition d’être signalée sur chaque image concernée. Un acheteur qui se sent trompé ne revient pas.')}
+      ${bloc('La lumière', 'Chaque pièce à l’heure où le jour y entre.')}
+      ${bloc('Des lignes droites', 'Une photo juste vaut mieux qu’une photo flatteuse : l’acheteur déçu négocie.')}
+      ${bloc('La première photo', 'La plus belle pièce, ou la vue. Elle décide de la visite.')}
+      ${bloc('Le plan', 'L’acheteur place ses meubles avant de venir.')}
     </div>
   </div>`);
 
@@ -654,14 +646,14 @@ page('annonce', () => `
 page('diffusion', () => `
   ${photo('diffusion', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
-    ${tete(numero('diffusion'), 'La diffusion', 'Être vu partout ne suffit pas. Il faut être vu par les bons acheteurs, au bon moment, avec un dossier prêt.')}
+    ${tete(numero('diffusion'), 'La diffusion', 'Être vu par les bons acheteurs, au bon moment, avec un dossier prêt.')}
     <div class="texte deux empile-grille">
-      ${bloc('Les portails', 'Une annonce nouvelle attire tous les acheteurs en alerte. Elle ne sort qu’une fois le dossier complet et les photos faites : on ne refait pas une première impression.')}
-      ${bloc('Notre fichier d’acquéreurs', 'Les acheteurs qui cherchent dans nos quartiers, déjà vérifiés : apport, financement, avancement du projet. Ils sont informés dès que le bien est prêt.')}
-      ${bloc('Les confrères du secteur', 'Un bien peut se vendre par une agence voisine qui a l’acheteur. Quand c’est votre intérêt, le mandat le prévoit.')}
-      ${bloc('La vente confidentielle', 'Aucune diffusion sur les portails, pas de panneau, aucune mention publique. Le bien est présenté aux seuls acheteurs qualifiés de notre fichier. Le délai est généralement plus long ; vous choisissez en connaissance de cause.')}
+      ${bloc('Les portails', 'L’annonce sort quand tout est prêt. On ne refait pas une première impression.')}
+      ${bloc('Notre fichier', 'Nos acheteurs vérifiés sont prévenus dès que le bien est prêt.')}
+      ${bloc('Les confrères', 'Une agence voisine a peut-être l’acheteur. Si c’est votre intérêt, le mandat le prévoit.')}
+      ${bloc('La vente confidentielle', 'Ni portail, ni panneau. Plus discret, souvent plus long.')}
     </div>
-    <p class="texte diffusion-note"><strong>Écrit dans le mandat.</strong> Les canaux de diffusion y sont nommés : ce qui est écrit peut être vérifié.</p>
+    <p class="texte diffusion-note"><strong>Écrit dans le mandat :</strong> chaque canal y est nommé.</p>
   </div>`);
 
 /* 18. Le mandat */
@@ -680,7 +672,7 @@ page('mandat', () => `
       <table>
         <thead><tr><th>Forme</th><th>Ce qu’elle apporte</th><th>Ce qu’elle coûte</th></tr></thead>
         <tbody>
-          <tr><td class="fort">Mandat simple</td><td>Vous gardez toutes les portes ouvertes, et vous pouvez vendre vous-même.</td><td>Aucun professionnel n’investit vraiment sur un bien qu’il a peu de chances de vendre. Le même bien affiché à plusieurs prix laisse croire qu’il y a de la marge.</td></tr>
+          <tr><td class="fort">Mandat simple</td><td>Vous gardez toutes les portes ouvertes, et vous pouvez vendre vous-même.</td><td>Personne n’investit vraiment. Le même bien affiché à plusieurs prix laisse croire qu’il y a de la marge.</td></tr>
           <tr><td class="fort">Mandat exclusif</td><td>Un engagement écrit, un interlocuteur, un plan de vente : reportage photographique, dossier complet, acheteurs présélectionnés, compte rendu après chaque visite.</td><td>Trois mois d’irrévocabilité, puis une reconduction que vous pouvez interrompre à quinze jours.</td></tr>
           <tr><td class="fort">Vente confidentielle</td><td>Aucune diffusion, aucun panneau, présentation aux seuls acheteurs qualifiés.</td><td>Un délai souvent nettement plus long, à accepter dès le départ.</td></tr>
         </tbody>
@@ -702,12 +694,10 @@ page('visites', () => `
   <div class="colonne colonne-droite">
     ${tete(numero('visites'), 'Les visites', 'Une visite mal préparée fait plus de mal qu’une visite qui n’a pas lieu.')}
     <div class="texte deux empile-grille">
-      ${bloc('Qualifier avant, pas pendant', 'Apport, accord de principe bancaire, situation professionnelle, avancement du projet : demandés avant la visite. Moins de visites, plus d’offres, et votre appartement reste votre domicile.')}
-      ${bloc('Choisir l’heure', 'Un appartement orienté au sud se montre en fin de matinée. Un bien sur rue passante se montre le dimanche matin ; l’acheteur sérieux repassera en semaine, autant l’y inviter.')}
-      ${bloc('Annoncer les défauts', 'Le bruit, l’absence d’ascenseur, le ravalement voté. Dits par vous, ce sont des paramètres du prix. Découverts par l’acheteur, ce sont des arguments de négociation.')}
-      ${bloc('Laisser visiter', 'Mieux vaut être absent. L’acheteur ose regarder, ouvrir, poser ses questions, et se projeter.')}
-      ${bloc('Le dossier dès la deuxième visite', 'Diagnostics, procès-verbaux, charges, devis : l’acheteur qui revient a tout en main pour se décider.')}
-      ${bloc('Un compte rendu le jour même', 'Ce que l’acheteur a aimé, ce qui l’a arrêté, son budget, sa suite. Au fil des visites, ces comptes rendus disent ce qu’il faut corriger : le prix ou la présentation.')}
+      ${bloc('Qualifier avant', 'Apport et accord bancaire vérifiés avant la visite. Moins de visites, plus d’offres.')}
+      ${bloc('Choisir l’heure', 'Plein sud : en fin de matinée. Rue passante : le dimanche.')}
+      ${bloc('Dire les défauts', 'Dits par vous, ils sont dans le prix. Découverts, ils servent à négocier.')}
+      ${bloc('Écrire', 'Un compte rendu le jour même : ce qui a plu, ce qui a freiné, la suite.')}
     </div>
   </div>`);
 
@@ -717,12 +707,10 @@ page('signer', () => `
   <div class="colonne colonne-gauche">
     ${tete(numero('signer'), 'Négocier, puis signer', 'La première offre est rarement la meilleure. Elle est souvent la plus sûre.')}
     <div class="texte deux empile-grille">
-      ${bloc('Lire une offre en entier', 'Le prix, mais aussi l’apport, le financement et le calendrier. Chaque offre vous est présentée par écrit, avec notre recommandation. La décision reste la vôtre.')}
-      ${bloc('Négocier autre chose que le prix', 'La date de libération des lieux, le mobilier, les travaux votés, le délai de signature. Ces leviers valent souvent plus qu’une baisse.')}
-      ${bloc('Vérifier le financement', 'Montant, taux maximum, durée : ils figurent dans la condition suspensive de prêt, d’un mois au moins. Un dossier fragile fait perdre des semaines.')}
-      ${bloc('Les délais à connaître', 'Dix jours de rétractation pour l’acquéreur après l’avant-contrat. Deux mois pour le droit de préemption de la Ville de Paris. Environ trois mois jusqu’à l’acte, deux sans prêt.')}
-      ${bloc('Un locataire en place', 'Pour vendre libre un logement loué vide, le congé pour vendre se délivre au moins six mois avant la fin du bail, et vaut offre de vente au locataire.')}
-      ${bloc('La plus-value', 'Exonérée sur votre résidence principale. Pour un autre bien, faites calculer l’impôt par votre notaire avant de fixer le prix.')}
+      ${bloc('Lire l’offre en entier', 'Prix, apport, financement, calendrier. Présentée par écrit, avec ma recommandation.')}
+      ${bloc('Négocier autrement', 'Date de départ, mobilier, travaux votés : souvent plus utile qu’une baisse.')}
+      ${bloc('Les délais', '10 jours de rétractation. 2 mois de préemption pour la Ville. Environ 3 mois jusqu’à l’acte.')}
+      ${bloc('La plus-value', 'Exonérée sur la résidence principale. Sinon, demandez le calcul à votre notaire.')}
     </div>
   </div>`);
 
@@ -823,18 +811,18 @@ page('methode', () => `
 
 /* 23. Ce que nous écrivons pour vous */
 const engagements = [
-  ['Un avis de valeur écrit avant toute signature', 'Les ventes comparables de votre rue, les ajustements appliqués, une fourchette assumée. Vous le gardez même si vous ne signez pas.'],
-  ['Les canaux de diffusion nommés', 'Portails, fichier acquéreurs, confrères du secteur, diffusion confidentielle le cas échéant.'],
-  ['Un compte rendu après chaque visite', 'Le jour même, et une synthèse chaque semaine : contacts, visites, offres, concurrence.'],
-  ['Un rendez-vous chiffré en semaine 5', 'On confirme le prix ou on le corrige, ensemble, chiffres sous les yeux. La date figure dans le mandat.'],
-  ['Un seul interlocuteur', 'Samy Santamarina fait l’estimation, les visites, la négociation et le suivi jusqu’à l’acte.'],
-  ['Des honoraires réduits en exclusivité', 'Le taux de votre tranche baisse d’un point, et la remise est écrite dans le mandat.'],
+  ['Un avis de valeur écrit', 'Les ventes de votre rue, une fourchette assumée. Il vous reste, même sans mandat.'],
+  ['Des canaux nommés', 'Portails, fichier acquéreurs, confrères, ou vente confidentielle.'],
+  ['Un compte rendu par visite', 'Le jour même, et une synthèse chaque semaine.'],
+  ['Un point en semaine 5', 'On confirme ou on corrige le prix, ensemble.'],
+  ['Un seul interlocuteur', 'Samy Santamarina, de l’estimation à l’acte.'],
+  ['Des honoraires réduits', 'En exclusivité, un point de moins, écrit dans le mandat.'],
 ];
 page('trudaines', () => `
   ${photo('quartier', 'photo-tiers-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-large-droite">
     <p class="surtitre">Trudaines Immobilier</p>
-    <h2 class="titre-moyen">Ce que nous écrivons, et que vous pouvez vérifier</h2>
+    <h2 class="titre-moyen">Ce que nous écrivons pour vous</h2>
     <div class="engagements trois">
       ${engagements.map(([t, x]) => bloc(t, x)).join('')}
     </div>
