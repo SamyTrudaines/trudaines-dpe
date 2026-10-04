@@ -257,8 +257,10 @@ const CHAPITRES = [
   { id: 'signer', titre: 'Négocier, puis signer' },
 ];
 const ANNEXES = [
+  { id: 'actualites', titre: 'Ce qui a changé en 2026' },
   { id: 'calendrier', titre: 'Le calendrier d’une vente' },
   { id: 'liste', titre: 'La liste « prêt à vendre »' },
+  { id: 'methode', titre: 'Vendre avec nous, en six temps' },
   { id: 'trudaines', titre: 'Ce que nous écrivons pour vous' },
   { id: 'estimer', titre: 'Faire estimer votre bien' },
 ];
@@ -289,11 +291,11 @@ page('avant-propos', () => `
   ${photo('edito', 'photo-tiers-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-large-droite edito">
     <p class="surtitre">Avant-propos</p>
-    <h2 class="titre edito-titre">Une vente se joue sur des détails. Nous les traitons avec méthode.</h2>
+    <h2 class="titre edito-titre">Votre vente mérite mieux que des promesses.</h2>
     <div class="texte edito-texte">
-      <p>Vendre un appartement à Paris engage souvent une vie d’épargne et un nouveau projet de famille. La décision est lourde. Elle se joue pourtant sur des détails : une photo prise à contre-jour, un joint noirci, un prix affiché trop haut la première semaine, un procès-verbal d’assemblée qui manque le jour où l’acheteur veut signer.</p>
-      <p>J’ai fondé Trudaines en septembre 2024, après avoir constaté que les vendeurs parisiens recevaient beaucoup de promesses et peu de documents. Nous faisons l’inverse : les ventes réellement signées pour fixer le prix, un bien préparé avant la première visite, et tout par écrit, du premier avis de valeur au dernier compte rendu.</p>
-      <p>Ce guide rassemble ce que nous appliquons à chaque vente, sans rien garder pour nous. Prenez ce qui vous sert. Et si vous souhaitez un regard sur votre bien, je viens le voir : l’avis de valeur est écrit, gratuit, et il vous reste.</p>
+      <p>Avant l'immobilier, j'ai passé dix ans dans l'événementiel, où rien ne se rattrape le jour J. En 2018, avec mon épouse, nous avons acheté un appartement à Montmartre et nous l'avons entièrement rénové. J'ai connu, côté propriétaire, ce que vivent nos clients : les devis, l'attente, les doutes.</p>
+      <p>J'ai fondé Trudaines en septembre 2024, après avoir constaté que les vendeurs parisiens recevaient beaucoup de promesses et peu de documents. Nous faisons l'inverse. Je visite moi-même chaque bien que je prends en mandat, je conduis les visites, je mène les négociations et je suis le dossier jusqu'à l'acte. Tout est écrit : l'avis de valeur, les comptes rendus, les offres.</p>
+      <p>Ce guide rassemble ce que nous appliquons à chaque vente, sans rien garder pour nous. Prenez ce qui vous sert. Et si vous voulez un regard sur votre bien, appelez-moi : je viens le voir, et l'avis de valeur vous reste.</p>
     </div>
     <div class="signature">
       <p class="signature-nom">Samy Santamarina</p>
@@ -365,6 +367,60 @@ page('marche-chiffres', () => `
     </div>
   </div>`);
 
+/* 5 bis. Ce qui a changé en 2026 : faits vérifiés à la source, datés. */
+const actualites = [
+  {
+    domaine: 'Le marché parisien',
+    valeur: '9 520 €',
+    libelle: 'le m², 2e trimestre 2026',
+    fait: 'Prix des appartements anciens à Paris : +0,1 % sur un an. En Île-de-France, 31 750 ventes d’avril à juin, +10 % sur un an.',
+    lecture: 'Les ventes reprennent, les prix ne bougent plus. L’acheteur a le choix et compare tout.',
+    source: 'Notaires du Grand Paris, conjoncture du 2e trimestre 2026',
+  },
+  {
+    domaine: 'Le crédit',
+    valeur: '3,31 %',
+    libelle: 'taux moyen, août 2026',
+    fait: 'Après un palier autour de 3,23 % de février à juin. La BCE a relevé ses taux de 0,25 point le 10 septembre : taux de dépôt à 2,50 %.',
+    lecture: 'Chaque hausse réduit le budget des acheteurs financés à crédit. Le prix juste compte plus que jamais.',
+    source: 'Observatoire Crédit Logement/CSA, août 2026 ; Banque centrale européenne',
+  },
+  {
+    domaine: 'Le DPE',
+    valeur: '1,9',
+    libelle: 'coefficient de l’électricité',
+    fait: 'Au lieu de 2,3 depuis le 1er janvier 2026 : environ 850 000 logements sortent du statut de passoire, sans travaux. Location : G interdits depuis 2025, F en 2028, E en 2034.',
+    lecture: 'Chauffage électrique ? Téléchargez l’attestation actualisée avant la mise en vente.',
+    source: 'Ministère de l’Économie ; loi Climat et résilience',
+  },
+  {
+    domaine: 'Les frais d’achat',
+    valeur: '5 %',
+    libelle: 'droits de mutation à Paris',
+    fait: 'Part départementale portée de 4,5 % à 5 % pour les actes signés du 1er avril 2025 au 31 mars 2028. Les primo-accédants qui achètent leur résidence principale en sont exonérés.',
+    lecture: 'Ce que l’acheteur paie en frais, il ne le met pas dans le prix : un argument de plus pour un prix juste.',
+    source: 'Conseil de Paris, février 2025 ; Notaires de France',
+  },
+];
+page('actualites', () => `
+  <div class="cadre actualites">
+    <div class="actualites-tete">
+      <p class="surtitre">${numero('marche')} · L'actualité</p>
+      <h2 class="titre-moyen">Ce qui a changé en 2026</h2>
+      <p class="chapo">Les nouvelles qui comptent pour un vendeur parisien, vérifiées à la source au 4 octobre 2026.</p>
+    </div>
+    <div class="quatre actualites-grille">
+      ${actualites.map((a) => `<div class="actu">
+        <p class="surtitre">${a.domaine}</p>
+        <p class="chiffre-valeur">${a.valeur}</p>
+        <p class="chiffre-libelle">${a.libelle}</p>
+        <p class="actu-fait">${a.fait}</p>
+        <p class="actu-lecture">${a.lecture}</p>
+        <p class="source">${a.source}</p>
+      </div>`).join('')}
+    </div>
+  </div>`);
+
 /* 6. Le juste prix, ouverture */
 page('prix', () => `
   ${photo('prix', 'photo-droite', { position: '50% 50%' })}
@@ -414,6 +470,7 @@ page('preparer', () => `
       ${bloc('Nettoyer à fond', 'Vitres, miroirs, joints, plinthes, hotte, intérieur des placards. Les acheteurs ouvrent les placards, et ils regardent sous l’évier.')}
       ${bloc('Aérer et désodoriser', 'Une odeur de tabac, d’animal ou de cuisine se remarque dès l’entrée et s’oublie mal. Aérez avant chaque visite, sans parfum d’ambiance appuyé.')}
     </div>
+    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Faites le tour de votre appartement comme un acheteur, téléphone en main. Photographiez tout ce qui vous gêne : c'est votre liste de travaux.</p></div>
   </div>`);
 
 /* 9. Pièce par pièce */
@@ -473,6 +530,7 @@ page('reparations', () => `
     ${tete(numero('reparations'), 'Les petites réparations', 'Un petit défaut visible fait douter de tout le reste. L’acheteur qui voit un robinet goutter se demande ce qu’il ne voit pas.')}
     <ul class="liste deux reparations texte">${reparations.map((r) => `<li>${r}</li>`).join('')}</ul>
     <p class="texte reparations-note">La plupart se règlent en une seule intervention. Pour les travaux plus lourds, nous faisons établir des devis par des entreprises que nous connaissons.</p>
+    <div class="conseil"><p class="surtitre">Le conseil de Samy</p><p class="conseil-texte">Donnez cette liste à un artisan pour une seule matinée, avant les photos. C'est le meilleur investissement de toute la vente.</p></div>
   </div>`);
 
 /* 12. Investir où cela se voit */
@@ -738,6 +796,31 @@ page('liste', () => `
     </div>
   </div>`);
 
+/* 22 bis. Vendre avec nous : le déroulé, promesse par promesse, telle qu'écrite sur le site. */
+const temps = [
+  ['Un premier appel', 'Vous me parlez de votre projet, de vos délais, de vos contraintes. Je vous rappelle sous 24 heures ouvrées.'],
+  ['La visite d’estimation', 'Je viens voir votre bien. Quarante-cinq minutes, et aucune signature ce jour-là.'],
+  ['L’avis de valeur écrit', 'Sous 48 heures : les ventes signées de votre rue, une fourchette assumée, un prix conseillé. Il vous reste, même si vous ne vendez pas avec nous.'],
+  ['La préparation', 'Diagnostics, dossier de copropriété, photographies en lumière naturelle, plan de surfaces. Rien ne sort avant que tout soit prêt.'],
+  ['La mise en vente', 'Des acheteurs vérifiés avant chaque visite, un compte rendu le jour même, une synthèse chaque vendredi, un point chiffré en semaine 5.'],
+  ['Jusqu’à l’acte', 'Chaque offre présentée par écrit avec ma recommandation. Le compromis, le prêt et les délais suivis avec le notaire, jusqu’à la remise des clés.'],
+];
+page('methode', () => `
+  <div class="cadre methode">
+    <div class="methode-tete">
+      <p class="surtitre">Trudaines Immobilier</p>
+      <h2 class="titre-moyen">Vendre avec nous, en six temps</h2>
+      <p class="chapo">Vous décidez à chaque étape. Nous portons le reste, et nous l'écrivons.</p>
+    </div>
+    <ol class="methode-temps">
+      ${temps.map(([t, x], i) => `<li><p class="methode-numero">${String(i + 1).padStart(2, '0')}</p><h3 class="intertitre">${t}</h3><p>${x}</p></li>`).join('')}
+    </ol>
+    <div class="liste-appel">
+      <p>Votre seule démarche : le premier appel.</p>
+      ${appel(`Appeler le ${contact.telephone}`, telephone, { clair: true })}
+    </div>
+  </div>`);
+
 /* 23. Ce que nous écrivons pour vous */
 const engagements = [
   ['Un avis de valeur écrit avant toute signature', 'Les ventes comparables de votre rue, les ajustements appliqués, une fourchette assumée. Vous le gardez même si vous ne signez pas.'],
@@ -772,7 +855,7 @@ page('estimer', () => `
     <div class="logo dos-logo">${logoSvg(true)}</div>
     <p class="surtitre">Prochaine étape</p>
     <h2 class="titre dos-titre">Faites estimer votre bien</h2>
-    <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 48 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste.</p>
+    <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 48 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste. C'est moi qui vous réponds.</p>
     <div class="dos-grille">
       <ul class="dos-appels">
         <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Demander une visite d’estimation</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>
@@ -784,7 +867,7 @@ page('estimer', () => `
     </div>
     <div class="dos-mentions">
       <p>${MENTION_LEGALE}</p>
-      <p>Sources : demandes de valeurs foncières (DGFiP), code de la construction et de l’habitation, code civil, ministère de l’Économie. Règles en vigueur en octobre 2026.${credits.length ? ` Photographies : ${credits.map((c) => c.photographe).filter((v, i, t) => t.indexOf(v) === i).join(', ')}, sur Unsplash.` : ''}</p>
+      <p>Sources : demandes de valeurs foncières (DGFiP), Notaires du Grand Paris, Observatoire Crédit Logement/CSA, Banque centrale européenne, code de la construction et de l’habitation, code civil, ministère de l’Économie. Règles en vigueur en octobre 2026.${credits.length ? ` Photographies : ${credits.map((c) => c.photographe).filter((v, i, t) => t.indexOf(v) === i).join(', ')}, sur Unsplash.` : ''}</p>
     </div>
   </div>`);
 

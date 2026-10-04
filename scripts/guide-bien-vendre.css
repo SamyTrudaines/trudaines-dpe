@@ -528,3 +528,30 @@ table.honoraires td { font-size: 7.8pt; padding: 1.7mm 0; }
 .couverture-auteur + .couverture-territoire { margin-top: 2.6mm; }
 .liste-appel { display: flex; align-items: center; justify-content: space-between; gap: 10mm; margin-top: 10mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; }
 .liste-appel p { font-family: 'Cormorant', serif; font-style: italic; font-size: 14pt; }
+
+/* Ce qui a changé en 2026 */
+.actualites { display: flex; flex-direction: column; }
+.actualites-tete { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 14mm; align-items: end; margin-bottom: 12mm; }
+.actualites-grille { flex: 1; }
+.actualites-tete .titre-moyen { grid-column: 1; margin-top: 3mm; font-size: 32pt; }
+.actualites-tete .chapo { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 13pt; }
+.actualites-grille { column-gap: 9mm; }
+.actu { border-top: 0.25mm solid var(--encre); padding-top: 4mm; display: flex; flex-direction: column; }
+.actu .chiffre-valeur { margin-top: 5mm; font-size: 38pt; }
+.actu-fait { margin-top: 5mm; font-size: 8.9pt; line-height: 1.6; }
+.actu-lecture { margin-top: 4mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 14pt; line-height: 1.3; }
+.actu .source { margin-top: auto; padding-top: 4mm; }
+
+/* Vendre avec nous */
+.methode-tete { display: grid; grid-template-columns: 1.45fr 1fr; column-gap: 14mm; align-items: end; margin-bottom: 10mm; }
+.methode-tete .titre-moyen { grid-column: 1; margin-top: 3mm; font-size: 32pt; }
+.methode-tete .chapo { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 13pt; }
+.methode-temps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 12mm; row-gap: 7mm; }
+.methode-temps li { border-top: 0.25mm solid var(--trait); padding-top: 3mm; }
+.methode-numero { font-family: 'Cormorant', serif; font-size: 26pt; line-height: 1; color: var(--orange); margin-bottom: 2.5mm; }
+.methode-temps li p:last-child { font-size: 8.4pt; line-height: 1.58; }
+
+/* Le conseil de Samy */
+.conseil { margin-top: 6mm; padding-top: 3.4mm; border-top: 0.25mm solid var(--orange); }
+.conseil .surtitre { color: var(--encre); }
+.conseil-texte { margin-top: 1.6mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 13pt; line-height: 1.3; }
