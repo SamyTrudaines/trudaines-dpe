@@ -11,9 +11,8 @@
  *
  * La liste fait foi dans assets/guide/sources.json : emplacement, identifiant
  * Unsplash, photographe, page, description, et point d'appui du recadrage
- * [x, y] entre 0 et 1. Le téléchargement passe par le bouton de la page de la
- * photo, ce que demandent les règles d'Unsplash. L'environnement de travail
- * n'atteint pas Unsplash : le workflow .github/workflows/photos-guide.yml lance
+ * [x, y] entre 0 et 1, et au besoin l'adresse de l'original (champ original).
+ * L'environnement de travail n'atteint pas Unsplash : le workflow .github/workflows/photos-guide.yml lance
  * ce script sur les machines de GitHub dès que sources.json change.
  *
  * Sortie : assets/guide/<emplacement>.jpg, lu par scripts/guide-bien-vendre.mjs.
@@ -48,20 +47,41 @@ const sources = JSON.parse(readFileSync(join(racine, 'assets', 'guide', 'sources
 const sortie = join(racine, 'assets', 'guide');
 mkdirSync(sortie, { recursive: true });
 
-async function original({ emplacement, id }) {
+/**
+ * Adresse de l'original sur le serveur d'images d'Unsplash. La page publique de
+ * la photo la donne ; les données de la page servent de second recours.
+ */
+async function adresseOriginal(id) {
+  const entetes = { 'User-Agent': 'Mozilla/5.0 (Trudaines, guide vendeur)', Accept: 'text/html,application/json' };
+  const json = await fetch(`https://unsplash.com/napi/photos/${id}`, { headers: entetes }).catch(() => null);
+  if (json && json.ok) {
+    const donnees = await json.json().catch(() => null);
+    if (donnees?.urls?.raw) return donnees.urls.raw;
+  }
+  const page = await fetch(`https://unsplash.com/photos/${id}`, { headers: entetes }).catch(() => null);
+  if (page && page.ok) {
+    const trouve = /https:\/\/images\.unsplash\.com\/photo-[0-9]+-[0-9a-f]+/.exec(await page.text());
+    if (trouve) return trouve[0];
+  }
+  throw new Error(`adresse de l'original introuvable (napi ${json?.status ?? 'sans réponse'}, page ${page?.status ?? 'sans réponse'})`);
+}
+
+async function original({ emplacement, id, original: adresseConnue }) {
   if (depuis) {
     const chemin = join(depuis, `${emplacement}.jpg`);
     if (!existsSync(chemin)) throw new Error(`${emplacement} : ${chemin} absent`);
     return readFileSync(chemin);
   }
-  const adresse = `https://unsplash.com/photos/${id}/download?force=true`;
+  const base = (adresseConnue || (await adresseOriginal(id))).split('?')[0];
+  // 3 600 px sur le grand côté suffisent au plus grand cadre de la maquette.
+  const adresse = `${base}?fm=jpg&q=90&w=3600&fit=max`;
   for (let essai = 1; essai <= 4; essai += 1) {
-    const reponse = await fetch(adresse, { redirect: 'follow', headers: { 'User-Agent': 'Mozilla/5.0 (Trudaines, guide vendeur)' } });
-    if (reponse.ok) return Buffer.from(await reponse.arrayBuffer());
-    console.warn(`  ${emplacement} : essai ${essai}, réponse ${reponse.status}`);
+    const reponse = await fetch(adresse).catch(() => null);
+    if (reponse && reponse.ok) return Buffer.from(await reponse.arrayBuffer());
+    console.warn(`  ${emplacement} : essai ${essai}, réponse ${reponse?.status ?? 'aucune'}`);
     await new Promise((r) => setTimeout(r, 3000 * essai));
   }
-  throw new Error(`${emplacement} : téléchargement impossible (${adresse})`);
+  throw new Error(`téléchargement impossible (${adresse})`);
 }
 
 const borne = (v, min, max) => Math.min(max, Math.max(min, v));
