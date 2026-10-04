@@ -392,9 +392,9 @@ const actualites = [
     domaine: 'Le DPE',
     valeur: '1,9',
     libelle: 'coefficient de l’électricité',
-    fait: 'Au lieu de 2,3 depuis le 1er janvier 2026 : environ 850 000 logements sortent du statut de passoire, sans travaux. Location : G interdits depuis 2025, F en 2028, E en 2034.',
+    fait: 'Au lieu de 2,3 depuis le 1er janvier 2026 : environ 850 000 logements sortent du statut de passoire, sans travaux. Puis 1,7 au 1er janvier 2027. Location : G interdits depuis 2025, F en 2028, E en 2034.',
     lecture: 'Chauffage électrique ? Téléchargez l’attestation actualisée avant la mise en vente.',
-    source: 'Ministère de l’Économie ; loi Climat et résilience',
+    source: 'Ministère de l’Économie ; arrêté du 19 août 2026 ; loi Climat et résilience',
   },
   {
     domaine: 'Les frais d’achat',
