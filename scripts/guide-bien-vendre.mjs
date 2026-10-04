@@ -286,7 +286,7 @@ page('couverture', () => `
 
 /* 2. Avant-propos */
 page('avant-propos', () => `
-  ${photo('cles', 'photo-tiers-gauche', { position: '50% 50%' })}
+  ${photo('edito', 'photo-tiers-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-large-droite edito">
     <p class="surtitre">Avant-propos</p>
     <h2 class="titre edito-titre">Une vente se joue sur des détails. Nous les traitons avec méthode.</h2>
@@ -655,7 +655,7 @@ page('visites', () => `
 
 /* 20. Négocier, puis signer */
 page('signer', () => `
-  ${photo('negociation', 'photo-droite', { position: '50% 50%' })}
+  ${photo('cles', 'photo-droite', { position: '50% 50%' })}
   <div class="colonne colonne-gauche">
     ${tete(numero('signer'), 'Négocier, puis signer', 'La première offre est rarement la meilleure. Elle est souvent la plus sûre.')}
     <div class="texte deux empile-grille">

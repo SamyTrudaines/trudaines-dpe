@@ -39,8 +39,8 @@ const FORMATS = {
 const EMPLACEMENTS = {
   couverture: 'couverture',
   marche: 'demi', prix: 'demi', preparer: 'demi', repeindre: 'demi', reparations: 'demi',
-  diagnostics: 'demi', photos: 'demi', diffusion: 'demi', visites: 'demi', negociation: 'demi',
-  cles: 'tiers', escalier: 'tiers', lumiere: 'tiers', quartier: 'tiers', dos: 'tiers',
+  diagnostics: 'demi', photos: 'demi', diffusion: 'demi', visites: 'demi', cles: 'demi',
+  edito: 'tiers', escalier: 'tiers', lumiere: 'tiers', quartier: 'tiers', dos: 'tiers',
 };
 
 const sources = JSON.parse(readFileSync(join(racine, 'assets', 'guide', 'sources.json'), 'utf8'));

@@ -1,5 +1,17 @@
 [
  {
+  "emplacement": "edito",
+  "id": "hOc0ldfXHnc",
+  "photographe": "Stephanie Klepacki",
+  "page": "https://unsplash.com/photos/a-close-up-of-a-wooden-door-on-a-building-hOc0ldfXHnc",
+  "description": "Porte cochère parisienne en bois blond à deux vantaux moulurés, encadrée de pierre de taille claire.",
+  "cadrage": [
+   0.5,
+   0.5
+  ],
+  "original": "https://images.unsplash.com/photo-1683918891756-817074d0cca7"
+ },
+ {
   "emplacement": "couverture",
   "id": "uO0i6ECaHbY",
   "photographe": "Elena Kloppenburg",
@@ -18,7 +30,7 @@
   "page": "https://unsplash.com/photos/a-person-handing-another-person-something-with-their-hand-ThbDT7-woYw",
   "description": "Remise d’une clé de main à main, lumière chaude et arrière-plan flou, sans visage.",
   "cadrage": [
-   0.5,
+   0.52,
    0.5
   ],
   "original": "https://images.unsplash.com/photo-1633889975586-4ff8a44ed944"
@@ -154,18 +166,6 @@
    0.5
   ],
   "original": "https://images.unsplash.com/photo-1722606509813-d4a4282d067a"
- },
- {
-  "emplacement": "negociation",
-  "id": "mgvCv7Ht5hw",
-  "photographe": "Tim Mossholder",
-  "page": "https://unsplash.com/photos/two-cups-of-coffee-sit-on-a-table-mgvCv7Ht5hw",
-  "description": "Deux tasses de café blanches posées sur des documents, une main appuyée sur la feuille, sans visage.",
-  "cadrage": [
-   0.5,
-   0.55
-  ],
-  "original": "https://images.unsplash.com/photo-1635317735762-6a5ae18ee1c9"
  },
  {
   "emplacement": "quartier",
