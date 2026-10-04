@@ -183,7 +183,13 @@ const guides = defineCollection({
     titre: z.string(),
     slug: z.string(),
     chapo: z.string(),
+    /** Image de couverture affichée à côté du formulaire, chemin public. */
     couverture: z.string().optional(),
+    /**
+     * paysage : PDF composé par scripts/guide-bien-vendre.mjs et versionné dans
+     * public/guides, que scripts/generate-pdfs.mjs ne régénère pas.
+     */
+    maquette: z.enum(['portrait', 'paysage']).default('portrait'),
     sommaire: z.array(z.string()).default([]),
     pages: z.number().default(0),
     fichier: z.string(),

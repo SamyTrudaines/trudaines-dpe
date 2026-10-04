@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "fiches": "node scripts/generate-pdfs.mjs",
+    "guide": "node scripts/guide-bien-vendre.mjs",
     "verifier": "node scripts/verifier.mjs",
     "verifier-mobile": "node scripts/verifier-mobile.mjs",
     "test-formulaires": "node scripts/test-formulaires.mjs",

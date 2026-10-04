@@ -1,0 +1,58 @@
+# Photographies du guide « Bien vendre à Paris ».
+#
+# L'environnement de travail n'atteint pas Unsplash ; les machines de GitHub,
+# si. Quand assets/guide/sources.json change sur une branche de travail, ce
+# workflow télécharge chaque original par le bouton de sa page Unsplash
+# (licence Unsplash, crédits en dernière page du guide), le recadre au format
+# de son emplacement (scripts/guide-photos.mjs) et pousse les fichiers
+# assets/guide/<emplacement>.jpg sur la même branche. Jamais sur main : la
+# branche principale ne change que par pull request.
+#
+# Le PDF n'est pas recomposé ici (il faut Chromium et une relecture) :
+# après le passage du workflow, récupérer la branche puis lancer npm run guide.
+name: Photos du guide
+
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - assets/guide/sources.json
+      - scripts/guide-photos.mjs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: photos-guide-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Téléchargement et recadrage
+        run: node scripts/guide-photos.mjs
+
+      - name: Envoi sur la branche
+        # Un envoi fait avec le jeton du workflow ne relance aucun workflow :
+        # pas de boucle possible.
+        run: |
+          if [ -z "$(git status --porcelain -- assets/guide)" ]; then
+            echo "Photographies inchangées."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/guide
+          git commit -m "Photographies du guide préparées depuis Unsplash"
+          git push

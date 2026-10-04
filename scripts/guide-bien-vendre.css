@@ -1,0 +1,622 @@
+/*
+ * Maquette du guide « Bien vendre à Paris » : A4 à l'italienne, fond blanc.
+ * Cormorant Garamond italique pour les titres, Montserrat pour le texte, l'orange
+ * de la marque réservé aux repères (numéros, filets, valeur mise en avant).
+ * Chaque page porte le même pied : logo, téléphone, courriel, folio.
+ */
+@font-face { font-family: 'Montserrat'; font-weight: 300; src: url('{{NM}}/@fontsource/montserrat/files/montserrat-latin-300-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-weight: 400; src: url('{{NM}}/@fontsource/montserrat/files/montserrat-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-weight: 500; src: url('{{NM}}/@fontsource/montserrat/files/montserrat-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-weight: 600; src: url('{{NM}}/@fontsource/montserrat/files/montserrat-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant'; font-weight: 300; font-style: normal; src: url('{{NM}}/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-300-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant'; font-weight: 400; font-style: normal; src: url('{{NM}}/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant'; font-weight: 400; font-style: italic; src: url('{{NM}}/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant'; font-weight: 500; font-style: italic; src: url('{{NM}}/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-italic.woff2') format('woff2'); }
+
+@page { size: 297mm 210mm; margin: 0; }
+
+:root {
+  --encre: #1d1d1b;
+  --orange: #f8b365;
+  --ardoise: #6b6e74;
+  --gris: #a7aaae;
+  --trait: #dcdcda;
+  --papier: #f6f5f2;
+  --marge: 17mm;
+  --pied: 12mm;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; color: var(--encre); }
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 10.4pt;
+  line-height: 1.55;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-kerning: normal;
+  hyphens: manual;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ---------------------------------------------------------------- page */
+
+.page {
+  position: relative;
+  width: 297mm;
+  height: 210mm;
+  overflow: hidden;
+  break-after: page;
+  background: #fff;
+}
+.page:last-child { break-after: auto; }
+
+/* Zone de texte d'une page sans photographie. */
+.cadre {
+  position: absolute;
+  top: 16mm;
+  left: var(--marge);
+  right: var(--marge);
+  bottom: calc(var(--pied) + 8mm);
+}
+
+/* Demi-page photographique, à fond perdu en haut et sur le bord extérieur. */
+.photo {
+  position: absolute;
+  top: 0;
+  bottom: var(--pied);
+  overflow: hidden;
+  background: var(--papier);
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-gauche { left: 0; width: 50%; }
+.photo-droite { right: 0; width: 50%; }
+.photo-tiers-gauche { left: 0; width: 38%; }
+.photo-tiers-droite { right: 0; width: 38%; }
+.photo-legende {
+  position: absolute;
+  left: 6mm;
+  bottom: 5mm;
+  font-size: 6.2pt;
+  letter-spacing: 0.04em;
+  color: #fff;
+  opacity: 0.92;
+}
+
+/* Colonne de texte posée à côté d'une demi-page photographique. */
+.colonne { position: absolute; top: 17mm; bottom: calc(var(--pied) + 8mm); }
+.colonne-droite { left: calc(50% + 13mm); right: var(--marge); }
+.colonne-gauche { left: var(--marge); right: calc(50% + 13mm); }
+.colonne-large-droite { left: calc(38% + 13mm); right: var(--marge); }
+.colonne-large-gauche { left: var(--marge); right: calc(38% + 13mm); }
+
+/* ---------------------------------------------------------------- pied */
+
+.pied {
+  position: absolute;
+  left: var(--marge);
+  right: var(--marge);
+  bottom: 0;
+  height: var(--pied);
+  display: flex;
+  align-items: center;
+  gap: 6mm;
+  border-top: 0.25mm solid var(--trait);
+  font-size: 7.8pt;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--ardoise);
+}
+.pied-gauche { right: calc(50% + 13mm); }
+.pied-logo svg { display: block; height: 3mm; width: auto; }
+.pied-contact { flex: 1; display: flex; gap: 2.2mm; align-items: center; }
+.pied-contact > * + *::before { content: '·'; margin-right: 2.2mm; color: var(--gris); }
+.pied-contact strong { font-weight: 500; color: var(--encre); }
+.pied-folio { display: flex; gap: 4mm; align-items: center; }
+.pied-folio .folio { font-weight: 500; color: var(--encre); min-width: 4mm; text-align: right; }
+
+/* ---------------------------------------------------------------- logo */
+
+.logo svg { display: block; width: auto; }
+.logo .mot, .logo .sous { fill: var(--encre); }
+.logo .ai { fill: var(--orange); }
+.sur-photo .logo .mot, .sur-photo .logo .sous { fill: #fff; }
+
+/* ---------------------------------------------------------- typographie */
+
+.surtitre {
+  font-size: 7.8pt;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+}
+.numero {
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
+  font-size: 54pt;
+  line-height: 0.8;
+  color: var(--orange);
+  font-variant-numeric: lining-nums;
+}
+.titre {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40pt;
+  line-height: 1.02;
+  letter-spacing: -0.005em;
+  color: var(--encre);
+}
+.titre-moyen {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 31pt;
+  line-height: 1.06;
+}
+.chapo {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17pt;
+  line-height: 1.3;
+  color: var(--encre);
+}
+.filet { width: 11mm; height: 0.5mm; background: var(--orange); }
+.intertitre {
+  font-size: 8.4pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--encre);
+  margin-bottom: 1.6mm;
+}
+p + p { margin-top: 2.4mm; }
+.texte p { text-wrap: pretty; }
+.texte strong { font-weight: 600; }
+.discret { color: var(--ardoise); }
+.petit { font-size: 9pt; line-height: 1.5; }
+.source { font-size: 7.4pt; line-height: 1.45; color: var(--ardoise); }
+
+.citation {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 23pt;
+  line-height: 1.2;
+  color: var(--encre);
+}
+.citation::before {
+  content: '';
+  display: block;
+  width: 11mm;
+  height: 0.5mm;
+  background: var(--orange);
+  margin-bottom: 4mm;
+}
+
+/* ---------------------------------------------------------------- grilles */
+
+.deux { display: grid; grid-template-columns: 1fr 1fr; column-gap: 9mm; }
+.trois { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 8mm; }
+.quatre { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 7mm; }
+.empile > * + * { margin-top: 4.2mm; }
+.empile-serre > * + * { margin-top: 2.6mm; }
+
+/* Bloc à étiquette : un intertitre et son paragraphe. */
+.bloc { break-inside: avoid; }
+
+/* Points de liste : un carré orange discret, jamais de tiret. */
+.liste { list-style: none; }
+.liste li { position: relative; padding-left: 4.2mm; }
+.liste li + li { margin-top: 1.5mm; }
+.liste li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 1.3mm;
+  height: 1.3mm;
+  background: var(--orange);
+}
+
+/* Liste numérotée : numéros en Cormorant orange. */
+.etapes { list-style: none; counter-reset: etape; }
+.etapes > li { counter-increment: etape; position: relative; padding-left: 10mm; break-inside: avoid; }
+.etapes > li + li { margin-top: 4mm; }
+.etapes > li::before {
+  content: counter(etape, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: -1.2mm;
+  font-family: 'Cormorant', serif;
+  font-size: 17pt;
+  font-weight: 400;
+  color: var(--orange);
+}
+
+/* Cases à cocher de la liste « prêt à vendre ». */
+.cases { list-style: none; }
+.cases li { position: relative; padding-left: 6.4mm; break-inside: avoid; }
+.cases li + li { margin-top: 2.1mm; }
+.cases li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  width: 3mm;
+  height: 3mm;
+  border: 0.25mm solid var(--encre);
+}
+
+/* ---------------------------------------------------------------- chiffres */
+
+.chiffre-valeur {
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
+  font-size: 40pt;
+  line-height: 1;
+  color: var(--encre);
+  font-variant-numeric: lining-nums;
+  white-space: nowrap;
+}
+.chiffre-libelle {
+  margin-top: 2.2mm;
+  font-size: 7.8pt;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.chiffre-note { margin-top: 1mm; font-size: 8.6pt; line-height: 1.45; color: var(--ardoise); }
+.chiffres { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; column-gap: 7mm; border-top: 0.25mm solid var(--trait); padding-top: 4.5mm; }
+
+/* ---------------------------------------------------------------- tableaux */
+
+table { width: 100%; border-collapse: collapse; font-size: 9.4pt; line-height: 1.4; }
+th {
+  text-align: left;
+  font-size: 7.4pt;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+  padding: 0 3mm 2mm 0;
+  border-bottom: 0.25mm solid var(--encre);
+  vertical-align: bottom;
+}
+td { padding: 2.1mm 3mm 2.1mm 0; border-bottom: 0.25mm solid var(--trait); vertical-align: top; }
+td.nombre, th.nombre { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.fort { font-weight: 500; }
+tr.total td { font-weight: 600; border-bottom: none; }
+
+/* ---------------------------------------------------------------- graphiques */
+
+.graphique svg { display: block; width: 100%; height: auto; overflow: visible; }
+.graphique-titre { font-size: 9.4pt; font-weight: 600; margin-bottom: 0.6mm; }
+.graphique-sous-titre { font-size: 8.6pt; color: var(--ardoise); margin-bottom: 3mm; }
+svg text { font-family: 'Montserrat', sans-serif; }
+
+/* ---------------------------------------------------------------- appels */
+
+.appel {
+  display: inline-flex;
+  align-items: center;
+  gap: 3mm;
+  padding: 3.2mm 6mm;
+  background: var(--encre);
+  color: #fff;
+  font-size: 8.4pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.appel-clair { background: transparent; color: var(--encre); border: 0.25mm solid var(--encre); }
+.encart {
+  border-top: 0.25mm solid var(--encre);
+  padding-top: 3.4mm;
+}
+.encart-papier { background: var(--papier); padding: 5mm 6mm; border: none; }
+
+/* ============================================================ pages */
+
+/* Ouverture de chapitre : numéro, titre, chapeau. */
+.tete { margin-bottom: 7mm; }
+.tete .numero { margin-bottom: 5mm; }
+.tete .titre { margin-bottom: 4.5mm; }
+.tete .chapo { max-width: 112mm; }
+.titre-moyen + * { margin-top: 5mm; }
+.surtitre + .titre-moyen, .surtitre + .titre { margin-top: 3mm; }
+.empile-grille { row-gap: 4.6mm; }
+
+/* Couverture */
+.couverture-photo { position: absolute; top: 0; right: 0; bottom: var(--pied); width: 56%; background: var(--papier); }
+.couverture-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.couverture-texte {
+  position: absolute;
+  left: var(--marge);
+  top: 17mm;
+  bottom: calc(var(--pied) + 9mm);
+  width: calc(44% - var(--marge) - 12mm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.couverture-logo svg { height: 12.5mm; }
+.couverture-titre {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 64pt;
+  line-height: 0.94;
+  letter-spacing: -0.01em;
+  margin: 5mm 0 6mm;
+}
+.couverture-bas .filet { margin-bottom: 5mm; }
+.couverture-chapo { font-size: 13.5pt; max-width: 94mm; }
+.couverture-territoire {
+  margin-top: 6mm;
+  font-size: 7.8pt;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+}
+.pied-couverture .pied-logo { display: none; }
+
+/* Avant-propos */
+.edito { display: flex; flex-direction: column; }
+.edito-titre { font-size: 26pt; margin: 3mm 0 7mm; max-width: 140mm; }
+.edito-texte { font-size: 11.4pt; line-height: 1.6; max-width: 145mm; }
+.edito-texte p + p { margin-top: 3mm; }
+.signature { margin-top: auto; }
+.signature-nom { font-family: 'Cormorant', serif; font-style: italic; font-size: 22pt; line-height: 1; }
+.signature-titre { margin-top: 2mm; font-size: 7pt; letter-spacing: 0.04em; color: var(--ardoise); }
+
+/* Sommaire */
+.sommaire-titre { font-size: 26pt; margin: 3mm 0 8mm; max-width: 140mm; }
+.sommaire { list-style: none; columns: 2; column-gap: 10mm; }
+.sommaire li { break-inside: avoid; border-top: 0.25mm solid var(--trait); }
+.sommaire a { display: grid; grid-template-columns: 10mm 1fr auto; align-items: baseline; padding: 2.5mm 0; }
+.sommaire-numero { font-family: 'Cormorant', serif; font-size: 15pt; line-height: 1; color: var(--orange); }
+.sommaire-libelle { font-size: 11pt; }
+.sommaire-page { font-size: 9pt; color: var(--ardoise); font-variant-numeric: tabular-nums; }
+.sommaire-annexes { margin-top: 7mm; }
+
+/* Chiffres clés empilés dans une colonne */
+.chiffres-colonne { display: block; border-top: none; padding-top: 0; }
+.chiffres-colonne .chiffre {
+  display: grid;
+  grid-template-columns: 52mm 1fr;
+  align-items: baseline;
+  border-top: 0.25mm solid var(--trait);
+  padding: 3.4mm 0 3mm;
+}
+.chiffres-colonne .chiffre-libelle { margin-top: 0; }
+.chiffres-source { margin-top: 3mm; }
+
+/* Le marché en chiffres */
+.grille-marche {
+  display: grid;
+  grid-template-columns: 1.56fr 1fr;
+  grid-template-rows: auto auto 1fr;
+  column-gap: 12mm;
+  row-gap: 6mm;
+}
+.marche-titre { grid-column: 1 / -1; }
+.marche-courbe { grid-column: 1; }
+.marche-barres { grid-column: 2; }
+.marche-tableau { grid-column: 1; }
+.marche-lecture { grid-column: 2; }
+.marche-lecture .source { margin-top: 3mm; }
+
+/* Le juste prix */
+.prix-encart { margin-top: 7mm; }
+.prix-encart p { margin-bottom: 4mm; }
+.deux-asymetrique { display: grid; grid-template-columns: 1fr 1.15fr; column-gap: 14mm; }
+.prix-deciles .surtitre { margin-bottom: 3mm; }
+.prix-deciles-titre { font-size: 7.6pt; }
+.prix-deciles-lecture { margin: 4mm 0 4mm; }
+.prix-deciles .source { margin-top: 3mm; }
+
+/* Pièce par pièce */
+.pieces { row-gap: 6mm; }
+.pieces .liste li + li { margin-top: 1.2mm; }
+.lumiere { margin-top: 7mm; max-width: 140mm; }
+
+/* Réparations */
+.liste.deux { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 2.4mm; }
+.liste.deux li + li { margin-top: 0; }
+.reparations-note { margin-top: 6mm; color: var(--ardoise); }
+
+/* Investir où cela se voit */
+.investir { align-content: center; }
+.investir-tableau td { font-size: 10.6pt; padding: 3.4mm 4mm 3.4mm 0; }
+.investir-tableau td:first-child { font-weight: 500; }
+.investir-droite { padding-top: 16mm; }
+.investir .citation { font-size: 23pt; }
+.investir-texte { margin-top: 8mm; }
+
+/* Diagnostics */
+table.diagnostics { font-size: 8.8pt; line-height: 1.32; }
+table.diagnostics td { padding: 1.6mm 2.6mm 1.6mm 0; }
+.diagnostics-note { margin-top: 4mm; color: var(--ardoise); }
+
+/* Copropriété */
+.copro { column-gap: 14mm; }
+.copro-intro { margin-bottom: 4mm; }
+.copro .liste li + li { margin-top: 1.1mm; }
+.copro-note { margin-top: 4mm; }
+.copro-dpe-titre { margin-bottom: 1mm; }
+
+/* Annonce */
+.annonce { column-gap: 14mm; }
+.annonce-intertitre { margin-top: 6mm; margin-bottom: 3mm; }
+.annonce-droite { padding-top: 22mm; }
+.annonce .liste li + li { margin-top: 2.4mm; }
+
+/* Diffusion */
+.diffusion-note { margin-top: 6mm; border-top: 0.25mm solid var(--trait); padding-top: 3.4mm; }
+
+/* Mandat */
+.mandat { display: grid; grid-template-columns: 82mm 1fr; column-gap: 14mm; }
+.mandat-tete { grid-column: 1; grid-row: 1; }
+.mandat-honoraires { grid-column: 1; grid-row: 2; align-self: end; }
+.mandat-tableau { grid-column: 2; grid-row: 1; padding-top: 2mm; }
+.mandat-citation { grid-column: 2; grid-row: 2; align-self: end; max-width: 120mm; }
+.mandat-tableau td { font-size: 9.6pt; padding: 3.2mm 4mm 3.2mm 0; }
+.mandat-tableau th:first-child { width: 30mm; }
+table.honoraires td { font-size: 9.6pt; padding: 1.7mm 0; }
+.mandat-honoraires .petit { margin-top: 3mm; }
+
+/* Calendrier */
+.calendrier-chapo { margin-top: 3mm; max-width: 150mm; }
+.frise { list-style: none; display: grid; grid-template-columns: repeat(7, 1fr); column-gap: 5mm; position: relative; margin-top: 12mm; }
+.frise::before { content: ''; position: absolute; left: 0; right: 0; top: 7.7mm; height: 0.25mm; background: var(--encre); }
+.frise-quand {
+  font-size: 7.4pt;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ardoise);
+  height: 5mm;
+  white-space: nowrap;
+}
+.frise-point { display: block; position: relative; width: 2.6mm; height: 2.6mm; background: var(--orange); margin: 1.4mm 0 5mm; }
+.frise-quoi { font-family: 'Cormorant', serif; font-style: italic; font-size: 18pt; line-height: 1.1; margin-bottom: 2mm; }
+.frise-detail { font-size: 9.4pt; line-height: 1.45; }
+.calendrier-citation { margin-top: 14mm; max-width: 175mm; }
+
+/* Liste prêt à vendre */
+.liste-tete { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 14mm; align-items: end; margin-bottom: 9mm; }
+.liste-tete .surtitre { grid-column: 1; }
+.liste-tete .titre-moyen { grid-column: 1; margin-top: 3mm; font-size: 32pt; }
+.liste-tete .chapo { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 13pt; }
+.liste-intertitre { border-bottom: 0.25mm solid var(--encre); padding-bottom: 2.4mm; margin-bottom: 4mm; }
+.liste-prete .trois { column-gap: 12mm; }
+
+/* Ce que nous écrivons */
+.engagements { row-gap: 5mm; column-gap: 7mm; margin-top: 6mm; }
+.engagements .bloc p { font-size: 9.6pt; line-height: 1.5; }
+.avis { display: grid; grid-template-columns: 34mm 1fr 1fr; column-gap: 7mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; margin-top: 7mm; }
+.avis .chiffre-libelle { margin-top: 2mm; line-height: 1.5; }
+.avis-citation p { font-family: 'Cormorant', serif; font-style: italic; font-size: 13.5pt; line-height: 1.3; }
+.avis-citation footer { margin-top: 2mm; font-size: 7.6pt; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ardoise); }
+
+/* Dernière page */
+.dos { display: flex; flex-direction: column; }
+.dos-logo svg { height: 10mm; }
+.dos .surtitre { margin-top: 9mm; }
+.dos-titre { font-size: 36pt; margin: 3mm 0 4mm; }
+.dos-chapo { max-width: 132mm; font-size: 13pt; }
+.dos-grille { display: grid; grid-template-columns: 1fr 32mm; column-gap: 12mm; margin-top: 7mm; align-items: start; }
+.dos-appels { list-style: none; }
+.dos-appels li { border-top: 0.25mm solid var(--trait); }
+.dos-appels li:last-child { border-bottom: 0.25mm solid var(--trait); }
+.dos-appels a { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; padding: 2.7mm 0; }
+.dos-appel-titre { font-size: 10.6pt; font-weight: 600; }
+.dos-appel-titre::after { content: ' ›'; color: var(--orange); }
+.dos-appel-detail { font-size: 9pt; color: var(--ardoise); text-align: right; }
+.qr { display: block; }
+.qr svg { display: block; width: 32mm; height: 32mm; }
+.qr span { display: block; margin-top: 2.4mm; font-size: 7.6pt; line-height: 1.4; color: var(--ardoise); }
+.dos-mentions { margin-top: auto; font-size: 6.6pt; line-height: 1.45; color: var(--ardoise); }
+.dos-mentions p + p { margin-top: 1.2mm; }
+
+.couverture-auteur { margin-top: 5mm; font-size: 9pt; color: var(--ardoise); letter-spacing: 0.02em; }
+.couverture-auteur + .couverture-territoire { margin-top: 2.6mm; }
+.liste-appel { display: flex; align-items: center; justify-content: space-between; gap: 10mm; margin-top: 10mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; }
+.liste-appel p { font-family: 'Cormorant', serif; font-style: italic; font-size: 17pt; }
+
+/* Ce qui a changé en 2026 */
+.actualites { display: flex; flex-direction: column; }
+.actualites-tete { display: grid; grid-template-columns: 1fr 1.3fr; column-gap: 14mm; align-items: end; margin-bottom: 12mm; }
+.actualites-grille { flex: 1; }
+.actualites-tete .titre-moyen { grid-column: 1; margin-top: 3mm; font-size: 32pt; }
+.actualites-tete .chapo { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 13pt; }
+.actualites-grille { column-gap: 9mm; }
+.actu { border-top: 0.25mm solid var(--encre); padding-top: 4mm; display: flex; flex-direction: column; }
+.actu .chiffre-valeur { margin-top: 5mm; font-size: 38pt; }
+.actu-fait { margin-top: 5mm; font-size: 10pt; line-height: 1.5; }
+.actu-lecture { margin-top: 4mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 14pt; line-height: 1.3; }
+.actu .source { margin-top: auto; padding-top: 4mm; }
+
+/* Vendre avec nous */
+.methode-tete { display: grid; grid-template-columns: 1.45fr 1fr; column-gap: 14mm; align-items: end; margin-bottom: 10mm; }
+.methode-tete .titre-moyen { grid-column: 1; margin-top: 3mm; font-size: 32pt; }
+.methode-tete .chapo { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 13pt; }
+.methode-temps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 12mm; row-gap: 7mm; }
+.methode-temps li { border-top: 0.25mm solid var(--trait); padding-top: 3mm; }
+.methode-numero { font-family: 'Cormorant', serif; font-size: 26pt; line-height: 1; color: var(--orange); margin-bottom: 2.5mm; }
+.methode-temps li p:last-child { font-size: 10.4pt; line-height: 1.5; }
+
+/* Le conseil de Samy */
+.conseil { margin-top: 6mm; padding-top: 3.4mm; border-top: 0.25mm solid var(--orange); }
+.conseil .surtitre { color: var(--encre); }
+.conseil-texte { margin-top: 1.6mm; font-family: 'Cormorant', serif; font-style: italic; font-size: 15pt; line-height: 1.3; }
+
+/* Pages d'ouverture : textes courts, donc plus grands, pour une lecture sans lunettes. */
+.colonne .bloc p, .colonne .liste li, .colonne .etapes p { font-size: 11.6pt; line-height: 1.5; }
+.colonne .intertitre { font-size: 9pt; }
+.colonne .empile-grille { row-gap: 6mm; }
+
+/* ============================================================ système */
+
+/* Bandeau : surtitre et titre sur toute la largeur. Les colonnes du dessous
+   partent toutes de la même ligne, jamais l'une sous un titre et l'autre non. */
+.bandeau { margin-bottom: 9mm; }
+.bandeau .titre-moyen { margin-top: 3mm; }
+.cadre > .deux, .cadre > .deux-asymetrique, .bandeau + .deux, .bandeau + .deux-asymetrique { align-items: start; }
+.investir-droite { padding-top: 0; }
+
+/* Titres équilibrés : jamais un mot seul en fin de ligne. */
+.titre, .titre-moyen, .chapo, .couverture-titre, .citation, .conseil-texte, .actu-lecture, .frise-quoi, .colonne-titre { text-wrap: balance; }
+
+/* Titre d'une colonne de texte, posé sur un filet. */
+.colonne-titre {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19pt;
+  line-height: 1.15;
+  padding-bottom: 2.6mm;
+  border-bottom: 0.25mm solid var(--encre);
+  margin-bottom: 4.5mm;
+}
+
+/* Page d'appel à l'estimation */
+.appel-page { display: flex; flex-direction: column; }
+.appel-grand { font-family: 'Cormorant', serif; font-weight: 300; font-size: 96pt; line-height: 0.9; color: var(--orange); margin-top: 3mm; }
+.appel-page .titre-moyen { margin-top: 4mm; font-size: 26pt; }
+.coches { list-style: none; margin-top: 6mm; }
+.coches li { position: relative; padding-left: 7mm; font-size: 11.6pt; line-height: 1.45; }
+.coches li + li { margin-top: 2.4mm; }
+.coches li::before {
+  content: '';
+  position: absolute;
+  left: 0.4mm;
+  top: 0.38em;
+  width: 3.2mm;
+  height: 1.6mm;
+  border-left: 0.5mm solid var(--orange);
+  border-bottom: 0.5mm solid var(--orange);
+  transform: rotate(-45deg);
+}
+.appel-actions { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 8mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; }
+.appel-tel { margin-top: 3mm; font-size: 10pt; color: var(--ardoise); }
+.appel-tel a { color: var(--encre); font-weight: 600; }
+.qr-petit svg { width: 24mm; height: 24mm; }
+
+/* Preuves chiffrées, juste avant l'appel */
+.preuves { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 9mm; margin-top: 9mm; border-top: 0.25mm solid var(--encre); padding-top: 5mm; }
+.preuves .chiffre-valeur { font-size: 34pt; }
+.preuves + .liste-appel { margin-top: 7mm; }
+
+.engagements.deux { column-gap: 10mm; row-gap: 4.5mm; }
+
+/* Barème et liens de dernière page : une ligne chacun, jamais coupés. */
+.mandat { grid-template-columns: 96mm 1fr; }
+table.honoraires td { white-space: nowrap; }
+.dos-appel-titre { white-space: nowrap; }
+.appel, .dos-appel-detail { white-space: nowrap; }
