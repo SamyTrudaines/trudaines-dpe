@@ -186,8 +186,9 @@
   "page": "https://unsplash.com/photos/keys-hanging-in-a-door-lock-WETkxYfCPGw",
   "description": "Clé ancienne en laiton suspendue à la serrure d'une porte en bois sombre.",
   "cadrage": [
-   0.5,
-   0.45
+   0.43,
+   0.42,
+   0.86
   ],
   "original": "https://images.unsplash.com/photo-1750614335370-fa6e54d970db"
  }

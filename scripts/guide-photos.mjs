@@ -11,7 +11,8 @@
  *
  * La liste fait foi dans assets/guide/sources.json : emplacement, identifiant
  * Unsplash, photographe, page, description, et point d'appui du recadrage
- * [x, y] entre 0 et 1, et au besoin l'adresse de l'original (champ original).
+ * [x, y] entre 0 et 1 (et, en troisième valeur, un resserrement), et au besoin
+ * l'adresse de l'original (champ original).
  * L'environnement de travail n'atteint pas Unsplash : le workflow .github/workflows/photos-guide.yml lance
  * ce script sur les machines de GitHub dès que sources.json change.
  *
@@ -107,7 +108,10 @@ for (const source of sources) {
       h = info.height;
       l = Math.round(h * rapport);
     }
-    const [fx, fy] = source.cadrage || [0.5, 0.5];
+    // Troisième valeur facultative du cadrage : resserrement, 0,86 garde 86 % du cadre.
+    const [fx, fy, resserrement = 1] = source.cadrage || [0.5, 0.5];
+    l = Math.round(l * resserrement);
+    h = Math.round(h * resserrement);
     const gauche = borne(Math.round(fx * info.width - l / 2), 0, info.width - l);
     const haut = borne(Math.round(fy * info.height - h / 2), 0, info.height - h);
     if (l < largeur) throw new Error(`cadre de ${l} px, sous les ${largeur} px voulus`);
