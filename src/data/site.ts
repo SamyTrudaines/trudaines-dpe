@@ -12,9 +12,9 @@ export const site = {
   raisonSociale: 'MIGA',
   formeJuridique: 'SASU',
   url: 'https://www.trudaines.com',
-  baseline: 'Cabinet de vente immobilière, Paris 9e nord et Montmartre',
+  baseline: 'Cabinet de vente immobilière, Paris 9e, 10e, 17e et 18e',
   description:
-    "Cabinet de vente immobilière fondé par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires du 9e nord, de Montmartre et du 10e.",
+    "Cabinet de vente immobilière fondé par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires à Paris, dans les 9e, 10e, 17e et 18e arrondissements.",
   email: 'samy.santamarina@trudaines.com',
   telephone: '06 20 46 59 12',
   telephoneLien: '+33620465912',
