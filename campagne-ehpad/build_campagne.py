@@ -816,31 +816,31 @@ def body_text(r):
 
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
-{SOC['contact']}
-Fondateur, {SOC['societe']} - Conseil patrimonial & immobilier, approche humaine
-Tél. {SOC['tel']} · {SOC['email']}
-TRUDAINES.COM
+Samy Santamarina
+Fondateur, Trudaines Immobilier
+Tél. {SOC['tel']} · samy.santamarina@trudaines.com
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
-Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop ».
+Message professionnel adressé à {r['nom']} ({r['adresse']}, {r['cp']} Paris). Pour ne plus être contacté, répondez « stop »."""
 
-CLAUDE 2 $"""
-
-# Signature HTML de marque (palette anthracite + or patrimonial)
-SIGNATURE_HTML = """<table cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
-<tr><td style="border-top:2px solid #1a1a1a;padding-top:10px;">
-<div style="font-size:15px;font-weight:bold;color:#1a1a1a;letter-spacing:1.5px;">SAMY SANTAMARINA</div>
-<div style="font-size:11px;color:#8a8a8a;letter-spacing:2px;margin-top:1px;">FONDATEUR &nbsp;&middot;&nbsp; TRUDAINES</div>
-<div style="font-size:13px;color:#1a1a1a;margin-top:7px;">
-<a href="tel:+33620465912" style="color:#1a1a1a;text-decoration:none;">+33 6 20 46 59 12</a>
-&nbsp;&middot;&nbsp;
-<a href="mailto:samy.santamarina@trudaines.com" style="color:#1a1a1a;text-decoration:none;">samy.santamarina@trudaines.com</a>
-</div>
-<div style="font-size:12px;margin-top:8px;color:#b08d57;letter-spacing:0.5px;">
-<a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;font-weight:bold;">&#9670; TRUDAINES.COM</a>
-&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">Devenir apporteur</a>
-&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">&#9733; Votre avis</a>
-&nbsp;|&nbsp; <a href="https://www.trudaines.com" style="color:#b08d57;text-decoration:none;">LinkedIn</a>
-</div>
+# Signature de marque RÉELLE de Samy (récupérée de ses emails) : liens véritables.
+SIGNATURE_HTML = """<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;color:#2d2d2d;font-family:Arial,Helvetica,sans-serif;margin-top:14px;">
+<tr><td style="vertical-align:top;">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:14px;font-weight:bold;letter-spacing:2px;padding:0 0 2px;">SAMY SANTAMARINA</td></tr>
+<tr><td style="font-size:9px;letter-spacing:2px;color:#999;padding:0 0 10px;">FONDATEUR</td></tr>
+<tr><td style="font-size:11px;color:#666;padding:0 0 10px;letter-spacing:0.3px;"><a href="tel:+33620465912" style="color:#666;text-decoration:none;">+33 6 20 46 59 12</a></td></tr>
+<tr><td style="padding:0;"><span style="font-size:17px;font-weight:bold;letter-spacing:5px;">TRUD</span><span style="font-size:17px;font-weight:bold;letter-spacing:5px;color:#e9a64c;">AI</span><span style="font-size:17px;font-weight:bold;letter-spacing:5px;">NES</span><br><span style="font-size:6px;font-weight:bold;letter-spacing:7px;color:#aaa;">IMMOBILIER</span></td></tr>
+</table></td></tr>
+<tr><td style="padding:12px 0 0;"><table cellpadding="0" cellspacing="0" border="0"><tr><td style="width:320px;height:1px;background:#eee;font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0;font-size:9px;letter-spacing:1px;">
+<a href="https://trudaines.lovable.app/auth" style="color:#e9a64c;font-weight:bold;text-decoration:none;">&#8599; DEVENIR APPORTEUR</a><span style="color:#ddd;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+<a href="https://g.page/r/CaBmZJ_RxDBgEBM/review" style="color:#999;text-decoration:none;">&#9733; VOTRE AVIS</a><span style="color:#ddd;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+<a href="https://www.linkedin.com/in/samysantamarina/" style="color:#999;font-weight:bold;text-decoration:none;">in</a><span style="color:#ddd;">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+<a href="https://trudaines.com/" style="color:#999;text-decoration:none;">&#9672; TRUDAINES.COM</a>
 </td></tr></table>"""
 
 def p(txt):
@@ -859,7 +859,6 @@ def body_html(r):
     parts.append(SIGNATURE_HTML)
     parts.append('<p style="font-size:11px;color:#9a9a9a;margin:16px 0 4px 0;">Message professionnel adressé à '
                  + r['nom'] + ' (' + r['adresse'] + ', ' + r['cp'] + ' Paris). Pour ne plus être contacté, répondez « stop ».</p>')
-    parts.append('<p style="font-size:11px;color:#9a9a9a;margin:0;">CLAUDE 2 $</p>')
     parts.append('</div>')
     return "\n".join(parts)
 

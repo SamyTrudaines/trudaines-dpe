@@ -31,13 +31,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD La Résidence de Sèvres (81 bis rue Vaneau, 75007 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 2. Résidence Seniors Les Hespérides Daumesnil — 75012 Paris 12e
@@ -64,13 +65,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Seniors Les Hespérides Daumesnil (125 ter rue de Reuilly, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 3. EHPAD Korian Champ-de-Mars — 75015 Paris 15e
@@ -97,13 +99,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Champ-de-Mars (64 rue de la Fédération, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 4. EHPAD Maisons de Famille Villa Lecourbe — 75015 Paris 15e
@@ -130,13 +133,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Maisons de Famille Villa Lecourbe (286 rue Lecourbe, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 5. EHPAD Résidence Castagnary — 75015 Paris 15e
@@ -163,13 +167,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Castagnary (102-108 rue Castagnary, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 6. EHPAD Les Terrasses de Mozart — 75016 Paris 16e
@@ -196,13 +201,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Les Terrasses de Mozart (11 bis rue de la Source, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 7. EHPAD Les Artistes de Batignolles — 75017 Paris 17e
@@ -229,13 +235,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Les Artistes de Batignolles (5 rue René Blum, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 8. EHPAD Résidence Assomption — 75016 Paris 16e
@@ -261,13 +268,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Assomption (19 rue de l'Assomption, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 9. EHPAD Résidence Chaillot — 75016 Paris 16e
@@ -293,13 +301,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Chaillot (15 rue Boissière, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 10. EHPAD Résidence Trocadéro — 75116 Paris 16e
@@ -325,13 +334,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Trocadéro (7/9 bis rue du Bouquet de Longchamp, 75116 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 11. Résidence Seniors Les Hespérides Auteuil Chardon Lagache — 75016 Paris 16e
@@ -357,13 +367,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Seniors Les Hespérides Auteuil Chardon Lagache (32 rue Chardon Lagache, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 12. Résidence Seniors Les Hespérides Auteuil Mirabeau — 75016 Paris 16e
@@ -389,13 +400,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Seniors Les Hespérides Auteuil Mirabeau (18 rue Mirabeau, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 13. EHPAD Korian Monceau — 75017 Paris 17e
@@ -421,13 +433,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Monceau (26 rue Médéric, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 14. EHPAD Le Trèfle Bleu Cardinet — 75017 Paris 17e
@@ -453,13 +466,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Le Trèfle Bleu Cardinet (152 rue Cardinet, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 
@@ -491,13 +505,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Magenta (54 rue des Vinaigriers, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 16. EHPAD Dolcéa Les Ambassadeurs Nation — 75011 Paris 11e
@@ -524,13 +539,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Dolcéa Les Ambassadeurs Nation (125-127 rue de Montreuil, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 17. EHPAD Korian Les Arcades — 75012 Paris 12e
@@ -557,13 +573,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Les Arcades (116 avenue Daumesnil, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 18. Résidence Services Seniors Alix (Fondation de Rothschild) — 75012 Paris 12e
@@ -590,13 +607,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Services Seniors Alix (Fondation de Rothschild) (15 rue Lamblardie, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 19. EHPAD Résidence Jean-Baptiste Carpeaux — 75018 Paris 18e
@@ -623,13 +641,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Jean-Baptiste Carpeaux (197 rue Marcadet, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 20. EHPAD Résidence Edith Piaf — 75019 Paris 19e
@@ -656,13 +675,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Edith Piaf (50 rue des Bois, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 21. EHPAD Résidence du Marais — 75003 Paris 3e
@@ -688,13 +708,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence du Marais (11 bis rue Barbette, 75003 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 22. EHPAD Les Parentèles de la Rue Blanche — 75009 Paris 9e
@@ -720,13 +741,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Les Parentèles de la Rue Blanche (49 rue Blanche, 75009 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 23. EHPAD La Maison des Parents — 75013 Paris 13e
@@ -752,13 +774,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD La Maison des Parents (67 A rue du Château des Rentiers, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 24. EHPAD Résidence Les Gobelins — 75013 Paris 13e
@@ -784,13 +807,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Les Gobelins (35 rue Le Brun, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 25. EHPAD Résidence Saint-Jacques — 75013 Paris 13e
@@ -816,13 +840,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Saint-Jacques (3 passage Victor Marchand, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 26. EHPAD Korian Brune — 75014 Paris 14e
@@ -848,13 +873,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Brune (117 boulevard Brune, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 27. EHPAD Korian Jardins d'Alésia — 75014 Paris 14e
@@ -880,13 +906,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Jardins d'Alésia (187 bis avenue du Maine, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 28. EHPAD Résidence Club Le Montsouris — 75014 Paris 14e
@@ -912,13 +939,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Club Le Montsouris (18 bis rue d'Alésia, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 29. EHPAD Résidence Tiers Temps Paris — 75014 Paris 14e
@@ -944,13 +972,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Tiers Temps Paris (24 rue Rémy Dumoncel, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 30. EHPAD Résidence Les Issambres — 75018 Paris 18e
@@ -976,13 +1005,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Les Issambres (111 boulevard Ney, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 31. EHPAD Résidence Ornano (Les Intemporelles) — 75018 Paris 18e
@@ -1008,13 +1038,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Ornano (Les Intemporelles) (10 rue Baudelique, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 32. EHPAD Résidence Les Musiciens — 75019 Paris 19e
@@ -1040,13 +1071,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Les Musiciens (7-9 rue Germaine Tailleferre, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 33. EHPAD Résidence Océane — 75019 Paris 19e
@@ -1072,13 +1104,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Océane (23 rue Raoul Wallenberg, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 34. EHPAD Korian Les Amandiers — 75020 Paris 20e
@@ -1104,13 +1137,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Les Amandiers (5 rue des Cendriers, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 35. EHPAD Korian Saint-Simon — 75020 Paris 20e
@@ -1136,13 +1170,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Saint-Simon (121-127 bis rue d'Avron, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 36. EHPAD Korian Terrasses du XXème — 75020 Paris 20e
@@ -1168,13 +1203,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Korian Terrasses du XXème (5 rue de l'Indre, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 
@@ -1206,13 +1242,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Amitié et Partage (83 rue de Sèvres, 75006 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 38. EHPAD Résidence Antoine Portail — 75006 Paris 6e
@@ -1239,13 +1276,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Antoine Portail (88 rue du Cherche-Midi, 75006 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 39. EHPAD Bastille — 75011 Paris 11e
@@ -1272,13 +1310,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Bastille (24 rue Amelot, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 40. EHPAD Maison de Retraite Protestante de la Muette — 75012 Paris 12e
@@ -1305,13 +1344,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Maison de Retraite Protestante de la Muette (43 rue du Sergent Bauchat, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 41. EHPAD La Maison du Parc — 75013 Paris 13e
@@ -1338,13 +1378,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD La Maison du Parc (81 bis rue de l'Amiral Mouchez, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 42. Maison de Retraite des Sœurs Augustines — 75013 Paris 13e
@@ -1371,13 +1412,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Maison de Retraite des Sœurs Augustines (29 rue de la Santé, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 43. EHPAD Saint-Augustin — 75014 Paris 14e
@@ -1404,13 +1446,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Saint-Augustin (68 rue des Plantes, Bât. B, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 44. EHPAD COS Jacques Barrot — 75017 Paris 17e
@@ -1437,13 +1480,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD COS Jacques Barrot (16 rue Gilbert Cesbron, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 45. EHPAD Centre Robert Doisneau — 75018 Paris 18e
@@ -1470,13 +1514,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Centre Robert Doisneau (51 rue René Clair, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 46. EHPAD Les Jardins de Montmartre — 75018 Paris 18e
@@ -1503,13 +1548,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Les Jardins de Montmartre (18 rue Pierre Picard, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 47. EHPAD Résidence Les Airelles — 75020 Paris 20e
@@ -1536,13 +1582,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Les Airelles (8-12 rue des Panoyaux, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 48. EHPAD Ma Maison Notre-Dame des Champs — 75006 Paris 6e
@@ -1568,13 +1615,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Ma Maison Notre-Dame des Champs (49 rue Notre-Dame des Champs, 75006 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 49. EHPAD COS Jeanne d'Arc — 75007 Paris 7e
@@ -1600,13 +1648,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD COS Jeanne d'Arc (21 rue du Général Bertrand, 75007 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 50. EHPAD Ma Maison Breteuil — 75007 Paris 7e
@@ -1632,13 +1681,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Ma Maison Breteuil (62 avenue de Breteuil, 75007 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 51. EHPAD Maison de Retraite et de Gériatrie Fondation de Rothschild — 75012 Paris 12e
@@ -1664,13 +1714,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Maison de Retraite et de Gériatrie Fondation de Rothschild (76 rue de Picpus, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 52. EHPAD Petites Sœurs des Pauvres — Ma Maison Picpus — 75012 Paris 12e
@@ -1696,13 +1747,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Petites Sœurs des Pauvres — Ma Maison Picpus (71 rue de Picpus, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 53. EHPAD Résidence Catherine Labouré — 75012 Paris 12e
@@ -1728,13 +1780,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Catherine Labouré (77 rue de Reuilly, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 54. EHPAD Résidence La Pirandelle — 75013 Paris 13e
@@ -1760,13 +1813,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence La Pirandelle (6 rue Pirandello, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 55. EHPAD Notre-Dame de Bon Secours (Sainte-Monique) — 75014 Paris 14e
@@ -1792,13 +1846,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Notre-Dame de Bon Secours (Sainte-Monique) (66 rue des Plantes, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 56. Maison de Retraite Marie-Thérèse — 75014 Paris 14e
@@ -1824,13 +1879,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Maison de Retraite Marie-Thérèse (277 boulevard Raspail, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 57. EHPAD Grenelle — 75015 Paris 15e
@@ -1856,13 +1912,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Grenelle (3-5 avenue Delecourt, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 58. EHPAD La Source d'Auteuil — 75016 Paris 16e
@@ -1888,13 +1945,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD La Source d'Auteuil (11 rue de la Source, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 59. EHPAD COS Alice Guy — 75019 Paris 19e
@@ -1920,13 +1978,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD COS Alice Guy (10 rue de Colmar, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 60. EHPAD Les Jardins de Belleville — 75019 Paris 19e
@@ -1952,13 +2011,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Les Jardins de Belleville (259 rue de Belleville, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 61. EHPAD Résidence Amaraggi — 75019 Paris 19e
@@ -1984,13 +2044,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Amaraggi (11 boulevard Sérurier, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 62. EHPAD COS Hospitalité Familiale — 75020 Paris 20e
@@ -2016,13 +2077,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD COS Hospitalité Familiale (118-122 boulevard de Charonne, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 
@@ -2054,13 +2116,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Fondation de Rothschild (foyer-logement) (9 rue Lamblardie, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 64. EHPAD Alice Prin — 75014 Paris 14e
@@ -2087,13 +2150,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Alice Prin (5 rue Maria Helena Vieira da Silva, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 65. EHPAD Résidence Furtado-Heine — 75014 Paris 14e
@@ -2120,13 +2184,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Furtado-Heine (5-7 rue Jacquier, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 66. EHPAD Résidence Julie-Siegfried — 75014 Paris 14e
@@ -2153,13 +2218,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Julie-Siegfried (39-41 avenue Villemain, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 67. EHPAD Résidence Santé Oasis — 75018 Paris 18e
@@ -2186,13 +2252,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Santé Oasis (11-15 rue Laghouat, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 68. EHPAD Résidence Hérold — 75019 Paris 19e
@@ -2219,13 +2286,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Hérold (66-74 rue du Général Brunet, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 69. EHPAD Alquier-Debrousse — 75020 Paris 20e
@@ -2252,13 +2320,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Alquier-Debrousse (1 allée Alquier-Debrousse (161 av. Gambetta), 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 70. EHPAD Sara Weill-Raynal (ex-Belleville) — 75020 Paris 20e
@@ -2285,13 +2354,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Sara Weill-Raynal (ex-Belleville) (180 rue Pelleport, 75020 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 71. EHPAD Le Jardin des Plantes — 75005 Paris 5e
@@ -2317,13 +2387,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Le Jardin des Plantes (18-22 rue Poliveau, 75005 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 72. Résidence Autonomie Cités Caritas (intergénérationnelle) — 75012 Paris 12e
@@ -2349,13 +2420,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Cités Caritas (intergénérationnelle) (47 rue des Meuniers, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 73. Résidence Autonomie Les Solanacées — 75012 Paris 12e
@@ -2381,13 +2453,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Les Solanacées (29 rue des Meuniers, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 74. Résidence Autonomie Moïse Léon — 75012 Paris 12e
@@ -2413,13 +2486,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Moïse Léon (46 rue de Picpus, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 75. Résidence Autonomie Rosalie Rendu — 75012 Paris 12e
@@ -2445,13 +2519,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Rosalie Rendu (77 rue de Reuilly, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 76. EHPAD Résidence Anselme Payen — 75015 Paris 15e
@@ -2477,13 +2552,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Anselme Payen (9 place Violet, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 77. EHPAD Résidence Huguette Valsecchi — 75015 Paris 15e
@@ -2509,13 +2585,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à EHPAD Résidence Huguette Valsecchi (14 rue Marie Skobtsov, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 78. Maison Médicale Jeanne Garnier — 75015 Paris 15e
@@ -2541,13 +2618,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Maison Médicale Jeanne Garnier (106 avenue Émile-Zola, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 79. USLD Hôpital Henry Dunant (Croix-Rouge) — 75016 Paris 16e
@@ -2573,13 +2651,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Hôpital Henry Dunant (Croix-Rouge) (95 rue Michel-Ange, 75016 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 80. Unité d'Hébergement Temporaire Les Symphonies — 75018 Paris 18e
@@ -2605,13 +2684,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Unité d'Hébergement Temporaire Les Symphonies (99 boulevard Ney, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 81. Résidence autonomie Au cœur de Belleville — 75019 Paris 19e
@@ -2637,13 +2717,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Au cœur de Belleville (1 rue Jules Romains, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 
@@ -2675,13 +2756,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Faubourg du Temple (119 rue du Faubourg du Temple, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 83. Résidence autonomie Jemmapes — 75010 Paris 10e
@@ -2708,13 +2790,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Jemmapes (126 quai de Jemmapes, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 84. Résidence autonomie La Grange aux Belles — 75010 Paris 10e
@@ -2741,13 +2824,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie La Grange aux Belles (11 rue Boy-Zelenski, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 85. Résidence autonomie Lesecq — 75010 Paris 10e
@@ -2774,13 +2858,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Lesecq (24 rue de Belzunce, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 86. Résidence autonomie Robert Blache — 75010 Paris 10e
@@ -2807,13 +2892,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Robert Blache (4 rue Robert Blache, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 87. Résidence autonomie Allée Verte — 75011 Paris 11e
@@ -2840,13 +2926,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Allée Verte (14-16 rue Pelée, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 88. Résidence autonomie Beauharnais — 75011 Paris 11e
@@ -2873,13 +2960,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Beauharnais (10 Cité Beauharnais, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 89. Résidence autonomie Charles Delescluze — 75011 Paris 11e
@@ -2906,13 +2994,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Charles Delescluze (5-7-9 rue Charles-Delescluze, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 90. Résidence autonomie Folie Méricourt — 75011 Paris 11e
@@ -2939,13 +3028,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Folie Méricourt (94 rue de la Folie-Méricourt, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 91. Résidence autonomie Keller — 75011 Paris 11e
@@ -2972,13 +3062,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Keller (18 rue Keller, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 92. Résidence autonomie La Roquette — 75011 Paris 11e
@@ -3005,13 +3096,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie La Roquette (10-12-14 bis rue Duranti, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 93. Résidence autonomie Léon Frot — 75011 Paris 11e
@@ -3038,13 +3130,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Léon Frot (41 rue Léon-Frot, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 94. Résidence autonomie Morand — 75011 Paris 11e
@@ -3071,13 +3164,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Morand (28 rue Morand, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 95. Résidence autonomie Ménilmontant — 75011 Paris 11e
@@ -3104,13 +3198,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Ménilmontant (21 passage de Ménilmontant, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 96. Résidence autonomie Omer Talon — 75011 Paris 11e
@@ -3137,13 +3232,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Omer Talon (33 rue Merlin, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 97. Résidence autonomie Philippe Auguste — 75011 Paris 11e
@@ -3170,13 +3266,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Philippe Auguste (99 avenue Philippe-Auguste, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 98. Résidence autonomie Richard Lenoir — 75011 Paris 11e
@@ -3203,13 +3300,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Richard Lenoir (61-63 boulevard Richard-Lenoir, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 99. Résidence autonomie Robert Houdin — 75011 Paris 11e
@@ -3236,13 +3334,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Robert Houdin (13 rue Robert-Houdin, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 100. Résidence autonomie de la Présentation — 75011 Paris 11e
@@ -3269,13 +3368,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie de la Présentation (110-116 rue du Faubourg-du-Temple, 75011 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 101. Résidence Autonomie Lacuée — 75012 Paris 12e
@@ -3302,13 +3402,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Lacuée (4 rue Lacuée, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 102. Résidence Autonomie Les Tourelles — 75012 Paris 12e
@@ -3335,13 +3436,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Les Tourelles (22 rue du Chaffault, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 103. Résidence Autonomie Ave Maria — 75004 Paris 4e
@@ -3367,13 +3469,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Ave Maria (Quartier Saint-Paul / Ave Maria, 75004 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 104. USLD La Collégiale — 75005 Paris 5e
@@ -3399,13 +3502,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD La Collégiale (33 rue du Fer à Moulin, 75005 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 105. USLD Hôpital Fernand-Widal — 75010 Paris 10e
@@ -3431,13 +3535,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Hôpital Fernand-Widal (200 rue du Faubourg Saint-Denis, 75010 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 106. Résidence Autonomie Saint-Éloi — 75012 Paris 12e
@@ -3463,13 +3568,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Saint-Éloi (10 rue Eugénie Éboué, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 107. USLD Est Parisien — Hôpital Rothschild (AP-HP) — 75012 Paris 12e
@@ -3495,13 +3601,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Est Parisien — Hôpital Rothschild (AP-HP) (5 rue Santerre, 75012 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 108. USLD Pitié-Salpêtrière (AP-HP) — 75013 Paris 13e
@@ -3527,13 +3634,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Pitié-Salpêtrière (AP-HP) (47-83 boulevard de l'Hôpital, 75013 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 109. USLD Maison Médicale La Rochefoucauld (AP-HP) — 75014 Paris 14e
@@ -3559,13 +3667,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Maison Médicale La Rochefoucauld (AP-HP) (15 avenue du Général Leclerc, 75014 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 110. Hôpital Vaugirard - Gabriel-Pallez (USLD) — 75015 Paris 15e
@@ -3591,13 +3700,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Hôpital Vaugirard - Gabriel-Pallez (USLD) (10 rue Vaugelas, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 111. Résidence autonomie Grenelle (CASVP) — 75015 Paris 15e
@@ -3623,13 +3733,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Grenelle (CASVP) (44 quai de Grenelle, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 112. Résidence autonomie Oscar Roty — 75015 Paris 15e
@@ -3655,13 +3766,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie Oscar Roty (107 rue de Lourmel, 75015 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 113. Résidence Autonomie André Leroux — 75017 Paris 17e
@@ -3687,13 +3799,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie André Leroux (21 rue Jean Leclaire, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 114. Résidence Autonomie Services Épinettes — 75017 Paris 17e
@@ -3719,13 +3832,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie Services Épinettes (51 rue des Épinettes, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 115. Résidence Autonomie des Ternes — 75017 Paris 17e
@@ -3751,13 +3865,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence Autonomie des Ternes (28 rue Bayen, 75017 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 116. USLD Hôpital Bretonneau (AP-HP) — 75018 Paris 18e
@@ -3783,13 +3898,14 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à USLD Hôpital Bretonneau (AP-HP) (23 rue Joseph de Maistre, 75018 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
 ### 117. Résidence autonomie de Flandre — 75019 Paris 19e
@@ -3815,12 +3931,13 @@ https://calendar.app.google/6PUSSyjkwazbJHRo9
 Avec toute mon admiration pour ce que vous portez au quotidien,
 
 Samy Santamarina
-Fondateur, Trudaines - Conseil patrimonial & immobilier, approche humaine
+Fondateur, Trudaines Immobilier
 Tél. 06 20 46 59 12 · samy.santamarina@trudaines.com
-TRUDAINES.COM
+Devenir apporteur : https://trudaines.lovable.app/auth
+Votre avis : https://g.page/r/CaBmZJ_RxDBgEBM/review
+LinkedIn : https://www.linkedin.com/in/samysantamarina/
+https://trudaines.com/
 
 Message professionnel adressé à Résidence autonomie de Flandre (142 avenue de Flandre, 75019 Paris). Pour ne plus être contacté, répondez « stop ».
-
-CLAUDE 2 $
 ```
 
