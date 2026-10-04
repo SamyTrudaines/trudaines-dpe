@@ -8,6 +8,7 @@ import ListeRues from '../../components/ListeRues.astro';
 import ModuleEstimation from '../../components/ModuleEstimation.astro';
 import ReferencesProches from '../../components/ReferencesProches.astro';
 import LivreBlanc from '../../components/LivreBlanc.astro';
+import AlerteExpress from '../../components/AlerteExpress.astro';
 import { secteurs } from '../../data/secteurs';
 import { site } from '../../data/site';
 import { nombre } from '../../lib/format';
@@ -290,6 +291,15 @@ const donneeEstimation = liste.length
       identifiant={`guide-${id}`}
     />
   )}
+
+  <AlerteExpress
+    id="alerte-quartier"
+    titre={`Vous cherchez à ${nom} ?`}
+    texte="Nos biens sont présentés d'abord à notre fichier d'acquéreurs, souvent avant les portails. Trois champs, et vous en faites partie."
+    origine={`Quartier ${nom}`}
+    evt={evt('quartier', 'alerte', id)}
+    secteur={secteur?.nom}
+  />
 
   <section class="section filet">
     <div class="conteneur">

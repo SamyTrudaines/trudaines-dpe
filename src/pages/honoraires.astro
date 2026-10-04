@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { honoraires, site } from '../data/site';
+import { honoraires, site, parrainage } from '../data/site';
 
 const tableaux = [
   { titre: 'Mandat de vente, honoraires à la charge du vendeur', lignes: honoraires.vente },
@@ -23,8 +23,8 @@ const tableaux = [
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Ce barème est un barème maximum. Nous pouvons pratiquer un taux inférieur, jamais supérieur. En mandat
-        exclusif, le taux de votre tranche est réduit d'un point, par exemple 6 % au lieu de 7 %. Le taux retenu
-        pour votre bien est arrêté avec vous avant la signature du mandat et y figure en toutes lettres.
+        exclusif, le taux de chaque tranche baisse d'un point. Le taux retenu pour votre bien est arrêté avec vous
+        avant la signature du mandat et y figure en toutes lettres.
       </p>
     </div>
   </section>
@@ -39,7 +39,8 @@ const tableaux = [
               <thead>
                 <tr class="border-b border-[color:var(--color-encre)]">
                   <th scope="col" class="py-4 pr-6 font-semibold">Tranche</th>
-                  <th scope="col" class="py-4 pr-6 font-semibold">Honoraires TTC</th>
+                  <th scope="col" class="py-4 pr-6 font-semibold">{t.lignes.some((l) => l.exclusif) ? 'Mandat simple, TTC' : 'Honoraires TTC'}</th>
+                  {t.lignes.some((l) => l.exclusif) && <th scope="col" class="py-4 pr-6 font-semibold">Mandat exclusif, TTC</th>}
                   <th scope="col" class="py-4 font-semibold">Minimum</th>
                 </tr>
               </thead>
@@ -48,6 +49,7 @@ const tableaux = [
                   <tr class="border-b border-[color:var(--color-trait)]">
                     <th scope="row" class="py-4 pr-6 font-medium">{l.tranche}</th>
                     <td class="py-4 pr-6">{l.taux}</td>
+                    {t.lignes.some((ligne) => ligne.exclusif) && <td class="py-4 pr-6">{l.exclusif}</td>}
                     <td class="py-4 text-[color:var(--color-ardoise)]">{l.minimum ?? 'Sans minimum'}</td>
                   </tr>
                 ))}
@@ -62,6 +64,11 @@ const tableaux = [
           Les honoraires de vente sont calculés sur le prix de vente hors honoraires. Lorsqu'ils sont à la charge de
           l'acquéreur, le prix affiché dans l'annonce est indiqué honoraires inclus et hors honoraires, conformément
           à la réglementation.
+        </p>
+        <p class="mt-4">
+          Vous connaissez quelqu'un qui vend, achète ou loue ? Avec {parrainage.nom}, {Math.round(parrainage.part * 100)} % de nos
+          honoraires hors taxes vous reviennent.{' '}
+          <a href="/recommander" class="lien-souligne">Calculer votre prime</a>.
         </p>
         <p class="mt-4">
           {site.nomLong}, {site.legal.rcs}. Carte professionnelle {site.legal.carteT}. Garantie financière

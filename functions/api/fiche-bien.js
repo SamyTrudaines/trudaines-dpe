@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
-  liste, gabaritNotification, gabaritClient, identifiantValide,
+  liste, gabaritNotification, gabaritClient, identifiantValide, telephoneInternational,
 } from '../_lib/brevo.js';
 
 /**
@@ -64,7 +64,7 @@ export async function onRequestPost({ request, env }) {
     await embaser(env, {
       email,
       attributs: {
-        SMS: valeur('telephone'),
+        SMS: telephoneInternational(valeur('telephone')),
         BIEN_REFERENCE: reference,
         ORIGINE: 'Dossier de bien téléchargé',
         ...optIn(donnees),

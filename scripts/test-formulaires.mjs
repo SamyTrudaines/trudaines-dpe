@@ -4,6 +4,8 @@
  * le piège à robots et le fonctionnement sans JavaScript.
  * Lancer : npm run test-formulaires
  */
+import { readFileSync } from 'node:fs';
+
 const appels = [];
 globalThis.fetch = async (url, options = {}) => {
   appels.push({ url: String(url), corps: options.body ? JSON.parse(options.body) : null });
@@ -40,8 +42,9 @@ const cas = [
   ['fiche-bien', '../functions/api/fiche-bien.js', { email: 'paul@example.com', telephone: '0601020304', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['guide', '../functions/api/guide.js', { email: 'paul@example.com', telephone: '0601020304', guide: 'guide-prix-2026-9e-nord', titreGuide: 'Guide des prix 2026', horodatage: recent() }, 6],
   ['alerte', '../functions/api/alerte.js', { prenom: 'Léa', email: 'lea@example.com', secteur: 'Paris 9e', pieces: '3', budget: '800000', surface: '60', consentement: 'oui', horodatage: recent() }, 4],
+  ['alerte express', '../functions/api/alerte.js', { email: 'leo@example.com', secteur: 'Paris 18e', budget: '650000', consentement: 'oui', formule: 'express', origine: 'Accueil', horodatage: recent() }, 4],
   ['contact', '../functions/api/contact.js', { prenom: 'Marc', nom: 'Petit', email: 'marc@example.com', telephone: '0601020304', sujet: 'Vendre', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 3],
-  ['recommandation', '../functions/api/recommandation.js', { prenom: 'Hélène', nom: 'Girard', email: 'helene@example.com', telephone: '0601020304', contexte: 'Un voisin vend son trois pièces au printemps.', prise_de_contact: 'Je lui donne votre numéro', consentement: 'oui', horodatage: recent() }, 3],
+  ['recommandation', '../functions/api/recommandation.js', { prenom: 'Hélène', nom: 'Girard', email: 'helene@example.com', telephone: '0601020304', projet: 'Vente', contexte: 'Un voisin vend son trois pièces au printemps.', consentement: 'oui', horodatage: recent() }, 3],
   ['temoignage', '../functions/api/temoignage.js', { prenom: 'Julien', email: 'julien@example.com', note: '5', texte: 'Vente conclue en trois semaines, comptes rendus après chaque visite.', quartier: 'Montmartre', projet: 'Vente', publication: 'oui', horodatage: recent() }, null],
   ['candidature', '../functions/api/candidature.js', { prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304', profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 5],
 ];
@@ -460,9 +463,10 @@ verifier(
   const repliAttributs = await guide.onRequestPost({ request: requete(donneesGuide({ consentement: 'oui' })), env: envDoi });
   const repliCorps = await repliAttributs.json();
   verifier(
-    'double opt-in : trois essais, du complet aux seuls attributs natifs puis au seul consentement',
+    'double opt-in : trois essais, du complet aux attributs connus sans téléphone puis au seul consentement',
     essaisConfirmation.length === 3 && 'GUIDE' in essaisConfirmation[0].attributes &&
-      !('GUIDE' in essaisConfirmation[1].attributes) && essaisConfirmation[1].attributes.SMS === '0601020304' &&
+      essaisConfirmation[0].attributes.SMS === '+33601020304' &&
+      'GUIDE' in essaisConfirmation[1].attributes && !('SMS' in essaisConfirmation[1].attributes) &&
       Object.keys(essaisConfirmation[2].attributes).join() === 'OPT_IN' &&
       essaisConfirmation.every((c) => c.includeListIds.join() === '6') && repliCorps.doi === true,
     `${essaisConfirmation.length} essai(s)`
@@ -537,6 +541,119 @@ verifier(
   sansOrigine.status === 200 && fonctionAtteinte,
   `statut ${sansOrigine.status}`
 );
+
+/* ------------------------------------- acquéreurs, WinWin et embasement ---- */
+
+const alerte = await import(new URL('../functions/api/alerte.js', import.meta.url).href);
+const recommandation = await import(new URL('../functions/api/recommandation.js', import.meta.url).href);
+const brevoLib = await import(new URL('../functions/_lib/brevo.js', import.meta.url).href);
+const contactsAppeles = () => appels.filter((a) => a.url.endsWith('/contacts'));
+const emailsAppeles = () => appels.filter((a) => a.url.endsWith('/smtp/email'));
+
+appels.length = 0;
+await alerte.onRequestPost({
+  request: requete({
+    prenom: 'Nora', email: 'nora@example.com', telephone: '06 11 22 33 44', secteur: 'Paris 17e', budget: '1200000',
+    pieces: '4', delai: 'Dès que possible', financement: 'Accord de principe obtenu',
+    vente_prealable: 'Oui, avec une estimation', consentement: 'oui', origine: 'Acheter', horodatage: recent(),
+  }),
+  env,
+});
+const inscriptionNora = contactsAppeles()[0]?.corps;
+verifier(
+  'acquéreur qui vend avant d’acheter : listes acheteurs et vendeurs, téléphone au format international',
+  inscriptionNora && inscriptionNora.listIds.join() === '4,3' && inscriptionNora.attributes.SMS === '+33611223344' &&
+    inscriptionNora.attributes.VENTE_PREALABLE === 'Oui, avec une estimation' && /estimation/.test(emailsAppeles()[0]?.corps.subject || ''),
+  inscriptionNora ? JSON.stringify(inscriptionNora.listIds) : 'aucune inscription'
+);
+
+appels.length = 0;
+await alerte.onRequestPost({
+  request: requete({ email: 'leo@example.com', secteur: 'Paris 18e', budget: '650 000', consentement: 'oui', formule: 'express', horodatage: recent() }),
+  env,
+});
+const inscriptionLeo = contactsAppeles()[0]?.corps.attributes || {};
+verifier(
+  'alerte express : aucun champ vide envoyé, rien n’efface une recherche déjà enregistrée',
+  inscriptionLeo.BUDGET_MAX === '650000' && !('PIECES_MIN' in inscriptionLeo) && !('PRENOM' in inscriptionLeo) && !('SMS' in inscriptionLeo),
+  JSON.stringify(inscriptionLeo)
+);
+
+appels.length = 0;
+const sansConsentement = await alerte.onRequestPost({
+  request: requete({ email: 'leo@example.com', secteur: 'Paris 18e', budget: '650000', formule: 'express', horodatage: recent() }),
+  env,
+});
+verifier('alerte sans consentement refusée', sansConsentement.status === 400 && appels.length === 0, `statut ${sansConsentement.status}`);
+
+appels.length = 0;
+const secteurForge = await alerte.onRequestPost({
+  request: requete({ email: 'leo@example.com', secteur: '<b>Gagnez</b>', budget: '650000', consentement: 'oui', horodatage: recent() }),
+  env,
+});
+verifier(
+  'secteur hors liste remplacé dans l’objet de la notification',
+  secteurForge.status === 200 && !/Gagnez/.test(emailsAppeles()[0]?.corps.subject || ''),
+  emailsAppeles()[0]?.corps.subject
+);
+
+verifier(
+  'numéros de téléphone au format attendu par Brevo',
+  brevoLib.telephoneInternational('06 01 02 03 04') === '+33601020304' &&
+    brevoLib.telephoneInternational('+33 6 01 02 03 04') === '+33601020304' &&
+    brevoLib.telephoneInternational('0033601020304') === '+33601020304' &&
+    brevoLib.telephoneInternational('12345') === ''
+);
+
+/* Brevo refuse un attribut pas encore créé : le contact entre quand même, avec ses attributs connus. */
+const fetchAvantRefus = globalThis.fetch;
+globalThis.fetch = async (url, options = {}) => {
+  const corps = options.body ? JSON.parse(options.body) : null;
+  appels.push({ url: String(url), corps });
+  if (String(url).endsWith('/contacts') && corps?.attributes && 'DELAI_ACHAT' in corps.attributes) {
+    return new Response(JSON.stringify({ code: 'invalid_parameter', message: 'Attribute DELAI_ACHAT does not exist' }), { status: 400 });
+  }
+  return new Response(JSON.stringify({ messageId: 'test' }), { status: 201 });
+};
+appels.length = 0;
+await alerte.onRequestPost({
+  request: requete({ prenom: 'Ana', email: 'ana@example.com', secteur: 'Paris 9e', budget: '900000', delai: 'Dans les six mois', consentement: 'oui', horodatage: recent() }),
+  env,
+});
+globalThis.fetch = fetchAvantRefus;
+const essaisAna = contactsAppeles().map((a) => a.corps.attributes);
+verifier(
+  'attribut inconnu de Brevo : nouvel essai qui garde secteur, budget et consentement',
+  essaisAna.length === 2 && !('DELAI_ACHAT' in essaisAna[1]) && essaisAna[1].SECTEUR_RECHERCHE === 'Paris 9e' &&
+    essaisAna[1].BUDGET_MAX === '900000' && essaisAna[1].OPT_IN === true,
+  JSON.stringify(essaisAna[1] || {})
+);
+
+appels.length = 0;
+await recommandation.onRequestPost({
+  request: requete({
+    prenom: 'Paul', nom: 'Martin', email: 'paul@example.com', telephone: '0601020304', projet: 'Gestion locative',
+    proche: 'Jeanne Durand 0699887766', consentement: 'oui', horodatage: recent(),
+  }),
+  env,
+});
+const notification = emailsAppeles()[0]?.corps.htmlContent || '';
+const confirmation = emailsAppeles()[1]?.corps.htmlContent || '';
+verifier(
+  'WinWin : le proche n’entre dans aucune liste, ses coordonnées restent dans la notification',
+  contactsAppeles().length === 1 && contactsAppeles()[0].corps.email === 'paul@example.com' &&
+    !JSON.stringify(contactsAppeles()[0].corps).includes('0699887766') && notification.includes('0699887766') &&
+    !confirmation.includes('0699887766'),
+  `${contactsAppeles().length} inscription(s)`
+);
+verifier(
+  'WinWin gestion : la confirmation parle de la première année',
+  /première année/.test(confirmation),
+);
+
+const partSite = Number(/parrainage\s*=\s*\{[\s\S]*?part:\s*([\d.]+)/.exec(readFileSync(new URL('../src/data/site.ts', import.meta.url), 'utf8'))?.[1]);
+const partFonction = Number(/PART_WINWIN\s*=\s*([\d.]+)/.exec(readFileSync(new URL('../functions/api/recommandation.js', import.meta.url), 'utf8'))?.[1]);
+verifier('part WinWin identique dans site.ts et dans la fonction', partSite > 0 && partSite === partFonction, `${partSite} et ${partFonction}`);
 
 console.log(echecs ? `${echecs} échec(s)` : 'Tous les formulaires répondent correctement.');
 process.exit(echecs ? 1 : 0);

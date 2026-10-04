@@ -1,15 +1,19 @@
 ---
+import { evt } from '../lib/entonnoir';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import CarteArticle from '../components/CarteArticle.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
-import { site } from '../data/site';
+import { site, parrainage } from '../data/site';
+import { pourcent, primeVente } from '../lib/bareme';
+import { prix } from '../lib/format';
 import { secteurs } from '../data/secteurs';
 import Ouverture from '../components/Ouverture.astro';
 import Manifeste from '../components/Manifeste.astro';
 import ReferencesAccueil from '../components/ReferencesAccueil.astro';
 import VitrineBiens from '../components/VitrineBiens.astro';
+import AlerteExpress from '../components/AlerteExpress.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -34,6 +38,9 @@ const preuveAvis = toutCinq
   ? `${agregatAvis.total} avis clients, tous à cinq étoiles`
   : `${agregatAvis.total} avis clients, note moyenne de ${agregatAvis.noteTexte} sur 5`;
 const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
+
+/* Trudaines WinWin : trois exemples calculés au barème exclusif, jamais saisis à la main. */
+const exemplesWinWin = [500000, 1000000, 2000000].map((p) => ({ prix: p, prime: primeVente(p) }));
 
 const engagements = [
   {
@@ -139,6 +146,14 @@ const engagements = [
     <ReferencesAccueil references={references} total={totalReferences} />
   )}
 
+  <AlerteExpress
+    id="alerte-accueil"
+    titre="Nos biens partent souvent avant les portails"
+    texte="Chaque nouveau bien est présenté d'abord à notre fichier d'acquéreurs. Trois champs, et vous en faites partie."
+    origine="Accueil"
+    evt={evt('alerte', 'accueil')}
+  />
+
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
       <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
@@ -158,6 +173,36 @@ const engagements = [
   </section>
 
   <Avis avis={avis} agregat={agregatAvis} />
+
+  <section class="section filet" aria-labelledby="winwin-accueil">
+    <div class="conteneur">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
+        <div class="max-w-2xl">
+          <p class="surtitre marque-filet">{parrainage.nom}</p>
+          <h2 id="winwin-accueil" class="titre-2 mt-6">
+            Un proche vend ? Votre recommandation vaut {pourcent(parrainage.part)} de nos honoraires.
+          </h2>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Vous nous présentez, nous faisons le reste. Votre proche est entre de bonnes mains, et vous recevez
+            votre prime après la signature chez le notaire. Un achat ou une mise en location ? Même principe.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="/recommander#simulateur" class="bouton" data-evt="accueil_winwin_simulateur">Calculer ma prime</a>
+          <a href="/recommander#formulaire-winwin" class="bouton bouton-secondaire" data-evt="accueil_winwin_recommander">Recommander un proche</a>
+        </div>
+      </div>
+      <ul class="reperes mt-14" aria-label="Exemples de primes WinWin, au barème du mandat exclusif">
+        {exemplesWinWin.map((e) => (
+          <li>
+            <span class="reperes-chiffre">{prix(e.prime)}</span>
+            <span class="reperes-texte">pour la vente d'un bien à <span class="whitespace-nowrap">{prix(e.prix)}</span></span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">Au barème du mandat exclusif, sur nos honoraires hors taxes.</p>
+    </div>
+  </section>
 
   <Manifeste />
 

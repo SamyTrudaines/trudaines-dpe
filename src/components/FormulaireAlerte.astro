@@ -1,69 +1,139 @@
 ---
 import { secteurs } from '../data/secteurs';
+
+/**
+ * Alerte acquéreur complète, en deux temps : la recherche, puis la personne.
+ *
+ * La première étape ne demande que ce qui sert à trier les biens. La seconde
+ * qualifie : calendrier, financement, et surtout un bien à vendre avant
+ * d'acheter, qui fait d'un acquéreur un vendeur à estimer. Seuls le prénom et
+ * l'email y sont obligatoires.
+ */
+const choix = [...secteurs].sort((a, b) => a.arrondissement.localeCompare(b.arrondissement));
 ---
 <form
+  id="alerte"
   class="border border-[color:var(--color-trait)] bg-white p-6 md:p-8"
   method="POST"
   action="/api/alerte"
   data-trudaines
   data-evenement="alerte_creee"
+  data-evenement-etape="alerte_etape1"
 >
   <input type="hidden" name="horodatage" value="" />
+  <input type="hidden" name="origine" value="Acheter" />
   <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
     <label for="societe-alerte">Ne pas remplir</label>
     <input type="text" id="societe-alerte" name="societe" tabindex="-1" autocomplete="off" />
   </div>
   <div data-corps>
-    <h2 class="titre-3">Être prévenu avant la diffusion</h2>
-    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-      Une partie de nos biens part avant d'apparaître sur les portails. Décrivez votre recherche, nous vous écrivons quand un bien correspond.
-    </p>
-    <div class="mt-6 grid gap-4 sm:grid-cols-2">
-      <div>
-        <label class="etiquette" for="alerte-secteur">Secteur recherché</label>
-        <select class="champ" id="alerte-secteur" name="secteur" required>
-          {secteurs.map((s) => <option value={s.nom}>{s.nom}</option>)}
-          <option value="Indifférent">Indifférent</option>
-        </select>
-      </div>
-      <div>
-        <label class="etiquette" for="alerte-pieces">Nombre de pièces minimum</label>
-        <select class="champ" id="alerte-pieces" name="pieces" required>
-          <option value="1">1 pièce</option>
-          <option value="2">2 pièces</option>
-          <option value="3">3 pièces</option>
-          <option value="4">4 pièces</option>
-          <option value="5">5 pièces et plus</option>
-        </select>
-      </div>
-      <div>
-        <label class="etiquette" for="alerte-budget">Budget maximum en euros</label>
-        <input class="champ" id="alerte-budget" name="budget" type="number" min="100000" step="10000" required inputmode="numeric" />
-      </div>
-      <div>
-        <label class="etiquette" for="alerte-surface">Surface minimum en m²</label>
-        <input class="champ" id="alerte-surface" name="surface" type="number" min="10" required inputmode="numeric" />
-      </div>
-      <div>
-        <label class="etiquette" for="alerte-prenom">Prénom</label>
-        <input class="champ" id="alerte-prenom" name="prenom" type="text" autocomplete="given-name" required />
-      </div>
-      <div>
-        <label class="etiquette" for="alerte-email">Email</label>
-        <input class="champ" id="alerte-email" name="email" type="email" autocomplete="email" required />
+    <div class="mb-8">
+      <p class="surtitre" data-compteur>Étape 1 sur 2</p>
+      <div class="mt-3 h-[2px] w-full bg-[color:var(--color-trait)]" role="presentation">
+        <div class="h-[2px] bg-[color:var(--color-nuit)] transition-[width] duration-200" style="width:50%" data-barre></div>
       </div>
     </div>
-    <div class="mt-4 flex items-start gap-3">
-      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="alerte-consentement" name="consentement" type="checkbox" required value="oui" />
-      <label class="text-sm text-[color:var(--color-ardoise)]" for="alerte-consentement">
-        J'accepte de recevoir les biens correspondant à ma recherche.
-      </label>
-    </div>
-    <button type="submit" class="bouton mt-6 w-full sm:w-auto">Créer mon alerte</button>
-    <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3">Votre recherche</legend>
+      <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+        Nos biens sont présentés d'abord à notre fichier d'acquéreurs, souvent avant les portails.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label class="etiquette" for="alerte-secteur">Secteur</label>
+          <select class="champ" id="alerte-secteur" name="secteur" required>
+            {choix.map((s) => <option value={s.nom}>{s.nom}</option>)}
+            <option value="Tout Paris">Tout Paris</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-budget">Budget maximum en euros</label>
+          <input class="champ" id="alerte-budget" name="budget" type="number" min="100000" step="10000" required inputmode="numeric" placeholder="800 000" />
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-pieces">Pièces, au moins</label>
+          <select class="champ" id="alerte-pieces" name="pieces" required>
+            <option value="1">1 pièce</option>
+            <option value="2" selected>2 pièces</option>
+            <option value="3">3 pièces</option>
+            <option value="4">4 pièces</option>
+            <option value="5">5 pièces et plus</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-surface">Surface minimum en m², facultatif</label>
+          <input class="champ" id="alerte-surface" name="surface" type="number" min="10" inputmode="numeric" />
+        </div>
+      </div>
+      <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Continuer</button>
+    </fieldset>
+
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3">Pour vous prévenir</legend>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label class="etiquette" for="alerte-prenom">Prénom</label>
+          <input class="champ" id="alerte-prenom" name="prenom" type="text" autocomplete="given-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-email">Email</label>
+          <input class="champ" id="alerte-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="sm:col-span-2">
+          <label class="etiquette" for="alerte-telephone">Téléphone, facultatif</label>
+          <input class="champ" id="alerte-telephone" name="telephone" type="tel" autocomplete="tel" />
+          <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+            Pour être appelé quand un bien correspond exactement, avant l'envoi de l'alerte.
+          </p>
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-delai">Votre calendrier</label>
+          <select class="champ" id="alerte-delai" name="delai">
+            <option value="">Choisir</option>
+            <option value="Dès que possible">Dès que possible</option>
+            <option value="Dans les six mois">Dans les six mois</option>
+            <option value="Je commence à regarder">Je commence à regarder</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for="alerte-financement">Votre financement</label>
+          <select class="champ" id="alerte-financement" name="financement">
+            <option value="">Choisir</option>
+            <option value="Accord de principe obtenu">Accord de principe obtenu</option>
+            <option value="Apport, prêt à finaliser">Apport, prêt à finaliser</option>
+            <option value="Achat comptant">Achat comptant</option>
+            <option value="À étudier">À étudier</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="etiquette" for="alerte-vente">Un bien à vendre avant d'acheter ?</label>
+          <select class="champ" id="alerte-vente" name="vente_prealable">
+            <option value="">Choisir</option>
+            <option value="Non">Non</option>
+            <option value="Oui, avec une estimation">Oui, et je veux bien une estimation offerte</option>
+            <option value="Oui, plus tard">Oui, j'en parlerai plus tard</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-6 flex items-start gap-3">
+        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="alerte-consentement" name="consentement" type="checkbox" required value="oui" />
+        <label class="text-sm text-[color:var(--color-ardoise)]" for="alerte-consentement">
+          J'accepte de recevoir les biens correspondant à ma recherche.{' '}
+          <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+        </label>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="submit" class="bouton">Créer mon alerte</button>
+      </div>
+      <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+    </fieldset>
   </div>
   <div data-confirmation hidden class="py-2">
     <h2 class="titre-3">Alerte enregistrée</h2>
-    <p class="mt-4 text-[color:var(--color-ardoise)]">Vous recevrez un email dès qu'un bien correspond à vos critères.</p>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">
+      Vous recevrez un email dès qu'un bien correspond à votre recherche, y compris avant sa diffusion publique.
+    </p>
   </div>
 </form>

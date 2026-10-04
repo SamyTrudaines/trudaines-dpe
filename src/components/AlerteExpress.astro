@@ -1,0 +1,83 @@
+---
+import { secteurs } from '../data/secteurs';
+
+/**
+ * Alerte acquéreur en trois champs, posée là où l'on regarde des biens :
+ * accueil, fiches, références, quartiers. Secteur et budget peuvent arriver
+ * préremplis par la page. Le reste de la recherche se précise ensuite sur
+ * /acheter#alerte, que rappelle l'email de confirmation.
+ *
+ * `origine` dit d'où vient l'inscription, dans la notification et dans Brevo ;
+ * `evt` nomme l'événement d'analyse, construit par evt() de src/lib/entonnoir.ts.
+ */
+interface Props {
+  id: string;
+  titre: string;
+  texte: string;
+  origine: string;
+  evt: string;
+  secteur?: string;
+  budget?: number;
+}
+const { id, titre, texte, origine, evt, secteur, budget } = Astro.props;
+const choix = [...secteurs].sort((a, b) => a.arrondissement.localeCompare(b.arrondissement));
+---
+<section class="section filet" aria-labelledby={`${id}-titre`}>
+  <div class="conteneur grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end lg:gap-16">
+    <div>
+      <p class="surtitre">Acheter avec Trudaines</p>
+      <h2 id={`${id}-titre`} class="titre-2 mt-6">{titre}</h2>
+      <p class="mt-6 text-[color:var(--color-ardoise)]">{texte}</p>
+    </div>
+    <form
+      method="POST"
+      action="/api/alerte"
+      data-trudaines
+      data-evenement="alerte_creee"
+      data-evt={evt}
+    >
+      <input type="hidden" name="horodatage" value="" />
+      <input type="hidden" name="origine" value={origine} />
+      <input type="hidden" name="formule" value="express" />
+      <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label for={`${id}-societe`}>Ne pas remplir</label>
+        <input type="text" id={`${id}-societe`} name="societe" tabindex="-1" autocomplete="off" />
+      </div>
+      <div data-corps>
+        <div class="alerte-express-grille">
+          <div>
+            <label class="etiquette" for={`${id}-secteur`}>Secteur</label>
+            <select class="champ" id={`${id}-secteur`} name="secteur" required>
+              {choix.map((s) => <option value={s.nom} selected={s.nom === secteur}>{s.nom}</option>)}
+              <option value="Tout Paris" selected={!secteur}>Tout Paris</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`${id}-budget`}>Budget maximum en euros</label>
+            <input class="champ" id={`${id}-budget`} name="budget" type="number" min="100000" step="10000" required inputmode="numeric" placeholder="800 000" value={budget} />
+          </div>
+          <div>
+            <label class="etiquette" for={`${id}-email`}>Email</label>
+            <input class="champ" id={`${id}-email`} name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="mt-5 flex items-start gap-3">
+          <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`${id}-consentement`} name="consentement" type="checkbox" required value="oui" />
+          <label class="text-sm text-[color:var(--color-ardoise)]" for={`${id}-consentement`}>
+            J'accepte de recevoir les biens correspondant à ma recherche.{' '}
+            <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+          </label>
+        </div>
+        <button type="submit" class="bouton mt-6 w-full sm:w-auto">Être prévenu en premier</button>
+        <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
+      </div>
+      <div data-confirmation hidden class="py-2">
+        <p class="titre-3">C'est noté.</p>
+        <p class="mt-4 text-[color:var(--color-ardoise)]">
+          Vous recevrez nos biens dès leur entrée, avant les portails quand c'est le cas. Pour des alertes plus
+          justes,{' '}<a href="/acheter#alerte" class="lien-souligne">précisez pièces, surface et calendrier</a>.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

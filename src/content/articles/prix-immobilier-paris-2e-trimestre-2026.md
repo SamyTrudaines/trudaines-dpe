@@ -4,7 +4,7 @@ date: 2026-10-04
 image: /images/panorama/prix-immobilier-paris-2e-trimestre-2026.webp
 imageAlt: Toits haussmanniens et avenue arborée de Paris vus d'en haut
 chapo: Les prix parisiens ne bougent plus, les ventes reprennent. Pour un vendeur, ce marché récompense le prix juste et sanctionne le prix rêvé.
-titreSeo: "Prix immobilier Paris 2026 : 9 520 €/m², ce que cela change pour vendre | Trudaines"
+titreSeo: "Prix immobilier Paris 2026 : 9 520 € le m² | Trudaines"
 descriptionSeo: "Prix des appartements à Paris au 2e trimestre 2026 : 9 520 € le m², +0,1 % sur un an. Ventes en hausse, prix par arrondissement 9e, 10e, 17e, 18e et conseils pour vendre."
 motsCles:
   - prix immobilier Paris 2026

@@ -1,52 +1,75 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormulaireRecommandation from '../components/FormulaireRecommandation.astro';
+import SimulateurWinWin from '../components/SimulateurWinWin.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site, parrainage } from '../data/site';
+import { pourcent, primeVente } from '../lib/bareme';
+import { prix as euros } from '../lib/format';
 
 const avis = (await avisCommentés()).slice(0, 3);
 const agregatAvis = await agrégatAvis();
 
+const part = pourcent(parrainage.part);
+const exemple = { prix: 1000000, prime: primeVente(1000000) };
+
 const etapes = [
   {
-    titre: 'Vous me dites ce que vous savez',
+    titre: 'Vous nous présentez',
     texte:
-      "Un quartier, un type de bien, un calendrier. Pas de nom, pas de numéro : la personne ne m'a rien demandé, et ce n'est pas à moi de l'appeler la première fois.",
+      "Le formulaire, un appel ou un message. Si votre proche est d'accord, laissez ses coordonnées ; sinon, je vous rappelle et nous décidons ensemble comment faire les présentations.",
   },
   {
-    titre: 'Je vous rappelle avant tout contact',
+    titre: 'Nous faisons le reste',
     texte:
-      "Nous décidons ensemble de la façon de faire les présentations. Vous lui donnez mon numéro, ou vous nous mettez en relation par email. Rien ne part sans votre feu vert.",
+      "Estimation, mandat, visites, négociation : vous n'avez rien à faire. Vous savez si le rendez-vous a eu lieu et si le mandat est signé. Le prix et les raisons du projet restent entre votre proche et moi.",
   },
   {
-    titre: 'Vous savez où en est le dossier',
-    texte:
-      "Vous saurez si le rendez vous a eu lieu et si le mandat est signé. Vous ne saurez rien de ce qui ne vous regarde pas : le prix, la situation, les raisons de la vente restent entre elle et moi.",
+    titre: 'Vous recevez votre prime',
+    texte: `${part} de nos honoraires hors taxes, versés dès leur encaissement, après la signature chez le notaire ; en gestion, au terme de la première année. Un accord écrit, signé avant la mise en relation, fixe tout.`,
   },
 ];
 
 const faq = [
   {
-    question: 'Est ce que je touche quelque chose ?',
-    reponse: parrainage.recompense
-      ? `${parrainage.recompense} Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation. Dans ce cas là, il faut une carte professionnelle.`
-      : "Une recommandation ponctuelle, faite par quelqu'un qui ne négocie rien et ne présente pas le bien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. Un remerciement est donc possible et il est d'usage, nous en convenons au cas par cas. Ce qui sortirait du cadre, c'est de rémunérer une personne qui recommanderait à répétition, ou qui interviendrait dans la négociation : il faut alors une carte professionnelle.",
+    question: 'Combien vais-je recevoir ?',
+    reponse: `${part} des honoraires hors taxes que Trudaines encaisse sur l'opération : une vente, un achat avec mandat de recherche, ou la première année d'une gestion locative. Pour un appartement vendu ${euros(exemple.prix)} en mandat exclusif, cela fait ${euros(exemple.prime)}. Le simulateur fait le calcul sur notre barème.`,
   },
   {
-    question: 'Et si la personne ne veut pas être contactée ?',
+    question: 'Quand la prime est-elle versée ?',
     reponse:
-      "Il ne se passe rien. Je n'écris ni n'appelle jamais quelqu'un qui ne m'a pas été présenté. C'est la raison pour laquelle le formulaire ne demande ni son nom ni son numéro.",
+      "Dès que nous encaissons nos honoraires : après la signature de l'acte chez le notaire pour une vente ou un achat, au terme de la première année pour une gestion. Pas d'opération conclue, pas d'honoraires, donc pas de prime : la loi du 2 janvier 1970 interdit à une agence d'être payée avant.",
   },
   {
-    question: 'Est ce que vous prenez tous les biens ?',
+    question: 'Est-ce bien légal ?',
     reponse:
-      "Le cabinet travaille Paris, avec une connaissance au mètre carré des 9e, 10e, 17e et 18e. Pour un bien parisien hors de ces quatre arrondissements, je prends le rendez vous et je m'appuie sur la même méthode. Hors de Paris, je le dis franchement et j'oriente vers quelqu'un dont c'est le terrain, sans rien demander en retour.",
+      "Oui, dans un cadre précis. Une recommandation occasionnelle, faite par quelqu'un qui ne visite pas, ne négocie pas et ne signe rien, n'est pas de l'entremise immobilière : la loi du 2 janvier 1970 vise ceux qui s'y livrent de manière habituelle. WinWin récompense donc des recommandations ponctuelles, et un accord écrit, signé avant la mise en relation, fixe la prime.",
   },
   {
-    question: 'Que se passe t il si le prix demandé est trop haut ?',
+    question: 'Dois-je déclarer cette prime ?',
     reponse:
-      "Je le dis, chiffres à l'appui, et je perds parfois le mandat. C'est la seule façon de ne pas vous mettre en porte à faux avec quelqu'un que vous connaissez.",
+      "Oui. C'est un revenu imposable, en général dans la catégorie des bénéfices non commerciaux. De notre côté, nous déclarons à l'administration fiscale les sommes versées au-delà de 1 200 € par an et par bénéficiaire, comme la loi nous y oblige.",
+  },
+  {
+    question: 'Et si mon proche ne veut pas être contacté ?',
+    reponse:
+      "Il ne se passe rien. Je n'appelle jamais quelqu'un qui ne m'a pas été présenté, et ses coordonnées ne servent qu'à la prise de contact convenue avec vous.",
+  },
+  {
+    question: 'Et si mon proche est déjà en contact avec le cabinet ?',
+    reponse:
+      'Je vous le dis dès votre message. La prime récompense une mise en relation qui n’aurait pas eu lieu sans vous.',
+  },
+  {
+    question: 'Vous prenez tous les biens ?',
+    reponse:
+      "Le cabinet travaille Paris, avec une connaissance au mètre carré des 9e, 10e, 17e et 18e. Pour un bien parisien hors de ces quatre arrondissements, je prends le rendez-vous et je m'appuie sur la même méthode. Hors de Paris, je le dis franchement et j'oriente vers quelqu'un dont c'est le terrain, sans rien demander en retour.",
+  },
+  {
+    question: 'Et si le prix demandé est trop haut ?',
+    reponse:
+      "Je le dis, chiffres à l'appui, et je perds parfois le mandat. C'est la seule façon de ne pas vous mettre en porte-à-faux avec quelqu'un que vous connaissez.",
   },
 ];
 
@@ -63,28 +86,50 @@ const donnees = [
 ];
 ---
 <Layout
-  titre="Recommander Trudaines à un proche | Cabinet immobilier Paris"
-  description="Vous connaissez quelqu'un qui vend dans le 9e, à Montmartre ou dans le 10e ? Voici comment se passe une recommandation, et ce qui ne se passe pas."
+  titre="Recommandation immobilière rémunérée à Paris | Trudaines WinWin"
+  description={`Un proche vend, achète ou loue à Paris ? Recommandez-le : ${part} de nos honoraires HT vous reviennent. Simulateur, conditions et cadre légal en clair.`}
   filAriane={[{ nom: 'Recommander' }]}
   donnees={donnees}
   cta={false}
 >
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
-      <p class="surtitre">Recommandation</p>
-      <h1 class="titre-1 mt-6">Quelqu'un autour de vous vend ?</h1>
+      <p class="surtitre marque-filet">{parrainage.nom}</p>
+      <h1 class="titre-1 mt-6">Vous recommandez. Vous recevez {part}.</h1>
       <p class="chapo mt-8">
-        La plus grande partie des mandats du cabinet vient de personnes qui en ont parlé à quelqu'un. C'est
-        flatteur et c'est engageant : recommander un professionnel, c'est mettre sa propre parole en jeu. Voici
-        exactement ce qui se passe quand vous le faites.
+        Un proche vend, achète ou met en location ? Présentez-le-nous. Quand votre proche nous confie son projet,
+        {' '}{part} de nos honoraires hors taxes vous reviennent. Votre proche est entre de bonnes mains, vous
+        recevez votre part : c'est WinWin.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#simulateur" class="bouton" data-evt="winwin_calculer">Calculer ma prime</a>
+        <a href="#formulaire-winwin" class="bouton bouton-secondaire" data-evt="winwin_formulaire">Recommander maintenant</a>
+      </div>
+      <p class="mt-10 border-t border-[color:var(--color-trait)] pt-6 text-sm text-[color:var(--color-ardoise)]">
+        94 % des Français ignorent qu'une recommandation immobilière peut être rémunérée.{' '}
+        <a href="#sources" class="lien-souligne whitespace-nowrap">Source</a>
       </p>
     </div>
   </section>
 
-  <section class="section filet">
+  <section id="simulateur" class="section filet" aria-labelledby="titre-simulateur">
+    <div class="conteneur">
+      <p class="surtitre">Simulateur</p>
+      <h2 id="titre-simulateur" class="titre-2 mt-6 max-w-2xl">Combien vaut votre recommandation ?</h2>
+      <SimulateurWinWin />
+      <p class="mt-10 max-w-3xl text-xs leading-relaxed text-[color:var(--color-ardoise)]">
+        Calcul indicatif au barème affiché, sur les honoraires hors taxes effectivement encaissés : vente au taux du
+        mandat exclusif, achat au barème du mandat de recherche, gestion sur douze mois de loyers. Le montant
+        définitif figure dans l'accord écrit, signé avant la mise en relation.{' '}
+        <a href="/honoraires" class="lien-souligne">Notre barème</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="titre-etapes">
     <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
-        <h2 class="titre-2">Comment cela se passe</h2>
+        <h2 id="titre-etapes" class="titre-2">Trois étapes, aucune démarche</h2>
         <ol class="mt-10 grid gap-10">
           {etapes.map((e, index) => (
             <li class="border-t border-[color:var(--color-encre)] pt-5">
@@ -94,14 +139,18 @@ const donnees = [
             </li>
           ))}
         </ol>
+        <p class="mt-12 text-sm text-[color:var(--color-ardoise)]">
+          Recommander est votre talent ? En faire un métier demande une carte professionnelle ou une habilitation :
+          le cabinet recrute et forme.{' '}
+          <a href="/nous-rejoindre" class="lien-souligne">Nous rejoindre</a>.
+        </p>
       </div>
       <div>
         {parrainage.lien && (
-          <div class="mb-8 border border-[color:var(--color-trait)] bg-[color:var(--color-papier)] p-6">
+          <div class="mb-8 border border-[color:var(--color-trait)] p-6">
             <p class="surtitre">En un clic</p>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
-              Si vous recommandez régulièrement, l'application du cabinet suit vos recommandations et leur
-              avancement sans que vous ayez à me relancer.
+              L'application du cabinet suit vos recommandations et leur avancement sans que vous ayez à me relancer.
             </p>
             <a href={parrainage.lien} rel="noopener" target="_blank" data-evt="clic_parrainage" class="bouton mt-6">
               {parrainage.libelleLien || 'Ouvrir l’application'}
@@ -109,6 +158,10 @@ const donnees = [
           </div>
         )}
         <FormulaireRecommandation />
+        <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+          Plus simple au téléphone ?{' '}
+          <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne whitespace-nowrap">{site.telephone}</a>
+        </p>
       </div>
     </div>
   </section>
@@ -125,12 +178,15 @@ const donnees = [
         ))}
       </dl>
       <p class="mt-10 text-sm">
-        Une question qui n'est pas là ? Écrivez moi à{' '}
+        Une question qui n'est pas là ? Écrivez-moi à{' '}
         <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a> ou appelez le{' '}
         <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a>.
+      </p>
+      <p id="sources" class="mt-6 text-xs text-[color:var(--color-ardoise)]">
+        Source du chiffre de 94 % : étude Selvitys pour iad, mars 2026, 1 000 Français interrogés.
       </p>
     </div>
   </section>
 
-  <Avis avis={avis} agregat={agregatAvis} titre="Ce qu'en disent ceux qui ont déjà recommandé" />
+  <Avis avis={avis} agregat={agregatAvis} titre="Ce qu'en disent ceux qui m'ont fait confiance" />
 </Layout>

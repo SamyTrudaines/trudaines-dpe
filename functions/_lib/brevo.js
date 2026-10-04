@@ -131,6 +131,56 @@ export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, 
 const ATTRIBUTS_NATIFS = new Set(['PRENOM', 'NOM', 'SMS', 'OPT_IN', 'WHATSAPP', 'LANDLINE_NUMBER']);
 
 /**
+ * Attributs relevés dans le compte Brevo le 4 octobre 2026. Un attribut ajouté
+ * depuis au code, tant qu'il n'est pas créé dans Brevo, fait refuser le contact
+ * entier : l'enregistrement repart alors avec ceux-ci, plutôt que de tomber
+ * d'un coup aux seuls attributs natifs et de perdre secteur, budget ou origine.
+ */
+const ATTRIBUTS_CONNUS = new Set([
+  ...ATTRIBUTS_NATIFS,
+  'DATE_OPTIN', 'ORIGINE', 'SECTEUR', 'SECTEUR_RECHERCHE', 'SECTEUR_SOUHAITE', 'PIECES_MIN', 'BUDGET_MAX',
+  'SURFACE_MIN', 'ADRESSE_BIEN', 'TYPE_BIEN', 'SURFACE', 'PIECES', 'HORIZON_VENTE', 'BIEN_REFERENCE', 'SUJET',
+  'GUIDE', 'PROFIL',
+]);
+
+/** Garde les seuls attributs nommés, sans les valeurs vides. */
+const garder = (attributs, retenir) =>
+  Object.fromEntries(Object.entries(attributs).filter(([nom, valeur]) => retenir(nom) && valeur !== '' && valeur != null));
+
+/**
+ * Essais successifs d'un envoi à Brevo, du plus complet au plus sûr. Une valeur
+ * vide n'est jamais envoyée : un formulaire court ne doit pas effacer ce qu'un
+ * formulaire plus complet a déjà enregistré. Le téléphone tombe avant les
+ * attributs natifs, parce que Brevo refuse un numéro qu'il juge mal formé ou
+ * déjà porté par un autre contact : mieux vaut un contact sans téléphone, qui
+ * reste dans la notification interne, qu'un contact perdu.
+ */
+function essais(attributs) {
+  const liste = [
+    garder(attributs, () => true),
+    garder(attributs, (nom) => ATTRIBUTS_CONNUS.has(nom)),
+    garder(attributs, (nom) => ATTRIBUTS_CONNUS.has(nom) && nom !== 'SMS'),
+    garder(attributs, (nom) => ATTRIBUTS_NATIFS.has(nom) && nom !== 'SMS'),
+    garder(attributs, (nom) => nom === 'OPT_IN'),
+  ];
+  return liste.filter((essai, i) => i === 0 || JSON.stringify(essai) !== JSON.stringify(liste[i - 1]));
+}
+
+/**
+ * Numéro au format international attendu par l'attribut SMS de Brevo : un
+ * numéro français à dix chiffres devient +33 suivi de neuf chiffres, un numéro
+ * déjà international est gardé. Tout le reste est écarté du contact ; le
+ * numéro tel que saisi reste dans la notification interne.
+ */
+export function telephoneInternational(valeur) {
+  const brut = String(valeur || '').replace(/[\s.()-]/g, '');
+  if (/^\+\d{8,15}$/.test(brut)) return brut;
+  if (/^00\d{8,15}$/.test(brut)) return `+${brut.slice(2)}`;
+  if (/^0[1-9]\d{8}$/.test(brut)) return `+33${brut.slice(1)}`;
+  return '';
+}
+
+/**
  * Trace du consentement. La case cochée devient l'attribut OPT_IN, daté du
  * jour : c'est la preuve que demande le RGPD, portée par le contact lui même,
  * et l'email de notification reçu par le cabinet en garde le double. Une
@@ -165,18 +215,17 @@ export async function enregistrerContact(env, { email, attributs = {}, listes = 
       }),
     });
 
-  let reponseApi = await envoyer(attributs);
-  if (reponseApi.status === 400) {
-    const detail = await reponseApi.text();
-    console.error(`Brevo contacts 400, nouvel essai avec les seuls attributs natifs : ${detail}`);
-    const natifs = Object.fromEntries(
-      Object.entries(attributs).filter(([nom]) => ATTRIBUTS_NATIFS.has(nom))
-    );
-    reponseApi = await envoyer(natifs);
+  let reponseApi = null;
+  let detail = '';
+  for (const retenus of essais(attributs)) {
+    reponseApi = await envoyer(retenus);
+    if (reponseApi.status !== 400) break;
+    detail = await reponseApi.text();
+    console.error(`Brevo contacts 400, nouvel essai avec moins d'attributs : ${detail}`);
   }
 
   if (!reponseApi.ok && reponseApi.status !== 204) {
-    const detail = await reponseApi.text();
+    if (!reponseApi.bodyUsed) detail = await reponseApi.text();
     throw new Error(`Brevo contacts ${reponseApi.status} ${detail}`);
   }
   return true;
@@ -243,11 +292,9 @@ export async function demanderConfirmation(env, { email, attributs = {}, listes 
       }),
     });
 
-  const natifs = Object.fromEntries(Object.entries(attributs).filter(([nom]) => ATTRIBUTS_NATIFS.has(nom)));
-  const consentement = Object.fromEntries(Object.entries(attributs).filter(([nom]) => nom === 'OPT_IN'));
   let reponseApi = null;
   let detail = '';
-  for (const retenus of [attributs, natifs, consentement]) {
+  for (const retenus of essais(attributs)) {
     reponseApi = await envoyer(retenus);
     if (reponseApi.status !== 400) break;
     detail = await reponseApi.text();

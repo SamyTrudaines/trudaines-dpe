@@ -4,7 +4,7 @@ date: 2026-10-04
 image: /images/panorama/droits-de-mutation-paris-5-pourcent-2028.webp
 imageAlt: Façade parisienne blanche à toit mansardé et garde-corps en fer forgé
 chapo: Depuis le 1er avril 2025, la part départementale des droits de mutation est passée de 4,5 % à 5 % à Paris. Les primo-accédants en sont exonérés. Ce que cela change dans un budget d'achat et dans une négociation.
-titreSeo: "Droits de mutation Paris 2026 : 5 % jusqu'en 2028, primo-accédants exonérés | Trudaines"
+titreSeo: "Frais de notaire à Paris : droits de mutation à 5 % | Trudaines"
 descriptionSeo: "Frais de notaire à Paris : part départementale des droits de mutation à 5 % du 1er avril 2025 au 31 mars 2028. Exonération des primo-accédants. Impact sur le prix de vente."
 motsCles:
   - frais de notaire Paris 2026

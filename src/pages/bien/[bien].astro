@@ -1,10 +1,13 @@
 ---
+import { evt } from '../../lib/entonnoir';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import FormulaireVisite from '../../components/FormulaireVisite.astro';
 import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import CarteBien from '../../components/CarteBien.astro';
+import AlerteExpress from '../../components/AlerteExpress.astro';
+import { secteurs } from '../../data/secteurs';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut, lieuBien, referencePrixEnergie } from '../../lib/format';
 import { site } from '../../data/site';
 import { titreSeo, descriptionSeo } from '../../lib/seo';
@@ -32,6 +35,9 @@ const d = bien.data;
  * Voir le commentaire du champ `archive` dans src/content.config.ts.
  */
 const archive = d.archive;
+/* Alerte en fin de fiche : secteur du bien, et budget arrondi au prix affiché, jamais pour une référence, qui ne montre aucun prix. */
+const secteurBien = secteurs.find((s) => s.arrondissement === d.arrondissement)?.nom;
+const budgetAlerte = !archive && d.prix > 0 ? Math.ceil(d.prix / 10000) * 10000 : undefined;
 
 /*
  * Message du bouton WhatsApp. Une annonce renvoie vers elle-même, pour que Samy
@@ -345,4 +351,13 @@ const donnees = [
       </div>
     </section>
   )}
+  <AlerteExpress
+    id="alerte-fiche"
+    titre={archive ? 'Le prochain partira peut-être avant les portails' : 'Pas tout à fait celui-ci ? Recevez les prochains en premier'}
+    texte="Chaque nouveau bien est présenté d'abord à notre fichier d'acquéreurs. Trois champs, et vous en faites partie."
+    origine={`Fiche ${d.reference}`}
+    evt={evt('alerte', archive ? 'reference' : 'fiche')}
+    secteur={secteurBien}
+    budget={budgetAlerte}
+  />
 </Layout>
