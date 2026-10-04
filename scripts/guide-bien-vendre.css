@@ -560,3 +560,63 @@ table.honoraires td { font-size: 9.6pt; padding: 1.7mm 0; }
 .colonne .bloc p, .colonne .liste li, .colonne .etapes p { font-size: 11.6pt; line-height: 1.5; }
 .colonne .intertitre { font-size: 9pt; }
 .colonne .empile-grille { row-gap: 6mm; }
+
+/* ============================================================ système */
+
+/* Bandeau : surtitre et titre sur toute la largeur. Les colonnes du dessous
+   partent toutes de la même ligne, jamais l'une sous un titre et l'autre non. */
+.bandeau { margin-bottom: 9mm; }
+.bandeau .titre-moyen { margin-top: 3mm; }
+.cadre > .deux, .cadre > .deux-asymetrique, .bandeau + .deux, .bandeau + .deux-asymetrique { align-items: start; }
+.investir-droite { padding-top: 0; }
+
+/* Titres équilibrés : jamais un mot seul en fin de ligne. */
+.titre, .titre-moyen, .chapo, .couverture-titre, .citation, .conseil-texte, .actu-lecture, .frise-quoi, .colonne-titre { text-wrap: balance; }
+
+/* Titre d'une colonne de texte, posé sur un filet. */
+.colonne-titre {
+  font-family: 'Cormorant', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 19pt;
+  line-height: 1.15;
+  padding-bottom: 2.6mm;
+  border-bottom: 0.25mm solid var(--encre);
+  margin-bottom: 4.5mm;
+}
+
+/* Page d'appel à l'estimation */
+.appel-page { display: flex; flex-direction: column; }
+.appel-grand { font-family: 'Cormorant', serif; font-weight: 300; font-size: 96pt; line-height: 0.9; color: var(--orange); margin-top: 3mm; }
+.appel-page .titre-moyen { margin-top: 4mm; font-size: 26pt; }
+.coches { list-style: none; margin-top: 6mm; }
+.coches li { position: relative; padding-left: 7mm; font-size: 11.6pt; line-height: 1.45; }
+.coches li + li { margin-top: 2.4mm; }
+.coches li::before {
+  content: '';
+  position: absolute;
+  left: 0.4mm;
+  top: 0.38em;
+  width: 3.2mm;
+  height: 1.6mm;
+  border-left: 0.5mm solid var(--orange);
+  border-bottom: 0.5mm solid var(--orange);
+  transform: rotate(-45deg);
+}
+.appel-actions { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; gap: 8mm; border-top: 0.25mm solid var(--trait); padding-top: 5mm; }
+.appel-tel { margin-top: 3mm; font-size: 10pt; color: var(--ardoise); }
+.appel-tel a { color: var(--encre); font-weight: 600; }
+.qr-petit svg { width: 24mm; height: 24mm; }
+
+/* Preuves chiffrées, juste avant l'appel */
+.preuves { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 9mm; margin-top: 9mm; border-top: 0.25mm solid var(--encre); padding-top: 5mm; }
+.preuves .chiffre-valeur { font-size: 34pt; }
+.preuves + .liste-appel { margin-top: 7mm; }
+
+.engagements.deux { column-gap: 10mm; row-gap: 4.5mm; }
+
+/* Barème et liens de dernière page : une ligne chacun, jamais coupés. */
+.mandat { grid-template-columns: 96mm 1fr; }
+table.honoraires td { white-space: nowrap; }
+.dos-appel-titre { white-space: nowrap; }
+.appel, .dos-appel-detail { white-space: nowrap; }

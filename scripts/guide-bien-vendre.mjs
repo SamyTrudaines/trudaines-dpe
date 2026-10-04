@@ -681,7 +681,7 @@ page('diffusion', () => `
       ${bloc('Les portails', 'L’annonce sort quand tout est prêt. On ne refait pas une première impression.')}
       ${bloc('Notre fichier', 'Nos acheteurs vérifiés sont prévenus dès que le bien est prêt.')}
       ${bloc('Les confrères', 'Une agence voisine a peut-être l’acheteur. Si c’est votre intérêt, le mandat le prévoit.')}
-      ${bloc('La vente confidentielle', 'Ni portail, ni panneau. Plus discret, souvent plus long.')}
+      ${bloc('Confidentielle', 'Ni portail, ni panneau. Plus discret, souvent plus long.')}
     </div>
     <p class="texte diffusion-note"><strong>Écrit dans le mandat :</strong> chaque canal y est nommé.</p>
   </div>`);
@@ -818,12 +818,12 @@ page('liste', () => `
 
 /* 22 bis. Vendre avec nous : le déroulé, promesse par promesse, telle qu'écrite sur le site. */
 const temps = [
-  ['Un premier appel', 'Vous me parlez de votre projet, de vos délais, de vos contraintes. Je vous rappelle sous 24 heures ouvrées.'],
-  ['La visite d’estimation', 'Je viens voir votre bien. Quarante-cinq minutes, et aucune signature ce jour-là.'],
-  ['L’avis de valeur écrit', 'Sous 48 heures : les ventes signées de votre rue, une fourchette assumée, un prix conseillé. Il vous reste, même si vous ne vendez pas avec nous.'],
-  ['La préparation', 'Diagnostics, dossier de copropriété, photographies en lumière naturelle, plan de surfaces. Rien ne sort avant que tout soit prêt.'],
-  ['La mise en vente', 'Des acheteurs vérifiés avant chaque visite, un compte rendu le jour même, une synthèse chaque vendredi, un point chiffré en semaine 5.'],
-  ['Jusqu’à l’acte', 'Chaque offre présentée par écrit avec ma recommandation. Le compromis, le prêt et les délais suivis avec le notaire, jusqu’à la remise des clés.'],
+  ['Un premier appel', 'Vous me parlez de votre projet. Je vous rappelle sous 24 heures ouvrées.'],
+  ['La visite d’estimation', 'Je viens voir votre bien. Quarante-cinq minutes, aucune signature ce jour-là.'],
+  ['L’avis de valeur écrit', 'Sous 48 heures, avec les ventes signées de votre rue. Il vous reste, même sans mandat.'],
+  ['La préparation', 'Diagnostics, dossier, photographies, plan. Rien ne sort avant que tout soit prêt.'],
+  ['La mise en vente', 'Acheteurs vérifiés, compte rendu le jour même, synthèse chaque vendredi.'],
+  ['Jusqu’à l’acte', 'Chaque offre par écrit, avec ma recommandation. Suivi avec le notaire, jusqu’aux clés.'],
 ];
 page('methode', () => `
   <div class="cadre methode">
@@ -861,7 +861,7 @@ page('trudaines', () => `
   <div class="colonne colonne-large-droite">
     <p class="surtitre">Trudaines Immobilier</p>
     <h2 class="titre-moyen">Ce que nous écrivons pour vous</h2>
-    <div class="engagements trois">
+    <div class="engagements deux">
       ${engagements.map(([t, x]) => bloc(t, x)).join('')}
     </div>
     <div class="avis">
@@ -884,10 +884,10 @@ page('estimer', () => `
     <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 48 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste. C'est moi qui vous réponds.</p>
     <div class="dos-grille">
       <ul class="dos-appels">
-        <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Prendre rendez-vous pour une estimation</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>
-        <li><a href="${telephone}"><span class="dos-appel-titre">Appeler Samy Santamarina</span><span class="dos-appel-detail">${contact.telephone}, du lundi au samedi</span></a></li>
+        <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Prendre rendez-vous</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>
+        <li><a href="${telephone}"><span class="dos-appel-titre">Appeler Samy Santamarina</span><span class="dos-appel-detail">${contact.telephone}</span></a></li>
         <li><a href="${courriel}"><span class="dos-appel-titre">Écrire</span><span class="dos-appel-detail">${contact.email}</span></a></li>
-        <li><a href="${lien('/estimation#estimation-immediate', 'dos-en-ligne')}"><span class="dos-appel-titre">Estimer en ligne</span><span class="dos-appel-detail">Une première fourchette tirée des ventes de votre rue</span></a></li>
+        <li><a href="${lien('/estimation#estimation-immediate', 'dos-en-ligne')}"><span class="dos-appel-titre">Estimer en ligne</span><span class="dos-appel-detail">Une fourchette, sans inscription</span></a></li>
       </ul>
       <a class="qr" href="${lienEstimation('qr')}">${lire('assets/guide/qr-estimation.svg').replace(/<\?xml[^>]*>/, '')}<span>Scannez pour demander votre estimation</span></a>
     </div>
@@ -961,6 +961,14 @@ async function imprimer() {
       throw new Error(`texte hors cadre :\n  ${debordements.join('\n  ')}`);
     }
     if (debordements.length) console.warn(`texte hors cadre :\n  ${debordements.join('\n  ')}`);
+
+    // Un intertitre sur deux lignes décale son texte par rapport au bloc voisin.
+    const titresLongs = await onglet.evaluate(() =>
+      [...document.querySelectorAll('.empile-grille .intertitre, .engagements .intertitre, .methode-temps .intertitre, .pieces .intertitre')]
+        .filter((t) => t.getBoundingClientRect().height > parseFloat(getComputedStyle(t).lineHeight) * 1.5)
+        .map((t) => `${t.closest('.page').id} « ${t.textContent} »`)
+    );
+    if (titresLongs.length) console.warn(`intertitres sur deux lignes :\n  ${titresLongs.join('\n  ')}`);
 
     const pdfBrut = await onglet.pdf({ width: '297mm', height: '210mm', printBackground: true, preferCSSPageSize: true, tagged: true, outline: true });
 

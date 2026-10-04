@@ -13,7 +13,7 @@ sommaire:
   - Le mandat, les visites, la négociation et la signature
   - Le calendrier réel d'une vente et la liste « prêt à vendre »
   - Vendre avec Trudaines, en six temps
-pages: 26
+pages: 27
 fichier: /guides/bien-vendre-paris-2026.pdf
 listeBrevo: telechargements
 disponible: true
