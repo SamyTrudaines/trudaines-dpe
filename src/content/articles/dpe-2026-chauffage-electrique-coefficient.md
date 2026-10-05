@@ -4,7 +4,7 @@ date: 2026-10-04
 image: /images/panorama/dpe-2026-chauffage-electrique-coefficient.webp
 imageAlt: Radiateur en fonte sous une fenêtre à croisillons
 chapo: Depuis le 1er janvier 2026, le DPE traite l'électricité plus favorablement, et un nouvel arrêté va plus loin au 1er janvier 2027. Votre appartement a peut-être changé de classe sans travaux. À vérifier avant de mettre en vente.
-titreSeo: "DPE 2026 et 2027 : coefficient électricité à 1,9 puis 1,7, ce qui change pour vendre | Trudaines"
+titreSeo: "DPE 2026 et 2027 : électricité à 1,9 puis 1,7 | Trudaines"
 descriptionSeo: "DPE : coefficient de l'électricité de 2,3 à 1,9 au 1er janvier 2026, puis 1,7 au 1er janvier 2027. Logements qui sortent des classes F et G, attestation ADEME gratuite, conseils pour vendre à Paris."
 motsCles:
   - DPE 2026

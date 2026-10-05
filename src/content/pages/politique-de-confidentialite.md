@@ -10,13 +10,16 @@ Trudaines Immobilier (MIGA, RCS Paris 930 663 646), 2 rue Livingstone, 75018 Par
 
 - **Demande d'estimation** : adresse du bien, caractéristiques, identité, email, téléphone. Finalité : réaliser l'estimation et vous recontacter. Base légale : mesures précontractuelles prises à votre demande.
 - **Demande de visite ou de dossier de bien** : identité, email, téléphone, créneaux souhaités. Finalité : organiser la visite et transmettre le dossier.
-- **Alerte acquéreur et téléchargement de guide** : email, téléphone, critères de recherche. Finalité : vous adresser les biens et documents correspondants. Base légale : votre consentement.
+- **Alerte acquéreur et téléchargement de guide** : email, prénom, téléphone, critères de recherche, calendrier, financement et, si vous l'indiquez, le bien à vendre avant votre achat. Finalité : vous adresser les biens et documents correspondants et, à votre demande, organiser l'estimation de votre bien. Base légale : votre consentement.
+- **Recommandation Trudaines WinWin** : identité et coordonnées de la personne qui recommande, projet et contexte, et, seulement avec l'accord de la personne recommandée, ses nom et téléphone. Finalité : organiser la mise en relation et verser la prime convenue. La personne recommandée n'est inscrite dans aucune liste ; ses coordonnées servent à la seule prise de contact convenue, et l'origine de ses données lui est indiquée dès le premier échange. Base légale : l'intérêt légitime du cabinet et l'accord WinWin.
 - **Candidature** : identité, coordonnées, CV. Finalité : étudier votre candidature.
 - **Mesure d'audience** : données de navigation agrégées, déposées uniquement après acceptation du bandeau.
 
 ## Durées de conservation
 
 - Prospects vendeurs et acquéreurs : trois ans à compter du dernier contact.
+- Personnes recommandées sans suite : six mois à compter de la recommandation.
+- Primes WinWin versées : dix ans pour les pièces comptables.
 - Clients : durée de la relation contractuelle, puis dix ans au titre des obligations légales.
 - Candidatures : deux ans à compter du dépôt, sauf demande de suppression.
 - Mesure d'audience : quatorze mois.

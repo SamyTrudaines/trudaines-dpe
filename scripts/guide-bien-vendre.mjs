@@ -58,6 +58,9 @@ const lien = (chemin, emplacement) => {
   const marquage = `utm_source=guide-bien-vendre&utm_medium=pdf&utm_campaign=guides&utm_content=${emplacement}`;
   return `${SITE}${base}${base.includes('?') ? '&' : '?'}${marquage}${ancre ? `#${ancre}` : ''}`;
 };
+/* Part de la prime Trudaines WinWin, lue dans src/data/site.ts comme le reste. */
+const partWinWin = Number(/parrainage\s*=\s*\{[\s\S]*?part:\s*([\d.]+)/.exec(siteTs)?.[1]);
+if (!(partWinWin > 0 && partWinWin < 1)) throw new Error('part WinWin introuvable dans src/data/site.ts');
 const lienEstimation = (emplacement) =>
   contact.reservation || lien('/estimation#avis-de-valeur', emplacement);
 const telephone = `tel:${contact.telephoneLien}`;
@@ -689,8 +692,14 @@ page('diffusion', () => `
 /* 18. Le mandat */
 const baremes = (() => {
   const bloc = /honoraires\s*=\s*\{\s*vente:\s*\[([\s\S]*?)\]/.exec(siteTs)?.[1] ?? '';
-  const lignes = [...bloc.matchAll(/tranche:\s*(['"])(.*?)\1,\s*taux:\s*(['"])(.*?)\3,\s*minimum:\s*(?:(['"])(.*?)\5|null)/g)]
-    .map((m) => ({ tranche: m[2], taux: m[4].replace(/ du prix de vente$/, ''), minimum: m[6] || null }));
+  // Chaque tranche : taux en mandat simple, taux en mandat exclusif, minimum.
+  const lignes = [...bloc.matchAll(/tranche:\s*(['"])(.*?)\1,\s*taux:\s*(['"])(.*?)\3,\s*exclusif:\s*(?:(['"])(.*?)\5|null),\s*minimum:\s*(?:(['"])(.*?)\7|null)/g)]
+    .map((m) => ({
+      tranche: m[2],
+      taux: m[4].replace(/ du prix de vente$/, ''),
+      exclusif: m[6] ? m[6].replace(/ du prix de vente$/, '') : null,
+      minimum: m[8] || null,
+    }));
   if (lignes.length < 2) throw new Error('barème de vente introuvable dans src/data/site.ts');
   return lignes;
 })();
@@ -714,9 +723,10 @@ page('mandat', () => `
     <div class="mandat-honoraires">
       <h3 class="intertitre">Nos honoraires</h3>
       <table class="honoraires">
-        <tbody>${baremes.map((b) => `<tr><td>${b.tranche}</td><td class="nombre">${b.taux}${!minimumCommun && b.minimum ? `, minimum ${b.minimum}` : ''}</td></tr>`).join('')}${minimumCommun ? `<tr class="total"><td>Minimum</td><td class="nombre">${minimumCommun}</td></tr>` : ''}</tbody>
+        <thead><tr><th></th><th class="nombre">Simple</th><th class="nombre">Exclusif</th></tr></thead>
+        <tbody>${baremes.map((b) => `<tr><td>${b.tranche}</td><td class="nombre">${b.taux.replace(/ TTC$/, '')}${!minimumCommun && b.minimum ? `, minimum ${b.minimum}` : ''}</td><td class="nombre">${(b.exclusif ?? b.taux).replace(/ TTC$/, '')}</td></tr>`).join('')}${minimumCommun ? `<tr class="total"><td>Minimum</td><td class="nombre" colspan="2">${minimumCommun}</td></tr>` : ''}</tbody>
       </table>
-      <p class="petit discret">Barème maximum, à la charge du vendeur, calculé sur le prix de vente hors honoraires. Dus seulement si la vente se fait. En mandat exclusif, le taux de votre tranche baisse d’un point, et la remise est écrite dans le mandat.</p>
+      <p class="petit discret">Barème maximum TTC, à la charge du vendeur, calculé sur le prix de vente hors honoraires. Dus seulement si la vente se fait. Le taux retenu est écrit dans le mandat.</p>
     </div>
   </div>`);
 
@@ -891,6 +901,7 @@ page('estimer', () => `
       </ul>
       <a class="qr" href="${lienEstimation('qr')}">${lire('assets/guide/qr-estimation.svg').replace(/<\?xml[^>]*>/, '')}<span>Scannez pour demander votre estimation</span></a>
     </div>
+    <p class="dos-winwin">Pas vendeur vous-même ? Un proche l’est peut-être. <a href="${lien('/recommander', 'dos-winwin')}"><strong>Trudaines WinWin</strong> : ${Math.round(partWinWin * 100)} % de nos honoraires hors taxes pour vous, trudaines.com/recommander</a></p>
     <div class="dos-mentions">
       <p>${MENTION_LEGALE}</p>
       <p>Sources : demandes de valeurs foncières (DGFiP), Notaires du Grand Paris, Observatoire Crédit Logement/CSA, Banque centrale européenne, code de la construction et de l’habitation, code civil, ministère de l’Économie. Règles en vigueur en octobre 2026.${credits.length ? ` Photographies : ${credits.map((c) => c.photographe).filter((v, i, t) => t.indexOf(v) === i).join(', ')}, sur Unsplash.` : ''}</p>

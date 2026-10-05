@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
-  liste, gabaritNotification, gabaritClient,
+  liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
 
 const TAILLE_MAX = 4 * 1024 * 1024;
@@ -141,7 +141,7 @@ export async function onRequestPost({ request, env }) {
       attributs: {
         PRENOM: valeur('prenom'),
         NOM: valeur('nom'),
-        SMS: valeur('telephone'),
+        SMS: telephoneInternational(valeur('telephone')),
         PROFIL: valeur('profil'),
         SECTEUR_SOUHAITE: valeur('secteurSouhaite'),
         ORIGINE: 'Candidature',

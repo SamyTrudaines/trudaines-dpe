@@ -1,7 +1,7 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide,
-  configurationDoubleOptIn, demanderConfirmation,
+  configurationDoubleOptIn, demanderConfirmation, telephoneInternational,
 } from '../_lib/brevo.js';
 
 export async function onRequestPost({ request, env }) {
@@ -69,7 +69,7 @@ export async function onRequestPost({ request, env }) {
     const listes = liste(env, 'telechargements');
     const doubleOptIn = configurationDoubleOptIn(env) !== null && listes.length > 0;
     const abonnement = valeur('consentement') === 'oui';
-    const attributsContact = { SMS: valeur('telephone'), GUIDE: titreGuide, ORIGINE: 'Téléchargement de guide' };
+    const attributsContact = { SMS: telephoneInternational(valeur('telephone')), GUIDE: titreGuide, ORIGINE: 'Téléchargement de guide' };
 
     let confirmation = 'sans objet';
     if (doubleOptIn && abonnement) {

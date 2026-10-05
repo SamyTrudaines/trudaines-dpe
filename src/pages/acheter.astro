@@ -34,7 +34,8 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       <h1 class="titre-1">Les biens que nous vendons</h1>
       <p class="chapo mt-8">
         Une sélection volontairement courte. Chaque bien est visité, documenté et présenté par la personne qui le
-        vend. Une partie de nos ventes se fait avant diffusion : créez une alerte pour en être informé.
+        vend. Une partie de nos ventes se fait avant diffusion :{' '}
+        <a href="#alerte" class="lien-souligne" data-evt="acheter_lien_alerte">créez une alerte</a> pour en être informé.
       </p>
     </div>
   </section>
@@ -158,7 +159,8 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
         </div>
       )}
       <p class="mt-12 text-sm text-[color:var(--color-ardoise)]" data-aucun-resultat hidden>
-        Aucun bien ne correspond à ces critères pour le moment. Créez une alerte, nous vous préviendrons.
+        Aucun bien ne correspond à ces critères pour le moment.{' '}
+        <a href="#alerte" class="lien-souligne">Créez une alerte</a>, nous vous préviendrons.
       </p>
     </div>
   </section>

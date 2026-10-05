@@ -1,0 +1,80 @@
+---
+import { parrainage } from '../data/site';
+import { bareme, donneesSimulateur, honorairesTTC, primeWinWin, pourcent, TVA } from '../lib/bareme';
+import { prix, nombre } from '../lib/format';
+
+/**
+ * Simulateur Trudaines WinWin.
+ *
+ * Le calcul se fait dans le navigateur (public/js/winwin.js) à partir des
+ * nombres de src/lib/bareme.ts, eux-mêmes lus dans le barème affiché : le
+ * script ne contient aucun taux. Rien n'est envoyé. Sans JavaScript, le cas
+ * par défaut reste lisible, calculé à la construction.
+ */
+const PRIX_DEFAUT = 800000;
+const tranche = bareme.venteExclusif.find((t) => t.plafond === null || PRIX_DEFAUT <= t.plafond) ?? bareme.venteExclusif[0];
+const ttc = honorairesTTC(PRIX_DEFAUT, bareme.venteExclusif) ?? 0;
+const prime = primeWinWin(ttc);
+const part = pourcent(parrainage.part);
+const raccourcis = [500000, 800000, 1200000, 2000000];
+/* Montants insécables : un prix ne se coupe jamais en fin de ligne. */
+const euros = (valeur: number) => prix(valeur).replace(/ /g, '\u00a0');
+---
+<div class="winwin" data-winwin data-bareme={JSON.stringify(donneesSimulateur)}>
+  <div class="winwin-reglages">
+    <fieldset class="winwin-projets">
+      <legend class="etiquette">Votre proche</legend>
+      <div class="winwin-onglets">
+        <label><input type="radio" name="winwin-projet" value="vente" checked data-projet /><span>vend</span></label>
+        <label><input type="radio" name="winwin-projet" value="achat" data-projet /><span>achète</span></label>
+        <label><input type="radio" name="winwin-projet" value="gestion" data-projet /><span>met en location</span></label>
+      </div>
+    </fieldset>
+
+    <div class="mt-10">
+      <label class="etiquette" for="winwin-montant" data-libelle>Prix de vente estimé</label>
+      <div class="winwin-saisie">
+        <input
+          id="winwin-montant"
+          class="winwin-montant"
+          type="text"
+          inputmode="numeric"
+          autocomplete="off"
+          value={nombre(PRIX_DEFAUT)}
+          data-montant
+        />
+        <span class="winwin-unite" data-unite>€</span>
+      </div>
+      <input
+        class="winwin-curseur"
+        type="range"
+        min="150000"
+        max="3000000"
+        step="10000"
+        value={PRIX_DEFAUT}
+        aria-label="Ajuster le montant"
+        data-curseur
+      />
+      <div class="winwin-raccourcis" data-raccourcis>
+        {raccourcis.map((v) => (
+          <button type="button" data-valeur={v} aria-pressed={v === PRIX_DEFAUT ? 'true' : 'false'}>{euros(v)}</button>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="winwin-resultat">
+    <p class="etiquette">Votre prime {parrainage.nom}</p>
+    <p class="winwin-prime" data-prime>{euros(prime)}</p>
+    <p class="winwin-detail" data-detail>
+      {part} de nos honoraires hors taxes : {euros(Math.round(ttc / (1 + TVA)))} HT, soit {euros(ttc)} TTC au taux de
+      {' '}{pourcent(tranche.taux ?? 0)} en mandat exclusif.
+    </p>
+    <p class="sr-only" aria-live="polite" data-annonce></p>
+    <p class="winwin-versement" data-versement>Versée dès l'encaissement de nos honoraires, après la signature chez le notaire.</p>
+    <a href="#formulaire-winwin" class="bouton mt-8 w-full sm:w-auto" data-winwin-cta data-evt="winwin_recommander">
+      Recommander mon proche
+    </a>
+  </div>
+</div>
+<script is:inline src="/js/winwin.js" defer></script>

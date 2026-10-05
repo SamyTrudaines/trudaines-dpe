@@ -1,6 +1,6 @@
 import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
-  liste, gabaritNotification, gabaritClient,
+  liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
 
 export async function onRequestPost({ request, env }) {
@@ -49,7 +49,7 @@ export async function onRequestPost({ request, env }) {
       attributs: {
         PRENOM: prenom,
         NOM: valeur('nom'),
-        SMS: valeur('telephone'),
+        SMS: telephoneInternational(valeur('telephone')),
         ADRESSE_BIEN: valeur('adresse'),
         TYPE_BIEN: valeur('type'),
         SURFACE: valeur('surface'),

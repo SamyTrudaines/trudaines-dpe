@@ -4,7 +4,7 @@ date: 2026-10-04
 image: /images/panorama/credit-immobilier-hausse-bce-septembre-2026.webp
 imageAlt: Immeuble d'angle haussmannien à Paris et ses balcons filants
 chapo: La Banque centrale européenne a relevé ses taux le 10 septembre 2026. Le crédit immobilier était déjà remonté à 3,31 % en août. Ce que cela change pour acheter et pour vendre à Paris.
-titreSeo: "Taux de crédit immobilier 2026 : hausse BCE, 3,31 % en août | Trudaines"
+titreSeo: "Crédit immobilier 2026 : hausse BCE, taux à 3,31 % | Trudaines"
 descriptionSeo: "BCE : hausse de 0,25 point le 10 septembre 2026, taux de dépôt à 2,50 %. Crédit immobilier à 3,31 % en août 2026. Effet sur le budget des acheteurs et le prix de vente à Paris."
 motsCles:
   - taux crédit immobilier 2026

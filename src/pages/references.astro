@@ -1,6 +1,8 @@
 ---
+import { evt } from '../lib/entonnoir';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import AlerteExpress from '../components/AlerteExpress.astro';
 import Banniere from '../components/Banniere.astro';
 import { ambiance } from '../data/ambiance';
 import BlocCta from '../components/BlocCta.astro';
@@ -87,6 +89,14 @@ const donnees = [
       </p>
     </div>
   </section>
+
+  <AlerteExpress
+    id="alerte-references"
+    titre="Le prochain partira peut-être avant les portails"
+    texte="Ces biens sont vendus. Les suivants sont présentés d'abord à notre fichier d'acquéreurs : trois champs, et vous en faites partie."
+    origine="Références"
+    evt={evt('alerte', 'references')}
+  />
 
   {groupes.map((groupe) => (
     <section class="section filet" aria-labelledby={`groupe-${groupe.cle}`}>

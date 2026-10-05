@@ -1,12 +1,16 @@
 ---
 /**
- * Recommandation d'un proche. Aucun champ ne demande le nom ni les coordonnées
- * de la personne recommandée : elle n'a rien demandé, et c'est à celui qui la
- * connaît de faire les présentations. Le formulaire recueille le contexte, pas
- * un fichier de prospection.
+ * Recommandation Trudaines WinWin.
+ *
+ * Le moins de champs possible : le projet du proche, deux mots de contexte et
+ * les coordonnées du recommandant, que le cabinet rappelle avant tout contact.
+ * Les coordonnées du proche sont facultatives et ne se donnent qu'avec son
+ * accord : elles ne servent qu'à cette prise de contact, ne partent que dans
+ * la notification interne et n'entrent dans aucune liste.
  */
 ---
 <form
+  id="formulaire-winwin"
   class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
   method="POST"
   action="/api/recommandation"
@@ -19,38 +23,45 @@
     <input type="text" id="societe-recommandation" name="societe" tabindex="-1" autocomplete="off" />
   </div>
   <div data-corps>
-    <div class="grid gap-6 sm:grid-cols-2">
+    <h3 class="titre-3">Recommander un proche</h3>
+    <fieldset class="winwin-projets mt-6">
+      <legend class="etiquette">Votre proche</legend>
+      <div class="winwin-onglets">
+        <label><input type="radio" name="projet" value="Vente" checked required /><span>vend</span></label>
+        <label><input type="radio" name="projet" value="Achat" /><span>achète</span></label>
+        <label><input type="radio" name="projet" value="Gestion locative" /><span>met en location</span></label>
+      </div>
+    </fieldset>
+    <div class="mt-6">
+      <label class="etiquette" for="reco-contexte">En deux mots, facultatif</label>
+      <textarea class="champ" id="reco-contexte" name="contexte" rows="3" placeholder="Ma voisine vend son trois-pièces rue des Martyrs au printemps."></textarea>
+    </div>
+    <div class="mt-6">
+      <label class="etiquette" for="reco-proche">Ses coordonnées, si votre proche est d'accord, facultatif</label>
+      <input class="champ" id="reco-proche" name="proche" type="text" autocomplete="off" placeholder="Nom et téléphone" />
+      <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+        Sinon, je vous rappelle et nous décidons ensemble comment faire les présentations.
+      </p>
+    </div>
+
+    <p class="surtitre mt-10 border-t border-[color:var(--color-trait)] pt-6">Vous</p>
+    <div class="mt-5 grid gap-6 sm:grid-cols-2">
       <div>
-        <label class="etiquette" for="reco-prenom">Votre prénom</label>
+        <label class="etiquette" for="reco-prenom">Prénom</label>
         <input class="champ" id="reco-prenom" name="prenom" type="text" autocomplete="given-name" required />
       </div>
       <div>
-        <label class="etiquette" for="reco-nom">Votre nom</label>
+        <label class="etiquette" for="reco-nom">Nom</label>
         <input class="champ" id="reco-nom" name="nom" type="text" autocomplete="family-name" required />
       </div>
       <div>
-        <label class="etiquette" for="reco-email">Votre email</label>
-        <input class="champ" id="reco-email" name="email" type="email" autocomplete="email" required />
+        <label class="etiquette" for="reco-telephone">Téléphone</label>
+        <input class="champ" id="reco-telephone" name="telephone" type="tel" autocomplete="tel" required />
       </div>
       <div>
-        <label class="etiquette" for="reco-telephone">Votre téléphone</label>
-        <input class="champ" id="reco-telephone" name="telephone" type="tel" autocomplete="tel" />
+        <label class="etiquette" for="reco-email">Email</label>
+        <input class="champ" id="reco-email" name="email" type="email" autocomplete="email" required />
       </div>
-    </div>
-    <div class="mt-6">
-      <label class="etiquette" for="reco-contexte">Ce qu'il faut savoir</label>
-      <textarea class="champ" id="reco-contexte" name="contexte" rows="5" required placeholder="Un voisin vend son trois pièces rue des Martyrs au printemps, il hésite encore."></textarea>
-      <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
-        Ne mettez ni son nom ni son numéro. Je ne contacte jamais quelqu'un qui ne me connaît pas.
-      </p>
-    </div>
-    <div class="mt-6">
-      <label class="etiquette" for="reco-prise">Comment faire les présentations</label>
-      <select class="champ" id="reco-prise" name="prise_de_contact">
-        <option value="Je lui donne votre numéro">Je lui donne votre numéro</option>
-        <option value="Je vous mets en relation par email">Je vous mets en relation par email</option>
-        <option value="Je préfère en parler avec vous d'abord">Je préfère en parler avec vous d'abord</option>
-      </select>
     </div>
     <div class="mt-6 flex items-start gap-3">
       <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="reco-consentement" name="consentement" type="checkbox" required value="oui" />
@@ -59,13 +70,14 @@
         <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
       </label>
     </div>
-    <button type="submit" class="bouton mt-8">Envoyer la recommandation</button>
+    <button type="submit" class="bouton mt-8 w-full sm:w-auto">Envoyer ma recommandation</button>
     <p class="mt-4 text-sm text-[#a4262c]" data-erreur hidden></p>
   </div>
   <div data-confirmation hidden class="py-2">
-    <h2 class="titre-3">C'est noté, merci</h2>
+    <h3 class="titre-3">Merci, c'est noté</h3>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
-      Je vous rappelle avant tout contact. Rien ne part de mon côté tant que les présentations ne sont pas faites.
+      Je vous appelle sous 24 heures ouvrées pour convenir des présentations. Rien ne part vers votre proche sans
+      votre accord.
     </p>
   </div>
 </form>

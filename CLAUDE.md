@@ -33,6 +33,13 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   rattachement aux quartiers dans `src/lib/quartiers.ts`.
 - Mise en ligne outillée : `scripts/mise-en-ligne/`, workflow `.github/workflows/mise-en-ligne.yml`,
   procédure dans `DEPLOIEMENT.md`.
+- Barème et Trudaines WinWin : `honoraires` et `parrainage` dans `src/data/site.ts` (vente : mandat simple
+  6/5/4 %, exclusif 5/4/3 % TTC, tranches 700 000 € et 1 500 000 €, minimum 8 000 € HT ; prime WinWin 15 %
+  des honoraires HT, gestion sur la première année). `src/lib/bareme.ts` lit ces textes en nombres pour le
+  simulateur de /recommander (`public/js/winwin.js`), l'accueil et llms.txt : ne jamais y recopier un taux.
+- Acquéreurs : alerte complète `FormulaireAlerte` (/acheter#alerte) et alerte express `AlerteExpress`
+  (accueil, fiches, références, quartiers), une seule fonction `functions/api/alerte.js`. Attributs Brevo
+  `DELAI_ACHAT`, `FINANCEMENT`, `VENTE_PREALABLE` à créer : tant qu'ils manquent, le contact entre sans eux.
 - Guide « Bien vendre à Paris » : PDF à l'italienne composé par Chromium, texte et mise en page dans
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.

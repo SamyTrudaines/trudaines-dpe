@@ -468,6 +468,8 @@ table.diagnostics td { padding: 1.6mm 2.6mm 1.6mm 0; }
 .mandat-tableau td { font-size: 9.6pt; padding: 3.2mm 4mm 3.2mm 0; }
 .mandat-tableau th:first-child { width: 30mm; }
 table.honoraires td { font-size: 9.6pt; padding: 1.7mm 0; }
+table.honoraires th { padding: 0 0 1.4mm; }
+table.honoraires td.nombre, table.honoraires th.nombre { padding-left: 6mm; }
 .mandat-honoraires .petit { margin-top: 3mm; }
 
 /* Calendrier */
@@ -521,6 +523,8 @@ table.honoraires td { font-size: 9.6pt; padding: 1.7mm 0; }
 .qr { display: block; }
 .qr svg { display: block; width: 32mm; height: 32mm; }
 .qr span { display: block; margin-top: 2.4mm; font-size: 7.6pt; line-height: 1.4; color: var(--ardoise); }
+.dos-winwin { margin-top: 6mm; font-size: 9pt; color: var(--ardoise); }
+.dos-winwin strong { color: var(--encre); font-weight: 600; }
 .dos-mentions { margin-top: auto; font-size: 6.6pt; line-height: 1.45; color: var(--ardoise); }
 .dos-mentions p + p { margin-top: 1.2mm; }
 

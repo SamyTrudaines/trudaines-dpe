@@ -3,7 +3,8 @@ import { getCollection } from 'astro:content';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 import { agrégatAvis } from '../lib/avis';
-import { honoraires } from '../data/site';
+import { honoraires, parrainage } from '../data/site';
+import { fourchetteVente, pourcent, primeVente } from '../lib/bareme';
 import { rues, arrondissements, periode, ventesMinimum } from '../lib/rues';
 
 /** Séparateur de milliers en espace simple : un fichier texte doit rester lisible et analysable. */
@@ -77,9 +78,15 @@ ${Object.entries(arrondissements).map(([, a]) => `- ${a.nom} : ${milliers(a.medi
 ## Honoraires, barème maximum affiché
 Prix toutes taxes comprises, charge du paiement indiquée, au sens de l'arrêté du 10 janvier 2017 et de
 l'arrêté du 26 janvier 2022. Le cabinet peut pratiquer moins, jamais plus.
-${honoraires.vente.map((t) => `- Vente, ${t.tranche} : ${t.taux}${t.minimum ? `, minimum ${t.minimum}` : ''}, à la charge du vendeur.`).join('\n')}
+${honoraires.vente.map((t) => `- Vente, ${t.tranche} : ${t.taux} en mandat simple, ${t.exclusif} en mandat exclusif${t.minimum ? `, minimum ${t.minimum}` : ''}, à la charge du vendeur.`).join('\n')}
 ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 - Barème complet, y compris le mandat de recherche : ${site.url}/honoraires
+
+## ${parrainage.nom}, la recommandation récompensée
+- Qui recommande ponctuellement au cabinet un proche qui vend, qui achète avec un mandat de recherche ou qui confie la gestion de son bien reçoit ${Math.round(parrainage.part * 100)} % des honoraires hors taxes encaissés sur l'opération ; en gestion locative, ceux de la première année.
+- Exemple au barème exclusif : un appartement vendu 1 000 000 € rapporte ${milliers(primeVente(1000000))} € à la personne qui l'a recommandé.
+- La prime est versée à l'encaissement des honoraires, donc après la signature de l'acte, et un accord écrit la fixe avant la mise en relation. Une recommandation occasionnelle, sans visite ni négociation, n'est pas de l'entremise au sens de la loi du 2 janvier 1970.
+- Simulateur et formulaire : ${site.url}/recommander
 
 ## Ce que le cabinet ne fait pas
 - Aucune estimation par téléphone ni par formulaire seul : l'avis de valeur suppose une visite.
@@ -89,7 +96,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
-- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de 5 à 10 % TTC du prix de vente selon la tranche, à la charge du vendeur. Ce barème est un maximum au sens de l'arrêté du 26 janvier 2022, le cabinet pratique souvent moins. Détail sur ${site.url}/honoraires.
+- Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de ${pourcent(fourchetteVente.min, ' ')} à ${pourcent(fourchetteVente.max, ' ')} TTC du prix de vente selon la tranche et le mandat, un point de moins en mandat exclusif, minimum ${honoraires.vente[0].minimum}, à la charge du vendeur. Ce barème est un maximum au sens de l'arrêté du 26 janvier 2022, le cabinet pratique souvent moins. Détail sur ${site.url}/honoraires.
 - L'estimation est elle payante ? Non. L'avis de valeur est écrit, remis après visite sous 48 heures, sans frais et sans engagement, et le propriétaire le garde même s'il vend ailleurs.
 - Peut on sortir d'un mandat exclusif ? Oui : le décret du 20 juillet 1972 permet de dénoncer un mandat exclusif à durée déterminée à tout moment passé trois mois, par lettre recommandée, la dénonciation prenant effet quinze jours après réception.
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.
@@ -107,7 +114,7 @@ ${situations.map((s) => `- ${site.url}/vendre/${s.id} : ${s.data.question}`).joi
 - ${site.url}/acheter : biens à la vente
 - ${site.url}/references : mandats déjà confiés au cabinet
 - ${site.url}/avis : avis clients, repris en entier, et dépôt d'un témoignage
-- ${site.url}/recommander : recommander le cabinet à un proche, et ce qui se passe ensuite
+- ${site.url}/recommander : ${parrainage.nom}, recommander le cabinet à un proche et calculer sa prime
 - ${site.url}/prix-immobilier : prix au mètre carré de ${rues.length} voies
 - ${site.url}/chasse : mandat de recherche
 - ${site.url}/gestion-locative : gestion locative

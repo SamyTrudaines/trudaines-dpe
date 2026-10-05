@@ -93,7 +93,9 @@ créer.
    `PRENOM`, `NOM`, `ADRESSE_BIEN`, `TYPE_BIEN`, `SURFACE`, `PIECES`,
    `HORIZON_VENTE`, `SECTEUR`, `ORIGINE`, `BIEN_REFERENCE`, `SECTEUR_RECHERCHE`,
    `PIECES_MIN`, `BUDGET_MAX`, `SURFACE_MIN`, `SUJET`, `GUIDE`, `PROFIL`,
-   `SECTEUR_SOUHAITE`.
+   `SECTEUR_SOUHAITE`, puis, pour l'alerte acquéreur qualifiée (octobre 2026),
+   `DELAI_ACHAT`, `FINANCEMENT` et `VENTE_PREALABLE`. Un attribut manquant ne
+   bloque rien : le contact entre avec les attributs déjà créés.
 
 3. **Senders, Domains, Dedicated IPs** : vérifiez le domaine `trudaines.com`
    (enregistrements DKIM et Brevo code fournis par Brevo, à ajouter chez Gandi).
