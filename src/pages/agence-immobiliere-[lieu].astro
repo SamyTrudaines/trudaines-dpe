@@ -1,0 +1,303 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Banniere from '../components/Banniere.astro';
+import EnBref from '../components/EnBref.astro';
+import CarteBien from '../components/CarteBien.astro';
+import ReferencesProches from '../components/ReferencesProches.astro';
+import ModuleEstimation from '../components/ModuleEstimation.astro';
+import AlerteExpress from '../components/AlerteExpress.astro';
+import Avis from '../components/Avis.astro';
+import { ambiance } from '../data/ambiance';
+import { agencesLocales, type AgenceLocale } from '../data/agences-locales';
+import { secteurs } from '../data/secteurs';
+import { site } from '../data/site';
+import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
+import { evt, referencesProches } from '../lib/entonnoir';
+import { prix, nombre } from '../lib/format';
+import { distance, memeVoie, position, ruesDuQuartier } from '../lib/quartiers';
+import { rues, periode, type Rue } from '../lib/rues';
+
+/**
+ * Pages « agence immobilière » d'un lieu : Montmartre, Saint-Georges, Trudaine.
+ * Données et textes dans src/data/agences-locales.ts ; les prix viennent des
+ * ventes de rues.json, les distances des coordonnées de la Base Adresse
+ * Nationale. Les pages d'arrondissement ont leur propre fichier.
+ */
+interface Props { lieu: AgenceLocale }
+
+export const getStaticPaths: GetStaticPaths = () =>
+  agencesLocales.map((lieu) => ({ params: { lieu: lieu.slug }, props: { lieu } }));
+
+const { lieu } = Astro.props;
+const id = lieu.slug;
+const bureau = { lon: site.adresse.longitude, lat: site.adresse.latitude };
+const metresDuBureau = Math.round(distance(bureau, lieu.repere) / 10) * 10;
+const secteur = secteurs.find((s) => s.slug === lieu.secteur);
+
+/* Les rues du lieu : celles de la zone du quartier publié, ou celles qui tiennent dans le rayon du repère. */
+const brutes: Rue[] = lieu.quartier
+  ? ruesDuQuartier(lieu.quartier)
+  : rues.filter((r) => {
+      const p = position(r);
+      return p !== null && distance(p, lieu.repere) <= (lieu.rayon ?? 500);
+    });
+/* Une voie écrite de deux façons dans la base foncière ne compte qu'une fois : on garde la série la plus fournie. */
+const liste = brutes.filter((r) => !memeVoie(r).some((autre) => brutes.includes(autre) && (autre.ventes > r.ventes || (autre.ventes === r.ventes && autre.slug < r.slug))));
+const parVentes = [...liste].sort((a, b) => b.ventes - a.ventes);
+const tableau = parVentes.slice(0, 15);
+const ventes = liste.reduce((somme, r) => somme + r.ventes, 0);
+const plusChere = liste.reduce((a, b) => (b.mediane > a.mediane ? b : a));
+const moinsChere = liste.reduce((a, b) => (b.mediane < a.mediane ? b : a));
+const perimetre = lieu.quartier
+  ? `les ${liste.length} voies du quartier publiées sur notre page quartier`
+  : `les ${liste.length} voies à moins de ${lieu.rayon} mètres de ${lieu.repere.libelle}`;
+
+const agregat = await agrégatAvis();
+const avis = await avisCommentés(3);
+const tousLesBiens = await getCollection('biens');
+const biens = tousLesBiens.filter((b) => lieu.quartiersBiens.includes(b.data.quartier) && !b.data.archive && !b.data.offMarket && b.data.statut !== 'vendu').slice(0, 3);
+const references = referencesProches(tousLesBiens.filter((b) => b.data.archive), {
+  quartier: lieu.quartiersBiens[0],
+  codePostal: lieu.codePostal,
+});
+const quartiers = (await getCollection('quartiers')).filter((q) => lieu.quartiersLies.includes(q.id));
+const autres = agencesLocales.filter((a) => a.slug !== id);
+
+const fourchette = `De ${prix(moinsChere.mediane)} (${moinsChere.nom}) à ${prix(plusChere.mediane)} (${plusChere.nom}) le mètre carré, médianes des ventes d'appartements de ${periode}.`;
+const bureauPhrase = `à ${nombre(metresDuBureau)} mètres de ${lieu.repere.libelle} à vol d'oiseau`;
+const enBref = await lignesEnBref({ dans: lieu.dans, bureau: bureauPhrase, prix: fourchette, lienPrix: '#prix-des-rues' });
+
+const faq = [
+  {
+    question: `Quel est le prix au mètre carré ${lieu.dans} ?`,
+    reponse: `Sur ${perimetre}, les ventes d'appartements enregistrées de ${periode} donnent des médianes de ${prix(moinsChere.mediane)} à ${prix(plusChere.mediane)} le mètre carré selon la voie, sur ${nombre(ventes)} ventes. ${plusChere.nom} est la plus chère, ${moinsChere.nom} la plus accessible. Le prix d'un appartement dépend ensuite de l'étage, de la lumière, de l'état et de l'immeuble.`,
+  },
+  ...faqAgence({ dans: lieu.dans, bureau: bureauPhrase }),
+  ...lieu.faq,
+];
+
+const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Agence immobilière ${lieu.nom}`,
+    serviceType: 'Agence immobilière : vente, estimation, recherche, gestion locative',
+    url: `${site.url}/agence-immobiliere-${id}`,
+    provider: { '@id': `${site.url}/#cabinet` },
+    areaServed: {
+      '@type': 'Place',
+      name: `${lieu.nom}, ${lieu.arrondissement}`,
+      geo: {
+        '@type': 'GeoCircle',
+        geoMidpoint: { '@type': 'GeoCoordinates', latitude: lieu.repere.lat, longitude: lieu.repere.lon },
+        geoRadius: lieu.rayon ?? 500,
+      },
+    },
+  },
+  faqEnDonnees(faq),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Prix au mètre carré des rues, ${lieu.nom}, ${lieu.arrondissement}`,
+    numberOfItems: tableau.length,
+    itemListElement: tableau.map((r, i) => ({ '@type': 'ListItem', position: i + 1, name: r.nom, url: `${site.url}/prix-immobilier/${r.slug}` })),
+  },
+];
+
+const banniere = { montmartre: ambiance.maisonRose, 'saint-georges': ambiance.facadeParis, trudaine: ambiance.squareAnvers }[id] ?? ambiance.ruePavee;
+const donneeEstimation = `${lieu.nom} : de ${prix(moinsChere.mediane)} à ${prix(plusChere.mediane)} le mètre carré d'une rue à l'autre, sur ${nombre(ventes)} ventes. Votre appartement se place quelque part dans cet écart, et c'est la visite qui dit où.`;
+---
+<Layout
+  titre={lieu.titreSeo}
+  description={lieu.descriptionSeo}
+  filAriane={[{ nom: `Agence immobilière ${lieu.nom}` }]}
+  donnees={donnees}
+  ancreEstimation={`#estimation-${id}`}
+  evtEstimation={evt('agence', 'estimer', id)}
+  cta={false}
+>
+  <Banniere image={banniere} surtitre={lieu.arrondissement} titre={lieu.nom} hauteur="moyen" balise="div" premiere />
+
+  <section class="section pt-10">
+    <div class="conteneur grid grid-cols-1 gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div>
+        <p class="surtitre">{lieu.surtitre}</p>
+        <h1 class="titre-1 mt-6">{lieu.h1}</h1>
+        <p class="chapo mt-8">{lieu.chapo}</p>
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+          <a href={`#estimation-${id}`} class="bouton" data-evt={evt('agence', 'estimer', id)}>Estimer mon bien</a>
+          <a href={`tel:${site.telephoneLien}`} class="bouton bouton-secondaire" data-evt="clic_telephone">Appeler le {site.telephone}</a>
+        </div>
+      </div>
+      <aside class="border border-[color:var(--color-trait)] p-8">
+        <h2 class="titre-3">Nous joindre</h2>
+        <p class="mt-6 text-sm">{site.adresse.rue}<br />{site.adresse.codePostal} {site.adresse.ville}</p>
+        <p class="mt-4 text-sm">
+          <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a><br />
+          <a href={`mailto:${site.email}`} class="lien-souligne [overflow-wrap:anywhere]">{site.email}</a>
+        </p>
+        <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{site.horairesTexte}</p>
+        <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">
+          Carte professionnelle {site.legal.carteT}. Garantie financière {site.legal.garantieMontant}.
+          {' '}{site.legal.detentionFonds}
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <EnBref titre={`Trudaines ${lieu.dans}, en bref`} lignes={enBref} />
+
+  {lieu.sections.map((section) => (
+    <section class="section filet">
+      <div class="conteneur max-w-3xl">
+        <h2 class="titre-2">{section.titre}</h2>
+        {section.paragraphes?.map((p) => <p class="mt-6 text-[color:var(--color-ardoise)]">{p}</p>)}
+        {section.points && (
+          <ul class="mt-8 space-y-5 text-[color:var(--color-ardoise)]">
+            {section.points.map((pt) => (
+              <li><strong class="text-[color:var(--color-encre)]">{pt.titre}</strong> {pt.texte}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section id="prix-des-rues" class="section filet" aria-labelledby="titre-prix-rues">
+    <div class="conteneur">
+      <h2 id="titre-prix-rues" class="titre-2 max-w-3xl">Le prix des rues {lieu.dans}</h2>
+      <p class="mt-6 max-w-3xl text-[color:var(--color-ardoise)]">
+        {liste.length} voies, {nombre(ventes)} ventes d'appartements enregistrées devant notaire de {periode}.
+        {' '}Les {tableau.length} voies les plus vendues :
+      </p>
+      <div class="mt-8 overflow-x-auto">
+        <table class="w-full border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-[color:var(--color-encre)]">
+              <th scope="col" class="py-4 pr-6 font-semibold">Voie</th>
+              <th scope="col" class="py-4 pr-6 font-semibold">Arrondissement</th>
+              <th scope="col" class="py-4 pr-6 text-right font-semibold">Ventes</th>
+              <th scope="col" class="py-4 text-right font-semibold">Prix médian au m²</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tableau.map((r) => (
+              <tr class="border-b border-[color:var(--color-trait)]">
+                <th scope="row" class="py-3 pr-6 font-medium">
+                  <a href={`/prix-immobilier/${r.slug}`} class="lien-souligne" data-evt={evt('agence', 'rue', id)}>{r.nom}</a>
+                </th>
+                <td class="py-3 pr-6 text-[color:var(--color-ardoise)]">{r.arrondissement}</td>
+                <td class="py-3 pr-6 text-right tabular-nums">{r.ventes}</td>
+                <td class="whitespace-nowrap py-3 text-right tabular-nums">{prix(r.mediane)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">
+        Périmètre : {perimetre}. Appartements vendus seuls, ventes hors multilots. Source : demandes de valeurs foncières,
+        direction générale des finances publiques ; calculs Trudaines.
+        {' '}<a href="/prix-immobilier" class="lien-souligne">Toutes les voies mesurées</a>.
+      </p>
+    </div>
+  </section>
+
+  {biens.length > 0 && (
+    <section class="section filet" aria-labelledby="biens-lieu">
+      <div class="conteneur">
+        <h2 id="biens-lieu" class="titre-2">Nos biens à vendre {lieu.dans}</h2>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {biens.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              ville={b.data.ville}
+              chambres={b.data.chambres}
+              accroche={b.data.accroche}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              mention={b.data.mention}
+              photo={b.data.photos[0]}
+              portee="profonde"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <ReferencesProches
+    mandats={references.mandats}
+    portee={references.portee}
+    quartier={lieu.quartiersBiens[0]}
+    arrondissement={lieu.arrondissement}
+    ici={lieu.dans}
+    evt={evt('agence', 'reference', id)}
+    evtToutes={evt('agence', 'references', id)}
+  />
+
+  <section class="section filet" aria-label="Estimation">
+    <div class="conteneur">
+      <ModuleEstimation
+        identifiant={`estimation-${id}`}
+        secteur={lieu.secteur}
+        quartier={lieu.nom}
+        origine={`Agence immobilière ${lieu.nom}`}
+        evt={evt('agence', 'estimation', id)}
+        evtCreneau={evt('agence', 'creneau', id)}
+        donnee={donneeEstimation}
+        lienSecteur={secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('agence', 'secteur', id) } : undefined}
+      />
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="questions-lieu">
+    <div class="conteneur max-w-3xl">
+      <h2 id="questions-lieu" class="titre-2">Les questions que l'on nous pose {lieu.dans}</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <AlerteExpress
+    id="alerte-agence"
+    titre={`Vous cherchez à acheter ${lieu.dans} ?`}
+    texte="Nos biens sont présentés d'abord à notre fichier d'acquéreurs, souvent avant les portails. Trois champs, et vous en faites partie."
+    origine={`Agence ${lieu.nom}`}
+    evt={evt('agence', 'alerte', id)}
+    secteur={secteur?.nom}
+  />
+
+  <section class="section filet" aria-labelledby="autour-lieu">
+    <div class="conteneur">
+      <h2 id="autour-lieu" class="titre-2">Autour de {lieu.nom}</h2>
+      <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {quartiers.map((q) => (
+          <div class="bloc">
+            <h3 class="titre-3"><a href={`/quartiers/${q.id}`} class="no-underline hover:underline">Le quartier {q.data.nom}</a></h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {autres.map((a) => <a href={`/agence-immobiliere-${a.slug}`} class="lien-souligne">Agence immobilière {a.nom}</a>)}
+        {secteur && <a href={secteur.hrefAgence} class="lien-souligne">Agence immobilière {secteur.nom}</a>}
+      </p>
+    </div>
+  </section>
+
+  <Avis avis={avis} agregat={agregat} />
+</Layout>

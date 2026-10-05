@@ -99,6 +99,6 @@ Les informations sur les risques auxquels ce bien est exposé sont disponibles s
 
 <!-- Reprise de https://www.trudaines.com/vente/5-boulogne-billancourt/appartement/13-appartement-76m-avec-terrasse-boulogne-billancourt-les-passages le 2026-09-18.
      Statut affiché sur l'ancien site : aucun.
-     Titre d'origine sur l'ancien site : « Appartement 76m² avec Terrasse – Boulogne-Billancourt Les Passages ».
+     Titre d'origine sur l'ancien site : « Appartement 76m² avec Terrasse, Boulogne-Billancourt Les Passages ».
      À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
      taxe foncière, lots de copropriété, puis passer offMarket à false. -->

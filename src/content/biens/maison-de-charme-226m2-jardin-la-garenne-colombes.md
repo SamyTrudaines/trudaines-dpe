@@ -79,6 +79,6 @@ Un bien rare à La Garenne-Colombes, idéal pour les familles en quête de calme
 
 <!-- Reprise de https://www.trudaines.com/vente/8-la-garenne-colombes/maison/95-maison-de-charme-avec-jardin-a-la-garenne-colombes-quartier-residentiel-recherche-prestige le 2026-09-18.
      Statut affiché sur l'ancien site : aucun.
-     Titre d'origine sur l'ancien site : « Maison de charme avec jardin à La Garenne-Colombes – Quartier résidentiel recherché ».
+     Titre d'origine sur l'ancien site : « Maison de charme avec jardin à La Garenne-Colombes, Quartier résidentiel recherché ».
      À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
      taxe foncière, lots de copropriété, puis passer offMarket à false. -->

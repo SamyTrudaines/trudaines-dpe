@@ -33,7 +33,7 @@ export const secteurs: Secteur[] = [
       "Estimation immobilière à Paris 9e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet du secteur.",
     titreAgence: 'Agence immobilière Paris 9e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Cabinet de vente immobilière dans le 9e nord : Trudaine Maubeuge, Martyrs Lorette, Clichy Trinité. Un interlocuteur unique jusqu'à la signature.",
+      "Agence immobilière du 9e nord : Saint-Georges, Trudaine, Martyrs, Lorette, Trinité. Prix au m² rue par rue, estimation écrite sous 48 heures, un seul interlocuteur.",
     hrefAgence: '/agence-immobiliere-paris-9',
     intro:
       "Le 9e nord se lit rue par rue. Un deux-pièces sur Trudaine ne se vend pas au prix d'un deux-pièces équivalent situé à deux cents mètres, sur Rochechouart. Notre estimation croise les ventes réellement signées dans votre rue, les biens actuellement en concurrence et ce que la visite nous apprend de votre appartement.",
@@ -86,7 +86,7 @@ export const secteurs: Secteur[] = [
       "Estimation immobilière à Paris 18e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet de Montmartre.",
     titreAgence: 'Agence immobilière Paris 18e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Cabinet de vente immobilière au 2 rue Livingstone, Paris 18e : Montmartre, Abbesses, Lamarck, sud du 18e. Estimation et mise en vente.",
+      "Agence immobilière au 2 rue Livingstone, Paris 18e : Montmartre, Abbesses, Lamarck, sud du 18e. Prix au m² rue par rue, estimation écrite sous 48 heures.",
     hrefAgence: '/agence-immobiliere-paris-18',
     intro:
       "Le 18e est l'arrondissement où les écarts de prix sont les plus larges de Paris. Entre un immeuble de l'avenue Junot et un immeuble des années soixante situé deux rues plus loin, la différence se compte en milliers d'euros au mètre carré. Une moyenne d'arrondissement n'a aucun sens ici : notre estimation part de votre rue, de votre immeuble et de votre étage.",

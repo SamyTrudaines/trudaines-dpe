@@ -5,11 +5,29 @@ import BlocAgence from '../components/BlocAgence.astro';
 import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { getSecteur } from '../data/secteurs';
+import EnBref from '../components/EnBref.astro';
+import { agencesLocales } from '../data/agences-locales';
+import { site } from '../data/site';
+import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
+import { distance } from '../lib/quartiers';
+import { arrondissements, periode } from '../lib/rues';
+import { prix, nombre } from '../lib/format';
 
 const secteur = getSecteur('paris-18')!;
 const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id));
 const avis = await avisCommentés(3);
 const agregatAvis = await agrégatAvis();
+
+const chiffres = arrondissements['75018'];
+const montmartre = agencesLocales.find((l) => l.slug === 'montmartre')!;
+const metres = Math.round(distance({ lon: site.adresse.longitude, lat: site.adresse.latitude }, montmartre.repere) / 10) * 10;
+const bureau = `dans le 18e, entre Anvers et Château Rouge, à ${nombre(metres)} mètres de la place des Abbesses à vol d'oiseau`;
+const prixPhrase = `Médiane de ${prix(chiffres.mediane)} le mètre carré sur ${nombre(chiffres.ventes)} ventes d'appartements de ${periode} ; huit ventes sur dix entre ${prix(chiffres.d1)} et ${prix(chiffres.d9)}.`;
+const enBref = await lignesEnBref({ dans: 'dans le 18e arrondissement', bureau, prix: prixPhrase, lienPrix: '/prix-immobilier#arr-75018' });
+const faq = [
+  { question: 'Quel est le prix au mètre carré dans le 18e arrondissement ?', reponse: `${prixPhrase} Entre la Butte et le nord de l'arrondissement, l'écart d'une rue à l'autre dépasse souvent ce que dit la moyenne : nous publions le prix de chaque voie.` },
+  ...faqAgence({ dans: 'dans le 18e arrondissement', bureau }),
+];
 
 const services = [
   { titre: 'Vente et mandat', texte: "Un seul interlocuteur du premier rendez-vous à la signature, avec un compte rendu après chaque visite.", href: '/vendre' },
@@ -21,6 +39,7 @@ const services = [
   titre={secteur.titreAgence}
   description={secteur.descriptionAgence}
   filAriane={[{ nom: 'Agence immobilière Paris 18e' }]}
+  donnees={[faqEnDonnees(faq)]}
 >
   <BlocAgence
     h1="Agence immobilière à Paris 18e, au 2 rue Livingstone"
@@ -29,7 +48,9 @@ const services = [
     hrefEstimation="/estimation/paris-18"
     quartiers={quartiers}
     services={services}
-  />
+  >
+    <EnBref titre="Trudaines dans le 18e, en bref" lignes={enBref} />
+  </BlocAgence>
   <section class="section filet">
     <div class="conteneur max-w-3xl">
       <h2 class="titre-2">Le 18e ne se résume pas à Montmartre</h2>
@@ -39,8 +60,21 @@ const services = [
         et nous les documentons dans chaque avis de valeur.
       </p>
       <p class="mt-8">
-        <a href="/agence-immobiliere-montmartre" class="lien-souligne">Voir notre page dédiée à Montmartre</a>
+        <a href="/agence-immobiliere-montmartre" class="lien-souligne">Agence immobilière Montmartre : prix des rues, références, vente confidentielle</a>
       </p>
+    </div>
+  </section>
+  <section class="section filet" aria-labelledby="questions-18">
+    <div class="conteneur max-w-3xl">
+      <h2 id="questions-18" class="titre-2">Les questions que l'on nous pose sur le 18e</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   </section>
   <Avis avis={avis} agregat={agregatAvis} />

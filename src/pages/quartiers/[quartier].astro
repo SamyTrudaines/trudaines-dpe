@@ -9,6 +9,7 @@ import ModuleEstimation from '../../components/ModuleEstimation.astro';
 import ReferencesProches from '../../components/ReferencesProches.astro';
 import LivreBlanc from '../../components/LivreBlanc.astro';
 import AlerteExpress from '../../components/AlerteExpress.astro';
+import { agencesLocales } from '../../data/agences-locales';
 import { secteurs } from '../../data/secteurs';
 import { site } from '../../data/site';
 import { nombre } from '../../lib/format';
@@ -309,7 +310,10 @@ const donneeEstimation = liste.length
           <a href={`/quartiers/${q.id}`} class="lien-souligne">{q.data.nom}</a>
         ))}
       </div>
-      <p class="mt-10 text-sm">
+      <p class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {agencesLocales.filter((l) => l.quartiersLies.includes(id)).map((l) => (
+          <a href={`/agence-immobiliere-${l.slug}`} class="lien-souligne" data-evt={evt('quartier', 'agence', id)}>Agence immobilière {l.nom}</a>
+        ))}
         <a href="/prix-immobilier" class="lien-souligne">Le prix au mètre carré, rue par rue</a>
       </p>
     </div>

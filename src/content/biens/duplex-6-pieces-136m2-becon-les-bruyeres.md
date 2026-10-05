@@ -17,7 +17,7 @@ offMarket: true
 archive: true
 ordre: 50
 honorairesCharge: vendeur
-description: "Trudaines Immobilier - Samy Santamarina : Appartement duplex familial coup de cœur, lumineux, traversant, spacieux, et avec parquet moulures et cheminées – 5 chambres – Asnières sur Seine à 3 minutes à pied de la Gare Bécon Les Bruyères."
+description: "Trudaines Immobilier - Samy Santamarina : Appartement duplex familial coup de cœur, lumineux, traversant, spacieux, et avec parquet moulures et cheminées, 5 chambres, Asnières sur Seine à 3 minutes à pied de la Gare Bécon Les Bruyères."
 photos:
   - src: /images/biens/duplex-6-pieces-136m2-becon-les-bruyeres/01.webp
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
@@ -41,7 +41,7 @@ photos:
     alt: "Duplex 6 pièces 136 m², 5 chambres, Bécon les Bruyères"
 ---
 
-Trudaines Immobilier - Samy Santamarina : Appartement duplex familial coup de cœur, lumineux, traversant, spacieux, et avec parquet moulures et cheminées – 5 chambres – Asnières sur Seine à 3 minutes à pied de la Gare Bécon Les Bruyères.
+Trudaines Immobilier - Samy Santamarina : Appartement duplex familial coup de cœur, lumineux, traversant, spacieux, et avec parquet moulures et cheminées, 5 chambres, Asnières sur Seine à 3 minutes à pied de la Gare Bécon Les Bruyères.
 
 Idéalement situé, dans un quartier « village » avec de nombreux commerces de proximité, dans une rue calme et au sein d’une copropriété bien tenue des années 30 aux charges faibles (336€ / trimestre), ce duplex élégant de 136m² a une disposition idéale avec une entrée à chaque étage. Au troisième étage par escalier, la partie dédiée à la réception et au deuxième étage l’espace « nuit / familial » qui communiquent par un escalier intérieur avec une trémie et un lustre suspendu.
 
@@ -88,8 +88,6 @@ Ses points forts :
 - Bon DPE : E
 
 Chauffage gaz individuel.
-
-Trudaines Immobilier : le premier réseau de mandataires immobiliers propulsés par l’IA. Contactez-nous : contact@trudaines.fr
 
 Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques
 

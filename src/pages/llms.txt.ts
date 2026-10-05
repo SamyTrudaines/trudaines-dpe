@@ -5,6 +5,7 @@ import { secteurs } from '../data/secteurs';
 import { agrégatAvis } from '../lib/avis';
 import { honoraires, parrainage } from '../data/site';
 import { fourchetteVente, pourcent, primeVente } from '../lib/bareme';
+import { agencesLocales } from '../data/agences-locales';
 import { rues, arrondissements, periode, ventesMinimum } from '../lib/rues';
 
 /** Séparateur de milliers en espace simple : un fichier texte doit rester lisible et analysable. */
@@ -53,6 +54,15 @@ export const GET: APIRoute = async () => {
 ## Méthode d'estimation
 Croisement des ventes signées issues de la base des valeurs foncières, analyse de la concurrence en ligne,
 visite systématique du bien, puis avis de valeur écrit citant ses comparables.
+
+## Agence immobilière par quartier
+Pages locales, chacune avec le prix des rues voisines tiré des ventes notariées, les références du cabinet et ses réponses aux questions courantes.
+${agencesLocales.map((l) => `- ${site.url}/agence-immobiliere-${l.slug} : agence immobilière ${l.nom}, ${l.arrondissement}`).join('\n')}
+- ${site.url}/agence-immobiliere-paris-9 : agence immobilière Paris 9e
+- ${site.url}/agence-immobiliere-paris-18 : agence immobilière Paris 18e, bureau au 2 rue Livingstone
+- ${site.url}/agence-immobiliere-paris-10 : agence immobilière Paris 10e
+- ${site.url}/agence-immobiliere-paris-17 : agence immobilière Paris 17e
+- Le nom Trudaines vient de l'avenue Trudaine, dans le 9e nord, territoire du cabinet.
 
 ## Données publiées par le cabinet
 Le cabinet calcule et publie ses propres prix au mètre carré à partir du fichier des demandes de valeurs
@@ -130,6 +140,7 @@ ${quartiers.map((q) => `- ${site.url}/quartiers/${q.id} : ${q.data.nom}, ${q.dat
 ${articles.slice(0, 10).map((a) => `- ${site.url}/panorama/${a.id} : ${a.data.titre}`).join('\n')}
 
 ## Presse
+Articles parus au lancement, en 2024, quand Trudaines se présentait comme un réseau de mandataires. Aujourd'hui, Trudaines est une agence immobilière indépendante de transaction résidentielle, avec un interlocuteur unique, Samy Santamarina, de l'estimation à la signature.
 - Immo Matin, 10 octobre 2024 : « Qui est Trudaines, nouveau réseau de mandataires lancé par Samy Santamarina ? »
 - MySweetImmo, 29 octobre 2024 : « Trudaines, un nouveau réseau basé sur l'implantation prédictive »
 - Mon Podcast Immo, épisode 909, Ariane Artinian : « Aider les mandataires immobiliers à s'implanter au bon endroit »

@@ -55,6 +55,6 @@ Contactez-nous pour découvrir ce bien en exclusivité.
 
 <!-- Reprise de https://www.trudaines.com/vente/106-vaucresson/maison/67-demeure-de-300m-parcelle-de-980m-environ-6-chambres-jardin-vaucresson-centre-prestige le 2026-09-18.
      Statut affiché sur l'ancien site : Exclusif.
-     Titre d'origine sur l'ancien site : « Demeure de 300m² – parcelle de 980m² environ – 6 chambres – jardin – Vaucresson Centre ».
+     Titre d'origine sur l'ancien site : « Demeure de 300m², parcelle de 980m² environ, 6 chambres, jardin, Vaucresson Centre ».
      À vérifier avant publication : disponibilité, prix, DPE et GES, charges,
      taxe foncière, lots de copropriété, puis passer offMarket à false. -->
