@@ -37,9 +37,14 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   6/5/4 %, exclusif 5/4/3 % TTC, tranches 700 000 € et 1 500 000 €, minimum 8 000 € HT ; prime WinWin 15 %
   des honoraires HT, gestion sur la première année). `src/lib/bareme.ts` lit ces textes en nombres pour le
   simulateur de /recommander (`public/js/winwin.js`), l'accueil et llms.txt : ne jamais y recopier un taux.
+- Pages « agence immobilière » d'un lieu (Montmartre, Saint-Georges, Trudaine) : données et textes dans
+  `src/data/agences-locales.ts`, gabarit `src/pages/agence-immobiliere-[lieu].astro`, faits communs (en bref,
+  questions) dans `src/lib/agence.ts`. Repères géocodés par la Base Adresse Nationale, prix tirés de rues.json.
 - Acquéreurs : alerte complète `FormulaireAlerte` (/acheter#alerte) et alerte express `AlerteExpress`
   (accueil, fiches, références, quartiers), une seule fonction `functions/api/alerte.js`. Attributs Brevo
   `DELAI_ACHAT`, `FINANCEMENT`, `VENTE_PREALABLE` à créer : tant qu'ils manquent, le contact entre sans eux.
+- `/llms.txt` (`src/lib/llms.ts`) et `/llms-full.txt` (même texte suivi des pages en entier) se construisent
+  depuis les données et les collections : ne rien y recopier à la main.
 - Guide « Bien vendre à Paris » : PDF à l'italienne composé par Chromium, texte et mise en page dans
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.

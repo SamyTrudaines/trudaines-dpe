@@ -284,7 +284,7 @@ if (!existsSync(pageAvis)) {
   }
 }
 
-for (const attendu of ['/robots.txt', '/llms.txt', '/sitemap-index.xml', '/_headers']) {
+for (const attendu of ['/robots.txt', '/llms.txt', '/llms-full.txt', '/sitemap-index.xml', '/_headers']) {
   if (!cheminsPublics.has(attendu)) erreurs.push(`Fichier attendu absent du build : ${attendu}`);
 }
 

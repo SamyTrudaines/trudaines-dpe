@@ -12,7 +12,7 @@ interface Props {
 const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.props;
 ---
 <section class="section pt-10">
-  <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+  <div class="conteneur grid grid-cols-1 gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
     <div>
       <p class="surtitre">Le cabinet sur le terrain</p>
       <h1 class="titre-1 mt-6">{h1}</h1>
@@ -29,7 +29,7 @@ const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.pro
       </p>
       <p class="mt-4 text-sm">
         <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne">{site.telephone}</a><br />
-        <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a>
+        <a href={`mailto:${site.email}`} class="lien-souligne [overflow-wrap:anywhere]">{site.email}</a>
       </p>
       <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{site.horairesTexte}</p>
       <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">
@@ -39,6 +39,8 @@ const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.pro
     </aside>
   </div>
 </section>
+
+<slot />
 
 <section class="section filet" aria-labelledby="services-secteur">
   <div class="conteneur">

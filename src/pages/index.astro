@@ -7,6 +7,7 @@ import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site, parrainage } from '../data/site';
 import { pourcent, primeVente } from '../lib/bareme';
+import { agencesLocales } from '../data/agences-locales';
 import { prix } from '../lib/format';
 import { secteurs } from '../data/secteurs';
 import Ouverture from '../components/Ouverture.astro';
@@ -42,6 +43,18 @@ const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTim
 /* Trudaines WinWin : trois exemples calculés au barème exclusif, jamais saisis à la main. */
 const exemplesWinWin = [500000, 1000000, 2000000].map((p) => ({ prix: p, prime: primeVente(p) }));
 
+/* Nom du site affiché par Google au-dessus du lien, et lien avec la fiche de l'agence. */
+const siteWeb = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.url}/#site`,
+  name: site.nom,
+  alternateName: [site.nomLong, 'Trudaines agence immobilière'],
+  url: `${site.url}/`,
+  inLanguage: 'fr-FR',
+  publisher: { '@id': `${site.url}/#cabinet` },
+};
+
 const engagements = [
   {
     titre: 'Un prix argumenté par écrit',
@@ -64,6 +77,7 @@ const engagements = [
   titre="Trudaines | Agence immobilière à Paris, vente, recherche et gestion"
   description="Agence immobilière à Paris : vente, recherche pour acquéreur et gestion locative. Avis de valeur écrit sous 48 heures, compte rendu après chaque visite."
   enteteSurPhoto
+  donnees={[siteWeb]}
 >
   <Ouverture />
 
@@ -221,6 +235,11 @@ const engagements = [
           </a>
         ))}
       </div>
+      <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {agencesLocales.map((l) => (
+          <a href={`/agence-immobiliere-${l.slug}`} class="lien-souligne" data-evt="accueil_agence_locale">Agence immobilière {l.nom}</a>
+        ))}
+      </p>
     </div>
   </section>
 

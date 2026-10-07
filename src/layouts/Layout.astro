@@ -11,6 +11,7 @@ import BlocCta from '../components/BlocCta.astro';
 import { site } from '../data/site';
 import { agrégatAvis } from '../lib/avis';
 import { secteurs } from '../data/secteurs';
+import { agencesLocales } from '../data/agences-locales';
 
 interface Props {
   /** Ancre du formulaire local : la barre mobile y mène au lieu de /estimation. */
@@ -55,7 +56,22 @@ const agence = {
   '@type': 'RealEstateAgent',
   '@id': `${site.url}/#cabinet`,
   name: site.nomLong,
+  alternateName: [site.nom, 'Trudaines Immobilier Paris'],
   legalName: `${site.raisonSociale} ${site.formeJuridique}`,
+  slogan: "L'immobilier au-delà des murs.",
+  foundingDate: '2024-09',
+  identifier: [
+    { '@type': 'PropertyValue', propertyID: 'SIREN', value: site.legal.siren },
+    { '@type': 'PropertyValue', propertyID: 'Carte professionnelle', value: site.legal.carteT },
+  ],
+  knowsAbout: [
+    'Vente immobilière à Paris',
+    'Estimation immobilière',
+    'Prix au mètre carré par rue à Paris',
+    'Mandat exclusif',
+    'Recherche immobilière pour acquéreurs',
+    'Gestion locative',
+  ],
   url: site.url,
   logo: `${site.url}/images/logo.svg`,
   image: `${site.url}/images/logo.svg`,
@@ -77,7 +93,16 @@ const agence = {
     longitude: site.adresse.longitude,
   },
   /* Dérivé de src/data/secteurs.ts : ajouter un secteur l'ajoute ici sans autre geste. */
-  areaServed: secteurs.map((s) => ({ '@type': 'AdministrativeArea', name: `${s.nom} arrondissement` })),
+  areaServed: [
+    ...secteurs.map((s) => ({ '@type': 'AdministrativeArea', name: `${s.nom} arrondissement` })),
+    /* Les lieux des pages « agence immobilière » : Montmartre, Saint-Georges, Trudaine. */
+    ...agencesLocales.map((l) => ({
+      '@type': 'Place',
+      name: `${l.nom}, ${l.arrondissement}`,
+      url: `${site.url}/agence-immobiliere-${l.slug}`,
+      geo: { '@type': 'GeoCoordinates', latitude: l.repere.lat, longitude: l.repere.lon },
+    })),
+  ],
   openingHoursSpecification: site.horaires.map((h) => ({
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: h.jours,

@@ -9,6 +9,8 @@ mentale doit tenir en vingt minutes par mois.
 
 - `robots.txt` autorise nommément les quatorze robots d'index et de consultation.
 - `llms.txt` porte des faits datés et sourcés, rédigés pour être cités tels quels.
+- `llms-full.txt` reprend `llms.txt` et y ajoute le texte intégral des pages agence, situations,
+  quartiers, biens à vendre et articles, construit à chaque déploiement.
 - `/prix-immobilier.json` publie le jeu de données avec sa méthode, sa source et
   sa formule de citation.
 - 312 pages de voie, chacune avec des chiffres qui n'existent nulle part ailleurs.

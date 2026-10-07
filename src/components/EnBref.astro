@@ -1,0 +1,28 @@
+---
+/**
+ * « En bref » : les réponses qu'un moteur ou un assistant cherche sur la page,
+ * en phrases complètes et vérifiables, juste sous le titre. Chaque ligne se
+ * suffit à elle-même : une IA qui n'en cite qu'une cite encore un fait juste.
+ */
+interface Props {
+  titre?: string;
+  lignes: { terme: string; texte: string; lien?: { href: string; libelle: string } }[];
+}
+const { titre = 'En bref', lignes } = Astro.props;
+---
+<section class="section pt-0" aria-labelledby="en-bref">
+  <div class="conteneur">
+    <h2 id="en-bref" class="surtitre">{titre}</h2>
+    <dl class="mt-6 grid border-t border-[color:var(--color-encre)] md:grid-cols-2 md:gap-x-16">
+      {lignes.map((l) => (
+        <div class="grid gap-1 border-b border-[color:var(--color-trait)] py-5 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-6">
+          <dt class="text-sm font-semibold">{l.terme}</dt>
+          <dd class="text-[color:var(--color-ardoise)]">
+            {l.texte}
+            {l.lien && <>{' '}<a href={l.lien.href} class="lien-souligne whitespace-nowrap">{l.lien.libelle}</a></>}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

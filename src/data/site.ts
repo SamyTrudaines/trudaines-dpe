@@ -24,8 +24,9 @@ export const site = {
     codePostal: '75018',
     ville: 'Paris',
     pays: 'FR',
-    latitude: 48.8835,
-    longitude: 2.3452,
+    /* Base Adresse Nationale, « 2 Rue Livingstone 75018 Paris », score 0,97, relevé le 5 octobre 2026. */
+    latitude: 48.884252,
+    longitude: 2.345882,
   },
   horaires: [
     { jours: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], ouverture: '09:00', fermeture: '19:30' },
