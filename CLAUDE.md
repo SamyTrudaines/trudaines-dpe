@@ -7,7 +7,8 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 ## Règles de travail
 - Fusionner une pull request uniquement quand Samy écrit « fusionne ».
 - La bascule du domaine (`.mise-en-ligne/ordre.json` en mode `appliquer`) uniquement sur son
-  ordre explicite du moment. Le mode `audit` ne fait que lire.
+  ordre explicite du moment. Le mode `audit` ne fait que lire. Le mode `messagerie` (SPF, DKIM
+  Brevo, DMARC) a sa propre phrase de confirmation et ne touche ni MX, ni www, ni la racine.
 - Ne jamais demander un jeton, une clé ou un mot de passe dans la conversation : ils vivent dans
   les secrets GitHub et les variables Cloudflare.
 - Brevo : les listes RENT 600, RENT LEADS STAND CONF QR CODE et LISTE CHAUDE FABIAN sont des

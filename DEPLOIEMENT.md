@@ -183,6 +183,15 @@ Donner aux jetons une expiration courte et les révoquer après la mise en ligne
 4. `mode: retablir` : remet `www` et la racine dans leur état d'avant bascule,
    à partir de la ligne `SAUVEGARDE_RETABLISSEMENT` du journal d'application,
    recopiée dans le champ `sauvegarde` de l'ordre.
+5. `mode: messagerie` avec `confirmation: SECURISER LA MESSAGERIE trudaines.com`
+   (jetons Gandi et Brevo seulement) : publie la signature DKIM et le code
+   Brevo, complète le SPF (Google Workspace, Brevo) sans retirer ce qu'il
+   autorise déjà, remplace le DMARC par la politique de `config.mjs`
+   (quarantaine, rapports sur la boîte du cabinet) et demande à Brevo de
+   vérifier le domaine. MX, `www` et la racine ne sont jamais touchés. La
+   signature DKIM de Google Workspace s'active à la main dans la console
+   d'administration : le journal dit si elle manque. L'audit affiche ce que
+   ce mode écrirait.
 
 ---
 

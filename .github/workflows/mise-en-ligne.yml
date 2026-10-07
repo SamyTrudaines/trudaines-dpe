@@ -1,8 +1,8 @@
 # Mise en ligne de trudaines.com.
 #
 # Le mode se lit dans .mise-en-ligne/ordre.json : chaque ordre est un commit,
-# daté et relisible. audit ne fait que lire ; appliquer exige en plus la phrase
-# de confirmation écrite dans l'ordre. Les trois jetons viennent des secrets du
+# daté et relisible. audit ne fait que lire ; appliquer et messagerie exigent
+# chacun leur phrase de confirmation. Les trois jetons viennent des secrets du
 # dépôt et ne quittent jamais la machine d'exécution.
 #
 # Détail des étapes et des garde-fous : scripts/mise-en-ligne/index.mjs.
@@ -18,12 +18,12 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'audit, appliquer, recette ou retablir'
+        description: 'audit, appliquer, recette, retablir ou messagerie'
         type: choice
-        options: [audit, appliquer, recette, retablir]
+        options: [audit, appliquer, recette, retablir, messagerie]
         default: audit
       confirmation:
-        description: 'Pour appliquer : METTRE EN LIGNE trudaines.com'
+        description: 'Pour appliquer : METTRE EN LIGNE trudaines.com ; pour messagerie : SECURISER LA MESSAGERIE trudaines.com'
         required: false
 
 permissions:

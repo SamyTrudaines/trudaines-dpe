@@ -6,12 +6,16 @@
  * Règles de sûreté, qui ne se discutent pas à l'exécution :
  *  - seuls www, la redirection de la racine et les enregistrements
  *    d'authentification Brevo peuvent changer ;
- *  - MX, SPF et tout enregistrement existant d'un autre service restent
- *    intacts : une valeur TXT n'est jamais retirée, seulement ajoutée ;
+ *  - MX et tout enregistrement existant d'un autre service restent intacts :
+ *    une valeur TXT n'est jamais retirée, seulement ajoutée ; le SPF ne
+ *    change que dans le mode « messagerie », et seulement pour autoriser un
+ *    service de plus ou durcir sa fin ;
+ *  - le DMARC n'est remplacé que dans le mode « messagerie », par la
+ *    politique écrite dans config.mjs ;
  *  - une valeur existante différente de celle attendue n'est jamais écrasée,
  *    elle remonte comme conflit à trancher.
  */
-import { AUTORITES_CLOUDFLARE, CIBLE_PAGES, DOMAINE, URL_SITE } from './config.mjs';
+import { AUTORITES_CLOUDFLARE, CIBLE_PAGES, DOMAINE, POLITIQUE_DMARC, SPF_INCLUDES_REQUIS, URL_SITE } from './config.mjs';
 
 /** Nom relatif à la zone, « @ » pour la racine, comme l'attend LiveDNS. */
 export function nomRelatif(hote, domaine = DOMAINE) {
@@ -128,9 +132,10 @@ export function planUnique(zone, nom, rrtype, valeur, { garderExistant = false }
  * l'exige plus. Un DMARC existant est conservé : c'est une politique, pas
  * une formalité.
  */
-export function planBrevo(zone, dnsRecords) {
+export function planBrevo(zone, dnsRecords, { sansDmarc = false } = {}) {
   const resultat = { actions: [], conflits: [], notes: [] };
   for (const [cle, r] of Object.entries(dnsRecords || {})) {
+    if (sansDmarc && (/dmarc/i.test(cle) || nomRelatif(r?.host_name) === '_dmarc')) continue;
     if (!r || typeof r !== 'object' || !r.type || !r.value) continue;
     const type = String(r.type).toUpperCase();
     const valeur = String(r.value);
@@ -213,4 +218,100 @@ export function verifierCaa(caa) {
   return emissions.some((a) => AUTORITES_CLOUDFLARE.includes(a))
     ? []
     : [`Le CAA du domaine n'autorise que ${emissions.join(', ')} : Cloudflare ne pourrait pas émettre le certificat de www`];
+}
+
+/** Les « include: » d'un SPF, en minuscules, sans doublon. */
+export function includesSpf(valeur) {
+  return [...new Set(sansGuillemets(valeur || '').toLowerCase().match(/(?<=^|\s)include:[^\s]+/g) || [])].map((i) => i.slice(8));
+}
+
+/**
+ * SPF du domaine : un seul enregistrement, qui garde chacun de ses mécanismes
+ * et gagne les services manquants, placés avant le « all » final. Une fin
+ * permissive (« +all », « ?all ») devient « ~all » ; un « -all » déjà posé
+ * reste. Deux SPF publiés sont un conflit : rien n'est écrit.
+ */
+export function planSpf(zone, includes = SPF_INCLUDES_REQUIS) {
+  const rr = zone.find((e) => e.rrset_name === '@' && e.rrset_type === 'TXT');
+  const existants = (rr?.rrset_values || []).filter((v) => /^v=spf1(\s|$)/i.test(sansGuillemets(v)));
+  if (existants.length > 1) {
+    return { actions: [], conflits: [`${existants.length} SPF publiés sur la racine, un seul est permis : à trancher à la main`], notes: [] };
+  }
+  const actuel = existants[0] ? sansGuillemets(existants[0]) : 'v=spf1 ~all';
+  const jetons = actuel.split(/\s+/).filter(Boolean);
+  const fin = jetons.findIndex((j) => /^[-~?+]?all$/i.test(j));
+  const corps = fin === -1 ? jetons.slice(1) : jetons.slice(1, fin);
+  const finActuelle = fin === -1 ? '~all' : jetons[fin].toLowerCase();
+  const finVoulue = finActuelle === '-all' ? '-all' : '~all';
+  const presents = new Set(corps.map((j) => j.toLowerCase()));
+  const ajouts = [...new Set(includes.map((i) => i.toLowerCase()))].filter((i) => !presents.has(`include:${i}`)).map((i) => `include:${i}`);
+  const voulu = ['v=spf1', ...corps, ...ajouts, finVoulue].join(' ');
+  if (voulu === actuel && existants.length) return { actions: [], conflits: [], notes: [] };
+  const notes = [];
+  if (ajouts.length) notes.push(`SPF : ${ajouts.join(', ')} ajouté${ajouts.length > 1 ? 's' : ''}`);
+  if (finVoulue !== finActuelle) notes.push(`SPF : fin « ${finActuelle} » remplacée par « ${finVoulue} »`);
+  if (!existants.length) notes.push('SPF : aucun publié, création');
+  const autres = (rr?.rrset_values || []).filter((v) => !existants.includes(v));
+  return {
+    actions: [
+      {
+        type: 'ecrire',
+        nom: '@',
+        rrtype: 'TXT',
+        valeurs: [...autres, enGuillemets(voulu)],
+        ttl: rr?.rrset_ttl ?? 10800,
+        avant: rr ? rr.rrset_values : null,
+        ttlAvant: rr?.rrset_ttl ?? null,
+      },
+    ],
+    conflits: [],
+    notes,
+  };
+}
+
+/** La zone telle qu'elle serait une fois les actions écrites, sans rien écrire. */
+export function simuler(zone, actions) {
+  let z = zone.map((e) => ({ ...e, rrset_values: [...e.rrset_values] }));
+  for (const a of actions) {
+    z = z.filter((e) => !(e.rrset_name === a.nom && e.rrset_type === a.rrtype));
+    if (a.type === 'ecrire') z.push({ rrset_name: a.nom, rrset_type: a.rrtype, rrset_ttl: a.ttl, rrset_values: [...a.valeurs] });
+  }
+  return z;
+}
+
+/** DMARC du domaine : la politique de config.mjs, qui remplace toute autre. */
+export function planDmarc(zone, politique = POLITIQUE_DMARC) {
+  const rr = zone.find((e) => e.rrset_name === '_dmarc' && e.rrset_type === 'TXT');
+  if (rr && rr.rrset_values.length === 1 && sansGuillemets(rr.rrset_values[0]) === politique) return { actions: [], conflits: [], notes: [] };
+  const cname = zone.find((e) => e.rrset_name === '_dmarc' && e.rrset_type === 'CNAME');
+  if (cname) return { actions: [], conflits: [`_dmarc est un CNAME vers ${cname.rrset_values.join(' ')} : à retirer à la main avant de poser la politique`], notes: [] };
+  return {
+    actions: [{ type: 'ecrire', nom: '_dmarc', rrtype: 'TXT', valeurs: [enGuillemets(politique)], ttl: 3600, avant: rr ? rr.rrset_values : null, ttlAvant: rr?.rrset_ttl ?? null }],
+    conflits: [],
+    notes: rr ? [`DMARC : « ${sansGuillemets(rr.rrset_values.join(' '))} » remplacé`] : ['DMARC : aucun publié, création'],
+  };
+}
+
+/**
+ * Sécurité de la messagerie en une passe : signature DKIM et code Brevo,
+ * SPF complété des services qui envoient au nom du domaine (Google Workspace,
+ * et Brevo s'il le demande), puis la politique DMARC du cabinet.
+ */
+export function planMessagerie(zone, dnsRecordsBrevo) {
+  const resultat = { actions: [], conflits: [], notes: [] };
+  const brevo = planBrevo(zone, dnsRecordsBrevo, { sansDmarc: true });
+  const includes = [...SPF_INCLUDES_REQUIS];
+  for (const r of Object.values(dnsRecordsBrevo || {})) {
+    if (r && /^\s*"?v=spf1/i.test(String(r.value || ''))) includes.push(...includesSpf(r.value));
+  }
+  /* Le code Brevo et le SPF partagent le TXT de la racine : le SPF se calcule sur la zone telle qu'elle sera. */
+  const apres = simuler(zone, brevo.actions);
+  const spf = planSpf(apres, includes);
+  const dmarc = planDmarc(apres);
+  for (const p of [brevo, spf, dmarc]) {
+    resultat.actions.push(...p.actions);
+    resultat.conflits.push(...p.conflits);
+    resultat.notes.push(...(p.notes || []).filter((n) => !/^SPF demandé par Brevo/.test(n)));
+  }
+  return resultat;
 }

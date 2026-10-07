@@ -62,6 +62,20 @@ export const AUTORITES_CLOUDFLARE = ['letsencrypt.org', 'pki.goog', 'ssl.com'];
 
 export const CONFIRMATION_ATTENDUE = 'METTRE EN LIGNE trudaines.com';
 
+/*
+ * Sécurité de la messagerie (mode « messagerie »). Le SPF garde tout ce qu'il
+ * autorise déjà et gagne les services qui envoient au nom du domaine ; le
+ * DMARC passe en quarantaine : un message qui se fait passer pour le cabinet
+ * sans signature valable tombe en indésirables chez le destinataire. Les
+ * rapports arrivent dans la boîte du cabinet, sous une sous-adresse filtrable.
+ */
+export const CONFIRMATION_MESSAGERIE = 'SECURISER LA MESSAGERIE trudaines.com';
+export const SPF_INCLUDES_REQUIS = ['_spf.google.com'];
+export const ADRESSE_RAPPORTS_DMARC = 'samy.santamarina+dmarc@trudaines.com';
+export const POLITIQUE_DMARC = `v=DMARC1; p=quarantine; pct=100; rua=mailto:${ADRESSE_RAPPORTS_DMARC}; fo=1`;
+/* Sélecteur DKIM de Google Workspace : il s'active dans la console d'administration, pas par API. */
+export const SELECTEUR_DKIM_GOOGLE = 'google';
+
 /* Adresse de test de bout en bout : la boîte du cabinet, jamais un tiers. */
 export const EMAIL_RECETTE = 'samy.santamarina@trudaines.com';
 export const GUIDE_RECETTE = 'bien-vendre-paris-2026';

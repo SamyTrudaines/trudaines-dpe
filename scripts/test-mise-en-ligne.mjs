@@ -94,6 +94,37 @@ verifier('Serveurs de noms Gandi reconnus', plan.verifierServeursDeNoms(['ns-1.g
 verifier('Serveurs de noms étrangers : bloquant', plan.verifierServeursDeNoms(['ns1.wixdns.net']).length === 1);
 verifier('CAA Let’s Encrypt accepté', plan.verifierCaa(['0 issue "letsencrypt.org"']).length === 0);
 verifier('CAA fermé à Cloudflare : bloquant', plan.verifierCaa(['0 issue "sectigo.com"']).length === 1);
+{
+  const p = plan.planSpf(zoneType(), ['_spf.google.com']);
+  verifier('SPF : Google ajouté, Gandi conservé, « ?all » durci en « ~all »', p.actions.length === 1 && plan.sansGuillemets(p.actions[0].valeurs.at(-1)) === 'v=spf1 include:_mailcust.gandi.net include:_spf.google.com ~all', JSON.stringify(p.actions[0]?.valeurs));
+  const juste = [{ rrset_name: '@', rrset_type: 'TXT', rrset_ttl: 300, rrset_values: ['"brevo-code:x"', '"v=spf1 include:_spf.google.com include:la-boite-immo.fr ~all"'] }];
+  verifier('SPF déjà complet : aucune action', plan.planSpf(juste, ['_spf.google.com']).actions.length === 0);
+  const avecBrevo = plan.planSpf(juste, ['_spf.google.com', 'spf.brevo.com']);
+  verifier('SPF : autres TXT de la racine conservés, nouvel include avant le all', avecBrevo.actions[0].valeurs[0] === '"brevo-code:x"' && plan.sansGuillemets(avecBrevo.actions[0].valeurs[1]) === 'v=spf1 include:_spf.google.com include:la-boite-immo.fr include:spf.brevo.com ~all');
+  const strict = [{ rrset_name: '@', rrset_type: 'TXT', rrset_ttl: 300, rrset_values: ['"v=spf1 include:_spf.google.com -all"'] }];
+  verifier('SPF : un « -all » n’est jamais assoupli', plan.planSpf(strict, ['_spf.google.com']).actions.length === 0);
+  const deux = [{ rrset_name: '@', rrset_type: 'TXT', rrset_ttl: 300, rrset_values: ['"v=spf1 a ~all"', '"v=spf1 mx ~all"'] }];
+  verifier('SPF : deux publiés, conflit sans écriture', plan.planSpf(deux).conflits.length === 1 && plan.planSpf(deux).actions.length === 0);
+  verifier('SPF absent : création', plan.sansGuillemets(plan.planSpf([], ['_spf.google.com']).actions[0].valeurs[0]) === 'v=spf1 include:_spf.google.com ~all');
+}
+
+{
+  const tiers = [{ rrset_name: '_dmarc', rrset_type: 'TXT', rrset_ttl: 10800, rrset_values: ['"v=DMARC1; p=none; pct=100; rua=mailto:dmarcreports@lovable.dev"'] }];
+  const p = plan.planDmarc(tiers);
+  verifier('DMARC : politique tierce remplacée par la quarantaine du cabinet', p.actions.length === 1 && plan.sansGuillemets(p.actions[0].valeurs[0]).includes('p=quarantine') && plan.sansGuillemets(p.actions[0].valeurs[0]).includes('rua=mailto:samy.santamarina+dmarc@trudaines.com'));
+  verifier('DMARC : déjà conforme, aucune action', plan.planDmarc([{ rrset_name: '_dmarc', rrset_type: 'TXT', rrset_ttl: 3600, rrset_values: p.actions[0].valeurs }]).actions.length === 0);
+  const m = plan.planMessagerie(zoneType(), {
+    brevo_code: { type: 'TXT', value: 'brevo-code:abc123', host_name: 'trudaines.com' },
+    dkim_record: { type: 'TXT', value: 'k=rsa;p=XYZ', host_name: 'mail._domainkey' },
+    dmarc_record: { type: 'TXT', value: 'v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com', host_name: '_dmarc' },
+    spf_record: { type: 'TXT', value: 'v=spf1 include:spf.brevo.com ~all', host_name: '@' },
+  });
+  const noms = m.actions.map((a) => `${a.nom} ${a.rrtype}`);
+  verifier('Messagerie : code Brevo, DKIM, SPF et DMARC du cabinet, pas celui de Brevo', noms.join(',') === '@ TXT,mail._domainkey TXT,@ TXT,_dmarc TXT' && plan.sansGuillemets(m.actions.at(-1).valeurs[0]).includes('p=quarantine'), noms.join(', '));
+  verifier('Messagerie : le SPF gagne Brevo sans perdre Gandi', m.actions.some((a) => a.nom === '@' && a.valeurs.some((v) => plan.sansGuillemets(v) === 'v=spf1 include:_mailcust.gandi.net include:_spf.google.com include:spf.brevo.com ~all')));
+  verifier('Messagerie : aucune action sur MX ni www', !m.actions.some((a) => a.rrtype === 'MX' || a.nom === 'www'));
+}
+
 verifier('Hôte Brevo normalisé', plan.nomRelatif('mail._domainkey.trudaines.com') === 'mail._domainkey' && plan.nomRelatif('trudaines.com') === '@' && plan.nomRelatif('') === '@');
 
 /* ---------------------------------------------- internet simulé, bout en bout */
@@ -340,6 +371,28 @@ const CONFIRMATION = 'METTRE EN LIGNE trudaines.com';
   const rb = await executer({ mode: 'retablir', secrets, ordre: { sauvegarde: r.sauvegarde } });
   const www = etat.zone.filter((e) => e.rrset_name === 'www');
   verifier('Rétablissement : www revient à son état d’origine', rb.reussite === true && www.length === 1 && www[0].rrset_type === 'A' && www[0].rrset_values[0] === '203.0.113.10');
+}
+
+{
+  const etat = internet();
+  const sans = await executer({ mode: 'messagerie', confirmation: 'oui', secrets });
+  verifier('Messagerie sans la phrase de confirmation : rien n’est écrit', etat.ecritures.length === 0 && sans.reussite === false);
+  const zoneAvant = JSON.stringify(etat.zone);
+  const r = await executer({ mode: 'messagerie', confirmation: 'SECURISER LA MESSAGERIE trudaines.com', secrets });
+  verifier('Messagerie : réussie', r.reussite === true, r.journal.filter((l) => ['echec', 'bloquant'].includes(l.statut)).map((l) => l.texte).join(' | '));
+  verifier('Messagerie : aucune écriture Cloudflare', !etat.ecritures.some((e) => e.service === 'cloudflare'));
+  const txt = etat.zone.find((e) => e.rrset_name === '@' && e.rrset_type === 'TXT');
+  verifier('Messagerie : SPF complété de Google, code Brevo présent', txt.rrset_values.some((v) => plan.sansGuillemets(v) === 'v=spf1 include:_mailcust.gandi.net include:_spf.google.com ~all') && txt.rrset_values.includes('"brevo-code:abc123"'), txt.rrset_values.join(' | '));
+  verifier('Messagerie : DKIM Brevo publié', etat.zone.some((e) => e.rrset_name === 'mail._domainkey' && e.rrset_type === 'TXT'));
+  const dmarc = etat.zone.find((e) => e.rrset_name === '_dmarc');
+  verifier('Messagerie : DMARC en quarantaine, rapports au cabinet', dmarc && plan.sansGuillemets(dmarc.rrset_values[0]) === 'v=DMARC1; p=quarantine; pct=100; rua=mailto:samy.santamarina+dmarc@trudaines.com; fo=1');
+  const intacts = JSON.parse(zoneAvant).filter((e) => e.rrset_name !== '@' || e.rrset_type !== 'TXT');
+  verifier('Messagerie : MX, www, racine et DKIM Gandi intacts', intacts.every((e) => etat.zone.some((z) => JSON.stringify(z) === JSON.stringify(e))));
+  verifier('Messagerie : DKIM Google signalé en attente, avec la marche à suivre', r.journal.some((l) => l.statut === 'attente' && l.texte.includes('google._domainkey')));
+  const avant = etat.ecritures.length;
+  const bis = await executer({ mode: 'messagerie', confirmation: 'SECURISER LA MESSAGERIE trudaines.com', secrets });
+  const nouvelles = etat.ecritures.slice(avant).filter((e) => !e.chemin.endsWith('/authenticate'));
+  verifier('Messagerie, deuxième passage : rien n’est réécrit', bis.reussite === true && nouvelles.length === 0, nouvelles.map((e) => `${e.methode} ${e.chemin}`).join(', '));
 }
 
 console.log(echecs ? `${echecs} échec(s)` : 'Toute la mise en ligne se comporte comme prévu.');
