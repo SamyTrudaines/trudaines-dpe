@@ -98,6 +98,10 @@
         bouton.textContent = 'Envoi en cours...';
       }
       var donnees = new FormData(form);
+      /* Durée de saisie mesurée sur l'horloge de l'appareil : son avance ou son retard s'annulent. */
+      var champHorodatage = form.querySelector('[name="horodatage"]');
+      var debut = champHorodatage ? parseInt(champHorodatage.value, 10) : NaN;
+      if (debut) donnees.set('duree', String(Date.now() - debut));
       fetch(form.action, { method: 'POST', body: donnees, headers: { Accept: 'application/json' } })
         .then(function (r) {
           return r.json().catch(function () {

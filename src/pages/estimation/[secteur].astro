@@ -7,9 +7,10 @@ import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import TableauPrix from '../../components/TableauPrix.astro';
 import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
-import { avisCommentés, agrégatAvis, trierAvis } from '../../lib/avis';
+import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 import { evt } from '../../lib/entonnoir';
+const preuve = await preuveAvis();
 
 interface Props { secteur: Secteur }
 
@@ -49,7 +50,7 @@ const donnees = [
 ---
 <Layout
   titre={secteur.titre}
-  description={secteur.description}
+  description={`${secteur.description} ${preuve}`}
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
   donnees={donnees}
 >

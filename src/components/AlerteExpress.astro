@@ -40,8 +40,8 @@ const choix = [...secteurs].sort((a, b) => a.arrondissement.localeCompare(b.arro
       <input type="hidden" name="origine" value={origine} />
       <input type="hidden" name="formule" value="express" />
       <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
-        <label for={`${id}-societe`}>Ne pas remplir</label>
-        <input type="text" id={`${id}-societe`} name="societe" tabindex="-1" autocomplete="off" />
+        <label for={`${id}-controle`}>Ne pas remplir</label>
+        <input type="text" id={`${id}-controle`} name="controle" tabindex="-1" autocomplete="off" />
       </div>
       <div data-corps>
         <div class="alerte-express-grille">

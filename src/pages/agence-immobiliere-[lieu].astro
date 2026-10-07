@@ -13,12 +13,13 @@ import { ambiance } from '../data/ambiance';
 import { agencesLocales, type AgenceLocale } from '../data/agences-locales';
 import { secteurs } from '../data/secteurs';
 import { site } from '../data/site';
-import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
 import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
 import { evt, referencesProches } from '../lib/entonnoir';
 import { prix, nombre } from '../lib/format';
 import { distance, memeVoie, position, ruesDuQuartier } from '../lib/quartiers';
 import { rues, periode, type Rue } from '../lib/rues';
+const preuve = await preuveAvis();
 
 /**
  * Pages « agence immobilière » d'un lieu : Montmartre, Saint-Georges, Trudaine.
@@ -112,7 +113,7 @@ const donneeEstimation = `${lieu.nom} : de ${prix(moinsChere.mediane)} à ${prix
 ---
 <Layout
   titre={lieu.titreSeo}
-  description={lieu.descriptionSeo}
+  description={`${lieu.descriptionSeo} ${preuve}`}
   filAriane={[{ nom: `Agence immobilière ${lieu.nom}` }]}
   donnees={donnees}
   ancreEstimation={`#estimation-${id}`}

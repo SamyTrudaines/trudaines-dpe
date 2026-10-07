@@ -14,6 +14,7 @@ Trudaines Immobilier (MIGA, RCS Paris 930 663 646), 2 rue Livingstone, 75018 Par
 - **Recommandation Trudaines WinWin** : identité et coordonnées de la personne qui recommande, projet et contexte, et, seulement avec l'accord de la personne recommandée, ses nom et téléphone. Finalité : organiser la mise en relation et verser la prime convenue. La personne recommandée n'est inscrite dans aucune liste ; ses coordonnées servent à la seule prise de contact convenue, et l'origine de ses données lui est indiquée dès le premier échange. Base légale : l'intérêt légitime du cabinet et l'accord WinWin.
 - **Candidature** : identité, coordonnées, CV. Finalité : étudier votre candidature.
 - **Mesure d'audience** : données de navigation agrégées, déposées uniquement après acceptation du bandeau.
+- **Fréquentation** : Cloudflare Web Analytics compte les pages vues, la provenance et le type d'appareil, sans cookie ni identifiant enregistré sur votre appareil, et ne conserve que des données agrégées.
 
 ## Durées de conservation
 

@@ -73,6 +73,8 @@ const tableaux = [
         <p class="mt-4">
           {site.nomLong}, {site.legal.rcs}. Carte professionnelle {site.legal.carteT}. Garantie financière
           {' '}{site.legal.garantie}, {site.legal.garantieMontant}. {site.legal.detentionFonds}
+          {' '}Médiateur de la consommation : {site.legal.mediateur.nom}, {site.legal.mediateur.adresse},{' '}
+          <a href={site.legal.mediateur.site} class="lien-souligne" rel="noopener">{site.legal.mediateur.libelleSite}</a>.
         </p>
       </div>
     </div>

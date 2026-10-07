@@ -36,6 +36,7 @@ export async function llmsTexte() {
 - Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}
 - Carte professionnelle : ${site.legal.carteT}, CCI Paris Île-de-France, ${site.legal.carteTDate}
 - Garantie financière : ${site.legal.garantie}, ${site.legal.garantieMontant}
+- Médiateur de la consommation : ${site.legal.mediateur.nom}, ${site.legal.mediateur.adresse}, ${site.legal.mediateur.site}
 - Contact : ${site.email}, ${site.telephone}
 - Horaires : ${site.horairesTexte}
 - Fiche Google de l'établissement : ${site.reseaux.google}
