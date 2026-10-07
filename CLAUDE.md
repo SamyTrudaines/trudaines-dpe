@@ -43,6 +43,8 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Acquéreurs : alerte complète `FormulaireAlerte` (/acheter#alerte) et alerte express `AlerteExpress`
   (accueil, fiches, références, quartiers), une seule fonction `functions/api/alerte.js`. Attributs Brevo
   `DELAI_ACHAT`, `FINANCEMENT`, `VENTE_PREALABLE` à créer : tant qu'ils manquent, le contact entre sans eux.
+- `/llms.txt` (`src/lib/llms.ts`) et `/llms-full.txt` (même texte suivi des pages en entier) se construisent
+  depuis les données et les collections : ne rien y recopier à la main.
 - Guide « Bien vendre à Paris » : PDF à l'italienne composé par Chromium, texte et mise en page dans
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
