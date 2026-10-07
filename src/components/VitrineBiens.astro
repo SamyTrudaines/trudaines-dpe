@@ -11,8 +11,12 @@ import { jeuPhoto } from '../lib/images';
  * sans JavaScript, tout reste lisible et cliquable. Le script ne fait
  * qu'ajouter les flèches, le compteur, le filet de progression et les
  * vignettes. Pas de défilement automatique : le visiteur garde la main.
+ * Diapositives en groupes nommés, selon le modèle de carrousel du W3C : un
+ * élément de liste ne peut pas changer de rôle sans fausser l'arbre
+ * d'accessibilité que lisent les lecteurs d'écran et les agents.
  * Deux clics au plus vers une demande de visite : « Demander une visite »
- * ouvre la fiche directement sur son formulaire.
+ * ouvre la fiche directement sur son formulaire. La vitrine commence sous le
+ * premier écran : ses photographies se chargent toutes à l'approche.
  */
 interface Props { biens: CollectionEntry<'biens'>[] }
 const { biens } = Astro.props;
@@ -21,7 +25,7 @@ const deux = (n: number) => String(n).padStart(2, '0');
 const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
 ---
 <div class="vitrine" data-vitrine role="region" aria-roledescription="carrousel" aria-label="Nos biens à vendre">
-  <ul class="vitrine-piste" data-piste>
+  <div class="vitrine-piste" data-piste>
     {biens.map((b, i) => {
       const d = b.data;
       const titre = d.accroche ?? d.titre;
@@ -29,7 +33,7 @@ const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
       const jeu = photo ? jeuPhoto(photo.src) : undefined;
       const fiche = `/bien/${b.id}`;
       return (
-        <li class="vitrine-diapo" role="group" aria-roledescription="diapositive" aria-label={`${i + 1} sur ${total}`}>
+        <div class="vitrine-diapo" role="group" aria-roledescription="diapositive" aria-label={`${i + 1} sur ${total}`}>
           <a href={fiche} class="vitrine-photo" tabindex="-1" aria-hidden="true">
             {photo && jeu && (
               <img
@@ -39,7 +43,7 @@ const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
                 alt={photo.alt}
                 width="1600"
                 height="1067"
-                loading={i === 0 ? 'eager' : 'lazy'}
+                loading="lazy"
                 decoding="async"
               />
             )}
@@ -55,10 +59,10 @@ const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
               <a href={`${fiche}#demande-visite`} class="lien-souligne text-sm" data-evt="vitrine_visite">Demander une visite</a>
             </div>
           </div>
-        </li>
+        </div>
       );
     })}
-  </ul>
+  </div>
 
   {total > 1 && (
     <>

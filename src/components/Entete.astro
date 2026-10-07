@@ -102,12 +102,12 @@ const secondaires = [
     const racine = document.documentElement;
     let prevu = false;
 
+    // Lectures d'abord, écritures ensuite : aucune mise en page forcée en cours de route.
     const ajuster = () => {
       prevu = false;
       const y = Math.max(0, window.scrollY);
-      entete.toggleAttribute('data-compact', y > 24);
-
       const course = racine.scrollHeight - window.innerHeight;
+      entete.toggleAttribute('data-compact', y > 24);
       entete.style.setProperty('--progression', course > 0 ? Math.min(1, y / course).toFixed(4) : '0');
     };
 
@@ -122,7 +122,22 @@ const secondaires = [
       { passive: true }
     );
     window.addEventListener('resize', ajuster, { passive: true });
-    ajuster();
+
+    /*
+     * État d'arrivée sans rien mesurer pendant le chargement : un repère d'un
+     * pixel, posé en haut de page, dit à un observateur si la page a quitté son
+     * sommet (arrivée par une ancre, retour en arrière). Le filet de lecture,
+     * lui, se calcule au premier défilement.
+     */
+    if ('IntersectionObserver' in window) {
+      const sommet = document.createElement('div');
+      sommet.setAttribute('aria-hidden', 'true');
+      sommet.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:25px;pointer-events:none;';
+      document.body.prepend(sommet);
+      new IntersectionObserver(([e]) => entete.toggleAttribute('data-compact', !e.isIntersecting)).observe(sommet);
+    } else {
+      requestAnimationFrame(ajuster);
+    }
 
     const boutonsPage = document.querySelectorAll('main a.bouton[href="/estimation"], main [data-cta-estimation]');
     if (boutonsPage.length && 'IntersectionObserver' in window) {

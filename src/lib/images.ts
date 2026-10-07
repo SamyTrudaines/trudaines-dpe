@@ -65,10 +65,32 @@ export const TAILLES_CARTE = '(min-width: 1024px) 341px, (min-width: 640px) 45vw
 export const TAILLES_VITRINE = '(min-width: 1024px) 568px, (min-width: 640px) 46vw, 94vw';
 
 /**
- * Photographie d'ouverture d'une fiche de bien, étendue sur tout le
- * conteneur : 78 rem moins 4 rem de marges, soit 1184 px.
+ * Photographie d'ouverture de l'accueil, produite par scripts/photo-ouverture.mjs.
+ * Les largeurs s'arrêtent à celle de l'original : 1500 px aujourd'hui. Avec
+ * l'original du photographe, relancer le script et ajouter ici les largeurs
+ * qu'il annonce.
  */
-export const TAILLES_FICHE = '(min-width: 1280px) 1184px, 94vw';
+const LARGEURS_OUVERTURE = [760, 960, 1200, 1500];
+const jeuOuverture = (format: 'avif' | 'webp') =>
+  LARGEURS_OUVERTURE.map((l) => `/images/marque/ouverture-anvers-${l}.${format} ${l}w`).join(', ');
+export const OUVERTURE = {
+  avif: jeuOuverture('avif'),
+  webp: jeuOuverture('webp'),
+  src: '/images/marque/ouverture-anvers-1200.webp',
+  tailles: '100vw',
+  largeur: 1500,
+  hauteur: 1001,
+};
 
-/** Vignettes de la galerie d'une fiche, en grille de trois colonnes. */
-export const TAILLES_GALERIE = '(min-width: 768px) 380px, 46vw';
+/**
+ * Galerie d'une fiche de bien, colonne principale du conteneur large : 92 rem
+ * moins 6 rem de marges, moins la carte de visite (22 rem, 21 rem en dessous
+ * de 1280 px) et la gouttière (3,5 rem, 2,5 rem). Pleine largeur sur téléphone
+ * et tablette.
+ */
+export const TAILLES_GALERIE_FICHE =
+  '(min-width: 1472px) 968px, (min-width: 1280px) calc(100vw - 31.5rem), (min-width: 1024px) calc(100vw - 29.5rem), 100vw';
+
+/** Vue de toutes les photographies d'une fiche : 75 rem au plus. */
+export const TAILLES_PLEIN_ECRAN = '(min-width: 1248px) 1200px, 100vw';
+

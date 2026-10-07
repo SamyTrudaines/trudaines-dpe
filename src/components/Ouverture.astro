@@ -1,41 +1,35 @@
 ---
+import { OUVERTURE } from '../lib/images';
+
 /**
- * Ouverture de l'accueil : le square d'Anvers et, au loin, le Sacré-Cœur,
- * pleine largeur. Photographie du cabinet.
+ * Ouverture de l'accueil : le square d'Anvers et, au loin, le Sacré-Cœur, vus
+ * de l'avenue Trudaine. Photographie du cabinet, déclinée par
+ * scripts/photo-ouverture.mjs sans jamais dépasser la définition de l'original.
  *
- * Le fichier reçu mesure 1500 px sur 840. Il a été agrandi deux fois par
- * super-résolution (modèle EDSR), plus net qu'un simple agrandissement :
- * la version la plus large fait 3000 px, de quoi servir un écran Retina de
- * 1440 px. À remplacer par l'original, environ 6000 px, dès qu'il est déposé
- * dans le dépôt.
- *
- * Deux cadrages : l'image entière sur ordinateur, une coupe verticale centrée
- * sur le dôme sur téléphone. La photographie s'arrête un peu au-dessus de la
- * moitié de l'écran, pour que le titre de la page se lise dès l'arrivée ; sur
- * ordinateur, la coupe descend vers le bas de l'image pour garder le dôme. Les noms de fichiers changent avec la photographie,
- * les images étant gardées trente jours en cache.
+ * Sur téléphone, la photographie est montrée entière, à son format : la
+ * recadrer en hauteur obligerait à l'agrandir au-delà de sa définition, et
+ * c'est ce qui la rendait granuleuse. Sur ordinateur, elle couvre la largeur
+ * et sa hauteur suit l'écran : la coupe ne retire que du ciel et de la
+ * chaussée, la largeur fixant l'échelle, donc jamais de définition. Aucun
+ * mouvement : une image immobile se restitue au mieux. Le titre de la page se
+ * lit dès l'arrivée, sous la photographie.
  */
-const alt = "Le square d'Anvers et, au loin, la basilique du Sacré-Cœur";
-const large = [1200, 1600, 2000, 2400, 3000]
-  .map((l) => `/images/marque/square-anvers-large-${l}.webp ${l}w`)
-  .join(', ');
-const haut = [640, 900, 1200, 1462]
-  .map((l) => `/images/marque/square-anvers-haut-${l}.webp ${l}w`)
-  .join(', ');
+const alt = "Le square d'Anvers et, au loin, la basilique du Sacré-Cœur, vus de l'avenue Trudaine";
 ---
-<div class="relative w-full overflow-hidden bg-[color:var(--color-papier)]">
+<div class="ouverture">
   <picture>
-    <source media="(min-width: 768px)" srcset={large} sizes="100vw" />
-    <source srcset={haut} sizes="100vw" />
+    <source type="image/avif" srcset={OUVERTURE.avif} sizes={OUVERTURE.tailles} />
     <img
-      src="/images/marque/square-anvers-large-2400.webp"
+      src={OUVERTURE.src}
+      srcset={OUVERTURE.webp}
+      sizes={OUVERTURE.tailles}
       alt={alt}
-      width="3000"
-      height="1680"
+      width={OUVERTURE.largeur}
+      height={OUVERTURE.hauteur}
       fetchpriority="high"
       loading="eager"
       decoding="async"
-      class="ouverture-photo h-[52svh] w-full object-cover object-center md:h-[54svh] md:object-[50%_70%] lg:h-[56svh]"
+      class="ouverture-photo"
     />
   </picture>
   <div class="ouverture-voile" aria-hidden="true"></div>

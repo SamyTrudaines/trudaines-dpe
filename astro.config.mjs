@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://www.trudaines.com",
   trailingSlash: "never",
-  build: { format: "file" },
+  // Feuille de style écrite dans chaque page : une requête bloquante de moins avant le premier affichage.
+  build: { format: "file", inlineStylesheets: "always" },
   integrations: [sitemap({ filter: (page) => !page.includes("/merci") })],
   vite: { plugins: [tailwindcss()] },
 
