@@ -55,6 +55,14 @@ const similaires = archive
 const echelle = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const lienWa = lienWhatsapp(Astro.url.pathname, messageWhatsapp);
 
+/*
+ * Les fiches reprises de l'ancien site ont pour description le début de leur
+ * texte : le chapô ne la répète pas, le premier paragraphe prend sa place.
+ * La description reste celle des moteurs de recherche.
+ */
+const debut = (texte: string) => texte.replace(/[*_#>`]/g, '').replace(/\s+/g, ' ').trim().slice(0, 60).toLowerCase();
+const chapoRepete = Boolean(bien.body) && debut(bien.body ?? '') === debut(d.description);
+
 /* Chiffres clés sous la galerie : ce qu'un acquéreur compare d'abord, d'une fiche à l'autre. */
 const chiffres = [
   { valeur: `${nombre(d.surface)} m²`, libelle: 'Surface' },
@@ -223,9 +231,9 @@ const donnees = [
         </aside>
 
         <div class="fiche-bas">
-          <div class="prose-trudaines max-w-[44rem]">
+          <div class:list={['prose-trudaines max-w-[44rem]', { 'fiche-texte-ouvert': chapoRepete }]}>
             <h2 class="titre-2 mt-0">Le bien</h2>
-            <p class="chapo mt-6">{d.description}</p>
+            {!chapoRepete && <p class="chapo mt-6">{d.description}</p>}
             <Content />
           </div>
 

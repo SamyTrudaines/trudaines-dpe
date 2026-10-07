@@ -1356,6 +1356,15 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 .fiche-contact-tel { font-size: 1.05rem; font-weight: 600; color: var(--color-encre); text-decoration: none; }
 .fiche-contact-tel:hover { text-decoration: underline; text-decoration-color: var(--color-or); text-underline-offset: 0.3em; }
 
+/* Premier paragraphe du texte d'un bien, en chapô quand la description ne le précède pas. */
+.fiche-texte-ouvert > h2 + p {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.55rem);
+  line-height: 1.55;
+  color: var(--color-encre);
+}
+
 /* Chiffres clés, sous la galerie : la surface d'abord, puis ce qui se compare. */
 .fiche-chiffres {
   display: grid;
