@@ -59,7 +59,7 @@ Le quartier des Batignolles est l'un des derniers villages de Paris. Ancien fief
 
 Emplacement recherché, rénovation intégrale, et rareté du double accès : un bien aux multiples potentiels (résidentiel, télétravail, profession libérale) à visiter rapidement. Contactez l’agence Trudaines pour convenir d’une visite. DPE D consommation 226 kWh / m² / an - Emissions GES 8 kg CO₂ / m² / an
 
-Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site [Géorisques](https://www.georisques.gouv.fr).
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d le 2026-09-18.
      En vente au 2026-10-03, mais pas encore diffusé : l'annonce doit porter le montant estimé des

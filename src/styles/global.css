@@ -666,7 +666,7 @@ html.menu-ouvert { overflow: hidden; }
  * dépasser celle de l'image entière.
  */
 .ouverture { position: relative; overflow: hidden; background-color: var(--color-papier); }
-.ouverture-photo { display: block; width: 100%; height: auto; aspect-ratio: 1500 / 1001; object-fit: cover; }
+.ouverture-photo { display: block; width: 100%; height: auto; aspect-ratio: 3000 / 2002; object-fit: cover; }
 @media (min-width: 768px) {
   .ouverture-photo { aspect-ratio: auto; height: min(62svh, 66.73vw); object-position: 50% 60%; }
 }
@@ -1500,3 +1500,23 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   .galerie-plein-liste { gap: 1.5rem; padding: 1.5rem 1.5rem 4rem; }
 }
 .galerie-plein-liste img { display: block; width: 100%; height: auto; }
+
+/* Texte d'un bien : intertitres en italique, points forts en liste à filets, sur deux colonnes. */
+.fiche-bas .prose-trudaines h2:not(.titre-2) {
+  margin-top: 3rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.9rem);
+}
+.fiche-bas .prose-trudaines ul {
+  display: grid;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-encre);
+}
+@media (min-width: 768px) {
+  .fiche-bas .prose-trudaines ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
+}
+.fiche-bas .prose-trudaines ul > li { margin: 0; padding: 0.85rem 0; border-bottom: 1px solid var(--color-trait); }
+.fiche-bas .prose-trudaines ul > li::before { content: none; }

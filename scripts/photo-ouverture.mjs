@@ -2,12 +2,10 @@
  * Photographie d'ouverture de l'accueil : le square d'Anvers et le Sacré-Cœur
  * vus de l'avenue Trudaine.
  *
- * L'original, assets/photos/square-anvers-trudaine.jpg, mesure 1500 px sur
- * 1001. Les variantes ne dépassent jamais cette définition : une image
+ * L'original du photographe, assets/photos/square-anvers-trudaine.jpg, mesure
+ * 7360 px sur 4912. Les variantes ne dépassent jamais sa définition : une image
  * agrandie, même par super-résolution, invente un grain que la photographie
- * n'a pas. Quand l'original du photographe, plus grand, sera déposé à la même
- * adresse, relancer ce script suffit : les largeurs supérieures apparaîtront
- * d'elles-mêmes.
+ * n'a pas.
  *
  * AVIF d'abord, pour le poids qui fait l'affichage rapide sur téléphone, WebP
  * ensuite pour les navigateurs qui ne lisent pas l'AVIF. Les qualités sont
@@ -24,12 +22,14 @@ const NOM = 'ouverture-anvers';
 const LARGEURS = [760, 960, 1200, 1500, 2000, 2560, 3000];
 
 const { width: largeurSource } = await sharp(SOURCE).metadata();
-const largeurs = LARGEURS.filter((l) => l < largeurSource).concat(largeurSource);
+/* Jamais au-delà de l'original ; plus petit que la plus grande largeur, il devient la dernière. */
+const largeurs = LARGEURS.filter((l) => l < largeurSource);
+if (largeurSource < LARGEURS[LARGEURS.length - 1]) largeurs.push(largeurSource);
 mkdirSync(DOSSIER, { recursive: true });
 
 for (const largeur of largeurs) {
   const base = sharp(SOURCE).resize({ width: largeur, withoutEnlargement: true, kernel: 'lanczos3' });
-  const avif = await base.clone().avif({ quality: 60, effort: 6 }).toBuffer();
+  const avif = await base.clone().avif({ quality: 60, effort: 4 }).toBuffer();
   const webp = await base.clone().webp({ quality: 86, effort: 6, smartSubsample: true }).toBuffer();
   writeFileSync(`${DOSSIER}/${NOM}-${largeur}.avif`, avif);
   writeFileSync(`${DOSSIER}/${NOM}-${largeur}.webp`, webp);

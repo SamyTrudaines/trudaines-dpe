@@ -66,11 +66,10 @@ export const TAILLES_VITRINE = '(min-width: 1024px) 568px, (min-width: 640px) 46
 
 /**
  * Photographie d'ouverture de l'accueil, produite par scripts/photo-ouverture.mjs.
- * Les largeurs s'arrêtent à celle de l'original : 1500 px aujourd'hui. Avec
- * l'original du photographe, relancer le script et ajouter ici les largeurs
- * qu'il annonce.
+ * L'original du photographe mesure 7360 px : la plus grande variante, 3000 px,
+ * sert les écrans Retina sans agrandir l'image.
  */
-const LARGEURS_OUVERTURE = [760, 960, 1200, 1500];
+const LARGEURS_OUVERTURE = [760, 960, 1200, 1500, 2000, 2560, 3000];
 const jeuOuverture = (format: 'avif' | 'webp') =>
   LARGEURS_OUVERTURE.map((l) => `/images/marque/ouverture-anvers-${l}.${format} ${l}w`).join(', ');
 export const OUVERTURE = {
@@ -78,8 +77,8 @@ export const OUVERTURE = {
   webp: jeuOuverture('webp'),
   src: '/images/marque/ouverture-anvers-1200.webp',
   tailles: '100vw',
-  largeur: 1500,
-  hauteur: 1001,
+  largeur: 3000,
+  hauteur: 2002,
 };
 
 /**

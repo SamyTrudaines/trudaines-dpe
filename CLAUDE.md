@@ -43,7 +43,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Acquéreurs : alerte complète `FormulaireAlerte` (/acheter#alerte) et alerte express `AlerteExpress`
   (accueil, fiches, références, quartiers), une seule fonction `functions/api/alerte.js`. Attributs Brevo
   `DELAI_ACHAT`, `FINANCEMENT`, `VENTE_PREALABLE` à créer : tant qu'ils manquent, le contact entre sans eux.
-- Photo d'accueil : original dans `assets/photos/square-anvers-trudaine.jpg` (1500 px), variantes AVIF et WebP
+- Photo d'accueil : original dans `assets/photos/square-anvers-trudaine.jpg` (7360 px), variantes AVIF et WebP
   par `scripts/photo-ouverture.mjs`, jamais agrandies ; largeurs dans `OUVERTURE` (`src/lib/images.ts`).
 - Fiche d'un bien : galerie en tête (`GalerieBien`), demande de visite dans une carte collante à côté des photos,
   barre mobile « Visiter ». Les photos actuelles portent un filigrane incrusté : à remplacer par les originaux.
