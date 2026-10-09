@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import CadreMoulure from '../../components/CadreMoulure.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import TableauPrix from '../../components/TableauPrix.astro';
@@ -54,8 +55,8 @@ const donnees = [
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
   donnees={donnees}
 >
-  <section class="section pt-10">
-    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+  <CadreMoulure enTete>
+    <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
         <p class="surtitre">Estimation · {secteur.arrondissement}</p>
         <h1 class="titre-1 mt-6">Estimation immobilière {secteur.nom}</h1>
@@ -77,7 +78,7 @@ const donnees = [
       </div>
       <FormulaireEstimation secteur={secteur.slug} identifiant={`estimation-${secteur.slug}`} />
     </div>
-  </section>
+  </CadreMoulure>
 
   {quartiers.length > 0 && <TableauPrix quartiers={quartiers} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />}
 
