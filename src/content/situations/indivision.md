@@ -4,7 +4,7 @@ question: "Comment vendre un appartement en indivision si un indivisaire refuse 
 chapo: "Vendre un bien indivis suppose en principe l'accord de tous. Quand un indivisaire bloque, l'article 815-5-1 du code civil permet à ceux qui détiennent au moins deux tiers des droits de faire autoriser la vente par le tribunal. La plupart des indivisions se dénouent pourtant sans juge : avec un chiffre incontestable sur la table, on se dispute moins."
 titreSeo: "Vendre un bien en indivision, même si un héritier refuse | Trudaines"
 descriptionSeo: "Unanimité, recours des deux tiers de l'article 815-5-1, partage judiciaire : ce que la loi permet quand un indivisaire refuse de vendre, expliqué calmement."
-dateMaj: 2026-09-19
+dateMaj: 2026-10-09
 ordre: 3
 motsCles:
   - vendre un bien en indivision
@@ -15,6 +15,7 @@ motsCles:
 essentiel:
   - "Vendre le bien entier est un acte de disposition : il faut en principe l'accord de tous les indivisaires (article 815-3 du code civil)."
   - "Les indivisaires détenant au moins deux tiers des droits peuvent demander au tribunal judiciaire l'autorisation de vendre malgré un refus (article 815-5-1 du code civil)."
+  - "Depuis la loi n° 2026-248 du 7 avril 2026, le président du tribunal judiciaire peut aussi autoriser un indivisaire à conclure seul la vente d'un bien indivis, en cas d'urgence et dans l'intérêt commun (article 815-6 du code civil)."
   - "La vente autorisée par le tribunal sur ce fondement se fait par licitation, c'est à dire aux enchères, ce qui se pèse avant d'engager la procédure."
   - "Nul ne peut être contraint à demeurer dans l'indivision : le partage peut toujours être demandé en justice (article 815 du code civil)."
   - "Chaque indivisaire peut vendre sa seule quote-part, mais les autres indivisaires sont prioritaires pour la racheter (article 815-14 du code civil)."
