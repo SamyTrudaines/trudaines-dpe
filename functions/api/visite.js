@@ -58,7 +58,6 @@ export async function onRequestPost({ request, env }) {
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
         `Votre demande de visite pour le bien ${reference.toUpperCase()} est bien enregistrée.`,
         'Je reviens vers vous aujourd’hui avec deux créneaux possibles. Si vous avez besoin d’éléments avant la visite, diagnostics, charges ou procès-verbaux d’assemblée, dites-le moi, je vous les transmets en amont.',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

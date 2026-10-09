@@ -74,7 +74,6 @@ export async function onRequestPost({ request, env }) {
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
         'Votre recommandation est bien arrivée. Je vous appelle sous 24 heures ouvrées pour convenir des présentations : rien ne part vers votre proche sans votre accord.',
         `${prime} Un accord écrit, signé avant la mise en relation, le fixe noir sur blanc.`,
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

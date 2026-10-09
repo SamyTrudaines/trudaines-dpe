@@ -44,7 +44,6 @@ export async function onRequestPost({ request, env }) {
         piecesJointes.length
           ? 'Pour organiser une visite, répondez simplement à cet email ou appelez le 06 20 46 59 12.'
           : `Le document est également consultable à cette adresse : ${urlFiche}`,
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
       piecesJointes,
     });
