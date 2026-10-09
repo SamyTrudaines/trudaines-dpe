@@ -360,6 +360,15 @@
     color: var(--color-encre);
   }
   .prose-trudaines :where(img) { margin-block: 2rem; }
+  /* Photographie prise sur place, légendée sous l'image. */
+  .prose-trudaines :where(figure) { margin-block: 2.5rem; }
+  .prose-trudaines :where(figure img) { margin-block: 0; width: 100%; height: auto; }
+  .prose-trudaines :where(figure.portrait img) { max-width: 26rem; }
+  .prose-trudaines :where(figcaption) {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--color-ardoise);
+  }
 
   /* Tableaux de données des actualités : filets fins, chiffres alignés à droite. */
   .prose-trudaines :where(table) {
