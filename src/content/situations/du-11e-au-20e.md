@@ -4,7 +4,7 @@ question: "Comment vendre mon appartement du 11e pour acheter plus grand dans le
 chapo: "Une famille qui s'agrandit, une chambre qui manque : passer d'un appartement du 11e à un logement plus grand dans le 20e est l'un des mouvements les plus sensés de l'est parisien. Les ventes signées le montrent, le pas à franchir coûte moins cher qu'en 2022. Encore faut-il vendre au bon prix, acheter au bon prix, et dans le bon ordre."
 titreSeo: "Vendre dans le 11e et acheter plus grand dans le 20e | Trudaines"
 descriptionSeo: "Vendre dans le 11e pour acheter plus grand dans le 20e : écarts de prix réels (DVF), ordre des opérations, négociation, financement."
-dateMaj: 2026-10-09
+dateMaj: 2026-10-05
 ordre: 10
 motsCles:
   - vendre appartement Paris 11e
