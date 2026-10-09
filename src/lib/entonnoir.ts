@@ -60,7 +60,12 @@ export function referencesProches(
   const paris = mandats.filter((b) => b.data.archive && b.data.ville === 'Paris');
   const trier = (liste: CollectionEntry<'biens'>[]) =>
     [...liste]
-      .sort((a, b) => Number(b.data.photos.length > 0) - Number(a.data.photos.length > 0) || b.data.surface - a.data.surface)
+      .sort(
+        (a, b) =>
+          Number(b.data.photos.length > 0) - Number(a.data.photos.length > 0) ||
+          Number(b.data.statut === 'vendu') - Number(a.data.statut === 'vendu') ||
+          b.data.surface - a.data.surface
+      )
       .slice(0, combien);
 
   const duQuartier = quartier ? paris.filter((b) => b.data.quartier === quartier) : [];

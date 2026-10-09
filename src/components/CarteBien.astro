@@ -33,7 +33,8 @@ interface Props {
   mention?: string;
 }
 const { id, titre, quartier, arrondissement, ville = 'Paris', prixBien, surface, pieces, statut, photo, chargement = 'lazy', sansPrix = false, vitrine = false, portee = 'vitrine', evt, mention, chambres, accroche } = Astro.props;
-const pastille = statut !== 'a-vendre' ? libelleStatut[statut] : sansPrix ? undefined : mention;
+/* Une référence ne porte pas de pastille : « Vendu » sur une carte sur six se lirait comme un aveu. */
+const pastille = sansPrix ? undefined : statut !== 'a-vendre' ? libelleStatut[statut] : mention;
 const jeu = photo ? jeuPhoto(photo.src, portee) : undefined;
 const tailles = vitrine ? TAILLES_VITRINE : TAILLES_CARTE;
 const cadre = vitrine ? 'aspect-[3/2]' : 'aspect-[4/3]';
@@ -74,7 +75,7 @@ const faits = faitsBien({ pieces, chambres, surface }, accroche ? '' : titre);
     {faits && <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{faits}</p>}
     {sansPrix ? (
       <p class="mt-2 text-sm uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">
-        {statut === 'vendu' ? 'Vendu' : 'Mandat présenté'}
+        {statut === 'vendu' ? 'Vendu par Trudaines' : 'Confié à Trudaines'}
       </p>
     ) : (
       <p class="mt-2 text-base font-semibold text-[color:var(--color-nuit)]">{prixAffiche(prixBien)}</p>
