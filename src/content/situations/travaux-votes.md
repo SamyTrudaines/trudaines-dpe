@@ -54,6 +54,6 @@ Un mot sur le fonds de travaux : les sommes que vous y avez versées restent acq
 
 Trois solutions reviennent dans les actes parisiens. Le prix affiché intègre les travaux et l'acquéreur les assume selon la règle légale. Ou bien le vendeur prend à sa charge les travaux votés avant le compromis, et l'acte le stipule. Ou encore un séquestre est constitué chez le notaire pour couvrir les appels à venir. Aucune n'est meilleure dans l'absolu : ce qui compte est d'arriver à l'offre avec un dossier où tout est chiffré, daté et sourcé, pour que la négociation porte sur des montants et non sur des peurs.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Avant la mise en vente, nous réunissons les procès-verbaux, les montants votés, l'échéancier des appels et l'état du fonds de travaux, et nous intégrons ces chiffres à l'avis de valeur écrit remis sous 48 heures après la visite : le prix proposé tient compte des travaux, ligne par ligne, et vous savez pourquoi. Pendant la commercialisation, chaque acquéreur sérieux reçoit le dossier complet avant son offre, ce qui évite les renégociations de dernière minute chez le notaire. C'est moins spectaculaire qu'une belle photo, et c'est souvent ce qui fait tenir le prix.

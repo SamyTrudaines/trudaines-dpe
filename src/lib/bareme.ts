@@ -68,7 +68,7 @@ const tauxGestion = lireTaux(honoraires.gestion[0].taux);
 if (tauxGestion === null) throw new Error('Barème : taux de gestion illisible');
 
 export const bareme = {
-  /** Vente en mandat exclusif : le cas du simulateur, choisi par le cabinet. */
+  /** Vente en mandat exclusif : le cas du simulateur, choisi par l'agence. */
   venteExclusif: chiffrer(honoraires.vente, 'exclusif'),
   venteSimple: chiffrer(honoraires.vente, 'taux'),
   /** Mandat de recherche, à la charge de l'acquéreur. */

@@ -33,7 +33,7 @@ const groupes = [
   {
     cle: 'paris',
     titre: 'Paris',
-    chapo: `Le cabinet travaille Paris, avec une connaissance au mètre carré des 9e, 10e, 17e et 18e. Ces mandats se sont trouvés dans les ${arrondissements.join(', ')} arrondissements.`,
+    chapo: `L'agence travaille Paris, avec une connaissance au mètre carré des 9e, 10e, 17e et 18e. Ces mandats se sont trouvés dans les ${arrondissements.join(', ')} arrondissements.`,
     biens: paris,
   },
   {
@@ -61,7 +61,7 @@ const donnees = [
 ---
 <Layout
   titre="Nos références | Les biens présentés par Trudaines"
-  description={`Les ${mandats.length} biens confiés au cabinet Trudaines depuis 2024, de ${Math.round(surfaceMin)} à ${Math.round(surfaceMax)} m², à Paris et dans l'ouest parisien.`}
+  description={`Les ${mandats.length} biens confiés à l'agence Trudaines depuis 2024, de ${Math.round(surfaceMin)} à ${Math.round(surfaceMax)} m², à Paris et dans l'ouest parisien.`}
   filAriane={[{ nom: 'Nos références' }]}
   donnees={donnees}
   cta={false}
@@ -80,7 +80,7 @@ const donnees = [
       <h1 class="titre-1">Nos références</h1>
       <p class="chapo mt-8">
         {mandats.length} mandats, de {Math.round(surfaceMin)} à {Math.round(surfaceMax)} m², du deux pièces de la
-        Butte à la demeure avec jardin. Les photographies sont celles des dossiers, prises pour le cabinet.
+        Butte à la demeure avec jardin. Les photographies sont celles des dossiers, prises pour l'agence.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Ces biens ne sont plus proposés à la vente. Aucun prix n'est affiché et aucune visite n'est organisée

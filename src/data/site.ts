@@ -1,9 +1,9 @@
 /**
- * Données de référence du cabinet.
+ * Données de référence de l'agence.
  * Un seul endroit à modifier pour les coordonnées et les mentions légales.
  */
 
-/** Fiche Google du cabinet (Google Business Profile), lien de partage fourni par Samy. */
+/** Fiche Google de l'agence (Google Business Profile), lien de partage fourni par Samy. */
 const ficheGoogle = 'https://share.google/HkXUbdomV9hgp6Kda';
 
 export const site = {
@@ -12,9 +12,9 @@ export const site = {
   raisonSociale: 'MIGA',
   formeJuridique: 'SASU',
   url: 'https://www.trudaines.com',
-  baseline: 'Cabinet de vente immobilière, Paris 9e, 10e, 17e et 18e',
+  baseline: 'Agence immobilière, Paris 9e, 10e, 17e et 18e',
   description:
-    "Cabinet de vente immobilière fondé par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires à Paris, dans les 9e, 10e, 17e et 18e arrondissements.",
+    "Agence immobilière fondée par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires à Paris, dans les 9e, 10e, 17e et 18e arrondissements.",
   email: 'samy.santamarina@trudaines.com',
   telephone: '06 20 46 59 12',
   telephoneLien: '+33620465912',
@@ -43,11 +43,11 @@ export const site = {
     garantie: 'Galian, 89 rue de la Boétie, 75008 Paris',
     garantieMontant: '120 000 euros',
     garantieSocietaire: '175720A',
-    detentionFonds: 'Le cabinet ne reçoit aucun fonds, effet ou valeur.',
+    detentionFonds: "L'agence ne reçoit aucun fonds, effet ou valeur.",
     /**
      * Médiateur de la consommation, convention active depuis le 29 avril 2026.
      * L'adresse électronique du médiateur est réservée à ses échanges avec le
-     * cabinet : elle ne doit figurer sur aucun support, ce site compris.
+     * agence : elle ne doit figurer sur aucun support, ce site compris.
      */
     mediateur: {
       nom: 'MEDIMMOCONSO',
@@ -79,16 +79,16 @@ export const site = {
   ga4: import.meta.env.PUBLIC_GA4_ID ?? '',
   /**
    * Adresse de la page de réservation en ligne d'un créneau d'estimation (agenda
-   * du cabinet), en https. Tant qu'elle est vide, aucun bouton « Choisir un
+   * de l'agence), en https. Tant qu'elle est vide, aucun bouton « Choisir un
    * créneau » ne s'affiche. Elle ne sert qu'à la visite d'estimation : les visites
-   * de biens restent une demande par formulaire, le cabinet vérifiant chaque
+   * de biens restent une demande par formulaire, l'agence vérifiant chaque
    * acheteur avant de le recevoir.
    */
   reservationEstimation: '' as string,
 } as const;
 
 /**
- * Barème maximum affiché, au sens de l'arrêté du 26 janvier 2022 : le cabinet
+ * Barème maximum affiché, au sens de l'arrêté du 26 janvier 2022 : l'agence
  * peut pratiquer moins, jamais plus. Prix toutes taxes comprises et charge du
  * paiement indiquée pour chaque prestation, comme l'impose l'arrêté du
  * 10 janvier 2017. Les fourchettes de prix ne sont pas admises : un taux par
@@ -123,7 +123,7 @@ export const honoraires = {
 /**
  * Trudaines WinWin, la recommandation récompensée.
  *
- * Qui présente ponctuellement au cabinet un proche qui vend, qui achète avec
+ * Qui présente ponctuellement à l'agence un proche qui vend, qui achète avec
  * un mandat de recherche ou qui confie la gestion de son bien reçoit `part`
  * des honoraires hors taxes encaissés sur l'opération ; en gestion, ceux des
  * `anneesGestion` premières années seulement. Règles fixées par Samy
@@ -135,7 +135,7 @@ export const honoraires = {
  * habituelle. La prime suit l'encaissement des honoraires, donc la signature
  * de l'acte, et un accord écrit la fixe avant la mise en relation.
  *
- * `lien` pointe vers l'application de parrainage du cabinet quand elle existe.
+ * `lien` pointe vers l'application de parrainage de l'agence quand elle existe.
  */
 export const parrainage = {
   nom: 'Trudaines WinWin',

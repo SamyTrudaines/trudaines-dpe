@@ -16,7 +16,7 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
 ---
 <Layout
   titre="Appartements à vendre à Paris | Trudaines"
-  description="Les appartements à vendre du cabinet Trudaines à Paris : prix, surface, diagnostic énergétique et photographies, à filtrer par quartier, budget et pièces."
+  description="Les appartements à vendre de l'agence Trudaines à Paris : prix, surface, diagnostic énergétique et photographies, à filtrer par quartier, budget et pièces."
   filAriane={[{ nom: 'Acheter' }]}
 >
   <Banniere
@@ -101,12 +101,12 @@ const quartiers = [...new Set(biens.map((b) => b.data.quartier))].sort();
       {biens.length === 0 ? (
         <div class="max-w-2xl">
           <p class="text-[color:var(--color-ardoise)]">
-            Aucun bien n'est actuellement diffusé publiquement. Une partie des ventes du cabinet se fait avant
+            Aucun bien n'est actuellement diffusé publiquement. Une partie des ventes de l'agence se fait avant
             diffusion, auprès d'acquéreurs déjà qualifiés : créez une alerte ci-dessous, nous vous écrivons dès
             qu'un bien correspond à votre recherche.
           </p>
           <p class="mt-6 text-sm">
-            <a href="/references" class="lien-souligne">Voir les biens que le cabinet a présentés</a>
+            <a href="/references" class="lien-souligne">Voir les biens que l'agence a présentés</a>
           </p>
         </div>
       ) : (

@@ -29,7 +29,7 @@
  *   { "nom": "toits-haussmanniens", "hauteur": 150, "legende": "…" }
  *   ```
  *
- * Écrire un chiffre dans ces blocs engage le cabinet : ils ne contiennent que
+ * Écrire un chiffre dans ces blocs engage l'agence : ils ne contiennent que
  * des valeurs calculées par scripts/prix-dvf.py, jamais des ordres de grandeur.
  */
 import { readFileSync, readdirSync, mkdirSync, writeFileSync, existsSync, copyFileSync } from 'node:fs';
@@ -46,7 +46,7 @@ const nombres = new Intl.NumberFormat('fr-FR');
 const MENTION_LEGALE =
   'Trudaines Immobilier, MIGA SASU, RCS Paris 930 663 646, 2 rue Livingstone, 75018 Paris. ' +
   'Carte professionnelle CPI 9201 2024 000 000 114, CCI Paris Île-de-France. Garantie financière ' +
-  'Galian, 120 000 €. Le cabinet ne reçoit aucun fonds, effet ou valeur. Document non contractuel, ' +
+  "Galian, 120 000 €. L'agence ne reçoit aucun fonds, effet ou valeur. Document non contractuel, " +
   'communiqué sous réserve d’erreur ou d’omission.';
 
 const CONTACT = 'Samy Santamarina · 06 20 46 59 12 · samy.santamarina@trudaines.com · trudaines.com';

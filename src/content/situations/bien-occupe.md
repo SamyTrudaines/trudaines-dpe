@@ -3,7 +3,7 @@ titre: "Vendre un bien occupé ou donner congé"
 question: "Puis je vendre mon appartement avec un locataire dedans ?"
 chapo: "Oui, et sans l'accord du locataire : la vente d'un logement loué ne met pas fin au bail, qui se poursuit avec l'acquéreur. Vous pouvez aussi vendre libre en donnant congé pour vendre, six mois avant l'échéance du bail en location nue, trois mois en meublé. Le bon choix dépend du prix, de la date d'échéance du bail et du profil du locataire."
 titreSeo: "Vendre un appartement loué ou donner congé pour vendre | Trudaines"
-descriptionSeo: "Vendre occupé ou donner congé pour vendre : délais, priorité du locataire, décote constatée à Paris. Les deux calendriers expliqués par un cabinet du 9e."
+descriptionSeo: "Vendre occupé ou donner congé pour vendre : délais, priorité du locataire, décote constatée à Paris. Les deux calendriers expliqués par une agence du 9e."
 dateMaj: 2026-09-19
 ordre: 1
 motsCles:
@@ -62,6 +62,6 @@ Tout part de la date d'échéance écrite dans le bail. En location nue, si elle
 
 Un cas impose de vérifier avant d'agir : le locataire âgé. L'article 15 III de la même loi protège le locataire de plus de 65 ans dont les ressources sont inférieures à un plafond réglementaire : le congé ne peut lui être délivré sans qu'une offre de relogement correspondant à ses besoins et à ses possibilités lui soit faite à proximité. La protection tombe si le bailleur a lui-même plus de 65 ans ou des ressources inférieures au plafond. Les plafonds exacts et leur appréciation relèvent du notaire, à consulter avant de faire délivrer le congé.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Nous commençons par lire le bail : régime, date d'échéance, loyer, profil du locataire. Nous chiffrons ensuite les deux scénarios, vente occupée maintenant et vente libre à l'échéance, avec le coût du portage entre les deux. L'avis de valeur écrit, remis sous 48 heures après la visite, présente les deux prix et le calendrier attaché à chacun. Si le congé pour vendre est la bonne voie, nous en préparons le contenu avec votre notaire et faisons délivrer l'acte dans les délais. Pendant la commercialisation d'un bien occupé, nous organisons les visites avec le locataire, dans les limites que l'article 4 de la loi du 6 juillet 1989 fixe aux clauses de visite. Vous décidez sur pièces, avec un compte rendu écrit après chaque visite, comme sur toutes nos ventes.

@@ -69,7 +69,7 @@ const courriel = `mailto:${contact.email}?subject=${encodeURIComponent('Estimati
 const MENTION_LEGALE =
   'Trudaines Immobilier, MIGA SASU, RCS Paris 930 663 646, 2 rue Livingstone, 75018 Paris. ' +
   'Carte professionnelle CPI 9201 2024 000 000 114, CCI Paris Île-de-France. Garantie financière ' +
-  'Galian, 120 000 €. Le cabinet ne reçoit aucun fonds, effet ou valeur. Document non contractuel, ' +
+  "Galian, 120 000 €. L'agence ne reçoit aucun fonds, effet ou valeur. Document non contractuel, " +
   'communiqué sous réserve d’erreur ou d’omission.';
 
 /* ---------------------------------------------------------------- chiffres */
@@ -989,7 +989,7 @@ async function imprimer() {
     mkdirSync(dossierImages, { recursive: true });
     await sharp(couverture).resize({ width: 1200 }).webp({ quality: 82 }).toFile(join(dossierImages, `${SLUG}.webp`));
 
-    // Métadonnées du document, au nom du cabinet.
+    // Métadonnées du document, au nom de l'agence.
     const pdf = await PDFDocument.load(pdfBrut);
     pdf.setTitle('Bien vendre à Paris, le guide du vendeur');
     pdf.setAuthor('Trudaines Immobilier');

@@ -18,7 +18,7 @@ export function echapper(valeur) {
  * Toute donnée venue du formulaire est bornée avant d'entrer dans un email ou
  * dans un objet de message. Sans cette borne, un tiers peut faire envoyer par
  * notre propre expéditeur Brevo, donc signé par notre domaine, un message dont
- * il choisit le contenu : c'est un vecteur d'hameçonnage au nom du cabinet.
+ * il choisit le contenu : c'est un vecteur d'hameçonnage au nom de l'agence.
  */
 export function borner(valeur, longueur = 400) {
   return String(valeur ?? '')
@@ -200,7 +200,7 @@ export function telephoneInternational(valeur) {
 /**
  * Trace du consentement. La case cochée devient l'attribut OPT_IN, daté du
  * jour : c'est la preuve que demande le RGPD, portée par le contact lui même,
- * et l'email de notification reçu par le cabinet en garde le double. Une
+ * et l'email de notification reçu par l'agence en garde le double. Une
  * campagne ne part jamais vers un contact dont OPT_IN est faux.
  */
 export function optIn(donnees) {

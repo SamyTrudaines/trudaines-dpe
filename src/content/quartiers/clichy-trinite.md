@@ -7,7 +7,7 @@ fourchette: 8 000 à 14 000 € le m², du premier au neuvième décile
 chapo: Entre la place de Clichy et l'église de la Trinité, un secteur de transition où les écarts de prix entre deux rues voisines sont parmi les plus marqués du 9e.
 ordre: 3
 titreSeo: Immobilier Clichy Trinité, Paris 9e | Prix et vente - Trudaines
-descriptionSeo: "Marché immobilier du secteur Clichy Trinité, Paris 9e : prix au mètre carré, typologies et vente accompagnée par le cabinet Trudaines."
+descriptionSeo: "Marché immobilier du secteur Clichy Trinité, Paris 9e : prix au mètre carré, typologies et vente accompagnée par l'agence Trudaines."
 photos:
   - src: /images/quartiers/clichy-trinite-rue.webp
     alt: Immeuble haussmannien d'angle à rotonde, Paris

@@ -15,9 +15,9 @@ Directeur de la publication : Samy Santamarina, président.
 
 Carte professionnelle CPI 9201 2024 000 000 114 délivrée le 22 août 2024 par la CCI Paris Île-de-France, mentions transaction sur immeubles et fonds de commerce.
 Garantie financière : Galian, 89 rue de la Boétie, 75008 Paris, à hauteur de 120 000 euros, numéro de sociétaire 175720A.
-Le cabinet ne reçoit aucun fonds, effet ou valeur.
+L'agence ne reçoit aucun fonds, effet ou valeur.
 
-L'activité est soumise à la loi n° 70-9 du 2 janvier 1970 et au décret n° 72-678 du 20 juillet 1972. Le cabinet applique le code de déontologie des professionnels de l'immobilier institué par le décret n° 2015-1090 du 28 août 2015.
+L'activité est soumise à la loi n° 70-9 du 2 janvier 1970 et au décret n° 72-678 du 20 juillet 1972. L'agence applique le code de déontologie des professionnels de l'immobilier institué par le décret n° 2015-1090 du 28 août 2015.
 
 ## Hébergement
 
@@ -33,7 +33,7 @@ Conformément aux articles L611-1 et suivants du code de la consommation, tout c
 
 Médiateur compétent : MEDIMMOCONSO, 1 allée du Parc de Mesemena, bâtiment A, CS 25222, 44505 La Baule Cedex, [www.medimmoconso.fr](https://www.medimmoconso.fr), organisme référencé par la Commission d'évaluation et de contrôle de la médiation de la consommation. Le médiateur se saisit par le formulaire de réclamation en ligne de son site ou par courrier à cette adresse.
 
-Avant de le saisir, le consommateur adresse une réclamation écrite au cabinet, par courriel à samy.santamarina@trudaines.com ou par courrier au 2 rue Livingstone, 75018 Paris. Il dispose ensuite d'un an à compter de cette réclamation pour saisir le médiateur (article L612-2 du code de la consommation).
+Avant de le saisir, le consommateur adresse une réclamation écrite à l'agence, par courriel à samy.santamarina@trudaines.com ou par courrier au 2 rue Livingstone, 75018 Paris. Il dispose ensuite d'un an à compter de cette réclamation pour saisir le médiateur (article L612-2 du code de la consommation).
 
 ## Données personnelles
 
@@ -41,11 +41,11 @@ Le traitement des données collectées sur ce site est décrit dans la [politiqu
 
 ## Crédits photographiques
 
-Les photographies de biens et de références sont celles du cabinet, de même
+Les photographies de biens et de références sont celles de l'agence, de même
 que la vue du square d'Anvers et du Sacré-Cœur qui ouvre la page d'accueil.
 
 Les photographies d'atmosphère sont publiées sous licence Unsplash, et
-choisies par le cabinet : la butte Montmartre vue des toits par Henrique
+choisies par l'agence : la butte Montmartre vue des toits par Henrique
 Ferreira, la fenêtre ouverte sur les toits par Isaiah B, la rue pavée par
 Clément Dellandrea, la terrasse sous la glycine par Alex Harmuth, le café de
 coin par Caleb Maxwell, la brasserie de quartier par Camille Brodard, les

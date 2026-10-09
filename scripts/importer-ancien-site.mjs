@@ -232,7 +232,7 @@ function classer(chemin) {
 
 /* ---------------------------------------------------------------- extraction */
 
-/** Quartiers du cabinet, reconnus par les rues et repères cités dans l'annonce. */
+/** Quartiers de l'agence, reconnus par les rues et repères cités dans l'annonce. */
 const QUARTIERS = [
   {
     nom: 'Trudaine Maubeuge',
@@ -261,7 +261,7 @@ const QUARTIERS = [
   },
 ];
 
-/** Quartier du bien : d'abord les secteurs du cabinet, sinon l'arrondissement. */
+/** Quartier du bien : d'abord les secteurs de l'agence, sinon l'arrondissement. */
 function deduireQuartier(texte, codePostal, ville) {
   for (const quartier of QUARTIERS) {
     if (quartier.codePostal !== codePostal) continue;

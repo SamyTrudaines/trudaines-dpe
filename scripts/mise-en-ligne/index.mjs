@@ -86,7 +86,7 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   }
   const rua = (audit.dns.dmarc.join(' ').match(/rua=mailto:([^;"\s]+)/i) || [])[1];
   if (rua && !rua.toLowerCase().endsWith(`@${C.DOMAINE}`)) {
-    noter('DNS', 'alerte', `les rapports DMARC du domaine partent chez ${rua.split('@')[1]}, un tiers : à rapatrier vers une adresse du cabinet`);
+    noter('DNS', 'alerte', `les rapports DMARC du domaine partent chez ${rua.split('@')[1]}, un tiers : à rapatrier vers une adresse de l'agence`);
   }
   for (const b of verifierServeursDeNoms(audit.dns.ns)) noter('DNS', 'bloquant', b);
   for (const b of verifierCaa(audit.dns.caa)) noter('DNS', 'bloquant', b);

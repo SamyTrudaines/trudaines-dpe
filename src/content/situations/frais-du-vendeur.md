@@ -18,7 +18,7 @@ essentiel:
   - "L'état daté demandé au syndic est dû par le vendeur et plafonné à 380 € TTC (décret du 21 février 2020)."
   - "Si un crédit est inscrit sur le bien, la mainlevée de l'hypothèque donne lieu à un acte au tarif réglementé, et le remboursement anticipé peut déclencher une indemnité plafonnée à six mois d'intérêts, dans la limite de 3 % du capital restant dû."
   - "La vente de la résidence principale est exonérée d'impôt sur la plus-value (article 150 U du code général des impôts) ; les autres biens suivent le régime des plus-values, avec ses abattements par durée de détention."
-  - "Les honoraires du cabinet suivent le mandat : leur montant et leur charge figurent dans l'annonce, et le barème publié est un maximum."
+  - "Les honoraires de l'agence suivent le mandat : leur montant et leur charge figurent dans l'annonce, et le barème publié est un maximum."
 faq:
   - question: "Combien coûte le dossier de diagnostics à Paris ?"
     reponse: "Quelques centaines d'euros pour un appartement, selon la surface, l'année de construction et l'équipement, gaz et électricité notamment. C'est un ordre de grandeur constaté, pas un tarif réglementé : les prix varient d'un diagnostiqueur à l'autre. Nous faisons établir des devis auprès de professionnels dont nous connaissons le sérieux, et les rapports restent valables pour toute la durée de leurs validités légales respectives."
@@ -41,7 +41,7 @@ faq:
 | Mainlevée d'hypothèque, s'il y a une inscription | Vendeur | Tarif réglementé, selon le capital inscrit |
 | Indemnité de remboursement anticipé, si le contrat la prévoit | Vendeur | Plafond légal : six mois d'intérêts, dans la limite de 3 % du capital restant dû |
 | Impôt sur la plus-value et prélèvements sociaux | Vendeur | Zéro pour la résidence principale ; sinon selon durée de détention, calculé par le notaire |
-| Honoraires du cabinet | Selon le mandat | Charge et montant indiqués dans l'annonce ; barème publié en maximum |
+| Honoraires de l'agence | Selon le mandat | Charge et montant indiqués dans l'annonce ; barème publié en maximum |
 | Droits de mutation et émoluments d'acte | Acquéreur | Les « frais de notaire » ne sont pas pour vous |
 | Taxe foncière de l'année | Propriétaire au 1er janvier | Partage au prorata par convention d'usage dans l'acte |
 
@@ -59,6 +59,6 @@ La vente de votre résidence principale est exonérée d'impôt sur la plus-valu
 
 Tout cela est calculé, prélevé et déclaré par le notaire au moment de l'acte : vous recevez un net, pas une facture à venir. La bonne pratique est de demander la simulation dès l'avis de valeur, pour raisonner en net vendeur du premier jour.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Notre avis de valeur écrit, remis sous 48 heures après la visite, se conclut par un tableau de net vendeur : prix conseillé, honoraires selon le mandat choisi, postes certains, postes « selon le dossier » avec la question précise à poser à votre banque ou à votre notaire pour les fixer. Nous coordonnons ensuite les devis de diagnostics, la demande d'état daté et les échanges avec l'étude, pour que le chiffre annoncé au départ soit celui du virement à l'arrivée. Un vendeur qui connaît son net négocie mieux : il sait exactement où est son plancher.

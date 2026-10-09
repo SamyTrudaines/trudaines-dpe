@@ -1,5 +1,5 @@
 /**
- * Secteurs couverts par le cabinet.
+ * Secteurs couverts par l'agence.
  * Ajouter un secteur ici crée automatiquement sa page /estimation/<slug>.
  */
 export type QuestionFaq = { question: string; reponse: string };

@@ -3,7 +3,7 @@ import { bareme, pourcent } from './bareme';
 import { agrégatAvis } from './avis';
 
 /**
- * Faits du cabinet repris par les pages « agence immobilière » : bloc « En
+ * Faits de l'agence repris par les pages « agence immobilière » : bloc « En
  * bref » et questions fréquentes. Une seule rédaction pour toutes les pages,
  * chaque phrase calculée sur les données du site : barème, avis, adresse.
  */

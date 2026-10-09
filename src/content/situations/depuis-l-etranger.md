@@ -1,7 +1,7 @@
 ---
 titre: "Vendre depuis l'étranger"
 question: "Comment vendre mon appartement parisien en vivant à l'étranger ?"
-chapo: "Tout peut se faire sans revenir en France : la procuration règle la signature, le cabinet gère les accès, les diagnostics et les visites, et le notaire sécurise les fonds. Les vrais sujets sont fiscaux : taux applicables aux non-résidents, représentant fiscal parfois obligatoire, et exonérations qui se valident avec le notaire avant de promettre quoi que ce soit."
+chapo: "Tout peut se faire sans revenir en France : la procuration règle la signature, l'agence gère les accès, les diagnostics et les visites, et le notaire sécurise les fonds. Les vrais sujets sont fiscaux : taux applicables aux non-résidents, représentant fiscal parfois obligatoire, et exonérations qui se valident avec le notaire avant de promettre quoi que ce soit."
 titreSeo: "Vendre son appartement en France depuis l'étranger | Trudaines"
 descriptionSeo: "Procuration, visites à distance, plus-value du non-résident, représentant fiscal : vendre un appartement parisien depuis l'étranger, sans revenir en France."
 dateMaj: 2026-09-19
@@ -23,7 +23,7 @@ faq:
   - question: "Dois je revenir en France pour signer ?"
     reponse: "Non. Vous pouvez donner procuration pour le compromis comme pour l'acte. La procuration authentique peut être reçue à distance par un notaire français, par comparution par visioconférence, ou être établie localement puis légalisée ou apostillée selon le pays où vous résidez. Votre notaire indique la forme requise pour votre dossier."
   - question: "Qui s'occupe du logement, des diagnostics et des visites ?"
-    reponse: "Le cabinet. Nous détenons les clés, faisons intervenir le diagnostiqueur, préparons le logement, conduisons les visites et vous envoyons un compte rendu écrit après chacune, puis un point hebdomadaire. Le décalage horaire se gère par écrit et par des points en visioconférence à heure convenue."
+    reponse: "L'agence. Nous détenons les clés, faisons intervenir le diagnostiqueur, préparons le logement, conduisons les visites et vous envoyons un compte rendu écrit après chacune, puis un point hebdomadaire. Le décalage horaire se gère par écrit et par des points en visioconférence à heure convenue."
   - question: "Combien serai je imposé sur la plus-value ?"
     reponse: "Le régime des non-résidents combine l'impôt de 19 % et des prélèvements sociaux, ramenés au seul prélèvement de solidarité de 7,5 % pour les personnes affiliées à un régime de sécurité sociale de l'Espace économique européen ou de la Suisse. S'y ajoutent les abattements pour durée de détention, une surtaxe au delà de 50 000 € de plus-value imposable, et d'éventuelles exonérations. Le notaire calcule et prélève tout à l'acte : demandez lui une simulation avant de fixer votre prix net vendeur."
   - question: "Qu'est ce que le représentant fiscal, et me concerne t il ?"
@@ -50,6 +50,6 @@ Ce qui inquiète les vendeurs expatriés n'est pas la signature, c'est l'opacit�
 
 Le logement, lui, ne reste jamais sans regard : nous détenons les clés, faisons intervenir diagnostiqueurs et entreprises, aérons avant les visites, et vous signalons tout ce qui mérite une décision, une fuite comme un radiateur à purger.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Nous commençons, comme toujours, par un avis de valeur écrit remis sous 48 heures après la visite, complété d'une estimation du calendrier réaliste vu votre pays de résidence et les délais de procuration. Nous travaillons ensuite en triangle avec votre notaire : lui la procuration, la fiscalité et les fonds, nous le terrain, les visites et la négociation, vous les décisions, par écrit. Plusieurs de nos ventes se sont conclues sans que le vendeur remette un pied en France ; c'est un déroulé normal du dossier, pas un exploit.

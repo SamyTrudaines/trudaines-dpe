@@ -7,7 +7,7 @@ fourchette: 8 100 à 14 800 € le m², du premier au neuvième décile
 chapo: De la place des Abbesses à l'avenue Junot, un marché où la vue, l'étage et le calme pèsent autant que la surface.
 ordre: 4
 titreSeo: Immobilier Montmartre, Paris 18e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré à Montmartre, physionomie du marché et vente accompagnée par le cabinet Trudaines, installé au pied de la Butte.
+descriptionSeo: Prix au mètre carré à Montmartre, physionomie du marché et vente accompagnée par l'agence Trudaines, installée au pied de la Butte.
 photos:
   - src: /images/quartiers/montmartre-rue.webp
     alt: Église de pierre près du Sacré-Cœur, Montmartre

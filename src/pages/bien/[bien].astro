@@ -73,7 +73,7 @@ const chiffres = [
 ];
 
 /*
- * Le titre d'une page de référence porte le nom du cabinet tant que la balise
+ * Le titre d'une page de référence porte le nom de l'agence tant que la balise
  * reste sous les 70 caractères utiles en résultat de recherche. Au delà, le
  * titre du bien seul vaut mieux qu'une marque tronquée par Google.
  */
@@ -127,7 +127,7 @@ const donnees = [
   titre={titreSeo([d.titre, !archive && `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
   description={descriptionSeo(
     archive
-      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par le cabinet Trudaines, bien non disponible.`
+      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par l'agence Trudaines, bien non disponible.`
       : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`,
   )}
   image={d.photos[0]?.src}
@@ -152,7 +152,7 @@ const donnees = [
             <div class="fiche-prix">
               {archive ? (
                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-encre)]">
-                  {d.statut === 'vendu' ? 'Vendu par le cabinet' : 'Mandat présenté par le cabinet'}
+                  {d.statut === 'vendu' ? "Vendu par l'agence" : "Mandat présenté par l'agence"}
                 </p>
               ) : (
                 <>
@@ -200,7 +200,7 @@ const donnees = [
                 <p class="surtitre">Référence</p>
                 <h2 class="titre-3 mt-4">Un bien comparable à vendre ?</h2>
                 <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
-                  Ce dossier a été préparé, photographié et présenté par le cabinet. Le vôtre le sera de la même
+                  Ce dossier a été préparé, photographié et présenté par l'agence. Le vôtre le sera de la même
                   façon : avis de valeur écrit après visite, ventes comparables citées, compte rendu après chaque
                   visite.
                 </p>
@@ -342,7 +342,7 @@ const donnees = [
   {similaires.length > 0 && (
     <section class="section filet">
       <div class="conteneur">
-        <h2 class="titre-2">{archive ? 'Autres références du cabinet' : 'Autres biens du cabinet'}</h2>
+        <h2 class="titre-2">{archive ? "Autres références de l'agence" : "Autres biens de l'agence"}</h2>
         <div class="mt-12 grid gap-12 md:grid-cols-3">
           {similaires.map((b) => (
             <CarteBien

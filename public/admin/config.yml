@@ -139,7 +139,7 @@ collections:
       - { name: texte, label: Avis, widget: text, required: false, hint: 'À laisser vide quand le client a mis une note sans écrire de commentaire' }
       - { name: note, label: Note sur 5, widget: number, value_type: int, min: 1, max: 5, default: 5 }
       - { name: source, label: Plateforme, widget: select, options: [google, pagesjaunes, direct], default: google }
-      - { name: lienSource, label: Lien vers la fiche, widget: string, required: false, hint: "Adresse de la fiche Google du cabinet, pour que le visiteur puisse vérifier" }
+      - { name: lienSource, label: Lien vers la fiche, widget: string, required: false, hint: "Adresse de la fiche Google de l'agence, pour que le visiteur puisse vérifier" }
       - { name: anciennete, label: Ancienneté affichée, widget: string, required: false, hint: "Recopier ce qu'affiche la plateforme, « il y a 3 mois » par exemple" }
       - { name: dateVisite, label: Mention de visite, widget: string, required: false, hint: "Recopier ce qu'affiche Google, « Visité en mars » par exemple" }
       - { name: date, label: Date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD/MM/YYYY', time_format: false, required: false }

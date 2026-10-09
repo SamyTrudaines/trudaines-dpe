@@ -62,7 +62,7 @@ export const AUTORITES_CLOUDFLARE = ['letsencrypt.org', 'pki.goog', 'ssl.com'];
 
 export const CONFIRMATION_ATTENDUE = 'METTRE EN LIGNE trudaines.com';
 
-/* Adresse de test de bout en bout : la boîte du cabinet, jamais un tiers. */
+/* Adresse de test de bout en bout : la boîte de l'agence, jamais un tiers. */
 export const EMAIL_RECETTE = 'samy.santamarina@trudaines.com';
 export const GUIDE_RECETTE = 'bien-vendre-paris-2026';
 

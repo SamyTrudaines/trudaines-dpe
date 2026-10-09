@@ -1,7 +1,7 @@
 /**
  * Recette de production : ce qu'un visiteur obtient réellement sur
  * www.trudaines.com. L'envoi réel d'un formulaire n'a lieu que sur demande,
- * vers la boîte du cabinet, et prouve la chaîne entière jusqu'à Brevo.
+ * vers la boîte de l'agence, et prouve la chaîne entière jusqu'à Brevo.
  */
 import { valeurs, sonder, parcourir } from './http.mjs';
 import { CIBLE_PAGES, DOMAINE, EMAIL_RECETTE, GUIDE_RECETTE, HOTE_SITE, MARQUEUR_NOUVEAU_SITE, URL_SITE } from './config.mjs';
