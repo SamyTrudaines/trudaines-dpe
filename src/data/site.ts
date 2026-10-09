@@ -101,6 +101,19 @@ export const site = {
  * WinWin et l'exemple de l'accueil lisent ces textes par src/lib/bareme.ts :
  * une tranche qu'il ne sait pas lire arrête la construction du site.
  */
+/**
+ * Lieux où Samy Santamarina a déjà signé des ventes, déclarés par lui le
+ * 9 octobre 2026, avant et depuis la création de l'agence. Les références
+ * vendues du site s'y ajoutent d'elles-mêmes (src/lib/ventes.ts). `aussi` liste
+ * des communes où l'agence intervient sans y avoir encore vendu : elles ne sont
+ * jamais présentées comme des ventes.
+ */
+export const ventesRealisees = {
+  paris: ['75003', '75007', '75008', '75010', '75011', '75012', '75016', '75018', '75019', '75020'],
+  communes: ['Arcueil', 'Asnières-sur-Seine', 'Aubervilliers', 'Bagnolet', 'Montreuil', 'Montrouge', 'Pantin', 'Puteaux'],
+  aussi: ['Levallois-Perret', 'Clichy', 'Neuilly-sur-Seine'],
+} as const;
+
 export const honoraires = {
   vente: [
     { tranche: "Jusqu'à 700 000 €", taux: '6 % TTC du prix de vente', exclusif: '5 % TTC du prix de vente', minimum: '9 600 € TTC (8 000 € HT)' },

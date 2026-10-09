@@ -9,6 +9,7 @@ import BlocCta from '../components/BlocCta.astro';
 import { nombre } from '../lib/format';
 import { jeuPhoto, TAILLES_CARTE } from '../lib/images';
 import { site } from '../data/site';
+import { lieuxDeVente } from '../lib/ventes';
 
 /**
  * Les mandats passés, présentés comme références et non comme annonces.
@@ -44,6 +45,8 @@ const groupes = [
     biens: ouest,
   },
 ].filter((groupe) => groupe.biens.length > 0);
+
+const lieux = await lieuxDeVente();
 
 const surfaces = mandats.map((b) => b.data.surface).sort((a, b) => a - b);
 const surfaceMin = surfaces[0];
@@ -88,6 +91,40 @@ const donnees = [
         depuis cette page. Les biens disponibles sont sur{' '}
         <a href="/acheter" class="lien-souligne">la page acheter</a>.
       </p>
+    </div>
+  </section>
+
+  <section class="section filet pt-14" aria-labelledby="lieux-ventes">
+    <div class="conteneur">
+      <div class="max-w-2xl">
+        <p class="surtitre marque-filet">Ventes signées</p>
+        <h2 id="lieux-ventes" class="titre-2 mt-6">Partout dans Paris, et de l'autre côté du périphérique</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Samy Santamarina a déjà conduit des ventes jusqu'à la signature dans ces arrondissements et ces communes.
+          Votre adresse n'y figure pas ? La méthode est la même partout : les ventes signées de votre rue, une visite,
+          un avis de valeur écrit.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-12 md:grid-cols-2">
+        <div>
+          <h3 class="surtitre">Paris</h3>
+          <ul class="lieux-ventes mt-4" aria-label="Arrondissements où une vente a été signée">
+            {lieux.arrondissements.map((a) => <li>{a}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3 class="surtitre">Première couronne</h3>
+          <ul class="lieux-ventes lieux-ventes-communes mt-4" aria-label="Communes où une vente a été signée">
+            {lieux.communes.map((c) => <li>{c}</li>)}
+          </ul>
+        </div>
+      </div>
+      {lieux.aussi.length > 0 && (
+        <p class="mt-10 text-sm text-[color:var(--color-ardoise)]">
+          L'agence intervient aussi à {lieux.aussi.join(', ').replace(/, ([^,]*)$/, ' et $1')}, et dans toute la première couronne.{' '}
+          <a href="/estimation" class="lien-souligne">Faire estimer votre bien</a>
+        </p>
+      )}
     </div>
   </section>
 
