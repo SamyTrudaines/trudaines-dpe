@@ -9,22 +9,21 @@ const tableaux = [
 ];
 ---
 <Layout
-  titre="Honoraires | Trudaines, agence immobilière Paris"
+  titre="Honoraires maximum | Trudaines, agence immobilière Paris"
   description="Barème maximum des honoraires de Trudaines : mandat de vente, mandat de recherche, gestion locative. Montants TTC et charge du paiement indiquée."
   filAriane={[{ nom: 'Honoraires' }]}
 >
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
       <p class="surtitre">Honoraires</p>
-      <h1 class="titre-1 mt-6">Notre barème, en clair</h1>
+      <h1 class="titre-1 mt-6">Nos honoraires : un plafond, pas un tarif</h1>
       <p class="chapo mt-8">
-        Les honoraires ne sont dus qu'en cas de réalisation effective de l'opération. Ils sont indiqués toutes taxes
-        comprises et figurent en toutes lettres dans le mandat que vous signez.
+        Les taux ci-dessous sont des maximums. Celui de votre mandat se fixe avec vous, après l'estimation : il peut
+        être inférieur, jamais supérieur. Rien n'est dû tant que la vente, l'achat ou la location n'est pas signé.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
-        Ce barème est un barème maximum. Nous pouvons pratiquer un taux inférieur, jamais supérieur. En mandat
-        exclusif, le taux de chaque tranche baisse d'un point. Le taux retenu pour votre bien est arrêté avec vous
-        avant la signature du mandat et y figure en toutes lettres.
+        Barème maximum au sens de l'arrêté du 26 janvier 2022. En mandat exclusif, le plafond de chaque tranche baisse
+        d'un point. Le taux retenu figure en toutes lettres dans le mandat, toutes taxes comprises.
       </p>
     </div>
   </section>
@@ -39,8 +38,8 @@ const tableaux = [
               <thead>
                 <tr class="border-b border-[color:var(--color-encre)]">
                   <th scope="col" class="py-4 pr-6 font-semibold">Tranche</th>
-                  <th scope="col" class="py-4 pr-6 font-semibold">{t.lignes.some((l) => l.exclusif) ? 'Mandat simple, TTC' : 'Honoraires TTC'}</th>
-                  {t.lignes.some((l) => l.exclusif) && <th scope="col" class="py-4 pr-6 font-semibold">Mandat exclusif, TTC</th>}
+                  {t.lignes.some((l) => l.exclusif) && <th scope="col" class="py-4 pr-6 font-semibold">Mandat exclusif, au plus</th>}
+                  <th scope="col" class="py-4 pr-6 font-semibold">{t.lignes.some((l) => l.exclusif) ? 'Mandat simple, au plus' : 'Honoraires, au plus'}</th>
                   <th scope="col" class="py-4 font-semibold">Minimum</th>
                 </tr>
               </thead>
@@ -48,8 +47,8 @@ const tableaux = [
                 {t.lignes.map((l) => (
                   <tr class="border-b border-[color:var(--color-trait)]">
                     <th scope="row" class="py-4 pr-6 font-medium">{l.tranche}</th>
-                    <td class="py-4 pr-6">{l.taux}</td>
                     {t.lignes.some((ligne) => ligne.exclusif) && <td class="py-4 pr-6">{l.exclusif}</td>}
+                    <td class="py-4 pr-6">{l.taux}</td>
                     <td class="py-4 text-[color:var(--color-ardoise)]">{l.minimum ?? 'Sans minimum'}</td>
                   </tr>
                 ))}

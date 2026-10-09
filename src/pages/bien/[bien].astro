@@ -127,7 +127,7 @@ const donnees = [
   titre={titreSeo([d.titre, !archive && `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
   description={descriptionSeo(
     archive
-      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Mandat présenté par l'agence Trudaines, bien non disponible.`
+      ? `${d.quartier}, ${d.ville} ${d.arrondissement}. ${nombre(d.surface)} m², ${d.pieces} pièces. Bien confié à Trudaines, plus disponible.`
       : `${d.titre}, ${nombre(d.surface)} m², ${d.pieces} pièces, ${d.quartier}, ${d.ville} ${d.arrondissement}. ${prixAffiche(d.prix)}. Visite sur rendez-vous avec Trudaines.`,
   )}
   image={d.photos[0]?.src}
@@ -152,7 +152,7 @@ const donnees = [
             <div class="fiche-prix">
               {archive ? (
                 <p class="text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--color-encre)]">
-                  {d.statut === 'vendu' ? "Vendu par l'agence" : "Mandat présenté par l'agence"}
+                  {d.statut === 'vendu' ? 'Vendu par Trudaines' : 'Confié à Trudaines'}
                 </p>
               ) : (
                 <>

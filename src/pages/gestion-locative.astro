@@ -47,10 +47,10 @@ import { honoraires } from '../data/site';
         <h2 class="titre-3">Honoraires</h2>
         <ul class="mt-4 space-y-3 text-[color:var(--color-ardoise)]">
           {honoraires.gestion.map((h) => (
-            <li>{h.tranche} : {h.taux}</li>
+            <li>{h.tranche} : au plus {h.taux}</li>
           ))}
         </ul>
-        <p class="mt-4 text-sm"><a href="/honoraires" class="lien-souligne">Barème complet</a></p>
+        <p class="mt-4 text-sm"><a href="/honoraires" class="lien-souligne">Barème complet, en maximums</a></p>
       </div>
     </div>
   </section>
