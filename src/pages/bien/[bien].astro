@@ -86,23 +86,25 @@ const depensesConnues =
   d.depensesEnergieMin !== undefined && d.depensesEnergieMax !== undefined && d.depensesEnergieAnnee !== undefined;
 
 const donnees = [
-  // Un mandat archivé n'est pas une offre : aucun Product, aucun Offer, sinon
+  // Un mandat archivé n'est pas une offre : aucune annonce, aucun Offer, sinon
   // les moteurs continuent de présenter le bien comme disponible à la vente.
+  // Une annonce immobilière, pas un Product : Google lit un Product avec une
+  // offre comme une fiche de marchand et réclame livraison et retours.
   ...(archive ? [] : [{
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'RealEstateListing',
     name: d.titre,
-    sku: d.reference,
     description: d.description,
+    url: `${site.url}/bien/${bien.id}`,
     image: d.photos.map((p: { src: string }) => new URL(p.src, site.url).href),
-    brand: { '@id': `${site.url}/#cabinet` },
+    identifier: d.reference,
     offers: {
       '@type': 'Offer',
       // Un prix à zéro veut dire « non renseigné » : mieux vaut ne rien annoncer
       // que d'annoncer une offre gratuite aux moteurs de recherche.
       ...(d.prix > 0 ? { price: d.prix, priceCurrency: 'EUR' } : {}),
       availability: d.statut === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
-      url: `${site.url}/bien/${bien.id}`,
+      businessFunction: 'http://purl.org/goodrelations/v1#Sell',
       seller: { '@id': `${site.url}/#cabinet` },
     },
   }]),
