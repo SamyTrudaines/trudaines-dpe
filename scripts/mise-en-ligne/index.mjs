@@ -6,7 +6,10 @@
  *              de ce qui serait fait ;
  *   appliquer  exécute le plan, puis la recette de production ;
  *   recette    contrôle la production, formulaire réel compris ;
- *   retablir   remet www et la racine dans l'état sauvegardé avant bascule.
+ *   retablir   remet www et la racine dans l'état sauvegardé avant bascule ;
+ *   messagerie sécurise le courrier du domaine : DKIM et code Brevo, SPF
+ *              complété, politique DMARC en quarantaine. Sa propre phrase de
+ *              confirmation, ses propres jetons (Gandi et Brevo seulement).
  *
  * Rien n'est écrit tant qu'un seul contrôle est bloquant. L'ordre d'exécution
  * évite toute coupure : les formulaires sont configurés et redéployés avant
@@ -22,6 +25,7 @@ import { pause } from './http.mjs';
 import { brevo, cloudflare, estBlocageIpBrevo, gandi } from './services.mjs';
 import {
   planBrevo,
+  planMessagerie,
   planNettoyageRacine,
   planRacine,
   planUnique,
@@ -61,6 +65,12 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
 
   if (mode === 'retablir') {
     await retablir({ secrets, sauvegarde: ordre.sauvegarde, noter });
+    rapport.reussite = !bloque();
+    return rapport;
+  }
+
+  if (mode === 'messagerie') {
+    await securiserMessagerie({ secrets, confirmation, noter, bloque });
     rapport.reussite = !bloque();
     return rapport;
   }
@@ -134,6 +144,12 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
       for (const n of pb.notes) noter('Plan', 'info', n);
     }
     rapport.sauvegarde = sauvegarde(etat.gandi);
+    if (etat.brevo) {
+      const pm = planMessagerie(etat.gandi.zone, etat.brevo.configDomaine?.dns_records);
+      for (const a of pm.actions) noter('Messagerie', 'prevu', decrire(a));
+      for (const c of pm.conflits) noter('Messagerie', 'alerte', c);
+      noter('Messagerie', pm.actions.length ? 'info' : 'ok', pm.actions.length ? 'le mode « messagerie » appliquerait les écritures ci-dessus' : 'SPF, DKIM Brevo et DMARC déjà conformes');
+    }
   }
   if (etat.cloudflare) {
     const present = etat.cloudflare.domaines.some((d) => d.name === C.HOTE_SITE);
@@ -367,6 +383,55 @@ async function attendreDomaine(cf, noter) {
     await pause(ATTENTE);
   }
   return false;
+}
+
+/* ------------------------------------------------------- messagerie */
+
+/**
+ * Sécurise le courrier du domaine sans toucher ni aux MX, ni à www, ni à la
+ * racine. Google Workspace signe en DKIM depuis sa console d'administration,
+ * pas par API : l'état de ce sélecteur est seulement constaté.
+ */
+async function securiserMessagerie({ secrets, confirmation, noter, bloque }) {
+  if (!secrets.gandi || !secrets.brevo) {
+    noter('Messagerie', 'bloquant', 'les jetons Gandi et Brevo sont tous deux nécessaires');
+    return;
+  }
+  if (confirmation !== C.CONFIRMATION_MESSAGERIE) {
+    noter('Messagerie', 'bloquant', `confirmation absente ou inexacte, attendu « ${C.CONFIRMATION_MESSAGERIE} » : rien ne sera écrit`);
+  }
+  const b = brevo(secrets.brevo);
+  const g = gandi(secrets.gandi);
+  const etatBrevo = await lireBrevo(b, noter);
+  const etatGandi = await lireGandi(g, noter);
+  if (!etatGandi || bloque()) {
+    noter('Messagerie', 'bloquant', 'arrêtée avant toute écriture');
+    return;
+  }
+
+  let config = etatBrevo.configDomaine;
+  if (!config) {
+    config = await b.creerDomaine();
+    noter('Brevo', 'fait', `domaine d'envoi ${C.DOMAINE} déclaré`);
+  }
+  const plan = planMessagerie(etatGandi.zone, config?.dns_records);
+  for (const n of plan.notes) noter('Messagerie', 'info', n);
+  for (const c of plan.conflits) noter('Messagerie', 'alerte', c);
+  if (!plan.actions.length) noter('Messagerie', 'ok', 'SPF, DKIM Brevo et DMARC déjà conformes : rien à écrire');
+  for (const a of plan.actions) await appliquerDns(g, a, noter);
+
+  const auth = await b.authentifierDomaine().catch((e) => ({ statut: 'erreur', donnees: e.message }));
+  noter('Brevo', 'info', `authentification du domaine demandée (${auth.statut}) : Brevo la confirme quand les DNS ont circulé`);
+
+  const google = etatGandi.zone.some((e) => e.rrset_name === `${C.SELECTEUR_DKIM_GOOGLE}._domainkey` && ['TXT', 'CNAME'].includes(e.rrset_type));
+  noter(
+    'Messagerie',
+    google ? 'ok' : 'attente',
+    google
+      ? `signature DKIM Google Workspace publiée (sélecteur ${C.SELECTEUR_DKIM_GOOGLE})`
+      : `signature DKIM Google Workspace absente : console d'administration Google, Applications, Google Workspace, Gmail, Authentifier les e-mails, générer la clé, la coller chez Gandi en TXT ${C.SELECTEUR_DKIM_GOOGLE}._domainkey, puis « Démarrer l'authentification »`
+  );
+  noter('Messagerie', 'info', `rapports DMARC attendus sur ${C.ADRESSE_RAPPORTS_DMARC} : un filtre Gmail peut les archiver d'office`);
 }
 
 /* ------------------------------------------------------ rétablissement */
