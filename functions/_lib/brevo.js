@@ -375,6 +375,31 @@ export function gabaritNotification(titre, lignes) {
 }
 
 /**
+ * Signature de Samy, reprise de celle de sa messagerie : photo, nom, fonction,
+ * téléphone, logotype et quatre liens. La photo est celle que Gmail sert pour
+ * sa signature ; si elle change dans Gmail, remplacer l'adresse ici.
+ */
+const PHOTO_SIGNATURE =
+  'https://ci3.googleusercontent.com/mail-sig/AIorK4xPjfK4ishzP1FGxJT9LzP5Wca-qhajsKSTzUAYHlsl0ZY1dXY9z34lF9yPaQDO3KwMMrX7a-eoyZfC';
+
+export const SIGNATURE = `<table cellpadding="0" cellspacing="0" border="0" style="margin:28px 0 0;border-collapse:collapse;color:#2d2d2d;font-family:Helvetica,Arial,sans-serif">
+  <tr>
+    <td style="vertical-align:top;padding:0 18px 0 0"><img src="${PHOTO_SIGNATURE}" width="92" height="96" alt="Samy Santamarina" style="display:block;border:0"></td>
+    <td style="vertical-align:top">
+      <p style="margin:0 0 2px;font-size:14px;font-weight:bold;letter-spacing:2px">SAMY SANTAMARINA</p>
+      <p style="margin:0 0 10px;font-size:9px;letter-spacing:2px;color:#999999">FONDATEUR</p>
+      <p style="margin:0 0 10px;font-size:11px;letter-spacing:0.3px"><a href="tel:+33620465912" style="color:#666666;text-decoration:none">+33 6 20 46 59 12</a></p>
+      <p style="margin:0;font-size:17px;font-weight:bold;letter-spacing:5px">TRUD<span style="color:#e9a64c">AI</span>NES</p>
+      <p style="margin:0;font-size:6px;font-weight:bold;letter-spacing:7px;color:#aaaaaa">IMMOBILIER</p>
+    </td>
+  </tr>
+  <tr><td colspan="2" style="padding:12px 0 0"><div style="width:320px;max-width:100%;height:1px;background:#eeeeee;font-size:0;line-height:0">&nbsp;</div></td></tr>
+  <tr><td colspan="2" style="padding:12px 0 0;font-size:9px;letter-spacing:1px">
+    <a href="https://www.trudaines.com/recommander" style="color:#e9a64c;font-weight:bold;text-decoration:none">DEVENIR APPORTEUR</a><span style="color:#dddddd">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="https://g.page/r/CaBmZJ_RxDBgEBM/review" style="color:#999999;text-decoration:none">VOTRE AVIS</a><span style="color:#dddddd">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="https://www.linkedin.com/in/samysantamarina/" style="color:#999999;font-weight:bold;text-decoration:none">in</a><span style="color:#dddddd">&nbsp;&nbsp;|&nbsp;&nbsp;</span><a href="https://www.trudaines.com" style="color:#999999;text-decoration:none">TRUDAINES.COM</a>
+  </td></tr>
+</table>`;
+
+/**
  * Gabarit pour les emails envoyés au prospect.
  *
  * Titre et paragraphes sont échappés sans exception. Un paragraphe est du texte,
@@ -395,7 +420,8 @@ export function gabaritClient(titre, paragraphes) {
     <p style="margin:0 0 8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#5f6268">Trudaines</p>
     <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:24px;font-weight:400;color:#1d1d1b">${echapper(titre)}</h1>
     ${corps}
-    <p style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e3e3e0;font-size:12px;line-height:1.7;color:#5f6268">
+    ${SIGNATURE}
+    <p style="margin:32px 0 0;padding-top:24px;border-top:1px solid #e3e3e0;font-size:11px;line-height:1.7;color:#5f6268">
       Trudaines Immobilier, 2 rue Livingstone, 75018 Paris<br>
       06 20 46 59 12 · samy.santamarina@trudaines.com<br>
       Carte professionnelle CPI 9201 2024 000 000 114

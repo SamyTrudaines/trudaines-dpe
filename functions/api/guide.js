@@ -50,7 +50,6 @@ export async function onRequestPost({ request, env }) {
         piecesJointes.length
           ? 'Prenez le temps de le lire, et gardez mon numéro si une question précise se pose sur votre bien.'
           : `Le document est consultable à cette adresse : ${urlGuide}`,
-        'Samy Santamarina, fondateur de Trudaines, 06 20 46 59 12.',
       ]),
       piecesJointes,
     });

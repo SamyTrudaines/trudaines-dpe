@@ -69,7 +69,6 @@ export async function onRequestPost({ request, env }) {
         'Votre demande d’estimation vient de nous parvenir. Je vous rappelle sous 24 heures ouvrées pour convenir d’un rendez-vous de visite.',
         'La visite dure environ quarante-cinq minutes. Vous recevez ensuite un avis de valeur écrit, qui cite ses comparables et assume une fourchette de prix. Il est gratuit et il vous appartient, même si vous décidez de ne pas vendre.',
         'Si votre projet est urgent, appelez-moi directement au 06 20 46 59 12.',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

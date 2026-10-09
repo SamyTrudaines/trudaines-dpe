@@ -155,7 +155,6 @@ export async function onRequestPost({ request, env }) {
       sujet: 'Votre candidature chez Trudaines',
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
         'Votre candidature est bien arrivée. Je la lis personnellement et je vous réponds sous une semaine, y compris si la réponse est négative.',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

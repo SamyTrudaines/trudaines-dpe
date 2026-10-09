@@ -52,7 +52,6 @@ export async function onRequestPost({ request, env }) {
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
         'Votre témoignage vient de m’arriver. Je le relis, et je ne le publie que si vous m’en avez donné l’accord.',
         'S’il vous reste une minute, le déposer aussi sur Google aide davantage que tout le reste : c’est là que les prochains vendeurs regardent.',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

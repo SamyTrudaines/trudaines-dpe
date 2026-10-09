@@ -55,7 +55,6 @@ export async function onRequestPost({ request, env }) {
       html: gabaritClient(`Bonjour ${valeur('prenom')},`, [
         'Votre message vient de m’arriver. Je vous réponds sous 24 heures ouvrées.',
         'Si le sujet est urgent, appelez-moi au 06 20 46 59 12.',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 

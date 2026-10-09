@@ -98,7 +98,6 @@ export async function onRequestPost({ request, env }) {
         venteAvecEstimation
           ? 'Vous avez aussi un bien à vendre : je vous contacte pour organiser son estimation, offerte et sans engagement.'
           : '',
-        'Samy Santamarina, fondateur de Trudaines.',
       ]),
     }).catch(() => null);
 
