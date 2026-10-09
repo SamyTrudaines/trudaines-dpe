@@ -1,5 +1,5 @@
 ---
-titre: "Prix immobilier Paris 9e et 18e : l'analyse du cabinet"
+titre: "Prix immobilier Paris 9e et 18e : l'analyse de l'agence"
 date: 2026-04-14
 image: /images/panorama/prix-immobilier-paris-9-18-analyse.webp
 imageAlt: Les toits de Paris et la butte Montmartre au loin

@@ -5,7 +5,7 @@ interface Props {
   identifiant?: string;
   /** Nom d'événement (data-evt), envoyé quand la demande aboutit. */
   evt?: string;
-  /** Page d'où part la demande, transmise au cabinet : « Rue des Dames, Paris 17e ». */
+  /** Page d'où part la demande, transmise à l'agence : « Rue des Dames, Paris 17e ». */
   origine?: string;
 }
 const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
@@ -27,7 +27,7 @@ const listeId = `adresses-${identifiant}`;
   <input type="hidden" name="quartier" value={quartier} />
   <input type="hidden" name="origine" value={origine} />
   <input type="hidden" name="horodatage" value="" />
-  {/* Rempli par le calculateur immédiat : le cabinet voit la fourchette que le visiteur a eue sous les yeux. */}
+  {/* Rempli par le calculateur immédiat : l'agence voit la fourchette que le visiteur a eue sous les yeux. */}
   <input type="hidden" name="fourchette" value="" />
   <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
     <label for={`controle-${identifiant}`}>Ne pas remplir</label>

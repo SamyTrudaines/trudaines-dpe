@@ -17,7 +17,7 @@ const avis = (await avisCommentés()).slice(0, 3);
 const agregatAvis = await agrégatAvis();
 
 /*
- * Les quatre promesses reprennent celles que le cabinet publie depuis sa
+ * Les quatre promesses reprennent celles que l'agence publie depuis sa
  * création, « créez la rareté, profitez de l'engagement, optimisez la
  * rentabilité, diminuez le délai ». Deux formules de l'ancienne page ne sont
  * pas reprises : « le meilleur algorithme estimatif du marché », superlatif
@@ -48,7 +48,7 @@ const leviers = [
     verbe: 'Diminuez',
     suite: 'le délai et les frais de portage',
     texte:
-      "Chaque mois de vente supplémentaire coûte des charges, une taxe foncière au prorata, parfois un crédit relais. Ce coût là ne figure sur aucun devis, et il dépasse souvent l'écart d'honoraires entre deux cabinets.",
+      "Chaque mois de vente supplémentaire coûte des charges, une taxe foncière au prorata, parfois un crédit relais. Ce coût là ne figure sur aucun devis, et il dépasse souvent l'écart d'honoraires entre deux agences.",
   },
 ];
 
@@ -61,7 +61,7 @@ const contreparties = [
   {
     titre: 'Les canaux de diffusion nommés dans le mandat',
     texte:
-      "Portails, fichier acquéreurs du cabinet, confrères du secteur, diffusion confidentielle le cas échéant. Ce qui est écrit peut être vérifié.",
+      "Portails, fichier acquéreurs de l'agence, confrères du secteur, diffusion confidentielle le cas échéant. Ce qui est écrit peut être vérifié.",
   },
   {
     titre: 'Un compte rendu écrit après chaque visite',
@@ -107,7 +107,7 @@ const faq = [
   {
     question: 'Peut on sortir d’un mandat exclusif ?',
     reponse:
-      "Oui. Le décret du 20 juillet 1972, pris pour l'application de la loi Hoguet, prévoit qu'un mandat à durée déterminée comportant une clause d'exclusivité ou une clause pénale peut être dénoncé à tout moment passé un délai de trois mois à compter de sa signature, par lettre recommandée avec demande d'avis de réception ou par courrier électronique. La dénonciation prend effet quinze jours après sa réception. Aucun cabinet ne peut vous enfermer au delà.",
+      "Oui. Le décret du 20 juillet 1972, pris pour l'application de la loi Hoguet, prévoit qu'un mandat à durée déterminée comportant une clause d'exclusivité ou une clause pénale peut être dénoncé à tout moment passé un délai de trois mois à compter de sa signature, par lettre recommandée avec demande d'avis de réception ou par courrier électronique. La dénonciation prend effet quinze jours après sa réception. Aucun agence ne peut vous enfermer au delà.",
   },
   {
     question: 'Combien de temps dure le mandat ?',
@@ -117,7 +117,7 @@ const faq = [
   {
     question: 'Qui paie les honoraires ?',
     reponse:
-      "Le vendeur, sur les mandats de vente du cabinet. Le montant et la charge du paiement figurent dans le mandat et sur le barème affiché, conformément à l'arrêté du 10 janvier 2017. Aucun honoraire n'est dû si la vente ne se fait pas.",
+      "Le vendeur, sur les mandats de vente de l'agence. Le montant et la charge du paiement figurent dans le mandat et sur le barème affiché, conformément à l'arrêté du 10 janvier 2017. Aucun honoraire n'est dû si la vente ne se fait pas.",
   },
   {
     question: 'Et si je trouve moi même mon acheteur ?',
@@ -152,8 +152,8 @@ const donnees = [
 ];
 ---
 <Layout
-  titre="Le mandat exclusif | Trudaines, cabinet immobilier Paris 9e"
-  description="Ce que l'exclusivité change pour un vendeur parisien, ce que le cabinet s'engage à faire en échange, et ce que la loi prévoit pour en sortir."
+  titre="Le mandat exclusif | Trudaines, agence immobilière Paris 9e"
+  description="Ce que l'exclusivité change pour un vendeur parisien, ce que l'agence s'engage à faire en échange, et ce que la loi prévoit pour en sortir."
   filAriane={[{ nom: 'Le mandat exclusif' }]}
   donnees={donnees}
 >
@@ -170,7 +170,7 @@ const donnees = [
     <div class="conteneur max-w-3xl">
       <h1 class="titre-1">Le mandat exclusif, et ce qu'il vous doit en retour</h1>
       <p class="chapo mt-8">
-        Confier un bien à un seul cabinet n'a de sens que si ce cabinet s'engage par écrit en face. Voici les
+        Confier un bien à une seule agence n'a de sens que si cette agence s'engage par écrit en face. Voici les
         quatre choses que l'exclusivité change pour un vendeur, les six engagements qui l'accompagnent chez
         Trudaines, et ce que la loi prévoit si vous voulez en sortir.
       </p>
@@ -179,13 +179,13 @@ const donnees = [
 
   <section class="section filet pb-0" aria-labelledby="chiffres">
     <div class="conteneur">
-      <h2 id="chiffres" class="sr-only">Le cabinet en trois chiffres</h2>
+      <h2 id="chiffres" class="sr-only">L'agence en trois chiffres</h2>
       <dl class="grid gap-10 border-y border-[color:var(--color-trait)] py-12 sm:grid-cols-3">
         <div>
           <dt class="surtitre">Part des mandats en exclusivité</dt>
           <dd class="mt-4 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">9 sur 10</dd>
           <dd class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-            Neuf propriétaires sur dix confient leur bien en exclusivité au cabinet. Le taux n'est pas obtenu
+            Neuf propriétaires sur dix confient leur bien en exclusivité à l'agence. Le taux n'est pas obtenu
             par la pression : il l'est parce que les contreparties sont écrites.
           </dd>
         </div>
@@ -202,7 +202,7 @@ const donnees = [
           <dt class="surtitre">Activité</dt>
           <dd class="mt-4 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">× 3</dd>
           <dd class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-            Le chiffre d'affaires du cabinet a plus que triplé d'un exercice à l'autre, sans publicité payante
+            Le chiffre d'affaires de l'agence a plus que triplé d'un exercice à l'autre, sans publicité payante
             et sans jamais avoir signé un mandat le jour de la première visite.
           </dd>
         </div>
@@ -229,7 +229,7 @@ const donnees = [
   <section class="section filet" aria-labelledby="contreparties">
     <div class="conteneur">
       <div class="max-w-2xl">
-        <h2 id="contreparties" class="titre-2">Ce que le cabinet écrit en face</h2>
+        <h2 id="contreparties" class="titre-2">Ce que l'agence écrit en face</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
           Un mandat exclusif sans obligations en face est un mauvais contrat. Les six points qui suivent
           figurent dans le mandat, pas dans une conversation.
@@ -251,7 +251,7 @@ const donnees = [
     <div class="conteneur max-w-3xl">
       <h2 id="formes" class="titre-2">Les trois formes, sans plaidoyer</h2>
       <p class="mt-6 text-[color:var(--color-ardoise)]">
-        Les trois se défendent, pour des situations différentes. Un cabinet qui ne vous présente que
+        Les trois se défendent, pour des situations différentes. Une agence qui ne vous présente que
         l'exclusivité vous vend son confort, pas votre intérêt.
       </p>
       <dl class="mt-12 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">

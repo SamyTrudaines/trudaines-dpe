@@ -4,13 +4,13 @@ import {
 } from '../_lib/brevo.js';
 
 /**
- * Recommandation Trudaines WinWin : quelqu'un présente au cabinet un proche
+ * Recommandation Trudaines WinWin : quelqu'un présente à l'agence un proche
  * qui vend, qui achète ou qui met son bien en location.
  *
  * Deux principes tenus par ce point d'entrée.
  *
  * Aucun email n'est envoyé à la personne recommandée. Le premier contact
- * appartient à celui qui la connaît : le cabinet rappelle d'abord le
+ * appartient à celui qui la connaît : l'agence rappelle d'abord le
  * recommandant, et les présentations se font avec son accord.
  *
  * La personne recommandée n'entre dans aucune liste. Ses coordonnées, quand le

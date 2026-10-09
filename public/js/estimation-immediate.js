@@ -11,7 +11,7 @@
  * Un rez de chaussée sur rue passante, à rénover, sans ascenseur, se lit vers
  * le premier décile. Un dernier étage refait avec vue se lit vers le neuvième.
  *
- * Les déplacements ci dessous sont la pratique du cabinet, pas une mesure
+ * Les déplacements ci dessous sont la pratique de l'agence, pas une mesure
  * statistique : ils sont affichés au visiteur un par un, avec leur sens et leur
  * ampleur, pour que personne n'ait à croire une boîte noire sur parole.
  */

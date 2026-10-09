@@ -1,7 +1,7 @@
 /**
  * Photographies d'atmosphère.
  *
- * Deux origines. La photographie de marque, prise dans le quartier du cabinet,
+ * Deux origines. La photographie de marque, prise dans le quartier de l'agence,
  * porte le logo et ouvre l'accueil. Les autres viennent d'Unsplash, dont la
  * licence n'impose pas le crédit là où les conditions de l'API le demandent :
  * il est porté sur la page des mentions légales, et chaque image garde ici le
@@ -12,7 +12,7 @@
  * ville que l'on veut donner envie d'habiter.
  *
  * Ces images servent d'atmosphère. Les biens, les quartiers et les références
- * sont toujours illustrés par les photographies du cabinet : une agence qui
+ * sont toujours illustrés par les photographies de l'agence : une agence qui
  * illustre ses annonces avec des banques d'images ne tient pas longtemps.
  */
 export type Ambiance = {
@@ -27,7 +27,7 @@ export type Ambiance = {
  * Les photographies ci dessous viennent de la collection « Site WEB » réunie
  * par Samy Santamarina sur Unsplash. Le choix des images est donc le sien ;
  * l'attribution de chacune à une page tient à son format et à son sujet.
- * Les vues hors périmètre du cabinet, Tour Eiffel, Arc de Triomphe, Notre Dame,
+ * Les vues hors périmètre de l'agence, Tour Eiffel, Arc de Triomphe, Notre Dame,
  * pont Alexandre III, Moulin Rouge, ne sont pas reprises : une agence qui
  * illustre le 9e avec les monuments de tout Paris se présente comme une agence
  * de partout, donc de nulle part.
@@ -78,14 +78,14 @@ export const ambiance: Record<string, Ambiance> = {
   squareAnvers: {
     fichier: '/images/ambiance/square-anvers',
     alt: "Le square d'Anvers et le Sacré-Cœur, au pied de l'avenue Trudaine, Paris 9e",
-    auteur: 'Photographie du cabinet',
+    auteur: "Photographie de l'agence",
     profil: '',
     source: '',
   },
   facadeParis: {
     fichier: '/images/ambiance/facade-paris',
     alt: 'Façade haussmannienne parisienne, pierre de taille et balcons filants',
-    auteur: 'Fonds du précédent site du cabinet',
+    auteur: "Fonds du précédent site de l'agence",
     profil: '',
     source: '',
   },

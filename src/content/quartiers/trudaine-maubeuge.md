@@ -7,7 +7,7 @@ fourchette: 8 000 à 14 300 € le m², du premier au neuvième décile
 chapo: L'avenue Trudaine et ses rues adjacentes forment l'un des micro marchés les plus tendus du 9e, porté par les familles et par des immeubles de belle facture.
 ordre: 1
 titreSeo: Immobilier Trudaine Maubeuge, Paris 9e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine Maubeuge, Paris 9e. Estimation écrite par le cabinet Trudaines.
+descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine Maubeuge, Paris 9e. Estimation écrite par l'agence Trudaines.
 photos:
   - src: /images/quartiers/trudaine-maubeuge-rue.webp
     alt: Vélo contre un réverbère devant une façade fleurie

@@ -10,11 +10,11 @@ const commentés = avis.filter((a) => a.data.texte);
 const notesSeules = avis.filter((a) => !a.data.texte && a.data.note);
 
 const libelléSource = (source: string) =>
-  source === 'google' ? 'Avis Google' : source === 'pagesjaunes' ? 'Avis Pages Jaunes' : 'Avis recueilli par le cabinet';
+  source === 'google' ? 'Avis Google' : source === 'pagesjaunes' ? 'Avis Pages Jaunes' : "Avis recueilli par l'agence";
 
 /*
  * Balisage des avis cités. La note moyenne et le volume sont portés par la
- * fiche du cabinet, posée par le gabarit sur toutes les pages, et calculés sur
+ * fiche de l'agence, posée par le gabarit sur toutes les pages, et calculés sur
  * ces mêmes fiches : le visiteur peut les recompter ici.
  */
 const donnees = [
@@ -34,7 +34,7 @@ const donnees = [
 ];
 ---
 <Layout
-  titre="Avis clients | Trudaines, cabinet immobilier Paris"
+  titre="Avis clients | Trudaines, agence immobilière Paris"
   description={`${agregat.total} avis de vendeurs et d'acquéreurs accompagnés par Samy Santamarina, note ${agregat.noteTexte} sur 5, publiés sur Google et Pages Jaunes.`}
   filAriane={[{ nom: 'Avis clients' }]}
   donnees={donnees}
@@ -45,8 +45,8 @@ const donnees = [
         <p class="surtitre">Avis clients</p>
         <h1 class="titre-1 mt-6">Ce que disent les propriétaires que nous avons accompagnés</h1>
         <p class="chapo mt-8">
-          Tous les avis reçus par Samy Santamarina, avant et depuis l'ouverture du cabinet en septembre 2024, sont ici, dans leur intégralité, sans sélection. Chacun peut
-          être vérifié à sa source, sur la fiche Google du cabinet ou sur Pages Jaunes.
+          Les avis reçus par Samy Santamarina, avant et depuis l'ouverture de l'agence en septembre 2024, sont ici, dans leur texte d'origine. Chacun peut
+          être vérifié à sa source, sur la fiche Google de l'agence ou sur Pages Jaunes.
         </p>
       </div>
 
@@ -115,7 +115,7 @@ const donnees = [
         <div class="border-t border-[color:var(--color-trait)] pt-8">
           <h2 id="notes-seules" class="titre-3">Notes déposées sans commentaire</h2>
           <p class="mt-4 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
-            Ces {notesSeules.length} clients ont noté le cabinet cinq étoiles sans écrire de texte. Ils comptent dans la
+            Ces {notesSeules.length} clients ont noté l'agence cinq étoiles sans écrire de texte. Ils comptent dans la
             moyenne affichée ci-dessus, c'est pourquoi ils figurent ici.
           </p>
           <ul class="mt-8 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
@@ -143,9 +143,9 @@ const donnees = [
       <div class="max-w-2xl border-t border-[color:var(--color-encre)] pt-8">
         <h2 class="titre-3">Comment ces avis sont recueillis</h2>
         <p class="mt-4 text-sm leading-relaxed text-[color:var(--color-ardoise)]">
-          Le cabinet ne rémunère ni ne filtre aucun avis. Chaque client est invité une fois, après la signature, à
+          L'agence ne rémunère aucun avis. Chaque client est invité une fois, après la signature, à
           déposer son avis sur Google. Une partie des avis, sur Google comme sur Pages Jaunes, date de l'activité de
-          Samy Santamarina avant la création du cabinet en septembre 2024 : l'ancienneté de chacun est indiquée. Les noms sont réduits à l'initiale du nom de famille, les
+          Samy Santamarina avant la création de l'agence en septembre 2024 : l'ancienneté de chacun est indiquée. Les avis qui citent le réseau où il exerçait alors ne sont pas repris ici ; ils restent publiés sur la fiche Google. Les noms sont réduits à l'initiale du nom de famille, les
           textes ne sont pas retouchés, et les avis les plus longs sont affichés tels que la plateforme les publie.
         </p>
         <a
@@ -155,7 +155,7 @@ const donnees = [
           data-evt="clic_avis_google"
           class="lien-souligne mt-8 inline-block text-sm"
         >
-          Voir la fiche Google du cabinet
+          Voir la fiche Google de l'agence
         </a>
       </div>
     </div>
@@ -178,7 +178,7 @@ const donnees = [
         <p class="mt-8 text-sm">
           Le déposer aussi sur{' '}
           <a href={site.avis.lienGoogle} target="_blank" rel="noopener nofollow" data-evt="clic_avis_google" class="lien-souligne">
-            la fiche Google du cabinet
+            la fiche Google de l'agence
           </a>{' '}
           aide davantage que tout le reste : c'est là que regardent les vendeurs qui ne nous connaissent pas
           encore.

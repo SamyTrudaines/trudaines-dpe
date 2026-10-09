@@ -55,6 +55,6 @@ Entre ces deux extrémités, la convention d'indivision, prévue aux articles 81
 
 Une vente en indivision suit le même chemin qu'une vente ordinaire, avec une signature de plus à chaque étape. La procuration notariée règle la question des indivisaires éloignés ou à l'étranger. Le vrai point de vigilance est en amont : un indivisaire hésitant qui signe le mandat « pour voir » et se rétracte devant une offre au prix fait perdre des mois à tout le monde. Nous préférons une discussion franche avant la mise en vente à une renégociation de famille en cours de commercialisation.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Nous commençons par ce qui met d'accord : un avis de valeur écrit, remis sous 48 heures après la visite, qui cite les ventes signées comparables et assume une fourchette. Chaque indivisaire le reçoit, le lit, peut le contester sur pièces. Nous organisons ensuite la vente avec le notaire de la succession ou de l'indivision, nous faisons circuler les documents pour signature, y compris à distance, et nous rendons compte par écrit à tous les indivisaires en même temps, pas seulement à celui qui nous a appelés. Quand le dossier relève du juge plutôt que du marché, nous le disons clairement et nous vous orientons vers le notaire, sans facturer une attente inutile.

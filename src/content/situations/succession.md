@@ -71,6 +71,6 @@ La déclaration de succession se dépose dans les six mois du décès lorsqu'il 
 
 Cette contrainte est réelle, mais elle ne doit pas dicter un prix bradé. Un bien parisien correctement positionné trouve son acheteur dans des délais compatibles avec l'échéance fiscale, surtout si la vente est lancée tôt. Et l'article 1717 du code général des impôts permet, sous conditions et avec des garanties, un paiement fractionné ou différé des droits : c'est une demande que le notaire formule avec la déclaration, et qui retire à la vente son caractère d'urgence absolue. Vendre vite et vendre dans la précipitation ne sont pas la même chose.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Nous visitons le bien et nous remettons à chaque héritier le même avis de valeur écrit sous 48 heures, avec les ventes signées comparables du quartier. Ce document sert deux fois : il fonde le prix de mise en marché, et il donne aux héritiers une base commune pour la valeur à retenir dans la déclaration de succession, qu'ils arrêtent ensuite avec le notaire. Nous faisons signer le mandat par tous les indivisaires, procurations comprises, et chacun reçoit le compte rendu écrit après chaque visite, pas seulement celui qui a appelé. Nous travaillons directement avec le notaire chargé de la succession pour caler la promesse et l'acte sur l'avancement de l'attestation immobilière. Quand un héritier vit loin, les comptes rendus écrits et la signature à distance évitent que la vente n'avance au rythme des allers retours.

@@ -7,7 +7,7 @@ fourchette: 7 800 à 13 100 € le m², du premier au neuvième décile pondér�
 chapo: Le village des Batignolles a gardé son square, son marché et ses terrasses, et gagné une gare du Grand Paris. La demande familiale y est constante, l'offre courte.
 ordre: 6
 titreSeo: Immobilier Batignolles, Paris 17e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré et marché du quartier des Batignolles, Paris 17e, calculés sur 738 ventes signées. Estimation écrite par le cabinet Trudaines.
+descriptionSeo: Prix au mètre carré et marché du quartier des Batignolles, Paris 17e, calculés sur 738 ventes signées. Estimation écrite par l'agence Trudaines.
 photos:
   - src: /images/quartiers/batignolles-rue.webp
     alt: Immeuble de pierre ouvragée, arbres et ciel bleu

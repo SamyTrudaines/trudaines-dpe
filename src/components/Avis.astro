@@ -55,7 +55,7 @@ const aDesCitations = avis.some((a) => a.data.texte);
                 {[a.data.typeProjet, a.data.quartier].filter(Boolean).join(' · ')}
               </span>
               <span class="mt-1 block">
-                {a.data.source === 'google' ? 'Avis Google' : a.data.source === 'pagesjaunes' ? 'Avis Pages Jaunes' : 'Avis recueilli par le cabinet'}
+                {a.data.source === 'google' ? 'Avis Google' : a.data.source === 'pagesjaunes' ? 'Avis Pages Jaunes' : "Avis recueilli par l'agence"}
                 {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
                 {a.data.dateVisite ? ` · ${a.data.dateVisite}` : ''}
               </span>

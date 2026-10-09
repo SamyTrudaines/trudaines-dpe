@@ -6,7 +6,7 @@ import { site } from '../data/site';
 /*
  * Page de comparaison, sans citer aucun concurrent.
  *
- * Un vendeur qui hésite entre trois cabinets ne cherche pas un avis sur eux, il
+ * Un vendeur qui hésite entre trois agences ne cherche pas un avis sur elles, il
  * cherche des critères. Nommer un concurrent, ou pire glisser son nom dans le
  * texte pour capter ses recherches, expose à deux titres : l'usage de la marque
  * d'autrui dans un contenu commercial relève de la contrefaçon et du
@@ -15,7 +15,7 @@ import { site } from '../data/site';
  * vérifiable et loyale. Un texte dissimulé ne peut être ni l'un ni l'autre, et
  * les moteurs de recherche sanctionnent le procédé par le déclassement.
  *
- * Les critères ci dessous sont donc opposables à n'importe quel cabinet, y
+ * Les critères ci dessous sont donc opposables à n'importe quelle agence, y
  * compris Trudaines.
  */
 const criteres = [
@@ -38,7 +38,7 @@ const criteres = [
     titre: 'Le périmètre réellement travaillé',
     demander: '« Combien de ventes avez vous conclues dans ce quartier ces douze derniers mois ? »',
     bonneReponse:
-      "Une réponse chiffrée et vérifiable, et un refus assumé des secteurs que le cabinet ne connaît pas.",
+      "Une réponse chiffrée et vérifiable, et un refus assumé des secteurs que l'agence ne connaît pas.",
     signal:
       "Une couverture qui s'étend à toute l'Île-de-France. Personne ne connaît les cages d'escalier de cent quartiers.",
   },
@@ -81,19 +81,19 @@ const criteres = [
 
 const faq = [
   {
-    question: 'Faut il choisir une grande enseigne ou un cabinet indépendant ?',
+    question: 'Faut il choisir une grande enseigne ou une agence indépendante ?',
     reponse:
-      "La question utile n'est pas la taille mais le nombre de mandats traités en même temps par la personne qui s'occupera du vôtre. Un cabinet indépendant qui suit huit mandats et une agence de réseau qui en suit huit font le même travail ; à trente, ni l'un ni l'autre ne tient ses engagements de suivi.",
+      "La question utile n'est pas la taille mais le nombre de mandats traités en même temps par la personne qui s'occupera du vôtre. Une agence indépendante qui suit huit mandats et une agence de réseau qui en suit huit font le même travail ; à trente, ni l'un ni l'autre ne tient ses engagements de suivi.",
   },
   {
     question: 'Faut il faire estimer son bien par plusieurs agences ?',
     reponse:
-      "Oui, deux ou trois, et il faut comparer les documents écrits plutôt que les chiffres annoncés. Le cabinet qui annonce le prix le plus élevé n'est pas celui qui vendra le plus cher : un bien surévalué se vend plus bas après deux corrections.",
+      "Oui, deux ou trois, et il faut comparer les documents écrits plutôt que les chiffres annoncés. L'agence qui annonce le prix le plus élevé n'est pas celui qui vendra le plus cher : un bien surévalué se vend plus bas après deux corrections.",
   },
   {
     question: 'Les honoraires se négocient ils ?',
     reponse:
-      "Le barème affiché est un maximum au sens de l'arrêté du 26 janvier 2022 : un cabinet peut pratiquer moins, jamais plus. Ce qui se négocie utilement, ce sont les contreparties écrites dans le mandat, pas seulement le taux.",
+      "Le barème affiché est un maximum au sens de l'arrêté du 26 janvier 2022 : une agence peut pratiquer moins, jamais plus. Ce qui se négocie utilement, ce sont les contreparties écrites dans le mandat, pas seulement le taux.",
   },
   {
     question: 'Une estimation en ligne suffit elle ?',
@@ -116,7 +116,7 @@ const donnees = [
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'Choisir son agence immobilière à Paris',
-    description: 'Huit critères vérifiables pour comparer des cabinets immobiliers parisiens avant de signer un mandat.',
+    description: 'Huit critères vérifiables pour comparer des agences immobilières parisiennes avant de signer un mandat.',
     step: criteres.map((c) => ({ '@type': 'HowToStep', name: c.titre, text: c.demander })),
   },
 ];
@@ -133,9 +133,9 @@ const donnees = [
       <p class="surtitre">Avant de signer</p>
       <h1 class="titre-1 mt-6">Comment choisir son agence immobilière à Paris</h1>
       <p class="chapo mt-8">
-        Trois cabinets, trois chiffres, parfois cent mille euros d'écart. Voici les huit questions qui
+        Trois agences, trois chiffres, parfois cent mille euros d'écart. Voici les huit questions qui
         départagent, la réponse qu'un professionnel sérieux donne, et le signal qui doit vous faire reposer le
-        stylo. Ces critères valent pour n'importe quel cabinet, Trudaines compris.
+        stylo. Ces critères valent pour n'importe quelle agence, Trudaines compris.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Aucun concurrent n'est nommé sur cette page, et ce n'est pas de la prudence : un classement d'agences

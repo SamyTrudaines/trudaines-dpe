@@ -4,8 +4,8 @@ import CarteBien from './CarteBien.astro';
 import type { PorteeReferences } from '../lib/entonnoir';
 
 /**
- * Les mandats passés du cabinet près de la page, sans prix : la preuve que le
- * cabinet a déjà travaillé là. La portée dit d'où viennent les mandats montrés,
+ * Les mandats passés de l'agence près de la page, sans prix : la preuve que le
+ * agence a déjà travaillé là. La portée dit d'où viennent les mandats montrés,
  * du quartier à Paris, et le texte le dit sans détour quand il n'y en a pas
  * dans le quartier même.
  */
@@ -16,7 +16,7 @@ interface Props {
   quartier?: string;
   /** « Paris 9e » */
   arrondissement: string;
-  /** Où le cabinet n'a pas de mandat à montrer : « dans ce quartier » (défaut), « près de cette rue ». */
+  /** Où l'agence n'a pas de mandat à montrer : « dans ce quartier » (défaut), « près de cette rue ». */
   ici?: string;
   /** Événement (data-evt) du clic sur une référence. */
   evt: string;
@@ -38,8 +38,8 @@ const intro =
   portee === 'quartier'
     ? "Des mandats déjà conduits ici. Ces biens ne sont plus disponibles, leurs fiches restent consultables."
     : portee === 'arrondissement'
-      ? `Aucun mandat du cabinet n'est encore présenté ${ici}. Voici ceux ${duArrondissement}.`
-      : `Aucun mandat du cabinet n'est encore présenté dans ${dansArrondissement}. Voici des mandats conduits à Paris.`;
+      ? `Aucun mandat de l'agence n'est encore présenté ${ici}. Voici ceux ${duArrondissement}.`
+      : `Aucun mandat de l'agence n'est encore présenté dans ${dansArrondissement}. Voici des mandats conduits à Paris.`;
 ---
 {mandats.length > 0 && (
   <section class="section filet" aria-labelledby="references-proches">

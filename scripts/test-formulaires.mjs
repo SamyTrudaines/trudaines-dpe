@@ -497,7 +497,7 @@ verifier(
   console.error = erreurAvant;
 }
 
-/* La page d'où part une demande d'estimation arrive dans la notification du cabinet. */
+/* La page d'où part une demande d'estimation arrive dans la notification de l'agence. */
 appels.length = 0;
 await estimation.onRequestPost({
   request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', origine: 'Rue des Dames, Paris 17e', quartier: 'Batignolles', horodatage: recent() }),

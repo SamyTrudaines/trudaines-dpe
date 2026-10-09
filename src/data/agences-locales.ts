@@ -22,7 +22,7 @@ export type AgenceLocale = {
   repere: { libelle: string; lon: number; lat: number; source: string };
   quartier?: string;
   rayon?: number;
-  /** Nom des biens du cabinet dans ce secteur (champ quartier des fiches), pour ses références et ses biens à vendre. */
+  /** Nom des biens de l'agence dans ce secteur (champ quartier des fiches), pour ses références et ses biens à vendre. */
   quartiersBiens: string[];
   quartiersLies: string[];
   titreSeo: string;
@@ -148,7 +148,7 @@ export const agencesLocales: AgenceLocale[] = [
     h1: "Agence immobilière avenue Trudaine, Paris 9e",
     surtitre: 'Paris 9e · Trudaine, Anvers, Rochechouart',
     chapo:
-      "Trudaines tient son nom de l'avenue Trudaine. C'est le territoire du cabinet : l'avenue, ses rues calmes et les pentes qui montent vers Anvers et Montmartre. Nous y avons déjà conduit des mandats, et notre bureau est à quelques minutes à pied.",
+      "Trudaines tient son nom de l'avenue Trudaine. C'est le territoire de l'agence : l'avenue, ses rues calmes et les pentes qui montent vers Anvers et Montmartre. Nous y avons déjà conduit des mandats, et notre bureau est à quelques minutes à pied.",
     sections: [
       {
         titre: 'Une avenue qui sert de référence',
@@ -168,7 +168,7 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Pourquoi l'agence s'appelle-t-elle Trudaines ?",
         reponse:
-          "Le nom vient de l'avenue Trudaine, dans le 9e nord, qui est le territoire du cabinet. Au milieu du mot, deux lettres en orange, AI, pour l'intelligence artificielle : la technologie est dans le travail, pas sur l'enseigne.",
+          "Le nom vient de l'avenue Trudaine, dans le 9e nord, qui est le territoire de l'agence. Au milieu du mot, deux lettres en orange, AI, pour l'intelligence artificielle : la technologie est dans le travail, pas sur l'enseigne.",
       },
     ],
   },

@@ -14,7 +14,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   participants à un salon, pas des clients. Ne jamais les utiliser ni les mélanger aux listes du site.
 - Aucun chiffre inventé. Les prix viennent des ventes DVF (`src/data/rues.json`, produit par
   `scripts/prix-rues.py`) ; les références ne montrent jamais de prix.
-- Textes en français, sobres, orientés bénéfice client. Jamais de tiret cadratin ni demi-cadratin,
+- Textes en français, sobres, orientés bénéfice client. Trudaines est une agence : jamais « cabinet ». Jamais de tiret cadratin ni demi-cadratin,
   ni dans les textes ni dans les commentaires. Pas d'emoji.
 - Design : jetons et classes de `src/styles/global.css` (encre, orange de la marque, filets fins,
   titres Libre Baskerville italique, Montserrat). Fond blanc, pas de cartes à ombre ni de boutons arrondis.

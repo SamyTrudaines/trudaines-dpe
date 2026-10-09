@@ -8,7 +8,7 @@ import { distance } from '../lib/quartiers';
 
 /**
  * /llms-full.txt : /llms.txt suivi du texte intégral des pages éditoriales,
- * pour qu'un assistant lise le cabinet d'un seul tenant au lieu de suivre les
+ * pour qu'un assistant lise l'agence d'un seul tenant au lieu de suivre les
  * liens un par un. Tout vient des collections et des données du site : une
  * page modifiée l'est aussi ici à la construction suivante.
  *

@@ -52,6 +52,6 @@ Le réflexe des notaires est de conserver le prix de vente jusqu'à l'état liqu
 
 Garder l'appartement est parfois le bon choix, notamment pour les enfants. Le rachat de la part de l'autre, la soulte, se calcule sur la valeur du bien moins le capital restant dû, au prorata des droits de chacun. Deux conditions le rendent possible : une valeur que les deux acceptent, et une banque qui accepte de désolidariser l'époux qui part et de porter le prêt sur un seul revenu. Quand la banque refuse, la vente sur le marché redevient la solution qui libère les deux.
 
-## Ce que le cabinet fait dans cette situation
+## Ce que l'agence fait dans cette situation
 
 Nous apportons ce qui manque le plus dans un divorce : un tiers neutre et des documents. L'avis de valeur écrit, remis sous 48 heures après la visite, donne aux deux époux et à leurs avocats la même base chiffrée, argumentée sur les ventes signées du quartier. Ensuite nous tenons les deux informés de la même façon, compte rendu après chaque visite adressé aux deux, offres présentées par écrit aux deux, aucun canal privilégié. Nous coordonnons enfin le calendrier avec le notaire pour que la vente serve la liquidation au lieu de l'attendre. La discrétion va de soi : pas de panneau, pas de mention du contexte dans l'annonce, des visites groupées si vous le souhaitez.

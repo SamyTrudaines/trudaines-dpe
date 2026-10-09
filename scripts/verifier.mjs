@@ -205,7 +205,7 @@ if (existsSync(dossierBiens)) {
       if (/"@type":\s*"Offer"/.test(rendu)) {
         erreurs.push(`${fiche} : mandat archivé qui déclare encore une offre aux moteurs de recherche`);
       }
-      if (!/Mandat présenté par le cabinet|Vendu par le cabinet/.test(rendu)) {
+      if (!/Mandat présenté par l'agence|Vendu par l'agence/.test(rendu)) {
         erreurs.push(`${fiche} : mandat archivé sans mention indiquant que le bien n'est plus disponible`);
       }
       continue;

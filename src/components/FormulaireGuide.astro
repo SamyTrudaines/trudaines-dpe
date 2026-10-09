@@ -10,7 +10,7 @@ interface Props {
    * part. Par défaut, un événement par livre blanc : livreblanc_<slug>.
    */
   evt?: string;
-  /** Page d'où part la demande, transmise au cabinet : « Quartier Martyrs Lorette ». */
+  /** Page d'où part la demande, transmise à l'agence : « Quartier Martyrs Lorette ». */
   contexte?: string;
 }
 const { guide, titreGuide, identifiant = guide, evt, contexte = '' } = Astro.props;
