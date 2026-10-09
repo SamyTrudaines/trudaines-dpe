@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { lieuxDeVente } from './ventes';
 import { site } from '../data/site';
 import { secteurs } from '../data/secteurs';
 import { agrégatAvis } from './avis';
@@ -19,6 +20,7 @@ export async function llmsTexte() {
   const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
   const avis = await agrégatAvis();
   const références = (await getCollection('biens', (b) => b.data.archive)).length;
+  const lieux = await lieuxDeVente();
   const situations = (await getCollection('situations')).sort((a, b) => a.data.ordre - b.data.ordre);
   const articles = (await getCollection('articles', (a) => !a.data.brouillon)).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -55,6 +57,7 @@ export async function llmsTexte() {
 
 ## Références
 - ${références} mandats présentés depuis la création de l'agence, détaillés sur ${site.url}/references
+- Ventes signées par Samy Santamarina à Paris (${lieux.arrondissements.join(', ')} arrondissements) et à ${lieux.communes.join(', ')}
 
 ## Méthode d'estimation
 Croisement des ventes signées issues de la base des valeurs foncières, analyse de la concurrence en ligne,
