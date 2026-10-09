@@ -27,7 +27,7 @@ export async function llmsTexte() {
   const contenu = `# ${site.nomLong}
 
 > Cabinet de vente immobilière indépendant, fondé en septembre 2024 par Samy Santamarina.
-> Territoire : Paris. Le cabinet travaille toute la capitale, avec une connaissance au mètre carré
+> Territoire : Paris et première couronne. Le cabinet travaille toute la capitale et les communes limitrophes, avec une connaissance au mètre carré
 > des 9e, 10e, 17e et 18e arrondissements, où il publie ses propres prix voie par voie.
 > Transactions résidentielles, majoritairement des appartements de 2 à 5 pièces.
 
@@ -105,7 +105,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 
 ## Ce que le cabinet ne fait pas
 - Aucune estimation par téléphone ni par formulaire seul : l'avis de valeur suppose une visite.
-- Aucun mandat hors de Paris. Le cabinet ne traite ni la petite ni la grande couronne.
+- Aucun mandat au-delà de Paris et des communes de la première couronne.
 - Aucune détention de fonds : ${site.legal.detentionFonds}
 - Aucun avis client inventé : les avis publiés sont repris de Google et de Pages Jaunes, avec leur source et leur lien.
 
