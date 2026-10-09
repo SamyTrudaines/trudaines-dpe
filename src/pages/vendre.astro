@@ -94,7 +94,7 @@ const questions = [
       <h2 id="engagements" class="sr-only">Les sept engagements</h2>
       <ol class="grid gap-x-12 gap-y-14 md:grid-cols-2">
         {engagements.map((e, i) => (
-          <li class="grid grid-cols-[auto_1fr] gap-x-6">
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-6">
             <p class="chiffre" aria-hidden="true">{String(i + 1).padStart(2, '0')}</p>
             <div>
               <h3 class="titre-3">{e.titre}</h3>

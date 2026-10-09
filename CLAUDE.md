@@ -17,7 +17,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Textes en français, sobres, orientés bénéfice client. Jamais de tiret cadratin ni demi-cadratin,
   ni dans les textes ni dans les commentaires. Pas d'emoji.
 - Design : jetons et classes de `src/styles/global.css` (encre, orange de la marque, filets fins,
-  titres Cormorant italique, Montserrat). Fond blanc, pas de cartes à ombre ni de boutons arrondis.
+  titres Libre Baskerville italique, Montserrat). Fond blanc, pas de cartes à ombre ni de boutons arrondis.
 - Samy surveille sa consommation : travailler sobrement, peu de captures d'écran.
 - La barre d'en-tête reste visible à tout niveau de défilement : ne jamais la masquer.
 - Tout parcours clé (estimer, appeler, voir un bien, demander une visite) tient en deux clics au plus.

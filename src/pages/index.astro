@@ -55,6 +55,14 @@ const siteWeb = {
   publisher: { '@id': `${site.url}/#cabinet` },
 };
 
+/* Changements de vie qui amènent à vendre, chacun vers sa page de situation. */
+const moments = [
+  { cle: 'demenagement', titre: 'Un départ, une nouvelle adresse', texte: "Vendre et racheter dans le bon ordre, sans porter deux logements.", href: '/vendre/demenagement' },
+  { cle: 'separation', titre: 'Une séparation', texte: "Une valeur acceptée par les deux, une vente menée sans tension.", href: '/vendre/divorce' },
+  { cle: 'succession', titre: 'Une succession', texte: "Des héritiers d'accord sur un prix, le notaire et les démarches coordonnés.", href: '/vendre/succession' },
+  { cle: 'etranger', titre: 'Vendre à distance', texte: "Visites, comptes rendus et signatures sans revenir à Paris.", href: '/vendre/depuis-l-etranger' },
+];
+
 const engagements = [
   {
     titre: 'Un prix argumenté par écrit',
@@ -162,6 +170,36 @@ const engagements = [
     </div>
   </section>
 
+  {/*
+    Les ventes qui arrivent avec un changement de vie : un départ, une séparation,
+    une succession. Chaque entrée mène à sa page, écrite pour la question que le
+    vendeur pose vraiment.
+  */}
+  <section class="section filet" aria-labelledby="moments-de-vie">
+    <div class="conteneur">
+      <div class="max-w-2xl">
+        <p class="surtitre marque-filet">Vendre au bon moment</p>
+        <h2 id="moments-de-vie" class="titre-2 mt-6">Une vente arrive rarement seule.</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Un départ, une séparation, une succession : avant de parler de prix, nous prenons le temps de
+          comprendre ce que vous traversez. Puis nous organisons la vente autour de votre calendrier, avec
+          le notaire, la banque et chacun des signataires.
+        </p>
+      </div>
+      <ul class="moments mt-12">
+        {moments.map((m) => (
+          <li>
+            <a href={m.href} class="moments-lien" data-evt={evt('accueil', 'moment', m.cle)}>
+              <span class="moments-titre">{m.titre}</span>
+              <span class="moments-texte">{m.texte}</span>
+              <span class="moments-suite" aria-hidden="true">Lire</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   {biens.length > 0 && references.length > 0 && (
     <ReferencesAccueil references={references} total={totalReferences} />
   )}
@@ -177,9 +215,9 @@ const engagements = [
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
       <h2 id="engagements" class="titre-2 max-w-2xl">Ce qui change concrètement quand vous nous confiez une vente</h2>
-      <div class="mt-14 grid gap-x-12 gap-y-14 md:grid-cols-3">
+      <div class="mt-14 grid gap-x-12 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
         {engagements.map((e, n) => (
-          <div class="grid grid-cols-[auto_1fr] gap-x-5">
+          <div class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-5">
             <p class="chiffre" aria-hidden="true">{String(n + 1).padStart(2, '0')}</p>
             <div>
               <h3 class="titre-3">{e.titre}</h3>
