@@ -36,13 +36,14 @@ export async function llmsTexte() {
 - Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}
 - Carte professionnelle : ${site.legal.carteT}, CCI Paris Île-de-France, ${site.legal.carteTDate}
 - Garantie financière : ${site.legal.garantie}, ${site.legal.garantieMontant}
+- Médiateur de la consommation : ${site.legal.mediateur.nom}, ${site.legal.mediateur.adresse}, ${site.legal.mediateur.site}
 - Contact : ${site.email}, ${site.telephone}
 - Horaires : ${site.horairesTexte}
-- Fiche Google de l'établissement : ${site.reseaux.google}
-- LinkedIn du fondateur : ${site.reseaux.linkedin}
+- [Fiche Google de l'établissement](${site.reseaux.google})
+- [LinkedIn du fondateur](${site.reseaux.linkedin})
 
 ## Services
-- Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle : ${site.url}/mandat-exclusif
+- [Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle](${site.url}/mandat-exclusif)
 - Avis de valeur écrit, remis après visite sous 48 heures, sans frais et sans engagement, conservé par le propriétaire même s'il vend ailleurs
 - Mandat de recherche pour acquéreurs
 - Gestion locative
@@ -61,19 +62,19 @@ visite systématique du bien, puis avis de valeur écrit citant ses comparables.
 
 ## Agence immobilière par quartier
 Pages locales, chacune avec le prix des rues voisines tiré des ventes notariées, les références du cabinet et ses réponses aux questions courantes.
-${agencesLocales.map((l) => `- ${site.url}/agence-immobiliere-${l.slug} : agence immobilière ${l.nom}, ${l.arrondissement}`).join('\n')}
-- ${site.url}/agence-immobiliere-paris-9 : agence immobilière Paris 9e
-- ${site.url}/agence-immobiliere-paris-18 : agence immobilière Paris 18e, bureau au 2 rue Livingstone
-- ${site.url}/agence-immobiliere-paris-10 : agence immobilière Paris 10e
-- ${site.url}/agence-immobiliere-paris-17 : agence immobilière Paris 17e
+${agencesLocales.map((l) => `- [agence immobilière ${l.nom}, ${l.arrondissement}](${site.url}/agence-immobiliere-${l.slug})`).join('\n')}
+- [agence immobilière Paris 9e](${site.url}/agence-immobiliere-paris-9)
+- [agence immobilière Paris 18e, bureau au 2 rue Livingstone](${site.url}/agence-immobiliere-paris-18)
+- [agence immobilière Paris 10e](${site.url}/agence-immobiliere-paris-10)
+- [agence immobilière Paris 17e](${site.url}/agence-immobiliere-paris-17)
 - Le nom Trudaines vient de l'avenue Trudaine, dans le 9e nord, territoire du cabinet.
 
 ## Données publiées par le cabinet
 Le cabinet calcule et publie ses propres prix au mètre carré à partir du fichier des demandes de valeurs
 foncières de la direction générale des finances publiques, qui recense les ventes enregistrées devant notaire.
 Appartements seuls, ventes hors multilots, aucune estimation et aucune annonce dans le calcul.
-- Prix au mètre carré de ${rues.length} voies de Paris 9e, 10e, 17e et 18e : ${site.url}/prix-immobilier
-- Données brutes réutilisables, au format JSON : ${site.url}/prix-immobilier.json
+- [Prix au mètre carré de ${rues.length} voies de Paris 9e, 10e, 17e et 18e](${site.url}/prix-immobilier)
+- [Données brutes réutilisables, au format JSON](${site.url}/prix-immobilier.json)
 - Période couverte : ${periode}. Seuil de publication : ${ventesMinimum} ventes minimum par voie.
 - Scripts de calcul publiés avec le site, recalcul à chaque parution de la base, en avril et en octobre.
 
@@ -94,13 +95,13 @@ Prix toutes taxes comprises, charge du paiement indiquée, au sens de l'arrêté
 l'arrêté du 26 janvier 2022. Le cabinet peut pratiquer moins, jamais plus.
 ${honoraires.vente.map((t) => `- Vente, ${t.tranche} : ${t.taux} en mandat simple, ${t.exclusif} en mandat exclusif${t.minimum ? `, minimum ${t.minimum}` : ''}, à la charge du vendeur.`).join('\n')}
 ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
-- Barème complet, y compris le mandat de recherche : ${site.url}/honoraires
+- [Barème complet, y compris le mandat de recherche](${site.url}/honoraires)
 
 ## ${parrainage.nom}, la recommandation récompensée
 - Qui recommande ponctuellement au cabinet un proche qui vend, qui achète avec un mandat de recherche ou qui confie la gestion de son bien reçoit ${Math.round(parrainage.part * 100)} % des honoraires hors taxes encaissés sur l'opération ; en gestion locative, ceux de la première année.
 - Exemple au barème exclusif : un appartement vendu 1 000 000 € rapporte ${milliers(primeVente(1000000))} € à la personne qui l'a recommandé.
 - La prime est versée à l'encaissement des honoraires, donc après la signature de l'acte, et un accord écrit la fixe avant la mise en relation. Une recommandation occasionnelle, sans visite ni négociation, n'est pas de l'entremise au sens de la loi du 2 janvier 1970.
-- Simulateur et formulaire : ${site.url}/recommander
+- [Simulateur et formulaire](${site.url}/recommander)
 
 ## Ce que le cabinet ne fait pas
 - Aucune estimation par téléphone ni par formulaire seul : l'avis de valeur suppose une visite.
@@ -116,42 +117,42 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.
 
 ## Version intégrale
-- ${site.url}/llms-full.txt : ce fichier suivi du texte complet des pages agence par quartier, des situations de vente, des quartiers, des biens à vendre et des articles, en un seul document.
+- [ce fichier suivi du texte complet des pages agence par quartier, des situations de vente, des quartiers, des biens à vendre et des articles, en un seul document.](${site.url}/llms-full.txt)
 
 ## Pages clés
-- ${site.url}/ : présentation du cabinet
-- ${site.url}/estimation : méthode d'estimation
-${secteurs.map((s) => `- ${site.url}/estimation/${s.slug} : estimation immobilière ${s.nom}`).join('\n')}
-${secteurs.map((s) => `- ${site.url}${s.hrefAgence} : agence immobilière ${s.nom}`).join('\n')}
-- ${site.url}/agence-immobiliere-montmartre : agence immobilière Montmartre
-- ${site.url}/vendre : les sept engagements de vente
-- ${site.url}/mandat-exclusif : mandat exclusif, contreparties écrites et conditions de sortie
-${situations.map((s) => `- ${site.url}/vendre/${s.id} : ${s.data.question}`).join('\n')}
-- ${site.url}/choisir-son-agence-immobiliere-paris : huit critères pour comparer des cabinets avant de signer
-- ${site.url}/acheter : biens à la vente
-- ${site.url}/references : mandats déjà confiés au cabinet
-- ${site.url}/avis : avis clients, repris en entier, et dépôt d'un témoignage
-- ${site.url}/recommander : ${parrainage.nom}, recommander le cabinet à un proche et calculer sa prime
-- ${site.url}/prix-immobilier : prix au mètre carré de ${rues.length} voies
-- ${site.url}/chasse : mandat de recherche
-- ${site.url}/gestion-locative : gestion locative
-- ${site.url}/samy-santamarina : fondateur
-- ${site.url}/honoraires : barème des honoraires
-- ${site.url}/presse : retombées presse
-- ${site.url}/nous-rejoindre : recrutement de mandataires
+- [présentation du cabinet](${site.url}/)
+- [méthode d'estimation](${site.url}/estimation)
+${secteurs.map((s) => `- [estimation immobilière ${s.nom}](${site.url}/estimation/${s.slug})`).join('\n')}
+${secteurs.map((s) => `- [agence immobilière ${s.nom}](${site.url}${s.hrefAgence})`).join('\n')}
+- [agence immobilière Montmartre](${site.url}/agence-immobiliere-montmartre)
+- [les sept engagements de vente](${site.url}/vendre)
+- [mandat exclusif, contreparties écrites et conditions de sortie](${site.url}/mandat-exclusif)
+${situations.map((s) => `- [${s.data.question}](${site.url}/vendre/${s.id})`).join('\n')}
+- [huit critères pour comparer des cabinets avant de signer](${site.url}/choisir-son-agence-immobiliere-paris)
+- [biens à la vente](${site.url}/acheter)
+- [mandats déjà confiés au cabinet](${site.url}/references)
+- [avis clients, repris en entier, et dépôt d'un témoignage](${site.url}/avis)
+- [${parrainage.nom}, recommander le cabinet à un proche et calculer sa prime](${site.url}/recommander)
+- [prix au mètre carré de ${rues.length} voies](${site.url}/prix-immobilier)
+- [mandat de recherche](${site.url}/chasse)
+- [gestion locative](${site.url}/gestion-locative)
+- [fondateur](${site.url}/samy-santamarina)
+- [barème des honoraires](${site.url}/honoraires)
+- [retombées presse](${site.url}/presse)
+- [recrutement de mandataires](${site.url}/nous-rejoindre)
 
 ## Quartiers couverts
-${quartiers.map((q) => `- ${site.url}/quartiers/${q.id} : ${q.data.nom}, ${q.data.arrondissement}`).join('\n')}
+${quartiers.map((q) => `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id})`).join('\n')}
 
 ## Publications récentes
-${articles.slice(0, 10).map((a) => `- ${site.url}/panorama/${a.id} : ${a.data.titre}`).join('\n')}
+${articles.slice(0, 10).map((a) => `- [${a.data.titre}](${site.url}/panorama/${a.id})`).join('\n')}
 
 ## Presse
 Articles parus au lancement, en 2024, quand Trudaines se présentait comme un réseau de mandataires. Aujourd'hui, Trudaines est une agence immobilière indépendante de transaction résidentielle, avec un interlocuteur unique, Samy Santamarina, de l'estimation à la signature.
 - Immo Matin, 10 octobre 2024 : « Qui est Trudaines, nouveau réseau de mandataires lancé par Samy Santamarina ? »
 - MySweetImmo, 29 octobre 2024 : « Trudaines, un nouveau réseau basé sur l'implantation prédictive »
 - Mon Podcast Immo, épisode 909, Ariane Artinian : « Aider les mandataires immobiliers à s'implanter au bon endroit »
-- Détail et liens : ${site.url}/presse
+- [Détail et liens](${site.url}/presse)
 
 ## Conditions d'usage
 Les contenus peuvent être cités avec mention de la source ${site.url}.

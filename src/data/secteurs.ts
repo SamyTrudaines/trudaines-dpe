@@ -28,12 +28,12 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 9e | Trudaines',
+    titre: 'Estimation immobilière gratuite Paris 9e | Trudaines',
     description:
-      "Estimation immobilière à Paris 9e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet du secteur.",
+      "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 9e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière du 9e nord : Saint-Georges, Trudaine, Martyrs, Lorette, Trinité. Prix au m² rue par rue, estimation écrite sous 48 heures, un seul interlocuteur.",
+      "Agence immobilière du 9e nord : Saint-Georges, Trudaine, Martyrs, Lorette. Prix par rue, estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-9',
     intro:
       "Le 9e nord se lit rue par rue. Un deux-pièces sur Trudaine ne se vend pas au prix d'un deux-pièces équivalent situé à deux cents mètres, sur Rochechouart. Notre estimation croise les ventes réellement signées dans votre rue, les biens actuellement en concurrence et ce que la visite nous apprend de votre appartement.",
@@ -81,12 +81,12 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 18e et Montmartre | Trudaines',
+    titre: 'Estimation immobilière gratuite Paris 18e, Montmartre | Trudaines',
     description:
-      "Estimation immobilière à Paris 18e : estimation appartement, vente maison, avis de valeur écrit sous 48 heures par un cabinet de Montmartre.",
+      "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
     titreAgence: 'Agence immobilière Paris 18e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière au 2 rue Livingstone, Paris 18e : Montmartre, Abbesses, Lamarck, sud du 18e. Prix au m² rue par rue, estimation écrite sous 48 heures.",
+      "Agence immobilière à Paris 18e, 2 rue Livingstone : Montmartre, Abbesses, Lamarck. Estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-18',
     intro:
       "Le 18e est l'arrondissement où les écarts de prix sont les plus larges de Paris. Entre un immeuble de l'avenue Junot et un immeuble des années soixante situé deux rues plus loin, la différence se compte en milliers d'euros au mètre carré. Une moyenne d'arrondissement n'a aucun sens ici : notre estimation part de votre rue, de votre immeuble et de votre étage.",
@@ -134,12 +134,12 @@ export const secteurs: Secteur[] = [
     arrondissement: '75010',
     nom: 'Paris 10e',
     nomLong: '10e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 10e | Trudaines',
+    titre: 'Estimation immobilière gratuite Paris 10e | Trudaines',
     description:
-      "Estimation immobilière à Paris 10e, secteur Lariboisière Rocroy. Estimation appartement Paris 10e, vente maison Paris 10e par un cabinet voisin du quartier.",
+      "Estimation immobilière gratuite à Paris 10e, Lariboisière Rocroy : visite, ventes de votre rue, avis de valeur sous 48 h.",
     titreAgence: 'Agence immobilière Paris 10e | Lariboisière Rocroy - Trudaines',
     descriptionAgence:
-      "Trudaines accompagne les propriétaires vendeurs du 10e nord, secteur Lariboisière Rocroy. Estimation écrite, mise en vente, suivi hebdomadaire.",
+      "Agence immobilière du 10e nord, Lariboisière Rocroy : estimation offerte sous 48 h, compte rendu chaque semaine.",
     hrefAgence: '/agence-immobiliere-paris-10',
     intro:
       "Le nord du 10e touche le 9e à la rue du Faubourg Poissonnière et le 18e au boulevard de la Chapelle. Les acheteurs y arrivent souvent après avoir cherché dans le 9e, avec le même budget et une exigence différente sur le volume. Estimer ici demande de savoir ce qui se vend juste à côté.",
@@ -187,12 +187,12 @@ export const secteurs: Secteur[] = [
     arrondissement: '75017',
     nom: 'Paris 17e',
     nomLong: '17e arrondissement de Paris',
-    titre: 'Estimation immobilière Paris 17e | Trudaines',
+    titre: 'Estimation immobilière gratuite Paris 17e | Trudaines',
     description:
-      "Estimation immobilière à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures par un agent immobilier du secteur.",
+      "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e | Batignolles et Épinettes - Trudaines',
     descriptionAgence:
-      "Agence immobilière dans le 17e : Batignolles, Épinettes, Brochant, Ternes. Vente, recherche et gestion, un seul interlocuteur jusqu'à la signature.",
+      "Agence immobilière dans le 17e : Batignolles, Épinettes, Brochant. Estimation offerte sous 48 h, un seul interlocuteur.",
     hrefAgence: '/agence-immobiliere-paris-17',
     intro:
       "Le 17e se lit en trois marchés qui n'ont presque rien en commun. Les Batignolles et leur square, où la demande familiale est constante. Les Épinettes et Brochant, plus abordables, portés par le prolongement du tramway et par Clichy Batignolles. Et la plaine Monceau, qui relève d'un autre budget. Estimer ici suppose de savoir dans lequel des trois se trouve votre rue.",

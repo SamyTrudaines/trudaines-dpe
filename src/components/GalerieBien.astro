@@ -1,0 +1,143 @@
+---
+import { evt } from '../lib/entonnoir';
+import { jeuPhoto, TAILLES_GALERIE_FICHE, TAILLES_PLEIN_ECRAN } from '../lib/images';
+
+/**
+ * Galerie d'une fiche de bien, en tête de page comme chez les grandes maisons :
+ * une photographie à la fois, en grand, au format de la prise de vue (3:2),
+ * jamais recadrée au point de perdre sa définition.
+ *
+ * La piste défile au doigt et au pavé sans JavaScript (défilement magnétique).
+ * Le script ajoute les flèches, le compteur et la vue de toutes les photos,
+ * une fenêtre plein écran où elles se suivent en grand. La position se lit par
+ * un observateur d'intersection : aucune mesure de mise en page pendant le
+ * défilement. La première photographie est chargée tout de suite, les autres
+ * à l'approche.
+ */
+interface Props {
+  photos: { src: string; alt: string }[];
+  titre: string;
+}
+const { photos, titre } = Astro.props;
+const total = photos.length;
+const deux = (n: number) => String(n).padStart(2, '0');
+---
+{total > 0 ? (
+  <div class="galerie" data-galerie>
+    <div class="galerie-scene">
+      <ul class="galerie-piste" data-galerie-piste tabindex="0" aria-label={`Photographies du bien, ${total} au total`}>
+        {photos.map((p, i) => {
+          const jeu = jeuPhoto(p.src);
+          return (
+            <li class="galerie-diapo">
+              <button type="button" class="galerie-agrandir" data-galerie-photo={i} aria-label={`Agrandir la photographie ${i + 1} sur ${total}`}>
+                <img
+                  src={jeu.src}
+                  srcset={jeu.srcset}
+                  sizes={TAILLES_GALERIE_FICHE}
+                  alt={p.alt}
+                  width="2400"
+                  height="1600"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={i === 0 ? 'high' : undefined}
+                  decoding="async"
+                />
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+
+      {total > 1 && (
+        <>
+          <button type="button" class="galerie-fleche galerie-fleche-precedente" data-galerie-precedent aria-label="Photographie précédente">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <button type="button" class="galerie-fleche galerie-fleche-suivante" data-galerie-suivant aria-label="Photographie suivante">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+          <p class="galerie-compteur" aria-hidden="true"><span data-galerie-courant>01</span> / {deux(total)}</p>
+        </>
+      )}
+      <button type="button" class="galerie-tout" data-galerie-ouvrir data-evt={evt('fiche', 'photos')}>
+        {total > 1 ? `Voir les ${total} photos` : 'Agrandir'}
+      </button>
+    </div>
+
+    <dialog class="galerie-plein" data-galerie-dialogue aria-label={`Photographies : ${titre}`}>
+      <div class="galerie-plein-barre">
+        <p class="galerie-plein-titre">{titre}</p>
+        <button type="button" class="galerie-plein-fermer" data-galerie-fermer>Fermer</button>
+      </div>
+      <ol class="galerie-plein-liste">
+        {photos.map((p) => {
+          const jeu = jeuPhoto(p.src);
+          return (
+            <li>
+              <img src={jeu.src} srcset={jeu.srcset} sizes={TAILLES_PLEIN_ECRAN} alt={p.alt} width="2400" height="1600" loading="lazy" decoding="async" />
+            </li>
+          );
+        })}
+      </ol>
+    </dialog>
+  </div>
+) : (
+  <div class="galerie-vide">Photographies en cours de préparation</div>
+)}
+
+<script>
+  for (const galerie of document.querySelectorAll<HTMLElement>('[data-galerie]')) {
+    const piste = galerie.querySelector<HTMLElement>('[data-galerie-piste]');
+    const dialogue = galerie.querySelector<HTMLDialogElement>('[data-galerie-dialogue]');
+    if (!piste) continue;
+    const diapos = Array.from(piste.children) as HTMLElement[];
+    const total = diapos.length;
+    const courant = galerie.querySelector('[data-galerie-courant]');
+    const reduit = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+
+    const afficher = () => {
+      if (courant) courant.textContent = String(index + 1).padStart(2, '0');
+    };
+
+    if (total > 1 && 'IntersectionObserver' in window) {
+      const guetteur = new IntersectionObserver(
+        (entrees) => {
+          for (const e of entrees) {
+            if (e.isIntersecting) {
+              index = diapos.indexOf(e.target as HTMLElement);
+              afficher();
+            }
+          }
+        },
+        { root: piste, threshold: 0.6 }
+      );
+      diapos.forEach((d) => guetteur.observe(d));
+    }
+
+    const aller = (i: number) => {
+      index = (i + total) % total;
+      afficher();
+      piste.scrollTo({ left: diapos[index].offsetLeft, behavior: reduit.matches ? 'auto' : 'smooth' });
+    };
+    galerie.querySelector('[data-galerie-precedent]')?.addEventListener('click', () => aller(index - 1));
+    galerie.querySelector('[data-galerie-suivant]')?.addEventListener('click', () => aller(index + 1));
+    piste.addEventListener('keydown', (evt) => {
+      if (evt.key === 'ArrowRight') { evt.preventDefault(); aller(index + 1); }
+      if (evt.key === 'ArrowLeft') { evt.preventDefault(); aller(index - 1); }
+    });
+
+    if (!dialogue) continue;
+    const ouvrir = (n = 0) => {
+      dialogue.showModal();
+      const cible = dialogue.querySelectorAll('li')[n];
+      if (n > 0 && cible) cible.scrollIntoView({ block: 'start' });
+      else dialogue.scrollTop = 0;
+    };
+    galerie.querySelector('[data-galerie-ouvrir]')?.addEventListener('click', () => ouvrir(index));
+    galerie.querySelectorAll<HTMLButtonElement>('[data-galerie-photo]').forEach((b) =>
+      b.addEventListener('click', () => ouvrir(Number(b.dataset.galeriePhoto)))
+    );
+    dialogue.querySelector('[data-galerie-fermer]')?.addEventListener('click', () => dialogue.close());
+  }
+</script>

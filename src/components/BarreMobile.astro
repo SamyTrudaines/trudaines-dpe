@@ -1,13 +1,23 @@
 ---
 import { site } from '../data/site';
 import { lienWhatsapp } from '../lib/whatsapp';
-interface Props { ancreEstimation?: string; evtEstimation?: string; messageWhatsapp?: string }
-const { ancreEstimation, evtEstimation, messageWhatsapp } = Astro.props;
+/**
+ * `action` remplace « Estimer » quand la page a mieux à proposer : sur la fiche
+ * d'un bien à vendre, « Visiter » mène droit au formulaire de visite.
+ */
+interface Props {
+  ancreEstimation?: string;
+  evtEstimation?: string;
+  messageWhatsapp?: string;
+  action?: { href: string; libelle: string; evt?: string };
+}
+const { ancreEstimation, evtEstimation, messageWhatsapp, action } = Astro.props;
+const principale = action ?? { href: ancreEstimation ?? '/estimation', libelle: 'Estimer', evt: evtEstimation };
 const lienWa = lienWhatsapp(Astro.url.pathname, messageWhatsapp);
 ---
 <div data-barre-mobile class="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-3 border-t border-[color:var(--color-trait)] bg-white md:hidden">
-  <a href={ancreEstimation ?? '/estimation'} data-evt={evtEstimation} class="flex min-h-[4rem] items-center justify-center bg-[color:var(--color-nuit)] px-2 text-center text-[0.8125rem] font-semibold text-white no-underline">
-    Estimer
+  <a href={principale.href} data-evt={principale.evt} class="flex min-h-[4rem] items-center justify-center bg-[color:var(--color-nuit)] px-2 text-center text-[0.8125rem] font-semibold text-white no-underline">
+    {principale.libelle}
   </a>
   <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="flex min-h-[4rem] items-center justify-center px-2 text-center text-[0.8125rem] font-semibold text-[color:var(--color-encre)] no-underline">
     Appeler

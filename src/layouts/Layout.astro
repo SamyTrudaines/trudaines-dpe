@@ -32,9 +32,13 @@ interface Props {
   messageWhatsapp?: string;
   /** La page s'ouvre sur une photographie pleine largeur, sous une barre transparente. */
   enteteSurPhoto?: boolean;
+  /** Premier bouton de la barre mobile, à la place de « Estimer ». */
+  barreAction?: { href: string; libelle: string; evt?: string };
+  /** Fil d'Ariane aligné sur le conteneur large (fiche d'un bien). */
+  filArianeLarge?: boolean;
 }
 
-const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true, ctaProps = {}, ancreEstimation, evtEstimation, messageWhatsapp, enteteSurPhoto = false } = Astro.props;
+const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true, ctaProps = {}, ancreEstimation, evtEstimation, messageWhatsapp, enteteSurPhoto = false, barreAction, filArianeLarge = false } = Astro.props;
 
 /*
  * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
@@ -134,9 +138,13 @@ const agence = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="trudaines-version" content={version} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {/*
+      Polices du premier écran seulement : le titre (600 italique), le chapô
+      (500 droit) et le texte courant. Les autres arrivent à la demande, sans
+      disputer la bande passante à la photographie d'ouverture.
+    */}
     <link rel="preload" href="/fonts/cormorant-garamond-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/montserrat-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="theme-color" content="#ffffff" />
     <Seo titre={titre} description={description} image={image} type={type} noindex={noindex} />
@@ -146,13 +154,13 @@ const agence = {
   </head>
   <body>
     <Entete surPhoto={enteteSurPhoto} />
-    {filAriane.length > 0 && <FilAriane etapes={filAriane} />}
+    {filAriane.length > 0 && <FilAriane etapes={filAriane} large={filArianeLarge} />}
     <main id="contenu">
       <slot />
       {cta && <BlocCta {...ctaProps} />}
     </main>
     <PiedDePage colleAuBloc={cta} />
-    <BarreMobile ancreEstimation={ancreEstimation} evtEstimation={evtEstimation} messageWhatsapp={messageWhatsapp} />
+    <BarreMobile ancreEstimation={ancreEstimation} evtEstimation={evtEstimation} messageWhatsapp={messageWhatsapp} action={barreAction} />
     <BandeauCookies />
     <script src="/js/formulaires.js" defer is:inline></script>
     <script>
@@ -174,11 +182,12 @@ const agence = {
        * dans le HTML : un navigateur sans JavaScript, un moteur de recherche
        * ou un lecteur d'écran voient la page entière d'emblée. Seules les
        * sections encore sous le pli sont marquées, pour ne rien faire
-       * clignoter au chargement, et l'écouteur se coupe une fois passé.
+       * clignoter au chargement, et l'écouteur se coupe une fois passé. Le tri
+       * se fait par un premier observateur, qui donne la position de chaque
+       * section sans forcer de mise en page pendant le chargement.
        */
       if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
         const sections = document.querySelectorAll('main .section, main .conteneur > .vitrine');
-        const seuil = window.innerHeight * 0.92;
         const guetteur = new IntersectionObserver(
           (entrees) => {
             for (const entree of entrees) {
@@ -190,12 +199,16 @@ const agence = {
           },
           { rootMargin: '0px 0px -8% 0px' }
         );
-        for (const section of sections) {
-          if (section.getBoundingClientRect().top > seuil) {
-            section.setAttribute('data-apparait', '');
-            guetteur.observe(section);
+        const tri = new IntersectionObserver((entrees) => {
+          for (const entree of entrees) {
+            tri.unobserve(entree.target);
+            if (!entree.isIntersecting && entree.boundingClientRect.top > 0) {
+              entree.target.setAttribute('data-apparait', '');
+              guetteur.observe(entree.target);
+            }
           }
-        }
+        });
+        sections.forEach((section) => tri.observe(section));
       }
     </script>
   </body>

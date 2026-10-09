@@ -229,6 +229,10 @@ chemins. La canonicalisation du domaine se règle alors dans Cloudflare :
   l'indexation des pages estimation et agence.
 - **Google Business Profile** : vérifiez que l'adresse du 2 rue Livingstone et
   les horaires correspondent exactement à ceux du site, mot pour mot.
+- **Fréquentation, sans cookie** : dans Cloudflare, **Workers & Pages**, projet
+  `trudaines-dpe`, onglet **Metrics**, activez **Web Analytics**. La mesure est
+  insérée au déploiement suivant ; la politique de sécurité du contenu
+  l'autorise déjà. Elle compte toutes les visites, bandeau accepté ou non.
 - **Analytics** : vérifiez la remontée des événements `estimation_etape1`,
   `estimation_envoyee`, `visite_demandee`, `fiche_telechargee`,
   `guide_telecharge`, `alerte_creee`, `cv_envoye`, `clic_telephone`,

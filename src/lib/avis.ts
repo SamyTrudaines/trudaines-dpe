@@ -58,6 +58,20 @@ export type AgrégatAvis = {
  * Le chiffre affiché correspond donc toujours à ce que le visiteur peut compter
  * sur la page /avis, condition posée par Google pour un balisage AggregateRating.
  */
+/**
+ * Preuve sociale des extraits de recherche, « 105 avis clients, tous à cinq étoiles. »,
+ * calculée sur les avis publiés : Google n'affiche plus les étoiles qu'un site
+ * donne à sa propre entreprise, la meta description est donc le seul endroit
+ * où la note se lit avant le clic.
+ */
+export async function preuveAvis() {
+  const a = await agrégatAvis();
+  if (a.total === 0) return '';
+  /* « Tous à cinq étoiles » seulement si chaque avis publié porte sa note, comme sur l'accueil. */
+  const tousCinq = a.toutesCinq && a.notés === a.total;
+  return tousCinq ? `${a.total} avis clients, tous à cinq étoiles.` : `${a.total} avis clients, note moyenne de ${a.noteTexte} sur 5.`;
+}
+
 export async function agrégatAvis(): Promise<AgrégatAvis> {
   const liste = await getCollection('avis');
   const total = liste.length;

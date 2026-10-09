@@ -66,7 +66,7 @@ L’appartement est confortable par son double vitrage et ses doublages d’isol
 
 DPE D avec chauffage électrique (237 kWh/m²/an). Local à vélos et cave. Charges basses à seulement 750€ par trimestre.
 
-Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site Géorisques
+Les informations sur les risques auxquels ce bien est exposé sont disponibles sur le site [Géorisques](https://www.georisques.gouv.fr).
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/182-appartement-3-chambres-83m-vue-sur-seine-dernier-etage le 2026-09-18.
      Remis en vente sur le site le 2026-10-03 : prix ramené de 990 000 à 950 000 euros ce jour.

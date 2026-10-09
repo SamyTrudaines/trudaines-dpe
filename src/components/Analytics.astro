@@ -6,7 +6,8 @@ const id = site.ga4;
   Les deux scripts sont servis par une adresse, jamais écrits dans la page :
   la politique de sécurité du contenu refuse le code inscrit dans le HTML.
   /js/analytics.js pose window.trudainesEvent même sans identifiant GA4, et
-  n'arme la mesure d'audience que si data-ga4 est renseigné.
+  n'arme la mesure d'audience que si data-ga4 est renseigné. Différé : il ne
+  retarde jamais le premier affichage, et s'exécute avant les autres scripts.
 */}
-<script src="/js/analytics.js" data-ga4={id} is:inline></script>
+<script src="/js/analytics.js" data-ga4={id} defer is:inline></script>
 {id && <script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`} is:inline></script>}

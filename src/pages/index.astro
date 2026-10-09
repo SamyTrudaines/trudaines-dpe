@@ -74,14 +74,15 @@ const engagements = [
 ];
 ---
 <Layout
-  titre="Trudaines | Agence immobilière à Paris, vente, recherche et gestion"
-  description="Agence immobilière à Paris : vente, recherche pour acquéreur et gestion locative. Avis de valeur écrit sous 48 heures, compte rendu après chaque visite."
+  titre="Trudaines, agence immobilière à Paris 9e, 18e et Montmartre"
+  description={`Agence immobilière indépendante à Paris : vente, recherche, gestion locative. Avis de valeur écrit offert sous 48 heures. ${preuveAvis}.`}
   enteteSurPhoto
   donnees={[siteWeb]}
 >
   <Ouverture />
 
-  <section class="section pt-8">
+  {/* Titre, preuve et estimation en un seul écran : les biens commencent au premier défilement. */}
+  <section class="pb-10 pt-8 md:pb-14">
     <div class="conteneur">
       <h1 class="max-w-4xl">
         <span class="surtitre marque-filet block">Agence immobilière à Paris</span>
@@ -90,8 +91,8 @@ const engagements = [
       <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,29rem)] lg:items-end lg:gap-16">
         <div>
           <p class="chapo max-w-2xl">
-            Derrière chaque adresse, il y a une rue, un marché, une vie. Nous lisons les trois par la donnée
-            et défendons votre prix en personne.
+            <span class="block">Guidés par la passion et l'humain.</span>
+            <span class="block">En avance, par la technologie.</span>
           </p>
           {agregatAvis.total > 0 && (
             <a href="/avis" class="preuve-avis" data-evt="accueil_avis">
@@ -120,7 +121,28 @@ const engagements = [
           </p>
         </form>
       </div>
-      <ul class="reperes mt-16 md:mt-20" aria-label="Estimation : conditions et délais">
+    </div>
+  </section>
+
+  {biens.length > 0 ? (
+    <section class="pb-16 pt-6 md:pb-24 md:pt-10" aria-labelledby="biens-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+          <h2 id="biens-accueil" class="titre-2">Nos biens à vendre à Paris</h2>
+          <a href="/acheter" class="lien-souligne text-sm">Tous les biens à la vente</a>
+        </div>
+        <div class="mt-8 md:mt-10">
+          <VitrineBiens biens={biens} />
+        </div>
+      </div>
+    </section>
+  ) : (
+    references.length > 0 && <ReferencesAccueil references={references} total={totalReferences} />
+  )}
+
+  <section class="pb-16 md:pb-20">
+    <div class="conteneur">
+      <ul class="reperes" aria-label="Estimation : conditions et délais">
         <li>
           <span class="reperes-chiffre">0 €</span>
           <span class="reperes-texte">Estimation sans frais et sans engagement</span>
@@ -139,22 +161,6 @@ const engagements = [
       </ul>
     </div>
   </section>
-
-  {biens.length > 0 ? (
-    <section class="section" aria-labelledby="biens-accueil">
-      <div class="conteneur">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 id="biens-accueil" class="titre-2">Nos biens à vendre à Paris</h2>
-          <a href="/acheter" class="lien-souligne text-sm">Tous les biens à la vente</a>
-        </div>
-        <div class="mt-12">
-          <VitrineBiens biens={biens} />
-        </div>
-      </div>
-    </section>
-  ) : (
-    references.length > 0 && <ReferencesAccueil references={references} total={totalReferences} />
-  )}
 
   {biens.length > 0 && references.length > 0 && (
     <ReferencesAccueil references={references} total={totalReferences} />

@@ -321,11 +321,12 @@
   .filet { padding-top: clamp(3.5rem, 2rem + 5vw, 7rem); }
 
   /*
-   * Le mouvement du site, réglé une fois pour toutes. Trois gestes seulement :
+   * Le mouvement du site, réglé une fois pour toutes. Deux gestes seulement :
    * les sections apparaissent en montant quand elles entrent dans l'écran,
-   * la photographie d'ouverture respire lentement, et les cartes réagissent
-   * au survol. L'attribut d'apparition est posé par le script du gabarit,
-   * jamais dans la page : sans JavaScript, tout est visible d'emblée, et le
+   * et les cartes réagissent au survol. La photographie d'ouverture reste
+   * immobile : agrandie, même un instant, elle perdrait de sa netteté.
+   * L'attribut d'apparition est posé par le script du gabarit, jamais dans
+   * la page : sans JavaScript, tout est visible d'emblée, et le
    * réglage du système qui demande moins de mouvement est respecté.
    */
   @media (prefers-reduced-motion: no-preference) {
@@ -337,14 +338,6 @@
     [data-apparait].est-visible {
       opacity: 1;
       transform: none;
-    }
-
-    .ouverture-photo {
-      animation: approche-lente 8s ease-out both;
-    }
-    @keyframes approche-lente {
-      from { transform: scale(1.05); }
-      to { transform: scale(1); }
     }
 
     @media (hover: hover) {
@@ -667,13 +660,27 @@ html.menu-ouvert { overflow: hidden; }
 .entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) .logo-mot,
 .entete[data-sur-photo]:not([data-compact]):not([data-menu-ouvert]) .logo-sous { fill: #ffffff; }
 
+/*
+ * Photographie d'ouverture : entière sur téléphone, à son format 3:2 ; sur
+ * ordinateur, toute la largeur et une hauteur réglée sur l'écran, sans jamais
+ * dépasser celle de l'image entière.
+ */
+.ouverture { position: relative; overflow: hidden; background-color: var(--color-papier); }
+.ouverture-photo { display: block; width: 100%; height: auto; aspect-ratio: 3000 / 2002; object-fit: cover; }
+@media (min-width: 768px) {
+  .ouverture-photo { aspect-ratio: auto; height: min(62svh, 66.73vw); object-position: 50% 60%; }
+}
+
 /* Voile en haut de la photographie, pour que la barre blanche reste lisible. */
 .ouverture-voile {
   position: absolute;
   inset: 0 0 auto;
-  height: 11rem;
+  height: 6.5rem;
   background: linear-gradient(to bottom, rgba(18, 18, 16, 0.6), rgba(18, 18, 16, 0.22) 55%, rgba(18, 18, 16, 0));
   pointer-events: none;
+}
+@media (min-width: 768px) {
+  .ouverture-voile { height: 11rem; }
 }
 
 /*
@@ -1288,3 +1295,228 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   .alerte-express-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .alerte-express-grille > :last-child { grid-column: 1 / -1; }
 }
+
+/*
+ * Fiche d'un bien. Sur ordinateur, deux colonnes dès le haut de la page : la
+ * galerie, puis le détail du bien, à gauche ; la demande de visite à droite,
+ * qui accompagne la lecture jusqu'en bas. Sur téléphone, une colonne : la
+ * galerie, les chiffres, la demande de visite, puis le détail.
+ */
+.fiche-entete { display: grid; gap: 1.25rem; margin-top: 2rem; }
+@media (min-width: 1024px) {
+  .fiche-entete { grid-template-columns: minmax(0, 1fr) auto; align-items: end; column-gap: 3rem; }
+}
+.fiche-titre { font-size: clamp(2.1rem, 1.45rem + 2.1vw, 3.4rem); max-width: 22ch; }
+.fiche-prix { display: grid; gap: 0.35rem; }
+@media (min-width: 1024px) {
+  .fiche-prix { text-align: right; }
+}
+.fiche-prix-montant { font-size: clamp(1.6rem, 1.3rem + 0.9vw, 2.1rem); font-weight: 600; color: var(--color-encre); letter-spacing: 0.01em; }
+.fiche-prix-note { font-size: 0.875rem; color: var(--color-ardoise); }
+
+.fiche-grille {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'haut' 'visite' 'bas';
+  row-gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .fiche-grille {
+    grid-template-columns: minmax(0, 1fr) 21rem;
+    grid-template-areas: 'haut visite' 'bas visite';
+    column-gap: 2.5rem;
+    row-gap: 3.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .fiche-grille { grid-template-columns: minmax(0, 1fr) 22rem; column-gap: 3.5rem; }
+}
+.fiche-haut { grid-area: haut; min-width: 0; }
+.fiche-bas { grid-area: bas; min-width: 0; }
+.fiche-visite { grid-area: visite; min-width: 0; }
+.fiche-visite-carte { border: 1px solid var(--color-trait); background-color: #ffffff; padding: 1.25rem 1.5rem; }
+/* Formulaire resserré : la carte entière tient dans un écran d'ordinateur portable. */
+.fiche-visite-carte .titre-3 { font-size: 1.45rem; }
+.fiche-visite-carte .etiquette { margin-bottom: 0.3rem; font-size: 0.75rem; }
+.fiche-visite-carte .champ { min-height: 2.75rem; padding: 0.55rem 0.8rem; font-size: 0.95rem; }
+@media (min-width: 1024px) {
+  /* La carte suit la lecture ; sur un écran bas, elle défile en elle-même plutôt que d'être coupée. */
+  .fiche-visite-carte {
+    position: sticky;
+    top: calc(var(--entete-compact) + 1.5rem);
+    max-height: calc(100svh - var(--entete-compact) - 3rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}
+.fiche-visite-resume { margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-trait); }
+.fiche-visite-prix { font-size: 1.6rem; font-weight: 600; color: var(--color-encre); letter-spacing: 0.01em; }
+.fiche-visite-bien { margin-top: 0.3rem; font-size: 0.85rem; color: var(--color-ardoise); }
+.fiche-contact { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--color-trait); display: grid; gap: 0.4rem; font-size: 0.875rem; color: var(--color-ardoise); }
+.fiche-contact-tel { font-size: 1.05rem; font-weight: 600; color: var(--color-encre); text-decoration: none; }
+.fiche-contact-tel:hover { text-decoration: underline; text-decoration-color: var(--color-or); text-underline-offset: 0.3em; }
+
+/* Premier paragraphe du texte d'un bien, en chapô quand la description ne le précède pas. */
+.fiche-texte-ouvert > h2 + p {
+  font-family: var(--font-titre);
+  font-weight: 500;
+  font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.55rem);
+  line-height: 1.55;
+  color: var(--color-encre);
+}
+
+/* Chiffres clés, sous la galerie : la surface d'abord, puis ce qui se compare. */
+.fiche-chiffres {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-encre);
+}
+@media (min-width: 768px) {
+  .fiche-chiffres { grid-template-columns: repeat(var(--colonnes, 5), minmax(0, 1fr)); }
+}
+.fiche-chiffres > li { display: grid; gap: 0.3rem; padding: 1.1rem 0.75rem 1.1rem 0; border-bottom: 1px solid var(--color-trait); }
+.fiche-chiffre { font-family: var(--font-titre); font-style: italic; font-weight: 600; font-size: clamp(1.5rem, 1.25rem + 0.8vw, 2rem); line-height: 1.1; color: var(--color-encre); }
+.fiche-chiffre-libelle { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-ardoise); }
+
+/* Galerie : une photographie à la fois, au format de la prise de vue. */
+@media (max-width: 1023px) {
+  .fiche-haut .galerie { margin-inline: -1.5rem; }
+}
+.galerie-scene { position: relative; background-color: var(--color-papier); }
+.galerie-piste {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.galerie-piste::-webkit-scrollbar { display: none; }
+.galerie-piste:focus-visible { outline: 2px solid var(--color-encre); outline-offset: 3px; }
+.galerie-diapo { flex: 0 0 100%; scroll-snap-align: start; }
+.galerie-agrandir { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.galerie-agrandir img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.galerie-fleche {
+  position: absolute;
+  top: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-top: -1.5rem;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--color-encre);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.galerie-fleche:hover { background-color: #ffffff; }
+.galerie-fleche svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.galerie-fleche-precedente { left: 1rem; }
+.galerie-fleche-suivante { right: 1rem; }
+@media (hover: hover) and (min-width: 768px) {
+  .galerie-fleche { display: inline-flex; }
+}
+.galerie-compteur,
+.galerie-tout {
+  position: absolute;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.9rem;
+  background-color: rgba(255, 255, 255, 0.94);
+  color: var(--color-encre);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+.galerie-compteur { left: 1rem; }
+.galerie-tout { right: 1rem; border: 0; cursor: pointer; }
+@media (max-width: 767px) {
+  .galerie-compteur,
+  .galerie-tout { bottom: 0.75rem; padding: 0 0.7rem; letter-spacing: 0.12em; }
+  .galerie-compteur { left: 0.75rem; min-height: 2.25rem; }
+  .galerie-tout { right: 0.75rem; }
+}
+.galerie-tout:hover { background-color: #ffffff; text-decoration: underline; text-decoration-color: var(--color-or); text-underline-offset: 0.3em; }
+.galerie-vide {
+  display: flex;
+  aspect-ratio: 3 / 2;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-papier);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ardoise);
+}
+
+/* Toutes les photographies, en plein écran, sur fond blanc. */
+.galerie-plein {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #ffffff;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.galerie-plein::backdrop { background-color: #ffffff; }
+.galerie-plein-barre {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-trait);
+  background-color: #ffffff;
+}
+.galerie-plein-titre { font-family: var(--font-titre); font-style: italic; font-weight: 500; font-size: 1.25rem; color: var(--color-encre); }
+.galerie-plein-fermer {
+  min-height: 2.75rem;
+  padding: 0 1.25rem;
+  border: 1px solid var(--color-encre);
+  background-color: #ffffff;
+  color: var(--color-encre);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.galerie-plein-fermer:hover { background-color: var(--color-encre); color: #ffffff; }
+.galerie-plein-liste { display: grid; gap: 1rem; max-width: 75rem; margin: 0 auto; padding: 1rem 0 3rem; }
+@media (min-width: 768px) {
+  .galerie-plein-liste { gap: 1.5rem; padding: 1.5rem 1.5rem 4rem; }
+}
+.galerie-plein-liste img { display: block; width: 100%; height: auto; }
+
+/* Texte d'un bien : intertitres en italique, points forts en liste à filets, sur deux colonnes. */
+.fiche-bas .prose-trudaines h2:not(.titre-2) {
+  margin-top: 3rem;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.9rem);
+}
+.fiche-bas .prose-trudaines ul {
+  display: grid;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-encre);
+}
+@media (min-width: 768px) {
+  .fiche-bas .prose-trudaines ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2rem; }
+}
+.fiche-bas .prose-trudaines ul > li { margin: 0; padding: 0.85rem 0; border-bottom: 1px solid var(--color-trait); }
+.fiche-bas .prose-trudaines ul > li::before { content: none; }

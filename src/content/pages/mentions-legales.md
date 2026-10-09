@@ -29,7 +29,11 @@ L'ensemble des contenus de ce site, textes, photographies, analyses de marché e
 
 ## Médiation de la consommation
 
-Conformément à l'article L612-1 du code de la consommation, tout consommateur peut recourir gratuitement à un médiateur de la consommation : Medicys, 73 boulevard de Clichy, 75009 Paris, www.medicys.fr. La plateforme européenne de règlement en ligne des litiges est accessible à l'adresse ec.europa.eu/consumers/odr.
+Conformément aux articles L611-1 et suivants du code de la consommation, tout consommateur a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige qui l'oppose à Trudaines Immobilier.
+
+Médiateur compétent : MEDIMMOCONSO, 1 allée du Parc de Mesemena, bâtiment A, CS 25222, 44505 La Baule Cedex, [www.medimmoconso.fr](https://www.medimmoconso.fr), organisme référencé par la Commission d'évaluation et de contrôle de la médiation de la consommation. Le médiateur se saisit par le formulaire de réclamation en ligne de son site ou par courrier à cette adresse.
+
+Avant de le saisir, le consommateur adresse une réclamation écrite au cabinet, par courriel à samy.santamarina@trudaines.com ou par courrier au 2 rue Livingstone, 75018 Paris. Il dispose ensuite d'un an à compter de cette réclamation pour saisir le médiateur (article L612-2 du code de la consommation).
 
 ## Données personnelles
 

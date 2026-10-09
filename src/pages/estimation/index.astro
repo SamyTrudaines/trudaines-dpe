@@ -6,7 +6,8 @@ import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import { secteurs } from '../../data/secteurs';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
-import { avisCommentés, agrégatAvis } from '../../lib/avis';
+import { avisCommentés, agrégatAvis, preuveAvis } from '../../lib/avis';
+const preuve = await preuveAvis();
 
 const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
 const avis = await avisCommentés(3);
@@ -87,8 +88,8 @@ const donnees = [
 ];
 ---
 <Layout
-  titre="Estimation immobilière à Paris 9e et 18e | Trudaines"
-  description="Estimation immobilière à Paris 9e, 10e, 17e et 18e : ventes signées, visite sur place et avis de valeur écrit sous 48 heures, sans engagement."
+  titre="Estimation immobilière gratuite à Paris 9e et 18e | Trudaines"
+  description={`Estimation immobilière gratuite à Paris 9e, 10e, 17e et 18e : visite, ventes signées, avis de valeur écrit sous 48 h. ${preuve}`}
   filAriane={[{ nom: 'Estimation' }]}
   donnees={donnees}
 >

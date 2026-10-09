@@ -53,7 +53,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette'],
     titreSeo: 'Agence immobilière Montmartre, Paris 18e | Trudaines',
     descriptionSeo:
-      "Agence immobilière à Montmartre, au pied de la Butte : prix au m² rue par rue, estimation écrite sous 48 heures, vente exclusive ou confidentielle.",
+      "Agence immobilière à Montmartre, au pied de la Butte : prix par rue, estimation offerte sous 48 h, vente confidentielle.",
     h1: 'Agence immobilière à Montmartre',
     surtitre: 'Paris 18e · Abbesses, Lepic, Junot',
     chapo:
@@ -101,7 +101,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['martyrs-lorette', 'clichy-trinite', 'trudaine-maubeuge'],
     titreSeo: 'Agence immobilière Saint-Georges, Paris 9e | Trudaines',
     descriptionSeo:
-      "Agence immobilière du quartier Saint-Georges, Paris 9e : prix au m² des rues autour de la place, estimation écrite sous 48 heures. Nouvelle Athènes, Lorette.",
+      "Agence immobilière Saint-Georges, Paris 9e, Nouvelle Athènes : prix au m² des rues voisines, estimation offerte sous 48 h.",
     h1: 'Agence immobilière Saint-Georges, Paris 9e',
     surtitre: 'Paris 9e · Nouvelle Athènes',
     chapo:
@@ -144,7 +144,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['trudaine-maubeuge', 'martyrs-lorette', 'montmartre'],
     titreSeo: 'Agence immobilière Trudaine, Paris 9e | Trudaines',
     descriptionSeo:
-      "Trudaines, l'agence qui porte le nom de l'avenue Trudaine : prix au m² des rues voisines, mandats conduits dans le quartier, estimation écrite sous 48 h.",
+      "Trudaines, l'agence qui porte le nom de l'avenue Trudaine : prix au m² des rues voisines, estimation offerte sous 48 h.",
     h1: "Agence immobilière avenue Trudaine, Paris 9e",
     surtitre: 'Paris 9e · Trudaine, Anvers, Rochechouart',
     chapo:

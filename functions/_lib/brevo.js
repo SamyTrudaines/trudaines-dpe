@@ -69,12 +69,29 @@ export function reponse(request, { ok, message, redirection = '/merci', compleme
   return new Response(message, { status: statut, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }
 
-/** Contrôles anti robots : champ piège et délai de saisie minimal. */
+/**
+ * Champs pièges. Les formulaires portent « controle » : un champ nommé
+ * « societe » est reconnu par le remplissage automatique de Chrome comme le nom
+ * d'une entreprise, et pouvait se remplir seul chez un vrai visiteur, dont la
+ * demande était alors écartée sans qu'il le sache. « societe » reste lu pour
+ * les outils de recette, qui l'envoient exprès.
+ */
+const PIEGES = ['controle', 'societe'];
+const DELAI_MINIMUM = 2500;
+
+/**
+ * Contrôles anti robots : champ piège et délai de saisie minimal. La durée de
+ * saisie est mesurée par le navigateur sur sa propre horloge (champ duree) :
+ * une horloge d'appareil en avance ne fait plus passer un visiteur pour un
+ * robot. Sans elle, l'horodatage n'écarte un envoi que sur un écart positif.
+ */
 export function suspect(donnees) {
-  if ((donnees.get('societe') || '').trim() !== '') return true;
+  if (PIEGES.some((champ) => String(donnees.get(champ) || '').trim() !== '')) return true;
+  const duree = parseInt(donnees.get('duree') || '', 10);
+  if (Number.isFinite(duree)) return duree >= 0 && duree < DELAI_MINIMUM;
   const horodatage = parseInt(donnees.get('horodatage') || '0', 10);
-  if (horodatage && Date.now() - horodatage < 2500) return true;
-  return false;
+  const ecart = Date.now() - horodatage;
+  return Boolean(horodatage) && ecart >= 0 && ecart < DELAI_MINIMUM;
 }
 
 export function champsManquants(donnees, requis) {

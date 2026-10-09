@@ -77,6 +77,27 @@ const piegeOk = piege.status === 200 && appels.length === 0;
 if (!piegeOk) echecs++;
 console.log(`${piegeOk ? 'OK   ' : 'ÉCHEC'} piège à robots · appels réseau ${appels.length}`);
 
+/*
+ * Filtre anti robots : le piège des formulaires et celui des outils de recette
+ * écartent l'envoi ; une saisie de moins de 2,5 secondes aussi ; un appareil
+ * dont l'horloge avance de dix minutes n'est plus pris pour un robot.
+ */
+const demandeComplete = { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9' };
+const enAvance = String(Date.now() + 10 * 60 * 1000);
+for (const [nom, champs, ecarte] of [
+  ['piège controle rempli', { controle: 'robot', horodatage: recent(), duree: '20000' }, true],
+  ['saisie en 1,2 seconde', { horodatage: recent(), duree: '1200' }, true],
+  ['horloge en avance de 10 min, saisie de 40 s', { horodatage: enAvance, duree: '40000' }, false],
+  ['horloge en avance de 10 min, sans durée', { horodatage: enAvance }, false],
+  ['envoi sans JavaScript', {}, false],
+]) {
+  appels.length = 0;
+  await estimation.onRequestPost({ request: requete({ ...demandeComplete, ...champs }), env });
+  const ok = ecarte ? appels.length === 0 : appels.length > 0;
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} ${nom} · ${ecarte ? 'écarté' : 'transmis'} attendu, appels réseau ${appels.length}`);
+}
+
 const sansJs = await estimation.onRequestPost({
   request: requete({ adresse: '12 avenue Trudaine', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'c@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }, { json: false }),
   env,

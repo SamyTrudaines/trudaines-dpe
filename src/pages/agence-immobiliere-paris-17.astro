@@ -5,9 +5,10 @@ import BlocAgence from '../components/BlocAgence.astro';
 import Avis from '../components/Avis.astro';
 import Banniere from '../components/Banniere.astro';
 import { ambiance } from '../data/ambiance';
-import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
 import { getSecteur } from '../data/secteurs';
 import { arrondissements, periode } from '../lib/rues';
+const preuve = await preuveAvis();
 
 const secteur = getSecteur('paris-17')!;
 const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
@@ -24,7 +25,7 @@ const services = [
 ---
 <Layout
   titre={secteur.titreAgence}
-  description={secteur.descriptionAgence}
+  description={`${secteur.descriptionAgence} ${preuve}`}
   filAriane={[{ nom: 'Agence immobilière Paris 17e' }]}
 >
   <Banniere

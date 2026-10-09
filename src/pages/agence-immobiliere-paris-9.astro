@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import BlocAgence from '../components/BlocAgence.astro';
 import Avis from '../components/Avis.astro';
-import { avisCommentés, agrégatAvis } from '../lib/avis';
+import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
 import { getSecteur } from '../data/secteurs';
 import EnBref from '../components/EnBref.astro';
 import { agencesLocales } from '../data/agences-locales';
@@ -12,6 +12,7 @@ import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
 import { distance } from '../lib/quartiers';
 import { arrondissements, periode } from '../lib/rues';
 import { prix, nombre } from '../lib/format';
+const preuve = await preuveAvis();
 
 const secteur = getSecteur('paris-9')!;
 const quartiers = (await getCollection('quartiers')).filter((q) => secteur.quartiers.includes(q.id)).sort((a, b) => a.data.ordre - b.data.ordre);
@@ -39,7 +40,7 @@ const services = [
 ---
 <Layout
   titre={secteur.titreAgence}
-  description={secteur.descriptionAgence}
+  description={`${secteur.descriptionAgence} ${preuve}`}
   filAriane={[{ nom: 'Agence immobilière Paris 9e' }]}
   donnees={[faqEnDonnees(faq)]}
 >

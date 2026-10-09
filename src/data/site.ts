@@ -44,7 +44,17 @@ export const site = {
     garantieMontant: '120 000 euros',
     garantieSocietaire: '175720A',
     detentionFonds: 'Le cabinet ne reçoit aucun fonds, effet ou valeur.',
-    mediateur: 'Medicys, 73 boulevard de Clichy, 75009 Paris, www.medicys.fr',
+    /**
+     * Médiateur de la consommation, convention active depuis le 29 avril 2026.
+     * L'adresse électronique du médiateur est réservée à ses échanges avec le
+     * cabinet : elle ne doit figurer sur aucun support, ce site compris.
+     */
+    mediateur: {
+      nom: 'MEDIMMOCONSO',
+      adresse: '1 allée du Parc de Mesemena, bâtiment A, CS 25222, 44505 La Baule Cedex',
+      site: 'https://www.medimmoconso.fr',
+      libelleSite: 'www.medimmoconso.fr',
+    },
     tva: 'Régime de TVA applicable selon la facture émise.',
   },
   reseaux: {

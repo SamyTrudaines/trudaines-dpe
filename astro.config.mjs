@@ -5,7 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://www.trudaines.com",
   trailingSlash: "never",
-  build: { format: "file" },
+  // Feuille de style écrite dans chaque page : une requête bloquante de moins avant le premier affichage.
+  build: { format: "file", inlineStylesheets: "always" },
   integrations: [sitemap({ filter: (page) => !page.includes("/merci") })],
   vite: { plugins: [tailwindcss()] },
 
@@ -30,11 +31,13 @@ export default defineConfig({
         "manifest-src 'self'",
         "font-src 'self'",
         "img-src 'self' data: https://trudaines.staticlbi.com https://trudaines.la-boite-immo.com https://www.google-analytics.com",
-        "connect-src 'self' https://api-adresse.data.gouv.fr https://www.google-analytics.com https://region1.google-analytics.com",
+        // cloudflareinsights.com : Cloudflare Web Analytics, mesure sans cookie que
+        // Cloudflare Pages insère d'elle même dès qu'elle est activée sur le projet.
+        "connect-src 'self' https://api-adresse.data.gouv.fr https://www.google-analytics.com https://region1.google-analytics.com https://cloudflareinsights.com",
         'upgrade-insecure-requests',
       ],
       styleDirective: { resources: ["'self'", "'unsafe-inline'"] },
-      scriptDirective: { resources: ["'self'", 'https://www.googletagmanager.com'] },
+      scriptDirective: { resources: ["'self'", 'https://www.googletagmanager.com', 'https://static.cloudflareinsights.com'] },
     },
   },
 });
