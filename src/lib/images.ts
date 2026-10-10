@@ -10,7 +10,7 @@
  * les garde : sur la photographie d'un appartement parisien, ce détail est
  * exactement ce qui se vend.
  *
- * Une page profonde informe et se compte par centaines : les 458 pages de
+ * Une page profonde informe et se compte par centaines : les pages de
  * voie, les articles. Elle reçoit l'AVIF en premier, qui pèse environ un
  * tiers de moins, parce que le volume y compte davantage que le grain d'un
  * parquet.

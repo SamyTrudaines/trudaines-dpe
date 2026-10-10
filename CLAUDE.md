@@ -1,6 +1,6 @@
 # trudaines.com
 
-Site de Trudaines Immobilier (Samy Santamarina, Paris 9e, 10e, 17e, 18e). Astro 7 statique,
+Site de Trudaines Immobilier (Samy Santamarina, Paris 7e, 9e, 10e, 16e, 17e, 18e). Astro 7 statique,
 Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Functions
 (`functions/api/*.js`, Brevo dans `functions/_lib/brevo.js`).
 

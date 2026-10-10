@@ -10,7 +10,7 @@ import { agencesLocales } from '../data/agences-locales';
 import { site } from '../data/site';
 import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
 import { distance } from '../lib/quartiers';
-import { arrondissements, periode } from '../lib/rues';
+import { arrondissements, periode, rues } from '../lib/rues';
 import { prix, nombre } from '../lib/format';
 const preuve = await preuveAvis();
 
@@ -70,10 +70,10 @@ const services = [
   </section>
   <section class="section filet">
     <div class="conteneur max-w-3xl">
-      <h2 class="titre-2">Pourquoi quatre arrondissements travaillés au mètre carré</h2>
+      <h2 class="titre-2">Pourquoi six arrondissements travaillés au mètre carré</h2>
       <p class="mt-6 text-[color:var(--color-ardoise)]">
-        Une agence qui couvre toute l'Île-de-France connaît mal chaque rue. Nous avons choisi l'inverse : quatre
-        arrondissements limitrophes travaillés au mètre carré, 458 voies suivies en permanence, et la capacité
+        Une agence qui couvre toute l'Île-de-France connaît mal chaque rue. Nous avons choisi l'inverse : six
+        arrondissements travaillés au mètre carré, {nombre(rues.length)} voies suivies en permanence, et la capacité
         de dire à un vendeur ce qui s'est signé au deuxième étage de l'immeuble d'en face, il y a quatre mois.
       </p>
       <p class="mt-6 text-[color:var(--color-ardoise)]">
