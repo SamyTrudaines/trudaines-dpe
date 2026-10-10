@@ -9,6 +9,7 @@ prix: 950000
 surface: 83
 pieces: 4
 chambres: 3
+sallesDeBain: 1
 etage: "7e et dernier étage"
 ascenseur: true
 dpe: D

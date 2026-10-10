@@ -9,6 +9,7 @@ prix: 680000
 surface: 63
 pieces: 3
 chambres: 1
+sallesDeBain: 1
 etage: "3e étage"
 ascenseur: false
 dpe: D

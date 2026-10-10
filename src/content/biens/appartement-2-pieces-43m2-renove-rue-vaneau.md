@@ -9,6 +9,7 @@ prix: 710000
 surface: 42.72
 pieces: 2
 chambres: 1
+sallesDeBain: 1
 etage: "2e étage"
 ascenseur: false
 dpe: D

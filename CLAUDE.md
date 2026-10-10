@@ -53,6 +53,11 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
+- Flux des portails : `/flux/kyero.xml` (toutes langues) et `/flux/trovit-<langue>.xml` (fr, en, de, es, it, pt,
+  zh, ar), construits par `src/lib/flux.ts` depuis les biens à vendre publiés ; photos JPEG 1600 px tirées au build
+  (`/flux/photos/<bien>/<n>.jpg`). Traductions dans `src/data/annonces-traduites.ts` : un bien sans traduction part
+  en français seul.
+
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
 `npm run test-mise-en-ligne`, `npm run verifier-mobile`.
