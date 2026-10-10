@@ -122,3 +122,8 @@
 # ci-dessus, une ligne par URL, en conservant le code 301.
 # L'abréviation St-Cyr a été développée en Saint-Cyr à la relecture du 17e.
 /prix-immobilier/boulevard-gouvion-st-cyr-17  /prix-immobilier/boulevard-gouvion-saint-cyr-17  301
+
+# Flux des portails, publiés d'abord sous /flux le 10 octobre 2026, puis sous /feeds.
+/flux/trovit-fr.xml  /feeds/trovit.xml  301
+/flux/photos/*  /feeds/photos/:splat  301
+/flux/*  /feeds/:splat  301

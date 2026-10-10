@@ -67,6 +67,18 @@ const biens = defineCollection({
      * diagnostics d'un ancien mandat ne sont de toute façon plus à jour.
      */
     archive: z.boolean().default(false),
+    /**
+     * Voie du bien, sans numéro : l'adresse approximative des flux des portails.
+     * Ses coordonnées, centroïde de la voie, viennent de src/data/rues-geo.json.
+     */
+    rue: z.string().optional(),
+    /**
+     * Annonce traduite pour les portails internationaux (/feeds), par code de
+     * langue. Écrite et relue à la main, jamais générée au build.
+     */
+    traductions: z
+      .partialRecord(z.enum(['en', 'de', 'es', 'it', 'pt', 'zh', 'ar']), z.object({ titre: z.string(), texte: z.string() }))
+      .default({}),
     ordre: z.number().default(0),
     exemple: z.boolean().default(false),
   }),
