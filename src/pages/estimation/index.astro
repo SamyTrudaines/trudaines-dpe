@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import CadreMoulure from '../../components/CadreMoulure.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import EstimationImmediate from '../../components/EstimationImmediate.astro';
 import BoutonCreneau from '../../components/BoutonCreneau.astro';
@@ -93,8 +94,8 @@ const donnees = [
   filAriane={[{ nom: 'Estimation' }]}
   donnees={donnees}
 >
-  <section class="section pt-10">
-    <div class="conteneur grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start">
+  <CadreMoulure enTete>
+    <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
         <p class="surtitre">Estimation</p>
         <h1 class="titre-1 mt-6">Savoir ce que vaut votre bien, avant d'en parler à qui que ce soit</h1>
@@ -116,7 +117,7 @@ const donnees = [
       </div>
       <FormulaireEstimation identifiant="avis-de-valeur" />
     </div>
-  </section>
+  </CadreMoulure>
 
   <EstimationImmediate />
 

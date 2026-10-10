@@ -14,6 +14,8 @@ const biens = defineCollection({
     surface: z.number(),
     pieces: z.number(),
     chambres: z.number().default(0),
+    /** Salles de bains et salles d'eau, relevées sur la fiche. Lu par les flux des portails. */
+    sallesDeBain: z.number().optional(),
     etage: z.string().default('Non précisé'),
     ascenseur: z.boolean().default(false),
     dpe: z.enum(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'Vierge']).default('Vierge'),
