@@ -25,6 +25,7 @@ on:
     paths:
       - scripts/prix-rues.py
       - scripts/prix-dvf.py
+      - scripts/geocoder-rues.mjs
       - .github/workflows/prix-rues.yml
 
 permissions:

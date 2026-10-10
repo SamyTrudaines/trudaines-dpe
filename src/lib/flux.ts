@@ -124,7 +124,7 @@ export function adresseApprochee(b: Bien): { texte: string; lat?: number; lon?: 
   const lieu = d.rue ?? d.quartier;
   const texte = `${lieu}, ${d.arrondissement} ${d.ville}`;
   if (!d.rue || !d.arrondissement.startsWith('75')) return { texte };
-  const numero = String(Number(d.arrondissement.slice(3)));
+  const numero = d.arrondissement.slice(-2);
   const point = (geo.rues as Record<string, { lon: number; lat: number }>)[`${ardoise(d.rue)}-${numero}`];
   if (!point) return { texte };
   return { texte, lat: Math.round(point.lat * 1000) / 1000, lon: Math.round(point.lon * 1000) / 1000 };
