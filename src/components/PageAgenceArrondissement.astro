@@ -1,0 +1,132 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import BlocAgence from './BlocAgence.astro';
+import Avis from './Avis.astro';
+import EnBref from './EnBref.astro';
+import CarteBien from './CarteBien.astro';
+import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
+import { getSecteur } from '../data/secteurs';
+import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
+import { arrondissements, periode, rues } from '../lib/rues';
+import { prix, nombre } from '../lib/format';
+
+/**
+ * Page « agence immobilière » d'un arrondissement suivi sans quartier détaillé
+ * (7e, 16e) : chiffres et rues tirés des ventes DVF, biens en vente de
+ * l'arrondissement tirés de la collection, questions du secteur.
+ */
+interface Props {
+  slug: string;
+  /** « 7e » */
+  numero: string;
+  h1: string;
+}
+const { slug, numero, h1 } = Astro.props;
+const secteur = getSecteur(slug)!;
+const code = secteur.arrondissement;
+const chiffres = arrondissements[code];
+const dans = `dans le ${numero} arrondissement`;
+const bureau = "dans le 18e ; les rendez-vous d'estimation et les visites ont lieu chez vous";
+
+const prixPhrase = `Médiane de ${prix(chiffres.mediane)} le mètre carré sur ${nombre(chiffres.ventes)} ventes d'appartements de ${periode} ; huit ventes sur dix entre ${prix(chiffres.d1)} et ${prix(chiffres.d9)}.`;
+const enBref = await lignesEnBref({ dans, bureau, prix: prixPhrase, lienPrix: `/prix-immobilier#arr-${code}` });
+const faq = [...secteur.faq, ...faqAgence({ dans, bureau })];
+
+const ruesArr = rues.filter((r) => r.codePostal === code);
+const plusVendues = [...ruesArr].sort((a, b) => b.ventes - a.ventes).slice(0, 12);
+
+const enVente = await getCollection(
+  'biens',
+  (b) => b.data.arrondissement === code && b.data.statut === 'a-vendre' && !b.data.offMarket && !b.data.archive && !b.data.exemple
+);
+const preuve = await preuveAvis();
+const avis = await avisCommentés(3);
+const agregatAvis = await agrégatAvis();
+
+const services = [
+  { titre: 'Vente et mandat', texte: "Avis de valeur écrit, photographies, diffusion choisie, visites qualifiées, négociation et suivi jusqu'à l'acte.", href: '/vendre' },
+  { titre: 'Estimation', texte: 'Un avis de valeur documenté sous 48 heures après la visite, gratuit et sans engagement.', href: `/estimation/${slug}` },
+  { titre: 'Recherche pour acquéreur', texte: 'Mandat de recherche pour accéder aux biens avant leur diffusion publique.', href: '/chasse' },
+];
+---
+<Layout
+  titre={secteur.titreAgence}
+  description={`${secteur.descriptionAgence} ${preuve}`}
+  filAriane={[{ nom: `Agence immobilière ${secteur.nom}` }]}
+  donnees={[faqEnDonnees(faq)]}
+>
+  <BlocAgence
+    h1={h1}
+    intro={secteur.introAgence}
+    secteurNom={`le ${numero} arrondissement`}
+    hrefEstimation={`/estimation/${slug}`}
+    quartiers={[]}
+    services={services}
+  >
+    <EnBref titre={`Trudaines dans le ${numero}, en bref`} lignes={enBref} />
+  </BlocAgence>
+
+  {enVente.length > 0 && (
+    <section class="section filet" aria-labelledby={`en-vente-${numero}`}>
+      <div class="conteneur">
+        <h2 id={`en-vente-${numero}`} class="titre-2">En vente dans le {numero}</h2>
+        <div class="mt-12 grid gap-12 md:grid-cols-3">
+          {enVente.map((b) => (
+            <CarteBien
+              id={b.id}
+              titre={b.data.titre}
+              quartier={b.data.quartier}
+              arrondissement={b.data.arrondissement}
+              ville={b.data.ville}
+              chambres={b.data.chambres}
+              accroche={b.data.accroche}
+              prixBien={b.data.prix}
+              surface={b.data.surface}
+              pieces={b.data.pieces}
+              statut={b.data.statut}
+              photo={b.data.photos[0]}
+              evt={`agence_${slug}_bien`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section filet" aria-labelledby={`rues-${numero}`}>
+    <div class="conteneur">
+      <h2 id={`rues-${numero}`} class="titre-2">Le {numero}, rue par rue</h2>
+      <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+        {nombre(ruesArr.length)} voies du {numero} suivies sur les ventes signées devant notaire, {periode}. Voici
+        les plus actives ; chaque page donne la médiane, l'étendue et les prix par nombre de pièces.
+      </p>
+      <ul class="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+        {plusVendues.map((r) => (
+          <li class="flex items-baseline justify-between gap-4 border-b border-[color:var(--color-trait)] pb-3">
+            <a href={`/prix-immobilier/${r.slug}`} class="no-underline hover:underline">{r.nom}</a>
+            <span class="text-sm text-[color:var(--color-ardoise)] tabular-nums">{prix(r.mediane)} / m²</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-10">
+        <a href={`/prix-immobilier#arr-${code}`} class="lien-souligne">Toutes les voies du {numero}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby={`questions-${numero}`}>
+    <div class="conteneur max-w-3xl">
+      <h2 id={`questions-${numero}`} class="titre-2">Les questions que l'on nous pose sur le {numero}</h2>
+      <dl class="mt-10 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {faq.map((q) => (
+          <div class="py-8">
+            <dt class="titre-3">{q.question}</dt>
+            <dd class="mt-4 text-[color:var(--color-ardoise)]">{q.reponse}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+  <Avis avis={avis} agregat={agregatAvis} />
+</Layout>

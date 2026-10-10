@@ -1,6 +1,6 @@
 {
  "periode": "janvier 2024 à décembre 2025",
- "millesime": "millésime en cache",
+ "millesime": "2026-04-05",
  "ventesMinimum": 8,
  "arrondissements": {
   "75018": {
@@ -30,9 +30,2157 @@
    "mediane": 10714,
    "d1": 7560,
    "d9": 14029
+  },
+  "75007": {
+   "nom": "Paris 7e",
+   "ventes": 1651,
+   "mediane": 13978,
+   "d1": 10172,
+   "d9": 21143
+  },
+  "75016": {
+   "nom": "Paris 16e",
+   "ventes": 4342,
+   "mediane": 10918,
+   "d1": 8010,
+   "d9": 15313
   }
  },
  "rues": [
+  {
+   "slug": "avenue-emile-deschanel-07",
+   "nom": "Avenue Emile Deschanel",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 21170,
+   "d1": 14520,
+   "d9": 24830,
+   "surface": 156,
+   "prix": 2900000,
+   "ecartArrondissement": 51,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 161,
+     "mediane": 21410,
+     "prix": 3190000
+    }
+   ],
+   "rang": 1,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "quai-d-orsay-07",
+   "nom": "Quai d'Orsay",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 10,
+   "mediane": 20760,
+   "d1": 11390,
+   "d9": 25560,
+   "surface": 85,
+   "prix": 1465000,
+   "ecartArrondissement": 49,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 36,
+     "mediane": 21250,
+     "prix": 765000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 100,
+     "mediane": 19480,
+     "prix": 2000000
+    }
+   ],
+   "rang": 2,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-des-saints-peres-07",
+   "nom": "Rue des Saints Peres",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 19620,
+   "d1": 13830,
+   "d9": 25370,
+   "surface": 146,
+   "prix": 2500000,
+   "ecartArrondissement": 40,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 162,
+     "mediane": 20380,
+     "prix": 3239000
+    }
+   ],
+   "rang": 3,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "boulevard-raspail-07",
+   "nom": "Boulevard Raspail",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 11,
+   "mediane": 19060,
+   "d1": 13210,
+   "d9": 26350,
+   "surface": 107,
+   "prix": 2557000,
+   "ecartArrondissement": 36,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 184,
+     "mediane": 22120,
+     "prix": 3220000
+    }
+   ],
+   "rang": 4,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "boulevard-saint-germain-07",
+   "nom": "Boulevard Saint-Germain",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 22,
+   "mediane": 17860,
+   "d1": 12200,
+   "d9": 21940,
+   "surface": 110,
+   "prix": 1950000,
+   "ecartArrondissement": 28,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 102,
+     "mediane": 18420,
+     "prix": 1878000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 132,
+     "mediane": 17990,
+     "prix": 2011000
+    }
+   ],
+   "rang": 5,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-lille-07",
+   "nom": "Rue de Lille",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 46,
+   "mediane": 17220,
+   "d1": 10900,
+   "d9": 21690,
+   "surface": 58,
+   "prix": 1018000,
+   "ecartArrondissement": 23,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 22,
+     "mediane": 14690,
+     "prix": 307000
+    },
+    {
+     "pieces": 2,
+     "ventes": 15,
+     "surface": 37,
+     "mediane": 16570,
+     "prix": 580000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 69,
+     "mediane": 18680,
+     "prix": 1145000
+    },
+    {
+     "pieces": 4,
+     "ventes": 13,
+     "surface": 115,
+     "mediane": 17140,
+     "prix": 2160000
+    }
+   ],
+   "rang": 6,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-varenne-07",
+   "nom": "Rue de Varenne",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 30,
+   "mediane": 17040,
+   "d1": 13230,
+   "d9": 23760,
+   "surface": 54,
+   "prix": 710000,
+   "ecartArrondissement": 22,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 31,
+     "mediane": 15540,
+     "prix": 510000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 28,
+     "mediane": 17910,
+     "prix": 477000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 98,
+     "mediane": 15520,
+     "prix": 1520000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 186,
+     "mediane": 18580,
+     "prix": 3321000
+    }
+   ],
+   "rang": 7,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-beaune-07",
+   "nom": "Rue de Beaune",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 15,
+   "mediane": 16670,
+   "d1": 14160,
+   "d9": 26840,
+   "surface": 57,
+   "prix": 796000,
+   "ecartArrondissement": 19,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 20,
+     "mediane": 16900,
+     "prix": 349000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 51,
+     "mediane": 15190,
+     "prix": 723000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 68,
+     "mediane": 24170,
+     "prix": 1660000
+    }
+   ],
+   "rang": 8,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-du-bac-07",
+   "nom": "Rue du Bac",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 72,
+   "mediane": 16420,
+   "d1": 8330,
+   "d9": 25580,
+   "surface": 68,
+   "prix": 1034000,
+   "ecartArrondissement": 17,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 16,
+     "surface": 21,
+     "mediane": 12630,
+     "prix": 248000
+    },
+    {
+     "pieces": 2,
+     "ventes": 21,
+     "surface": 45,
+     "mediane": 14770,
+     "prix": 690000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 74,
+     "mediane": 15270,
+     "prix": 1181000
+    },
+    {
+     "pieces": 4,
+     "ventes": 23,
+     "surface": 116,
+     "mediane": 18610,
+     "prix": 2380000
+    }
+   ],
+   "rang": 9,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-charles-floquet-07",
+   "nom": "Avenue Charles Floquet",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 19,
+   "mediane": 16200,
+   "d1": 11050,
+   "d9": 22470,
+   "surface": 110,
+   "prix": 1858000,
+   "ecartArrondissement": 16,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 62,
+     "mediane": 10590,
+     "prix": 656000
+    },
+    {
+     "pieces": 4,
+     "ventes": 15,
+     "surface": 112,
+     "mediane": 17080,
+     "prix": 2091000
+    }
+   ],
+   "rang": 10,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-vaneau-07",
+   "nom": "Rue Vaneau",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 55,
+   "mediane": 16050,
+   "d1": 11870,
+   "d9": 21810,
+   "surface": 61,
+   "prix": 911000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 30,
+     "mediane": 16670,
+     "prix": 500000
+    },
+    {
+     "pieces": 2,
+     "ventes": 19,
+     "surface": 50,
+     "mediane": 14350,
+     "prix": 720000
+    },
+    {
+     "pieces": 3,
+     "ventes": 16,
+     "surface": 66,
+     "mediane": 15800,
+     "prix": 1028000
+    },
+    {
+     "pieces": 4,
+     "ventes": 15,
+     "surface": 105,
+     "mediane": 17970,
+     "prix": 1700000
+    }
+   ],
+   "rang": 11,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-saint-simon-07",
+   "nom": "Rue de Saint-Simon",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 11,
+   "mediane": 15940,
+   "d1": 11360,
+   "d9": 20830,
+   "surface": 88,
+   "prix": 1590000,
+   "ecartArrondissement": 14,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 196,
+     "mediane": 18730,
+     "prix": 3274000
+    }
+   ],
+   "rang": 12,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-emile-acollas-07",
+   "nom": "Avenue Emile Acollas",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 11,
+   "mediane": 15740,
+   "d1": 12480,
+   "d9": 21800,
+   "surface": 153,
+   "prix": 2089000,
+   "ecartArrondissement": 13,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 170,
+     "mediane": 16650,
+     "prix": 3145000
+    }
+   ],
+   "rang": 13,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-verneuil-07",
+   "nom": "Rue de Verneuil",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 30,
+   "mediane": 15670,
+   "d1": 10470,
+   "d9": 23650,
+   "surface": 50,
+   "prix": 954000,
+   "ecartArrondissement": 12,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 36,
+     "mediane": 13000,
+     "prix": 440000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 42,
+     "mediane": 13810,
+     "prix": 617000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 69,
+     "mediane": 19930,
+     "prix": 1221000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 130,
+     "mediane": 17010,
+     "prix": 2000000
+    }
+   ],
+   "rang": 14,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-breteuil-07",
+   "nom": "Avenue de Breteuil",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 29,
+   "mediane": 15580,
+   "d1": 12530,
+   "d9": 19290,
+   "surface": 74,
+   "prix": 1087000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 22,
+     "mediane": 14210,
+     "prix": 314000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 41,
+     "mediane": 14580,
+     "prix": 659000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 66,
+     "mediane": 15580,
+     "prix": 950000
+    },
+    {
+     "pieces": 4,
+     "ventes": 13,
+     "surface": 111,
+     "mediane": 17370,
+     "prix": 1750000
+    }
+   ],
+   "rang": 15,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-rapp-07",
+   "nom": "Avenue Rapp",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 21,
+   "mediane": 15470,
+   "d1": 12660,
+   "d9": 23370,
+   "surface": 75,
+   "prix": 1160000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 16,
+     "mediane": 15560,
+     "prix": 352000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 31,
+     "mediane": 15470,
+     "prix": 627000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 116,
+     "mediane": 16290,
+     "prix": 1747000
+    }
+   ],
+   "rang": 16,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-monttessuy-07",
+   "nom": "Rue de Monttessuy",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 12,
+   "mediane": 15210,
+   "d1": 11680,
+   "d9": 20940,
+   "surface": 40,
+   "prix": 719000,
+   "ecartArrondissement": 9,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 38,
+     "mediane": 15120,
+     "prix": 569000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 73,
+     "mediane": 16110,
+     "prix": 920000
+    }
+   ],
+   "rang": 17,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-barbet-de-jouy-07",
+   "nom": "Rue Barbet de Jouy",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 12,
+   "mediane": 14890,
+   "d1": 12540,
+   "d9": 25160,
+   "surface": 90,
+   "prix": 1043000,
+   "ecartArrondissement": 7,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 74,
+     "mediane": 13390,
+     "prix": 848000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 163,
+     "mediane": 24070,
+     "prix": 4158000
+    }
+   ],
+   "rang": 18,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-bellechasse-07",
+   "nom": "Rue de Bellechasse",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 21,
+   "mediane": 14890,
+   "d1": 9780,
+   "d9": 22190,
+   "surface": 89,
+   "prix": 1420000,
+   "ecartArrondissement": 7,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 16,
+     "mediane": 12040,
+     "prix": 194000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 51,
+     "mediane": 20020,
+     "prix": 1000000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 130,
+     "mediane": 15550,
+     "prix": 1900000
+    }
+   ],
+   "rang": 19,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "boulevard-des-invalides-07",
+   "nom": "Boulevard des Invalides",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 19,
+   "mediane": 14870,
+   "d1": 12160,
+   "d9": 19890,
+   "surface": 83,
+   "prix": 1050000,
+   "ecartArrondissement": 6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 20,
+     "mediane": 16030,
+     "prix": 301000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 63,
+     "mediane": 13470,
+     "prix": 1050000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 62,
+     "mediane": 14350,
+     "prix": 822000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 190,
+     "mediane": 16790,
+     "prix": 3176000
+    }
+   ],
+   "rang": 20,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-l-universite-07",
+   "nom": "Rue de l'Universite",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 70,
+   "mediane": 14420,
+   "d1": 10790,
+   "d9": 23090,
+   "surface": 69,
+   "prix": 998000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 20,
+     "mediane": 14080,
+     "prix": 270000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 52,
+     "mediane": 14440,
+     "prix": 936000
+    },
+    {
+     "pieces": 3,
+     "ventes": 19,
+     "surface": 68,
+     "mediane": 13060,
+     "prix": 945000
+    },
+    {
+     "pieces": 4,
+     "ventes": 25,
+     "surface": 106,
+     "mediane": 15500,
+     "prix": 1638000
+    }
+   ],
+   "rang": 21,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-jose-maria-de-heredia-07",
+   "nom": "Rue Jose Maria de Heredia",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 12,
+   "mediane": 14390,
+   "d1": 12290,
+   "d9": 16020,
+   "surface": 78,
+   "prix": 1090000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 68,
+     "mediane": 13960,
+     "prix": 1023000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 110,
+     "mediane": 15010,
+     "prix": 1605000
+    }
+   ],
+   "rang": 22,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-babylone-07",
+   "nom": "Rue de Babylone",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 22,
+   "mediane": 14340,
+   "d1": 11590,
+   "d9": 18310,
+   "surface": 62,
+   "prix": 840000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 19,
+     "mediane": 16920,
+     "prix": 257000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 36,
+     "mediane": 12550,
+     "prix": 445000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 64,
+     "mediane": 14600,
+     "prix": 877000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 90,
+     "mediane": 14430,
+     "prix": 1240000
+    }
+   ],
+   "rang": 23,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-la-bourdonnais-07",
+   "nom": "Avenue de la Bourdonnais",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 55,
+   "mediane": 14270,
+   "d1": 10540,
+   "d9": 17580,
+   "surface": 74,
+   "prix": 1135000,
+   "ecartArrondissement": 2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 23,
+     "mediane": 13930,
+     "prix": 315000
+    },
+    {
+     "pieces": 2,
+     "ventes": 16,
+     "surface": 42,
+     "mediane": 13490,
+     "prix": 550000
+    },
+    {
+     "pieces": 3,
+     "ventes": 10,
+     "surface": 51,
+     "mediane": 12520,
+     "prix": 584000
+    },
+    {
+     "pieces": 4,
+     "ventes": 24,
+     "surface": 116,
+     "mediane": 15680,
+     "prix": 1803000
+    }
+   ],
+   "rang": 24,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-oudinot-07",
+   "nom": "Rue Oudinot",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 20,
+   "mediane": 14200,
+   "d1": 7960,
+   "d9": 19630,
+   "surface": 64,
+   "prix": 814000,
+   "ecartArrondissement": 2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 22,
+     "mediane": 11030,
+     "prix": 239000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 65,
+     "mediane": 18430,
+     "prix": 1364000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 110,
+     "mediane": 15250,
+     "prix": 1670000
+    }
+   ],
+   "rang": 25,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-la-comete-07",
+   "nom": "Rue de la Comete",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 16,
+   "mediane": 13810,
+   "d1": 9130,
+   "d9": 16140,
+   "surface": 48,
+   "prix": 612000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 38,
+     "mediane": 13640,
+     "prix": 491000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 52,
+     "mediane": 13500,
+     "prix": 732000
+    }
+   ],
+   "rang": 26,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-bosquet-07",
+   "nom": "Avenue Bosquet",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 38,
+   "mediane": 13800,
+   "d1": 10140,
+   "d9": 24840,
+   "surface": 84,
+   "prix": 1224000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 18,
+     "mediane": 12280,
+     "prix": 214000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 28,
+     "mediane": 12500,
+     "prix": 410000
+    },
+    {
+     "pieces": 3,
+     "ventes": 9,
+     "surface": 62,
+     "mediane": 12460,
+     "prix": 922000
+    },
+    {
+     "pieces": 4,
+     "ventes": 20,
+     "surface": 126,
+     "mediane": 15370,
+     "prix": 1951000
+    }
+   ],
+   "rang": 27,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-suffren-07",
+   "nom": "Avenue de Suffren",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 14,
+   "mediane": 13800,
+   "d1": 10660,
+   "d9": 17880,
+   "surface": 91,
+   "prix": 1242000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 82,
+     "mediane": 10870,
+     "prix": 897000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 110,
+     "mediane": 13850,
+     "prix": 1275000
+    }
+   ],
+   "rang": 28,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-tourville-07",
+   "nom": "Avenue de Tourville",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 14,
+   "mediane": 13800,
+   "d1": 6840,
+   "d9": 19180,
+   "surface": 92,
+   "prix": 1056000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 104,
+     "mediane": 13800,
+     "prix": 1056000
+    }
+   ],
+   "rang": 29,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-cognacq-jay-07",
+   "nom": "Rue Cognacq Jay",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 8,
+   "mediane": 13780,
+   "d1": 11870,
+   "d9": 17560,
+   "surface": 89,
+   "prix": 1159000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 40,
+     "mediane": 14250,
+     "prix": 570000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 206,
+     "mediane": 13310,
+     "prix": 3195000
+    }
+   ],
+   "rang": 30,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-la-motte-picquet-07",
+   "nom": "Avenue de la Motte Picquet",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 44,
+   "mediane": 13700,
+   "d1": 9850,
+   "d9": 18120,
+   "surface": 62,
+   "prix": 737000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 9,
+     "surface": 15,
+     "mediane": 11250,
+     "prix": 160000
+    },
+    {
+     "pieces": 2,
+     "ventes": 13,
+     "surface": 38,
+     "mediane": 12680,
+     "prix": 500000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 68,
+     "mediane": 14850,
+     "prix": 1105000
+    },
+    {
+     "pieces": 4,
+     "ventes": 14,
+     "surface": 102,
+     "mediane": 16100,
+     "prix": 1697000
+    }
+   ],
+   "rang": 31,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-jean-nicot-07",
+   "nom": "Rue Jean Nicot",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 12,
+   "mediane": 13620,
+   "d1": 11990,
+   "d9": 18250,
+   "surface": 33,
+   "prix": 509000,
+   "ecartArrondissement": -3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 23,
+     "mediane": 13260,
+     "prix": 332000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 32,
+     "mediane": 13040,
+     "prix": 392000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 66,
+     "mediane": 14170,
+     "prix": 935000
+    }
+   ],
+   "rang": 32,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-grenelle-07",
+   "nom": "Rue de Grenelle",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 83,
+   "mediane": 13610,
+   "d1": 9620,
+   "d9": 20640,
+   "surface": 61,
+   "prix": 724000,
+   "ecartArrondissement": -3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 22,
+     "surface": 19,
+     "mediane": 12160,
+     "prix": 233000
+    },
+    {
+     "pieces": 2,
+     "ventes": 18,
+     "surface": 43,
+     "mediane": 12120,
+     "prix": 497000
+    },
+    {
+     "pieces": 3,
+     "ventes": 20,
+     "surface": 68,
+     "mediane": 14420,
+     "prix": 955000
+    },
+    {
+     "pieces": 4,
+     "ventes": 23,
+     "surface": 130,
+     "mediane": 16700,
+     "prix": 2176000
+    }
+   ],
+   "rang": 33,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-du-gros-caillou-07",
+   "nom": "Rue du Gros Caillou",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 14,
+   "mediane": 13490,
+   "d1": 11020,
+   "d9": 16980,
+   "surface": 25,
+   "prix": 327000,
+   "ecartArrondissement": -4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 18,
+     "mediane": 13450,
+     "prix": 285000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 29,
+     "mediane": 13530,
+     "prix": 350000
+    }
+   ],
+   "rang": 34,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-segur-07",
+   "nom": "Avenue de Segur",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 32,
+   "mediane": 13480,
+   "d1": 10440,
+   "d9": 17490,
+   "surface": 67,
+   "prix": 879000,
+   "ecartArrondissement": -4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 28,
+     "mediane": 13270,
+     "prix": 359000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 56,
+     "mediane": 12930,
+     "prix": 585000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 85,
+     "mediane": 13430,
+     "prix": 900000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 124,
+     "mediane": 14370,
+     "prix": 1786000
+    }
+   ],
+   "rang": 35,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-bourgogne-07",
+   "nom": "Rue de Bourgogne",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 33,
+   "mediane": 13390,
+   "d1": 9180,
+   "d9": 20150,
+   "surface": 43,
+   "prix": 630000,
+   "ecartArrondissement": -4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 10,
+     "surface": 22,
+     "mediane": 12420,
+     "prix": 270000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 38,
+     "mediane": 11970,
+     "prix": 455000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 58,
+     "mediane": 14150,
+     "prix": 895000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 140,
+     "mediane": 17900,
+     "prix": 2442000
+    }
+   ],
+   "rang": 36,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "boulevard-de-la-tour-maubourg-07",
+   "nom": "Boulevard de la Tour Maubourg",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 21,
+   "mediane": 13350,
+   "d1": 10380,
+   "d9": 20850,
+   "surface": 67,
+   "prix": 870000,
+   "ecartArrondissement": -4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 35,
+     "mediane": 11050,
+     "prix": 359000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 46,
+     "mediane": 14100,
+     "prix": 663000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 67,
+     "mediane": 11350,
+     "prix": 817000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 94,
+     "mediane": 18060,
+     "prix": 2102000
+    }
+   ],
+   "rang": 37,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-rousselet-07",
+   "nom": "Rue Rousselet",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 26,
+   "mediane": 13290,
+   "d1": 10800,
+   "d9": 18010,
+   "surface": 42,
+   "prix": 565000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 34,
+     "mediane": 12730,
+     "prix": 449000
+    },
+    {
+     "pieces": 2,
+     "ventes": 14,
+     "surface": 34,
+     "mediane": 12800,
+     "prix": 479000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 90,
+     "mediane": 12560,
+     "prix": 1130000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 80,
+     "mediane": 17200,
+     "prix": 1918000
+    }
+   ],
+   "rang": 38,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-duquesne-07",
+   "nom": "Avenue Duquesne",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 22,
+   "mediane": 13270,
+   "d1": 8860,
+   "d9": 16720,
+   "surface": 51,
+   "prix": 661000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 30,
+     "mediane": 10580,
+     "prix": 254000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 44,
+     "mediane": 11790,
+     "prix": 593000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 88,
+     "mediane": 14090,
+     "prix": 1505000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 128,
+     "mediane": 14530,
+     "prix": 1709000
+    }
+   ],
+   "rang": 39,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-sevres-07",
+   "nom": "Rue de Sevres",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 18,
+   "mediane": 13130,
+   "d1": 11150,
+   "d9": 17780,
+   "surface": 48,
+   "prix": 670000,
+   "ecartArrondissement": -6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 24,
+     "mediane": 12760,
+     "prix": 292000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 40,
+     "mediane": 13310,
+     "prix": 491000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 73,
+     "mediane": 12670,
+     "prix": 925000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 123,
+     "mediane": 13980,
+     "prix": 1496000
+    }
+   ],
+   "rang": 40,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-la-chaise-07",
+   "nom": "Rue de la Chaise",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 12880,
+   "d1": 9200,
+   "d9": 16590,
+   "surface": 46,
+   "prix": 635000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 46,
+     "mediane": 12220,
+     "prix": 562000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 103,
+     "mediane": 15000,
+     "prix": 1528000
+    }
+   ],
+   "rang": 41,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-saint-dominique-07",
+   "nom": "Rue Saint-Dominique",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 92,
+   "mediane": 12790,
+   "d1": 9540,
+   "d9": 18950,
+   "surface": 41,
+   "prix": 565000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 25,
+     "surface": 21,
+     "mediane": 12760,
+     "prix": 265000
+    },
+    {
+     "pieces": 2,
+     "ventes": 33,
+     "surface": 39,
+     "mediane": 12340,
+     "prix": 459000
+    },
+    {
+     "pieces": 3,
+     "ventes": 15,
+     "surface": 62,
+     "mediane": 13480,
+     "prix": 975000
+    },
+    {
+     "pieces": 4,
+     "ventes": 19,
+     "surface": 106,
+     "mediane": 13810,
+     "prix": 1384000
+    }
+   ],
+   "rang": 42,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-cler-07",
+   "nom": "Rue Cler",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 30,
+   "mediane": 12760,
+   "d1": 10090,
+   "d9": 16560,
+   "surface": 30,
+   "prix": 370000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 16,
+     "surface": 23,
+     "mediane": 13280,
+     "prix": 283000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 27,
+     "mediane": 11860,
+     "prix": 354000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 54,
+     "mediane": 11310,
+     "prix": 554000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 94,
+     "mediane": 13940,
+     "prix": 1315000
+    }
+   ],
+   "rang": 43,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-sedillot-07",
+   "nom": "Rue Sedillot",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 12750,
+   "d1": 8380,
+   "d9": 15410,
+   "surface": 72,
+   "prix": 880000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 72,
+     "mediane": 13470,
+     "prix": 1010000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 96,
+     "mediane": 9450,
+     "prix": 880000
+    }
+   ],
+   "rang": 44,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-chevert-07",
+   "nom": "Rue Chevert",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 20,
+   "mediane": 12730,
+   "d1": 10820,
+   "d9": 15060,
+   "surface": 51,
+   "prix": 517000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 26,
+     "mediane": 12880,
+     "prix": 300000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 44,
+     "mediane": 11370,
+     "prix": 409000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 60,
+     "mediane": 13040,
+     "prix": 795000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 78,
+     "mediane": 14990,
+     "prix": 1167000
+    }
+   ],
+   "rang": 45,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-valadon-07",
+   "nom": "Rue Valadon",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 11,
+   "mediane": 12670,
+   "d1": 9640,
+   "d9": 16670,
+   "surface": 26,
+   "prix": 305000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 18,
+     "mediane": 11730,
+     "prix": 273000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 40,
+     "mediane": 13640,
+     "prix": 584000
+    }
+   ],
+   "rang": 46,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-amelie-07",
+   "nom": "Rue Amelie",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 12660,
+   "d1": 10400,
+   "d9": 13720,
+   "surface": 20,
+   "prix": 210000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 18,
+     "mediane": 12580,
+     "prix": 205000
+    }
+   ],
+   "rang": 47,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-malar-07",
+   "nom": "Rue Malar",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 30,
+   "mediane": 12510,
+   "d1": 7970,
+   "d9": 16550,
+   "surface": 33,
+   "prix": 421000,
+   "ecartArrondissement": -10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 23,
+     "mediane": 12750,
+     "prix": 263000
+    },
+    {
+     "pieces": 2,
+     "ventes": 12,
+     "surface": 50,
+     "mediane": 12290,
+     "prix": 593000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 54,
+     "mediane": 13910,
+     "prix": 635000
+    }
+   ],
+   "rang": 48,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-pierre-leroux-07",
+   "nom": "Rue Pierre Leroux",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 33,
+   "mediane": 12500,
+   "d1": 9470,
+   "d9": 15510,
+   "surface": 38,
+   "prix": 521000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 24,
+     "mediane": 12050,
+     "prix": 301000
+    },
+    {
+     "pieces": 2,
+     "ventes": 17,
+     "surface": 40,
+     "mediane": 12500,
+     "prix": 540000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 54,
+     "mediane": 12570,
+     "prix": 706000
+    }
+   ],
+   "rang": 49,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-duroc-07",
+   "nom": "Rue Duroc",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 13,
+   "mediane": 12460,
+   "d1": 10100,
+   "d9": 14820,
+   "surface": 88,
+   "prix": 1100000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 44,
+     "mediane": 14540,
+     "prix": 632000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 123,
+     "mediane": 11840,
+     "prix": 1454000
+    }
+   ],
+   "rang": 50,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-de-l-exposition-07",
+   "nom": "Rue de l'Exposition",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 16,
+   "mediane": 12320,
+   "d1": 8900,
+   "d9": 15060,
+   "surface": 20,
+   "prix": 247000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 11,
+     "surface": 18,
+     "mediane": 12330,
+     "prix": 240000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 40,
+     "mediane": 11110,
+     "prix": 400000
+    }
+   ],
+   "rang": 51,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-du-general-bertrand-07",
+   "nom": "Rue du Général Bertrand",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 19,
+   "mediane": 12160,
+   "d1": 10300,
+   "d9": 14450,
+   "surface": 55,
+   "prix": 644000,
+   "ecartArrondissement": -13,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 30,
+     "mediane": 11780,
+     "prix": 400000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 54,
+     "mediane": 12090,
+     "prix": 648000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 130,
+     "mediane": 11580,
+     "prix": 1621000
+    }
+   ],
+   "rang": 52,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-masseran-07",
+   "nom": "Rue Masseran",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 9,
+   "mediane": 12150,
+   "d1": 11070,
+   "d9": 13490,
+   "surface": 90,
+   "prix": 1171000,
+   "ecartArrondissement": -13,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 66,
+     "mediane": 11990,
+     "prix": 792000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 113,
+     "mediane": 11620,
+     "prix": 1299000
+    }
+   ],
+   "rang": 53,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "avenue-de-saxe-07",
+   "nom": "Avenue de Saxe",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 19,
+   "mediane": 12000,
+   "d1": 8730,
+   "d9": 16240,
+   "surface": 100,
+   "prix": 716000,
+   "ecartArrondissement": -14,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 32,
+     "mediane": 12100,
+     "prix": 331000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 49,
+     "mediane": 14140,
+     "prix": 594000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 104,
+     "mediane": 11050,
+     "prix": 1238000
+    }
+   ],
+   "rang": 54,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-du-champ-de-mars-07",
+   "nom": "Rue du Champ de Mars",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 18,
+   "mediane": 11790,
+   "d1": 9640,
+   "d9": 13380,
+   "surface": 36,
+   "prix": 429000,
+   "ecartArrondissement": -16,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 16,
+     "mediane": 10780,
+     "prix": 178000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 34,
+     "mediane": 12440,
+     "prix": 458000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 46,
+     "mediane": 12820,
+     "prix": 527000
+    }
+   ],
+   "rang": 55,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-duvivier-07",
+   "nom": "Rue Duvivier",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 20,
+   "mediane": 11410,
+   "d1": 9050,
+   "d9": 18750,
+   "surface": 31,
+   "prix": 372000,
+   "ecartArrondissement": -18,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 10,
+     "surface": 22,
+     "mediane": 11020,
+     "prix": 285000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 35,
+     "mediane": 15000,
+     "prix": 588000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 64,
+     "mediane": 9660,
+     "prix": 660000
+    }
+   ],
+   "rang": 56,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-augereau-07",
+   "nom": "Rue Augereau",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 23,
+   "mediane": 11360,
+   "d1": 9460,
+   "d9": 13700,
+   "surface": 23,
+   "prix": 260000,
+   "ecartArrondissement": -19,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 21,
+     "mediane": 11330,
+     "prix": 235000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 32,
+     "mediane": 13300,
+     "prix": 365000
+    }
+   ],
+   "rang": 57,
+   "ruesClassees": 58
+  },
+  {
+   "slug": "rue-bosquet-07",
+   "nom": "Rue Bosquet",
+   "codePostal": "75007",
+   "arrondissement": "Paris 7e",
+   "ventes": 13,
+   "mediane": 10810,
+   "d1": 8680,
+   "d9": 14050,
+   "surface": 32,
+   "prix": 320000,
+   "ecartArrondissement": -23,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 33,
+     "mediane": 10530,
+     "prix": 348000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 28,
+     "mediane": 12190,
+     "prix": 392000
+    }
+   ],
+   "rang": 58,
+   "ruesClassees": 58
+  },
   {
    "slug": "place-d-anvers-09",
    "nom": "Place d'Anvers",
@@ -5949,6 +8097,5471 @@
    ],
    "rang": 79,
    "ruesClassees": 79
+  },
+  {
+   "slug": "avenue-de-new-york-16",
+   "nom": "Avenue de New York",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 16480,
+   "d1": 3780,
+   "d9": 21590,
+   "surface": 91,
+   "prix": 1235000,
+   "ecartArrondissement": 51,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 64,
+     "mediane": 17530,
+     "prix": 1122000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 174,
+     "mediane": 18220,
+     "prix": 2888000
+    }
+   ],
+   "rang": 1,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-president-wilson-16",
+   "nom": "Avenue Président Wilson",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 19,
+   "mediane": 16430,
+   "d1": 10820,
+   "d9": 24960,
+   "surface": 152,
+   "prix": 2400000,
+   "ecartArrondissement": 50,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 15,
+     "surface": 165,
+     "mediane": 19160,
+     "prix": 3065000
+    }
+   ],
+   "rang": 2,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-pierre-ier-de-serbie-16",
+   "nom": "Avenue Pierre-Ier-de-Serbie",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 16040,
+   "d1": 8400,
+   "d9": 20130,
+   "surface": 153,
+   "prix": 1100000,
+   "ecartArrondissement": 47,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 22,
+     "mediane": 14330,
+     "prix": 330000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 219,
+     "mediane": 17170,
+     "prix": 4204000
+    }
+   ],
+   "rang": 3,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-raphael-16",
+   "nom": "Avenue Raphael",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 15830,
+   "d1": 14260,
+   "d9": 18690,
+   "surface": 155,
+   "prix": 2376000,
+   "ecartArrondissement": 45,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 179,
+     "mediane": 16790,
+     "prix": 3102000
+    }
+   ],
+   "rang": 4,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-octave-feuillet-16",
+   "nom": "Rue Octave Feuillet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 14940,
+   "d1": 9670,
+   "d9": 19270,
+   "surface": 135,
+   "prix": 1780000,
+   "ecartArrondissement": 37,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 96,
+     "mediane": 12980,
+     "prix": 1173000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 164,
+     "mediane": 14940,
+     "prix": 2900000
+    }
+   ],
+   "rang": 5,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-henri-martin-16",
+   "nom": "Avenue Henri Martin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 16,
+   "mediane": 14900,
+   "d1": 7540,
+   "d9": 18470,
+   "surface": 123,
+   "prix": 1695000,
+   "ecartArrondissement": 36,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 40,
+     "mediane": 8750,
+     "prix": 326000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 100,
+     "mediane": 16040,
+     "prix": 1460000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 160,
+     "mediane": 16190,
+     "prix": 3000000
+    }
+   ],
+   "rang": 6,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-d-eylau-16",
+   "nom": "Avenue d'Eylau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 15,
+   "mediane": 14810,
+   "d1": 8340,
+   "d9": 20170,
+   "surface": 190,
+   "prix": 2823000,
+   "ecartArrondissement": 36,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 13,
+     "surface": 233,
+     "mediane": 15110,
+     "prix": 3150000
+    }
+   ],
+   "rang": 7,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-jean-bologne-16",
+   "nom": "Rue Jean Bologne",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 14730,
+   "d1": 10810,
+   "d9": 17150,
+   "surface": 75,
+   "prix": 917000,
+   "ecartArrondissement": 35,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 39,
+     "mediane": 16350,
+     "prix": 650000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 80,
+     "mediane": 13340,
+     "prix": 959000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 90,
+     "mediane": 17360,
+     "prix": 1576000
+    }
+   ],
+   "rang": 8,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-georges-mandel-16",
+   "nom": "Avenue Georges Mandel",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 25,
+   "mediane": 14430,
+   "d1": 11740,
+   "d9": 20440,
+   "surface": 124,
+   "prix": 1876000,
+   "ecartArrondissement": 32,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 30,
+     "mediane": 13230,
+     "prix": 403000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 88,
+     "mediane": 18930,
+     "prix": 1494000
+    },
+    {
+     "pieces": 4,
+     "ventes": 14,
+     "surface": 196,
+     "mediane": 14370,
+     "prix": 2500000
+    }
+   ],
+   "rang": 9,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-la-cure-16",
+   "nom": "Rue de la Cure",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 13810,
+   "d1": 11020,
+   "d9": 17320,
+   "surface": 137,
+   "prix": 1772000,
+   "ecartArrondissement": 26,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 140,
+     "mediane": 14190,
+     "prix": 1799000
+    }
+   ],
+   "rang": 10,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-raymond-poincare-16",
+   "nom": "Avenue Raymond Poincare",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 33,
+   "mediane": 13790,
+   "d1": 11200,
+   "d9": 21120,
+   "surface": 96,
+   "prix": 1394000,
+   "ecartArrondissement": 26,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 7,
+     "surface": 21,
+     "mediane": 12850,
+     "prix": 330000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 55,
+     "mediane": 12030,
+     "prix": 758000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 95,
+     "mediane": 12840,
+     "prix": 1080000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 176,
+     "mediane": 14530,
+     "prix": 2378000
+    }
+   ],
+   "rang": 11,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-du-conseiller-collignon-16",
+   "nom": "Rue du Conseiller Collignon",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 13710,
+   "d1": 12030,
+   "d9": 14780,
+   "surface": 125,
+   "prix": 1714000,
+   "ecartArrondissement": 26,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 140,
+     "mediane": 13570,
+     "prix": 1900000
+    }
+   ],
+   "rang": 12,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-benjamin-franklin-16",
+   "nom": "Rue Benjamin Franklin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 13570,
+   "d1": 8070,
+   "d9": 21720,
+   "surface": 109,
+   "prix": 2109000,
+   "ecartArrondissement": 24,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 28,
+     "mediane": 12030,
+     "prix": 352000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 210,
+     "mediane": 14500,
+     "prix": 2870000
+    }
+   ],
+   "rang": 13,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-vignes-16",
+   "nom": "Rue des Vignes",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 13310,
+   "d1": 9000,
+   "d9": 16180,
+   "surface": 79,
+   "prix": 1112000,
+   "ecartArrondissement": 22,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 63,
+     "mediane": 11400,
+     "prix": 732000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 80,
+     "mediane": 14550,
+     "prix": 1071000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 150,
+     "mediane": 14350,
+     "prix": 1919000
+    }
+   ],
+   "rang": 14,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-d-iena-16",
+   "nom": "Avenue d'Iena",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 13200,
+   "d1": 10960,
+   "d9": 16110,
+   "surface": 83,
+   "prix": 990000,
+   "ecartArrondissement": 21,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 58,
+     "mediane": 12990,
+     "prix": 760000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 94,
+     "mediane": 13250,
+     "prix": 1100000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 176,
+     "mediane": 14650,
+     "prix": 2420000
+    }
+   ],
+   "rang": 15,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-foch-16",
+   "nom": "Avenue Foch",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 68,
+   "mediane": 13150,
+   "d1": 10340,
+   "d9": 17400,
+   "surface": 102,
+   "prix": 1192000,
+   "ecartArrondissement": 20,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 14,
+     "surface": 25,
+     "mediane": 13160,
+     "prix": 317000
+    },
+    {
+     "pieces": 2,
+     "ventes": 16,
+     "surface": 65,
+     "mediane": 13490,
+     "prix": 936000
+    },
+    {
+     "pieces": 3,
+     "ventes": 11,
+     "surface": 100,
+     "mediane": 12910,
+     "prix": 1450000
+    },
+    {
+     "pieces": 4,
+     "ventes": 27,
+     "surface": 205,
+     "mediane": 13260,
+     "prix": 2565000
+    }
+   ],
+   "rang": 16,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-oswaldo-cruz-16",
+   "nom": "Rue Oswaldo Cruz",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 12970,
+   "d1": 10770,
+   "d9": 13940,
+   "surface": 65,
+   "prix": 814000,
+   "ecartArrondissement": 19,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 65,
+     "mediane": 12610,
+     "prix": 791000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 136,
+     "mediane": 13480,
+     "prix": 2150000
+    }
+   ],
+   "rang": 17,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-galilee-16",
+   "nom": "Rue Galilee",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 12950,
+   "d1": 11050,
+   "d9": 17500,
+   "surface": 130,
+   "prix": 2100000,
+   "ecartArrondissement": 19,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 215,
+     "mediane": 14710,
+     "prix": 2840000
+    }
+   ],
+   "rang": 18,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-bassano-16",
+   "nom": "Rue de Bassano",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 12910,
+   "d1": 9990,
+   "d9": 16000,
+   "surface": 26,
+   "prix": 365000,
+   "ecartArrondissement": 18,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 23,
+     "mediane": 12030,
+     "prix": 284000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 46,
+     "mediane": 13750,
+     "prix": 580000
+    }
+   ],
+   "rang": 19,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-paul-valery-16",
+   "nom": "Rue Paul Valery",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 12860,
+   "d1": 11210,
+   "d9": 18160,
+   "surface": 72,
+   "prix": 835000,
+   "ecartArrondissement": 18,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 20,
+     "mediane": 15880,
+     "prix": 289000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 51,
+     "mediane": 11380,
+     "prix": 588000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 81,
+     "mediane": 14810,
+     "prix": 1217000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 165,
+     "mediane": 15240,
+     "prix": 2575000
+    }
+   ],
+   "rang": 20,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-yvon-villarceau-16",
+   "nom": "Rue Yvon Villarceau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 12820,
+   "d1": 10670,
+   "d9": 15690,
+   "surface": 43,
+   "prix": 583000,
+   "ecartArrondissement": 17,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 40,
+     "mediane": 12580,
+     "prix": 578000
+    }
+   ],
+   "rang": 21,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-du-col-bonnet-16",
+   "nom": "Avenue du Col Bonnet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 12800,
+   "d1": 9850,
+   "d9": 13740,
+   "surface": 130,
+   "prix": 1650000,
+   "ecartArrondissement": 17,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 138,
+     "mediane": 12950,
+     "prix": 1753000
+    }
+   ],
+   "rang": 22,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-alfred-bruneau-16",
+   "nom": "Rue Alfred Bruneau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 12720,
+   "d1": 11510,
+   "d9": 17740,
+   "surface": 80,
+   "prix": 985000,
+   "ecartArrondissement": 16,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 60,
+     "mediane": 18040,
+     "prix": 1010000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 93,
+     "mediane": 13480,
+     "prix": 1230000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 84,
+     "mediane": 11710,
+     "prix": 960000
+    }
+   ],
+   "rang": 23,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-henri-heine-16",
+   "nom": "Rue Henri Heine",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 12620,
+   "d1": 10470,
+   "d9": 18600,
+   "surface": 132,
+   "prix": 1805000,
+   "ecartArrondissement": 16,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 94,
+     "mediane": 11470,
+     "prix": 1308000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 155,
+     "mediane": 12210,
+     "prix": 2084000
+    }
+   ],
+   "rang": 24,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-de-malakoff-16",
+   "nom": "Avenue de Malakoff",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 12600,
+   "d1": 9470,
+   "d9": 15570,
+   "surface": 81,
+   "prix": 1020000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 45,
+     "mediane": 14310,
+     "prix": 750000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 172,
+     "mediane": 10720,
+     "prix": 1961000
+    }
+   ],
+   "rang": 25,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-victor-hugo-16",
+   "nom": "Avenue Victor Hugo",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 77,
+   "mediane": 12570,
+   "d1": 9410,
+   "d9": 16150,
+   "surface": 88,
+   "prix": 950000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 20,
+     "surface": 30,
+     "mediane": 11690,
+     "prix": 309000
+    },
+    {
+     "pieces": 2,
+     "ventes": 16,
+     "surface": 50,
+     "mediane": 11310,
+     "prix": 541000
+    },
+    {
+     "pieces": 3,
+     "ventes": 10,
+     "surface": 86,
+     "mediane": 12240,
+     "prix": 1003000
+    },
+    {
+     "pieces": 4,
+     "ventes": 31,
+     "surface": 211,
+     "mediane": 13780,
+     "prix": 2918000
+    }
+   ],
+   "rang": 26,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-greuze-16",
+   "nom": "Rue Greuze",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 12570,
+   "d1": 8650,
+   "d9": 16420,
+   "surface": 84,
+   "prix": 958000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 31,
+     "mediane": 14250,
+     "prix": 475000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 77,
+     "mediane": 11400,
+     "prix": 1028000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 96,
+     "mediane": 13110,
+     "prix": 1280000
+    }
+   ],
+   "rang": 27,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-gustave-courbet-16",
+   "nom": "Rue Gustave Courbet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 12550,
+   "d1": 10680,
+   "d9": 18590,
+   "surface": 43,
+   "prix": 592000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 17,
+     "mediane": 12220,
+     "prix": 194000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 30,
+     "mediane": 10460,
+     "prix": 397000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 52,
+     "mediane": 13170,
+     "prix": 685000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 80,
+     "mediane": 12480,
+     "prix": 990000
+    }
+   ],
+   "rang": 28,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-rene-bazin-16",
+   "nom": "Rue Rene Bazin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 12530,
+   "d1": 9250,
+   "d9": 13840,
+   "surface": 76,
+   "prix": 964000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 15,
+     "mediane": 11560,
+     "prix": 168000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 105,
+     "mediane": 13250,
+     "prix": 1192000
+    }
+   ],
+   "rang": 29,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-kleber-16",
+   "nom": "Avenue Kleber",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 34,
+   "mediane": 12520,
+   "d1": 5010,
+   "d9": 18830,
+   "surface": 99,
+   "prix": 1246000,
+   "ecartArrondissement": 15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 24,
+     "mediane": 6270,
+     "prix": 131000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 78,
+     "mediane": 11220,
+     "prix": 875000
+    },
+    {
+     "pieces": 4,
+     "ventes": 17,
+     "surface": 150,
+     "mediane": 14880,
+     "prix": 2620000
+    }
+   ],
+   "rang": 30,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-claude-chahu-16",
+   "nom": "Rue Claude Chahu",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 12450,
+   "d1": 10180,
+   "d9": 13550,
+   "surface": 42,
+   "prix": 561000,
+   "ecartArrondissement": 14,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 18,
+     "mediane": 12500,
+     "prix": 200000
+    }
+   ],
+   "rang": 31,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-auguste-vacquerie-16",
+   "nom": "Rue Auguste Vacquerie",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 12430,
+   "d1": 10820,
+   "d9": 14810,
+   "surface": 65,
+   "prix": 830000,
+   "ecartArrondissement": 14,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 60,
+     "mediane": 11450,
+     "prix": 663000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 80,
+     "mediane": 13810,
+     "prix": 1105000
+    }
+   ],
+   "rang": 32,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-de-montespan-16",
+   "nom": "Avenue de Montespan",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 12410,
+   "d1": 10720,
+   "d9": 17490,
+   "surface": 89,
+   "prix": 1175000,
+   "ecartArrondissement": 14,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 108,
+     "mediane": 13200,
+     "prix": 1658000
+    }
+   ],
+   "rang": 33,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-bugeaud-16",
+   "nom": "Avenue Bugeaud",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 12360,
+   "d1": 9350,
+   "d9": 17220,
+   "surface": 96,
+   "prix": 1091000,
+   "ecartArrondissement": 13,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 24,
+     "mediane": 9580,
+     "prix": 230000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 141,
+     "mediane": 12490,
+     "prix": 1754000
+    }
+   ],
+   "rang": 34,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-decamps-16",
+   "nom": "Rue Decamps",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 12330,
+   "d1": 9800,
+   "d9": 18120,
+   "surface": 96,
+   "prix": 1136000,
+   "ecartArrondissement": 13,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 48,
+     "mediane": 12400,
+     "prix": 682000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 138,
+     "mediane": 12970,
+     "prix": 1739000
+    }
+   ],
+   "rang": 35,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-de-beausejour-16",
+   "nom": "Boulevard de Beausejour",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 21,
+   "mediane": 12250,
+   "d1": 9130,
+   "d9": 15690,
+   "surface": 104,
+   "prix": 1138000,
+   "ecartArrondissement": 12,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 34,
+     "mediane": 9930,
+     "prix": 330000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 45,
+     "mediane": 14290,
+     "prix": 700000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 104,
+     "mediane": 14110,
+     "prix": 1467000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 150,
+     "mediane": 12250,
+     "prix": 1795000
+    }
+   ],
+   "rang": 36,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-d-ankara-16",
+   "nom": "Rue d'Ankara",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 12190,
+   "d1": 8060,
+   "d9": 13310,
+   "surface": 50,
+   "prix": 636000,
+   "ecartArrondissement": 12,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 36,
+     "mediane": 9170,
+     "prix": 330000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 51,
+     "mediane": 12690,
+     "prix": 640000
+    }
+   ],
+   "rang": 37,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-longchamp-16",
+   "nom": "Rue de Longchamp",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 48,
+   "mediane": 12160,
+   "d1": 9630,
+   "d9": 13900,
+   "surface": 66,
+   "prix": 812000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 13,
+     "surface": 23,
+     "mediane": 11320,
+     "prix": 250000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 46,
+     "mediane": 12640,
+     "prix": 610000
+    },
+    {
+     "pieces": 3,
+     "ventes": 9,
+     "surface": 64,
+     "mediane": 10860,
+     "prix": 728000
+    },
+    {
+     "pieces": 4,
+     "ventes": 20,
+     "surface": 131,
+     "mediane": 12680,
+     "prix": 1660000
+    }
+   ],
+   "rang": 38,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-copernic-16",
+   "nom": "Rue Copernic",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 23,
+   "mediane": 12140,
+   "d1": 10350,
+   "d9": 16110,
+   "surface": 65,
+   "prix": 930000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 16,
+     "mediane": 11780,
+     "prix": 172000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 58,
+     "mediane": 12140,
+     "prix": 664000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 65,
+     "mediane": 11870,
+     "prix": 885000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 126,
+     "mediane": 15350,
+     "prix": 1633000
+    }
+   ],
+   "rang": 39,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-raynouard-16",
+   "nom": "Rue Raynouard",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 51,
+   "mediane": 12140,
+   "d1": 8780,
+   "d9": 22540,
+   "surface": 94,
+   "prix": 990000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 33,
+     "mediane": 11350,
+     "prix": 338000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 45,
+     "mediane": 12310,
+     "prix": 643000
+    },
+    {
+     "pieces": 3,
+     "ventes": 20,
+     "surface": 93,
+     "mediane": 12650,
+     "prix": 1130000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 135,
+     "mediane": 11670,
+     "prix": 1531000
+    }
+   ],
+   "rang": 40,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-la-pompe-16",
+   "nom": "Rue de la Pompe",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 70,
+   "mediane": 12110,
+   "d1": 9430,
+   "d9": 16200,
+   "surface": 59,
+   "prix": 803000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 24,
+     "surface": 19,
+     "mediane": 11680,
+     "prix": 212000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 35,
+     "mediane": 12590,
+     "prix": 467000
+    },
+    {
+     "pieces": 3,
+     "ventes": 16,
+     "surface": 78,
+     "mediane": 13320,
+     "prix": 1091000
+    },
+    {
+     "pieces": 4,
+     "ventes": 21,
+     "surface": 130,
+     "mediane": 11780,
+     "prix": 1550000
+    }
+   ],
+   "rang": 41,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-mesnil-16",
+   "nom": "Rue Mesnil",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 24,
+   "mediane": 12110,
+   "d1": 9680,
+   "d9": 15300,
+   "surface": 76,
+   "prix": 895000,
+   "ecartArrondissement": 11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 27,
+     "mediane": 12760,
+     "prix": 344000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 34,
+     "mediane": 11180,
+     "prix": 430000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 78,
+     "mediane": 11840,
+     "prix": 895000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 113,
+     "mediane": 12040,
+     "prix": 1410000
+    }
+   ],
+   "rang": 42,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-bois-le-vent-16",
+   "nom": "Rue Bois le Vent",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 12050,
+   "d1": 9630,
+   "d9": 14500,
+   "surface": 44,
+   "prix": 549000,
+   "ecartArrondissement": 10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 43,
+     "mediane": 11400,
+     "prix": 432000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 38,
+     "mediane": 11180,
+     "prix": 462000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 80,
+     "mediane": 12170,
+     "prix": 973000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 100,
+     "mediane": 13790,
+     "prix": 1214000
+    }
+   ],
+   "rang": 43,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-paul-doumer-16",
+   "nom": "Avenue Paul Doumer",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 58,
+   "mediane": 12010,
+   "d1": 10100,
+   "d9": 15580,
+   "surface": 82,
+   "prix": 1030000,
+   "ecartArrondissement": 10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 31,
+     "mediane": 12000,
+     "prix": 360000
+    },
+    {
+     "pieces": 2,
+     "ventes": 13,
+     "surface": 60,
+     "mediane": 12730,
+     "prix": 750000
+    },
+    {
+     "pieces": 3,
+     "ventes": 11,
+     "surface": 98,
+     "mediane": 11960,
+     "prix": 1305000
+    },
+    {
+     "pieces": 4,
+     "ventes": 19,
+     "surface": 150,
+     "mediane": 11880,
+     "prix": 1834000
+    }
+   ],
+   "rang": 44,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-chaillot-16",
+   "nom": "Rue de Chaillot",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 27,
+   "mediane": 11980,
+   "d1": 9170,
+   "d9": 14340,
+   "surface": 72,
+   "prix": 825000,
+   "ecartArrondissement": 10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 36,
+     "mediane": 9640,
+     "prix": 288000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 32,
+     "mediane": 12380,
+     "prix": 449000
+    },
+    {
+     "pieces": 3,
+     "ventes": 9,
+     "surface": 85,
+     "mediane": 11600,
+     "prix": 970000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 90,
+     "mediane": 12430,
+     "prix": 1238000
+    }
+   ],
+   "rang": 45,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-weber-16",
+   "nom": "Rue Weber",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 11960,
+   "d1": 9670,
+   "d9": 15510,
+   "surface": 71,
+   "prix": 696000,
+   "ecartArrondissement": 10,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 45,
+     "mediane": 12000,
+     "prix": 540000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 95,
+     "mediane": 11390,
+     "prix": 1082000
+    }
+   ],
+   "rang": 46,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-du-president-kennedy-16",
+   "nom": "Avenue du Président Kennedy",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 19,
+   "mediane": 11950,
+   "d1": 9350,
+   "d9": 16590,
+   "surface": 124,
+   "prix": 1430000,
+   "ecartArrondissement": 9,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 115,
+     "mediane": 11220,
+     "prix": 1300000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 170,
+     "mediane": 13310,
+     "prix": 2195000
+    }
+   ],
+   "rang": 47,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-poussin-16",
+   "nom": "Rue Poussin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 22,
+   "mediane": 11920,
+   "d1": 9490,
+   "d9": 13680,
+   "surface": 77,
+   "prix": 887000,
+   "ecartArrondissement": 9,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 73,
+     "mediane": 10090,
+     "prix": 736000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 92,
+     "mediane": 12020,
+     "prix": 1054000
+    }
+   ],
+   "rang": 48,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-belles-feuilles-16",
+   "nom": "Rue des Belles Feuilles",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 61,
+   "mediane": 11880,
+   "d1": 9460,
+   "d9": 14710,
+   "surface": 64,
+   "prix": 706000,
+   "ecartArrondissement": 9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 14,
+     "surface": 16,
+     "mediane": 12190,
+     "prix": 192000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 67,
+     "mediane": 11530,
+     "prix": 600000
+    },
+    {
+     "pieces": 3,
+     "ventes": 21,
+     "surface": 61,
+     "mediane": 12700,
+     "prix": 730000
+    },
+    {
+     "pieces": 4,
+     "ventes": 15,
+     "surface": 117,
+     "mediane": 12020,
+     "prix": 1300000
+    }
+   ],
+   "rang": 49,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-vital-16",
+   "nom": "Rue Vital",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 16,
+   "mediane": 11880,
+   "d1": 10700,
+   "d9": 16630,
+   "surface": 92,
+   "prix": 1177000,
+   "ecartArrondissement": 9,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 40,
+     "mediane": 11310,
+     "prix": 460000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 60,
+     "mediane": 10890,
+     "prix": 640000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 134,
+     "mediane": 12790,
+     "prix": 1690000
+    }
+   ],
+   "rang": 50,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-flandrin-16",
+   "nom": "Boulevard Flandrin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 49,
+   "mediane": 11840,
+   "d1": 8940,
+   "d9": 16210,
+   "surface": 67,
+   "prix": 885000,
+   "ecartArrondissement": 8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 19,
+     "surface": 23,
+     "mediane": 12100,
+     "prix": 370000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 58,
+     "mediane": 11000,
+     "prix": 698000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 95,
+     "mediane": 10770,
+     "prix": 1229000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 186,
+     "mediane": 11580,
+     "prix": 2061000
+    }
+   ],
+   "rang": 51,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-boissiere-16",
+   "nom": "Rue Boissiere",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 22,
+   "mediane": 11810,
+   "d1": 8900,
+   "d9": 16720,
+   "surface": 69,
+   "prix": 794000,
+   "ecartArrondissement": 8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 14,
+     "mediane": 12740,
+     "prix": 164000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 68,
+     "mediane": 11380,
+     "prix": 682000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 52,
+     "mediane": 12250,
+     "prix": 625000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 138,
+     "mediane": 11730,
+     "prix": 1692000
+    }
+   ],
+   "rang": 52,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-sablons-16",
+   "nom": "Rue des Sablons",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 22,
+   "mediane": 11800,
+   "d1": 10470,
+   "d9": 13880,
+   "surface": 82,
+   "prix": 930000,
+   "ecartArrondissement": 8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 52,
+     "mediane": 12260,
+     "prix": 590000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 81,
+     "mediane": 11350,
+     "prix": 675000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 78,
+     "mediane": 11760,
+     "prix": 881000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 135,
+     "mediane": 13410,
+     "prix": 1714000
+    }
+   ],
+   "rang": 53,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-hubert-germain-16",
+   "nom": "Avenue Hubert Germain",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 20,
+   "mediane": 11740,
+   "d1": 9920,
+   "d9": 16970,
+   "surface": 79,
+   "prix": 901000,
+   "ecartArrondissement": 8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 27,
+     "mediane": 12260,
+     "prix": 350000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 50,
+     "mediane": 11840,
+     "prix": 780000
+    },
+    {
+     "pieces": 4,
+     "ventes": 10,
+     "surface": 135,
+     "mediane": 11560,
+     "prix": 1560000
+    }
+   ],
+   "rang": 54,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-jules-sandeau-16",
+   "nom": "Boulevard Jules Sandeau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 11730,
+   "d1": 10130,
+   "d9": 15050,
+   "surface": 120,
+   "prix": 1450000,
+   "ecartArrondissement": 7,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 161,
+     "mediane": 11610,
+     "prix": 1692000
+    }
+   ],
+   "rang": 55,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-delessert-16",
+   "nom": "Boulevard Delessert",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 11720,
+   "d1": 9000,
+   "d9": 13340,
+   "surface": 90,
+   "prix": 956000,
+   "ecartArrondissement": 7,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 150,
+     "mediane": 11940,
+     "prix": 1389000
+    }
+   ],
+   "rang": 56,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-la-faisanderie-16",
+   "nom": "Rue de la Faisanderie",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 51,
+   "mediane": 11680,
+   "d1": 9940,
+   "d9": 16520,
+   "surface": 81,
+   "prix": 929000,
+   "ecartArrondissement": 7,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 13,
+     "surface": 22,
+     "mediane": 11500,
+     "prix": 326000
+    },
+    {
+     "pieces": 2,
+     "ventes": 10,
+     "surface": 50,
+     "mediane": 12090,
+     "prix": 645000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 87,
+     "mediane": 11160,
+     "prix": 952000
+    },
+    {
+     "pieces": 4,
+     "ventes": 22,
+     "surface": 142,
+     "mediane": 11790,
+     "prix": 2110000
+    }
+   ],
+   "rang": 57,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-la-tour-16",
+   "nom": "Rue de la Tour",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 69,
+   "mediane": 11620,
+   "d1": 8300,
+   "d9": 14420,
+   "surface": 70,
+   "prix": 850000,
+   "ecartArrondissement": 6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 12,
+     "surface": 28,
+     "mediane": 9660,
+     "prix": 235000
+    },
+    {
+     "pieces": 2,
+     "ventes": 14,
+     "surface": 46,
+     "mediane": 11310,
+     "prix": 525000
+    },
+    {
+     "pieces": 3,
+     "ventes": 20,
+     "surface": 69,
+     "mediane": 12320,
+     "prix": 908000
+    },
+    {
+     "pieces": 4,
+     "ventes": 23,
+     "surface": 110,
+     "mediane": 12570,
+     "prix": 1320000
+    }
+   ],
+   "rang": 58,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-fresnel-16",
+   "nom": "Rue Fresnel",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 11600,
+   "d1": 10850,
+   "d9": 13840,
+   "surface": 71,
+   "prix": 840000,
+   "ecartArrondissement": 6,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 71,
+     "mediane": 11830,
+     "prix": 944000
+    }
+   ],
+   "rang": 59,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-lauriston-16",
+   "nom": "Rue Lauriston",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 87,
+   "mediane": 11560,
+   "d1": 8940,
+   "d9": 16030,
+   "surface": 38,
+   "prix": 452000,
+   "ecartArrondissement": 6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 27,
+     "surface": 19,
+     "mediane": 11200,
+     "prix": 220000
+    },
+    {
+     "pieces": 2,
+     "ventes": 28,
+     "surface": 34,
+     "mediane": 11460,
+     "prix": 392000
+    },
+    {
+     "pieces": 3,
+     "ventes": 16,
+     "surface": 69,
+     "mediane": 12360,
+     "prix": 870000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 110,
+     "mediane": 11610,
+     "prix": 1307000
+    }
+   ],
+   "rang": 60,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-nicolo-16",
+   "nom": "Rue Nicolo",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 33,
+   "mediane": 11530,
+   "d1": 8970,
+   "d9": 14190,
+   "surface": 65,
+   "prix": 703000,
+   "ecartArrondissement": 6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 10,
+     "surface": 30,
+     "mediane": 10400,
+     "prix": 348000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 55,
+     "mediane": 11760,
+     "prix": 703000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 85,
+     "mediane": 11530,
+     "prix": 970000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 120,
+     "mediane": 13580,
+     "prix": 1700000
+    }
+   ],
+   "rang": 61,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-lekain-16",
+   "nom": "Rue Lekain",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 11500,
+   "d1": 7660,
+   "d9": 18700,
+   "surface": 54,
+   "prix": 535000,
+   "ecartArrondissement": 5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 17,
+     "mediane": 11060,
+     "prix": 180000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 65,
+     "mediane": 14610,
+     "prix": 963000
+    }
+   ],
+   "rang": 62,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-cortambert-16",
+   "nom": "Rue Cortambert",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 21,
+   "mediane": 11490,
+   "d1": 9890,
+   "d9": 15510,
+   "surface": 57,
+   "prix": 706000,
+   "ecartArrondissement": 5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 19,
+     "mediane": 13550,
+     "prix": 257000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 50,
+     "mediane": 10570,
+     "prix": 528000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 150,
+     "mediane": 13220,
+     "prix": 2117000
+    }
+   ],
+   "rang": 63,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-l-yvette-16",
+   "nom": "Rue de l'Yvette",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 25,
+   "mediane": 11490,
+   "d1": 9260,
+   "d9": 13280,
+   "surface": 70,
+   "prix": 916000,
+   "ecartArrondissement": 5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 7,
+     "surface": 14,
+     "mediane": 10490,
+     "prix": 175000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 87,
+     "mediane": 11150,
+     "prix": 916000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 72,
+     "mediane": 12810,
+     "prix": 972000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 142,
+     "mediane": 11500,
+     "prix": 1525000
+    }
+   ],
+   "rang": 64,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-leroux-16",
+   "nom": "Rue Leroux",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 11410,
+   "d1": 8860,
+   "d9": 14690,
+   "surface": 118,
+   "prix": 1429000,
+   "ecartArrondissement": 5,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 119,
+     "mediane": 13090,
+     "prix": 1598000
+    }
+   ],
+   "rang": 65,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-saint-didier-16",
+   "nom": "Rue Saint-Didier",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 41,
+   "mediane": 11360,
+   "d1": 7970,
+   "d9": 13090,
+   "surface": 51,
+   "prix": 530000,
+   "ecartArrondissement": 4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 13,
+     "surface": 24,
+     "mediane": 10810,
+     "prix": 250000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 51,
+     "mediane": 11140,
+     "prix": 443000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 64,
+     "mediane": 12300,
+     "prix": 740000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 99,
+     "mediane": 11370,
+     "prix": 1180000
+    }
+   ],
+   "rang": 66,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-massenet-16",
+   "nom": "Rue Massenet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 11330,
+   "d1": 8570,
+   "d9": 13540,
+   "surface": 58,
+   "prix": 587000,
+   "ecartArrondissement": 4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 14,
+     "mediane": 11880,
+     "prix": 188000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 65,
+     "mediane": 10920,
+     "prix": 710000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 95,
+     "mediane": 11740,
+     "prix": 1115000
+    }
+   ],
+   "rang": 67,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-du-bouquet-de-longchamp-16",
+   "nom": "Rue du Bouquet de Longchamp",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 11300,
+   "d1": 10530,
+   "d9": 13590,
+   "surface": 28,
+   "prix": 300000,
+   "ecartArrondissement": 4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 7,
+     "surface": 21,
+     "mediane": 11300,
+     "prix": 265000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 36,
+     "mediane": 12030,
+     "prix": 434000
+    }
+   ],
+   "rang": 68,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-petrarque-16",
+   "nom": "Rue Petrarque",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 11300,
+   "d1": 8490,
+   "d9": 12840,
+   "surface": 60,
+   "prix": 671000,
+   "ecartArrondissement": 4,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 22,
+     "mediane": 9880,
+     "prix": 239000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 66,
+     "mediane": 11960,
+     "prix": 780000
+    }
+   ],
+   "rang": 69,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-lannes-16",
+   "nom": "Boulevard Lannes",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 20,
+   "mediane": 11280,
+   "d1": 7920,
+   "d9": 14360,
+   "surface": 86,
+   "prix": 940000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 15,
+     "mediane": 11470,
+     "prix": 184000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 56,
+     "mediane": 11010,
+     "prix": 537000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 92,
+     "mediane": 13810,
+     "prix": 1097000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 130,
+     "mediane": 11010,
+     "prix": 1594000
+    }
+   ],
+   "rang": 70,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-theophile-gautier-16",
+   "nom": "Avenue Theophile Gautier",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 34,
+   "mediane": 11270,
+   "d1": 9010,
+   "d9": 11900,
+   "surface": 84,
+   "prix": 978000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 24,
+     "mediane": 10300,
+     "prix": 250000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 38,
+     "mediane": 10440,
+     "prix": 414000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 82,
+     "mediane": 11180,
+     "prix": 857000
+    },
+    {
+     "pieces": 4,
+     "ventes": 18,
+     "surface": 122,
+     "mediane": 11330,
+     "prix": 1367000
+    }
+   ],
+   "rang": 71,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-duban-16",
+   "nom": "Rue Duban",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 11260,
+   "d1": 8210,
+   "d9": 14800,
+   "surface": 86,
+   "prix": 920000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 25,
+     "mediane": 8210,
+     "prix": 230000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 96,
+     "mediane": 11260,
+     "prix": 1125000
+    }
+   ],
+   "rang": 72,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-pergolese-16",
+   "nom": "Rue Pergolese",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 35,
+   "mediane": 11250,
+   "d1": 8410,
+   "d9": 13210,
+   "surface": 50,
+   "prix": 555000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 26,
+     "mediane": 10160,
+     "prix": 266000
+    },
+    {
+     "pieces": 2,
+     "ventes": 16,
+     "surface": 44,
+     "mediane": 10600,
+     "prix": 493000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 72,
+     "mediane": 11870,
+     "prix": 715000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 94,
+     "mediane": 11470,
+     "prix": 1226000
+    }
+   ],
+   "rang": 73,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-eugene-manuel-16",
+   "nom": "Rue Eugene Manuel",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 11200,
+   "d1": 9320,
+   "d9": 13360,
+   "surface": 80,
+   "prix": 865000,
+   "ecartArrondissement": 3,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 25,
+     "mediane": 10290,
+     "prix": 314000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 40,
+     "mediane": 10550,
+     "prix": 422000
+    },
+    {
+     "pieces": 4,
+     "ventes": 9,
+     "surface": 83,
+     "mediane": 12000,
+     "prix": 1030000
+    }
+   ],
+   "rang": 74,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-scheffer-16",
+   "nom": "Rue Scheffer",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 26,
+   "mediane": 11180,
+   "d1": 8420,
+   "d9": 15910,
+   "surface": 69,
+   "prix": 831000,
+   "ecartArrondissement": 2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 31,
+     "mediane": 10290,
+     "prix": 378000
+    },
+    {
+     "pieces": 2,
+     "ventes": 12,
+     "surface": 64,
+     "mediane": 10940,
+     "prix": 669000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 93,
+     "mediane": 11690,
+     "prix": 1030000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 158,
+     "mediane": 11280,
+     "prix": 1761000
+    }
+   ],
+   "rang": 75,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-chalgrin-16",
+   "nom": "Rue Chalgrin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 19,
+   "mediane": 11170,
+   "d1": 8280,
+   "d9": 14700,
+   "surface": 95,
+   "prix": 900000,
+   "ecartArrondissement": 2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 32,
+     "mediane": 12860,
+     "prix": 320000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 66,
+     "mediane": 11120,
+     "prix": 666000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 100,
+     "mediane": 11240,
+     "prix": 985000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 120,
+     "mediane": 10550,
+     "prix": 1340000
+    }
+   ],
+   "rang": 76,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-vineuse-16",
+   "nom": "Rue Vineuse",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 30,
+   "mediane": 11130,
+   "d1": 8480,
+   "d9": 12630,
+   "surface": 84,
+   "prix": 808000,
+   "ecartArrondissement": 2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 7,
+     "surface": 17,
+     "mediane": 11200,
+     "prix": 195000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 40,
+     "mediane": 9640,
+     "prix": 410000
+    },
+    {
+     "pieces": 3,
+     "ventes": 8,
+     "surface": 88,
+     "mediane": 11130,
+     "prix": 1026000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 125,
+     "mediane": 11320,
+     "prix": 1423000
+    }
+   ],
+   "rang": 77,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-ribera-16",
+   "nom": "Rue Ribera",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 19,
+   "mediane": 11070,
+   "d1": 7300,
+   "d9": 15910,
+   "surface": 84,
+   "prix": 930000,
+   "ecartArrondissement": 1,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 68,
+     "mediane": 11480,
+     "prix": 658000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 84,
+     "mediane": 10670,
+     "prix": 812000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 100,
+     "mediane": 12820,
+     "prix": 1162000
+    }
+   ],
+   "rang": 78,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-commandant-schloesing-16",
+   "nom": "Rue Commandant Schloesing",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 11060,
+   "d1": 8950,
+   "d9": 13560,
+   "surface": 35,
+   "prix": 486000,
+   "ecartArrondissement": 1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 34,
+     "mediane": 12330,
+     "prix": 380000
+    }
+   ],
+   "rang": 79,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-spontini-16",
+   "nom": "Rue Spontini",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 33,
+   "mediane": 11060,
+   "d1": 8990,
+   "d9": 15190,
+   "surface": 105,
+   "prix": 1120000,
+   "ecartArrondissement": 1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 13,
+     "mediane": 10540,
+     "prix": 127000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 50,
+     "mediane": 9590,
+     "prix": 509000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 75,
+     "mediane": 10020,
+     "prix": 898000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 186,
+     "mediane": 11960,
+     "prix": 2125000
+    }
+   ],
+   "rang": 80,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-duret-16",
+   "nom": "Rue Duret",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 19,
+   "mediane": 11040,
+   "d1": 9100,
+   "d9": 13880,
+   "surface": 73,
+   "prix": 722000,
+   "ecartArrondissement": 1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 23,
+     "mediane": 10780,
+     "prix": 242000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 70,
+     "mediane": 11040,
+     "prix": 720000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 77,
+     "mediane": 9480,
+     "prix": 768000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 128,
+     "mediane": 11840,
+     "prix": 1572000
+    }
+   ],
+   "rang": 81,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-passy-16",
+   "nom": "Rue de Passy",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 41,
+   "mediane": 11000,
+   "d1": 7230,
+   "d9": 14870,
+   "surface": 45,
+   "prix": 545000,
+   "ecartArrondissement": 1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 19,
+     "mediane": 10530,
+     "prix": 240000
+    },
+    {
+     "pieces": 2,
+     "ventes": 10,
+     "surface": 48,
+     "mediane": 10940,
+     "prix": 511000
+    },
+    {
+     "pieces": 3,
+     "ventes": 10,
+     "surface": 71,
+     "mediane": 11880,
+     "prix": 761000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 112,
+     "mediane": 11340,
+     "prix": 1219000
+    }
+   ],
+   "rang": 82,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-l-annonciation-16",
+   "nom": "Rue de l'Annonciation",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 16,
+   "mediane": 10950,
+   "d1": 7720,
+   "d9": 12640,
+   "surface": 35,
+   "prix": 315000,
+   "ecartArrondissement": 0,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 16,
+     "mediane": 10570,
+     "prix": 164000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 35,
+     "mediane": 11280,
+     "prix": 316000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 84,
+     "mediane": 12560,
+     "prix": 879000
+    }
+   ],
+   "rang": 83,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-marceline-desbordes-valmore-16",
+   "nom": "Rue Marceline-Desbordes-Valmore",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 21,
+   "mediane": 10930,
+   "d1": 9110,
+   "d9": 13930,
+   "surface": 38,
+   "prix": 465000,
+   "ecartArrondissement": 0,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 13,
+     "surface": 32,
+     "mediane": 10660,
+     "prix": 344000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 50,
+     "mediane": 13250,
+     "prix": 675000
+    }
+   ],
+   "rang": 84,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-rodin-16",
+   "nom": "Avenue Rodin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 10890,
+   "d1": 9580,
+   "d9": 13520,
+   "surface": 110,
+   "prix": 1360000,
+   "ecartArrondissement": 0,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 191,
+     "mediane": 11100,
+     "prix": 2095000
+    }
+   ],
+   "rang": 85,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-le-sueur-16",
+   "nom": "Rue le Sueur",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 10860,
+   "d1": 9840,
+   "d9": 12800,
+   "surface": 55,
+   "prix": 610000,
+   "ecartArrondissement": 0,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 43,
+     "mediane": 9850,
+     "prix": 496000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 57,
+     "mediane": 11700,
+     "prix": 620000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 73,
+     "mediane": 10620,
+     "prix": 775000
+    }
+   ],
+   "rang": 86,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-george-sand-16",
+   "nom": "Rue George Sand",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 10850,
+   "d1": 8250,
+   "d9": 12680,
+   "surface": 83,
+   "prix": 884000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 46,
+     "mediane": 9240,
+     "prix": 435000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 104,
+     "mediane": 11670,
+     "prix": 1138000
+    }
+   ],
+   "rang": 87,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-guy-de-maupassant-16",
+   "nom": "Rue Guy de Maupassant",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 10850,
+   "d1": 8290,
+   "d9": 15800,
+   "surface": 110,
+   "prix": 1321000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 110,
+     "mediane": 11790,
+     "prix": 1540000
+    }
+   ],
+   "rang": 88,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-de-lamballe-16",
+   "nom": "Avenue de Lamballe",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 10840,
+   "d1": 8750,
+   "d9": 13000,
+   "surface": 82,
+   "prix": 834000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 20,
+     "mediane": 12440,
+     "prix": 225000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 66,
+     "mediane": 10930,
+     "prix": 772000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 88,
+     "mediane": 9330,
+     "prix": 849000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 150,
+     "mediane": 10740,
+     "prix": 1450000
+    }
+   ],
+   "rang": 89,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-louis-david-16",
+   "nom": "Rue Louis David",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 15,
+   "mediane": 10800,
+   "d1": 9540,
+   "d9": 14470,
+   "surface": 57,
+   "prix": 761000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 27,
+     "mediane": 10060,
+     "prix": 290000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 105,
+     "mediane": 10770,
+     "prix": 1153000
+    }
+   ],
+   "rang": 90,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-l-assomption-16",
+   "nom": "Rue de l'Assomption",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 56,
+   "mediane": 10780,
+   "d1": 7900,
+   "d9": 14860,
+   "surface": 66,
+   "prix": 670000,
+   "ecartArrondissement": -1,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 9,
+     "surface": 21,
+     "mediane": 10000,
+     "prix": 246000
+    },
+    {
+     "pieces": 2,
+     "ventes": 16,
+     "surface": 48,
+     "mediane": 11140,
+     "prix": 508000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 68,
+     "mediane": 10350,
+     "prix": 787000
+    },
+    {
+     "pieces": 4,
+     "ventes": 19,
+     "surface": 133,
+     "mediane": 11180,
+     "prix": 1558000
+    }
+   ],
+   "rang": 91,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-dufrenoy-16",
+   "nom": "Rue Dufrenoy",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 10740,
+   "d1": 5970,
+   "d9": 12830,
+   "surface": 68,
+   "prix": 792000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 32,
+     "mediane": 9690,
+     "prix": 344000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 82,
+     "mediane": 11200,
+     "prix": 830000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 124,
+     "mediane": 11560,
+     "prix": 1552000
+    }
+   ],
+   "rang": 92,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-jasmin-16",
+   "nom": "Rue Jasmin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 10710,
+   "d1": 10000,
+   "d9": 14840,
+   "surface": 70,
+   "prix": 850000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 40,
+     "mediane": 10250,
+     "prix": 410000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 70,
+     "mediane": 10710,
+     "prix": 850000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 87,
+     "mediane": 12890,
+     "prix": 1182000
+    }
+   ],
+   "rang": 93,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-pierre-guerin-16",
+   "nom": "Rue Pierre Guerin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 10690,
+   "d1": 8600,
+   "d9": 12500,
+   "surface": 68,
+   "prix": 710000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 18,
+     "mediane": 8890,
+     "prix": 177000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 68,
+     "mediane": 10780,
+     "prix": 710000
+    }
+   ],
+   "rang": 94,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-singer-16",
+   "nom": "Rue Singer",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 10690,
+   "d1": 9000,
+   "d9": 20220,
+   "surface": 60,
+   "prix": 686000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 14,
+     "mediane": 10400,
+     "prix": 293000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 60,
+     "mediane": 10560,
+     "prix": 585000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 59,
+     "mediane": 13550,
+     "prix": 944000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 98,
+     "mediane": 10620,
+     "prix": 1112000
+    }
+   ],
+   "rang": 95,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-musset-16",
+   "nom": "Rue de Musset",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 10670,
+   "d1": 8370,
+   "d9": 11690,
+   "surface": 30,
+   "prix": 278000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 28,
+     "mediane": 9320,
+     "prix": 261000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 32,
+     "mediane": 11050,
+     "prix": 344000
+    }
+   ],
+   "rang": 96,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-d-auteuil-16",
+   "nom": "Rue d'Auteuil",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 34,
+   "mediane": 10650,
+   "d1": 8590,
+   "d9": 15100,
+   "surface": 78,
+   "prix": 823000,
+   "ecartArrondissement": -2,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 22,
+     "mediane": 10270,
+     "prix": 228000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 52,
+     "mediane": 11870,
+     "prix": 728000
+    },
+    {
+     "pieces": 3,
+     "ventes": 10,
+     "surface": 78,
+     "mediane": 11770,
+     "prix": 823000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 90,
+     "mediane": 10530,
+     "prix": 1058000
+    }
+   ],
+   "rang": 97,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-de-montmorency-16",
+   "nom": "Boulevard de Montmorency",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 21,
+   "mediane": 10610,
+   "d1": 9350,
+   "d9": 13420,
+   "surface": 90,
+   "prix": 1103000,
+   "ecartArrondissement": -3,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 52,
+     "mediane": 10580,
+     "prix": 550000
+    },
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 78,
+     "mediane": 10750,
+     "prix": 850000
+    },
+    {
+     "pieces": 4,
+     "ventes": 11,
+     "surface": 123,
+     "mediane": 10680,
+     "prix": 1314000
+    }
+   ],
+   "rang": 98,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-la-source-16",
+   "nom": "Rue de la Source",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 10580,
+   "d1": 9030,
+   "d9": 12320,
+   "surface": 114,
+   "prix": 1135000,
+   "ecartArrondissement": -3,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 44,
+     "mediane": 9980,
+     "prix": 419000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 133,
+     "mediane": 10580,
+     "prix": 1448000
+    }
+   ],
+   "rang": 99,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "square-alboni-16",
+   "nom": "Square Alboni",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 10570,
+   "d1": 9900,
+   "d9": 13590,
+   "surface": 160,
+   "prix": 1515000,
+   "ecartArrondissement": -3,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 160,
+     "mediane": 11140,
+     "prix": 1580000
+    }
+   ],
+   "rang": 100,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-jean-richepin-16",
+   "nom": "Rue Jean Richepin",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 10430,
+   "d1": 4610,
+   "d9": 14190,
+   "surface": 100,
+   "prix": 1438000,
+   "ecartArrondissement": -4,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 138,
+     "mediane": 11810,
+     "prix": 1716000
+    }
+   ],
+   "rang": 101,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-du-ranelagh-16",
+   "nom": "Rue du Ranelagh",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 57,
+   "mediane": 10420,
+   "d1": 8390,
+   "d9": 13950,
+   "surface": 55,
+   "prix": 540000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 16,
+     "surface": 18,
+     "mediane": 10620,
+     "prix": 230000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 48,
+     "mediane": 9250,
+     "prix": 454000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 65,
+     "mediane": 10380,
+     "prix": 708000
+    },
+    {
+     "pieces": 4,
+     "ventes": 18,
+     "surface": 114,
+     "mediane": 10910,
+     "prix": 1346000
+    }
+   ],
+   "rang": 102,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-mozart-16",
+   "nom": "Avenue Mozart",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 46,
+   "mediane": 10410,
+   "d1": 7540,
+   "d9": 12350,
+   "surface": 70,
+   "prix": 682000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 26,
+     "mediane": 9130,
+     "prix": 215000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 40,
+     "mediane": 10390,
+     "prix": 417000
+    },
+    {
+     "pieces": 3,
+     "ventes": 11,
+     "surface": 68,
+     "mediane": 9470,
+     "prix": 640000
+    },
+    {
+     "pieces": 4,
+     "ventes": 18,
+     "surface": 137,
+     "mediane": 11500,
+     "prix": 1524000
+    }
+   ],
+   "rang": 103,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-docteur-blanche-16",
+   "nom": "Rue Docteur Blanche",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 25,
+   "mediane": 10380,
+   "d1": 8760,
+   "d9": 14560,
+   "surface": 105,
+   "prix": 1000000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 30,
+     "mediane": 9180,
+     "prix": 261000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 92,
+     "mediane": 9350,
+     "prix": 860000
+    },
+    {
+     "pieces": 4,
+     "ventes": 13,
+     "surface": 128,
+     "mediane": 11360,
+     "prix": 1350000
+    }
+   ],
+   "rang": 104,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-boulainvilliers-16",
+   "nom": "Rue de Boulainvilliers",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 46,
+   "mediane": 10370,
+   "d1": 8090,
+   "d9": 12940,
+   "surface": 68,
+   "prix": 684000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 14,
+     "surface": 17,
+     "mediane": 9540,
+     "prix": 201000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 66,
+     "mediane": 10370,
+     "prix": 682000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 70,
+     "mediane": 11420,
+     "prix": 820000
+    },
+    {
+     "pieces": 4,
+     "ventes": 14,
+     "surface": 112,
+     "mediane": 10560,
+     "prix": 1383000
+    }
+   ],
+   "rang": 105,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-raffet-16",
+   "nom": "Rue Raffet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 33,
+   "mediane": 10330,
+   "d1": 8490,
+   "d9": 12490,
+   "surface": 48,
+   "prix": 534000,
+   "ecartArrondissement": -5,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 13,
+     "surface": 23,
+     "mediane": 10330,
+     "prix": 269000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 49,
+     "mediane": 11120,
+     "prix": 538000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 80,
+     "mediane": 10180,
+     "prix": 855000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 112,
+     "mediane": 10330,
+     "prix": 1142000
+    }
+   ],
+   "rang": 106,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-dangeau-16",
+   "nom": "Rue Dangeau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 10260,
+   "d1": 8490,
+   "d9": 12910,
+   "surface": 65,
+   "prix": 610000,
+   "ecartArrondissement": -6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 34,
+     "mediane": 9930,
+     "prix": 290000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 69,
+     "mediane": 10830,
+     "prix": 731000
+    }
+   ],
+   "rang": 107,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-chanez-16",
+   "nom": "Rue Chanez",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 18,
+   "mediane": 10250,
+   "d1": 8680,
+   "d9": 11510,
+   "surface": 64,
+   "prix": 663000,
+   "ecartArrondissement": -6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 30,
+     "mediane": 9360,
+     "prix": 280000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 51,
+     "mediane": 10060,
+     "prix": 508000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 70,
+     "mediane": 10340,
+     "prix": 675000
+    }
+   ],
+   "rang": 108,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-marbeau-16",
+   "nom": "Rue Marbeau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 15,
+   "mediane": 10250,
+   "d1": 6240,
+   "d9": 13140,
+   "surface": 97,
+   "prix": 1125000,
+   "ecartArrondissement": -6,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 93,
+     "mediane": 11360,
+     "prix": 1125000
+    },
+    {
+     "pieces": 4,
+     "ventes": 8,
+     "surface": 140,
+     "mediane": 10330,
+     "prix": 1455000
+    }
+   ],
+   "rang": 109,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-erlanger-16",
+   "nom": "Rue Erlanger",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 50,
+   "mediane": 10240,
+   "d1": 8110,
+   "d9": 12650,
+   "surface": 68,
+   "prix": 710000,
+   "ecartArrondissement": -6,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 16,
+     "surface": 29,
+     "mediane": 9890,
+     "prix": 306000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 51,
+     "mediane": 10420,
+     "prix": 560000
+    },
+    {
+     "pieces": 3,
+     "ventes": 11,
+     "surface": 80,
+     "mediane": 10590,
+     "prix": 805000
+    },
+    {
+     "pieces": 4,
+     "ventes": 16,
+     "surface": 102,
+     "mediane": 9730,
+     "prix": 1022000
+    }
+   ],
+   "rang": 110,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-suchet-16",
+   "nom": "Boulevard Suchet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 55,
+   "mediane": 10150,
+   "d1": 8280,
+   "d9": 12980,
+   "surface": 90,
+   "prix": 822000,
+   "ecartArrondissement": -7,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 11,
+     "surface": 14,
+     "mediane": 11100,
+     "prix": 178000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 60,
+     "mediane": 9530,
+     "prix": 550000
+    },
+    {
+     "pieces": 3,
+     "ventes": 16,
+     "surface": 92,
+     "mediane": 10510,
+     "prix": 1073000
+    },
+    {
+     "pieces": 4,
+     "ventes": 19,
+     "surface": 113,
+     "mediane": 10110,
+     "prix": 1220000
+    }
+   ],
+   "rang": 111,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-jean-de-la-fontaine-16",
+   "nom": "Rue Jean de la Fontaine",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 69,
+   "mediane": 10070,
+   "d1": 6220,
+   "d9": 12160,
+   "surface": 71,
+   "prix": 529000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 18,
+     "surface": 36,
+     "mediane": 10090,
+     "prix": 296000
+    },
+    {
+     "pieces": 2,
+     "ventes": 18,
+     "surface": 42,
+     "mediane": 9820,
+     "prix": 412000
+    },
+    {
+     "pieces": 3,
+     "ventes": 14,
+     "surface": 82,
+     "mediane": 10080,
+     "prix": 809000
+    },
+    {
+     "pieces": 4,
+     "ventes": 19,
+     "surface": 110,
+     "mediane": 10160,
+     "prix": 1270000
+    }
+   ],
+   "rang": 112,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-davioud-16",
+   "nom": "Rue Davioud",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 10030,
+   "d1": 9070,
+   "d9": 12260,
+   "surface": 80,
+   "prix": 763000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 92,
+     "mediane": 9810,
+     "prix": 855000
+    }
+   ],
+   "rang": 113,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-felicien-david-16",
+   "nom": "Rue Felicien David",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 25,
+   "mediane": 10020,
+   "d1": 7970,
+   "d9": 13670,
+   "surface": 42,
+   "prix": 460000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 9,
+     "surface": 35,
+     "mediane": 10290,
+     "prix": 355000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 42,
+     "mediane": 10580,
+     "prix": 477000
+    },
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 111,
+     "mediane": 9170,
+     "prix": 884000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 115,
+     "mediane": 9880,
+     "prix": 934000
+    }
+   ],
+   "rang": 114,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "square-mignot-16",
+   "nom": "Square Mignot",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 10020,
+   "d1": 8620,
+   "d9": 10990,
+   "surface": 66,
+   "prix": 670000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 67,
+     "mediane": 10300,
+     "prix": 690000
+    }
+   ],
+   "rang": 115,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-lalo-16",
+   "nom": "Rue Lalo",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 25,
+   "mediane": 10000,
+   "d1": 7620,
+   "d9": 13410,
+   "surface": 99,
+   "prix": 1200000,
+   "ecartArrondissement": -8,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 10,
+     "mediane": 10000,
+     "prix": 100000
+    },
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 42,
+     "mediane": 10060,
+     "prix": 342000
+    },
+    {
+     "pieces": 4,
+     "ventes": 14,
+     "surface": 145,
+     "mediane": 10590,
+     "prix": 1708000
+    }
+   ],
+   "rang": 116,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-francois-gerard-16",
+   "nom": "Rue Francois Gerard",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 9980,
+   "d1": 7560,
+   "d9": 10870,
+   "surface": 47,
+   "prix": 396000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 33,
+     "mediane": 10190,
+     "prix": 341000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 49,
+     "mediane": 9480,
+     "prix": 433000
+    }
+   ],
+   "rang": 117,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-gros-16",
+   "nom": "Rue Gros",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 9890,
+   "d1": 8770,
+   "d9": 11270,
+   "surface": 74,
+   "prix": 661000,
+   "ecartArrondissement": -9,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 122,
+     "mediane": 10360,
+     "prix": 1208000
+    }
+   ],
+   "rang": 118,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-boileau-16",
+   "nom": "Rue Boileau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 57,
+   "mediane": 9790,
+   "d1": 8160,
+   "d9": 11850,
+   "surface": 49,
+   "prix": 463000,
+   "ecartArrondissement": -10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 11,
+     "surface": 20,
+     "mediane": 10480,
+     "prix": 220000
+    },
+    {
+     "pieces": 2,
+     "ventes": 27,
+     "surface": 49,
+     "mediane": 9420,
+     "prix": 460000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 63,
+     "mediane": 9320,
+     "prix": 592000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 116,
+     "mediane": 11830,
+     "prix": 1486000
+    }
+   ],
+   "rang": 119,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "villa-chanez-16",
+   "nom": "Villa Chanez",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 15,
+   "mediane": 9790,
+   "d1": 5760,
+   "d9": 13390,
+   "surface": 55,
+   "prix": 470000,
+   "ecartArrondissement": -10,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 45,
+     "mediane": 9710,
+     "prix": 437000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 82,
+     "mediane": 9150,
+     "prix": 640000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 89,
+     "mediane": 11650,
+     "prix": 1038000
+    }
+   ],
+   "rang": 120,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "quai-louis-bleriot-16",
+   "nom": "Quai Louis Bleriot",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 38,
+   "mediane": 9770,
+   "d1": 7590,
+   "d9": 15300,
+   "surface": 82,
+   "prix": 835000,
+   "ecartArrondissement": -10,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 19,
+     "mediane": 9970,
+     "prix": 190000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 38,
+     "mediane": 11380,
+     "prix": 666000
+    },
+    {
+     "pieces": 3,
+     "ventes": 12,
+     "surface": 86,
+     "mediane": 9400,
+     "prix": 840000
+    },
+    {
+     "pieces": 4,
+     "ventes": 15,
+     "surface": 120,
+     "mediane": 9760,
+     "prix": 948000
+    }
+   ],
+   "rang": 121,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-degas-16",
+   "nom": "Rue Degas",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 9770,
+   "d1": 6840,
+   "d9": 13190,
+   "surface": 56,
+   "prix": 577000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 50,
+     "mediane": 9380,
+     "prix": 432000
+    }
+   ],
+   "rang": 122,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-civry-16",
+   "nom": "Rue de Civry",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 39,
+   "mediane": 9730,
+   "d1": 7810,
+   "d9": 11130,
+   "surface": 65,
+   "prix": 533000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 10,
+     "surface": 14,
+     "mediane": 10120,
+     "prix": 145000
+    },
+    {
+     "pieces": 2,
+     "ventes": 7,
+     "surface": 49,
+     "mediane": 10200,
+     "prix": 500000
+    },
+    {
+     "pieces": 3,
+     "ventes": 16,
+     "surface": 69,
+     "mediane": 9250,
+     "prix": 618000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 114,
+     "mediane": 10290,
+     "prix": 1149000
+    }
+   ],
+   "rang": 123,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-narcisse-diaz-16",
+   "nom": "Rue Narcisse Diaz",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 9710,
+   "d1": 7900,
+   "d9": 11940,
+   "surface": 39,
+   "prix": 330000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 24,
+     "mediane": 10790,
+     "prix": 284000
+    },
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 55,
+     "mediane": 9460,
+     "prix": 520000
+    }
+   ],
+   "rang": 124,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-fantin-latour-16",
+   "nom": "Rue Fantin Latour",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 9690,
+   "d1": 7830,
+   "d9": 11150,
+   "surface": 43,
+   "prix": 520000,
+   "ecartArrondissement": -11,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 5,
+     "surface": 18,
+     "mediane": 8580,
+     "prix": 157000
+    },
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 35,
+     "mediane": 9710,
+     "prix": 340000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 57,
+     "mediane": 10750,
+     "prix": 549000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 81,
+     "mediane": 8840,
+     "prix": 690000
+    }
+   ],
+   "rang": 125,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-du-general-balfourier-16",
+   "nom": "Avenue du Général Balfourier",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 10,
+   "mediane": 9630,
+   "d1": 8730,
+   "d9": 10900,
+   "surface": 42,
+   "prix": 417000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 42,
+     "mediane": 9770,
+     "prix": 439000
+    }
+   ],
+   "rang": 126,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-claude-lorrain-16",
+   "nom": "Rue Claude Lorrain",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 17,
+   "mediane": 9620,
+   "d1": 6260,
+   "d9": 10780,
+   "surface": 52,
+   "prix": 500000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 50,
+     "mediane": 10540,
+     "prix": 414000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 62,
+     "mediane": 8830,
+     "prix": 540000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 101,
+     "mediane": 9020,
+     "prix": 1042000
+    }
+   ],
+   "rang": 127,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-remusat-16",
+   "nom": "Rue de Remusat",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 9620,
+   "d1": 8330,
+   "d9": 11890,
+   "surface": 67,
+   "prix": 789000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 65,
+     "mediane": 8790,
+     "prix": 624000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 101,
+     "mediane": 9560,
+     "prix": 971000
+    }
+   ],
+   "rang": 128,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-charles-dickens-16",
+   "nom": "Rue Charles Dickens",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 9600,
+   "d1": 7460,
+   "d9": 11450,
+   "surface": 72,
+   "prix": 608000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 100,
+     "mediane": 10460,
+     "prix": 1039000
+    }
+   ],
+   "rang": 129,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-victorien-sardou-16",
+   "nom": "Rue Victorien Sardou",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 14,
+   "mediane": 9570,
+   "d1": 6880,
+   "d9": 17060,
+   "surface": 71,
+   "prix": 720000,
+   "ecartArrondissement": -12,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 4,
+     "surface": 19,
+     "mediane": 11270,
+     "prix": 234000
+    },
+    {
+     "pieces": 4,
+     "ventes": 7,
+     "surface": 107,
+     "mediane": 9250,
+     "prix": 1030000
+    }
+   ],
+   "rang": 130,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-perchamps-16",
+   "nom": "Rue des Perchamps",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 9,
+   "mediane": 9530,
+   "d1": 8930,
+   "d9": 11000,
+   "surface": 32,
+   "prix": 360000,
+   "ecartArrondissement": -13,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 32,
+     "mediane": 10190,
+     "prix": 350000
+    }
+   ],
+   "rang": 131,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-de-l-abbe-roussel-16",
+   "nom": "Avenue de l'Abbe Roussel",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 9430,
+   "d1": 8340,
+   "d9": 11240,
+   "surface": 66,
+   "prix": 617000,
+   "ecartArrondissement": -14,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 6,
+     "surface": 70,
+     "mediane": 9300,
+     "prix": 617000
+    }
+   ],
+   "rang": 132,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-michel-ange-16",
+   "nom": "Rue Michel Ange",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 84,
+   "mediane": 9380,
+   "d1": 7600,
+   "d9": 12530,
+   "surface": 79,
+   "prix": 729000,
+   "ecartArrondissement": -14,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 7,
+     "surface": 18,
+     "mediane": 10360,
+     "prix": 150000
+    },
+    {
+     "pieces": 2,
+     "ventes": 23,
+     "surface": 50,
+     "mediane": 9300,
+     "prix": 447000
+    },
+    {
+     "pieces": 3,
+     "ventes": 25,
+     "surface": 82,
+     "mediane": 8920,
+     "prix": 712000
+    },
+    {
+     "pieces": 4,
+     "ventes": 29,
+     "surface": 109,
+     "mediane": 9660,
+     "prix": 1119000
+    }
+   ],
+   "rang": 133,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-parent-de-rosan-16",
+   "nom": "Rue Parent de Rosan",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 22,
+   "mediane": 9330,
+   "d1": 7760,
+   "d9": 11720,
+   "surface": 38,
+   "prix": 386000,
+   "ecartArrondissement": -15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 8,
+     "surface": 26,
+     "mediane": 10040,
+     "prix": 244000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 57,
+     "mediane": 9020,
+     "prix": 519000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 110,
+     "mediane": 9080,
+     "prix": 890000
+    }
+   ],
+   "rang": 134,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-exelmans-16",
+   "nom": "Boulevard Exelmans",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 90,
+   "mediane": 9310,
+   "d1": 7280,
+   "d9": 11710,
+   "surface": 70,
+   "prix": 595000,
+   "ecartArrondissement": -15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 10,
+     "surface": 19,
+     "mediane": 10790,
+     "prix": 192000
+    },
+    {
+     "pieces": 2,
+     "ventes": 22,
+     "surface": 45,
+     "mediane": 9440,
+     "prix": 446000
+    },
+    {
+     "pieces": 3,
+     "ventes": 27,
+     "surface": 70,
+     "mediane": 8500,
+     "prix": 618000
+    },
+    {
+     "pieces": 4,
+     "ventes": 31,
+     "surface": 103,
+     "mediane": 9850,
+     "prix": 885000
+    }
+   ],
+   "rang": 135,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-du-general-delestraint-16",
+   "nom": "Rue du Général Delestraint",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 38,
+   "mediane": 9260,
+   "d1": 7960,
+   "d9": 10650,
+   "surface": 80,
+   "prix": 663000,
+   "ecartArrondissement": -15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 30,
+     "mediane": 8330,
+     "prix": 300000
+    },
+    {
+     "pieces": 2,
+     "ventes": 8,
+     "surface": 52,
+     "mediane": 8340,
+     "prix": 440000
+    },
+    {
+     "pieces": 3,
+     "ventes": 14,
+     "surface": 78,
+     "mediane": 9110,
+     "prix": 696000
+    },
+    {
+     "pieces": 4,
+     "ventes": 13,
+     "surface": 110,
+     "mediane": 9590,
+     "prix": 1201000
+    }
+   ],
+   "rang": 136,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "boulevard-murat-16",
+   "nom": "Boulevard Murat",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 77,
+   "mediane": 9230,
+   "d1": 7420,
+   "d9": 11220,
+   "surface": 57,
+   "prix": 533000,
+   "ecartArrondissement": -15,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 17,
+     "surface": 31,
+     "mediane": 9170,
+     "prix": 285000
+    },
+    {
+     "pieces": 2,
+     "ventes": 20,
+     "surface": 49,
+     "mediane": 9350,
+     "prix": 444000
+    },
+    {
+     "pieces": 3,
+     "ventes": 23,
+     "surface": 67,
+     "mediane": 8400,
+     "prix": 662000
+    },
+    {
+     "pieces": 4,
+     "ventes": 17,
+     "surface": 116,
+     "mediane": 9640,
+     "prix": 1000000
+    }
+   ],
+   "rang": 137,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-molitor-16",
+   "nom": "Rue Molitor",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 26,
+   "mediane": 9190,
+   "d1": 7730,
+   "d9": 12870,
+   "surface": 47,
+   "prix": 424000,
+   "ecartArrondissement": -16,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 9,
+     "surface": 37,
+     "mediane": 9560,
+     "prix": 345000
+    },
+    {
+     "pieces": 2,
+     "ventes": 9,
+     "surface": 52,
+     "mediane": 8830,
+     "prix": 420000
+    },
+    {
+     "pieces": 4,
+     "ventes": 6,
+     "surface": 106,
+     "mediane": 10510,
+     "prix": 1390000
+    }
+   ],
+   "rang": 138,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-chardon-lagache-16",
+   "nom": "Rue Chardon Lagache",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 54,
+   "mediane": 9170,
+   "d1": 5830,
+   "d9": 11780,
+   "surface": 59,
+   "prix": 470000,
+   "ecartArrondissement": -16,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 15,
+     "surface": 25,
+     "mediane": 9620,
+     "prix": 228000
+    },
+    {
+     "pieces": 2,
+     "ventes": 14,
+     "surface": 50,
+     "mediane": 8870,
+     "prix": 437000
+    },
+    {
+     "pieces": 3,
+     "ventes": 11,
+     "surface": 77,
+     "mediane": 8870,
+     "prix": 593000
+    },
+    {
+     "pieces": 4,
+     "ventes": 14,
+     "surface": 115,
+     "mediane": 9370,
+     "prix": 1097000
+    }
+   ],
+   "rang": 139,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-eaux-16",
+   "nom": "Rue des Eaux",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 9130,
+   "d1": 7600,
+   "d9": 10970,
+   "surface": 90,
+   "prix": 786000,
+   "ecartArrondissement": -16,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 55,
+     "mediane": 8820,
+     "prix": 485000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 110,
+     "mediane": 8650,
+     "prix": 865000
+    }
+   ],
+   "rang": 140,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-jouvenet-16",
+   "nom": "Rue Jouvenet",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 45,
+   "mediane": 9090,
+   "d1": 7170,
+   "d9": 12770,
+   "surface": 32,
+   "prix": 260000,
+   "ecartArrondissement": -17,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 26,
+     "surface": 25,
+     "mediane": 9380,
+     "prix": 234000
+    },
+    {
+     "pieces": 2,
+     "ventes": 11,
+     "surface": 40,
+     "mediane": 8600,
+     "prix": 335000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 64,
+     "mediane": 10390,
+     "prix": 658000
+    },
+    {
+     "pieces": 4,
+     "ventes": 4,
+     "surface": 116,
+     "mediane": 8090,
+     "prix": 929000
+    }
+   ],
+   "rang": 141,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-perrichont-16",
+   "nom": "Avenue Perrichont",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 12,
+   "mediane": 9060,
+   "d1": 7510,
+   "d9": 11770,
+   "surface": 88,
+   "prix": 762000,
+   "ecartArrondissement": -17,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 68,
+     "mediane": 8350,
+     "prix": 593000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 90,
+     "mediane": 9340,
+     "prix": 815000
+    }
+   ],
+   "rang": 142,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "avenue-de-versailles-16",
+   "nom": "Avenue de Versailles",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 131,
+   "mediane": 9000,
+   "d1": 7380,
+   "d9": 11110,
+   "surface": 55,
+   "prix": 460000,
+   "ecartArrondissement": -18,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 36,
+     "surface": 20,
+     "mediane": 9440,
+     "prix": 174000
+    },
+    {
+     "pieces": 2,
+     "ventes": 34,
+     "surface": 48,
+     "mediane": 8850,
+     "prix": 396000
+    },
+    {
+     "pieces": 3,
+     "ventes": 33,
+     "surface": 69,
+     "mediane": 8870,
+     "prix": 580000
+    },
+    {
+     "pieces": 4,
+     "ventes": 28,
+     "surface": 98,
+     "mediane": 8990,
+     "prix": 934000
+    }
+   ],
+   "rang": 143,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-claude-terrasse-16",
+   "nom": "Rue Claude Terrasse",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 32,
+   "mediane": 8890,
+   "d1": 7390,
+   "d9": 11490,
+   "surface": 33,
+   "prix": 297000,
+   "ecartArrondissement": -19,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 9,
+     "surface": 21,
+     "mediane": 9950,
+     "prix": 170000
+    },
+    {
+     "pieces": 2,
+     "ventes": 18,
+     "surface": 36,
+     "mediane": 8890,
+     "prix": 342000
+    },
+    {
+     "pieces": 3,
+     "ventes": 4,
+     "surface": 48,
+     "mediane": 8020,
+     "prix": 372000
+    }
+   ],
+   "rang": 144,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-des-patures-16",
+   "nom": "Rue des Patures",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 8850,
+   "d1": 8220,
+   "d9": 11410,
+   "surface": 62,
+   "prix": 572000,
+   "ecartArrondissement": -19,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 6,
+     "surface": 70,
+     "mediane": 8850,
+     "prix": 600000
+    }
+   ],
+   "rang": 145,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-van-loo-16",
+   "nom": "Rue Van Loo",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 8,
+   "mediane": 8760,
+   "d1": 8000,
+   "d9": 9800,
+   "surface": 79,
+   "prix": 724000,
+   "ecartArrondissement": -20,
+   "typologies": [
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 119,
+     "mediane": 8740,
+     "prix": 1040000
+    }
+   ],
+   "rang": 146,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-de-varize-16",
+   "nom": "Rue de Varize",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 13,
+   "mediane": 8750,
+   "d1": 7780,
+   "d9": 15110,
+   "surface": 65,
+   "prix": 556000,
+   "ecartArrondissement": -20,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 3,
+     "surface": 36,
+     "mediane": 8750,
+     "prix": 315000
+    },
+    {
+     "pieces": 3,
+     "ventes": 5,
+     "surface": 77,
+     "mediane": 8560,
+     "prix": 591000
+    },
+    {
+     "pieces": 4,
+     "ventes": 3,
+     "surface": 135,
+     "mediane": 7790,
+     "prix": 1145000
+    }
+   ],
+   "rang": 147,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-antoine-roucher-16",
+   "nom": "Rue Antoine Roucher",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 8410,
+   "d1": 6160,
+   "d9": 11430,
+   "surface": 51,
+   "prix": 540000,
+   "ecartArrondissement": -23,
+   "typologies": [
+    {
+     "pieces": 3,
+     "ventes": 3,
+     "surface": 48,
+     "mediane": 9190,
+     "prix": 414000
+    },
+    {
+     "pieces": 4,
+     "ventes": 5,
+     "surface": 90,
+     "mediane": 6980,
+     "prix": 642000
+    }
+   ],
+   "rang": 148,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-agar-16",
+   "nom": "Rue Agar",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 11,
+   "mediane": 8380,
+   "d1": 7600,
+   "d9": 10540,
+   "surface": 46,
+   "prix": 380000,
+   "ecartArrondissement": -23,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 3,
+     "surface": 23,
+     "mediane": 10540,
+     "prix": 242000
+    },
+    {
+     "pieces": 2,
+     "ventes": 5,
+     "surface": 46,
+     "mediane": 7900,
+     "prix": 370000
+    }
+   ],
+   "rang": 149,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-le-marois-16",
+   "nom": "Rue le Marois",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 31,
+   "mediane": 7970,
+   "d1": 7270,
+   "d9": 10750,
+   "surface": 43,
+   "prix": 395000,
+   "ecartArrondissement": -27,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 6,
+     "surface": 36,
+     "mediane": 7870,
+     "prix": 274000
+    },
+    {
+     "pieces": 2,
+     "ventes": 17,
+     "surface": 43,
+     "mediane": 7950,
+     "prix": 360000
+    },
+    {
+     "pieces": 3,
+     "ventes": 7,
+     "surface": 58,
+     "mediane": 8640,
+     "prix": 555000
+    }
+   ],
+   "rang": 150,
+   "ruesClassees": 151
+  },
+  {
+   "slug": "rue-mirabeau-16",
+   "nom": "Rue Mirabeau",
+   "codePostal": "75016",
+   "arrondissement": "Paris 16e",
+   "ventes": 16,
+   "mediane": 6090,
+   "d1": 4770,
+   "d9": 11520,
+   "surface": 70,
+   "prix": 396000,
+   "ecartArrondissement": -44,
+   "typologies": [
+    {
+     "pieces": 2,
+     "ventes": 4,
+     "surface": 54,
+     "mediane": 5880,
+     "prix": 323000
+    },
+    {
+     "pieces": 3,
+     "ventes": 9,
+     "surface": 70,
+     "mediane": 5910,
+     "prix": 457000
+    }
+   ],
+   "rang": 151,
+   "ruesClassees": 151
   },
   {
    "slug": "rue-de-thann-17",

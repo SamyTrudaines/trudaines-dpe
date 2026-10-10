@@ -38,15 +38,15 @@ const donnees = [
   {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Prix immobilier rue par rue, Paris 9e, 10e, 17e et 18e',
+    name: 'Prix immobilier rue par rue, Paris 7e, 9e, 10e, 16e, 17e et 18e',
     description: `Prix au mètre carré de ${rues.length} voies de Paris, calculés sur ${nombre(totalVentes)} ventes d'appartements.`,
     url: `${site.url}/prix-immobilier`,
   },
 ];
 ---
 <Layout
-  titre="Prix immobilier rue par rue, Paris 9e, 10e, 17e et 18e | Trudaines"
-  description={`Le prix au m² de ${rues.length} voies de Paris 9e, 10e, 17e et 18e, calculé sur ${nombre(totalVentes)} ventes d'appartements signées devant notaire.`}
+  titre="Prix immobilier rue par rue à Paris | Trudaines"
+  description={`Le prix au m² de ${rues.length} voies de Paris 7e, 9e, 10e, 16e, 17e et 18e, calculé sur ${nombre(totalVentes)} ventes d'appartements signées devant notaire.`}
   filAriane={[{ nom: 'Prix par rue' }]}
   donnees={donnees}
   cta={false}
@@ -56,7 +56,7 @@ const donnees = [
       <p class="surtitre">Ventes signées, {periode}</p>
       <h1 class="titre-1 mt-6">Le prix au mètre carré, rue par rue</h1>
       <p class="chapo mt-8">
-        {rues.length} voies de Paris 9e, 10e, 17e et 18e, mesurées sur {nombre(totalVentes)} ventes d'appartements
+        {rues.length} voies de Paris 7e, 9e, 10e, 16e, 17e et 18e, mesurées sur {nombre(totalVentes)} ventes d'appartements
         enregistrées devant notaire. Pas une estimation, pas une annonce : des ventes signées.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">

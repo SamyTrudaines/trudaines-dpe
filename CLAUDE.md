@@ -1,6 +1,6 @@
 # trudaines.com
 
-Site de Trudaines Immobilier (Samy Santamarina, Paris 9e, 10e, 17e, 18e). Astro 7 statique,
+Site de Trudaines Immobilier (Samy Santamarina, Paris 7e, 9e, 10e, 16e, 17e, 18e). Astro 7 statique,
 Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Functions
 (`functions/api/*.js`, Brevo dans `functions/_lib/brevo.js`).
 
@@ -53,11 +53,12 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
-- Flux des portails : `/flux/kyero.xml` (toutes langues) et `/flux/trovit-<langue>.xml` (fr, en, de, es, it, pt,
-  zh, ar), construits par `src/lib/flux.ts` depuis les biens à vendre publiés ; photos JPEG 1600 px tirées au build
-  (`/flux/photos/<bien>/<n>.jpg`). Traductions dans `src/data/annonces-traduites.ts` : un bien sans traduction part
-  en français seul.
+- Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),
+  `/feeds/trovit.xml` (français) et `/feeds/trovit-<langue>.xml` (en, de, es, it, pt, zh, ar), construits par
+  `src/lib/flux.ts` et `src/lib/flux-trovit.ts` depuis les biens à vendre publiés ; photos JPEG 1600 px tirées au
+  build (`/feeds/photos/<bien>/<n>.jpg`). Traductions dans le champ `traductions` de chaque bien, adresse
+  approximative par le champ `rue`. `npm run verifier-flux` valide contre `scripts/schemas/`.
 
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
-`npm run test-mise-en-ligne`, `npm run verifier-mobile`.
+`npm run test-mise-en-ligne`, `npm run verifier-mobile`, `npm run verifier-flux`.

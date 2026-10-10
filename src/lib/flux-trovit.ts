@@ -1,19 +1,18 @@
-import type { APIRoute, GetStaticPaths } from 'astro';
-import { site } from '../../data/site';
-import { annonce, biensDiffuses, estMaison, LANGUES, photosJpeg, reponseXml, urlBien, xml, type Langue } from '../../lib/flux';
-
 /**
- * Flux Trovit, un par langue : /flux/trovit-fr.xml pour Trovit France,
- * /flux/trovit-en.xml et suivants pour les sites étrangers du groupe
- * (Trovit, Mitula, Nestoria). Le format ne porte qu'une langue par annonce.
+ * Flux Trovit, format Homes : une seule langue par annonce. /feeds/trovit.xml
+ * en français pour Trovit France, /feeds/trovit-<langue>.xml pour les sites
+ * étrangers du groupe. Validé contre homes.xsd par scripts/verifier-flux.mjs.
+ *
+ * Pas de latitude ni de longitude : le schéma les type en entier long, ce qui
+ * interdit des coordonnées décimales. L'adresse approximative passe par
+ * <address>, <city_area> et <postcode>.
  */
-export const getStaticPaths: GetStaticPaths = () =>
-  ['fr', ...LANGUES].map((langue) => ({ params: { langue } }));
+import { site } from '../data/site';
+import { adresseApprochee, annonce, biensDiffuses, estMaison, photosJpeg, urlBien, type Langue } from './flux';
 
 const cdata = (t: string | number) => `<![CDATA[${String(t).replace(/]]>/g, ']]]]><![CDATA[>')}]]>`;
 
-export const GET: APIRoute = async ({ params }) => {
-  const langue = params.langue as Langue | 'fr';
+export async function fluxTrovit(langue: Langue | 'fr'): Promise<string> {
   const jour = new Date().toLocaleDateString('fr-FR', { timeZone: 'Europe/Paris' });
   const biens = await biensDiffuses();
 
@@ -26,27 +25,28 @@ export const GET: APIRoute = async ({ params }) => {
     <title>${cdata(a.titre)}</title>
     <type>${cdata('For Sale')}</type>
     <content>${cdata(a.texte)}</content>
+    <date>${cdata(jour)}</date>
+    <is_new>${cdata(0)}</is_new>
     <price>${cdata(d.prix)}</price>
+    <agency>${cdata(site.nomLong)}</agency>
     <property_type>${cdata(estMaison(b) ? 'Maison' : 'Appartement')}</property_type>
     <floor_area unit="meters">${cdata(Math.round(d.surface))}</floor_area>
     <rooms>${cdata(d.chambres)}</rooms>
     <bathrooms>${cdata(d.sallesDeBain ?? 1)}</bathrooms>
+    <address>${cdata(adresseApprochee(b).texte)}</address>
     <city>${cdata(d.ville)}</city>
     <city_area>${cdata(d.quartier)}</city_area>
     <postcode>${cdata(d.arrondissement)}</postcode>
     <region>${cdata('Île-de-France')}</region>
-    <is_new>${cdata(0)}</is_new>
-    <agency>${cdata(site.nomLong)}</agency>
-    <date>${cdata(jour)}</date>
     <pictures>
 ${photosJpeg(b).map((u, i) => `      <picture>\n        <picture_url>${cdata(u)}</picture_url>\n        <picture_title>${cdata(`${a.titre} ${i + 1}`)}</picture_title>\n      </picture>`).join('\n')}
     </pictures>
   </ad>`;
   });
 
-  return reponseXml(`<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <trovit>
 ${annonces.join('\n')}
 </trovit>
-`);
-};
+`;
+}

@@ -76,6 +76,14 @@ const typeDeVoie = (nom) => normaliser(nom).split(' ')[0];
 
 class ErreurReseau extends Error {}
 
+/**
+ * Codes postaux d'un arrondissement. Le 16e en a deux : 75016 au sud et 75116
+ * au nord (Foch, Victor-Hugo, Kléber). Le fichier DVF les range tous deux dans
+ * l'arrondissement, la Base Adresse Nationale les distingue.
+ */
+const CODES_POSTAUX = { '75016': ['75016', '75116'] };
+const codesDe = (codePostal) => CODES_POSTAUX[codePostal] ?? [codePostal];
+
 async function interroger(nom, codePostal) {
   const adresse =
     API +
@@ -104,7 +112,7 @@ function trancher(tache, propositions) {
 
   const meilleure = (liste) => liste.reduce((a, b) => (b.properties.score > a.properties.score ? b : a));
   const sansFiltre = meilleure(propositions);
-  const memeCode = propositions.filter((p) => p.properties.postcode === tache.codePostal);
+  const memeCode = propositions.filter((p) => codesDe(tache.codePostal).includes(p.properties.postcode));
   if (memeCode.length === 0) {
     return {
       ecart: { raison: 'code postal différent', score: arrondi(sansFiltre.properties.score, 3), propose: sansFiltre.properties.label },
@@ -157,7 +165,9 @@ async function travailleur() {
     const tache = taches[suivante];
     suivante += 1;
     try {
-      resultats.set(tache.cle, trancher(tache, await interroger(tache.nom, tache.codePostal)));
+      const propositions = [];
+      for (const code of codesDe(tache.codePostal)) propositions.push(...(await interroger(tache.nom, code)));
+      resultats.set(tache.cle, trancher(tache, propositions));
     } catch (erreur) {
       echecsReseau += 1;
       console.error(`  réseau : ${erreur.message}`);
