@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Prix au mètre carré, rue par rue, sur les 9e, 10e et 18e arrondissements.
+Prix au mètre carré, rue par rue, sur les 7e, 9e, 10e, 16e, 17e et 18e arrondissements.
 
 Le fichier des demandes de valeurs foncières de la DGFiP porte l'adresse de
 chaque vente. Regroupées par voie sur vingt quatre mois, ces ventes donnent une
@@ -39,8 +39,10 @@ prix_dvf = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(prix_dvf)
 
 ARRONDISSEMENTS = {
+    '75007': 'Paris 7e',
     '75009': 'Paris 9e',
     '75010': 'Paris 10e',
+    '75016': 'Paris 16e',
     '75017': 'Paris 17e',
     '75018': 'Paris 18e',
 }
