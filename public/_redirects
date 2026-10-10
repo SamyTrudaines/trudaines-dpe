@@ -11,9 +11,7 @@
 /vente/1-paris/appartement/162-appartement-etage-eleve-89m-4-pieces-lumineux-trudaine-75009                                        /bien/appartement-4-pieces-89m2-haussmannien-trudaine-condorcet  301
 /vente/1-paris/appartement/172-appartement-etage-eleve-63m-3-pieces-lumineux-montmartre                                            /bien/appartement-3-pieces-63m2-renove-abbesses                  301
 /vente/1-paris/appartement/180-appartement-2-pieces-43m-renove-rue-vaneau                                                          /bien/appartement-2-pieces-43m2-renove-rue-vaneau                301
-# Batignolles : renvoi provisoire vers /acheter tant que la fiche attend le montant des dépenses
-# d'énergie de son DPE. À sa publication, rétablir la cible /bien/appartement-3-pieces-64m2-renove-batignolles en 301.
-/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d                                               /acheter                                                         302
+/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d                                               /bien/appartement-3-pieces-64m2-renove-batignolles               301
 /vente/1-paris/appartement/182-appartement-3-chambres-83m-vue-sur-seine-dernier-etage                                              /bien/appartement-4-pieces-83m2-vue-seine-exelmans               301
 /vente/1-paris/appartement/23-a-acheter-a-paris-18-appartement-avec-samy-santamarina                                               /bien/appartement-2-pieces-46m2-balcon-abbesses                  301
 /vente/1-paris/appartement/26-appar                                                                                                /bien/appartement-familial-6-pieces-158m2-montholon-paradis      301
