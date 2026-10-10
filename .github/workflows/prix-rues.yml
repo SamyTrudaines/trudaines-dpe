@@ -18,6 +18,14 @@ on:
     - cron: '0 6 15 4 *'
     - cron: '0 6 15 10 *'
   workflow_dispatch:
+  # Un changement du périmètre calculé, poussé sur une branche de travail,
+  # relance le calcul et ouvre la pull request vers cette même branche.
+  push:
+    branches: ['claude/**']
+    paths:
+      - scripts/prix-rues.py
+      - scripts/prix-dvf.py
+      - .github/workflows/prix-rues.yml
 
 permissions:
   contents: write
