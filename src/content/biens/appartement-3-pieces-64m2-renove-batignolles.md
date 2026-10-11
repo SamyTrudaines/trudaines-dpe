@@ -20,6 +20,9 @@ archive: false
 ordre: 50
 honorairesCharge: vendeur
 taxeFonciere: 2545
+depensesEnergieMin: 1360
+depensesEnergieMax: 1880
+depensesEnergieAnnee: "2021, 2022 et 2023"
 description: "Trudaines vous présente en exclusivité, au cœur du village des Batignolles, rue des Dames, un trois pièces de 64 m² au deuxième étage par escalier d'un immeuble ancien, dans une copropriété à taille humaine."
 photos:
   - src: /images/biens/appartement-3-pieces-64m2-renove-batignolles/01.webp
@@ -136,6 +139,5 @@ Les informations sur les risques auxquels ce bien est exposé sont disponibles s
 
 <!-- Reprise de https://www.trudaines.com/vente/1-paris/appartement/181-appart-3-pieces-64m-batignolles-paris-17-renove-dpe-d le 2026-09-18.
      Publié le 2026-10-10 à la demande de Samy, d'après la fiche technique du bien (taxe foncière 2 545 €,
-     cave, une salle de bains, deux WC). Manque encore le montant estimé des dépenses annuelles d'énergie
-     du DPE établi après la réunion des deux lots (classe D, 226 kWh, classe climat B, 8 kg) : renseigner
-     depensesEnergieMin, depensesEnergieMax et depensesEnergieAnnee dès réception. -->
+     cave, une salle de bains, deux WC). DPE après réunion des lots : n° ADEME 2675E2254919T, classe D (226 kWh, 8 kg), dépenses
+     estimées 1 360 à 1 880 € par an, prix 2021, 2022 et 2023, relevés le 2026-10-11. -->
