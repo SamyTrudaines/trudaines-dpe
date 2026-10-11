@@ -235,6 +235,92 @@ export const secteurs: Secteur[] = [
       },
     ],
   },
+  {
+    slug: 'paris-7',
+    arrondissement: '75007',
+    nom: 'Paris 7e',
+    nomLong: '7e arrondissement de Paris',
+    titre: 'Estimation immobilière gratuite Paris 7e | Trudaines',
+    description:
+      "Estimation gratuite à Paris 7e : Saint-Germain, Invalides, Gros-Caillou. Avis de valeur écrit sous 48 heures.",
+    titreAgence: 'Agence immobilière Paris 7e | Vente et estimation - Trudaines',
+    descriptionAgence:
+      "Agence immobilière dans le 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Prix par rue, estimation offerte sous 48 h.",
+    hrefAgence: '/agence-immobiliere-paris-7',
+    intro:
+      "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue, pas d'une moyenne.",
+    introAgence:
+      "Nous vendons dans le 7e pour des propriétaires qui attendent deux choses : un prix argumenté par écrit, et une commercialisation discrète. Peu de visites, des acheteurs qualifiés, un interlocuteur unique du premier rendez-vous à l'acte.",
+    quartiers: [],
+    prixMoyen: '13 978 € le m², prix médian',
+    fourchette:
+      "10 172 à 21 143 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
+    faq: [
+      {
+        question: 'Quel est le prix au mètre carré dans le 7e arrondissement ?',
+        reponse:
+          "Le prix médian ressort à 13 978 € le mètre carré sur 1 651 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 10 172 € et un neuvième à 21 143 €. Près de 11 000 € séparent ces deux bornes : c'est l'adresse, l'étage, la vue, l'état et la copropriété qui font le prix. Nous publions le détail rue par rue.",
+      },
+      {
+        question: 'Comment vendre discrètement dans le 7e ?',
+        reponse:
+          "Par une vente confidentielle : pas de panneau, une diffusion choisie ou aucune, des visites réservées aux acquéreurs dont le financement est vérifié. La contrepartie est un délai souvent plus long. Nous en parlons au premier rendez-vous pour décider ensemble.",
+      },
+      {
+        question: 'Les acheteurs étrangers sont-ils nombreux dans le 7e ?',
+        reponse:
+          "Ils comptent dans la demande, notamment pour les pied-à-terre. Nos annonces sont traduites en anglais, allemand, espagnol, italien, portugais, chinois et arabe, et la visite peut se faire à distance avec un compte rendu écrit. Un acheteur étranger reste un acheteur comme un autre : nous vérifions son financement avant la visite.",
+      },
+      {
+        question: "Que se passe-t-il après l'estimation, suis-je engagé ?",
+        reponse:
+          "Non. L'avis de valeur écrit est gratuit et sans engagement. Vous le gardez, même si vous vendez plus tard ou avec une autre agence.",
+      },
+    ],
+  },
+  {
+    slug: 'paris-16',
+    arrondissement: '75016',
+    nom: 'Paris 16e',
+    nomLong: '16e arrondissement de Paris',
+    titre: 'Estimation immobilière gratuite Paris 16e | Trudaines',
+    description:
+      "Estimation gratuite à Paris 16e : Passy, Auteuil, Muette, Trocadéro. Avis de valeur écrit sous 48 heures.",
+    titreAgence: 'Agence immobilière Paris 16e | Vente et estimation - Trudaines',
+    descriptionAgence:
+      "Agence immobilière dans le 16e : Passy, Auteuil, Muette, Trocadéro, Chaillot. Prix par rue, estimation offerte sous 48 h.",
+    hrefAgence: '/agence-immobiliere-paris-16',
+    intro:
+      "Le 16e n'est pas un marché, c'en est plusieurs. Le nord, autour de l'Étoile, du Trocadéro et de l'avenue Foch, ne se vend pas comme Passy ou la Muette, et Auteuil a ses propres acheteurs, souvent des familles qui veulent la Seine, les écoles et le bois. Notre estimation part des ventes signées de votre rue.",
+    introAgence:
+      "Nous vendons dans le 16e, de Passy à Auteuil, pour des propriétaires qui veulent un prix défendu par écrit et des visites réservées aux acheteurs qualifiés. Un seul interlocuteur, de l'estimation à la signature chez le notaire.",
+    quartiers: [],
+    prixMoyen: '10 918 € le m², prix médian',
+    fourchette:
+      "8 010 à 15 313 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
+    faq: [
+      {
+        question: 'Quel est le prix au mètre carré dans le 16e arrondissement ?',
+        reponse:
+          "Le prix médian ressort à 10 918 € le mètre carré sur 4 342 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 8 010 € et un neuvième à 15 313 €. L'écart dit tout de l'arrondissement : la rue, l'étage, la vue et l'immeuble font le prix. Nous publions le détail rue par rue.",
+      },
+      {
+        question: 'Comment se vend un grand appartement familial dans le 16e ?',
+        reponse:
+          "Avec un prix juste dès le premier jour et un dossier complet avant la première visite : diagnostics, procès-verbaux d'assemblée générale, travaux votés, charges. Les acheteurs de grandes surfaces comparent beaucoup et financent souvent avec une vente préalable : nous vérifions leur calendrier avant de les recevoir.",
+      },
+      {
+        question: 'Vendre un appartement sous le prix médian, est-ce un échec ?',
+        reponse:
+          "Non. La médiane d'un arrondissement mélange toutes les adresses et tous les états. Un bien à rénover, au rez-de-chaussée ou sans ascenseur se vend en dessous, un dernier étage avec vue au-dessus. Ce qui compte est le prix de votre rue et de votre immeuble, et c'est celui que nous écrivons.",
+      },
+      {
+        question: "Que se passe-t-il après l'estimation, suis-je engagé ?",
+        reponse:
+          "Non. L'avis de valeur écrit est gratuit et sans engagement. Vous le gardez, même si vous vendez plus tard ou avec une autre agence.",
+      },
+    ],
+  },
 ];
 
 export const getSecteur = (slug: string) => secteurs.find((s) => s.slug === slug);

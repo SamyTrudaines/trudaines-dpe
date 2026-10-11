@@ -1,11 +1,17 @@
 import type { APIRoute } from 'astro';
-import { annonce, biensDiffuses, estMaison, LANGUES, photosJpeg, reponseXml, urlBien, xml } from '../../lib/flux';
+import { adresseApprochee, annonce, biensDiffuses, estMaison, photosJpeg, reponseXml, urlBien, xml } from '../../lib/flux';
 
 /**
- * Flux Kyero, version 3 : un seul fichier, toutes les langues dans <desc>.
+ * Flux Kyero, version 3 : un seul fichier, plusieurs langues dans <desc>.
  * Kyero lit cette adresse à intervalle régulier ; un bien retiré du flux est
  * retiré du portail à la lecture suivante.
+ *
+ * Le schéma Kyero v3 (kyeroV3.0.xsd) n'admet que ca, da, de, en, es, fi, fr,
+ * it, nl, no, pt, ru et sv : le chinois et l'arabe partent par Trovit
+ * (/feeds/trovit-zh.xml, /feeds/trovit-ar.xml). Il n'a pas d'élément titre.
+ * Le fichier est validé contre ce schéma par scripts/verifier-flux.mjs.
  */
+const LANGUES_KYERO = ['fr', 'en', 'de', 'es', 'it', 'pt'] as const;
 const DEPARTEMENTS: Record<string, string> = {
   '75': 'Paris',
   '77': 'Seine-et-Marne',
@@ -23,8 +29,8 @@ export const GET: APIRoute = async () => {
 
   const proprietes = biens.map((b) => {
     const d = b.data;
-    const langues = ['fr', ...LANGUES] as const;
-    const textes = langues.map((l) => annonce(b, l)).filter((a, i) => i === 0 || a.langue !== 'fr');
+    const textes = LANGUES_KYERO.map((l) => annonce(b, l)).filter((a, i) => i === 0 || a.langue !== 'fr');
+    const adresse = adresseApprochee(b);
     const photos = photosJpeg(b);
     return `  <property>
     <id>${xml(d.reference)}</id>
@@ -40,7 +46,7 @@ export const GET: APIRoute = async () => {
     <town>${xml(d.ville)}</town>
     <province>${xml(DEPARTEMENTS[d.arrondissement.slice(0, 2)] ?? 'Île-de-France')}</province>
     <country>France</country>
-    <location_detail>${xml(d.quartier)}</location_detail>
+${adresse.lat !== undefined ? `    <location>\n      <latitude>${adresse.lat}</latitude>\n      <longitude>${adresse.lon}</longitude>\n    </location>\n` : ''}    <location_detail>${xml((d.rue ? `${d.rue}, ${d.quartier}` : d.quartier).slice(0, 50))}</location_detail>
     <beds>${d.chambres}</beds>
     <baths>${d.sallesDeBain ?? 1}</baths>
     <pool>0</pool>
@@ -54,14 +60,11 @@ export const GET: APIRoute = async () => {
     <url>
 ${textes.map((a) => `      <${a.langue}>${xml(urlBien(b))}</${a.langue}>`).join('\n')}
     </url>
-    <title>
-${textes.map((a) => `      <${a.langue}>${xml(a.titre)}</${a.langue}>`).join('\n')}
-    </title>
     <desc>
-${textes.map((a) => `      <${a.langue}>${xml(a.texte)}</${a.langue}>`).join('\n')}
+${textes.map((a) => `      <${a.langue}>${xml(`${a.titre}\n\n${a.texte}`)}</${a.langue}>`).join('\n')}
     </desc>
     <features>
-${[d.ascenseur ? 'Lift' : '', `${d.pieces} rooms`, d.etage !== 'Non précisé' ? d.etage : ''].filter(Boolean).map((f) => `      <feature>${xml(f)}</feature>`).join('\n')}
+${[`${d.pieces} rooms`, d.ascenseur ? 'Lift' : '', d.etage !== 'Non précisé' ? d.etage : '', `Ref. ${d.reference}`].filter(Boolean).map((f) => `      <feature>${xml(f)}</feature>`).join('\n')}
     </features>
     <images>
 ${photos.map((u, i) => `      <image id="${i + 1}">\n        <url>${xml(u)}</url>\n      </image>`).join('\n')}

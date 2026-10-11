@@ -1,19 +1,25 @@
 /**
- * Flux XML des annonces pour les portails : Kyero (multilingue, un seul flux)
- * et Trovit (un flux par langue). Tout se lit dans la collection des biens et
- * dans src/data/annonces-traduites.ts : rien n'est recopié à la main.
+ * Flux XML des annonces pour les portails : Kyero v3 (/feeds/kyero.xml, un
+ * seul fichier multilingue) et Trovit (/feeds/trovit.xml en français,
+ * /feeds/trovit-<langue>.xml pour les autres langues). Tout se lit dans la
+ * collection des biens, traductions comprises (champ `traductions`) : rien
+ * n'est recopié à la main, rien n'est traduit au build.
  *
  * Un bien part dans les flux s'il est en vente, publié et réel : statut
  * a-vendre, ni offMarket, ni archive, ni exemple. Un bien sous offre ou vendu
  * en sort au build suivant, ce qui le retire des portails à leur prochaine
  * lecture.
  *
- * Les photos partent en JPEG de 1600 px (/flux/photos/<bien>/<n>.jpg), le
+ * Les photos partent en JPEG de 1600 px (/feeds/photos/<bien>/<n>.jpg), le
  * format que tous les portails acceptent, tirées au build des WebP du site.
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { site } from '../data/site';
-import { annoncesTraduites, LANGUES, type Langue } from '../data/annonces-traduites';
+import geo from '../data/rues-geo.json';
+
+/** Langues des traductions, celles des acquéreurs étrangers du haut de gamme parisien. */
+export const LANGUES = ['en', 'de', 'es', 'it', 'pt', 'zh', 'ar'] as const;
+export type Langue = (typeof LANGUES)[number];
 
 export type Bien = CollectionEntry<'biens'>;
 
@@ -41,7 +47,7 @@ export function photosJpeg(b: Bien): string[] {
   return b.data.photos
     .map((p) => p.src.match(/\/(\d\d)\.webp$/)?.[1])
     .filter((n): n is string => Boolean(n))
-    .map((n) => `${site.url}/flux/photos/${b.id}/${n}.jpg`);
+    .map((n) => `${site.url}/feeds/photos/${b.id}/${n}.jpg`);
 }
 
 /** Texte français de la fiche, sans markdown ni commentaires. */
@@ -98,13 +104,31 @@ export function mentions(b: Bien, langue: Langue | 'fr'): string {
 
 /** Titre et texte d'une annonce dans une langue, français si la traduction manque. */
 export function annonce(b: Bien, langue: Langue | 'fr'): { titre: string; texte: string; langue: Langue | 'fr' } {
-  const t = langue === 'fr' ? undefined : annoncesTraduites[b.id]?.[langue];
+  const t = langue === 'fr' ? undefined : b.data.traductions[langue];
   if (!t) return { titre: b.data.titre, texte: `${texteFrancais(b)}\n\n${mentions(b, 'fr')}`, langue: 'fr' };
   return { titre: t.titre, texte: `${t.texte}\n\n${mentions(b, langue as Langue)}`, langue };
 }
 
-export { LANGUES };
-export type { Langue };
+/** Slug de voie, même règle que scripts/prix-rues.py. */
+const ardoise = (t: string) =>
+  t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+/**
+ * Adresse approximative : la voie sans numéro, ou le quartier, puis le code
+ * postal. Le point est le centroïde de la voie (Base Adresse Nationale, via
+ * rues-geo.json), arrondi à trois décimales, soit une centaine de mètres :
+ * jamais l'immeuble.
+ */
+export function adresseApprochee(b: Bien): { texte: string; lat?: number; lon?: number } {
+  const d = b.data;
+  const lieu = d.rue ?? d.quartier;
+  const texte = `${lieu}, ${d.arrondissement} ${d.ville}`;
+  if (!d.rue || !d.arrondissement.startsWith('75')) return { texte };
+  const numero = d.arrondissement.slice(-2);
+  const point = (geo.rues as Record<string, { lon: number; lat: number }>)[`${ardoise(d.rue)}-${numero}`];
+  if (!point) return { texte };
+  return { texte, lat: Math.round(point.lat * 1000) / 1000, lon: Math.round(point.lon * 1000) / 1000 };
+}
 
 /** Maison ou appartement, d'après le titre de la fiche. */
 export const estMaison = (b: Bien) => /maison|demeure|villa/i.test(b.data.titre);

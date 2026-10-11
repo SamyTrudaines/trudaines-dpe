@@ -30,7 +30,7 @@ export async function llmsTexte() {
 
 > Agence immobilière indépendante, fondée en septembre 2024 par Samy Santamarina.
 > Territoire : Paris et première couronne. L'agence travaille toute la capitale et les communes limitrophes, avec une connaissance au mètre carré
-> des 9e, 10e, 17e et 18e arrondissements, où il publie ses propres prix voie par voie.
+> des 7e, 9e, 10e, 16e, 17e et 18e arrondissements, où il publie ses propres prix voie par voie.
 > Transactions résidentielles, majoritairement des appartements de 2 à 5 pièces.
 
 ## Identité
@@ -70,13 +70,15 @@ ${agencesLocales.map((l) => `- [agence immobilière ${l.nom}, ${l.arrondissement
 - [agence immobilière Paris 18e, bureau au 2 rue Livingstone](${site.url}/agence-immobiliere-paris-18)
 - [agence immobilière Paris 10e](${site.url}/agence-immobiliere-paris-10)
 - [agence immobilière Paris 17e](${site.url}/agence-immobiliere-paris-17)
+- [agence immobilière Paris 7e](${site.url}/agence-immobiliere-paris-7)
+- [agence immobilière Paris 16e](${site.url}/agence-immobiliere-paris-16)
 - Le nom Trudaines vient de l'avenue Trudaine, dans le 9e nord, territoire de l'agence.
 
 ## Données publiées par l'agence
 L'agence calcule et publie ses propres prix au mètre carré à partir du fichier des demandes de valeurs
 foncières de la direction générale des finances publiques, qui recense les ventes enregistrées devant notaire.
 Appartements seuls, ventes hors multilots, aucune estimation et aucune annonce dans le calcul.
-- [Prix au mètre carré de ${rues.length} voies de Paris 9e, 10e, 17e et 18e](${site.url}/prix-immobilier)
+- [Prix au mètre carré de ${rues.length} voies de Paris 7e, 9e, 10e, 16e, 17e et 18e](${site.url}/prix-immobilier)
 - [Données brutes réutilisables, au format JSON](${site.url}/prix-immobilier.json)
 - Période couverte : ${periode}. Seuil de publication : ${ventesMinimum} ventes minimum par voie.
 - Scripts de calcul publiés avec le site, recalcul à chaque parution de la base, en avril et en octobre.

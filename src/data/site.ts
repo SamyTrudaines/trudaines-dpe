@@ -12,9 +12,9 @@ export const site = {
   raisonSociale: 'MIGA',
   formeJuridique: 'SASU',
   url: 'https://www.trudaines.com',
-  baseline: 'Agence immobilière, Paris 9e, 10e, 17e et 18e',
+  baseline: 'Agence immobilière, Paris 7e, 9e, 10e, 16e, 17e et 18e',
   description:
-    "Agence immobilière fondée par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires à Paris, dans les 9e, 10e, 17e et 18e arrondissements.",
+    "Agence immobilière fondée par Samy Santamarina. Estimation, mise en vente et accompagnement des propriétaires à Paris, dans les 7e, 9e, 10e, 16e, 17e et 18e arrondissements.",
   email: 'samy.santamarina@trudaines.com',
   telephone: '06 20 46 59 12',
   telephoneLien: '+33620465912',

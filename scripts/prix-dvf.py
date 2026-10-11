@@ -40,7 +40,7 @@ from pathlib import Path
 
 DATASET = 'https://www.data.gouv.fr/api/1/datasets/5c4ae55a634f4117716d5656/'
 BAN = 'https://api-adresse.data.gouv.fr/search/'
-COMMUNES = {'109': '75009', '110': '75010', '117': '75017', '118': '75018'}
+COMMUNES = {'107': '75007', '109': '75009', '110': '75010', '116': '75016', '117': '75017', '118': '75018'}
 
 SECTEURS = [
     ('trudaine-maubeuge',   'Trudaine Maubeuge',   '75009', 'Avenue Trudaine'),
@@ -107,7 +107,7 @@ def nombre(valeur):
 
 
 def ventes_appartements(chemin):
-    """Ventes d'appartements hors multilots des 9e, 10e et 18e arrondissements."""
+    """Ventes d'appartements hors multilots des arrondissements suivis (COMMUNES)."""
     par_mutation = defaultdict(list)
     with open(chemin, encoding='utf-8', newline='') as f:
         for ligne in csv.DictReader(f, delimiter='|'):

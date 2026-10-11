@@ -15,7 +15,8 @@
     "test-formulaires": "node scripts/test-formulaires.mjs",
     "avis-google": "node scripts/importer-avis-google.mjs",
     "test-mise-en-ligne": "node scripts/test-mise-en-ligne.mjs",
-    "mise-en-ligne": "node scripts/mise-en-ligne/index.mjs"
+    "mise-en-ligne": "node scripts/mise-en-ligne/index.mjs",
+    "verifier-flux": "node scripts/verifier-flux.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
