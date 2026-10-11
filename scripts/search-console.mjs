@@ -6,19 +6,23 @@
  * partagée en écriture avec le compte de service, et que l'analyse quotidienne
  * lit ensuite.
  *
- * Variables (secrets GitHub, jamais dans le code ni la conversation) :
- *   GSC_COMPTE_SERVICE  clé JSON du compte de service Google Cloud
- *   GSC_FEUILLE         identifiant de la feuille (dans son adresse, entre /d/ et /edit)
- *   GSC_PROPRIETE       facultatif : propriété Search Console, sinon trouvée seule
+ * Aucune clé : GitHub prouve son identité à Google à chaque passage (Workload
+ * Identity Federation, jeton OIDC limité à ce dépôt et à la branche main), et
+ * l'action google-github-actions/auth remet un jeton d'accès valable une heure,
+ * restreint à la lecture de Search Console et aux feuilles partagées avec le
+ * compte de service. Il n'existe donc aucun fichier secret à voler.
+ *
+ * Variables (fournies par le workflow) :
+ *   GSC_JETON      jeton d'accès du compte de service, valable une heure
+ *   GSC_FEUILLE    identifiant de la feuille (dans son adresse, entre /d/ et /edit)
+ *   GSC_PROPRIETE  facultatif : propriété Search Console, sinon trouvée seule
  *
  * Search Console publie ses chiffres avec deux à trois jours de retard : le
  * script reprend les sept derniers jours et n'écrit que les dates absentes de
  * la feuille. Une ligne par date, requête, page, pays et appareil.
  *
- * Lancer : node scripts/search-console.mjs [--essai]
+ * Lancer : GSC_JETON=... GSC_FEUILLE=... node scripts/search-console.mjs [--essai]
  */
-import { createSign } from 'node:crypto';
-
 const ESSAI = process.argv.includes('--essai');
 const ONGLET = 'donnees';
 const ENTETE = ['date', 'requete', 'page', 'pays', 'appareil', 'clics', 'impressions', 'ctr', 'position'];
@@ -26,43 +30,14 @@ const ENTETE = ['date', 'requete', 'page', 'pays', 'appareil', 'clics', 'impress
 function exiger(nom) {
   const valeur = process.env[nom];
   if (!valeur) {
-    // Tant que le compte de service n'est pas configuré, le relevé se tait
-    // plutôt que d'échouer chaque matin.
     console.log(`Variable ${nom} absente : rien n'est relevé.`);
     process.exit(0);
   }
   return valeur;
 }
 
-const compte = JSON.parse(exiger('GSC_COMPTE_SERVICE'));
+const acces = exiger('GSC_JETON');
 const feuille = exiger('GSC_FEUILLE');
-
-const base64url = (texte) => Buffer.from(texte).toString('base64url');
-
-/** Jeton d'accès OAuth du compte de service, signé localement (JWT RS256). */
-async function jeton() {
-  const maintenant = Math.floor(Date.now() / 1000);
-  const entete = base64url(JSON.stringify({ alg: 'RS256', typ: 'JWT' }));
-  const corps = base64url(
-    JSON.stringify({
-      iss: compte.client_email,
-      scope: 'https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/spreadsheets',
-      aud: 'https://oauth2.googleapis.com/token',
-      iat: maintenant,
-      exp: maintenant + 3600,
-    })
-  );
-  const signature = createSign('RSA-SHA256').update(`${entete}.${corps}`).sign(compte.private_key, 'base64url');
-  const reponse = await fetch('https://oauth2.googleapis.com/token', {
-    method: 'POST',
-    headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: `${entete}.${corps}.${signature}` }),
-  });
-  if (!reponse.ok) throw new Error(`jeton refusé : HTTP ${reponse.status} ${await reponse.text()}`);
-  return (await reponse.json()).access_token;
-}
-
-const acces = await jeton();
 
 async function appel(url, options = {}) {
   const reponse = await fetch(url, {
@@ -81,7 +56,7 @@ async function propriete() {
   const choisie = proprietes.find((u) => u.startsWith('sc-domain:')) ?? proprietes[0];
   if (!choisie) {
     throw new Error(
-      `aucune propriété trudaines.com visible pour ${compte.client_email} : l'ajouter comme utilisateur dans Search Console`
+      "aucune propriété trudaines.com visible : ajouter le compte de service comme utilisateur dans Search Console"
     );
   }
   return choisie;
