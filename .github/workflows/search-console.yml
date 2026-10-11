@@ -1,0 +1,31 @@
+# Relevé quotidien de Google Search Console vers la feuille Google privée de
+# Samy (détail : scripts/search-console.mjs). Le dépôt étant public, aucune
+# donnée de recherche n'y est écrite. Secrets : GSC_COMPTE_SERVICE, GSC_FEUILLE.
+name: Search Console
+
+on:
+  schedule:
+    # Tous les jours à 5 h UTC, avant l'analyse du matin.
+    - cron: '7 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relever:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Relevé Search Console
+        env:
+          GSC_COMPTE_SERVICE: ${{ secrets.GSC_COMPTE_SERVICE }}
+          GSC_FEUILLE: ${{ secrets.GSC_FEUILLE }}
+          GSC_PROPRIETE: ${{ secrets.GSC_PROPRIETE }}
+        run: node scripts/search-console.mjs
