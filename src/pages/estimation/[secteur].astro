@@ -10,6 +10,8 @@ import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
+import { arrondissements } from '../../lib/rues';
+import { prix, nombre } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
 
@@ -19,6 +21,8 @@ export const getStaticPaths: GetStaticPaths = () =>
   secteurs.map((s) => ({ params: { secteur: s.slug }, props: { secteur: s } }));
 
 const { secteur } = Astro.props;
+/* Le prix médian dans l'extrait Google : un chiffre vérifiable fait cliquer plus qu'une promesse. */
+const chiffres = arrondissements[secteur.arrondissement];
 const tousQuartiers = await getCollection('quartiers');
 const quartiers = tousQuartiers
   .filter((q) => secteur.quartiers.includes(q.id))
@@ -51,7 +55,9 @@ const donnees = [
 ---
 <Layout
   titre={secteur.titre}
-  description={`${secteur.description} ${preuve}`}
+  description={chiffres
+    ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² médian sur ${nombre(chiffres.ventes)} ventes signées. Avis de valeur écrit sous 48 h, sans engagement.`
+    : `${secteur.description} ${preuve}`}
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
   donnees={donnees}
 >

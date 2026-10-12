@@ -63,6 +63,11 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   les fichiers (images, flux, PDF) gardent leur 404. Les anciennes adresses connues ont leur cible précise dans
   `public/_redirects`. `public/_routes.json` évite d'appeler la fonction pour les fichiers statiques.
 
+- Search Console : relevé quotidien par `.github/workflows/search-console.yml` (`scripts/search-console.mjs`) vers
+  une feuille Google privée de Samy, jamais dans le dépôt, qui est public. Aucune clé de compte de service : GitHub
+  s'identifie par Workload Identity Federation (projet Google Cloud trudaines-511314, pool `github`, fournisseur
+  `depot` limité à ce dépôt et à main). Ne jamais créer de clé JSON pour `releve-search-console`.
+
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
 `npm run test-mise-en-ligne`, `npm run verifier-mobile`, `npm run verifier-flux`.

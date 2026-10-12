@@ -115,6 +115,8 @@ const donnees = [
     description: `Médiane et déciles du prix au mètre carré des appartements vendus ${nomEnPhrase}, sur ${rue.ventes} ventes de ${periode}.`,
     creator: { '@id': `${site.url}/#cabinet` },
     isBasedOn: 'https://www.data.gouv.fr/datasets/5c4ae55a634f4117716d5656/',
+    /* Calcul tiré des demandes de valeurs foncières, publiées sous Licence Ouverte 2.0 ; diffusé sous la même licence. */
+    license: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence/',
     temporalCoverage: '2024-01-01/2025-12-31',
     spatialCoverage: {
       '@type': 'Place',

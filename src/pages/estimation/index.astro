@@ -83,7 +83,7 @@ const donnees = [
     name: 'Estimation immobilière',
     serviceType: "Estimation et avis de valeur d'un bien immobilier",
     provider: { '@id': 'https://www.trudaines.com/#cabinet' },
-    areaServed: ['Paris 9e', 'Paris 10e', 'Paris 17e', 'Paris 18e'],
+    areaServed: secteurs.map((s) => s.nom),
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Avis de valeur écrit, remis après visite sous 48 heures, sans engagement" },
   },
 ];

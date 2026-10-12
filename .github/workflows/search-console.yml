@@ -1,0 +1,51 @@
+# Relevé quotidien de Google Search Console vers la feuille Google privée de
+# Samy (détail : scripts/search-console.mjs). Le dépôt étant public, aucune
+# donnée de recherche n'y est écrite.
+#
+# Sans clé : GitHub s'identifie auprès de Google par Workload Identity
+# Federation. Le fournisseur n'accepte que ce dépôt, sur la branche main, et
+# le compte de service n'a aucun rôle sur le projet Google Cloud : il lit
+# Search Console et écrit dans la seule feuille partagée avec lui. Aucun de ces
+# identifiants n'est secret ; sans la preuve OIDC de GitHub, ils ne servent à rien.
+name: Search Console
+
+on:
+  schedule:
+    # Tous les jours à 5 h UTC, avant l'analyse du matin.
+    - cron: '7 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  relever:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Identification auprès de Google, sans clé
+        id: google
+        # Tant que la fédération n'est pas configurée côté Google Cloud, le
+        # relevé se tait au lieu d'échouer chaque matin.
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1043190760192/locations/global/workloadIdentityPools/github/providers/depot
+          service_account: releve-search-console@trudaines-511314.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 900s
+          access_token_scopes: https://www.googleapis.com/auth/webmasters.readonly,https://www.googleapis.com/auth/spreadsheets
+
+      - name: Relevé Search Console
+        if: steps.google.outcome == 'success'
+        env:
+          GSC_JETON: ${{ steps.google.outputs.access_token }}
+          GSC_FEUILLE: 1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8
+        run: node scripts/search-console.mjs
