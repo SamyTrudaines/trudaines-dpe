@@ -191,6 +191,13 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
         Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques, ventes
         d'appartements signées de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes.
       </p>
+      {/* Le visiteur lit le prix de sa rue puis repart : la proposition d'estimation vient juste après le chiffre. */}
+      <div class="mt-8 flex flex-col gap-4 border-l-2 border-[color:var(--color-or)] pl-5 sm:flex-row sm:items-center sm:justify-between">
+        <p class="max-w-xl">
+          Votre appartement est {rue.nom} ? La médiane ne dit pas son prix. Avis de valeur écrit sous 48 h, gratuit et sans engagement.
+        </p>
+        <a href={`#estimation-${rue.slug}`} class="bouton shrink-0" data-evt={evt('rue', 'vers_estimation', contexte)}>Estimer mon appartement</a>
+      </div>
     </div>
   </section>
 
