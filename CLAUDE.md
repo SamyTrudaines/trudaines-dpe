@@ -53,6 +53,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
+- Estimation par quartier : `/estimation/<secteur>/<quartier>` (Épinettes, Cardinet, Bonne-Nouvelle, Saint-Georges,
+  Jules-Joffrin), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
+  requêtes que Search Console attribue déjà au site.
+
 - Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),
   `/feeds/trovit.xml` (français) et `/feeds/trovit-<langue>.xml` (en, de, es, it, pt, zh, ar), construits par
   `src/lib/flux.ts` et `src/lib/flux-trovit.ts` depuis les biens à vendre publiés ; photos JPEG 1600 px tirées au
