@@ -128,3 +128,24 @@
 /flux/trovit-fr.xml  /feeds/trovit.xml  301
 /flux/photos/*  /feeds/photos/:splat  301
 /flux/*  /feeds/:splat  301
+
+# --- Liens courts suivis, à diffuser hors du site ----------------------------
+# Un lien par canal : GA4 (Acquisition, source / support) dit d'où viennent les
+# visiteurs et les demandes. Code 302 : la cible peut changer sans que les
+# navigateurs gardent l'ancienne en mémoire. Les sites partenaires et la presse
+# pointent, eux, directement vers la page voulue : un lien direct compte mieux
+# pour Google qu'un lien qui passe par une redirection.
+/l/signature      /?utm_source=signature&utm_medium=email                            302
+/l/google         /?utm_source=google&utm_medium=fiche-etablissement                  302
+/l/linkedin       /?utm_source=linkedin&utm_medium=social                             302
+/l/instagram      /?utm_source=instagram&utm_medium=social                            302
+/l/facebook       /?utm_source=facebook&utm_medium=social                             302
+/l/youtube        /?utm_source=youtube&utm_medium=social                              302
+/l/tiktok         /?utm_source=tiktok&utm_medium=social                               302
+/l/whatsapp       /?utm_source=whatsapp&utm_medium=message                            302
+/l/podcast        /samy-santamarina?utm_source=podcast&utm_medium=audio               302
+/l/panneau        /estimation?utm_source=panneau&utm_medium=qr                        302
+/l/flyer          /estimation?utm_source=flyer&utm_medium=qr                          302
+/l/carte          /estimation?utm_source=carte-de-visite&utm_medium=qr                302
+/l/winwin         /recommander?utm_source=winwin&utm_medium=partage                   302
+/l/prix           /prix-immobilier?utm_source=partage&utm_medium=message              302
