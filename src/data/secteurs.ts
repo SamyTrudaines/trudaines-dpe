@@ -245,13 +245,13 @@ export const secteurs: Secteur[] = [
       "Estimation gratuite à Paris 7e : Saint-Germain, Invalides, Gros-Caillou. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 7e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière dans le 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Prix par rue, estimation offerte sous 48 h.",
+      "Agence immobilière dans le 7e : faubourg Saint-Germain, Invalides, Gros-Caillou. Prix par rue, estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-7',
     intro:
       "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue, pas d'une moyenne.",
     introAgence:
       "Nous vendons dans le 7e pour des propriétaires qui attendent deux choses : un prix argumenté par écrit, et une commercialisation discrète. Peu de visites, des acheteurs qualifiés, un interlocuteur unique du premier rendez-vous à l'acte.",
-    quartiers: [],
+    quartiers: ['faubourg-st-germain', 'gros-caillou'],
     prixMoyen: '13 978 € le m², prix médian',
     fourchette:
       "10 172 à 21 143 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
@@ -260,6 +260,11 @@ export const secteurs: Secteur[] = [
         question: 'Quel est le prix au mètre carré dans le 7e arrondissement ?',
         reponse:
           "Le prix médian ressort à 13 978 € le mètre carré sur 1 651 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 10 172 € et un neuvième à 21 143 €. Près de 11 000 € séparent ces deux bornes : c'est l'adresse, l'étage, la vue, l'état et la copropriété qui font le prix. Nous publions le détail rue par rue.",
+      },
+      {
+        question: 'Quels quartiers du 7e couvrez-vous ?',
+        reponse:
+          "Tout l'arrondissement, que nous lisons en deux marchés : le faubourg Saint-Germain, de la rue du Bac à la rue de Varenne, et le Gros-Caillou, du Champ-de-Mars aux Invalides. Chacun a sa page, avec le prix médian de chaque rue tiré des ventes signées devant notaire.",
       },
       {
         question: 'Comment vendre discrètement dans le 7e ?',
@@ -294,7 +299,7 @@ export const secteurs: Secteur[] = [
       "Le 16e n'est pas un marché, c'en est plusieurs. Le nord, autour de l'Étoile, du Trocadéro et de l'avenue Foch, ne se vend pas comme Passy ou la Muette, et Auteuil a ses propres acheteurs, souvent des familles qui veulent la Seine, les écoles et le bois. Notre estimation part des ventes signées de votre rue.",
     introAgence:
       "Nous vendons dans le 16e, de Passy à Auteuil, pour des propriétaires qui veulent un prix défendu par écrit et des visites réservées aux acheteurs qualifiés. Un seul interlocuteur, de l'estimation à la signature chez le notaire.",
-    quartiers: [],
+    quartiers: ['passy-muette', 'victor-hugo', 'auteuil'],
     prixMoyen: '10 918 € le m², prix médian',
     fourchette:
       "8 010 à 15 313 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
@@ -303,6 +308,16 @@ export const secteurs: Secteur[] = [
         question: 'Quel est le prix au mètre carré dans le 16e arrondissement ?',
         reponse:
           "Le prix médian ressort à 10 918 € le mètre carré sur 4 342 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 8 010 € et un neuvième à 15 313 €. L'écart dit tout de l'arrondissement : la rue, l'étage, la vue et l'immeuble font le prix. Nous publions le détail rue par rue.",
+      },
+      {
+        question: 'Quels quartiers du 16e couvrez-vous ?',
+        reponse:
+          "Tout l'arrondissement, que nous lisons en trois marchés : le nord, de l'Étoile au Trocadéro par l'avenue Victor-Hugo, Passy et la Muette autour de la rue de Passy, et Auteuil, du vieux village aux grands boulevards du sud. Chacun a sa page, avec le prix médian de chaque rue tiré des ventes signées devant notaire.",
+      },
+      {
+        question: 'Les acheteurs étrangers sont-ils nombreux dans le 16e ?',
+        reponse:
+          "Ils comptent dans la demande, surtout au nord de l'arrondissement et pour les étages élevés avec vue. Nos annonces sont traduites en anglais, allemand, espagnol, italien, portugais, chinois et arabe, et la visite peut se faire à distance avec un compte rendu écrit. Comme pour tout acheteur, nous vérifions le financement avant la visite.",
       },
       {
         question: 'Comment se vend un grand appartement familial dans le 16e ?',

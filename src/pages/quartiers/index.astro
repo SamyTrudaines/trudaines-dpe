@@ -10,14 +10,14 @@ import { ruesDuQuartier } from '../../lib/quartiers';
 const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
 ---
 <Layout
-  titre="Quartiers de Paris 9e, 10e, 17e et 18e | Prix - Trudaines"
-  description="Trudaine Maubeuge, Martyrs Lorette, Clichy Trinité, Montmartre, Lariboisière Rocroy : prix au mètre carré, physionomie du marché et biens en vente."
+  titre="Quartiers de Paris 7e, 9e, 10e, 16e, 17e et 18e | Prix - Trudaines"
+  description="Faubourg Saint-Germain, Passy, Auteuil, Trudaine, Montmartre, Batignolles : prix au mètre carré par quartier, physionomie du marché et biens en vente."
   filAriane={[{ nom: 'Quartiers' }]}
 >
   <Banniere
     image={ambiance.montmartreDepuisLesToits}
     surtitre="Territoire"
-    titre="Cinq quartiers, une seule façon de les lire"
+    titre="Douze quartiers, une seule façon de les lire"
     chapo="Nous ne publions pas de moyenne d'arrondissement. Chaque quartier a sa demande, ses typologies dominantes, ses rues qui se vendent vite et celles qui demandent plus de patience."
     hauteur="moyen"
     premiere

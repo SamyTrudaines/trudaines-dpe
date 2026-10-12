@@ -12,8 +12,8 @@ import { arrondissements, periode, rues } from '../lib/rues';
 import { prix, nombre } from '../lib/format';
 
 /**
- * Page « agence immobilière » d'un arrondissement suivi sans quartier détaillé
- * (7e, 16e) : chiffres et rues tirés des ventes DVF, biens en vente de
+ * Page « agence immobilière » d'un arrondissement de l'ouest (7e, 16e) : quartiers
+ * du secteur, chiffres et rues tirés des ventes DVF, biens en vente de
  * l'arrondissement tirés de la collection, questions du secteur.
  */
 interface Props {
@@ -32,6 +32,9 @@ const bureau = "dans le 18e ; les rendez-vous d'estimation et les visites ont li
 const prixPhrase = `Médiane de ${prix(chiffres.mediane)} le mètre carré sur ${nombre(chiffres.ventes)} ventes d'appartements de ${periode} ; huit ventes sur dix entre ${prix(chiffres.d1)} et ${prix(chiffres.d9)}.`;
 const enBref = await lignesEnBref({ dans, bureau, prix: prixPhrase, lienPrix: `/prix-immobilier#arr-${code}` });
 const faq = [...secteur.faq, ...faqAgence({ dans, bureau })];
+const quartiers = (await getCollection('quartiers'))
+  .filter((q) => secteur.quartiers.includes(q.id))
+  .sort((a, b) => a.data.ordre - b.data.ordre);
 
 const ruesArr = rues.filter((r) => r.codePostal === code);
 const plusVendues = [...ruesArr].sort((a, b) => b.ventes - a.ventes).slice(0, 12);
@@ -61,7 +64,7 @@ const services = [
     intro={secteur.introAgence}
     secteurNom={`le ${numero} arrondissement`}
     hrefEstimation={`/estimation/${slug}`}
-    quartiers={[]}
+    quartiers={quartiers}
     services={services}
   >
     <EnBref titre={`Trudaines dans le ${numero}, en bref`} lignes={enBref} />
