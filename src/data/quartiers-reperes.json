@@ -80,6 +80,72 @@
         { "voie": "Boulevard Bessières", "motif": "citée par le texte : limite nord du quartier" },
         { "voie": "Cité des Fleurs", "motif": "citée par le texte : voie privée plantée du quartier" }
       ]
+    },
+    "faubourg-st-germain": {
+      "codePostal": "75007",
+      "rayon": 700,
+      "reperes": [
+        { "voie": "Rue du Bac", "motif": "citée par le texte : l'axe du faubourg" },
+        { "voie": "Rue de Varenne", "motif": "citée par le texte : les hôtels particuliers" },
+        { "voie": "Rue de Lille", "motif": "citée par le texte : le faubourg côté Seine" },
+        { "voie": "Rue de Verneuil", "motif": "citée par le texte : le faubourg côté Seine" },
+        { "voie": "Rue de Bellechasse", "motif": "citée par le texte" },
+        { "voie": "Rue Vaneau", "motif": "citée par le texte : le sud du faubourg" },
+        { "voie": "Rue de Babylone", "motif": "citée par le texte : le sud du faubourg" },
+        { "voie": "Boulevard Saint-Germain", "motif": "porte le nom du quartier" }
+      ]
+    },
+    "gros-caillou": {
+      "codePostal": "75007",
+      "rayon": 700,
+      "reperes": [
+        { "voie": "Rue Saint-Dominique", "motif": "citée par le texte : la rue commerçante du Gros-Caillou" },
+        { "voie": "Rue Cler", "motif": "citée par le texte : la rue marchande" },
+        { "voie": "Avenue Bosquet", "motif": "citée par le texte" },
+        { "voie": "Avenue de la Bourdonnais", "motif": "citée par le texte : le Champ-de-Mars" },
+        { "voie": "Rue du Gros Caillou", "motif": "porte le nom du quartier" },
+        { "voie": "Avenue de la Motte Picquet", "motif": "citée par le texte : l'École militaire" },
+        { "voie": "Boulevard de la Tour Maubourg", "motif": "citée par le texte : les Invalides" }
+      ]
+    },
+    "passy-muette": {
+      "codePostal": "75016",
+      "rayon": 800,
+      "reperes": [
+        { "voie": "Rue de Passy", "motif": "porte le nom du quartier" },
+        { "voie": "Rue de la Tour", "motif": "citée par le texte" },
+        { "voie": "Rue Raynouard", "motif": "citée par le texte : la colline au-dessus de la Seine" },
+        { "voie": "Rue de Boulainvilliers", "motif": "citée par le texte : la Muette" },
+        { "voie": "Rue de l'Annonciation", "motif": "citée par le texte : le village de Passy" },
+        { "voie": "Avenue Paul Doumer", "motif": "citée par le texte" },
+        { "voie": "Rue Vital", "motif": "citée par le texte" }
+      ]
+    },
+    "auteuil": {
+      "codePostal": "75016",
+      "rayon": 800,
+      "reperes": [
+        { "voie": "Rue d'Auteuil", "motif": "porte le nom du quartier" },
+        { "voie": "Rue Chardon Lagache", "motif": "citée par le texte" },
+        { "voie": "Rue Michel Ange", "motif": "citée par le texte : les grands axes du sud" },
+        { "voie": "Rue Boileau", "motif": "citée par le texte" },
+        { "voie": "Rue Jean de la Fontaine", "motif": "citée par le texte : le nord d'Auteuil" },
+        { "voie": "Rue Molitor", "motif": "citée par le texte" },
+        { "voie": "Boulevard Exelmans", "motif": "citée par le texte : les grands axes du sud" }
+      ]
+    },
+    "victor-hugo": {
+      "codePostal": "75016",
+      "rayon": 800,
+      "reperes": [
+        { "voie": "Avenue Victor Hugo", "motif": "porte le nom du quartier" },
+        { "voie": "Rue Lauriston", "motif": "citée par le texte" },
+        { "voie": "Rue des Belles Feuilles", "motif": "citée par le texte : la rue marchande" },
+        { "voie": "Avenue Foch", "motif": "citée par le texte" },
+        { "voie": "Rue de Longchamp", "motif": "citée par le texte" },
+        { "voie": "Avenue Kleber", "motif": "citée par le texte" },
+        { "voie": "Avenue Raymond Poincare", "motif": "citée par le texte : la descente vers le Trocadéro" }
+      ]
     }
   }
 }
