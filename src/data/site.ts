@@ -73,10 +73,11 @@ export const site = {
     releve: 'octobre 2026',
   },
   /**
-   * Identifiant GA4, renseigné dans les variables Cloudflare Pages (PUBLIC_GA4_ID).
-   * Sans lui, aucun traceur n'est posé et le bandeau des cookies ne s'affiche pas.
+   * Identifiant GA4 de trudaines.com (public, il figure dans chaque page). La variable
+   * Cloudflare Pages PUBLIC_GA4_ID, si elle existe, le remplace. Sans identifiant, aucun
+   * traceur n'est posé et le bandeau des cookies ne s'affiche pas.
    */
-  ga4: import.meta.env.PUBLIC_GA4_ID ?? '',
+  ga4: import.meta.env.PUBLIC_GA4_ID || 'G-VP03SDNLJG',
   /**
    * Adresse de la page de réservation en ligne d'un créneau d'estimation (agenda
    * de l'agence), en https. Tant qu'elle est vide, aucun bouton « Choisir un
