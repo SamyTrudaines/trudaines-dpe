@@ -63,6 +63,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   build (`/feeds/photos/<bien>/<n>.jpg`). Traductions dans le champ `traductions` de chaque bien, adresse
   approximative par le champ `rue`. `npm run verifier-flux` valide contre `scripts/schemas/`.
 
+- Liens courts suivis : `/l/<canal>` dans `public/_redirects` (signature, google, linkedin, instagram, panneau, flyer,
+  winwin...), redirection 302 avec paramètres utm vers la page cible ; GA4 `G-VP03SDNLJG` dans `site.ga4`.
+
 - Pages introuvables : `functions/_middleware.js` renvoie toute page HTML en 404 vers l'accueil (301), choix de Samy ;
   les fichiers (images, flux, PDF) gardent leur 404. Les anciennes adresses connues ont leur cible précise dans
   `public/_redirects`. `public/_routes.json` évite d'appeler la fonction pour les fichiers statiques.
