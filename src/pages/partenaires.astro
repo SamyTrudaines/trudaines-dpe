@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { partenaires } from '../data/partenaires';
+
+const initiales = (nom: string) => nom.split(/[\s-]+/).map((m) => m[0]).join('').slice(0, 2);
+---
+<Layout
+  titre="Partenaires de l'agence | Trudaines, Paris"
+  description="Courtier, diagnostiqueur, architecte d'intérieur, rénovation, patrimoine, plomberie : les professionnels avec qui Trudaines accompagne ses clients à Paris."
+  filAriane={[{ nom: 'Partenaires' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Partenaires</p>
+      <h1 class="titre-1 mt-6">Ceux avec qui nous travaillons</h1>
+      <p class="chapo mt-8">
+        Un projet immobilier mobilise un financement, des diagnostics, parfois des travaux, souvent une question de patrimoine.
+        Voici les professionnels que nous connaissons, avec qui nous travaillons et que nous recommandons à nos clients.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur">
+      <ul class="divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {partenaires.map((p) => (
+          <li class="grid gap-6 py-10 md:grid-cols-[180px_1fr] md:items-start">
+            {p.photo ? (
+              <img src={p.photo} alt={`Portrait de ${p.nom}`} width="160" height="200" loading="lazy" decoding="async" class="h-[200px] w-40 object-cover" />
+            ) : (
+              <div class="flex h-[200px] w-40 items-center justify-center border border-[color:var(--color-trait)] font-[family-name:var(--font-titre)] text-3xl italic text-[color:var(--color-ardoise)]" aria-hidden="true">
+                {initiales(p.nom)}
+              </div>
+            )}
+            <div class="max-w-3xl">
+              <h2 class="titre-3">{p.nom}</h2>
+              <p class="mt-2 text-sm uppercase tracking-[0.12em] text-[color:var(--color-ardoise)]">{p.metier} · {p.structure}</p>
+              {p.pitch && (
+                <dl class="mt-6 space-y-5">
+                  {p.pitch.map((q) => (
+                    <div>
+                      <dt class="surtitre">{q.question}</dt>
+                      <dd class="mt-2">« {q.reponse} »</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-10 text-sm text-[color:var(--color-ardoise)]">
+        Nos clients restent libres de choisir leurs prestataires.
+      </p>
+    </div>
+  </section>
+</Layout>
