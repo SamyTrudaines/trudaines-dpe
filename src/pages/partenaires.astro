@@ -6,7 +6,7 @@ const initiales = (nom: string) => nom.split(/[\s-]+/).map((m) => m[0]).join('')
 ---
 <Layout
   titre="Partenaires de l'agence | Trudaines, Paris"
-  description="Courtier, diagnostiqueur, architecte d'intérieur, rénovation, patrimoine, plomberie : les professionnels avec qui Trudaines accompagne ses clients à Paris."
+  description="Courtier, diagnostiqueur, architecte d'intérieur, rénovation, patrimoine, plomberie, serrurier : les professionnels qui accompagnent les clients de Trudaines."
   filAriane={[{ nom: 'Partenaires' }]}
 >
   <section class="section pt-10">
@@ -35,6 +35,11 @@ const initiales = (nom: string) => nom.split(/[\s-]+/).map((m) => m[0]).join('')
             <div class="max-w-3xl">
               <h2 class="titre-3">{p.nom}</h2>
               <p class="mt-2 text-sm uppercase tracking-[0.12em] text-[color:var(--color-ardoise)]">{p.metier} · {p.structure}</p>
+              {p.presentation && (
+                <div class="mt-6 space-y-4">
+                  {p.presentation.map((paragraphe) => <p>{paragraphe}</p>)}
+                </div>
+              )}
               {p.pitch && (
                 <dl class="mt-6 space-y-5">
                   {p.pitch.map((q) => (
@@ -44,6 +49,9 @@ const initiales = (nom: string) => nom.split(/[\s-]+/).map((m) => m[0]).join('')
                     </div>
                   ))}
                 </dl>
+              )}
+              {p.site && (
+                <p class="mt-6 text-sm"><a href={p.site} rel="noopener">{p.site.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></p>
               )}
             </div>
           </li>

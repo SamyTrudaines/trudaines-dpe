@@ -12,8 +12,16 @@ export type Partenaire = {
   metier: string;
   structure: string;
   photo?: string;
+  /** Site du partenaire. */
+  site?: string;
   /** Réponses du partenaire, dans ses mots. */
   pitch?: { question: string; reponse: string }[];
+  /**
+   * Présentation écrite par l'agence, quand le partenaire n'a pas encore donné
+   * la sienne : seulement des faits publics (son site, les registres), sourcés
+   * dans le commentaire de la fiche.
+   */
+  presentation?: string[];
 };
 
 export const partenaires: Partenaire[] = [
@@ -75,13 +83,38 @@ export const partenaires: Partenaire[] = [
     structure: 'EGC Rénovation',
   },
   {
-    nom: 'Grégory Salé',
-    metier: 'Gestion de patrimoine, fondateur',
-    structure: 'Chess',
+    /* Source : chesspatrimoine.fr (accueil et page « Le cabinet »), relevé le 15 octobre 2026. */
+    nom: 'Grégory Saleh',
+    metier: 'Ingénieur patrimonial, fondateur',
+    structure: 'Chess Patrimoine',
+    photo: '/images/partenaires/gregory-saleh.webp',
+    site: 'https://chesspatrimoine.fr/',
+    presentation: [
+      'Grégory Saleh a exercé plus de seize ans en gestion privée, au Conservateur, chez CNP Assurances, Corum l’Épargne et au groupe Stentor Gestion Privée, avant de fonder Chess Patrimoine à Paris, un conseil indépendant de tout groupe bancaire ou d’assurance.',
+      'Sa conviction : un dirigeant, une profession libérale ou une famille mérite un conseiller qui voit l’ensemble de sa situation, revenus, structure juridique, régime matrimonial, transmission, et qui travaille avec son notaire, son avocat et son expert-comptable. Sa méthode tient en trois temps : un bilan global, une stratégie chiffrée, puis un suivi dans la durée.',
+      'Il lit l’économie sous quatre angles, démographie, taux, géopolitique et fiscalité, pour éclairer chaque décision de placement et de transmission. Il est titulaire de la certification AMF ; le cabinet est courtier en assurance, immatriculé à l’ORIAS sous le numéro 25003322.',
+      'Avec Trudaines : une donation, une SCI familiale ou une vente qui finance un projet se décident avec lui pour la stratégie patrimoniale, et avec nous pour la valeur du bien.',
+    ],
   },
   {
+    /* Sources : annuaire des entreprises (SIREN 932 051 014, créée en août 2024), profil LinkedIn public. */
     nom: 'Pierre-Marie Gérard',
-    metier: 'Plomberie',
+    metier: 'Plombier chauffagiste, fondateur',
     structure: 'Gérard Plomberie',
+    presentation: [
+      'Pierre-Marie Gérard a créé Gérard Plomberie en 2024, après un premier parcours de dessinateur, de chef de projet et d’architecte d’intérieur dans le commerce. Il est passé par l’apprentissage en génie climatique avant de s’installer à son compte.',
+      'Plomberie sanitaire, chauffe-eau, chauffage, dépannage : il intervient à Paris, depuis le 7e arrondissement.',
+      'Avec Trudaines : une fuite, un chauffe-eau ou une réparation à régler avant une mise en vente ou une location.',
+    ],
+  },
+  {
+    /* Source : registre national des entreprises (SIREN 350 879 151, serrurerie au Plessis-Robinson depuis 2012). Agrément MAIF indiqué par Samy. */
+    nom: 'Laurent Chaouat',
+    metier: 'Serrurier, agréé MAIF',
+    structure: 'Le Plessis-Robinson',
+    presentation: [
+      'Serrurier et menuisier métallique à son compte, installé au Plessis-Robinson depuis 2012, Laurent Chaouat est agréé par la MAIF pour ses interventions.',
+      'Avec Trudaines : une serrure à changer entre deux occupants, une porte à sécuriser avant une mise en vente ou une location.',
+    ],
   },
 ];
