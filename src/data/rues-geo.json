@@ -183,6 +183,7 @@
     "rue-cardinet-17": { "lon": 2.310888, "lat": 48.88632, "score": 0.983 },
     "rue-caroline-17": { "lon": 2.324142, "lat": 48.883654, "score": 0.972 },
     "rue-carpeaux-18": { "lon": 2.331299, "lat": 48.890944, "score": 0.975 },
+    "rue-casimir-perier-07": { "lon": 2.319435, "lat": 48.858017, "score": 0.967 },
     "rue-catulle-mendes-17": { "lon": 2.291369, "lat": 48.886522, "score": 0.97 },
     "rue-cauchois-18": { "lon": 2.333053, "lat": 48.885188, "score": 0.973 },
     "rue-caulaincourt-18": { "lon": 2.335924, "lat": 48.888597, "score": 0.981 },
@@ -211,7 +212,6 @@
     "rue-claude-terrasse-16": { "lon": 2.261897, "lat": 48.83844, "score": 0.977 },
     "rue-clauzel-09": { "lon": 2.338466, "lat": 48.879132, "score": 0.969 },
     "rue-cler-07": { "lon": 2.306193, "lat": 48.857224, "score": 0.972 },
-    "rue-cognacq-jay-07": { "lon": 2.303746, "lat": 48.861813, "score": 0.968 },
     "rue-collette-17": { "lon": 2.326573, "lat": 48.893623, "score": 0.971 },
     "rue-commandant-schloesing-16": { "lon": 2.284323, "lat": 48.861771, "score": 0.869 },
     "rue-condorcet-09": { "lon": 2.344612, "lat": 48.879957, "score": 0.974 },
@@ -428,6 +428,7 @@
     "rue-eugene-sue-18": { "lon": 2.347094, "lat": 48.891187, "score": 0.975 },
     "rue-eugene-varlin-10": { "lon": 2.364217, "lat": 48.878502, "score": 0.971 },
     "rue-eva-kotchever-18": { "lon": 2.357235, "lat": 48.897496, "score": 0.972 },
+    "rue-fabert-07": { "lon": 2.311313, "lat": 48.860138, "score": 0.969 },
     "rue-fantin-latour-16": { "lon": 2.265786, "lat": 48.839758, "score": 0.973 },
     "rue-faraday-17": { "lon": 2.293001, "lat": 48.881942, "score": 0.973 },
     "rue-fauvet-18": { "lon": 2.327187, "lat": 48.889143, "score": 0.973 },
@@ -651,6 +652,7 @@
     "rue-vineuse-16": { "lon": 2.2849, "lat": 48.860153, "score": 0.976 },
     "rue-vital-16": { "lon": 2.278771, "lat": 48.859413, "score": 0.976 },
     "rue-weber-16": { "lon": 2.281921, "lat": 48.875048, "score": 0.974 },
+    "rue-wilhem-16": { "lon": 2.270819, "lat": 48.845966, "score": 0.975 },
     "rue-yves-toudic-10": { "lon": 2.363521, "lat": 48.870239, "score": 0.973 },
     "rue-yvon-villarceau-16": { "lon": 2.287428, "lat": 48.868956, "score": 0.97 },
     "rue-yvonne-le-tac-18": { "lon": 2.340086, "lat": 48.884159, "score": 0.974 },
@@ -661,7 +663,6 @@
     "square-mignot-16": { "lon": 2.282792, "lat": 48.862334, "score": 0.967 },
     "square-moncey-09": { "lon": 2.330489, "lat": 48.880567, "score": 0.965 },
     "villa-chanez-16": { "lon": 2.260674, "lat": 48.847442, "score": 0.969 },
-    "villa-compoint-17": { "lon": 2.324291, "lat": 48.891904, "score": 0.972 },
     "villa-dancourt-18": { "lon": 2.341181, "lat": 48.88294, "score": 0.97 },
     "villa-de-guelma-18": { "lon": 2.337167, "lat": 48.883164, "score": 0.971 },
     "villa-jacquemont-17": { "lon": 2.322177, "lat": 48.888215, "score": 0.969 },
@@ -670,7 +671,7 @@
     "villa-saint-michel-18": { "lon": 2.32755, "lat": 48.889917, "score": 0.974 }
   },
   "ecartees": {
-    "avenue-bugeaud-16": { "raison": "score faible", "score": 0.378, "propose": "Avenue Erlanger 75016 Paris" }
+    "avenue-bugeaud-16": { "raison": "score faible", "score": 0.49, "propose": "Avenue Boudon 75016 Paris" }
   },
   "reperes": {
     "75009 Avenue Trudaine": { "lon": 2.343221, "lat": 48.881253, "score": 0.971 },
