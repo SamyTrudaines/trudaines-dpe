@@ -1,75 +1,155 @@
 ---
-titre: "Transmettre son appartement de son vivant, sans le quitter"
+titre: "Donation en démembrement : le guide 2026 pour transmettre (ou vendre) un bien à Paris"
 date: 2026-10-13
-image: /images/panorama/demembrement-nue-propriete-usufruit.webp
-imageAlt: "Immeuble haussmannien à Paris, transmission de patrimoine familial"
-chapo: "Le démembrement de propriété, expliqué simplement : donner la nue-propriété de votre appartement à vos enfants, payer moins de droits et garder votre toit."
-titreSeo: "Démembrement de propriété 2026 : transmettre à ses enfants | Trudaines"
-descriptionSeo: "Nue-propriété, usufruit : comment donner votre appartement à vos enfants de votre vivant, payer moins de droits et garder votre toit. Expliqué simplement."
+dateMaj: 2026-10-14
+image: /images/panorama/demembrement-transmission-familiale.webp
+imageAlt: "Une grand-mère montre un coquillage à sa petite-fille lors d'une promenade en forêt"
+chapo: "Donner la nue-propriété de son appartement à ses enfants en gardant l'usufruit : on reste chez soi, on paie des droits sur une base réduite selon son âge, et la plus-value future est transmise sans impôt. Ce qui est en vigueur en octobre 2026, un cas chiffré à 1 200 000 €, et ce qu'il faut prévoir si le bien doit un jour être vendu."
+titreSeo: "Donation en démembrement 2026 : transmettre ou vendre | Trudaines"
+descriptionSeo: "Nue-propriété, usufruit, abattements 2026, cas chiffré à 1,2 M€ et vente d'un bien démembré : le guide pour transmettre ou vendre un appartement à Paris."
 motsCles:
   - démembrement de propriété
   - donation nue-propriété
   - usufruit enfants
   - barème article 669
-  - transmettre appartement Paris
+  - abattement donation 2026
   - donation-partage
-  - réserve d'usufruit
+  - vendre un bien démembré
+  - donation avant vente
 ---
 
-Il y a des maisons qui sont bien plus que des murs. On y a élevé ses enfants, fêté des Noëls, traversé des deuils. Le jour où l'on pense à la transmettre, la question n'est jamais seulement fiscale. Elle est intime : comment donner sans se déposséder ?
+**En bref.** Donner la nue-propriété de son appartement à ses enfants en gardant l'usufruit a trois effets. On reste chez soi. On paie des droits sur une base réduite de 30 à 60 % selon son âge. Et toute la plus-value future est transmise sans impôt. En 2026, chaque parent peut transmettre 100 000 € par enfant en franchise de droits, plus 31 865 € en argent sous conditions. Le plafond de 150 000 € évoqué dans la presse est une proposition du projet de loi de finances pour 2027, pas encore votée.
 
-Le démembrement de propriété répond exactement à cette question.
+*Par Samy Santamarina, fondateur de Trudaines. Mis à jour en octobre 2026.*
 
-## Le principe : couper la propriété en deux
+## 1. Ce qui est en vigueur en octobre 2026, et ce qui ne l'est pas
 
-En droit français, être propriétaire, c'est réunir deux droits :
+La loi de finances pour 2026, promulguée le 19 février 2026, n'a modifié ni les abattements ni le barème des donations. Voici les chiffres qui s'appliquent aujourd'hui :
 
-- **l'usufruit** : le droit d'habiter le bien ou d'en percevoir les loyers ;
-- **la nue-propriété** : le droit de posséder les murs, qui deviendra une pleine propriété plus tard.
+| Dispositif | Montant | Conditions | Renouvelable |
+| --- | --- | --- | --- |
+| Abattement parent vers enfant (art. 779 du CGI) | 100 000 € par parent et par enfant | Aucune | Tous les 15 ans |
+| Don familial de sommes d'argent (art. 790 G) | 31 865 € | Donateur de moins de 80 ans, enfant majeur | Tous les 15 ans |
+| Don d'argent pour un logement (art. 790 A bis) | 100 000 € par donateur | Achat d'un logement neuf ou travaux de rénovation énergétique de la résidence principale, don fait au plus tard le 31 décembre 2026 | Non |
+| Abattement grand-parent vers petit-enfant (art. 790 B) | 31 865 € | Aucune | Tous les 15 ans |
 
-Le démembrement consiste à séparer ces deux droits. Le plus souvent, les parents donnent la nue-propriété à leurs enfants et conservent l'usufruit. Rien ne change dans votre quotidien : vous restez chez vous, ou vous continuez à percevoir les loyers. Vos enfants, eux, sont déjà propriétaires, en attente.
+Concrètement, un couple peut aujourd'hui transmettre à un enfant 263 730 € sans droits (2 × 131 865 €). Ce montant monte à 463 730 € si l'enfant achète un logement neuf avant la fin de l'année.
 
-## Pourquoi c'est si efficace
+**Ce qui est en discussion.** Le projet de loi de finances pour 2027, déposé le 1er octobre 2026, propose de porter le don d'argent exonéré de 31 865 € à 50 000 €, pour les dons faits au premier semestre 2027. Avec l'abattement classique, cela ferait 150 000 € par parent et par enfant. Ce n'est pas voté : tant que le texte n'est pas publié au Journal officiel, aucune décision ne doit reposer dessus.
 
-### 1. Vous donnez moins que la valeur réelle
+**À retenir.** L'exonération « logement » de 100 000 € s'arrête le 31 décembre 2026. Si votre famille y pense, c'est maintenant qu'il faut agir.
 
-Les droits de donation ne portent que sur la nue-propriété, dont la valeur dépend de l'âge du donateur, selon le barème de l'article 669 du code général des impôts :
+## 2. Le démembrement, en une phrase
 
-| Âge du donateur | Valeur de l'usufruit | Valeur taxée (nue-propriété) |
+Être propriétaire, c'est cumuler l'usufruit (habiter le bien, ou le louer et en percevoir les loyers) et la nue-propriété (les murs). Le démembrement sépare les deux : vous donnez les murs, vous gardez l'usage.
+
+Dans votre quotidien, rien ne change. Fiscalement, tout change.
+
+## 3. Pourquoi c'est la donation la plus efficace
+
+### Vous êtes taxé sur une valeur réduite
+
+La nue-propriété est évaluée selon l'âge de l'usufruitier (article 669 du CGI) :
+
+| Âge de l'usufruitier | Usufruit | Nue-propriété (base taxable) |
 | --- | --- | --- |
 | 51 à 60 ans | 50 % | 50 % |
 | 61 à 70 ans | 40 % | 60 % |
 | 71 à 80 ans | 30 % | 70 % |
 | 81 à 90 ans | 20 % | 80 % |
+| 91 ans et plus | 10 % | 90 % |
 
-Plus on donne tôt, plus la base taxable est faible.
+Le bon moment, c'est avant de changer de tranche : donner à 70 ans plutôt qu'à 71 ans réduit la base taxable de 10 % de la valeur du bien.
 
-### 2. Au décès, la propriété se reconstitue sans nouvel impôt
+### Au décès, aucun droit sur ce bien
 
-L'usufruit s'éteint et vos enfants deviennent pleins propriétaires, sans droits de succession sur ce bien (article 1133 du code général des impôts).
+L'usufruit s'éteint et vos enfants deviennent pleins propriétaires sans droits supplémentaires (article 1133 du CGI). Toute la hausse de valeur accumulée entre-temps leur revient sans impôt.
 
-### 3. Les abattements se cumulent et se rechargent
+### Les abattements se rechargent
 
-Chaque parent peut transmettre 100 000 € à chaque enfant en franchise de droits, et cet abattement se reconstitue tous les 15 ans.
+Une donation faite aujourd'hui redonne droit au même abattement 15 ans plus tard. Plus on commence tôt, plus on peut transmettre sans droits.
 
-**Exemple.** Un couple de 72 et 70 ans, propriétaire à parts égales d'un appartement estimé 800 000 €, en donne la nue-propriété à ses deux enfants. La part du parent de 72 ans est taxée sur 70 % de sa valeur, celle du parent de 70 ans sur 60 % : la valeur transmise est de 520 000 €. Les quatre abattements de 100 000 € ramènent la base imposable à 120 000 €, soit environ 16 800 € de droits au total au barème en vigueur, hors frais de notaire. Au décès des parents, le bien revient entier aux enfants. Chiffres indicatifs : chaque situation se calcule avec votre notaire.
+## 4. Cas chiffré : un appartement parisien de 1 200 000 €
+
+Un couple de 72 et 70 ans, marié sous le régime de la communauté, a deux enfants. Leur appartement du 16e est estimé à 1 200 000 €.
+
+**Option A : donation de la nue-propriété aujourd'hui**
+
+- Part du père, 72 ans : 600 000 € × 70 % = 420 000 €
+- Part de la mère, 70 ans : 600 000 € × 60 % = 360 000 €
+- Par enfant, après les abattements de 100 000 € de chaque parent : 110 000 € et 80 000 € taxables
+- Droits par enfant : environ 34 400 €. Total : environ 68 800 €.
+
+**Option B : rien n'est fait, transmission au décès, à valeur égale**
+
+- Par enfant : 300 000 € reçus de chaque parent, soit 200 000 € taxables par parent
+- Droits par enfant : environ 76 400 €. Total : environ 152 800 €.
+
+**Écart : plus de 84 000 € en faveur de la donation.** Ce calcul ne compte pas la hausse future du bien. Avec 2 % par an pendant 15 ans, l'appartement prendrait environ 415 000 € de valeur : dans l'option A, cette hausse arrive aux enfants sans droits ; dans l'option B, elle serait taxée au décès, à 20 % dans cet exemple, soit environ 83 000 € de droits en plus.
+
+*Calcul indicatif, au barème actuel des droits entre parents et enfants (de 5 % à 45 %), hors frais d'acte et sans tenir compte des droits du conjoint survivant. Chaque situation se chiffre avec votre notaire.*
 
 <figure>
   <img src="/images/panorama/demembrement-nue-propriete-usufruit-generations.webp" srcset="/images/panorama/demembrement-nue-propriete-usufruit-generations-800.webp 800w, /images/panorama/demembrement-nue-propriete-usufruit-generations.webp 1600w" sizes="(min-width: 720px) 640px, 92vw" width="1600" height="1067" alt="Transmission entre générations" loading="lazy" decoding="async" />
   <figcaption>Donner la nue-propriété, c'est préparer la suite sans rien changer au présent.</figcaption>
 </figure>
 
-## Les précautions qui font la différence
+## 5. Le sujet que personne n'aborde : et si l'on doit vendre ?
 
-- **Prévoir l'avenir du bien.** Une clause de remploi ou de quasi-usufruit protège le parent si le bien doit être vendu, pour financer une entrée en maison de retraite par exemple.
-- **Penser au conjoint survivant.** Une réversion d'usufruit lui garantit de rester chez lui.
-- **Préserver l'équilibre entre les enfants.** La donation-partage fige les valeurs au jour de la donation et évite les querelles au moment de la succession.
-- **Suivre la loi.** En 2026, le barème et les abattements n'ont pas changé. Des propositions publiques de durcissement de la fiscalité du démembrement ont toutefois été formulées fin 2025 : ceux qui y réfléchissent ont intérêt à ne pas trop attendre.
+C'est là que la plupart des familles se trompent, et que l'accompagnement d'un professionnel de l'immobilier change tout.
 
-## Notre regard
+### Cas 1 : vendre un bien déjà démembré
 
-Chez Trudaines, nous ne commençons jamais par un calcul. Nous commençons par une conversation : qui veut-on protéger, qu'est-ce qui compte vraiment, quelles tensions faut-il apaiser ? La technique vient ensuite, avec votre notaire. Et tout commence par une estimation juste du bien, celle qui fixera la valeur transmise.
+Entrée en maison de retraite, déménagement, partage : il faut parfois vendre. Sauf accord contraire, le prix est réparti entre l'usufruitier et les nus-propriétaires. Sans anticipation, le parent peut se retrouver à financer son hébergement avec une partie seulement du prix.
 
-Vous réfléchissez à transmettre votre appartement ? [Prenons 30 minutes pour en parler](/contact).
+La parade : prévoir dès l'acte de donation une clause de remploi, ou le report de l'usufruit sur le prix de vente (quasi-usufruit). Le parent garde ainsi l'usage de la totalité du prix.
 
-*Article informatif, il ne remplace pas le conseil personnalisé de votre notaire.*
+### Cas 2 : donner avant de vendre, la « donation-cession »
+
+Pour une résidence secondaire ou un bien locatif détenu depuis longtemps, la plus-value peut coûter cher. Si les parents donnent d'abord et que les enfants vendent ensuite, la plus-value est calculée à partir de la valeur retenue au jour de la donation. Elle disparaît donc en grande partie.
+
+Conditions impératives : la donation doit être réelle, irrévocable et signée avant tout engagement de vente, le prix de vente cohérent avec la valeur déclarée, et l'argent ne doit pas revenir aux parents. Mal exécuté, ce montage peut être requalifié en abus de droit par l'administration fiscale.
+
+### Cas 3 : vendre, puis donner l'argent
+
+Cette option permet de profiter des abattements sur les dons d'argent : 31 865 €, et 100 000 € pour l'achat d'un logement neuf jusqu'à fin 2026. Elle sert aussi à aider un enfant à acheter. L'ordre des opérations change la fiscalité, et il se décide avant de signer un mandat de vente.
+
+Dans les trois cas, tout repose sur une valeur juste. Une sous-évaluation expose à un redressement fiscal. Une surévaluation fait payer trop de droits. La valeur déclarée dans l'acte de donation sert de base à tout le reste.
+
+## 6. Les clauses qui protègent vraiment
+
+- **Réserve d'usufruit réversible** au profit du conjoint survivant.
+- **Donation-partage** : elle fige les valeurs au jour de l'acte et évite les conflits entre héritiers.
+- **Clause d'inaliénabilité et droit de retour** si l'enfant décède avant vous.
+- **Clause d'exclusion de communauté** : le bien reste à votre enfant seul en cas de divorce.
+- **Remploi ou quasi-usufruit** en cas de vente, voir plus haut.
+
+## 7. Questions fréquentes
+
+**Peut-on donner 150 000 € à son enfant sans impôt en 2026 ?**
+Pas encore. Aujourd'hui, un parent peut donner 100 000 €, plus 31 865 € en argent s'il a moins de 80 ans et que l'enfant est majeur, soit 131 865 €. Le passage à 150 000 € n'est qu'une proposition du projet de loi de finances pour 2027.
+
+**Le démembrement est-il menacé ?**
+Des propositions publiques de durcissement de sa fiscalité ont été formulées fin 2025. Rien n'est adopté à ce jour, mais si vous y réfléchissez, mieux vaut ne pas trop attendre.
+
+**Je donne la nue-propriété : puis-je encore louer mon bien ?**
+Oui. En tant qu'usufruitier, vous percevez les loyers et restez imposé sur ces revenus.
+
+**Mes enfants peuvent-ils vendre sans mon accord ?**
+Non. La vente de la pleine propriété exige l'accord de l'usufruitier et des nus-propriétaires.
+
+**Qui paie les travaux ?**
+Les grosses réparations (toiture, murs porteurs) reviennent au nu-propriétaire, l'entretien courant à l'usufruitier. L'acte peut prévoir une autre répartition.
+
+**Combien coûte l'acte ?**
+Les frais de notaire et les droits s'ajoutent. Le parent qui donne peut payer les droits lui-même sans que cela compte comme une donation supplémentaire.
+
+## 8. Notre méthode
+
+Chez Trudaines, nous ne commençons pas par un calcul. Nous commençons par vous écouter : qui voulez-vous protéger, faudra-t-il vendre un jour, qu'est-ce qui doit rester dans la famille ?
+
+Nous établissons ensuite la valeur de référence de votre bien, celle qui servira à l'acte de donation ou à la vente. C'est un avis de valeur écrit et argumenté : ventes comparables, état du bien, marché du quartier. Il coûte 300 €, intégralement déduits de nos honoraires si vous nous confiez ensuite la vente. Enfin, nous travaillons avec votre notaire pour que chaque étape serve votre projet.
+
+Vous envisagez de donner, de vendre, ou les deux ? [Réservez 30 minutes avec Samy Santamarina](/contact) ou appelez le [06 20 46 59 12](tel:+33620465912).
+
+*Article informatif, à jour en octobre 2026. Il ne remplace pas le conseil personnalisé de votre notaire ou de votre avocat fiscaliste. Les projets de loi cités ne sont pas adoptés.*
