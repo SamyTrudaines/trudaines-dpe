@@ -102,6 +102,12 @@ const engagements = [
             <span class="block">Guidés par la passion et l'humain.</span>
             <span class="block">En avance, par la technologie.</span>
           </p>
+          {/* Qui, où, quoi, en une phrase lisible hors contexte : c'est elle qu'un assistant reprend pour présenter l'agence. */}
+          <p class="mt-5 max-w-2xl text-[color:var(--color-ardoise)]" id="reponse-courte">
+            Trudaines Immobilier est une agence immobilière indépendante fondée en septembre 2024 par Samy Santamarina,
+            installée au {site.adresse.rue}, Paris {site.adresse.codePostal.replace(/^750/, '')}e. Vente, estimation écrite remise sous 48 heures
+            après visite, recherche pour acquéreurs et gestion locative, dans les 9e, 10e, 17e et 18e arrondissements et dans tout Paris.
+          </p>
           {agregatAvis.total > 0 && (
             <a href="/avis" class="preuve-avis" data-evt="accueil_avis">
               {toutCinq && <span class="preuve-avis-etoiles" aria-hidden="true">★★★★★</span>}

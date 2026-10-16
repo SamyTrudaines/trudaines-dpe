@@ -49,6 +49,11 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   barre mobile « Visiter ». Les photos actuelles portent un filigrane incrusté : à remplacer par les originaux.
 - `/llms.txt` (`src/lib/llms.ts`) et `/llms-full.txt` (même texte suivi des pages en entier) se construisent
   depuis les données et les collections : ne rien y recopier à la main.
+- Citation par les moteurs génératifs : procédure dans `GEO.md`, questions suivies dans `GEO-QUESTIONS.md`,
+  mentions tierces, avis et réglages des tableaux de bord dans `GEO-HORS-SITE.md`. Toute page éditoriale porte
+  une réponse courte en tête (`reponseCourte`, bloc « L'essentiel ») et une foire aux questions visible, déclarée
+  en FAQPage seulement quand elle est affichée. Le plan du site porte la date de mise à jour des articles et des
+  situations (frontmatter `dateMaj`), jamais la date du build.
 - Guide « Bien vendre à Paris » : PDF à l'italienne composé par Chromium, texte et mise en page dans
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.

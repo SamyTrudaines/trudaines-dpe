@@ -114,6 +114,10 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 - Aucune détention de fonds : ${site.legal.detentionFonds}
 - Aucun avis client inventé : les avis publiés sont repris de Google et de Pages Jaunes, avec leur source et leur lien.
 
+## Situations de vente, réponses courtes
+Chaque réponse est développée sur une page datée, avec ses sources et une foire aux questions.
+${situations.map((s) => `- ${s.data.question} ${s.data.chapo} Détail : ${site.url}/vendre/${s.id} (mis à jour le ${s.data.dateMaj.toISOString().slice(0, 10)}).`).join('\n')}
+
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
 - Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de ${pourcent(fourchetteVente.min, ' ')} à ${pourcent(fourchetteVente.max, ' ')} TTC du prix de vente selon la tranche et le mandat, un point de moins en mandat exclusif, minimum ${honoraires.vente[0].minimum}, à la charge du vendeur. Ce barème est un maximum au sens de l'arrêté du 26 janvier 2022, l'agence pratique souvent moins. Détail sur ${site.url}/honoraires.
@@ -162,6 +166,7 @@ Articles parus au lancement, en 2024, quand Trudaines se présentait comme un r�
 ## Conditions d'usage
 Les contenus peuvent être cités avec mention de la source ${site.url}.
 Les prix indiqués sont des ordres de grandeur, ils ne valent pas estimation d'un bien précis.
+Fichier construit à chaque publication du site ; dernière construction le ${new Date().toISOString().slice(0, 10)}. Prix recalculés à chaque parution de la base DVF, en avril et en octobre.
 `;
 
   return contenu;

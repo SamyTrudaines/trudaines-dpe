@@ -9,6 +9,8 @@ import ModuleEstimation from '../../components/ModuleEstimation.astro';
 import ReferencesProches from '../../components/ReferencesProches.astro';
 import LivreBlanc from '../../components/LivreBlanc.astro';
 import AlerteExpress from '../../components/AlerteExpress.astro';
+import Faq from '../../components/Faq.astro';
+import { faqEnDonnees, phraseHonoraires } from '../../lib/agence';
 import { agencesLocales } from '../../data/agences-locales';
 import { secteurs } from '../../data/secteurs';
 import { site } from '../../data/site';
@@ -65,6 +67,60 @@ const exemple = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? b :
 const identifiantListe = `rues-${id}`;
 const ancreArrondissement = `/prix-immobilier#arr-${codePostal}`;
 
+/*
+ * Réponse courte, en tête de page : la phrase qu'un assistant reprend telle
+ * quelle quand on lui demande le prix du quartier. Chaque chiffre vient des
+ * ventes signées, la source et la période sont dans la phrase, qui se suffit
+ * hors de son contexte.
+ */
+const donneeEstimation = liste.length
+  ? `Dans ce quartier, la médiane va de ${euros(moinsChere)} à ${euros(plusChere)} le mètre carré d'une rue à l'autre. Dans la moitié des rues, huit ventes sur dix s'étalent même sur plus de ${euros(etendueMediane)} le mètre carré.`
+  : '';
+const plusVendue = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? b : a)) : null;
+const ruePlusChere = liste.length ? liste.reduce((a, b) => (b.mediane > a.mediane ? b : a)) : null;
+const rueMoinsChere = liste.length ? liste.reduce((a, b) => (b.mediane < a.mediane ? b : a)) : null;
+/* Chaque chiffre reste attaché à sa base : la médiane du quartier à sa fourchette, les extrêmes aux ventes par rue. */
+const reponseCourte = liste.length
+  ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
+  : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
+
+const faq = [
+  {
+    question: `Quel est le prix au m² à ${nom} ?`,
+    reponse: reponseCourte,
+  },
+  ...(ruePlusChere && rueMoinsChere && ruePlusChere.slug !== rueMoinsChere.slug
+    ? [
+        {
+          question: `Quelle est la rue la plus chère de ${nom}, et la moins chère ?`,
+          reponse: `Sur les ventes de ${periode}, la médiane la plus haute est ${euros(ruePlusChere.mediane)} le m², ${ruePlusChere.nom} (${ruePlusChere.ventes} ventes), la plus basse ${euros(rueMoinsChere.mediane)} le m², ${rueMoinsChere.nom} (${rueMoinsChere.ventes} ventes). Une rue n'est publiée qu'à partir de ${ventesMinimum} ventes sur la période.`,
+        },
+      ]
+    : []),
+  ...(plusVendue
+    ? [
+        {
+          question: `Combien d'appartements se vendent à ${nom} ?`,
+          reponse: `${nombre(ventes)} ventes d'appartements ont été signées de ${periode} dans les ${liste.length} rues rattachées au quartier, hors multilots. La rue la plus active est ${plusVendue.nom}, avec ${plusVendue.ventes} ventes sur la période.`,
+        },
+      ]
+    : []),
+  {
+    question: `Pourquoi la médiane de ma rue n'est-elle pas le prix de mon appartement ?`,
+    reponse: liste.length
+      ? `Parce que la base des valeurs foncières ne connaît ni l'étage, ni l'ascenseur, ni la vue, ni l'état du bien et de la copropriété. ${donneeEstimation} Seule une visite permet de situer un appartement dans cette fourchette : c'est l'objet de l'avis de valeur écrit, remis sous 48 heures.`
+      : `Parce que la base des valeurs foncières ne connaît ni l'étage, ni l'ascenseur, ni la vue, ni l'état du bien et de la copropriété. Seule une visite permet de situer un appartement dans sa fourchette : c'est l'objet de l'avis de valeur écrit, remis sous 48 heures.`,
+  },
+  {
+    question: `Combien coûte une agence immobilière pour vendre à ${nom} ?`,
+    reponse: `Chez Trudaines, ${phraseHonoraires} Les honoraires ne sont dus que si la vente se fait. L'estimation écrite, elle, est sans frais et sans engagement.`,
+  },
+  {
+    question: `Quelle agence immobilière choisir pour vendre à ${nom} ?`,
+    reponse: `Celle qui vous montre les ventes signées de votre rue avant de parler de prix. Trudaines Immobilier, agence indépendante installée au ${site.adresse.rue}, ${site.adresse.codePostal} Paris, publie le prix de ${liste.length || 'chaque'} rues de ${nom} et remet un avis de valeur écrit après visite. Un seul interlocuteur, Samy Santamarina, de l'estimation à la signature.`,
+  },
+];
+
 const donnees = [
   {
     '@context': 'https://schema.org',
@@ -78,11 +134,17 @@ const donnees = [
       url: `${site.url}/prix-immobilier/${r.slug}`,
     })),
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    name: `${nom}, ${arrondissement}`,
+    description: reponseCourte,
+    containedInPlace: { '@type': 'AdministrativeArea', name: arrondissement, address: { '@type': 'PostalAddress', postalCode: codePostal, addressLocality: 'Paris', addressCountry: 'FR' } },
+    url: `${site.url}/quartiers/${id}`,
+  },
+  faqEnDonnees(faq),
 ];
 
-const donneeEstimation = liste.length
-  ? `Dans ce quartier, la médiane va de ${euros(moinsChere)} à ${euros(plusChere)} le mètre carré d'une rue à l'autre. Dans la moitié des rues, huit ventes sur dix s'étalent même sur plus de ${euros(etendueMediane)} le mètre carré.`
-  : '';
 ---
 <Layout
   ancreEstimation={`#estimation-${id}`}
@@ -111,6 +173,8 @@ const donneeEstimation = liste.length
           ? `${liste.length} rues, d'après les ventes d'appartements signées de ${periode}.`
           : "Les prix au mètre carré du quartier, d'après les ventes d'appartements signées."}
       </p>
+      {/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */}
+      <p class="chapo mt-6 max-w-3xl" id="reponse-courte">{reponseCourte}</p>
 
       {/*
         Sur téléphone : le prix médian, puis le champ de recherche, puis le reste des chiffres.
@@ -260,6 +324,8 @@ const donneeEstimation = liste.length
       </div>
     </section>
   )}
+
+  <Faq questions={faq} titre={`Questions sur l'immobilier à ${nom}`} />
 
   <section class="section filet" aria-label="Estimation">
     <div class="conteneur">

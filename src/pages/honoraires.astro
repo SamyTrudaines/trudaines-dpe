@@ -1,6 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Faq from '../components/Faq.astro';
 import { honoraires, site, parrainage } from '../data/site';
+import { bareme, honorairesTTC, pourcent, fourchetteVente } from '../lib/bareme';
+import { faqEnDonnees, phraseHonoraires } from '../lib/agence';
+import { nombre } from '../lib/format';
+
+/* Exemples calculés sur le barème, jamais recopiés : ils suivent toute modification de site.ts. */
+const exemples = [500000, 900000, 2000000].map((prix) => ({
+  prix,
+  exclusif: honorairesTTC(prix, bareme.venteExclusif) ?? 0,
+  simple: honorairesTTC(prix, bareme.venteSimple) ?? 0,
+}));
+const euros = (valeur: number) => `${nombre(Math.round(valeur))} €`;
+
+const reponseCourte = `Chez Trudaines, les honoraires de vente vont de ${pourcent(fourchetteVente.min, ' ')} à ${pourcent(fourchetteVente.max, ' ')} TTC du prix de vente selon la tranche et le type de mandat : ${phraseHonoraires} Rien n'est dû si la vente ne se fait pas, et l'estimation écrite d'un bien à vendre est offerte.`;
+
+const faq = [
+  { question: 'Combien coûte une agence immobilière pour vendre à Paris ?', reponse: reponseCourte },
+  {
+    question: 'Combien paie-t-on d’honoraires pour un appartement vendu 500 000 €, 900 000 € ou 2 000 000 € ?',
+    reponse: `Au barème maximum de Trudaines : ${exemples.map((e) => `${euros(e.prix)} vendus donnent ${euros(e.exclusif)} TTC en mandat exclusif et ${euros(e.simple)} TTC en mandat simple`).join(' ; ')}. Le taux inscrit au mandat peut être inférieur.`,
+  },
+  {
+    question: 'Les honoraires d’agence se négocient-ils ?',
+    reponse: `Oui. Le barème affiché est un plafond au sens de l'arrêté du 26 janvier 2022 : l'agence peut pratiquer moins, jamais plus. Le taux retenu se fixe après l'estimation, en fonction du bien et du mandat, et figure en toutes lettres, toutes taxes comprises, dans le mandat signé.`,
+  },
+  {
+    question: 'Quand les honoraires sont-ils payés ?',
+    reponse: `À la signature de l'acte authentique chez le notaire, prélevés sur le prix de vente. Aucun acompte, aucun frais de dossier, aucune somme due si le bien ne se vend pas. Seul l'avis de valeur établi pour un acte de donation, de succession ou de partage est facturé, ${honoraires.avisDeValeur[0].taux.toLowerCase()}.`,
+  },
+  {
+    question: 'Combien coûte un mandat de recherche pour acheter à Paris ?',
+    reponse: `De ${honoraires.chasse[0].taux.replace(" du prix d'achat", '')} jusqu'à 400 000 € à ${honoraires.chasse[4].taux.replace(" du prix d'achat", '')} entre 1 600 001 € et 2 500 000 € du prix d'achat, à la charge de l'acquéreur, dus uniquement à la signature de l'acte. Au-delà de 2 500 000 €, le taux est arrêté au mandat.`,
+  },
+  {
+    question: 'Combien coûte la gestion locative chez Trudaines ?',
+    reponse: `${honoraires.gestion[0].taux}, à la charge du bailleur, sans minimum. Les loyers encaissés sont couverts par une garantie financière de ${site.legal.garantieMontant} auprès de ${site.legal.garantie.split(',')[0]}.`,
+  },
+];
 
 const tableaux = [
   { titre: 'Mandat de vente, honoraires à la charge du vendeur', lignes: honoraires.vente },
@@ -13,6 +51,7 @@ const tableaux = [
   titre="Honoraires maximum | Trudaines, agence immobilière Paris"
   description="Barème maximum des honoraires de Trudaines : vente, recherche, gestion locative, avis de valeur pour un acte. Montants TTC et charge du paiement indiquée."
   filAriane={[{ nom: 'Honoraires' }]}
+  donnees={[faqEnDonnees(faq)]}
 >
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
@@ -22,6 +61,8 @@ const tableaux = [
         Les taux ci-dessous sont des maximums. Celui de votre mandat se fixe avec vous, après l'estimation : il peut
         être inférieur, jamais supérieur. Rien n'est dû tant que la vente, l'achat ou la location n'est pas signé, à l'exception de l'avis de valeur établi pour un acte de donation ou de succession. L'estimation d'un bien que vous envisagez de vendre reste offerte.
       </p>
+      {/* La réponse en une fois, calculée sur le barème : c'est elle qu'un assistant reprend. */}
+      <p class="mt-6" id="reponse-courte">{reponseCourte}</p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Barème maximum au sens de l'arrêté du 26 janvier 2022. En mandat exclusif, le plafond de chaque tranche baisse
         d'un point. Le taux retenu figure en toutes lettres dans le mandat, toutes taxes comprises.
@@ -79,4 +120,6 @@ const tableaux = [
       </div>
     </div>
   </section>
+
+  <Faq questions={faq} titre="Questions sur les honoraires" />
 </Layout>
