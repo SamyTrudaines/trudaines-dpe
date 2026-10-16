@@ -97,14 +97,15 @@ export const partenaires: Partenaire[] = [
     ],
   },
   {
-    /* Sources : annuaire des entreprises (SIREN 932 051 014, créée en août 2024), profil LinkedIn public. */
+    /* Sources : annuaire des entreprises (SIREN 932 051 014, créée en août 2024), profil LinkedIn public. Zone d'intervention et regard d'architecte indiqués par Samy. */
     nom: 'Pierre-Marie Gérard',
     metier: 'Plombier chauffagiste, fondateur',
     structure: 'Gérard Plomberie',
     presentation: [
       'Pierre-Marie Gérard a créé Gérard Plomberie en 2024, après un premier parcours de dessinateur, de chef de projet et d’architecte d’intérieur dans le commerce. Il est passé par l’apprentissage en génie climatique avant de s’installer à son compte.',
-      'Plomberie sanitaire, chauffe-eau, chauffage, dépannage : il intervient à Paris, depuis le 7e arrondissement.',
-      'Avec Trudaines : une fuite, un chauffe-eau ou une réparation à régler avant une mise en vente ou une location.',
+      'Ce double parcours lui donne un regard d’architecte sur une rénovation. Il voit le chantier dans son ensemble : les réseaux, les volumes, l’usage des pièces, l’ordre des travaux.',
+      'Plomberie sanitaire, chauffe-eau, chauffage, dépannage : il intervient dans tout Paris, avec un camp de base dans les 7e et 15e arrondissements.',
+      'Avec Trudaines : une fuite, un chauffe-eau ou une réparation à régler avant une mise en vente ou une location, ou une rénovation à penser avant un achat.',
     ],
   },
   {

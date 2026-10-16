@@ -1,6 +1,8 @@
 # Signalement IndexNow des pages changées par chaque fusion sur main, dès que
-# la production les sert. Détail : scripts/indexnow.mjs. Aucun secret : la clé
-# du protocole est publique, servie à la racine du site.
+# la production les sert (scripts/indexnow.mjs ; la clé du protocole est publique,
+# servie à la racine du site). Puis envoi des biens devenus diffusables aux
+# acquéreurs prioritaires (scripts/acquereurs/envoyer.mjs, secret BREVO_API_KEY),
+# en essai adressé à Samy tant que envoiActif est faux.
 name: IndexNow
 
 on:
@@ -11,9 +13,10 @@ on:
 permissions:
   contents: read
 
+# Pas d'annulation : un envoi aux acquéreurs commencé doit aller à son terme.
 concurrency:
   group: indexnow
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   signaler:
@@ -33,3 +36,13 @@ jobs:
           AVANT: ${{ github.event.before }}
           APRES: ${{ github.sha }}
         run: node scripts/indexnow.mjs
+
+      # Après l'attente de la production : la fiche et ses photos sont en ligne.
+      - name: Acquéreurs prioritaires, nouveaux biens
+        if: always()
+        env:
+          AVANT: ${{ github.event.before }}
+          APRES: ${{ github.sha }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MODE: reel
+        run: npm ci --ignore-scripts && node scripts/acquereurs/envoyer.mjs

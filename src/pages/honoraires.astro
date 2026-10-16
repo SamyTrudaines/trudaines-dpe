@@ -6,11 +6,12 @@ const tableaux = [
   { titre: 'Mandat de vente, honoraires à la charge du vendeur', lignes: honoraires.vente },
   { titre: "Mandat de recherche, honoraires à la charge de l'acquéreur", lignes: honoraires.chasse },
   { titre: 'Mandat de gestion, honoraires à la charge du bailleur', lignes: honoraires.gestion },
+  { titre: 'Avis de valeur pour un acte, à la charge du demandeur', lignes: honoraires.avisDeValeur },
 ];
 ---
 <Layout
   titre="Honoraires maximum | Trudaines, agence immobilière Paris"
-  description="Barème maximum des honoraires de Trudaines : mandat de vente, mandat de recherche, gestion locative. Montants TTC et charge du paiement indiquée."
+  description="Barème maximum des honoraires de Trudaines : vente, recherche, gestion locative, avis de valeur pour un acte. Montants TTC et charge du paiement indiquée."
   filAriane={[{ nom: 'Honoraires' }]}
 >
   <section class="section pt-10">
@@ -19,7 +20,7 @@ const tableaux = [
       <h1 class="titre-1 mt-6">Nos honoraires : un plafond, pas un tarif</h1>
       <p class="chapo mt-8">
         Les taux ci-dessous sont des maximums. Celui de votre mandat se fixe avec vous, après l'estimation : il peut
-        être inférieur, jamais supérieur. Rien n'est dû tant que la vente, l'achat ou la location n'est pas signé.
+        être inférieur, jamais supérieur. Rien n'est dû tant que la vente, l'achat ou la location n'est pas signé, à l'exception de l'avis de valeur établi pour un acte de donation ou de succession. L'estimation d'un bien que vous envisagez de vendre reste offerte.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Barème maximum au sens de l'arrêté du 26 janvier 2022. En mandat exclusif, le plafond de chaque tranche baisse

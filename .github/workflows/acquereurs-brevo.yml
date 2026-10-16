@@ -1,0 +1,28 @@
+# Prépare Brevo pour les alertes des acquéreurs prioritaires (scripts/acquereurs/brevo-preparer.mjs) :
+# liste, attributs, modèle de confirmation. Ne supprime rien ; relancer ne crée rien deux fois.
+name: Acquéreurs, préparation Brevo
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'scripts/acquereurs/brevo-preparer.mjs'
+      - '.github/workflows/acquereurs-brevo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preparer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Liste, attributs et modèle
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: node scripts/acquereurs/brevo-preparer.mjs

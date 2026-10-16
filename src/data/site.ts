@@ -132,6 +132,18 @@ export const honoraires = {
   gestion: [
     { tranche: 'Gestion locative', taux: '10 % TTC du loyer hors taxes encaissé', exclusif: null, minimum: null },
   ],
+  /**
+   * Avis de valeur écrit destiné à un acte (donation, succession, partage). L'estimation
+   * d'un bien que le propriétaire envisage de vendre reste offerte.
+   */
+  avisDeValeur: [
+    {
+      tranche: 'Avis de valeur écrit pour une donation, une succession ou un partage',
+      taux: '300 € TTC, intégralement déduits de nos honoraires si la vente nous est confiée ensuite',
+      exclusif: null,
+      minimum: null,
+    },
+  ],
 } as const;
 
 /**

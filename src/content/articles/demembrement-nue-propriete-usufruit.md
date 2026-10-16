@@ -148,7 +148,7 @@ Les frais de notaire et les droits s'ajoutent. Le parent qui donne peut payer le
 
 Chez Trudaines, nous ne commençons pas par un calcul. Nous commençons par vous écouter : qui voulez-vous protéger, faudra-t-il vendre un jour, qu'est-ce qui doit rester dans la famille ?
 
-Nous établissons ensuite la valeur de référence de votre bien, celle qui servira à l'acte de donation ou à la vente. C'est un avis de valeur écrit et argumenté : ventes comparables, état du bien, marché du quartier. Il coûte 300 €, intégralement déduits de nos honoraires si vous nous confiez ensuite la vente. Enfin, nous travaillons avec votre notaire pour que chaque étape serve votre projet.
+Nous établissons ensuite la valeur de référence de votre bien, celle qui servira à l'acte de donation. C'est un avis de valeur écrit et argumenté : ventes comparables, état du bien, marché du quartier. Il coûte 300 € TTC, intégralement déduits de nos honoraires si vous nous confiez ensuite la vente ([voir notre barème](/honoraires)). Enfin, nous travaillons avec votre notaire pour que chaque étape serve votre projet.
 
 Vous envisagez de donner, de vendre, ou les deux ? [Réservez 30 minutes avec Samy Santamarina](/contact) ou appelez le [06 20 46 59 12](tel:+33620465912).
 
