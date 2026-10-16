@@ -11,6 +11,25 @@ motsCles:
   - vendre un appartement à Paris
   - dossier de diagnostic technique
   - durée de validité des diagnostics
+essentiel:
+  - "Le vendeur d'un appartement fait établir à ses frais un dossier de diagnostic technique, annexé à l'avant-contrat ou, à défaut, à l'acte de vente (article L271-4 du code de la construction et de l'habitation)."
+  - "Pour un appartement parisien, le dossier comprend selon les cas le DPE, l'amiante (permis de construire avant le 1er juillet 1997), le plomb (immeuble d'avant le 1er janvier 1949), les termites, le gaz et l'électricité (installations de plus de 15 ans), l'état des risques et pollutions et la superficie loi Carrez."
+  - "Tout Paris est classé en zone termites par l'arrêté préfectoral n° 2003-80-1 du 21 mars 2003 : l'état termites est exigé dans tous les arrondissements et reste valable six mois."
+  - "Le DPE est valable dix ans, les diagnostics gaz et électricité trois ans, l'état termites et l'état des risques six mois ; un DPE établi avant le 1er juillet 2021 a expiré au plus tard le 31 décembre 2024."
+  - "Chaque diagnostic doit être valable à la date de l'avant-contrat puis à celle de l'acte, séparées en général de deux à trois mois ; un diagnostic expiré entre les deux est remplacé par un nouveau (article L271-5)."
+faq:
+  - question: "Quels diagnostics sont obligatoires pour vendre un appartement à Paris ?"
+    reponse: "Le DPE dans tous les cas, l'état termites et l'état des risques et pollutions partout à Paris, la superficie loi Carrez pour un lot de copropriété, le plomb si l'immeuble date d'avant le 1er janvier 1949, l'amiante si le permis de construire est antérieur au 1er juillet 1997, le gaz et l'électricité si l'installation a plus de 15 ans."
+  - question: "Combien de temps un diagnostic immobilier reste-t-il valable ?"
+    reponse: "Dix ans pour le DPE, trois ans pour le gaz et l'électricité, six mois pour l'état termites et l'état des risques et pollutions. Le plomb est illimité si le constat est négatif, un an si le seuil est dépassé. L'amiante est illimité en l'absence d'amiante pour un rapport postérieur au 1er avril 2013, sinon contrôle sous trois ans."
+  - question: "Qui paie les diagnostics, le vendeur ou l'acheteur ?"
+    reponse: "Le vendeur. Il choisit le diagnostiqueur et en supporte le coût, sauf accord différent avec l'acquéreur (article L271-4 du code de la construction et de l'habitation). Le professionnel doit être certifié, assuré et indépendant du vendeur comme de l'agence (article L271-6)."
+  - question: "Quand faut-il commander les diagnostics pour vendre ?"
+    reponse: "Dès la mise en vente. Le DPE doit exister avant la diffusion de l'annonce, qui indique la classe énergie, la classe climat et les dépenses annuelles d'énergie (article L126-33). L'état des risques se remet dès la première visite, les autres diagnostics au plus tard à la signature de l'avant-contrat."
+  - question: "Mon ancien DPE est-il encore valable ?"
+    reponse: "Non s'il a été établi avant le 1er juillet 2021 : il a expiré au plus tard le 31 décembre 2024, selon le décret du 17 décembre 2020. Un DPE postérieur à cette date est valable dix ans. Un diagnostic valable au compromis mais expiré le jour de l'acte doit être refait."
+  - question: "Que se passe-t-il si la surface loi Carrez est fausse ?"
+    reponse: "Si la surface réelle est inférieure de plus de 5 % à celle de l'acte, l'acquéreur peut demander une diminution du prix dans l'année qui suit l'acte authentique (article 46 de la loi du 10 juillet 1965). La loi Carrez exclut les parties de moins de 1,80 m sous plafond, et un mesurage ancien ne vaut plus après des travaux."
 ---
 
 Vendre un appartement suppose de réunir un dossier de diagnostics. La loi fixe ce que ce dossier contient, le moment où il doit être remis et la durée de validité de chaque pièce. Ce sont les dates qui demandent le plus d'attention.

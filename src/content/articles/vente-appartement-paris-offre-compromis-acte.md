@@ -11,6 +11,25 @@ motsCles:
   - compromis de vente
   - acte authentique
   - délai de rétractation
+essentiel:
+  - "Une vente de logement à Paris suit un ordre fixe : offre d'achat, avant-contrat, levée des conditions suspensives, puis acte authentique chez le notaire."
+  - "L'acquéreur non professionnel dispose de dix jours calendaires pour se rétracter après la notification de l'avant-contrat, sans motif ni pénalité (article L271-1 du code de la construction et de l'habitation) ; le vendeur, lui, est engagé dès la signature."
+  - "La condition suspensive d'obtention du prêt dure au moins un mois à compter de la signature de l'avant-contrat (article L313-41 du code de la consommation) ; si le prêt est refusé, les sommes versées sont remboursées sans retenue."
+  - "La Ville de Paris dispose de deux mois à compter de la réception de la déclaration d'intention d'aliéner pour exercer son droit de préemption, et son silence vaut renonciation."
+  - "Les notaires comptent en général trois mois entre l'avant-contrat et l'acte, deux mois en l'absence de prêt ; la date fixée dans l'avant-contrat est une date limite, qui peut être repoussée par avenant avec l'accord des deux parties."
+faq:
+  - question: "Combien de temps entre le compromis et l'acte de vente à Paris ?"
+    reponse: "Trois mois environ, deux mois en l'absence de prêt. Pendant ce délai, le notaire réunit les pièces, interroge l'urbanisme et la publicité foncière, purge le droit de préemption de la Ville de Paris, qui dispose de deux mois, et vérifie le financement. La date fixée dans l'avant-contrat peut être repoussée par avenant."
+  - question: "Le vendeur peut-il se rétracter après avoir signé le compromis ?"
+    reponse: "Non. Le vendeur n'a pas de droit de rétractation : il est engagé dès la signature de l'avant-contrat. S'il refuse de signer l'acte, l'acquéreur peut saisir la justice pour obtenir l'exécution forcée de la vente ou des dommages et intérêts. Seul l'acquéreur dispose des dix jours de rétractation."
+  - question: "Une offre d'achat acceptée engage-t-elle le vendeur ?"
+    reponse: "Oui. Une offre écrite acceptée sans réserve par le vendeur l'engage : il ne peut plus vendre le bien à un autre acquéreur. L'offre n'est pas obligatoire, mais elle indique le prix proposé, le financement, les conditions éventuelles et sa durée de validité, fixée par l'acheteur."
+  - question: "Quel est le montant du dépôt de garantie dans un compromis de vente ?"
+    reponse: "Entre 5 et 10 % du prix en pratique. Dans un compromis, le montant est fixé librement par les parties. Le dépôt de garantie, ou l'indemnité d'immobilisation dans une promesse unilatérale, est versé en général chez le notaire, qui le conserve en séquestre jusqu'à l'acte."
+  - question: "Que se passe-t-il si l'acheteur n'obtient pas son prêt ?"
+    reponse: "La vente ne se fait pas et les sommes versées par l'acquéreur lui sont remboursées sans retenue, sauf si l'échec du prêt lui est imputable (article L313-41 du code de la consommation). La condition suspensive de prêt dure au moins un mois à compter de la signature de l'avant-contrat."
+  - question: "Quand le vendeur doit-il remettre les clés ?"
+    reponse: "À la signature de l'acte authentique, après vérification que le logement est libre, sauf accord contraire écrit dans l'avant-contrat. Une remise anticipée ou différée est possible si les deux parties en conviennent. Le notaire s'assure que le vendeur a rendu toutes les clés et les remet à l'acquéreur une fois l'acte signé."
 ---
 
 Une vente de logement suit un ordre fixe : offre, avant-contrat, levée des conditions, acte chez le notaire. Chaque étape a ses engagements et ses délais, dont plusieurs viennent de la loi. Les connaître permet de savoir ce qui reste modifiable, et jusqu'à quand.
