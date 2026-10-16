@@ -27,8 +27,8 @@ reprise. La page qui dit « le congé pour vendre doit être notifié six mois a
 l'échéance du bail, et il ouvre au locataire un droit de préemption » est reprise
 mot pour mot, avec le lien.
 
-**Le bon rythme est une question par semaine.** Huit situations manquent
-aujourd'hui sur le site. Huit semaines, une page chacune, et le sujet est clos.
+**Le bon rythme est une question par semaine.** Les dix situations sont écrites, datées et dotées d'une foire aux questions visible
+(octobre 2026). Restent à écrire : vendre maintenant ou attendre, délai de vente réel à Paris, plus-value.
 
 ---
 
@@ -62,14 +62,14 @@ Faible volume, intention maximale, concurrence quasi nulle. **Priorité absolue.
 
 | Question | Réponse sur le site |
 | --- | --- |
-| Comment vendre l'appartement d'un parent après une succession ? | **non** |
-| Vendre un bien en indivision, comment faire si un héritier refuse ? | **non** |
-| Comment vendre un appartement pendant un divorce ? | **non** |
-| Puis je vendre un appartement avec un locataire dedans ? | **non** |
-| Congé pour vendre, quel délai et quel droit du locataire ? | **non** |
+| Comment vendre l'appartement d'un parent après une succession ? | oui, /vendre/succession |
+| Vendre un bien en indivision, comment faire si un héritier refuse ? | oui, /vendre/indivision |
+| Comment vendre un appartement pendant un divorce ? | oui, /vendre/divorce |
+| Puis je vendre un appartement avec un locataire dedans ? | oui, /vendre/bien-occupe |
+| Congé pour vendre, quel délai et quel droit du locataire ? | oui, /vendre/bien-occupe |
 | Comment vendre un logement classé F ou G à Paris ? | oui, article dédié |
-| Vendre quand la copropriété a voté de gros travaux | **non** |
-| Je vis à l'étranger, comment vendre mon appartement parisien ? | **non** |
+| Vendre quand la copropriété a voté de gros travaux | oui, /vendre/travaux-votes |
+| Je vis à l'étranger, comment vendre mon appartement parisien ? | oui, /vendre/depuis-l-etranger |
 
 ## L'argent de la vente
 
@@ -79,7 +79,7 @@ Intention forte, et sujet sur lequel un vendeur n'ose pas toujours appeler.
 | --- | --- |
 | Combien coûte une agence immobilière pour vendre à Paris ? | oui, barème affiché |
 | Quelle plus value paie t on en revendant un appartement à Paris ? | partielle |
-| Quels frais restent à la charge du vendeur ? | **non** |
+| Quels frais restent à la charge du vendeur ? | oui, /vendre/frais-du-vendeur |
 | Les honoraires d'agence se négocient ils ? | oui, page choisir son agence |
 
 ## Le choix du professionnel
@@ -92,7 +92,7 @@ Le moment de la décision. Peu de volume, valeur maximale.
 | Quelle agence immobilière choisir à Montmartre ? | oui |
 | Mandat simple ou mandat exclusif, que choisir ? | oui, page dédiée |
 | Peut on résilier un mandat exclusif ? | oui |
-| Vendre seul ou passer par une agence à Paris ? | **non** |
+| Vendre seul ou passer par une agence à Paris ? | oui, /vendre/seul-ou-par-agence |
 
 ## Le cabinet
 
@@ -108,31 +108,16 @@ Le moment de la décision. Peu de volume, valeur maximale.
 
 ## Ce qui manque, dans l'ordre où l'écrire
 
-Huit pages. Une par semaine. Chacune répond à une question que personne ne
-traite et que le vendeur concerné doit résoudre avant de pouvoir vendre.
+Les dix situations de vente sont écrites, datées et dotées d'une foire aux questions
+visible sur la page et déclarée aux moteurs (octobre 2026). Trois questions restent
+sans réponse directe, à écrire avec des chiffres sourcés et datés, jamais d'opinion :
 
-1. **Vendre un bien occupé, et le congé pour vendre.** Délais, droit de
-   préemption du locataire, prix du bien occupé contre prix du bien libre.
-2. **Vendre après une succession.** Attestation notariée, accord des héritiers,
-   calendrier réel, fiscalité de la plus value en cas de succession.
-3. **Vendre en indivision.** Ce qu'il faut de majorité, ce qui se passe quand un
-   indivisaire refuse, et le recours au tribunal.
-4. **Vendre pendant un divorce.** Qui signe, ce que devient le prix, le rôle du
-   notaire, et le calendrier qui ne dépend pas que des époux.
-5. **Vendre quand la copropriété a voté des travaux.** Qui paie les appels de
-   fonds, ce qui se négocie, comment le dire à l'acheteur avant qu'il le
-   découvre.
-6. **Vendre depuis l'étranger.** Procuration, représentant fiscal, signature à
-   distance, imposition du non résident.
-7. **Ce qui reste à la charge du vendeur.** Diagnostics, mainlevée, syndic,
-   plus value : le compte réel, pas la théorie.
-8. **Vendre seul ou par agence à Paris.** Comparaison honnête, y compris ce
-   qu'un particulier fait très bien tout seul.
-
-Chacune de ces pages sert deux fois : elle est citée par les moteurs, et elle
-devient le document que le vendeur reçoit par mail après le premier appel.
-
----
+1. **Faut il vendre maintenant ou attendre à Paris ?** À bâtir sur les chiffres des
+   notaires du Grand Paris et sur les ventes DVF, avec la date de parution.
+2. **Combien de temps faut il pour vendre un appartement à Paris ?** Délai médian
+   observé sur les mandats de l'agence, par arrondissement, et délai de marché publié.
+3. **Quelle plus value paie t on en revendant un appartement à Paris ?** Régime
+   d'imposition, abattements par durée de détention, cas de la résidence principale.
 
 ## Le bloc à coller dans l'outil
 

@@ -121,6 +121,15 @@ const articles = defineCollection({
     descriptionSeo: z.string().optional(),
     motsCles: z.array(z.string()).default([]),
     brouillon: z.boolean().default(false),
+    /*
+     * Ce que le lecteur doit retenir, en phrases complètes qui se suffisent à
+     * elles-mêmes : affiché sous le chapô, repris par les moteurs génératifs.
+     */
+    essentiel: z.array(z.string()).default([]),
+    /* Questions que l'article règle, affichées en fin de texte et déclarées en FAQPage. */
+    faq: z
+      .array(z.object({ question: z.string(), reponse: z.string() }))
+      .default([]),
   }),
 });
 

@@ -9,10 +9,20 @@ const donnees = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    /* Identifiant stable : les articles et les situations y rattachent leur auteur. */
+    '@id': `${site.url}/samy-santamarina#personne`,
     name: 'Samy Santamarina',
+    givenName: 'Samy',
+    familyName: 'Santamarina',
     jobTitle: 'Président fondateur',
+    description:
+      "Agent immobilier à Paris, fondateur de Trudaines, titulaire de la carte professionnelle de transaction. Ancien directeur développement et communication en agences événementielles, enseignant en école d'immobilier et de commerce sur l'automatisation et l'intelligence artificielle.",
     worksFor: { '@id': `${site.url}/#agence` },
     url: `${site.url}/samy-santamarina`,
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'KEDGE Business School' },
+      { '@type': 'CollegeOrUniversity', name: 'IMSI, Institut du management des services immobiliers' },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.adresse.rue,
@@ -28,9 +38,13 @@ const donnees = [
       'Estimation immobilière',
       'Mandat exclusif',
       'Valeurs foncières et données de marché',
+      'Vente en succession, en indivision et en cours de divorce',
+      'Vente d’un bien occupé',
       'Paris 9e',
       'Montmartre',
       'Paris 10e',
+      'Paris 17e',
+      'Paris 18e',
     ],
     /*
      * Titre professionnel et retombées presse déclarés aux moteurs. Un moteur

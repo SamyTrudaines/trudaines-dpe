@@ -15,6 +15,25 @@ motsCles:
   - don familial 50 000 euros 2027
   - notaire succession Paris agent immobilier
   - vendre l'appartement d'un parent en maison de retraite
+essentiel:
+  - "Depuis la loi n° 2026-248 du 7 avril 2026, le président du tribunal judiciaire peut autoriser un indivisaire à conclure seul la vente d'un bien indivis, en cas d'urgence et dans l'intérêt commun de l'indivision (article 815-6 du code civil)."
+  - "Le recours des héritiers détenant les deux tiers des droits, prévu à l'article 815-5-1 du code civil, reste ouvert à côté de cette nouvelle voie."
+  - "Le projet de loi de finances pour 2027, déposé le 1er octobre 2026, prévoit un don familial de sommes d'argent exonéré de 50 000 € pour les dons faits entre le 1er janvier et le 30 juin 2027 ; le texte est en discussion jusqu'en décembre et ne s'applique pas encore."
+  - "Pour les droits de succession, les meubles sont évalués par défaut à 5 % de l'actif (article 764 du code général des impôts) ; un inventaire peut retenir une valeur plus juste quand l'appartement ne contient que des meubles d'usage."
+  - "La vente du logement d'un parent sous tutelle, curatelle ou habilitation familiale suppose en principe l'autorisation du juge des contentieux de la protection (article 426 du code civil)."
+faq:
+  - question: "Un héritier peut-il bloquer la vente d'un appartement en indivision ?"
+    reponse: "Moins facilement qu'avant. Vendre un bien indivis suppose en principe l'accord de tous, mais depuis la loi du 7 avril 2026, le président du tribunal judiciaire peut autoriser un indivisaire à conclure seul la vente s'il constate l'urgence et l'intérêt commun de l'indivision. Le recours des héritiers détenant les deux tiers des droits (article 815-5-1) existe toujours."
+  - question: "Que change la loi du 7 avril 2026 sur l'indivision ?"
+    reponse: "Elle complète l'article 815-6 du code civil : le président du tribunal judiciaire peut autoriser un indivisaire à vendre seul un bien indivis. Ce n'est pas une vente à la majorité : la vente doit profiter à tous les héritiers, et le dossier se prépare avec un avis de valeur écrit, l'état du bien et l'offre reçue."
+  - question: "Le don familial exonéré de 50 000 € est-il déjà en vigueur ?"
+    reponse: "Non. Le projet de loi de finances pour 2027, déposé le 1er octobre 2026, prévoit un don familial de sommes d'argent exonéré de 50 000 € pour les dons faits entre le 1er janvier et le 30 juin 2027. Le texte est en discussion jusqu'en décembre et aucun notaire ne peut l'appliquer aujourd'hui : montants, dates et conditions peuvent changer."
+  - question: "Faut-il vider l'appartement avant de le mettre en vente ?"
+    reponse: "Non. Les visites peuvent commencer dans un appartement encore meublé, pourvu que passages, fenêtres et dessus des meubles soient dégagés. Avant de tout donner, demandez au notaire si un inventaire est utile : pour les droits de succession, les meubles sont évalués par défaut à 5 % de l'actif (article 764 du code général des impôts)."
+  - question: "Faut-il faire des travaux dans un appartement hérité avant de le vendre ?"
+    reponse: "Des petites réparations, oui ; une rénovation, non. Faire reprendre par un artisan une moulure qui tombe, une fissure au plafond ou une fenêtre qui ferme mal est presque toujours rentable. Refaire la cuisine ou la salle de bains l'est rarement : l'acquéreur d'un appartement ancien veut choisir ses travaux et paie pour les volumes, parquets, cheminées et moulures d'origine."
+  - question: "Peut-on vendre l'appartement d'un parent entré en maison de retraite ?"
+    reponse: "Oui, mais c'est lui qui vend, ou une personne munie de sa procuration. S'il fait l'objet d'une mesure de protection, tutelle, curatelle ou habilitation familiale, la vente de son logement suppose en principe l'autorisation du juge des contentieux de la protection (article 426 du code civil)."
 ---
 
 Sur le terrain, je vois trop de dossiers à l'arrêt. Un héritier loin, un autre qui hésite, un troisième qui ne répond plus, et l'appartement reste fermé, les charges courent, les murs vieillissent. Les photographies de cet article ont été prises lors d'une visite d'estimation : c'est l'état dans lequel la plupart des familles m'ouvrent la porte.

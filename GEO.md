@@ -7,7 +7,7 @@ mentale doit tenir en vingt minutes par mois.
 
 ## Ce qui est déjà en place, et qu'il n'y a plus à faire
 
-- `robots.txt` autorise nommément les quatorze robots d'index et de consultation.
+- `robots.txt` autorise nommément dix-neuf robots d'index et de consultation, Le Chat de Mistral compris.
 - `llms.txt` porte des faits datés et sourcés, rédigés pour être cités tels quels.
 - `llms-full.txt` reprend `llms.txt` et y ajoute le texte intégral des pages agence, situations,
   quartiers, biens à vendre et articles, construit à chaque déploiement.

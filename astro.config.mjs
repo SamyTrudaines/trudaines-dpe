@@ -1,13 +1,47 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import { readdirSync, readFileSync } from "node:fs";
+import matter from "gray-matter";
+
+/*
+ * Date de dernière modification des pages éditoriales, pour le plan du site.
+ * Elle est lue dans le frontmatter (dateMaj, sinon date) : une page sans date
+ * n'en reçoit pas, plutôt que la date du build, qui ferait croire aux moteurs
+ * que tout le site change à chaque déploiement.
+ */
+function datesDeContenu() {
+  const dates = new Map();
+  const lire = (dossier, prefixe, champs) => {
+    for (const fichier of readdirSync(`./src/content/${dossier}`)) {
+      if (!fichier.endsWith(".md")) continue;
+      const { data } = matter(readFileSync(`./src/content/${dossier}/${fichier}`, "utf8"));
+      if (data.brouillon) continue;
+      const valeur = champs.map((c) => data[c]).find(Boolean);
+      if (valeur) dates.set(`${prefixe}/${fichier.replace(/\.md$/, "")}`, new Date(valeur));
+    }
+  };
+  lire("articles", "/panorama", ["dateMaj", "date"]);
+  lire("situations", "/vendre", ["dateMaj"]);
+  return dates;
+}
+const dates = datesDeContenu();
 
 export default defineConfig({
   site: "https://www.trudaines.com",
   trailingSlash: "never",
   // Feuille de style écrite dans chaque page : une requête bloquante de moins avant le premier affichage.
   build: { format: "file", inlineStylesheets: "always" },
-  integrations: [sitemap({ filter: (page) => !page.includes("/merci") && !page.includes("/acquereurs-prioritaires") })],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes("/merci") && !page.includes("/acquereurs-prioritaires"),
+      serialize: (item) => {
+        const chemin = new URL(item.url).pathname.replace(/\/$/, "");
+        const date = dates.get(chemin);
+        return date ? { ...item, lastmod: date.toISOString() } : item;
+      },
+    }),
+  ],
   vite: { plugins: [tailwindcss()] },
 
   /*
