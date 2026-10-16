@@ -13,6 +13,7 @@ import { distance, memeVoie, position, ruesDuQuartier, type Point } from '../../
 import { rues, periode, type Rue } from '../../../lib/rues';
 import { prix, nombre } from '../../../lib/format';
 import { evt } from '../../../lib/entonnoir';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations } from '../../../data/lieux';
 
 /**
  * Estimation d'un quartier : textes dans src/data/estimations-quartiers.ts,
@@ -86,8 +87,13 @@ const donnees = [
     '@type': 'Service',
     name: `Estimation immobilière ${page.nom}, ${secteur.nom}`,
     serviceType: 'Estimation immobilière',
-    provider: { '@id': 'https://www.trudaines.com/#cabinet' },
-    areaServed: { '@type': 'Place', name: `${page.nom}, ${secteur.nomLong}` },
+    provider: { '@id': 'https://www.trudaines.com/#agence' },
+    areaServed: {
+      '@type': 'Place',
+      name: `${page.nom}, ${secteur.nomLong}`,
+      ...(arrondissementParCodePostal[page.codePostal] ? { containedInPlace: lieuEnDonnees(arrondissementParCodePostal[page.codePostal]) } : {}),
+      ...donneesDeRattachement(rattachementsEstimations[page.slug] ?? {}),
+    },
   },
 ];
 ---

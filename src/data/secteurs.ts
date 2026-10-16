@@ -245,7 +245,7 @@ export const secteurs: Secteur[] = [
       "Estimation gratuite à Paris 7e : Saint-Germain, Invalides, Gros-Caillou. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 7e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière dans le 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Prix par rue, estimation offerte sous 48 h.",
+      "Agence immobilière Paris 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-7',
     intro:
       "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue, pas d'une moyenne.",

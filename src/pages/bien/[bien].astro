@@ -105,7 +105,7 @@ const donnees = [
       ...(d.prix > 0 ? { price: d.prix, priceCurrency: 'EUR' } : {}),
       availability: d.statut === 'vendu' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
       businessFunction: 'http://purl.org/goodrelations/v1#Sell',
-      seller: { '@id': `${site.url}/#cabinet` },
+      seller: { '@id': `${site.url}/#agence` },
     },
   }]),
   {

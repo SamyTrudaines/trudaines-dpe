@@ -6,6 +6,7 @@ prixMoyenM2: 8 850 € le m², médiane pondérée des voies mesurées
 fourchette: 6 700 à 11 000 € le m², du premier au neuvième décile pondéré des voies du quartier
 chapo: Au nord de la rue Guy Môquet, les Épinettes offrent 1 500 € de moins au mètre carré que les Batignolles voisines. C'est le dernier quartier du 17e où un premier achat reste possible.
 ordre: 7
+dateMaj: 2026-10-16
 titreSeo: Immobilier Épinettes, Paris 17e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier des Épinettes, Paris 17e, calculés sur 558 ventes signées. Estimation écrite par l'agence Trudaines.
 photos:

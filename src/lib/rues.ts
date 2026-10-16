@@ -37,6 +37,8 @@ export type Arrondissement = {
 export const rues = donnees.rues as Rue[];
 export const arrondissements = donnees.arrondissements as Record<string, Arrondissement>;
 export const periode = donnees.periode as string;
+/** Date de parution du fichier DVF utilisé, AAAA-MM-JJ. */
+export const millesime = donnees.millesime as string;
 export const ventesMinimum = donnees.ventesMinimum as number;
 
 /** Libellé de typologie : 4 signifie « quatre pièces et plus ». */

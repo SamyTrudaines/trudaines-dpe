@@ -12,9 +12,12 @@ import AlerteExpress from '../../components/AlerteExpress.astro';
 import { agencesLocales } from '../../data/agences-locales';
 import { secteurs } from '../../data/secteurs';
 import { site } from '../../data/site';
-import { nombre } from '../../lib/format';
-import { periode, ventesMinimum } from '../../lib/rues';
-import { zones, ruesDuQuartier } from '../../lib/quartiers';
+import Faq from '../../components/Faq.astro';
+import { faqEnDonnees } from '../../lib/agence';
+import { nombre, prix, dateFr, dateIso, enPhrase } from '../../lib/format';
+import { periode, ventesMinimum, millesime } from '../../lib/rues';
+import { zones, ruesDuQuartier, distance } from '../../lib/quartiers';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsQuartiers } from '../../data/lieux';
 import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
 
 interface Props { quartier: CollectionEntry<'quartiers'> }
@@ -65,7 +68,7 @@ const exemple = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? b :
 const identifiantListe = `rues-${id}`;
 const ancreArrondissement = `/prix-immobilier#arr-${codePostal}`;
 
-const donnees = [
+const donnees: Record<string, unknown>[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -83,6 +86,86 @@ const donnees = [
 const donneeEstimation = liste.length
   ? `Dans ce quartier, la médiane va de ${euros(moinsChere)} à ${euros(plusChere)} le mètre carré d'une rue à l'autre. Dans la moitié des rues, huit ventes sur dix s'étalent même sur plus de ${euros(etendueMediane)} le mètre carré.`
   : '';
+
+/*
+ * Réponses courtes, calculées sur les mêmes données que la page, pour les
+ * visiteurs pressés comme pour les assistants qui cherchent un fait à citer.
+ * Les rues la plus et la moins chère sont celles de la liste ci-dessus.
+ */
+const dateMaj = quartier.data.dateMaj;
+const urlPage = `${site.url}/quartiers/${id}`;
+const bureau = { lon: site.adresse.longitude, lat: site.adresse.latitude };
+const metresDuBureau = zone.centre ? Math.round(distance(bureau, zone.centre) / 10) * 10 : null;
+const distanceBureau = metresDuBureau === null ? '' : metresDuBureau >= 1000 ? `${(metresDuBureau / 1000).toFixed(1).replace('.', ',')} km` : `${nombre(metresDuBureau)} m`;
+const ruePlusChere = liste.length ? liste.reduce((a, b) => (b.mediane > a.mediane ? b : a)) : null;
+const rueMoinsChere = liste.length ? liste.reduce((a, b) => (b.mediane < a.mediane ? b : a)) : null;
+const faitVentes = quartier.data.faits.find((f) => /ventes/i.test(f.titre))?.valeur ?? '';
+const millesimeTexte = dateFr(new Date(millesime));
+
+const faq = [
+  {
+    question: `Quel est le prix au mètre carré à ${nom}, ${arrondissement} ?`,
+    reponse: `${prixMedian} le mètre carré, prix médian des appartements vendus${faitVentes ? ` (${faitVentes})` : ''}, ${quartier.data.fourchette}.${
+      ruePlusChere && rueMoinsChere
+        ? ` D'une rue à l'autre, la médiane va de ${prix(rueMoinsChere.mediane)} (${enPhrase(rueMoinsChere.nom)}) à ${prix(ruePlusChere.mediane)} (${enPhrase(ruePlusChere.nom)}), ventes de ${periode}.`
+        : ''
+    } Source : base des valeurs foncières de l'administration fiscale.`,
+  },
+  ...(ruePlusChere && rueMoinsChere
+    ? [
+        {
+          question: `Quelle est la rue la plus chère de ${nom} ?`,
+          reponse: `${ruePlusChere.nom}, ${prix(ruePlusChere.mediane)} le mètre carré médian sur ${ruePlusChere.ventes} ventes de ${periode}. La moins chère des rues mesurées est la ${enPhrase(rueMoinsChere.nom)}, ${prix(rueMoinsChere.mediane)} le mètre carré sur ${rueMoinsChere.ventes} ventes. ${liste.length} rues sont publiées pour ce quartier, chacune avec au moins ${ventesMinimum} ventes sur la période.`,
+        },
+      ]
+    : []),
+  {
+    question: `Comment Trudaines estime-t-elle un appartement à ${nom} ?`,
+    reponse: `Nous partons des ventes signées dans votre rue et dans les rues voisines, puis nous visitons : l'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 48 heures, gratuit et sans engagement.${
+      distanceBureau ? ` Notre bureau, ${site.adresse.rue} à Paris 18e, est à ${distanceBureau} du centre du quartier à vol d'oiseau.` : ''
+    }`,
+  },
+  {
+    question: `D'où viennent les prix publiés pour ${nom} ?`,
+    reponse: `Du fichier des demandes de valeurs foncières (DVF) de la direction générale des finances publiques, millésime du ${millesimeTexte} : ventes d'appartements signées de ${periode}, hors multilots, sans aucune annonce ni estimation dans le calcul. Une rue n'est publiée qu'à partir de ${ventesMinimum} ventes. Les prix sont recalculés à chaque parution de la base, en avril et en octobre.`,
+  },
+];
+
+/* Le quartier comme lieu, relié aux entités publiques (src/data/lieux.ts), puis la page qui en parle. */
+const arrondissementLieu = arrondissementParCodePostal[codePostal];
+donnees.push(
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    '@id': `${urlPage}#lieu`,
+    name: `${nom}, ${arrondissement}`,
+    url: urlPage,
+    description: `Quartier ${nom} tel que Trudaines le mesure : les rues de ${arrondissement} dont le centre est à moins de ${zone.rayon} m du centre de ${zone.reperes.join(', ')}.`,
+    ...(zone.centre
+      ? {
+          geo: {
+            '@type': 'GeoCircle',
+            geoMidpoint: { '@type': 'GeoCoordinates', latitude: Number(zone.centre.lat.toFixed(6)), longitude: Number(zone.centre.lon.toFixed(6)) },
+            geoRadius: zone.rayon,
+          },
+        }
+      : {}),
+    ...(arrondissementLieu ? { containedInPlace: lieuEnDonnees(arrondissementLieu) } : {}),
+    ...donneesDeRattachement(rattachementsQuartiers[id] ?? {}),
+  },
+  faqEnDonnees(faq),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': urlPage,
+    url: urlPage,
+    name: quartier.data.titreSeo,
+    ...(dateMaj ? { dateModified: dateIso(dateMaj) } : {}),
+    about: { '@id': `${urlPage}#lieu` },
+    publisher: { '@id': `${site.url}/#agence` },
+    isPartOf: { '@type': 'WebSite', name: site.nomLong, url: site.url },
+  }
+);
 ---
 <Layout
   ancreEstimation={`#estimation-${id}`}
@@ -110,6 +193,7 @@ const donneeEstimation = liste.length
         {liste.length > 0
           ? `${liste.length} rues, d'après les ventes d'appartements signées de ${periode}.`
           : "Les prix au mètre carré du quartier, d'après les ventes d'appartements signées."}
+        {dateMaj && <> Page mise à jour le <time datetime={dateIso(dateMaj)}>{dateFr(dateMaj)}</time>.</>}
       </p>
 
       {/*
@@ -301,6 +385,8 @@ const donneeEstimation = liste.length
     evt={evt('quartier', 'alerte', id)}
     secteur={secteur?.nom}
   />
+
+  <Faq questions={faq} titre={`Questions sur ${nom}`} />
 
   <section class="section filet">
     <div class="conteneur">

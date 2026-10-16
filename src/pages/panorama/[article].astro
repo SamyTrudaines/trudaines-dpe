@@ -30,7 +30,7 @@ const donnees = [
     datePublished: dateIso(article.data.date),
     dateModified: dateIso(article.data.dateMaj ?? article.data.date),
     author: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
-    publisher: { '@id': `${site.url}/#cabinet` },
+    publisher: { '@id': `${site.url}/#agence` },
     mainEntityOfPage: `${site.url}/panorama/${article.id}`,
     ...(article.data.image ? { image: new URL(article.data.image, site.url).href } : {}),
     keywords: article.data.motsCles.join(', '),
