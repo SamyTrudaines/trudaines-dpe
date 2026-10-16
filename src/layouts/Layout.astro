@@ -12,6 +12,8 @@ import { site } from '../data/site';
 import { agrégatAvis } from '../lib/avis';
 import { secteurs } from '../data/secteurs';
 import { agencesLocales } from '../data/agences-locales';
+import { getCollection } from 'astro:content';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsAgences } from '../data/lieux';
 
 interface Props {
   /** Ancre du formulaire local : la barre mobile y mène au lieu de /estimation. */
@@ -45,6 +47,7 @@ const { titre, description, image, type = 'website', noindex = false, filAriane 
  * le visiteur comme le moteur peuvent les recompter sur la page.
  */
 const avis = await agrégatAvis();
+const quartiers = (await getCollection('quartiers')).sort((a, b) => a.data.ordre - b.data.ordre);
 
 /*
  * Version construite, posée par Cloudflare Pages au moment du build (branche et
@@ -58,7 +61,7 @@ const version = process.env.CF_PAGES_COMMIT_SHA
 const agence = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
-  '@id': `${site.url}/#cabinet`,
+  '@id': `${site.url}/#agence`,
   name: site.nomLong,
   alternateName: [site.nom, 'Trudaines Immobilier Paris'],
   legalName: `${site.raisonSociale} ${site.formeJuridique}`,
@@ -96,15 +99,33 @@ const agence = {
     latitude: site.adresse.latitude,
     longitude: site.adresse.longitude,
   },
-  /* Dérivé de src/data/secteurs.ts : ajouter un secteur l'ajoute ici sans autre geste. */
+  /*
+   * Dérivé de src/data/secteurs.ts : ajouter un secteur l'ajoute ici sans autre
+   * geste. Chaque arrondissement renvoie à son article Wikipédia et à son élément
+   * Wikidata (src/data/lieux.ts) : un assistant le rattache ainsi au lieu qu'il
+   * connaît déjà, sans confondre Paris 9e et un autre « 9e ».
+   */
   areaServed: [
-    ...secteurs.map((s) => ({ '@type': 'AdministrativeArea', name: `${s.nom} arrondissement` })),
+    ...secteurs.map((s) => {
+      const lieu = arrondissementParCodePostal[s.arrondissement];
+      return lieu
+        ? { ...lieuEnDonnees(lieu), url: `${site.url}${s.hrefAgence}` }
+        : { '@type': 'AdministrativeArea', name: `${s.nom} arrondissement`, url: `${site.url}${s.hrefAgence}` };
+    }),
     /* Les lieux des pages « agence immobilière » : Montmartre, Saint-Georges, Trudaine. */
     ...agencesLocales.map((l) => ({
       '@type': 'Place',
       name: `${l.nom}, ${l.arrondissement}`,
       url: `${site.url}/agence-immobiliere-${l.slug}`,
       geo: { '@type': 'GeoCoordinates', latitude: l.repere.lat, longitude: l.repere.lon },
+      ...donneesDeRattachement(rattachementsAgences[l.slug] ?? {}),
+    })),
+    /* Les quartiers du site, décrits en détail (lieu, rues, repères) sur leur propre page. */
+    ...quartiers.map((q) => ({
+      '@type': 'Place',
+      '@id': `${site.url}/quartiers/${q.id}#lieu`,
+      name: `${q.data.nom}, ${q.data.arrondissement}`,
+      url: `${site.url}/quartiers/${q.id}`,
     })),
   ],
   openingHoursSpecification: site.horaires.map((h) => ({

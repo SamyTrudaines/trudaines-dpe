@@ -98,6 +98,8 @@ const quartiers = defineCollection({
     titreSeo: z.string(),
     descriptionSeo: z.string(),
     ordre: z.number().default(0),
+    /** Dernière révision de la page, affichée et déclarée aux moteurs (dateModified). */
+    dateMaj: z.coerce.date().optional(),
   }),
 });
 

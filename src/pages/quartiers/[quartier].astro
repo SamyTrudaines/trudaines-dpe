@@ -14,9 +14,10 @@ import { faqEnDonnees, phraseHonoraires } from '../../lib/agence';
 import { agencesLocales } from '../../data/agences-locales';
 import { secteurs } from '../../data/secteurs';
 import { site } from '../../data/site';
-import { nombre } from '../../lib/format';
-import { periode, ventesMinimum } from '../../lib/rues';
-import { zones, ruesDuQuartier } from '../../lib/quartiers';
+import { nombre, dateFr, dateIso } from '../../lib/format';
+import { periode, ventesMinimum, millesime } from '../../lib/rues';
+import { zones, ruesDuQuartier, distance } from '../../lib/quartiers';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsQuartiers } from '../../data/lieux';
 import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
 
 interface Props { quartier: CollectionEntry<'quartiers'> }
@@ -84,6 +85,14 @@ const reponseCourte = liste.length
   ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
   : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
 
+/* Date de révision de la page, millésime de la base et distance du bureau : les faits que les réponses citent. */
+const dateMaj = quartier.data.dateMaj;
+const urlPage = `${site.url}/quartiers/${id}`;
+const bureau = { lon: site.adresse.longitude, lat: site.adresse.latitude };
+const metresDuBureau = zone.centre ? Math.round(distance(bureau, zone.centre) / 10) * 10 : null;
+const distanceBureau = metresDuBureau === null ? '' : metresDuBureau >= 1000 ? `${(metresDuBureau / 1000).toFixed(1).replace('.', ',')} km` : `${nombre(metresDuBureau)} m`;
+const millesimeTexte = dateFr(new Date(millesime));
+
 const faq = [
   {
     question: `Quel est le prix au m² à ${nom} ?`,
@@ -117,7 +126,13 @@ const faq = [
   },
   {
     question: `Quelle agence immobilière choisir pour vendre à ${nom} ?`,
-    reponse: `Celle qui vous montre les ventes signées de votre rue avant de parler de prix. Trudaines Immobilier, agence indépendante installée au ${site.adresse.rue}, ${site.adresse.codePostal} Paris, publie le prix de ${liste.length || 'chaque'} rues de ${nom} et remet un avis de valeur écrit après visite. Un seul interlocuteur, Samy Santamarina, de l'estimation à la signature.`,
+    reponse: `Celle qui vous montre les ventes signées de votre rue avant de parler de prix. Trudaines Immobilier, agence indépendante installée au ${site.adresse.rue}, ${site.adresse.codePostal} Paris, publie le prix de ${liste.length || 'chaque'} rues de ${nom} et remet un avis de valeur écrit après visite. Un seul interlocuteur, Samy Santamarina, de l'estimation à la signature.${
+      distanceBureau ? ` Le bureau est à ${distanceBureau} du centre du quartier à vol d'oiseau.` : ''
+    }`,
+  },
+  {
+    question: `D'où viennent les prix publiés pour ${nom} ?`,
+    reponse: `Du fichier des demandes de valeurs foncières (DVF) de la direction générale des finances publiques, millésime du ${millesimeTexte} : ventes d'appartements signées de ${periode}, hors multilots, sans aucune annonce ni estimation dans le calcul. Une rue n'est publiée qu'à partir de ${ventesMinimum} ventes. Les prix sont recalculés à chaque parution de la base, en avril et en octobre.`,
   },
 ];
 
@@ -134,15 +149,41 @@ const donnees = [
       url: `${site.url}/prix-immobilier/${r.slug}`,
     })),
   },
+  /* Le quartier comme lieu : périmètre mesuré, arrondissement, quartiers administratifs et repères reliés à Wikidata (src/data/lieux.ts). */
   {
     '@context': 'https://schema.org',
     '@type': 'Place',
+    '@id': `${urlPage}#lieu`,
     name: `${nom}, ${arrondissement}`,
+    url: urlPage,
     description: reponseCourte,
-    containedInPlace: { '@type': 'AdministrativeArea', name: arrondissement, address: { '@type': 'PostalAddress', postalCode: codePostal, addressLocality: 'Paris', addressCountry: 'FR' } },
-    url: `${site.url}/quartiers/${id}`,
+    ...(zone.centre
+      ? {
+          geo: {
+            '@type': 'GeoCircle',
+            geoMidpoint: { '@type': 'GeoCoordinates', latitude: Number(zone.centre.lat.toFixed(6)), longitude: Number(zone.centre.lon.toFixed(6)) },
+            geoRadius: zone.rayon,
+          },
+        }
+      : {}),
+    containedInPlace: arrondissementParCodePostal[codePostal]
+      ? { ...lieuEnDonnees(arrondissementParCodePostal[codePostal]), address: { '@type': 'PostalAddress', postalCode: codePostal, addressLocality: 'Paris', addressCountry: 'FR' } }
+      : { '@type': 'AdministrativeArea', name: arrondissement, address: { '@type': 'PostalAddress', postalCode: codePostal, addressLocality: 'Paris', addressCountry: 'FR' } },
+    ...donneesDeRattachement(rattachementsQuartiers[id] ?? {}),
   },
   faqEnDonnees(faq),
+  /* La page elle même, datée de sa dernière révision, à propos du lieu ci-dessus. */
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': urlPage,
+    url: urlPage,
+    name: quartier.data.titreSeo,
+    ...(dateMaj ? { dateModified: dateIso(dateMaj) } : {}),
+    about: { '@id': `${urlPage}#lieu` },
+    publisher: { '@id': `${site.url}/#agence` },
+    isPartOf: { '@type': 'WebSite', name: site.nomLong, url: site.url },
+  },
 ];
 
 ---
@@ -172,6 +213,7 @@ const donnees = [
         {liste.length > 0
           ? `${liste.length} rues, d'après les ventes d'appartements signées de ${periode}.`
           : "Les prix au mètre carré du quartier, d'après les ventes d'appartements signées."}
+        {dateMaj && <> Page mise à jour le <time datetime={dateIso(dateMaj)}>{dateFr(dateMaj)}</time>.</>}
       </p>
       {/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */}
       <p class="chapo mt-6 max-w-3xl" id="reponse-courte">{reponseCourte}</p>

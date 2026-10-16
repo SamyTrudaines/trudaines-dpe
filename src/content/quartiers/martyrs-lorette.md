@@ -6,6 +6,7 @@ prixMoyenM2: 11 150 € le m²
 fourchette: 8 100 à 14 600 € le m², du premier au neuvième décile
 chapo: Autour de Notre Dame de Lorette et de la rue des Martyrs, un quartier commerçant et recherché, où la demande dépasse durablement l'offre disponible.
 ordre: 2
+dateMaj: 2026-10-16
 titreSeo: Immobilier Martyrs Lorette, Paris 9e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier Martyrs Lorette, Paris 9e. Estimation écrite et vente accompagnée par l'agence Trudaines.
 photos:

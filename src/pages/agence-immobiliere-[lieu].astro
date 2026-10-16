@@ -15,6 +15,7 @@ import { secteurs } from '../data/secteurs';
 import { site } from '../data/site';
 import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
 import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsAgences } from '../data/lieux';
 import { evt, referencesProches } from '../lib/entonnoir';
 import { prix, nombre } from '../lib/format';
 import { distance, memeVoie, position, ruesDuQuartier } from '../lib/quartiers';
@@ -87,7 +88,8 @@ const donnees = [
     name: `Agence immobilière ${lieu.nom}`,
     serviceType: 'Agence immobilière : vente, estimation, recherche, gestion locative',
     url: `${site.url}/agence-immobiliere-${id}`,
-    provider: { '@id': `${site.url}/#cabinet` },
+    provider: { '@id': `${site.url}/#agence` },
+    /* Le périmètre, relié aux lieux que Wikidata connaît (src/data/lieux.ts). */
     areaServed: {
       '@type': 'Place',
       name: `${lieu.nom}, ${lieu.arrondissement}`,
@@ -96,6 +98,8 @@ const donnees = [
         geoMidpoint: { '@type': 'GeoCoordinates', latitude: lieu.repere.lat, longitude: lieu.repere.lon },
         geoRadius: lieu.rayon ?? 500,
       },
+      ...(arrondissementParCodePostal[lieu.codePostal] ? { containedInPlace: lieuEnDonnees(arrondissementParCodePostal[lieu.codePostal]) } : {}),
+      ...donneesDeRattachement(rattachementsAgences[id] ?? {}),
     },
   },
   faqEnDonnees(faq),

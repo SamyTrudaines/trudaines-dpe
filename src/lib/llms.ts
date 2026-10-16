@@ -151,7 +151,8 @@ ${situations.map((s) => `- [${s.data.question}](${site.url}/vendre/${s.id})`).jo
 - [recrutement de mandataires](${site.url}/nous-rejoindre)
 
 ## Quartiers couverts
-${quartiers.map((q) => `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id})`).join('\n')}
+Prix médian au mètre carré des appartements vendus, puis fourchette du premier au neuvième décile, source DVF. Chaque page publie en plus le prix de chacune de ses rues.
+${quartiers.map((q) => `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${q.data.prixMoyenM2}${q.data.faits.find((f) => /ventes/i.test(f.titre)) ? ` (${q.data.faits.find((f) => /ventes/i.test(f.titre))?.valeur})` : ''} ; ${q.data.fourchette}.`).join('\n')}
 
 ## Publications récentes
 ${articles.slice(0, 10).map((a) => `- [${a.data.titre}](${site.url}/panorama/${a.id})`).join('\n')}
