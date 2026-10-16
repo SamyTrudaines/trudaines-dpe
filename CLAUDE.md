@@ -80,6 +80,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   les fichiers (images, flux, PDF) gardent leur 404. Les anciennes adresses connues ont leur cible précise dans
   `public/_redirects`. `public/_routes.json` évite d'appeler la fonction pour les fichiers statiques.
 
+- Robots : `src/pages/robots.txt.ts` nomme les moteurs et les assistants et porte les Content Signals (search, ai-input,
+  ai-train à yes). Les DNS sont chez Gandi : aucun réglage Cloudflare AI Crawl Control ne s'applique tant que la zone
+  n'y est pas ; s'il y passe un jour, Training jamais sur Block (DEPLOIEMENT.md, section 5). L'audit de mise en ligne
+  sonde Googlebot, Bingbot, Applebot, GPTBot, OAI-SearchBot, ClaudeBot et PerplexityBot sur le plan du site.
 - Search Console : relevé quotidien par `.github/workflows/search-console.yml` (`scripts/search-console.mjs`) vers
   une feuille Google privée de Samy, jamais dans le dépôt, qui est public. Aucune clé de compte de service : GitHub
   s'identifie par Workload Identity Federation (projet Google Cloud trudaines-511314, pool `github`, fournisseur

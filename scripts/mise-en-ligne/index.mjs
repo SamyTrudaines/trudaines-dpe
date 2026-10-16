@@ -103,6 +103,15 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   );
   noter('Nouveau site', nouveau.gardeOrigine === 403 ? 'ok' : 'alerte', `garde des formulaires : statut ${nouveau.gardeOrigine} face à un site tiers, 403 attendu`);
   noter('Nouveau site', nouveau.pieges === 200 ? 'ok' : 'alerte', `fonctions actives : piège à robots en ${nouveau.pieges}`);
+  const robots = Object.entries(nouveau.robots || {});
+  const refuses = robots.filter(([, r]) => r.statut !== 200 || r.mitige);
+  noter(
+    'Référencement',
+    refuses.length ? 'alerte' : 'ok',
+    refuses.length
+      ? `robots refusés sur le plan du site : ${refuses.map(([n, r]) => `${n} ${r.statut}${r.mitige ? ` (${r.mitige})` : ''}`).join(', ')}`
+      : `robots acceptés sur le plan du site, par leur nom d'agent : ${robots.map(([n]) => n).join(', ')}`
+  );
   const aa = audit.ancienSite;
   noter(
     'Référencement',

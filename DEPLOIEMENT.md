@@ -41,6 +41,7 @@ pour l'environnement **Production** et pour **Preview**.
 | `BREVO_DOI_REDIRECTION` | `https://www.trudaines.com/merci-abonnement` | Texte |
 | `SITE_URL` | `https://www.trudaines.com` | Texte |
 | `PUBLIC_GA4_ID` | `G-XXXXXXXXXX` | Texte |
+| `PUBLIC_BING_VALIDATION` | Code donné par Bing Webmaster Tools (balise `msvalidate.01`), facultatif | Texte |
 | `GITHUB_OAUTH_ID` | Identifiant de l'application OAuth GitHub | Texte |
 | `GITHUB_OAUTH_SECRET` | Secret de l'application OAuth GitHub | Secret |
 
@@ -191,7 +192,13 @@ Donner aux jetons une expiration courte et les révoquer après la mise en ligne
 Tant que les DNS restent chez Gandi, la redirection web de Gandi assure la
 racine et Cloudflare Pages passe `www` en https de lui-même : rien à faire.
 Les réglages ci-dessous ne valent qu'après un éventuel transfert de la zone
-chez Cloudflare. Le fichier `public/_redirects` gère les redirections de
+chez Cloudflare. Si ce transfert a lieu, ouvrir aussitôt **Security** puis
+**AI Crawl Control** : laisser Search, Agent et Training sur Allow, ou au pire
+Training sur Disallow, jamais sur Block. Depuis le 15 septembre 2026, un robot
+mixte (Googlebot, Bingbot, Applebot) est traité selon la règle la plus stricte :
+Training sur Block bloque Googlebot au niveau du réseau, sans trace dans les
+journaux (blog Cloudflare, 1er juillet et 15 septembre 2026). L'audit de mise
+en ligne sonde ces agents sur le plan du site. Le fichier `public/_redirects` gère les redirections de
 chemins. La canonicalisation du domaine se règle alors dans Cloudflare :
 
 1. Tableau de bord Cloudflare, sélectionnez le domaine `trudaines.com`.

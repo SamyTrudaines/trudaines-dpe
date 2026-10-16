@@ -106,6 +106,24 @@ async function testerAnciennesAdresses(chemins) {
   };
 }
 
+/*
+ * Robots des moteurs et des assistants, par leur nom d'agent. Depuis le
+ * 15 septembre 2026, Cloudflare bloque les robots mixtes (Googlebot, Bingbot,
+ * Applebot) sur les zones dont le réglage Training est sur Block. Le robot
+ * n'est pas authentifié par son adresse, un 200 ne prouve donc pas tout, mais
+ * un refus par nom d'agent, ou une atténuation Cloudflare (en-tête
+ * cf-mitigated), se voit tout de suite.
+ */
+const ROBOTS = [
+  ['Googlebot', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'],
+  ['Bingbot', 'Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)'],
+  ['Applebot', 'Mozilla/5.0 (compatible; Applebot/0.1; +http://www.apple.com/go/applebot)'],
+  ['GPTBot', 'GPTBot/1.0'],
+  ['OAI-SearchBot', 'OAI-SearchBot/1.0'],
+  ['ClaudeBot', 'ClaudeBot/1.0'],
+  ['PerplexityBot', 'PerplexityBot/1.0'],
+];
+
 export async function auditPublic() {
   const dns = {};
   const lire = async (cle, nom, type) => {
@@ -148,6 +166,11 @@ export async function auditPublic() {
   nouveau.accueil = resumePage(accueil);
   for (const chemin of ['/sitemap-index.xml', '/robots.txt', '/.well-known/security.txt']) {
     nouveau[chemin] = (await sonder(`https://${CIBLE_PAGES}${chemin}`)).statut;
+  }
+  nouveau.robots = {};
+  for (const [nom, agent] of ROBOTS) {
+    const r = await sonder(`https://${CIBLE_PAGES}/sitemap-index.xml`, { headers: { 'User-Agent': agent } });
+    nouveau.robots[nom] = { statut: r.statut, mitige: r.entetes['cf-mitigated'] || '' };
   }
   const formulaireVide = () => {
     const f = new FormData();

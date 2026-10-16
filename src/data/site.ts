@@ -78,6 +78,8 @@ export const site = {
    * traceur n'est posé et le bandeau des cookies ne s'affiche pas.
    */
   ga4: import.meta.env.PUBLIC_GA4_ID || 'G-VP03SDNLJG',
+  /** Code de vérification Bing Webmaster Tools (balise msvalidate.01), variable Cloudflare PUBLIC_BING_VALIDATION. */
+  bing: import.meta.env.PUBLIC_BING_VALIDATION || '',
   /**
    * Adresse de la page de réservation en ligne d'un créneau d'estimation (agenda
    * de l'agence), en https. Tant qu'elle est vide, aucun bouton « Choisir un
