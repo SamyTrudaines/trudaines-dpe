@@ -8,6 +8,25 @@ motsCles:
   - DPE
   - rénovation énergétique
   - vente immobilière
+essentiel:
+  - "Un classement F ou G n'empêche pas de vendre un appartement à Paris : c'est un paramètre de prix et de préparation, pas un obstacle."
+  - "Faire établir un devis d'entreprise avant la mise en vente remplace l'inquiétude de l'acheteur par un montant documenté, et ce devis se joint au dossier remis à l'acquéreur."
+  - "Annoncer la classe énergie dès l'annonce, avec le chiffrage des travaux, réduit les visites inutiles et améliore la qualité des offres reçues."
+  - "En copropriété, le gain énergétique dépend surtout de décisions collectives (façades, chaudière commune, menuiseries en parties communes) ; un propriétaire seul agit sur les fenêtres privatives, la ventilation, le chauffage individuel et parfois l'isolation par l'intérieur."
+  - "L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il s'impose aux maisons individuelles et aux immeubles en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025."
+faq:
+  - question: "Peut-on vendre un appartement classé F ou G à Paris ?"
+    reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter, mais ce n'est pas un obstacle à la vente : c'est un paramètre de prix, qui se prépare avant la mise en vente."
+  - question: "Faut-il faire un audit énergétique pour vendre un appartement en copropriété ?"
+    reponse: "Non. L'audit énergétique réglementaire s'impose à la vente des maisons individuelles et des immeubles d'habitation en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025. Beaucoup de vendeurs parisiens paient un audit dont ils n'ont pas besoin."
+  - question: "Un DPE F ou G fait-il baisser le prix d'un appartement ?"
+    reponse: "Il n'y a pas de décote fixe. L'ajustement dépend du montant des travaux, de leur faisabilité en copropriété et du profil de l'acheteur : un investisseur raisonne en rendement net après travaux, un couple qui achète sa résidence principale en capacité d'emprunt. Le même bien ne se vend pas au même prix selon la cible."
+  - question: "Faut-il annoncer le classement F ou G dans l'annonce ?"
+    reponse: "Oui. Annoncer le classement dès l'annonce, avec le chiffrage et le calendrier de travaux possible, réduit le nombre de visites inutiles et augmente la qualité des offres reçues. Cacher le sujet produit l'effet inverse : des visites nombreuses et des offres basses."
+  - question: "Que peut faire un copropriétaire seul pour améliorer le DPE de son appartement ?"
+    reponse: "Peu de choses, mais elles comptent. Il agit sur les fenêtres quand elles sont privatives, la ventilation, le chauffage individuel et parfois l'isolation par l'intérieur, au prix de quelques centimètres sur chaque mur. L'isolation des façades, la chaudière commune et les menuiseries en parties communes relèvent de l'assemblée générale."
+  - question: "Pourquoi faire chiffrer les travaux avant de mettre en vente ?"
+    reponse: "Parce que l'acheteur qui découvre un classement défavorable sans chiffrage imagine toujours le pire. Un devis d'entreprise établi avant la mise en vente, joint au dossier, permet de discuter d'un montant documenté plutôt que d'une inquiétude. Aucun coût moyen au mètre carré ne vaut : d'un immeuble à l'autre, les devis n'ont pas d'ordre de grandeur commun."
 ---
 
 Depuis l'entrée en vigueur du calendrier de restriction à la location, les classes F et G attirent une attention particulière des acheteurs, y compris de ceux qui achètent pour habiter. Ce n'est pas un obstacle à la vente, c'est un paramètre de prix et de préparation.

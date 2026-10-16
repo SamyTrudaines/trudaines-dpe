@@ -11,6 +11,25 @@ motsCles:
   - pré-état daté
   - vendre un appartement en copropriété
   - fiche synthétique
+essentiel:
+  - "Pour vendre un lot de copropriété, le vendeur remet à l'acquéreur les documents sur l'immeuble et ses finances au plus tard à la signature de l'avant-contrat (article L721-2 du code de la construction et de l'habitation)."
+  - "Le dossier comprend la fiche synthétique, le règlement de copropriété et l'état descriptif de division, les procès-verbaux des trois dernières assemblées générales, le carnet d'entretien, le plan pluriannuel de travaux et les informations financières rassemblées dans le pré-état daté."
+  - "Le syndic dispose d'un mois à compter de la demande pour délivrer la fiche synthétique, sous peine de 15 € par jour de retard imputés sur sa rémunération."
+  - "Les honoraires du syndic pour l'état daté, établi pour l'acte et payé par le vendeur, sont plafonnés à 380 € TTC depuis le 1er juin 2020 ; le prix du pré-état daté n'est pas plafonné."
+  - "Si les documents manquent à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur ne court qu'à partir du lendemain de leur remise (article L721-3)."
+faq:
+  - question: "Quels documents de copropriété faut-il fournir pour vendre un appartement ?"
+    reponse: "La fiche synthétique, le règlement de copropriété et l'état descriptif de division avec leurs modificatifs, les procès-verbaux des trois dernières assemblées générales, le carnet d'entretien, la notice d'information des copropriétaires, les conclusions du diagnostic technique global s'il existe, le plan pluriannuel de travaux, les informations financières du pré-état daté et la superficie loi Carrez."
+  - question: "Qu'est-ce qu'un pré-état daté ?"
+    reponse: "Le document, établi le plus souvent par le syndic, qui rassemble les informations financières à remettre à l'acquéreur au stade de l'avant-contrat : charges des deux derniers exercices, sommes dues au syndicat, impayés de la copropriété et quote-part du fonds de travaux. Il se distingue de l'état daté, établi pour l'acte, et son prix n'est pas plafonné par la loi."
+  - question: "Combien coûte l'état daté et qui le paie ?"
+    reponse: "Au plus 380 € TTC, à la charge du vendeur. Les honoraires du syndic pour l'état daté sont plafonnés à ce montant depuis le 1er juin 2020. Le pré-état daté, lui, n'a pas de plafond légal : demandez son montant au syndic avant de le commander."
+  - question: "Combien de temps le syndic a-t-il pour fournir les documents ?"
+    reponse: "Un mois à compter de la demande d'un copropriétaire pour la fiche synthétique, avec une pénalité de 15 € par jour de retard imputée sur sa rémunération. Faites la demande par écrit et conservez la date. Le vendeur est dispensé de remettre les procès-verbaux que le syndic ne lui a pas fournis."
+  - question: "Que se passe-t-il si les documents de copropriété manquent au compromis ?"
+    reponse: "Le délai de rétractation de dix jours de l'acquéreur ne commence pas. Il ne court qu'à partir du lendemain de la remise des documents sur l'organisation de l'immeuble et des informations financières (article L721-3). Le vendeur est engagé, l'acquéreur peut encore revenir sur sa décision, et la date à laquelle la vente devient ferme dépend du syndic."
+  - question: "Le vendeur récupère-t-il le fonds de travaux à la vente ?"
+    reponse: "Non. Les sommes versées au fonds de travaux restent attachées au lot et acquises au syndicat (article 14-2-1 de la loi du 10 juillet 1965). L'acquéreur peut accepter de verser un montant équivalent en plus du prix : c'est un point de négociation, à chiffrer avec l'échéancier des travaux votés."
 ---
 
 Quand une offre arrive, l'avant-contrat doit être accompagné du dossier de copropriété. Une partie des pièces dépend du syndic, qui n'a pas votre calendrier. Les demander le jour de l'offre, c'est laisser un tiers fixer la date de votre compromis.

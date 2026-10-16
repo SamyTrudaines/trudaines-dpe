@@ -26,7 +26,11 @@ const imageAbsolue = new URL(image, site.url).href;
 <title>{titre}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonique} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{/*
+  Extraits sans limite de longueur et aperçus d'image en grand : les aperçus IA
+  de Google et Bing reprennent la réponse courte en entier au lieu de la couper.
+*/}
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'} />
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content={site.nomLong} />
 <meta property="og:locale" content="fr_FR" />

@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
+import Faq from '../../components/Faq.astro';
 import { dateFr, dateIso } from '../../lib/format';
 import { site } from '../../data/site';
 
@@ -43,8 +44,9 @@ const donnees = [
     '@type': 'Article',
     headline: d.titre,
     description: d.chapo,
+    inLanguage: 'fr-FR',
     dateModified: dateIso(d.dateMaj),
-    author: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
+    author: { '@type': 'Person', '@id': `${site.url}/samy-santamarina#personne`, name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
     publisher: { '@id': `${site.url}/#cabinet` },
     mainEntityOfPage: `${site.url}/vendre/${situation.id}`,
   },
@@ -88,6 +90,7 @@ const donnees = [
       <div class="conteneur-texte prose-trudaines">
         <Content />
       </div>
+      {d.faq.length > 0 && <Faq questions={d.faq} titre="Les questions que se posent les vendeurs dans cette situation" />}
       <div class="conteneur-texte mt-16 pt-8">
         <p class="text-sm text-[color:var(--color-ardoise)]">
           Cette page décrit des règles générales à sa date de mise à jour. Elle ne remplace ni votre notaire ni

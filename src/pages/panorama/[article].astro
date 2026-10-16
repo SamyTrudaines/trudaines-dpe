@@ -4,6 +4,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { titreSeo, descriptionSeo } from '../../lib/seo';
 import CarteArticle from '../../components/CarteArticle.astro';
+import Faq from '../../components/Faq.astro';
 import { dateFr, dateIso } from '../../lib/format';
 import { site } from '../../data/site';
 
@@ -21,21 +22,38 @@ const autres = (await getCollection('articles', (a) => !a.data.brouillon && a.id
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
 
-const donnees = [
+/* Date de mise à jour affichée seulement quand elle diffère de la parution : sinon la ligne ne dirait rien. */
+const dateMaj = article.data.dateMaj && dateIso(article.data.dateMaj) !== dateIso(article.data.date) ? article.data.dateMaj : undefined;
+
+const donnees: Record<string, unknown>[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: article.data.titre,
     description: article.data.chapo,
+    inLanguage: 'fr-FR',
     datePublished: dateIso(article.data.date),
     dateModified: dateIso(article.data.dateMaj ?? article.data.date),
-    author: { '@type': 'Person', name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
+    author: { '@type': 'Person', '@id': `${site.url}/samy-santamarina#personne`, name: 'Samy Santamarina', url: `${site.url}/samy-santamarina` },
     publisher: { '@id': `${site.url}/#cabinet` },
     mainEntityOfPage: `${site.url}/panorama/${article.id}`,
     ...(article.data.image ? { image: new URL(article.data.image, site.url).href } : {}),
     keywords: article.data.motsCles.join(', '),
   },
 ];
+
+/* La FAQ n'est déclarée que si elle est affichée : un balisage qui décrit du texte invisible est un balisage trompeur. */
+if (article.data.faq.length > 0) {
+  donnees.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: article.data.faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.reponse },
+    })),
+  });
+}
 ---
 <Layout
   titre={article.data.titreSeo ?? titreSeo([article.data.titre, 'Trudaines'])}
@@ -48,9 +66,26 @@ const donnees = [
   <article>
     <header class="section pb-0 pt-10">
       <div class="conteneur-texte">
-        <p class="surtitre">{dateFr(article.data.date)}</p>
+        <p class="surtitre">
+          <time datetime={dateIso(article.data.date)}>{dateFr(article.data.date)}</time>
+          {dateMaj && <> · mis à jour le <time datetime={dateIso(dateMaj)}>{dateFr(dateMaj)}</time></>}
+        </p>
         <h1 class="titre-1 mt-6">{article.data.titre}</h1>
         <p class="chapo mt-8">{article.data.chapo}</p>
+
+        {article.data.essentiel.length > 0 && (
+          <div class="bloc mt-12">
+            <h2 class="titre-3">L'essentiel</h2>
+            <ul class="mt-5 space-y-3 text-[color:var(--color-ardoise)]">
+              {article.data.essentiel.map((point) => (
+                <li class="flex gap-3">
+                  <span aria-hidden="true" class="text-[color:var(--color-or-fonce)]">·</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       {article.data.image && (
         <div class="conteneur mt-12">
@@ -71,9 +106,11 @@ const donnees = [
       <div class="conteneur-texte prose-trudaines">
         <Content />
       </div>
+      {article.data.faq.length > 0 && <Faq questions={article.data.faq} titre="Les questions que cet article règle" />}
       <div class="conteneur-texte mt-16 border-t border-[color:var(--color-trait)] pt-8">
         <p class="text-sm text-[color:var(--color-ardoise)]">
-          Article rédigé par Samy Santamarina, fondateur de Trudaines.{' '}
+          Article rédigé par <a href="/samy-santamarina" class="lien-souligne">Samy Santamarina</a>, fondateur de Trudaines,
+          agent immobilier titulaire de la carte professionnelle {site.legal.carteT}.{' '}
           <a href="/estimation" class="lien-souligne">Faire estimer mon bien</a>.
         </p>
         {article.data.motsCles.length > 0 && (

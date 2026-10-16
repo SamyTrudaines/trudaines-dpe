@@ -25,15 +25,20 @@ const MOTEURS = [
   'Claude-SearchBot',
   'PerplexityBot',
   'Google-Extended',
+  'GoogleOther',
   'Applebot-Extended',
   'Bingbot',
   'Amazonbot',
   'meta-externalagent',
   'CCBot',
+  'DuckAssistBot',
+  'YouBot',
   // Consultation à la demande de l'utilisateur
   'ChatGPT-User',
   'Claude-User',
   'Perplexity-User',
+  // Le Chat de Mistral, assistant français : ses utilisateurs posent leurs questions en français, depuis la France.
+  'MistralAI-User',
 ];
 
 const COMMUN = `Allow: /
