@@ -21,6 +21,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Samy surveille sa consommation : travailler sobrement, peu de captures d'écran.
 - La barre d'en-tête reste visible à tout niveau de défilement : ne jamais la masquer.
 - Tout parcours clé (estimer, appeler, voir un bien, demander une visite) tient en deux clics au plus.
+- Stabilité d'indexation, déterminante pour Samy : une adresse publiée ne change jamais sans redirection 301 ; pas de
+  refonte globale du gabarit, des classes ou de la structure HTML sans mesure qui la justifie ; les ajouts se font page
+  par page. Aucune règle de Google ne porte sur le choix d'un cadre CSS (Tailwind, Bootstrap) ni sur le nom des classes :
+  ne jamais renommer ou brouiller des classes « pour Google », cela n'apporte rien et casse le suivi.
 - Le titre de l'accueil est « L'immobilier au-delà des murs. » ; sa fin, « au-delà des murs. », est le
   marqueur que la recette de mise en ligne cherche sur la page (`scripts/mise-en-ligne/config.mjs`).
 
