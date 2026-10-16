@@ -88,6 +88,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   une feuille Google privée de Samy, jamais dans le dépôt, qui est public. Aucune clé de compte de service : GitHub
   s'identifie par Workload Identity Federation (projet Google Cloud trudaines-511314, pool `github`, fournisseur
   `depot` limité à ce dépôt et à main). Ne jamais créer de clé JSON pour `releve-search-console`.
+  Onglets : `donnees` (relevé quotidien), `historique` (seize mois par jour), `sitemaps`, `inspection` (ce que Googlebot a
+  lu sur les pages clés et les quatre portes du domaine), `synthese` (formules QUERY, séparateur `;` car la feuille est en
+  français). Si Googlebot ne peut plus lire une page clé, le relevé échoue et GitHub prévient Samy.
 
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,

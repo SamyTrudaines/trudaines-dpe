@@ -90,6 +90,11 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   }
   for (const b of verifierServeursDeNoms(audit.dns.ns)) noter('DNS', 'bloquant', b);
   for (const b of verifierCaa(audit.dns.caa)) noter('DNS', 'bloquant', b);
+  /* Les quatre portes du domaine : chacune doit finir en 200 sur l'accueil https://www, saut par saut. */
+  for (const [depart, h] of Object.entries(audit.http)) {
+    const arrivee = h.sauts.at(-1) || '';
+    noter('Domaine', arrivee === `200 https://${C.HOTE_SITE}/` ? 'ok' : 'alerte', `${depart} : ${h.sauts.join(' puis ') || h.page.erreur || 'aucune réponse'}`);
+  }
   const ancien = audit.http[`https://${C.HOTE_SITE}/`].page;
   noter('Ancien site', 'info', `statut ${ancien.statut}, serveur ${ancien.serveur || '?'}, moteur ${ancien.generateur || ancien.propulse || '?'}, titre « ${ancien.titre || '?'} »`);
   const nouveau = audit.nouveau;
