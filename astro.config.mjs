@@ -7,7 +7,7 @@ export default defineConfig({
   trailingSlash: "never",
   // Feuille de style écrite dans chaque page : une requête bloquante de moins avant le premier affichage.
   build: { format: "file", inlineStylesheets: "always" },
-  integrations: [sitemap({ filter: (page) => !page.includes("/merci") })],
+  integrations: [sitemap({ filter: (page) => !page.includes("/merci") && !page.includes("/acquereurs-prioritaires") })],
   vite: { plugins: [tailwindcss()] },
 
   /*

@@ -1,0 +1,70 @@
+# Envoi d'un bien aux acquéreurs prioritaires (scripts/acquereurs/envoyer.mjs), à la main :
+# un bien du site par son identifiant, ou un bien hors site décrit champ par champ.
+# Les nouveaux biens du site partent seuls, depuis indexnow.yml, une fois en production.
+# Un envoi depuis une branche de travail reste un essai, adressé à Samy seul.
+name: Acquéreurs, envoi d'un bien
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'scripts/acquereurs/envoyer.mjs'
+      - '.github/workflows/acquereurs-envoi.yml'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'essai (à Samy seul) ou reel'
+        default: 'essai'
+        type: choice
+        options: ['essai', 'reel']
+      biens:
+        description: 'Identifiants des fiches, séparés par des virgules'
+        required: false
+      titre:
+        description: 'Hors site : titre'
+        required: false
+      prix:
+        description: 'Hors site : prix en euros'
+        required: false
+      surface:
+        description: 'Hors site : surface en m²'
+        required: false
+      pieces:
+        description: 'Hors site : pièces'
+        required: false
+      arrondissement:
+        description: 'Hors site : code postal, 75018'
+        required: false
+      lien:
+        description: 'Hors site : lien https de l’annonce'
+        required: false
+      photo:
+        description: 'Hors site : lien https d’une photo JPEG'
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  envoyer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+      - name: Envoi
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MODE: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.mode || 'essai' }}
+          BIENS: ${{ github.event_name == 'push' && 'appartement-2-pieces-43m2-renove-rue-vaneau' || inputs.biens }}
+          HORS_SITE_TITRE: ${{ inputs.titre }}
+          HORS_SITE_PRIX: ${{ inputs.prix }}
+          HORS_SITE_SURFACE: ${{ inputs.surface }}
+          HORS_SITE_PIECES: ${{ inputs.pieces }}
+          HORS_SITE_ARRONDISSEMENT: ${{ inputs.arrondissement }}
+          HORS_SITE_LIEN: ${{ inputs.lien }}
+          HORS_SITE_PHOTO: ${{ inputs.photo }}
+        run: node scripts/acquereurs/envoyer.mjs

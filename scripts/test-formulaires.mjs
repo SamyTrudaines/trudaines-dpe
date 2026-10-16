@@ -672,6 +672,34 @@ verifier(
   /première année/.test(confirmation),
 );
 
+/* Acquéreurs prioritaires : double opt-in vers la liste dédiée, avec son propre modèle, et rien sans arrondissement. */
+const prioritaire = await import(new URL('../functions/api/acquereur-prioritaire.js', import.meta.url).href);
+const { acquereurs: reglagesAcquereurs } = await import(new URL('../functions/_lib/acquereurs.js', import.meta.url).href);
+appels.length = 0;
+const fdPrioritaire = { prenom: 'Jérémy', nom: 'Essai', email: 'jeremy@example.com', budget: '1000000', surface: '80', pieces: '3', financement: 'Crédit', entree: '2027-03-01', consentement: 'oui', horodatage: recent() };
+const reqPrioritaire = requete(fdPrioritaire);
+const fdBrut = await reqPrioritaire.clone().formData();
+const formulaireArr = new FormData();
+for (const [k, v] of fdBrut) formulaireArr.append(k, v);
+formulaireArr.append('arrondissements', '75018');
+formulaireArr.append('arrondissements', '75009');
+formulaireArr.append('arrondissements', '99999');
+const repPrioritaire = await prioritaire.onRequestPost({
+  request: new Request('https://www.trudaines.com/api/test', { method: 'POST', body: formulaireArr, headers: { Accept: 'application/json' } }),
+  env,
+});
+const doiPrioritaire = appels.filter((a) => a.url.endsWith('/contacts/doubleOptinConfirmation'))[0]?.corps;
+verifier(
+  'acquéreur prioritaire : confirmation Brevo vers la liste dédiée, sans inscription directe',
+  repPrioritaire.status === 200 && doiPrioritaire?.templateId === reglagesAcquereurs.modeleConfirmation &&
+    JSON.stringify(doiPrioritaire?.includeListIds) === JSON.stringify([reglagesAcquereurs.liste]) &&
+    doiPrioritaire?.attributes?.ARRONDISSEMENTS === '75018,75009' && !appels.some((a) => a.url.endsWith('/contacts')),
+  JSON.stringify(doiPrioritaire?.attributes || {})
+);
+appels.length = 0;
+const sansArr = await prioritaire.onRequestPost({ request: requete(fdPrioritaire), env });
+verifier('acquéreur prioritaire : refus sans arrondissement', sansArr.status === 400 && appels.length === 0, `statut ${sansArr.status}`);
+
 const partSite = Number(/parrainage\s*=\s*\{[\s\S]*?part:\s*([\d.]+)/.exec(readFileSync(new URL('../src/data/site.ts', import.meta.url), 'utf8'))?.[1]);
 const partFonction = Number(/PART_WINWIN\s*=\s*([\d.]+)/.exec(readFileSync(new URL('../functions/api/recommandation.js', import.meta.url), 'utf8'))?.[1]);
 verifier('part WinWin identique dans site.ts et dans la fonction', partSite > 0 && partSite === partFonction, `${partSite} et ${partFonction}`);

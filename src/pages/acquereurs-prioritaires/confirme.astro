@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { site } from '../../data/site';
+---
+<Layout
+  titre="Acquéreur prioritaire, inscription confirmée | Trudaines"
+  description="Votre inscription aux biens en avant-première de l'agence Trudaines est confirmée."
+  noindex={true}
+  cta={false}
+>
+  <section class="section pt-20">
+    <div class="conteneur-texte text-center">
+      <p class="surtitre">Acquéreurs prioritaires</p>
+      <h1 class="titre-1 mt-6">C'est confirmé</h1>
+      <p class="chapo mt-8">
+        Vous recevrez chaque bien qui correspond à vos critères avant sa diffusion sur les portails. Pour arrêter,
+        répondez « stop » à l'un de mes messages.
+      </p>
+      <div class="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="/acheter" class="bouton">Les biens en vente</a>
+        <a href={`tel:${site.telephoneLien}`} class="bouton bouton-secondaire">Appeler Samy</a>
+      </div>
+    </div>
+  </section>
+</Layout>

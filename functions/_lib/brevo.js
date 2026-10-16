@@ -282,8 +282,9 @@ export function configurationDoubleOptIn(env) {
  * consentement. Mieux vaut une inscription sans téléphone qu'une inscription
  * perdue : le numéro reste dans la notification interne.
  */
-export async function demanderConfirmation(env, { email, attributs = {}, listes = [] }) {
-  const configuration = configurationDoubleOptIn(env);
+export async function demanderConfirmation(env, { email, attributs = {}, listes = [], modele, redirection }) {
+  /* Un parcours qui a son propre modèle et sa propre page d'arrivée les passe ici ; sinon, ceux du livre blanc. */
+  const configuration = modele && redirection ? { modele, redirection } : configurationDoubleOptIn(env);
   if (!configuration) throw new Error('Double opt-in non configuré');
   if (!env.BREVO_API_KEY) throw new Error('BREVO_API_KEY absente');
 
