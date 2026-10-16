@@ -17,7 +17,6 @@ essentiel:
   - "Le syndic dispose d'un mois à compter de la demande pour délivrer la fiche synthétique, sous peine de 15 € par jour de retard imputés sur sa rémunération."
   - "Les honoraires du syndic pour l'état daté, établi pour l'acte et payé par le vendeur, sont plafonnés à 380 € TTC depuis le 1er juin 2020 ; le prix du pré-état daté n'est pas plafonné."
   - "Si les documents manquent à la signature de l'avant-contrat, le délai de rétractation de dix jours de l'acquéreur ne court qu'à partir du lendemain de leur remise (article L721-3)."
-  - "Les sommes versées au fonds de travaux restent attachées au lot et ne sont pas remboursées au vendeur (article 14-2-1 de la loi du 10 juillet 1965)."
 faq:
   - question: "Quels documents de copropriété faut-il fournir pour vendre un appartement ?"
     reponse: "La fiche synthétique, le règlement de copropriété et l'état descriptif de division avec leurs modificatifs, les procès-verbaux des trois dernières assemblées générales, le carnet d'entretien, la notice d'information des copropriétaires, les conclusions du diagnostic technique global s'il existe, le plan pluriannuel de travaux, les informations financières du pré-état daté et la superficie loi Carrez."

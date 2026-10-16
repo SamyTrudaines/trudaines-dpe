@@ -19,7 +19,7 @@ faq:
     reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter, mais ce n'est pas un obstacle à la vente : c'est un paramètre de prix, qui se prépare avant la mise en vente."
   - question: "Faut-il faire un audit énergétique pour vendre un appartement en copropriété ?"
     reponse: "Non. L'audit énergétique réglementaire s'impose à la vente des maisons individuelles et des immeubles d'habitation en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025. Beaucoup de vendeurs parisiens paient un audit dont ils n'ont pas besoin."
-  - question: "Combien un DPE F ou G fait-il baisser le prix d'un appartement ?"
+  - question: "Un DPE F ou G fait-il baisser le prix d'un appartement ?"
     reponse: "Il n'y a pas de décote fixe. L'ajustement dépend du montant des travaux, de leur faisabilité en copropriété et du profil de l'acheteur : un investisseur raisonne en rendement net après travaux, un couple qui achète sa résidence principale en capacité d'emprunt. Le même bien ne se vend pas au même prix selon la cible."
   - question: "Faut-il annoncer le classement F ou G dans l'annonce ?"
     reponse: "Oui. Annoncer le classement dès l'annonce, avec le chiffrage et le calendrier de travaux possible, réduit le nombre de visites inutiles et augmente la qualité des offres reçues. Cacher le sujet produit l'effet inverse : des visites nombreuses et des offres basses."
