@@ -13,6 +13,12 @@ on:
   schedule:
     # Tous les jours à 5 h UTC, avant l'analyse du matin.
     - cron: '7 5 * * *'
+  # Aussitôt après une fusion qui change le relevé : la fédération n'accepte que main.
+  push:
+    branches: ['main']
+    paths:
+      - 'scripts/search-console.mjs'
+      - '.github/workflows/search-console.yml'
   workflow_dispatch:
 
 permissions:

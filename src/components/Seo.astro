@@ -44,3 +44,4 @@ const imageAbsolue = new URL(image, site.url).href;
 <meta name="twitter:image" content={imageAbsolue} />
 <meta name="geo.region" content="FR-75" />
 <meta name="geo.placename" content="Paris" />
+{site.bing && <meta name="msvalidate.01" content={site.bing} />}

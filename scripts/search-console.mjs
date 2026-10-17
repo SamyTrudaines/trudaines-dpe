@@ -21,6 +21,16 @@
  * script reprend les sept derniers jours et n'écrit que les dates absentes de
  * la feuille. Une ligne par date, requête, page, pays et appareil.
  *
+ * Trois onglets de plus, réécrits ou complétés à chaque passage :
+ *   historique  clics et impressions par jour sur seize mois, pour comparer
+ *               l'ancien site et le nouveau ;
+ *   sitemaps    état des plans du site déclarés dans Search Console ;
+ *   inspection  ce que Googlebot a lu, la dernière fois, sur les pages qui
+ *               portent les demandes et sur les quatre portes du domaine.
+ * Si Googlebot n'a pas pu lire l'une d'elles (403, erreur serveur, robots.txt,
+ * redirection cassée) ou si un plan du site est en erreur, le relevé échoue
+ * après avoir tout écrit : GitHub prévient alors Samy par email.
+ *
  * Lancer : GSC_JETON=... GSC_FEUILLE=... node scripts/search-console.mjs [--essai]
  */
 const ESSAI = process.argv.includes('--essai');
@@ -82,8 +92,12 @@ async function datesPresentes() {
 }
 
 async function ecrire(lignes) {
+  await ajouter(ONGLET, lignes);
+}
+
+async function ajouter(onglet, lignes) {
   for (let i = 0; i < lignes.length; i += 5000) {
-    await appel(`${SHEETS}/values/${ONGLET}!A1:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
+    await appel(`${SHEETS}/values/${onglet}!A1:append?valueInputOption=RAW&insertDataOption=INSERT_ROWS`, {
       method: 'POST',
       body: JSON.stringify({ values: lignes.slice(i, i + 5000) }),
     });
@@ -122,3 +136,116 @@ for (const date of aRelever) {
   console.log(`  ${date} : ${rows.length} lignes, ${clics} clics, ${impressions} impressions`);
 }
 console.log(`${total} ligne(s) ${ESSAI ? 'lues (essai, rien écrit)' : 'ajoutées à la feuille'}.`);
+
+/* ----------------------------------------------- historique, plans du site, inspection */
+
+const aujourdhui = jour(0);
+const alertes = [];
+
+/** Crée l'onglet s'il manque. */
+async function assurerOnglet(onglet) {
+  const { sheets = [] } = await appel(`${SHEETS}?fields=sheets.properties.title`);
+  if (sheets.some((s) => s.properties.title === onglet)) return false;
+  await appel(`${SHEETS}:batchUpdate`, {
+    method: 'POST',
+    body: JSON.stringify({ requests: [{ addSheet: { properties: { title: onglet } } }] }),
+  });
+  return true;
+}
+
+/** Remplace tout le contenu d'un onglet. */
+async function remplacer(onglet, lignes) {
+  if (ESSAI) return;
+  await assurerOnglet(onglet);
+  await appel(`${SHEETS}/values/${onglet}!A:Z:clear`, { method: 'POST', body: '{}' });
+  await appel(`${SHEETS}/values/${onglet}!A1?valueInputOption=RAW`, { method: 'PUT', body: JSON.stringify({ values: lignes }) });
+}
+
+/* Une section qui échoue n'empêche pas les autres : le message dit laquelle. */
+async function section(nom, travail) {
+  try {
+    await travail();
+  } catch (erreur) {
+    console.log(`${nom} : ${erreur.message}`);
+  }
+}
+
+await section('Historique', async () => {
+  const { rows = [] } = await appel(
+    `https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/searchAnalytics/query`,
+    {
+      method: 'POST',
+      body: JSON.stringify({ startDate: jour(480), endDate: jour(2), dimensions: ['date'], rowLimit: 25000, dataState: 'all' }),
+    }
+  );
+  await remplacer('historique', [
+    ['date', 'clics', 'impressions', 'ctr', 'position'],
+    ...rows.map((r) => [r.keys[0], r.clicks, r.impressions, Math.round(r.ctr * 10000) / 10000, Math.round(r.position * 10) / 10]),
+  ]);
+  console.log(`Historique : ${rows.length} jour(s)${rows.length ? `, du ${rows[0].keys[0]} au ${rows.at(-1).keys[0]}` : ''}.`);
+});
+
+await section('Plans du site', async () => {
+  const { sitemap = [] } = await appel(`https://www.googleapis.com/webmasters/v3/sites/${encodeURIComponent(site)}/sitemaps`);
+  await remplacer('sitemaps', [
+    ['releve', 'plan du site', 'soumis le', 'lu le', 'en attente', 'erreurs', 'avertissements', 'adresses soumises'],
+    ...sitemap.map((s) => [
+      aujourdhui,
+      s.path,
+      s.lastSubmitted ?? '',
+      s.lastDownloaded ?? '',
+      String(s.isPending ?? ''),
+      Number(s.errors ?? 0),
+      Number(s.warnings ?? 0),
+      (s.contents ?? []).reduce((n, c) => n + Number(c.submitted ?? 0), 0),
+    ]),
+  ]);
+  for (const s of sitemap) if (Number(s.errors ?? 0) > 0) alertes.push(`plan du site ${s.path} : ${s.errors} erreur(s)`);
+  console.log(`Plans du site : ${sitemap.length} déclaré(s)${sitemap.length ? '' : ', à soumettre dans Search Console'}.`);
+});
+
+/* Les pages qui portent les demandes, puis les quatre portes du domaine. */
+const ORIGINE = 'https://www.trudaines.com';
+const PAGES_CLES = [
+  '/', '/estimation', '/acheter', '/contact', '/honoraires', '/prix-immobilier',
+  '/quartiers/montmartre', '/quartiers/trudaine-maubeuge', '/quartiers/martyrs-lorette',
+  '/agence-immobiliere-paris-9', '/agence-immobiliere-paris-18', '/agence-immobiliere-montmartre',
+  '/estimation/paris-17/epinettes',
+];
+const PORTES = ['http://trudaines.com/', 'https://trudaines.com/', 'http://www.trudaines.com/'];
+/* États de lecture qui veulent dire : Googlebot n'a pas pu lire la page. */
+const LECTURE_BLOQUEE = new Set([
+  'BLOCKED_ROBOTS_TXT', 'ACCESS_DENIED', 'ACCESS_FORBIDDEN', 'BLOCKED_4XX', 'SERVER_ERROR', 'REDIRECT_ERROR', 'NOT_FOUND', 'SOFT_404',
+]);
+
+await section('Inspection', async () => {
+  const lignes = [];
+  for (const url of [...PAGES_CLES.map((p) => `${ORIGINE}${p}`), ...PORTES]) {
+    const { inspectionResult: r = {} } = await appel('https://searchconsole.googleapis.com/v1/urlInspection/index:inspect', {
+      method: 'POST',
+      body: JSON.stringify({ inspectionUrl: url, siteUrl: site, languageCode: 'fr-FR' }),
+    });
+    const i = r.indexStatusResult ?? {};
+    const riches = (r.richResultsResult?.detectedItems ?? []).map((d) => d.richResultType).join(', ');
+    lignes.push([
+      aujourdhui, url, i.verdict ?? '', i.coverageState ?? '', i.pageFetchState ?? '', i.robotsTxtState ?? '',
+      i.indexingState ?? '', i.lastCrawlTime ?? '', i.crawledAs ?? '', i.googleCanonical ?? '', riches,
+    ]);
+    if (LECTURE_BLOQUEE.has(i.pageFetchState) || i.robotsTxtState === 'DISALLOWED') {
+      alertes.push(`${url} : ${i.pageFetchState ?? ''} ${i.robotsTxtState === 'DISALLOWED' ? 'robots.txt' : ''}`.trim());
+    }
+  }
+  if (!ESSAI) {
+    if (await assurerOnglet('inspection')) {
+      await ajouter('inspection', [['releve', 'adresse', 'verdict', 'couverture', 'lecture', 'robots.txt', 'indexation', 'dernier passage', 'robot', 'canonique Google', 'résultats enrichis']]);
+    }
+    await ajouter('inspection', lignes);
+  }
+  console.log(`Inspection : ${lignes.length} adresse(s) relue(s).`);
+});
+
+if (alertes.length) {
+  console.log(`Googlebot n'a pas pu lire ${alertes.length} adresse(s) :`);
+  for (const a of alertes) console.log(`  ${a}`);
+  process.exitCode = 1;
+}

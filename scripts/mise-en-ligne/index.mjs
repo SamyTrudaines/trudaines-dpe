@@ -90,6 +90,11 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   }
   for (const b of verifierServeursDeNoms(audit.dns.ns)) noter('DNS', 'bloquant', b);
   for (const b of verifierCaa(audit.dns.caa)) noter('DNS', 'bloquant', b);
+  /* Les quatre portes du domaine : chacune doit finir en 200 sur l'accueil https://www, saut par saut. */
+  for (const [depart, h] of Object.entries(audit.http)) {
+    const arrivee = h.sauts.at(-1) || '';
+    noter('Domaine', arrivee === `200 https://${C.HOTE_SITE}/` ? 'ok' : 'alerte', `${depart} : ${h.sauts.join(' puis ') || h.page.erreur || 'aucune réponse'}`);
+  }
   const ancien = audit.http[`https://${C.HOTE_SITE}/`].page;
   noter('Ancien site', 'info', `statut ${ancien.statut}, serveur ${ancien.serveur || '?'}, moteur ${ancien.generateur || ancien.propulse || '?'}, titre « ${ancien.titre || '?'} »`);
   const nouveau = audit.nouveau;
@@ -103,6 +108,15 @@ export async function executer({ mode = 'audit', confirmation = '', secrets = {}
   );
   noter('Nouveau site', nouveau.gardeOrigine === 403 ? 'ok' : 'alerte', `garde des formulaires : statut ${nouveau.gardeOrigine} face à un site tiers, 403 attendu`);
   noter('Nouveau site', nouveau.pieges === 200 ? 'ok' : 'alerte', `fonctions actives : piège à robots en ${nouveau.pieges}`);
+  const robots = Object.entries(nouveau.robots || {});
+  const refuses = robots.filter(([, r]) => r.statut !== 200 || r.mitige);
+  noter(
+    'Référencement',
+    refuses.length ? 'alerte' : 'ok',
+    refuses.length
+      ? `robots refusés sur le plan du site : ${refuses.map(([n, r]) => `${n} ${r.statut}${r.mitige ? ` (${r.mitige})` : ''}`).join(', ')}`
+      : `robots acceptés sur le plan du site, par leur nom d'agent : ${robots.map(([n]) => n).join(', ')}`
+  );
   const aa = audit.ancienSite;
   noter(
     'Référencement',
