@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import PrixParTaille from '../components/PrixParTaille.astro';
+import { estimationsQuartiers } from '../data/estimations-quartiers';
 import Layout from '../layouts/Layout.astro';
 import BlocAgence from '../components/BlocAgence.astro';
 import Avis from '../components/Avis.astro';
@@ -87,4 +89,18 @@ const services = [
   </section>
 
   <Avis avis={avis} agregat={agregatAvis} />
+  <section class="section filet" aria-label="Estimation par quartier">
+    <div class="conteneur">
+      <p class="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {estimationsQuartiers.filter((q) => q.secteur === 'paris-17').map((q) => (
+          <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne">Estimation appartement {q.nom}</a>
+        ))}
+      </p>
+    </div>
+  </section>
+  <PrixParTaille
+    typologies={chiffres?.typologies ?? []}
+    titre="Prix d'un appartement selon sa taille dans le 17e"
+    source="Toutes les ventes d'appartements de l'arrondissement, par nombre de pièces."
+  />
 </Layout>
