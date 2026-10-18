@@ -36,6 +36,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   de révéler le prix. Étape 1 : adresse, type, surface, pièces, chambres, étage et ascenseur (listes déroulantes) ;
   étape 2 : prénom, email, téléphone ; la fourchette DVF de la rue, ajustée par étage, ascenseur et typologie
   (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi.
+- Deux voies dans chaque bloc d'estimation : « Estimer en ligne » ou « Être rappelé » (`functions/api/rappel.js`,
+  prénom et téléphone seulement). Estimation et rappel préviennent Samy par email et par SMS Brevo
+  (`envoyerSmsAgence`, variable `NOTIFICATION_SMS`, expéditeur `BREVO_SMS_EXPEDITEUR`, 11 caractères au plus).
 - La réception des demandes dans la boîte Gmail de Samy est déterminante : toute modification d'une fonction
   de formulaire se vérifie par `npm run test-formulaires`, et chaque demande reste aussi enregistrée dans Brevo.
 

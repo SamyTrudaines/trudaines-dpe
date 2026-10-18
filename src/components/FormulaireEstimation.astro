@@ -11,9 +11,17 @@ interface Props {
 const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
 const listeId = `adresses-${identifiant}`;
 ---
+<div class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10" data-choix-estimation>
+{/*
+  Deux voies, comme sur l'ancien site : estimer en ligne, ou être rappelé. Dans les deux cas Samy reçoit
+  un email et un SMS et rappelle ; seule la seconde le promet au visiteur.
+*/}
+<div class="mb-8 grid grid-cols-2 border border-[color:var(--color-encre)]" role="group" aria-label="Comment souhaitez-vous procéder ?">
+  <button type="button" class="choix-voie" aria-pressed="true" data-voie="en-ligne">Estimer en ligne</button>
+  <button type="button" class="choix-voie" aria-pressed="false" data-voie="rappel">Être rappelé</button>
+</div>
 <form
   id={identifiant}
-  class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10"
   method="POST"
   action="/api/estimation"
   data-trudaines
@@ -22,6 +30,7 @@ const listeId = `adresses-${identifiant}`;
   data-evenement-etape="estimation_etape1"
   data-formulaire-avis
   data-fourchette
+  data-voie-formulaire="en-ligne"
   novalidate={false}
 >
   <input type="hidden" name="secteur" value={secteur} />
@@ -192,4 +201,64 @@ const listeId = `adresses-${identifiant}`;
     </p>
   </div>
 </form>
+<form
+  id={`${identifiant}-rappel`}
+  method="POST"
+  action="/api/rappel"
+  data-trudaines
+  data-evenement="rappel_envoye"
+  data-voie-formulaire="rappel"
+  hidden
+>
+  <input type="hidden" name="secteur" value={secteur} />
+  <input type="hidden" name="origine" value={origine} />
+  <input type="hidden" name="horodatage" value="" />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for={`controle-${identifiant}-rappel`}>Ne pas remplir</label>
+    <input type="text" id={`controle-${identifiant}-rappel`} name="controle" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <p class="titre-3">Samy Santamarina vous rappelle</p>
+    <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Deux champs suffisent. Le reste se dit au téléphone.</p>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2">
+      <div>
+        <label class="etiquette" for={`rappel-prenom-${identifiant}`}>Prénom</label>
+        <input class="champ" id={`rappel-prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
+      </div>
+      <div>
+        <label class="etiquette" for={`rappel-telephone-${identifiant}`}>Téléphone</label>
+        <input class="champ" id={`rappel-telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" required />
+      </div>
+      <div>
+        <label class="etiquette" for={`rappel-moment-${identifiant}`}>Quand vous rappeler</label>
+        <select class="champ" id={`rappel-moment-${identifiant}`} name="moment">
+          <option>Dès que possible</option>
+          <option>Le matin</option>
+          <option>À midi</option>
+          <option>En fin de journée</option>
+          <option>Le samedi</option>
+        </select>
+      </div>
+      <div>
+        <label class="etiquette" for={`rappel-adresse-${identifiant}`}>Adresse du bien, facultatif</label>
+        <input class="champ" id={`rappel-adresse-${identifiant}`} name="adresse" type="text" autocomplete="street-address" />
+      </div>
+    </div>
+    <div class="mt-6 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`rappel-consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for={`rappel-consentement-${identifiant}`}>
+        J'accepte d'être rappelé par Trudaines au sujet de ma demande. <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+      </label>
+    </div>
+    <button type="submit" class="bouton mt-8">Être rappelé</button>
+    <p class="mt-6 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <div data-confirmation hidden class="py-4">
+    <p class="surtitre">Demande envoyée</p>
+    <h2 class="titre-3 mt-4">Merci, Samy vous rappelle.</h2>
+    <p class="mt-4 text-[color:var(--color-ardoise)]">En jours ouvrés, au moment que vous avez choisi. Si c'est urgent : 06 20 46 59 12.</p>
+  </div>
+</form>
+</div>
+<script src="/js/choix-estimation.js" defer is:inline></script>
 <script src="/js/fourchette-formulaire.js" defer is:inline></script>

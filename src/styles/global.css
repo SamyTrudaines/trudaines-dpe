@@ -1543,3 +1543,8 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   color: var(--color-encre);
 }
 .lieux-ventes-communes { font-size: 1.25rem; }
+
+/* Choix de la voie d'estimation : deux segments à filet, le segment choisi en encre. */
+.choix-voie { padding: 0.85rem 0.5rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; color: var(--color-encre); background: #ffffff; border: 0; cursor: pointer; }
+.choix-voie + .choix-voie { border-left: 1px solid var(--color-encre); }
+.choix-voie[aria-pressed='true'] { background: var(--color-encre); color: #ffffff; }
