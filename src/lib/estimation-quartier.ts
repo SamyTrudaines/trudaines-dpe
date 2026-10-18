@@ -67,8 +67,15 @@ export function chiffresZone(id: string): ChiffresZone | null {
   };
 }
 
-/** Faits d'un quartier, la ligne des ventes analysées remplacée par le décompte à jour. */
+/** Faits d'un quartier : ventes analysées et écart entre les voies remplacés par les valeurs à jour. */
 export function faitsQuartier(id: string, faits: { titre: string; valeur: string }[]) {
   const chiffres = chiffresZone(id);
-  return chiffres ? faits.map((f) => (/ventes/i.test(f.titre) ? { ...f, valeur: chiffres.ventesAnalysees } : f)) : faits;
+  if (!chiffres) return faits;
+  const parPrix = [...chiffres.mesure.liste].sort((a, b) => a.mediane - b.mediane);
+  const bas = parPrix[0];
+  const haut = parPrix[parPrix.length - 1];
+  const ecart = `De ${prix(bas.mediane)} le m² ${bas.nom} à ${prix(haut.mediane)} ${haut.nom}, en médiane`;
+  return faits.map((f) =>
+    /ventes/i.test(f.titre) ? { ...f, valeur: chiffres.ventesAnalysees } : /^De .*€.* à .*€/.test(f.valeur) ? { ...f, valeur: ecart } : f,
+  );
 }
