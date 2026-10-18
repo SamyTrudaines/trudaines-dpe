@@ -106,8 +106,13 @@ ${(() => {
     ? `- Le quartier de Montmartre, dans le 18e, ressort plus cher que la médiane du 18e entier : la moyenne d'arrondissement sous estime un bien de la Butte d'environ ${milliers(ecart)} € le mètre carré, soit ${milliers(ecart * 60)} € sur 60 m² (période ${periode}).\n`
     : '';
 })()}${Object.values(arrondissements).filter((a) => (a.typologies ?? []).length > 1).map((a) => `- ${a.nom}, prix médian selon la taille : ${a.typologies!.map((t) => `${libellePieces(t.pieces).toLowerCase()} ${milliers(t.prix)} € pour ${t.surface} m² (${milliers(t.mediane)} € le m², ${milliers(t.ventes)} ventes)`).join(' ; ')} (période ${periode}).`).join('\n')}
-- L'écart entre le premier et le neuvième décile atteint 6 700 € le mètre carré à Montmartre : c'est la valeur mesurable de ce que la base ne contient pas, l'étage, l'ascenseur, la vue, l'état du bien et celui de la copropriété.
-- Neuf mandats sur dix confiés à l'agence sont des mandats exclusifs.
+${(() => {
+  const c = chiffresZone('montmartre');
+  if (!c) return '';
+  const etendues = c.mesure.liste.map((r) => r.d9 - r.d1).sort((a, b) => a - b);
+  const etendue = Math.round(etendues[Math.floor(etendues.length / 2)] / 100) * 100;
+  return `- Dans la moitié des rues de Montmartre, l'écart entre le premier et le neuvième décile des ventes dépasse ${milliers(etendue)} € le mètre carré (période ${periode}) : c'est la valeur mesurable de ce que la base ne contient pas, l'étage, l'ascenseur, la vue, l'état du bien et celui de la copropriété.\n`;
+})()}- Neuf mandats sur dix confiés à l'agence sont des mandats exclusifs.
 - Le chiffre d'affaires de l'agence a plus que triplé d'un exercice à l'autre, sans publicité payante.
 - Un diagnostic de performance énergétique établi avant le 1er juillet 2021 n'est plus valide depuis le 31 décembre 2024.
 - L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il vise les maisons individuelles et les immeubles d'habitation en monopropriété.
