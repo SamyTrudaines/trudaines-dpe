@@ -66,11 +66,21 @@ export async function onRequestPost({ request, env }) {
       listes: liste(env, 'vendeurs'),
     });
 
+    /*
+     * La fourchette vue à l'écran, redonnée dans l'email du vendeur : seulement si elle a la
+     * forme exacte qu'écrit le site (« 380 000 € à 440 000 € (rue) »), jamais un texte libre.
+     */
+    const vue = /^([\d\s]+ €) à ([\d\s]+ €) \((rue|arrondissement)\)$/.exec(valeur('fourchette').replace(/[\u00a0\u202f]/g, ' '));
+    const phraseFourchette = vue
+      ? `Votre fourchette, calculée sur les ventes signées ${vue[3] === 'rue' ? 'de votre rue' : 'de votre arrondissement'} et ajustée selon l'étage, l'ascenseur et la taille : ${vue[1]} à ${vue[2]}. Elle ne voit ni l'état, ni la vue, ni la copropriété : c'est ce que la visite précise.`
+      : '';
+
     await envoyerEmail(env, {
       destinataire: email,
       sujet: 'Votre demande d’estimation est bien reçue',
       html: gabaritClient(`Bonjour ${prenom},`, [
         'Votre demande d’estimation vient de nous parvenir. Je vous rappelle sous 24 heures ouvrées pour convenir d’un rendez-vous de visite.',
+        phraseFourchette,
         'La visite dure environ quarante-cinq minutes. Vous recevez ensuite un avis de valeur écrit, qui cite ses comparables et assume une fourchette de prix. Il est gratuit et il vous appartient, même si vous décidez de ne pas vendre.',
         'Si votre projet est urgent, appelez-moi directement au 06 20 46 59 12.',
       ]),
