@@ -80,7 +80,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Mon DPE est en F ou en G, qu'est-ce que cela change ?",
         reponse:
-          "Cela change le prix et le profil des acheteurs, pas la possibilité de vendre. Nous lisons le diagnostic avec vous, nous identifions les postes qui pèsent le plus et nous faisons chiffrer les travaux par des entreprises que nous connaissons. Présenter un devis sérieux vaut mieux que de laisser l'acheteur imaginer le pire : son imagination coûte toujours plus cher que le devis.",
+          "La vente reste possible ; le prix et le profil des acheteurs changent. Nous lisons le diagnostic avec vous, nous identifions les postes qui pèsent le plus et nous faisons chiffrer les travaux par des entreprises que nous connaissons. Avec un devis dans le dossier, l'acheteur négocie sur un chiffre réel.",
       },
       {
         question: "Puis-je vendre sans que l'immeuble et mes voisins le sachent ?",
@@ -266,7 +266,7 @@ export const secteurs: Secteur[] = [
       "Agence immobilière Paris 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-7',
     intro:
-      "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue, pas d'une moyenne.",
+      "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue.",
     introAgence:
       "Nous vendons dans le 7e pour des propriétaires qui attendent deux choses : un prix argumenté par écrit, et une commercialisation discrète. Peu de visites, des acheteurs qualifiés, un interlocuteur unique du premier rendez-vous à l'acte.",
     quartiers: [],

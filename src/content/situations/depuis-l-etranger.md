@@ -52,4 +52,4 @@ Le logement, lui, ne reste jamais sans regard : nous détenons les clés, faison
 
 ## Ce que l'agence fait dans cette situation
 
-Nous commençons, comme toujours, par un avis de valeur écrit remis sous 48 heures après la visite, complété d'une estimation du calendrier réaliste vu votre pays de résidence et les délais de procuration. Nous travaillons ensuite en triangle avec votre notaire : lui la procuration, la fiscalité et les fonds, nous le terrain, les visites et la négociation, vous les décisions, par écrit. Plusieurs de nos ventes se sont conclues sans que le vendeur remette un pied en France ; c'est un déroulé normal du dossier, pas un exploit.
+Nous commençons, comme toujours, par un avis de valeur écrit remis sous 48 heures après la visite, complété d'une estimation du calendrier réaliste vu votre pays de résidence et les délais de procuration. Nous travaillons ensuite en triangle avec votre notaire : lui la procuration, la fiscalité et les fonds, nous le terrain, les visites et la négociation, vous les décisions, par écrit. Plusieurs de nos ventes se sont conclues sans que le vendeur remette un pied en France ; c'est le déroulé habituel du dossier.

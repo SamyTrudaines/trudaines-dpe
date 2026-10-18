@@ -30,7 +30,7 @@ L'acheteur ne compare pas votre bien aux ventes de l'an dernier. Il le compare �
 
 La valeur est une estimation de ce que le bien vaut. Le prix de mise en marché est une décision commerciale, qui dépend de votre calendrier et de votre tolérance à la négociation. Les deux doivent apparaître séparément, avec la stratégie de paliers associée.
 
-## Une conclusion assumée
+## Une conclusion chiffrée
 
 Le document doit être daté, signé, et se terminer par une recommandation claire. Si le professionnel ne s'engage pas par écrit sur un chiffre, il n'y a aucune raison qu'il le défende face à un acheteur quelques semaines plus tard.
 

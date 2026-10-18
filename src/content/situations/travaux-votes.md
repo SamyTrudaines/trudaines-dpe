@@ -18,7 +18,7 @@ essentiel:
   - "L'état daté demandé au syndic est à la charge du vendeur et ses honoraires sont plafonnés à 380 € TTC (décret du 21 février 2020)."
   - "Les procès-verbaux des trois dernières assemblées générales sont remis à l'acheteur avant la vente : il lira les travaux votés, autant les lui dire d'abord."
   - "Les sommes versées au fonds de travaux restent attachées au lot et ne sont pas remboursées au vendeur ; elles se valorisent dans la négociation."
-  - "Des travaux votés, chiffrés et financés rassurent souvent plus qu'ils n'inquiètent : c'est l'incertitude qui fait fuir, pas le ravalement."
+  - "Des travaux votés, chiffrés et financés rassurent souvent plus qu'ils n'inquiètent : ce qui fait fuir un acheteur, c'est un montant inconnu."
 faq:
   - question: "Le ravalement a été voté mais aucun appel n'est encore parti. Qui paiera ?"
     reponse: "Selon la règle de l'article 6-2 du décret du 17 mars 1967, les appels qui deviendront exigibles après la vente seront dus par l'acquéreur. C'est exactement le cas qui se négocie : soit le prix en tient compte, soit l'acte met tout ou partie des travaux à la charge du vendeur. L'important est que le sujet soit sur la table avant l'offre, chiffres à l'appui."

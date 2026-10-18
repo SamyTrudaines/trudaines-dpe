@@ -48,6 +48,6 @@ Le décrochage réel du secteur se trouve ailleurs, à l'est : le quartier Larib
 
 Nous ne travaillons que le 9e nord, Montmartre et le 10e nord. Ce n'est pas une coquetterie : une estimation rue par rue suppose de connaître les immeubles, les copropriétés en travaux, les cours bruyantes et les cages d'escalier sans ascenseur. Cette connaissance ne s'étend pas à l'infini.
 
-Pour chaque bien, l'avis de valeur cite les ventes signées comparables de la rue sur les douze derniers mois, explique chaque ajustement, assume une fourchette, et propose un calendrier de décision. Il est écrit, remis après visite, gratuit et sans engagement. Vous le gardez même si vous vendez ailleurs.
+Pour chaque bien, l'avis de valeur cite les ventes signées comparables de la rue sur les douze derniers mois, explique chaque ajustement, donne une fourchette, et propose un calendrier de décision. Il est écrit, remis après visite, gratuit et sans engagement. Vous le gardez même si vous vendez ailleurs.
 
 Les prix détaillés par quartier et par typologie sont publiés dans notre analyse de marché, et mis à jour à chaque parution des valeurs foncières.

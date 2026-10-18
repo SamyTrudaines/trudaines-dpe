@@ -45,7 +45,7 @@ faq:
 | Droits de mutation et émoluments d'acte | Acquéreur | Les « frais de notaire » ne sont pas pour vous |
 | Taxe foncière de l'année | Propriétaire au 1er janvier | Partage au prorata par convention d'usage dans l'acte |
 
-Chaque « selon le dossier » de ce tableau a une raison : le prix des diagnostics dépend de la surface et de l'équipement, la mainlevée du capital inscrit, la plus-value de votre situation. Un montant précis annoncé sans connaître votre dossier serait une promesse, pas une information.
+Chaque « selon le dossier » de ce tableau a une raison : le prix des diagnostics dépend de la surface et de l'équipement, la mainlevée du capital inscrit, la plus-value de votre situation. Sans votre dossier, aucun montant précis ne peut être annoncé.
 
 ## Les postes liés au crédit, les plus oubliés
 

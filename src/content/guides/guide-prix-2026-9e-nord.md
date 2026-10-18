@@ -112,7 +112,7 @@ Une lecture possible, et nous la donnons comme une lecture et non comme une dém
 ```encadre
 {
   "titre": "Conséquence pour un vendeur",
-  "texte": "Si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface que l'on vous annoncera peut être fausse. Demandez les ventes comparables, pas la règle générale."
+  "texte": "Si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface que l'on vous annoncera peut être fausse. Demandez les ventes comparables de votre rue."
 }
 ```
 

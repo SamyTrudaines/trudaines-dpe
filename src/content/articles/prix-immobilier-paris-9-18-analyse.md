@@ -56,7 +56,7 @@ Huit cents euros d'écart au mètre carré entre le studio et le grand apparteme
 
 Une lecture possible, et nous la donnons comme une lecture et non comme une démonstration : les grandes surfaces du secteur sont des appartements haussmanniens de belle facture, sur les meilleures adresses, avec hauteur sous plafond et parties communes tenues. Les petites surfaces mélangent des studios rénovés et d'anciennes chambres de service en dernier étage sans ascenseur, qui tirent la médiane vers le bas.
 
-Conséquence pratique pour un vendeur : si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface qu'on vous annoncera peut être fausse. Demandez les ventes comparables, pas la règle générale.
+Conséquence pratique pour un vendeur : si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface qu'on vous annoncera peut être fausse. Demandez les ventes comparables de votre rue.
 
 ## Ce que l'écart entre déciles mesure vraiment
 
