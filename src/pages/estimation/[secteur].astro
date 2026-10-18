@@ -92,7 +92,7 @@ const donnees = [
 <Layout
   titre={secteur.titre}
   description={chiffres
-    ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² médian sur ${nombre(chiffres.ventes)} ventes signées. Avis de valeur écrit sous 48 h, sans engagement.`
+    ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² médian sur ${nombre(chiffres.ventes)} ventes signées. En ligne en une minute, ou avis de valeur écrit sous 48 h.`
     : `${secteur.description} ${preuve}`}
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
   donnees={donnees}
