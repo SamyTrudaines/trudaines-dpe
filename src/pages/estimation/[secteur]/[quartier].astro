@@ -105,7 +105,10 @@ const faq = [
 
 const avis = trierAvis((await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug)).slice(0, 3);
 const agregat = await agrégatAvis();
-const voisines = estimationsQuartiers.filter((q) => q.slug !== page.slug);
+/* Les quartiers du même arrondissement d'abord : ce sont ceux que le vendeur compare. */
+const voisines = estimationsQuartiers
+  .filter((q) => q.slug !== page.slug)
+  .sort((a, b) => Number(b.secteur === page.secteur) - Number(a.secteur === page.secteur));
 /* Les ventes de l'agence dans le quartier : la preuve qu'on y travaille, avant la demande. */
 const archives = (await getCollection('biens')).filter((b) => b.data.archive);
 const quartierReference = page.quartiersBiens.find((q) => archives.some((b) => b.data.quartier === q)) ?? page.quartiersBiens[0];
