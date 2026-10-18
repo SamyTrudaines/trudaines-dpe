@@ -17,7 +17,9 @@ import { secteurs } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { site } from '../../data/site';
 import { nombre, dateFr, dateIso } from '../../lib/format';
-import { periode, ventesMinimum, millesime } from '../../lib/rues';
+import { periode, ventesMinimum, millesime, typologiesDesRues } from '../../lib/rues';
+import PrixParTaille from '../../components/PrixParTaille.astro';
+import { mesureQuartier } from '../../lib/estimation-quartier';
 import { zones, ruesDuQuartier, distance } from '../../lib/quartiers';
 import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsQuartiers } from '../../data/lieux';
 import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
@@ -371,6 +373,12 @@ const donnees = [
       </div>
     </section>
   )}
+
+  <PrixParTaille
+    typologies={pageEstimation ? mesureQuartier(pageEstimation).typologies : typologiesDesRues(liste)}
+    titre={`Prix d'un appartement selon sa taille à ${nom}`}
+    source="Pour chaque taille, médiane des rues du quartier pondérée par leurs ventes."
+  />
 
   <Faq questions={faq} titre={`Questions sur l'immobilier à ${nom}`} />
 
