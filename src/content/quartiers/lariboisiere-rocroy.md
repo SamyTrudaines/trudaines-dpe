@@ -6,7 +6,7 @@ prixMoyenM2: 9 050 € le m²
 fourchette: 6 100 à 11 500 € le m², du premier au neuvième décile
 chapo: Le nord du 10e, entre la gare du Nord et le square Rocroy, offre des volumes plus généreux à budget équivalent que le 9e voisin.
 ordre: 5
-dateMaj: 2026-10-16
+dateMaj: 2026-10-18
 titreSeo: Immobilier Lariboisière Rocroy, Paris 10e | Prix et vente - Trudaines
 descriptionSeo: Prix au mètre carré et marché du quartier Lariboisière Rocroy, Paris 10e. Estimation écrite et vente accompagnée par l'agence Trudaines.
 photos:

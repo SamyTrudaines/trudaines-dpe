@@ -1,4 +1,5 @@
 ---
+import EntreeEstimation from '../../components/EntreeEstimation.astro';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
@@ -13,9 +14,12 @@ import Faq from '../../components/Faq.astro';
 import { faqEnDonnees, phraseHonoraires } from '../../lib/agence';
 import { agencesLocales } from '../../data/agences-locales';
 import { secteurs } from '../../data/secteurs';
+import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { site } from '../../data/site';
 import { nombre, dateFr, dateIso } from '../../lib/format';
-import { periode, ventesMinimum, millesime } from '../../lib/rues';
+import { periode, ventesMinimum, millesime, typologiesDesRues } from '../../lib/rues';
+import PrixParTaille from '../../components/PrixParTaille.astro';
+import { mesureQuartier, chiffresZone, faitsQuartier } from '../../lib/estimation-quartier';
 import { zones, ruesDuQuartier, distance } from '../../lib/quartiers';
 import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsQuartiers } from '../../data/lieux';
 import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
@@ -32,6 +36,8 @@ const { Content } = await render(quartier);
 const id = quartier.id;
 const nom = quartier.data.nom;
 const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
+/* La page d'estimation du même quartier, quand elle existe : le lien le plus utile après le prix. */
+const pageEstimation = estimationsQuartiers.find((q) => q.zone === id);
 const zone = zones[id];
 if (!zone) throw new Error(`Quartier ${id} : aucune définition dans src/data/quartiers-reperes.json`);
 if (secteur && secteur.arrondissement !== zone.codePostal) {
@@ -41,7 +47,9 @@ const codePostal = zone.codePostal;
 const arrondissement = quartier.data.arrondissement;
 
 /* Les rues du quartier, et ce que leur liste dit en un coup d'œil. */
-const liste = ruesDuQuartier(id);
+const chiffres = chiffresZone(id);
+/* Les voies retenues par la mesure, une seule graphie par voie, sinon toutes les rues de la zone. */
+const liste = chiffres?.mesure.liste ?? ruesDuQuartier(id);
 const medianes = liste.map((r) => r.mediane);
 const moinsChere = Math.min(...medianes);
 const plusChere = Math.max(...medianes);
@@ -52,8 +60,9 @@ const euros = (valeur: number) => `${nombre(valeur)} €`;
 const mois = dureeEnMois(periode);
 
 /* « 11 150 € le m², ... » : le chiffre en grand, la suite en légende. */
-const lecture = /^(.+?€)\s*(.*)$/.exec(quartier.data.prixMoyenM2);
-const prixMedian = lecture ? lecture[1] : quartier.data.prixMoyenM2;
+const lecture = /^(.+?€)\s*(.*)$/.exec(chiffres?.prix ?? quartier.data.prixMoyenM2);
+const prixMedian = lecture ? lecture[1] : chiffres?.prix ?? quartier.data.prixMoyenM2;
+const fourchette = chiffres?.fourchette ?? quartier.data.fourchette;
 const legendePrix = lecture ? lecture[2] : '';
 
 const biens = (await getCollection('biens', (b) => b.data.quartier === nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
@@ -81,9 +90,11 @@ const plusVendue = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? 
 const ruePlusChere = liste.length ? liste.reduce((a, b) => (b.mediane > a.mediane ? b : a)) : null;
 const rueMoinsChere = liste.length ? liste.reduce((a, b) => (b.mediane < a.mediane ? b : a)) : null;
 /* Chaque chiffre reste attaché à sa base : la médiane du quartier à sa fourchette, les extrêmes aux ventes par rue. */
-const reponseCourte = liste.length
-  ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
-  : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
+const reponseCourte = chiffres
+  ? `À ${nom} (${arrondissement}), les appartements se sont vendus ${prixMedian} le m² en médiane pondérée des rues, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, source DVF de la DGFiP. Selon la rue, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
+  : liste.length
+  ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
+  : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
 
 /* Date de révision de la page, millésime de la base et distance du bureau : les faits que les réponses citent. */
 const dateMaj = quartier.data.dateMaj;
@@ -217,6 +228,7 @@ const donnees = [
       </p>
       {/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */}
       <p class="chapo mt-6 max-w-3xl" id="reponse-courte">{reponseCourte}</p>
+      <EntreeEstimation cible={`estimation-${id}`} libelle={`Votre appartement à ${nom} : son prix en moins d'une minute`} />
 
       {/*
         Sur téléphone : le prix médian, puis le champ de recherche, puis le reste des chiffres.
@@ -246,8 +258,8 @@ const donnees = [
 
         <dl class="grid gap-x-6 gap-y-4 sm:col-span-2 sm:col-start-2 sm:row-start-1 sm:grid-cols-2">
           <div class="border-t border-[color:var(--color-encre)] pt-2">
-            <dt class="surtitre">Fourchette observée</dt>
-            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{quartier.data.fourchette}</dd>
+            <dt class="surtitre">{chiffres ? 'Ventes analysées' : 'Fourchette observée'}</dt>
+            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{chiffres ? chiffres.ventesAnalysees : fourchette}</dd>
           </div>
           {liste.length > 0 && (
             <div class="border-t border-[color:var(--color-encre)] pt-2">
@@ -316,7 +328,7 @@ const donnees = [
         <h2 id="le-quartier" class="titre-2 mt-6">{nom} en bref</h2>
         <p class="chapo mt-6">{quartier.data.chapo}</p>
         <dl class="mt-10 grid gap-6 sm:grid-cols-2">
-          {quartier.data.faits.map((f) => (
+          {faitsQuartier(id, quartier.data.faits).map((f) => (
             <div class="border-t border-[color:var(--color-trait)] pt-4">
               <dt class="surtitre">{f.titre}</dt>
               <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{f.valeur}</dd>
@@ -367,6 +379,12 @@ const donnees = [
     </section>
   )}
 
+  <PrixParTaille
+    typologies={pageEstimation ? mesureQuartier(pageEstimation).typologies : typologiesDesRues(liste)}
+    titre={`Prix d'un appartement selon sa taille à ${nom}`}
+    source="Pour chaque taille, médiane des rues du quartier pondérée par leurs ventes."
+  />
+
   <Faq questions={faq} titre={`Questions sur l'immobilier à ${nom}`} />
 
   <section class="section filet" aria-label="Estimation">
@@ -379,7 +397,7 @@ const donnees = [
         evt={evt('quartier', 'estimation', id)}
         evtCreneau={evt('quartier', 'creneau', id)}
         donnee={donneeEstimation}
-        lienSecteur={secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('quartier', 'estimer', id) } : undefined}
+        lienSecteur={pageEstimation ? { href: `/estimation/${pageEstimation.secteur}/${pageEstimation.slug}`, libelle: `Estimation appartement ${pageEstimation.nom}`, evt: evt('quartier', 'estimer', id) } : secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('quartier', 'estimer', id) } : undefined}
       />
     </div>
   </section>

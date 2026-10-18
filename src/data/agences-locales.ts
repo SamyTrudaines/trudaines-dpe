@@ -77,6 +77,11 @@ export const agencesLocales: AgenceLocale[] = [
     ],
     faq: [
       {
+        question: "Comment faire estimer mon appartement à Montmartre ?",
+        reponse:
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+      },
+      {
         question: 'Vendez-vous sans annonce publique à Montmartre ?',
         reponse:
           "Oui. La vente confidentielle se fait sans panneau ni diffusion, auprès d'acheteurs déjà qualifiés. Elle demande souvent plus de temps, et nous le disons avant la signature du mandat.",
@@ -124,7 +129,13 @@ export const agencesLocales: AgenceLocale[] = [
         ],
       },
     ],
-    faq: [],
+    faq: [
+      {
+        question: "Comment faire estimer mon appartement dans le quartier Saint-Georges ?",
+        reponse:
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+      },
+    ],
   },
   {
     slug: 'trudaine',
@@ -165,6 +176,16 @@ export const agencesLocales: AgenceLocale[] = [
       },
     ],
     faq: [
+      {
+        question: 'Quelle agence immobilière choisir pour vendre dans le 9e nord ?',
+        reponse:
+          "Celle qui vous montre les ventes signées de votre rue avant de parler de prix, et qui connaît les deux côtés du boulevard de Rochechouart. Trudaines est une agence indépendante dont le territoire est l'avenue Trudaine : elle publie le prix au mètre carré de chaque rue du secteur, d'après les ventes enregistrées devant notaire, et un seul interlocuteur, Samy Santamarina, suit la vente de l'estimation à la signature.",
+      },
+      {
+        question: "Comment faire estimer mon appartement près de l'avenue Trudaine ?",
+        reponse:
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+      },
       {
         question: "Pourquoi l'agence s'appelle-t-elle Trudaines ?",
         reponse:

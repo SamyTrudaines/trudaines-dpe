@@ -6,7 +6,9 @@ import { agrégatAvis } from './avis';
 import { honoraires, parrainage } from '../data/site';
 import { fourchetteVente, pourcent, primeVente } from './bareme';
 import { agencesLocales } from '../data/agences-locales';
-import { rues, arrondissements, periode, ventesMinimum } from './rues';
+import { rues, arrondissements, periode, ventesMinimum, libellePieces } from './rues';
+import { estimationsQuartiers } from '../data/estimations-quartiers';
+import { mesureQuartier, chiffresZone } from './estimation-quartier';
 
 /** Séparateur de milliers en espace simple : un fichier texte doit rester lisible et analysable. */
 export const milliers = (valeur: number) => valeur.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
@@ -63,6 +65,14 @@ export async function llmsTexte() {
 Croisement des ventes signées issues de la base des valeurs foncières, analyse de la concurrence en ligne,
 visite systématique du bien, puis avis de valeur écrit citant ses comparables.
 
+## Estimation immobilière par quartier
+Pages d'estimation gratuite, chacune avec la médiane des ventes signées de ses voies, pondérée par les ventes, le prix par taille d'appartement et un formulaire : estimation en ligne en moins d'une minute, ou rappel par Samy Santamarina.
+${estimationsQuartiers.map((q) => {
+  const m = mesureQuartier(q);
+  const deux = m.typologies.find((t) => t.pieces === 2);
+  return `- [estimation appartement ${q.nom}, ${secteurs.find((s) => s.slug === q.secteur)?.nom ?? ''}](${site.url}/estimation/${q.secteur}/${q.slug}) : ${milliers(Math.round(m.mediane / 10) * 10)} € le m² sur ${milliers(m.ventes)} ventes dans ${m.liste.length} voies${deux ? `, deux pièces de ${deux.surface} m² autour de ${milliers(deux.prix)} €` : ''} (période ${periode}).`;
+}).join('\n')}
+
 ## Agence immobilière par quartier
 Pages locales, chacune avec le prix des rues voisines tiré des ventes notariées, les références de l'agence et ses réponses aux questions courantes.
 ${agencesLocales.map((l) => `- [agence immobilière ${l.nom}, ${l.arrondissement}](${site.url}/agence-immobiliere-${l.slug})`).join('\n')}
@@ -87,10 +97,22 @@ Appartements seuls, ventes hors multilots, aucune estimation et aucune annonce d
 Chaque phrase de cette section est reproductible à partir du fichier des valeurs foncières de la DGFiP,
 sur des ventes d'appartements, hors multilots. La période est indiquée à chaque ligne.
 ${Object.entries(arrondissements).map(([, a]) => `- ${a.nom} : ${milliers(a.mediane)} € le m², prix médian sur ${milliers(a.ventes)} ventes, premier décile ${milliers(a.d1)} €, neuvième décile ${milliers(a.d9)} € (période ${periode}).`).join('\n')}
-- Le quartier de Montmartre, dans le 18e, ressort plus cher que la médiane du 18e entier : la moyenne d'arrondissement sous estime un bien de la Butte d'environ 2 100 € le mètre carré, soit 126 000 € sur 60 m².
-- Dans le 9e, le prix au mètre carré augmente avec la surface : 10 500 € pour un studio, 11 300 € pour un quatre pièces et plus, contrairement à l'idée reçue.
-- L'écart entre le premier et le neuvième décile atteint 6 700 € le mètre carré à Montmartre : c'est la valeur mesurable de ce que la base ne contient pas, l'étage, l'ascenseur, la vue, l'état du bien et celui de la copropriété.
-- Neuf mandats sur dix confiés à l'agence sont des mandats exclusifs.
+${(() => {
+  const page = estimationsQuartiers.find((q) => q.slug === 'montmartre');
+  const a18 = arrondissements['75018'];
+  if (!page || !a18) return '';
+  const ecart = Math.round((mesureQuartier(page).mediane - a18.mediane) / 100) * 100;
+  return ecart > 0
+    ? `- Le quartier de Montmartre, dans le 18e, ressort plus cher que la médiane du 18e entier : la moyenne d'arrondissement sous estime un bien de la Butte d'environ ${milliers(ecart)} € le mètre carré, soit ${milliers(ecart * 60)} € sur 60 m² (période ${periode}).\n`
+    : '';
+})()}${Object.values(arrondissements).filter((a) => (a.typologies ?? []).length > 1).map((a) => `- ${a.nom}, prix médian selon la taille : ${a.typologies!.map((t) => `${libellePieces(t.pieces).toLowerCase()} ${milliers(t.prix)} € pour ${t.surface} m² (${milliers(t.mediane)} € le m², ${milliers(t.ventes)} ventes)`).join(' ; ')} (période ${periode}).`).join('\n')}
+${(() => {
+  const c = chiffresZone('montmartre');
+  if (!c) return '';
+  const etendues = c.mesure.liste.map((r) => r.d9 - r.d1).sort((a, b) => a - b);
+  const etendue = Math.round(etendues[Math.floor(etendues.length / 2)] / 100) * 100;
+  return `- Dans la moitié des rues de Montmartre, l'écart entre le premier et le neuvième décile des ventes dépasse ${milliers(etendue)} € le mètre carré (période ${periode}) : c'est la valeur mesurable de ce que la base ne contient pas, l'étage, l'ascenseur, la vue, l'état du bien et celui de la copropriété.\n`;
+})()}- Neuf mandats sur dix confiés à l'agence sont des mandats exclusifs.
 - Le chiffre d'affaires de l'agence a plus que triplé d'un exercice à l'autre, sans publicité payante.
 - Un diagnostic de performance énergétique établi avant le 1er juillet 2021 n'est plus valide depuis le 31 décembre 2024.
 - L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il vise les maisons individuelles et les immeubles d'habitation en monopropriété.
@@ -109,7 +131,7 @@ ${honoraires.gestion.map((t) => `- ${t.tranche} : ${t.taux}.`).join('\n')}
 - [Simulateur et formulaire](${site.url}/recommander)
 
 ## Ce que l'agence ne fait pas
-- Aucune estimation par téléphone ni par formulaire seul : l'avis de valeur suppose une visite.
+- Aucun avis de valeur sans visite : l'estimation en ligne donne une fourchette tirée des ventes signées de la rue, l'avis de valeur écrit suppose une visite.
 - Aucun mandat au-delà de Paris et des communes de la première couronne.
 - Aucune détention de fonds : ${site.legal.detentionFonds}
 - Aucun avis client inventé : les avis publiés sont repris de Google et de Pages Jaunes, avec leur source et leur lien.
@@ -152,7 +174,12 @@ ${situations.map((s) => `- [${s.data.question}](${site.url}/vendre/${s.id})`).jo
 
 ## Quartiers couverts
 Prix médian au mètre carré des appartements vendus, puis fourchette du premier au neuvième décile, source DVF. Chaque page publie en plus le prix de chacune de ses rues.
-${quartiers.map((q) => `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${q.data.prixMoyenM2}${q.data.faits.find((f) => /ventes/i.test(f.titre)) ? ` (${q.data.faits.find((f) => /ventes/i.test(f.titre))?.valeur})` : ''} ; ${q.data.fourchette}.`).join('\n')}
+${quartiers.map((q) => {
+  const c = chiffresZone(q.id);
+  return c
+    ? `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${c.prix}, médiane pondérée des voies (${c.ventesAnalysees}) ; de ${c.fourchette}.`
+    : `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${q.data.prixMoyenM2} ; ${q.data.fourchette}.`;
+}).join('\n')}
 
 ## Publications récentes
 ${articles.slice(0, 10).map((a) => `- [${a.data.titre}](${site.url}/panorama/${a.id})`).join('\n')}

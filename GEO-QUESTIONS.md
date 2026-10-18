@@ -1,4 +1,4 @@
-# Les trente questions à suivre
+# Les questions à suivre
 
 Ce que tape réellement un vendeur parisien de 40 à 70 ans dans ChatGPT, dans
 Perplexity ou dans la barre de recherche de Google qui répond désormais par une
@@ -44,6 +44,23 @@ Fort volume, intention faible, indispensable pour exister.
 | Le 18e est il moins cher que le 9e ? | oui, analyse de la frontière |
 | Où trouver les prix de vente réels des appartements à Paris ? | oui, données DVF publiées |
 | Les prix de l'immobilier baissent ils à Paris en ce moment ? | partielle, à réactualiser à chaque parution |
+
+## L'estimation par quartier, la requête à mandats
+
+Volume moyen, intention forte : qui demande une estimation a un bien. Une page par quartier,
+chiffres DVF calculés, réponse courte en tête (octobre 2026).
+
+| Question | Réponse sur le site |
+| --- | --- |
+| Estimation appartement Montmartre | oui, /estimation/paris-18/montmartre |
+| Estimation appartement Trudaine | oui, /estimation/paris-9/trudaine-maubeuge |
+| Estimation appartement rue des Martyrs | oui, /estimation/paris-9/martyrs-lorette |
+| Estimation appartement Pigalle | oui, /estimation/paris-9/pigalle |
+| Estimation appartement Batignolles | oui, /estimation/paris-17/batignolles |
+| Estimation immobilière Paris 9 | oui, /estimation/paris-9 |
+| Estimation immobilière Paris 18 | oui, /estimation/paris-18 |
+| Combien vaut un deux pièces à Paris 9e ? | oui, prix par taille |
+| Quelle agence pour estimer mon appartement dans le 9e nord ? | oui, page agence Trudaine |
 
 ## La décision de vendre
 
@@ -94,7 +111,7 @@ Le moment de la décision. Peu de volume, valeur maximale.
 | Peut on résilier un mandat exclusif ? | oui |
 | Vendre seul ou passer par une agence à Paris ? | oui, /vendre/seul-ou-par-agence |
 
-## Le cabinet
+## L'agence
 
 À suivre pour savoir si la marque existe pour les moteurs.
 
@@ -124,6 +141,15 @@ sans réponse directe, à écrire avec des chiffres sourcés et datés, jamais d
 ```
 Quel est le prix au m2 dans le 9e arrondissement de Paris ?
 Quel est le prix au m2 à Montmartre ?
+Estimation appartement Montmartre
+Estimation appartement Trudaine
+Estimation appartement rue des Martyrs
+Estimation appartement Pigalle
+Estimation appartement Batignolles
+Estimation immobilière Paris 9
+Estimation immobilière Paris 18
+Combien vaut un deux pièces à Paris 9e ?
+Quelle agence pour estimer mon appartement dans le 9e nord ?
 Prix immobilier rue des Martyrs Paris 9e
 Le 18e arrondissement est il moins cher que le 9e ?
 Où trouver les prix de vente réels des appartements à Paris ?

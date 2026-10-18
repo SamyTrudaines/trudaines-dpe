@@ -1,4 +1,5 @@
 ---
+import EntreeEstimation from '../../components/EntreeEstimation.astro';
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
@@ -13,6 +14,8 @@ import { evt, referencesProches, guidePertinent } from '../../lib/entonnoir';
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
 import { ambianceDeVoie } from '../../data/ambiance';
+import { estimationsQuartiers } from '../../data/estimations-quartiers';
+import { estimationsDeRue } from '../../lib/estimation-quartier';
 
 interface Props { rue: Rue }
 
@@ -35,6 +38,8 @@ const memeNiveau = voisines(rue);
 const contexte = quartier ? quartier.id : `arr_${rue.codePostal.slice(-2)}`;
 const lieu = quartier ? `${rue.arrondissement}, quartier ${quartier.data.nom}` : rue.arrondissement;
 const ancreArrondissement = `/prix-immobilier#arr-${rue.codePostal}`;
+/* Les pages d'estimation des quartiers qui comptent cette rue : le chemin vers la recherche « estimation appartement <quartier> ». */
+const estimationsProches = estimationsDeRue(rue.slug, estimationsQuartiers);
 
 const archives = await getCollection('biens', (b) => b.data.archive);
 const references = referencesProches(archives, { quartier: quartier?.data.nom, codePostal: rue.codePostal });
@@ -163,6 +168,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
   <section class="section pb-0 pt-6 md:pt-8" aria-label="Les chiffres de la rue">
     <div class="conteneur">
       <p class="chapo max-w-4xl">{chapo}</p>
+      <EntreeEstimation cible={`estimation-${rue.slug}`} adresse={`${rue.nom}, ${rue.codePostal} Paris`} libelle={`Votre appartement ${nomEnPhrase} : son prix en moins d'une minute`} />
       <dl class="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[color:var(--color-trait)] py-6 lg:grid-cols-4 lg:gap-x-8">
         <div class="col-span-2 lg:col-span-1">
           <dt class="surtitre">Prix médian au m²</dt>
@@ -191,6 +197,13 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
         Source : fichier des demandes de valeurs foncières de la direction générale des finances publiques, ventes
         d'appartements signées de {periode}. Une voie n'est publiée qu'à partir de {ventesMinimum} ventes.
       </p>
+      {estimationsProches.length > 0 && (
+        <p class="mt-4 text-sm">
+          {estimationsProches.map((q, i) => (
+            <>{i > 0 && ' · '}<a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne">Estimation appartement {q.nom}</a></>
+          ))}
+        </p>
+      )}
       {/* Le visiteur lit le prix de sa rue puis repart : la proposition d'estimation vient juste après le chiffre. */}
       <div class="mt-8 flex flex-col gap-4 border-l-2 border-[color:var(--color-or)] pl-5 sm:flex-row sm:items-center sm:justify-between">
         <p class="max-w-xl">

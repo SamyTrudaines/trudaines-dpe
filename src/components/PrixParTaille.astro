@@ -1,0 +1,51 @@
+---
+import { libellePieces, periode, type Typologie } from '../lib/rues';
+import { prix, nombre } from '../lib/format';
+
+/**
+ * Prix d'un appartement selon sa taille : surface, prix au m² et valeur médiane
+ * des ventes signées. Les chiffres viennent de rues.json, jamais d'ici.
+ */
+interface Props {
+  typologies: Typologie[];
+  titre: string;
+  /** Ce que mesure le tableau, dit en une phrase sous le titre. */
+  source: string;
+  identifiant?: string;
+}
+
+const { typologies, titre, source, identifiant = 'prix-par-taille' } = Astro.props;
+---
+{typologies.length > 1 && (
+  <section class="section filet" aria-labelledby={identifiant}>
+    <div class="conteneur">
+      <h2 id={identifiant} class="titre-2">{titre}</h2>
+      <p class="mt-4 max-w-3xl text-sm text-[color:var(--color-ardoise)]">{source} Ventes de {periode}, base des valeurs foncières (DVF).</p>
+      <table class="mt-8 w-full text-left text-sm">
+        <thead>
+          <tr class="border-b border-[color:var(--color-encre)]">
+            <th class="py-3 font-normal">Taille</th>
+            <th class="py-3 text-right font-normal">Surface médiane</th>
+            <th class="py-3 text-right font-normal">Prix au m²</th>
+            <th class="py-3 text-right font-normal">Prix médian</th>
+            <th class="hidden py-3 text-right font-normal sm:table-cell">Ventes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {typologies.map((t) => (
+            <tr class="border-b border-[color:var(--color-trait)]">
+              <td class="py-3">{libellePieces(t.pieces)}</td>
+              <td class="py-3 text-right">{nombre(t.surface)} m²</td>
+              <td class="py-3 text-right">{prix(t.mediane)}</td>
+              <td class="py-3 text-right">{prix(t.prix)}</td>
+              <td class="hidden py-3 text-right sm:table-cell">{nombre(t.ventes)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+        Chaque colonne est une médiane distincte : le prix médian n'est pas le produit de la surface par le prix au m².
+      </p>
+    </div>
+  </section>
+)}

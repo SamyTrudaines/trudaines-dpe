@@ -10,6 +10,8 @@ import { getSecteur } from '../data/secteurs';
 import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
 import { arrondissements, periode, rues } from '../lib/rues';
 import { prix, nombre } from '../lib/format';
+import PrixParTaille from './PrixParTaille.astro';
+import { estimationsQuartiers } from '../data/estimations-quartiers';
 
 /**
  * Page « agence immobilière » d'un arrondissement suivi sans quartier détaillé
@@ -112,8 +114,21 @@ const services = [
       <p class="mt-10">
         <a href={`/prix-immobilier#arr-${code}`} class="lien-souligne">Toutes les voies du {numero}</a>
       </p>
+      {estimationsQuartiers.some((q) => q.secteur === slug) && (
+        <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          {estimationsQuartiers.filter((q) => q.secteur === slug).map((q) => (
+            <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne">Estimation appartement {q.nom}</a>
+          ))}
+        </p>
+      )}
     </div>
   </section>
+
+  <PrixParTaille
+    typologies={chiffres.typologies ?? []}
+    titre={`Prix d'un appartement selon sa taille dans le ${numero}`}
+    source={`Toutes les ventes d'appartements de l'arrondissement, par nombre de pièces.`}
+  />
 
   <section class="section filet" aria-labelledby={`questions-${numero}`}>
     <div class="conteneur max-w-3xl">

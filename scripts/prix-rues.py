@@ -176,6 +176,26 @@ def quartier_administratif(lon, lat, quartiers):
 
 
 
+def typologies_de(ventes, minimum=10):
+    """Prix par taille d'appartement (1, 2, 3, 4 pièces et plus) sur un lot de ventes."""
+    par_piece = defaultdict(list)
+    for v in ventes:
+        par_piece[min(v['pieces'], 4)].append(v)
+    lignes = []
+    for cle in sorted(par_piece):
+        groupe = par_piece[cle]
+        if len(groupe) < minimum:
+            continue
+        lignes.append({
+            'pieces': cle,
+            'ventes': len(groupe),
+            'surface': round(quantile(sorted(v['surface'] for v in groupe), 0.5)),
+            'mediane': round(quantile(sorted(v['prix_m2'] for v in groupe), 0.5) / 10) * 10,
+            'prix': round(quantile(sorted(v['valeur'] for v in groupe), 0.5) / 1000) * 1000,
+        })
+    return lignes
+
+
 def date_de_parution(annee):
     """Date de parution du fichier d'une année au catalogue data.gouv.fr, vide si injoignable."""
     try:
@@ -228,8 +248,10 @@ def main():
 
     # Repères d'arrondissement, pour situer chaque rue.
     par_arrondissement = defaultdict(list)
+    ventes_arrondissement = defaultdict(list)
     for v in ventes:
         par_arrondissement[v['code_postal']].append(v['prix_m2'])
+        ventes_arrondissement[v['code_postal']].append(v)
 
     arrondissements = {
         code: {
@@ -238,6 +260,7 @@ def main():
             'mediane': round(quantile(sorted(prix), 0.5)),
             'd1': round(quantile(sorted(prix), 0.1)),
             'd9': round(quantile(sorted(prix), 0.9)),
+            'typologies': typologies_de(ventes_arrondissement[code]),
         }
         for code, prix in par_arrondissement.items()
     }
@@ -308,13 +331,13 @@ def main():
         q = quartier_administratif(point['lon'], point['lat'], polygones)
         if not q or f"750{q['arrondissement']:02d}" != code_postal:
             continue
-        par_quartier[q['code']].extend(v['prix_m2'] for v in lot)
+        par_quartier[q['code']].extend(lot)
         infos_quartier[q['code']] = q
     quartiers = {}
-    for code, prix in sorted(par_quartier.items()):
-        if len(prix) < 30:
+    for code, lot_quartier in sorted(par_quartier.items()):
+        if len(lot_quartier) < 30:
             continue
-        prix = sorted(prix)
+        prix = sorted(v['prix_m2'] for v in lot_quartier)
         q = infos_quartier[code]
         quartiers[code] = {
             'nom': q['nom'],
@@ -323,6 +346,7 @@ def main():
             'mediane': round(quantile(prix, 0.5) / 10) * 10,
             'd1': round(quantile(prix, 0.1) / 10) * 10,
             'd9': round(quantile(prix, 0.9) / 10) * 10,
+            'typologies': typologies_de(lot_quartier),
         }
 
     sortie = {

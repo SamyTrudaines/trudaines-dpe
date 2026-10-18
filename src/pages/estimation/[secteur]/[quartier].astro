@@ -5,15 +5,19 @@ import CadreMoulure from '../../../components/CadreMoulure.astro';
 import FormulaireEstimation from '../../../components/FormulaireEstimation.astro';
 import BoutonCreneau from '../../../components/BoutonCreneau.astro';
 import Faq from '../../../components/Faq.astro';
+import PrixParTaille from '../../../components/PrixParTaille.astro';
 import Avis from '../../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, trierAvis } from '../../../lib/avis';
 import { secteurs } from '../../../data/secteurs';
 import { estimationsQuartiers, type EstimationQuartier } from '../../../data/estimations-quartiers';
-import { distance, memeVoie, position, ruesDuQuartier, type Point } from '../../../lib/quartiers';
-import { rues, periode, type Rue } from '../../../lib/rues';
-import { prix, nombre } from '../../../lib/format';
-import { evt } from '../../../lib/entonnoir';
-import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations } from '../../../data/lieux';
+import { mesureQuartier } from '../../../lib/estimation-quartier';
+import { agencesLocales } from '../../../data/agences-locales';
+import { periode, libellePieces, millesime, arrondissements } from '../../../lib/rues';
+import { prix, nombre, dateFr } from '../../../lib/format';
+import { getCollection } from 'astro:content';
+import ReferencesProches from '../../../components/ReferencesProches.astro';
+import { evt, referencesProches } from '../../../lib/entonnoir';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations, rattachementsQuartiers } from '../../../data/lieux';
 
 /**
  * Estimation d'un quartier : textes dans src/data/estimations-quartiers.ts,
@@ -29,39 +33,67 @@ const { page } = Astro.props;
 const secteur = secteurs.find((s) => s.slug === page.secteur)!;
 const arrondissement = secteur.nom.replace('Paris ', '');
 
-function ruesDeLaPage(p: EstimationQuartier): Rue[] {
-  if (p.zone) return ruesDuQuartier(p.zone);
-  const points = (p.reperes ?? []).map((slug) => rues.find((r) => r.slug === slug)).map((r) => (r ? position(r) : null)).filter((x): x is Point => x !== null);
-  if (!points.length) throw new Error(`[estimation] ${p.slug} : aucune voie repère géocodée`);
-  const centre = { lon: points.reduce((s, x) => s + x.lon, 0) / points.length, lat: points.reduce((s, x) => s + x.lat, 0) / points.length };
-  return rues.filter((r) => {
-    const point = position(r);
-    return r.codePostal === p.codePostal && point !== null && distance(point, centre) <= (p.rayon ?? 450);
-  });
-}
-
-const brutes = ruesDeLaPage(page);
-/* Une voie écrite de deux façons dans la base foncière ne compte qu'une fois : on garde la série la plus fournie. */
-const liste = brutes.filter((r) => !memeVoie(r).some((autre) => brutes.includes(autre) && (autre.ventes > r.ventes || (autre.ventes === r.ventes && autre.slug < r.slug))));
-if (liste.length < 3) throw new Error(`[estimation] ${page.slug} : ${liste.length} voies mesurées, trop peu pour publier`);
-
-const ventes = liste.reduce((s, r) => s + r.ventes, 0);
-/* Médiane pondérée : la médiane de voie au rang de la moitié des ventes, voies classées par prix. */
+const { liste, ventes, mediane, typologies } = mesureQuartier(page);
 const parPrix = [...liste].sort((a, b) => a.mediane - b.mediane);
-let cumul = 0;
-const mediane = parPrix.find((r) => (cumul += r.ventes) >= ventes / 2)!.mediane;
 const moinsChere = parPrix[0];
 const plusChere = parPrix[parPrix.length - 1];
 const tableau = [...liste].sort((a, b) => b.ventes - a.ventes).slice(0, 12);
+const deux = typologies.find((t) => t.pieces === 2);
+const trois = typologies.find((t) => t.pieces === 3);
+const medianeArrondie = prix(Math.round(mediane / 10) * 10);
 
-const titre = `Estimation immobilière ${page.nom}, ${secteur.nom} | Trudaines`;
-const description = `Estimation gratuite ${page.dans}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² médian sur ${nombre(ventes)} ventes signées. Avis de valeur écrit sous 48 h.`;
+/* Le quartier face à son arrondissement, la part des petites surfaces, la voie la plus active : des faits propres à la page. */
+const medianeArrondissement = arrondissements[page.codePostal]?.mediane;
+const ecartArrondissement = medianeArrondissement ? Math.round(((mediane - medianeArrondissement) / medianeArrondissement) * 100) : null;
+const ventesTypees = typologies.reduce((s, t) => s + t.ventes, 0);
+const petites = typologies.filter((t) => t.pieces <= 2).reduce((s, t) => s + t.ventes, 0);
+const partPetites = ventesTypees ? Math.round((petites / ventesTypees) * 100) : null;
+const verdictEcart = ecartArrondissement === null
+  ? ''
+  : Math.abs(ecartArrondissement) > 2
+    ? ecartArrondissement > 0 ? `Oui, d'environ ${ecartArrondissement} %` : `Non, il est inférieur d'environ ${-ecartArrondissement} %`
+    : `Pas sensiblement, l'écart est de ${ecartArrondissement} %`;
+const plusActive = [...liste].sort((a, b) => b.ventes - a.ventes)[0];
+const chiffresCles = [
+  { valeur: `${nombre(ventes)}`, libelle: `ventes d'appartements signées ${page.dans}, de ${periode}` },
+  ...(ecartArrondissement !== null && medianeArrondissement
+    ? [{
+        valeur: ecartArrondissement === 0 ? 'Au niveau' : `${ecartArrondissement > 0 ? '+' : ''}${ecartArrondissement} %`,
+        libelle: `par rapport à la médiane de ${secteur.nom}, ${prix(medianeArrondissement)} le m²`,
+      }]
+    : []),
+  ...(partPetites !== null ? [{ valeur: `${partPetites} %`, libelle: 'des ventes sont des studios et des deux pièces' }] : []),
+  { valeur: plusActive.nom, libelle: `la voie la plus active, ${plusActive.ventes} ventes à ${prix(plusActive.mediane)} le m² en médiane` },
+];
+
+/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */
+const reponseCourte = `${page.dans.charAt(0).toUpperCase()}${page.dans.slice(1)} (${secteur.nom}), les appartements se sont vendus ${medianeArrondie} le m² en médiane pondérée, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} voies (base DVF de la DGFiP).${
+  deux && trois ? ` Un deux pièces de ${deux.surface} m² s'y vend autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.` : ''
+} Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, gratuit et sans engagement.`;
+
+/* Le titre porte « estimation appartement », le h1 « estimation immobilière » : les deux recherches visées. */
+const titre = `Estimation appartement ${page.nom}, ${secteur.nom} | Trudaines`;
+const description = `Estimation appartement ${page.nom}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Gratuite, en ligne en une minute ou après visite.`;
 
 const faq = [
   {
     question: `Quel est le prix au mètre carré ${page.dans} ?`,
-    reponse: `Sur les ${liste.length} voies que nous mesurons ${page.dans}, ${nombre(ventes)} ventes d'appartements ont été signées de ${periode}. La médiane pondérée par les ventes ressort à ${prix(Math.round(mediane / 10) * 10)} le mètre carré. Selon la rue, elle va de ${prix(moinsChere.mediane)} (${moinsChere.nom}) à ${prix(plusChere.mediane)} (${plusChere.nom}).`,
+    reponse: `Sur les ${liste.length} voies que nous mesurons ${page.dans}, ${nombre(ventes)} ventes d'appartements ont été signées de ${periode}. La médiane pondérée par les ventes ressort à ${medianeArrondie} le mètre carré. Selon la rue, elle va de ${prix(moinsChere.mediane)} (${moinsChere.nom}) à ${prix(plusChere.mediane)} (${plusChere.nom}).`,
   },
+  {
+    question: `Combien vaut un appartement ${page.dans} ?`,
+    reponse: `${
+      typologies.length > 1
+        ? `Selon sa taille, sur les ventes signées de ${periode} : ${typologies.map((t) => `${libellePieces(t.pieces).toLowerCase()}, ${t.surface} m² et ${prix(t.prix)}`).join(' ; ')}, en médiane pondérée des voies.`
+        : `Pour un appartement de 50 m² vendu au prix médian du quartier, les ventes signées situent la valeur autour de ${prix(Math.round((mediane * 50) / 5000) * 5000)}.`
+    } Le prix réel dépend de la rue, de l'étage, de l'ascenseur, de l'état et de la copropriété : l'estimation en ligne ou l'avis de valeur écrit après visite le précisent pour votre bien.`,
+  },
+  ...(ecartArrondissement !== null && medianeArrondissement
+    ? [{
+        question: `Est-il plus cher d'acheter ${page.dans} que dans le reste du ${arrondissement} ?`,
+        reponse: `${verdictEcart} : la médiane pondérée des voies ${page.dans} est de ${medianeArrondie} le m², contre ${prix(medianeArrondissement)} pour l'ensemble de ${secteur.nom}, sur les ventes signées de ${periode}.`,
+      }]
+    : []),
   {
     question: 'Comment estimez-vous mon appartement ?',
     reponse: "Nous partons des ventes signées dans votre rue et dans les rues voisines, publiées par l'administration fiscale, puis nous visitons. L'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
@@ -74,7 +106,16 @@ const faq = [
 
 const avis = trierAvis((await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug)).slice(0, 3);
 const agregat = await agrégatAvis();
-const voisines = estimationsQuartiers.filter((q) => q.slug !== page.slug);
+/* La page agence du même lieu, quand elle existe : même périmètre, autre intention de recherche. */
+const agence = agencesLocales.find((l) => l.secteur === page.secteur && (l.slug === page.slug || (page.zone && (l.quartier ?? l.quartiersLies[0]) === page.zone)));
+/* Les quartiers du même arrondissement d'abord : ce sont ceux que le vendeur compare. */
+const voisines = estimationsQuartiers
+  .filter((q) => q.slug !== page.slug)
+  .sort((a, b) => Number(b.secteur === page.secteur) - Number(a.secteur === page.secteur));
+/* Les ventes de l'agence dans le quartier : la preuve qu'on y travaille, avant la demande. */
+const archives = (await getCollection('biens')).filter((b) => b.data.archive);
+const quartierReference = page.quartiersBiens.find((q) => archives.some((b) => b.data.quartier === q)) ?? page.quartiersBiens[0];
+const references = referencesProches(archives, { quartier: quartierReference, codePostal: page.codePostal });
 
 const donnees = [
   {
@@ -88,11 +129,13 @@ const donnees = [
     name: `Estimation immobilière ${page.nom}, ${secteur.nom}`,
     serviceType: 'Estimation immobilière',
     provider: { '@id': 'https://www.trudaines.com/#agence' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 48 heures, sans engagement" },
     areaServed: {
       '@type': 'Place',
       name: `${page.nom}, ${secteur.nomLong}`,
       ...(arrondissementParCodePostal[page.codePostal] ? { containedInPlace: lieuEnDonnees(arrondissementParCodePostal[page.codePostal]) } : {}),
-      ...donneesDeRattachement(rattachementsEstimations[page.slug] ?? {}),
+      /* Une page bâtie sur la zone d'un quartier publié en partage le périmètre, donc les rattachements. */
+      ...donneesDeRattachement(rattachementsEstimations[page.slug] ?? (page.zone ? rattachementsQuartiers[page.zone] : undefined) ?? {}),
     },
   },
 ];
@@ -108,12 +151,15 @@ const donnees = [
       <div>
         <p class="surtitre">Estimation · {secteur.nom} · {page.nom}</p>
         <h1 class="titre-1 mt-6">Estimation immobilière {page.nom}, {secteur.nom}</h1>
+        <p class="mt-6 max-w-2xl" id="reponse-courte">{reponseCourte}</p>
+        {/* Sur téléphone, le formulaire vient après le texte : un accès direct, sans défiler. */}
+        <a href={`#estimation-${page.slug}`} class="bouton mt-6 lg:hidden" data-evt={evt('estimation', 'formulaire', page.slug)}>Estimer mon appartement</a>
         <p class="chapo mt-8">{page.chapo}</p>
         <div class="mt-10 border-t border-[color:var(--color-encre)] pt-6">
           <p class="surtitre">Ventes signées {page.dans}</p>
-          <p class="mt-3 text-lg">{prix(Math.round(mediane / 10) * 10)} le m², médiane pondérée</p>
+          <p class="mt-3 text-lg">{medianeArrondie} le m², médiane pondérée</p>
           <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
-            {nombre(ventes)} ventes d'appartements sur {liste.length} voies, de {periode}.
+            {nombre(ventes)} ventes d'appartements sur {liste.length} voies, de {periode}. Base parue le <time datetime={millesime}>{dateFr(new Date(millesime))}</time>.
           </p>
         </div>
         <BoutonCreneau
@@ -134,6 +180,14 @@ const donnees = [
   <section class="section filet" aria-labelledby="methode">
     <div class="conteneur max-w-3xl">
       <h2 id="methode" class="titre-2">Ce qui fait le prix {page.dans}</h2>
+      <dl class="mt-8 grid gap-6 sm:grid-cols-2">
+        {chiffresCles.map((c) => (
+          <div class="flex flex-col border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="order-2 mt-2 text-sm text-[color:var(--color-ardoise)]">{c.libelle}</dt>
+            <dd class="order-1 titre-3">{c.valeur}</dd>
+          </div>
+        ))}
+      </dl>
       {page.paragraphes.map((p) => <p class="mt-6">{p}</p>)}
     </div>
   </section>
@@ -165,6 +219,22 @@ const donnees = [
     </div>
   </section>
 
+  <PrixParTaille
+    typologies={typologies}
+    titre={`Prix d'un appartement selon sa taille ${page.dans}`}
+    source={`Pour chaque taille, médiane des voies du quartier pondérée par leurs ventes.`}
+  />
+
+  <ReferencesProches
+    mandats={references.mandats}
+    portee={references.portee}
+    quartier={quartierReference}
+    arrondissement={secteur.nom}
+    ici={page.dans}
+    evt={evt('estimation', 'reference', page.slug)}
+    evtToutes={evt('estimation', 'references', page.slug)}
+  />
+
   <Faq questions={faq} titre={`Questions des vendeurs ${page.dans}`} />
 
   <Avis avis={avis} agregat={agregat} titre="Des ventes racontées par leurs propriétaires" />
@@ -180,6 +250,11 @@ const donnees = [
         <a href={page.lien.href} class="bloc no-underline">
           <span class="titre-3 block">{page.lien.libelle}</span>
         </a>
+        {agence && page.lien.href !== `/agence-immobiliere-${agence.slug}` && (
+          <a href={`/agence-immobiliere-${agence.slug}`} class="bloc no-underline">
+            <span class="titre-3 block">Agence immobilière {agence.nom}</span>
+          </a>
+        )}
         {voisines.map((q) => (
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="bloc no-underline">
             <span class="titre-3 block">Estimation {q.nom}</span>

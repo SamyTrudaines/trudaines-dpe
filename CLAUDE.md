@@ -29,9 +29,12 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   marqueur que la recette de mise en ligne cherche sur la page (`scripts/mise-en-ligne/config.mjs`).
 
 ## Objectifs de Samy (priorité absolue)
-- Top 3 sur Google, les réponses IA de Google, ChatGPT, Claude et Gemini pour : estimation Montmartre,
-  estimation Trudaine, estimation Paris 18, estimation Paris 9, estimation Saint-Georges, estimation rue des Martyrs.
-  Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
+- Top 3 sur Google, les réponses IA de Google, ChatGPT, Claude et Gemini, en « estimation immobilière » et
+  « estimation appartement » pour : Paris 18, Paris 9, Paris 17, Montmartre, Trudaine-Maubeuge, Lorette-Martyrs,
+  Clichy-Trinité, Batignolles-Cardinet, Saint-Georges, rue des Martyrs (et Abbesses, Lamarck, Jules-Joffrin).
+  Pages : /estimation/<secteur> et /estimation/<secteur>/<quartier> ; titre en « estimation appartement », h1 en
+  « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
+- Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, le contact demandé avant
   de révéler le prix. Étape 1 : adresse, type, surface, pièces, chambres, étage et ascenseur (listes déroulantes) ;
   étape 2 : prénom, email, téléphone ; la fourchette DVF de la rue, ajustée par étage, ascenseur et typologie
@@ -81,9 +84,19 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   `scripts/guide-bien-vendre.mjs` (`npm run guide`), chiffres DVF dans `src/data/marche-paris.json`
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
-- Estimation par quartier : `/estimation/<secteur>/<quartier>` (Épinettes, Cardinet, Bonne-Nouvelle, Saint-Georges,
-  Jules-Joffrin), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
+- Estimation par quartier : `/estimation/<secteur>/<quartier>` (Épinettes, Cardinet, Batignolles, Bonne-Nouvelle, Saint-Martin,
+  Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin ;
+  Abbesses, Lamarck, Pigalle et Saint-Martin : 400 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
   requêtes que Search Console attribue déjà au site.
+  Mesure commune dans `src/lib/estimation-quartier.ts` : médiane pondérée interpolée des médianes de voie
+  (`medianePonderee`, `src/lib/rues.ts`), prix par taille (`typologiesDesRues`). Les pages `/quartiers/<id>`, le tableau
+  des prix par quartier, les blocs agence et llms.txt lisent `chiffresZone` : le prix et la fourchette du frontmatter des
+  quartiers ne servent plus que de repli.
+- Prix par taille (studio, 2, 3, 4 pièces et plus) : `typologies` des arrondissements et des quartiers administratifs
+  dans rues.json (`scripts/prix-rues.py`, groupes d'au moins dix ventes), tableau `PrixParTaille` sur les pages
+  d'estimation, agence et quartier. Le calcul de fourchette en ligne s'en sert quand la rue manque de ventes.
+- Suivi des requêtes visées : bloc « Requêtes visées » (colonnes AB à AF) de l'onglet `synthese` de la feuille
+  Search Console, formules sur l'onglet `donnees`.
 
 - Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),
   `/feeds/trovit.xml` (français) et `/feeds/trovit-<langue>.xml` (en, de, es, it, pt, zh, ar), construits par

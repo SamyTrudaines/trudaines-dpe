@@ -28,7 +28,7 @@ export const GET: APIRoute = () => {
   const secteurs = Object.fromEntries(
     Object.entries(arrondissements).map(([code, a]) => [
       code,
-      { n: a.nom, v: a.ventes, m: a.mediane, a: a.d1, b: a.d9 },
+      { n: a.nom, v: a.ventes, m: a.mediane, a: a.d1, b: a.d9, t: Object.fromEntries((a.typologies ?? []).map((t) => [t.pieces, [t.mediane, t.ventes]])) },
     ])
   );
 

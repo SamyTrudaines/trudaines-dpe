@@ -199,7 +199,13 @@
      */
     var cle = String(Math.min(pieces, 4));
     var typologie = reference.t && reference.t[cle];
-    var decalage = typologie && typologie[1] >= 5 ? typologie[0] - reference.m : 0;
+    /* Faute de ventes assez nombreuses dans la voie, l'écart relatif mesuré sur tout l'arrondissement. */
+    var typeSecteur = etat.secteur && etat.secteur.t && etat.secteur.t[cle];
+    var decalage = typologie && typologie[1] >= 5
+      ? typologie[0] - reference.m
+      : typeSecteur && typeSecteur[1] >= 10
+        ? reference.m * (typeSecteur[0] / etat.secteur.m - 1)
+        : 0;
     var centre = prixPourPosition(reference, position) + decalage;
     centre = Math.max(reference.a, Math.min(reference.b, centre));
     var bas = Math.max(reference.a, centre * 0.95);

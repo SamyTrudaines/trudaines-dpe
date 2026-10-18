@@ -4,7 +4,8 @@ import CadreMoulure from '../../components/CadreMoulure.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import EstimationImmediate from '../../components/EstimationImmediate.astro';
 import BoutonCreneau from '../../components/BoutonCreneau.astro';
-import { secteurs } from '../../data/secteurs';
+import { secteurs, fourchetteSecteur } from '../../data/secteurs';
+import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis } from '../../lib/avis';
@@ -185,8 +186,15 @@ const donnees = [
             <h3 class="titre-3">
               <a href={`/estimation/${s.slug}`} class="no-underline hover:underline">Estimation {s.nom}</a>
             </h3>
-            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.fourchette}</p>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{fourchetteSecteur(s.arrondissement)}</p>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
+            {estimationsQuartiers.some((q) => q.secteur === s.slug) && (
+              <ul class="mt-4 space-y-1 text-sm">
+                {estimationsQuartiers.filter((q) => q.secteur === s.slug).map((q) => (
+                  <li><a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne">Estimation {q.nom}</a></li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

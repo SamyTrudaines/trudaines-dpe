@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { quartiersAdministratifs, periode } from '../lib/rues';
 import { nombre } from '../lib/format';
 import notaires from '../data/notaires.json';
+import { chiffresZone } from '../lib/estimation-quartier';
 /** `codePostal` : ajoute les quartiers administratifs de l'arrondissement, calculés sur les ventes DVF. */
 interface Props { quartiers: CollectionEntry<'quartiers'>[]; titre?: string; codePostal?: string }
 const { quartiers, titre = 'Prix par quartier', codePostal } = Astro.props;
@@ -40,8 +41,8 @@ const numero = codePostal ? `${Number(codePostal.slice(-2))}e` : '';
               <th scope="row" class="py-4 pr-6 font-medium">
                 <a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a>
               </th>
-              <td class="py-4 pr-6">{q.data.prixMoyenM2}</td>
-              <td class="py-4 pr-6 text-[color:var(--color-ardoise)]">{q.data.fourchette}</td>
+              <td class="py-4 pr-6">{chiffresZone(q.id)?.prix ?? q.data.prixMoyenM2}</td>
+              <td class="py-4 pr-6 text-[color:var(--color-ardoise)]">{chiffresZone(q.id)?.fourchette ?? q.data.fourchette}</td>
               {administratifs.length > 0 && <td class="py-4" />}
             </tr>
           ))}

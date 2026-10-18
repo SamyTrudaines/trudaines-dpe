@@ -2,7 +2,25 @@
  * Secteurs couverts par l'agence.
  * Ajouter un secteur ici crée automatiquement sa page /estimation/<slug>.
  */
+import { arrondissements, periode } from '../lib/rues';
+import { prix, nombre } from '../lib/format';
+
 export type QuestionFaq = { question: string; reponse: string };
+
+/**
+ * Prix au mètre carré d'un arrondissement, calculé depuis rues.json à chaque build :
+ * la réponse suit la base DVF, elle n'est jamais recopiée à la main.
+ */
+function reponsePrix(code: string, suite: string): string {
+  const a = arrondissements[code];
+  return `Le prix médian ressort à ${prix(a.mediane)} le mètre carré sur ${nombre(a.ventes)} ventes d'appartements enregistrées devant notaire de ${periode} (source DGFiP), avec un premier décile à ${prix(a.d1)} et un neuvième à ${prix(a.d9)}. ${suite}`;
+}
+
+/** Étendue du premier au neuvième décile, pour les listes de secteurs. */
+export function fourchetteSecteur(code: string): string {
+  const a = arrondissements[code];
+  return `${nombre(a.d1)} à ${prix(a.d9)} le m², du premier au neuvième décile des ventes d'appartements de ${periode}`;
+}
 
 export type Secteur = {
   slug: string;
@@ -28,7 +46,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 9e | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 9e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 9e | Vente et estimation - Trudaines',
@@ -81,7 +99,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 18e, Montmartre | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 18e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
     titreAgence: 'Agence immobilière Paris 18e | Vente et estimation - Trudaines',
@@ -187,7 +205,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75017',
     nom: 'Paris 17e',
     nomLong: '17e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 17e | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 17e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e | Batignolles et Épinettes - Trudaines',
@@ -206,7 +224,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Quel est le prix au mètre carré dans le 17e arrondissement ?",
         reponse:
-          "Le prix médian ressort à 10 130 € le mètre carré sur 4 641 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025, avec un premier décile à 7 375 € et un neuvième à 13 246 €. Cet écart de près de 5 900 € mesure ce qu'une moyenne d'arrondissement ne dit pas : l'adresse, l'étage, l'ascenseur, l'état du bien et celui de la copropriété. Nous publions le détail rue par rue.",
+          reponsePrix('75017', "L'écart entre ces deux bornes mesure ce qu'une moyenne d'arrondissement ne dit pas : l'adresse, l'étage, l'ascenseur, l'état du bien et celui de la copropriété. Nous publions le détail rue par rue."),
       },
       {
         question: "Les Batignolles se vendent-elles plus cher que les Épinettes ?",
@@ -259,7 +277,7 @@ export const secteurs: Secteur[] = [
       {
         question: 'Quel est le prix au mètre carré dans le 7e arrondissement ?',
         reponse:
-          "Le prix médian ressort à 13 978 € le mètre carré sur 1 651 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 10 172 € et un neuvième à 21 143 €. Près de 11 000 € séparent ces deux bornes : c'est l'adresse, l'étage, la vue, l'état et la copropriété qui font le prix. Nous publions le détail rue par rue.",
+          reponsePrix('75007', "Entre ces deux bornes, c'est l'adresse, l'étage, la vue, l'état et la copropriété qui font le prix. Nous publions le détail rue par rue."),
       },
       {
         question: 'Comment vendre discrètement dans le 7e ?',
@@ -302,7 +320,7 @@ export const secteurs: Secteur[] = [
       {
         question: 'Quel est le prix au mètre carré dans le 16e arrondissement ?',
         reponse:
-          "Le prix médian ressort à 10 918 € le mètre carré sur 4 342 ventes d'appartements enregistrées devant notaire entre janvier 2024 et décembre 2025 (source DGFiP), avec un premier décile à 8 010 € et un neuvième à 15 313 €. L'écart dit tout de l'arrondissement : la rue, l'étage, la vue et l'immeuble font le prix. Nous publions le détail rue par rue.",
+          reponsePrix('75016', "L'écart dit tout de l'arrondissement : la rue, l'étage, la vue et l'immeuble font le prix. Nous publions le détail rue par rue."),
       },
       {
         question: 'Comment se vend un grand appartement familial dans le 16e ?',

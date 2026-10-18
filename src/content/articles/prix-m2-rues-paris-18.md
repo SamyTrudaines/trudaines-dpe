@@ -1,6 +1,7 @@
 ---
 titre: "Paris 18e : entre Montmartre et la Chapelle, le mètre carré peut valoir plus du double"
 date: 2026-10-03
+dateMaj: 2026-10-18
 image: /images/panorama/prix-m2-rues-paris-18-photo.webp
 imageAlt: "Moulin à vent en bois entre des immeubles clairs"
 chapo: "Du passage Lepic à l'avenue de la Porte des Poissonniers, la médiane du mètre carré passe de 12 850 € à 5 720 € dans le 18e. Ces médianes de ventes signées situent une rue avant de vendre ou d'acheter, sans remplacer la visite."
@@ -91,6 +92,8 @@ Non, c'est un repère. Rue Lepic, huit ventes sur dix se sont faites entre 8 16
 ## Faire estimer votre bien
 
 Pour situer votre appartement dans l'étendue de sa rue, [demandez une estimation](/estimation) : nous la réalisons sur place.
+
+Par quartier, avec le prix de chaque rue et le prix selon la taille : [Montmartre](/estimation/paris-18/montmartre), [Abbesses](/estimation/paris-18/abbesses), [Lamarck](/estimation/paris-18/lamarck), [Jules-Joffrin](/estimation/paris-18/jules-joffrin).
 
 Source : base DVF (demandes de valeurs foncières), ventes portant sur un seul appartement, janvier 2024 à décembre 2025, traitement Trudaines. Les surfaces sont celles du fichier (surface réelle bâtie), qui peuvent s'écarter de quelques mètres carrés de la surface Carrez.
 
