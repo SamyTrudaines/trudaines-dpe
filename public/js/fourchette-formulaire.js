@@ -89,9 +89,19 @@
       position += CURSEURS.etage[valeur(form, 'etage')] || 0;
       position += CURSEURS.ascenseur[valeur(form, 'ascenseur')] || 0;
       position = Math.max(0.1, Math.min(0.9, position));
-      /* Recentrage sur la typologie quand la voie en compte assez de ventes, borné aux déciles observés. */
-      var typologie = reference.t && reference.t[String(Math.min(Math.max(pieces, 1), 4))];
-      var decalage = typologie && typologie[1] >= 5 ? typologie[0] - reference.m : 0;
+      /*
+       * Recentrage sur la typologie, borné aux déciles observés : celle de la voie quand elle compte
+       * assez de ventes, sinon l'écart relatif mesuré sur tout l'arrondissement, appliqué à la voie.
+       */
+      var cle = String(Math.min(Math.max(pieces, 1), 4));
+      var typologie = reference.t && reference.t[cle];
+      var arrondissement = d.arrondissements[codePostal];
+      var typeArrondissement = arrondissement && arrondissement.t && arrondissement.t[cle];
+      var decalage = typologie && typologie[1] >= 5
+        ? typologie[0] - reference.m
+        : typeArrondissement && typeArrondissement[1] >= 10
+          ? reference.m * (typeArrondissement[0] / arrondissement.m - 1)
+          : 0;
       var centre = Math.max(reference.a, Math.min(reference.b, prixPourPosition(reference, position) + decalage));
       var bas = Math.max(reference.a, centre * 0.93);
       var haut = Math.min(reference.b, centre * 1.07);
