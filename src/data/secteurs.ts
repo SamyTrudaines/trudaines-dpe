@@ -28,7 +28,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 9e | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 9e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 9e | Vente et estimation - Trudaines',
@@ -81,7 +81,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 18e, Montmartre | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 18e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
     titreAgence: 'Agence immobilière Paris 18e | Vente et estimation - Trudaines',
@@ -187,7 +187,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75017',
     nom: 'Paris 17e',
     nomLong: '17e arrondissement de Paris',
-    titre: 'Estimation immobilière gratuite Paris 17e | Trudaines',
+    titre: 'Estimation immobilière et appartement Paris 17e | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e | Batignolles et Épinettes - Trudaines',

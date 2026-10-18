@@ -1,0 +1,20 @@
+---
+/**
+ * Entrée d'estimation en tête de page : un seul champ, l'adresse, déjà amorcée
+ * avec la rue de la page. « Estimer » remplit le formulaire d'estimation plus bas
+ * (`cible`, identifiant du formulaire) et y conduit. Sans JavaScript, le lien
+ * mène au formulaire.
+ */
+interface Props { cible: string; adresse?: string; libelle?: string }
+const { cible, adresse = '', libelle = 'Estimez votre appartement' } = Astro.props;
+const id = `entree-${cible}`;
+---
+<form class="entree-estimation mt-6 max-w-2xl" action={`#${cible}`} data-entree-estimation={cible}>
+  <label class="etiquette" for={id}>{libelle}</label>
+  <div class="mt-2 flex flex-col gap-3 sm:flex-row">
+    <input class="champ sm:flex-1" id={id} type="text" autocomplete="street-address" value={adresse} placeholder="Votre adresse à Paris" />
+    <button type="submit" class="bouton whitespace-nowrap">Estimer en ligne</button>
+  </div>
+  <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">Gratuit, moins d'une minute. Ou <a href={`#${cible}`} class="lien-souligne" data-entree-rappel>être rappelé par Samy</a>.</p>
+</form>
+<script src="/js/entree-estimation.js" defer is:inline></script>

@@ -1,4 +1,5 @@
 ---
+import EntreeEstimation from '../../components/EntreeEstimation.astro';
 import type { GetStaticPaths } from 'astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
@@ -217,6 +218,7 @@ const donnees = [
       </p>
       {/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */}
       <p class="chapo mt-6 max-w-3xl" id="reponse-courte">{reponseCourte}</p>
+      <EntreeEstimation cible={`estimation-${id}`} libelle={`Votre appartement à ${nom} : son prix en moins d'une minute`} />
 
       {/*
         Sur téléphone : le prix médian, puis le champ de recherche, puis le reste des chiffres.

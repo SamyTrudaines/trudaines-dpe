@@ -54,13 +54,18 @@ const moinsChere = parPrix[0];
 const plusChere = parPrix[parPrix.length - 1];
 const tableau = [...liste].sort((a, b) => b.ventes - a.ventes).slice(0, 12);
 
-const titre = `Estimation immobilière ${page.nom}, ${secteur.nom} | Trudaines`;
+/* Le titre porte « estimation appartement », le h1 « estimation immobilière » : les deux recherches visées. */
+const titre = `Estimation appartement ${page.nom}, ${secteur.nom} | Trudaines`;
 const description = `Estimation gratuite ${page.dans}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² médian sur ${nombre(ventes)} ventes signées. Avis de valeur écrit sous 48 h.`;
 
 const faq = [
   {
     question: `Quel est le prix au mètre carré ${page.dans} ?`,
     reponse: `Sur les ${liste.length} voies que nous mesurons ${page.dans}, ${nombre(ventes)} ventes d'appartements ont été signées de ${periode}. La médiane pondérée par les ventes ressort à ${prix(Math.round(mediane / 10) * 10)} le mètre carré. Selon la rue, elle va de ${prix(moinsChere.mediane)} (${moinsChere.nom}) à ${prix(plusChere.mediane)} (${plusChere.nom}).`,
+  },
+  {
+    question: `Combien vaut un appartement ${page.dans} ?`,
+    reponse: `Pour un appartement de 50 m² vendu au prix médian du quartier, les ventes signées situent la valeur autour de ${prix(Math.round((mediane * 50) / 5000) * 5000)}. Le prix réel dépend de la rue, de l'étage, de l'ascenseur, de l'état et de la copropriété : l'estimation en ligne ou l'avis de valeur écrit après visite le précisent pour votre bien.`,
   },
   {
     question: 'Comment estimez-vous mon appartement ?',

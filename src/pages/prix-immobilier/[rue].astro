@@ -1,4 +1,5 @@
 ---
+import EntreeEstimation from '../../components/EntreeEstimation.astro';
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
@@ -163,6 +164,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
   <section class="section pb-0 pt-6 md:pt-8" aria-label="Les chiffres de la rue">
     <div class="conteneur">
       <p class="chapo max-w-4xl">{chapo}</p>
+      <EntreeEstimation cible={`estimation-${rue.slug}`} adresse={`${rue.nom}, ${rue.codePostal} Paris`} libelle={`Votre appartement ${nomEnPhrase} : son prix en moins d'une minute`} />
       <dl class="mt-6 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[color:var(--color-trait)] py-6 lg:grid-cols-4 lg:gap-x-8">
         <div class="col-span-2 lg:col-span-1">
           <dt class="surtitre">Prix médian au m²</dt>
