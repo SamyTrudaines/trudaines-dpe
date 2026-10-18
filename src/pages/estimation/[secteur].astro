@@ -12,8 +12,8 @@ import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
-import { arrondissements, periode, libellePieces } from '../../lib/rues';
-import { prix, nombre } from '../../lib/format';
+import { arrondissements, periode, libellePieces, millesime } from '../../lib/rues';
+import { prix, nombre, dateFr } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
 
@@ -112,6 +112,7 @@ const donnees = [
             {chiffres
               ? `${prix(chiffres.d1)} à ${prix(chiffres.d9)} le m², du premier au neuvième décile des ${nombre(chiffres.ventes)} ventes d'appartements signées de ${periode}`
               : secteur.fourchette}
+            {chiffres && <> Base parue le <time datetime={millesime}>{dateFr(new Date(millesime))}</time>.</>}
           </p>
         </div>
         <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">

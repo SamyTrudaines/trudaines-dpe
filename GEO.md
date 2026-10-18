@@ -57,7 +57,7 @@ aussi efficace pour décider.
 
 ## Les questions à suivre
 
-Les trente questions, leur raison d'être et l'état de la réponse sur le site
+Les questions suivies, leur raison d'être et l'état de la réponse sur le site
 sont dans `GEO-QUESTIONS.md`, avec un bloc prêt à coller dans l'outil.
 
 À retenir en une phrase : les questions de prix font le volume, les questions de

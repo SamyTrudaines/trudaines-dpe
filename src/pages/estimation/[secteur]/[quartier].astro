@@ -11,9 +11,11 @@ import { avisCommentés, agrégatAvis, trierAvis } from '../../../lib/avis';
 import { secteurs } from '../../../data/secteurs';
 import { estimationsQuartiers, type EstimationQuartier } from '../../../data/estimations-quartiers';
 import { mesureQuartier } from '../../../lib/estimation-quartier';
-import { periode, libellePieces } from '../../../lib/rues';
-import { prix, nombre } from '../../../lib/format';
-import { evt } from '../../../lib/entonnoir';
+import { periode, libellePieces, millesime } from '../../../lib/rues';
+import { prix, nombre, dateFr } from '../../../lib/format';
+import { getCollection } from 'astro:content';
+import ReferencesProches from '../../../components/ReferencesProches.astro';
+import { evt, referencesProches } from '../../../lib/entonnoir';
 import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations } from '../../../data/lieux';
 
 /**
@@ -74,6 +76,10 @@ const faq = [
 const avis = trierAvis((await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug)).slice(0, 3);
 const agregat = await agrégatAvis();
 const voisines = estimationsQuartiers.filter((q) => q.slug !== page.slug);
+/* Les ventes de l'agence dans le quartier : la preuve qu'on y travaille, avant la demande. */
+const archives = (await getCollection('biens')).filter((b) => b.data.archive);
+const quartierReference = page.quartiersBiens.find((q) => archives.some((b) => b.data.quartier === q)) ?? page.quartiersBiens[0];
+const references = referencesProches(archives, { quartier: quartierReference, codePostal: page.codePostal });
 
 const donnees = [
   {
@@ -114,7 +120,7 @@ const donnees = [
           <p class="surtitre">Ventes signées {page.dans}</p>
           <p class="mt-3 text-lg">{medianeArrondie} le m², médiane pondérée</p>
           <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
-            {nombre(ventes)} ventes d'appartements sur {liste.length} voies, de {periode}.
+            {nombre(ventes)} ventes d'appartements sur {liste.length} voies, de {periode}. Base parue le <time datetime={millesime}>{dateFr(new Date(millesime))}</time>.
           </p>
         </div>
         <BoutonCreneau
@@ -170,6 +176,16 @@ const donnees = [
     typologies={typologies}
     titre={`Prix d'un appartement selon sa taille ${page.dans}`}
     source={`Pour chaque taille, médiane des voies du quartier pondérée par leurs ventes.`}
+  />
+
+  <ReferencesProches
+    mandats={references.mandats}
+    portee={references.portee}
+    quartier={quartierReference}
+    arrondissement={secteur.nom}
+    ici={page.dans}
+    evt={evt('estimation', 'reference', page.slug)}
+    evtToutes={evt('estimation', 'references', page.slug)}
   />
 
   <Faq questions={faq} titre={`Questions des vendeurs ${page.dans}`} />
