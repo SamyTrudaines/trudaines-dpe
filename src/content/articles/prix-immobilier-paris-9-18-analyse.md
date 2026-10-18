@@ -25,18 +25,18 @@ Source unique : le fichier des demandes de valeurs foncières publié par la dir
 | Paris 10e | 1 404 | 6 700 € | 9 400 € | 12 200 € |
 | Paris 18e | 2 974 | 6 200 € | 8 900 € | 12 300 € |
 
-La médiane coupe le marché en deux : la moitié des ventes s'est faite en dessous, la moitié au dessus. Entre le premier et le neuvième décile, quatre ventes sur cinq. Les portails publient presque toujours des moyennes, plus faciles à calculer et plus flatteuses : une seule vente exceptionnelle suffit à les déformer.
+La médiane coupe le marché en deux : la moitié des ventes s'est faite en dessous, la moitié au-dessus. Entre le premier et le neuvième décile, quatre ventes sur cinq. Les portails publient presque toujours des moyennes, plus faciles à calculer et plus flatteuses : une seule vente exceptionnelle suffit à les déformer.
 
 ## Le piège de la moyenne d'arrondissement
 
-Le 18e ressort à 8 900 € le mètre carré. Montmartre, qui est dans le 18e, ressort à 11 000 €. Soit 2 100 € d'écart entre un quartier et son propre arrondissement, c'est à dire 126 000 € sur un appartement de 60 mètres carrés.
+Le 18e ressort à 8 900 € le mètre carré. Montmartre, qui est dans le 18e, ressort à 11 000 €. Soit 2 100 € d'écart entre un quartier et son propre arrondissement, c'est-à-dire 126 000 € sur un appartement de 60 mètres carrés.
 
 | Quartier | Ventes | Surface médiane | 1er décile | Médiane | 9e décile |
 | --- | --- | --- | --- | --- | --- |
 | Martyrs Lorette | 372 | 40 m² | 8 100 € | 11 150 € | 14 600 € |
 | Montmartre | 455 | 34 m² | 8 100 € | 11 000 € | 14 800 € |
 | Clichy Trinité | 138 | 45 m² | 8 000 € | 10 850 € | 14 000 € |
-| Trudaine Maubeuge | 292 | 45 m² | 8 000 € | 10 650 € | 14 300 € |
+| Trudaine-Maubeuge | 292 | 45 m² | 8 000 € | 10 650 € | 14 300 € |
 | Lariboisière Rocroy | 165 | 51 m² | 6 100 € | 9 050 € | 11 500 € |
 
 Chaque vente est rattachée au quartier dont le repère est le plus proche, dans un rayon de 500 mètres, à l'intérieur de son arrondissement. Quatre quartiers sur cinq tiennent dans un couloir de 500 € le mètre carré, entre 10 650 et 11 150 €. Le cinquième, Lariboisière Rocroy, décroche de 1 600 € par rapport à son voisin immédiat. C'est la frontière économique réelle du secteur, et elle ne passe pas là où passent les limites administratives.
@@ -80,6 +80,6 @@ Un quartier reste une moyenne. Le prix au mètre carré de 312 voies du 9e, du 1
 
 ## Utiliser ces chiffres pour votre bien
 
-Situez votre quartier, pas votre arrondissement. Situez votre typologie. Placez vous dans l'étendue, pas sur la médiane : un rez de chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile, un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième. Retranchez ce qui se voit, travaux votés en assemblée, procédure en cours, absence de cave. Puis demandez les comparables : cinq à dix ventes signées dans votre rue ou votre immeuble valent mieux que n'importe quelle médiane de quartier.
+Situez votre quartier, pas votre arrondissement. Situez votre typologie. Placez vous dans l'étendue, pas sur la médiane : un rez-de-chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile, un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième. Retranchez ce qui se voit, travaux votés en assemblée, procédure en cours, absence de cave. Puis demandez les comparables : cinq à dix ventes signées dans votre rue ou votre immeuble valent mieux que n'importe quelle médiane de quartier.
 
 Cette dernière étape, nous la faisons pour vous, gratuitement et sans engagement, dans un avis de valeur écrit remis après visite. Vous gardez le document même si vous vendez ailleurs, ou plus tard.

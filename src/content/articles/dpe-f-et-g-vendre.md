@@ -29,7 +29,7 @@ faq:
     reponse: "Parce que l'acheteur qui découvre un classement défavorable sans chiffrage imagine toujours le pire. Un devis d'entreprise établi avant la mise en vente, joint au dossier, permet de discuter d'un montant documenté plutôt que d'une inquiétude. Aucun coût moyen au mètre carré ne vaut : d'un immeuble à l'autre, les devis n'ont pas d'ordre de grandeur commun."
 ---
 
-Depuis l'entrée en vigueur du calendrier de restriction à la location, les classes F et G attirent une attention particulière des acheteurs, y compris de ceux qui achètent pour habiter. Ce n'est pas un obstacle à la vente, c'est un paramètre de prix et de préparation.
+Depuis l'entrée en vigueur du calendrier de restriction à la location, les classes F et G attirent une attention particulière des acheteurs, y compris de ceux qui achètent pour habiter. La vente reste possible ; la classe pèse sur le prix et sur la préparation du dossier.
 
 ## Lire le diagnostic avant l'acheteur
 

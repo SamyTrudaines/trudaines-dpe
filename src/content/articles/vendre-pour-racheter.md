@@ -37,7 +37,7 @@ Un acheteur qui doit encore vendre négocie mal. Soit il souscrit un prêt relai
 
 ## Vendre d'abord se prépare
 
-L'objection est connue : où vivre entre les deux. Elle se traite dans le compromis, par la date de libération des lieux. Une signature à quatre mois, parfois avec une occupation temporaire négociée, laisse le temps de chercher sereinement. C'est un argument que beaucoup d'acquéreurs acceptent, en particulier ceux qui ne sont pas eux mêmes pressés.
+L'objection est connue : où vivre entre les deux. Elle se traite dans le compromis, par la date de libération des lieux. Une signature à quatre mois, parfois avec une occupation temporaire négociée, laisse le temps de chercher sereinement. C'est un argument que beaucoup d'acquéreurs acceptent, en particulier ceux qui ne sont pas eux-mêmes pressés.
 
 ## Construire le calendrier dès le mandat
 
@@ -45,4 +45,4 @@ Nous écrivons ce calendrier avec le vendeur au moment du mandat : date de mise 
 
 ## Le cas particulier du marché tendu sur votre cible
 
-Si vous cherchez un bien rare, dans un périmètre étroit et avec des critères fermes, la logique peut s'inverser. Dans ce cas, nous préparons la vente sans la lancer : diagnostics commandés, dossier constitué, photographies faites. Le jour où votre offre est acceptée, la mise en vente prend vingt quatre heures au lieu de trois semaines.
+Si vous cherchez un bien rare, dans un périmètre étroit et avec des critères fermes, la logique peut s'inverser. Dans ce cas, nous préparons la vente sans la lancer : diagnostics commandés, dossier constitué, photographies faites. Le jour où votre offre est acceptée, la mise en vente prend vingt-quatre heures au lieu de trois semaines.

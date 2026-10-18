@@ -9,6 +9,8 @@ import {
  * Le moins de champs possible : prénom et téléphone, l'adresse et l'email sont
  * facultatifs. L'agence est prévenue par email et par SMS ; la demande est aussi
  * enregistrée dans Brevo, par l'email s'il est donné, sinon par le téléphone.
+ * Demander à être rappelé suffit : aucune case à cocher, et donc aucune
+ * inscription aux envois d'information (OPT_IN reste faux).
  */
 const MOMENTS = ['Dès que possible', 'Le matin', 'À midi', 'En fin de journée', 'Le samedi'];
 
@@ -22,8 +24,7 @@ export async function onRequestPost({ request, env }) {
     const email = valeur('email');
     const manquants = champsManquants(donnees, ['prenom', 'telephone']);
     if (
-      manquants.length || telephone.replace(/\D/g, '').length < 9 || (email && !emailValide(email)) ||
-      valeur('consentement') !== 'oui'
+      manquants.length || telephone.replace(/\D/g, '').length < 9 || (email && !emailValide(email))
     ) {
       return reponse(request, { ok: false, message: 'Merci d’indiquer votre prénom et un numéro de téléphone valide.' }, 400);
     }

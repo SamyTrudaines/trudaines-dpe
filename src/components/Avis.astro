@@ -1,5 +1,6 @@
 ---
 import type { Avis, AgrégatAvis } from '../lib/avis';
+import { datePublication } from '../lib/avis';
 import { site } from '../data/site';
 
 interface Props {
@@ -56,7 +57,7 @@ const aDesCitations = avis.some((a) => a.data.texte);
               </span>
               <span class="mt-1 block">
                 {a.data.source === 'google' ? 'Avis Google' : a.data.source === 'pagesjaunes' ? 'Avis Pages Jaunes' : "Avis recueilli par l'agence"}
-                {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
+                {datePublication(a.data.anciennete) ? `, ${datePublication(a.data.anciennete)}` : ''}
                 {a.data.dateVisite ? ` · ${a.data.dateVisite}` : ''}
               </span>
             </figcaption>

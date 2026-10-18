@@ -1,6 +1,6 @@
 ---
 titre: "Vendre un bien occupé ou donner congé"
-question: "Puis je vendre mon appartement avec un locataire dedans ?"
+question: "Puis-je vendre mon appartement avec un locataire dedans ?"
 chapo: "Oui, et sans l'accord du locataire : la vente d'un logement loué ne met pas fin au bail, qui se poursuit avec l'acquéreur. Vous pouvez aussi vendre libre en donnant congé pour vendre, six mois avant l'échéance du bail en location nue, trois mois en meublé. Le bon choix dépend du prix, de la date d'échéance du bail et du profil du locataire."
 titreSeo: "Vendre un appartement loué ou donner congé pour vendre | Trudaines"
 descriptionSeo: "Vendre occupé ou donner congé pour vendre : délais, priorité du locataire, décote constatée à Paris. Les deux calendriers expliqués par une agence du 9e."
@@ -20,11 +20,11 @@ essentiel:
   - "À Paris, la décote constatée d'un bien vendu occupé se situe le plus souvent entre 10 et 20 % du prix libre, selon le loyer et la durée restante du bail."
   - "Le congé délivré à un locataire de plus de 65 ans aux ressources modestes est subordonné à une offre de relogement (article 15 III)."
 faq:
-  - question: "Le locataire peut il refuser les visites pour la vente ?"
+  - question: "Le locataire peut-il refuser les visites pour la vente ?"
     reponse: "Non, mais elles s'organisent avec lui. L'article 4 de la loi du 6 juillet 1989 répute non écrite la clause qui obligerait le locataire à laisser visiter le logement les jours fériés ou plus de deux heures les jours ouvrables. En pratique, des créneaux fixes convenus avec le locataire donnent de meilleures visites qu'un rapport de force."
-  - question: "Que se passe t il si le locataire accepte d'acheter ?"
+  - question: "Que se passe-t-il si le locataire accepte d'acheter ?"
     reponse: "Le congé pour vendre vaut offre de vente, valable pendant les deux premiers mois du préavis selon l'article 15 II de la loi du 6 juillet 1989. Le locataire qui accepte dispose de deux mois pour signer l'acte, portés à quatre mois s'il recourt à un prêt. Si la vente n'est pas réalisée dans ce délai, l'acceptation est nulle de plein droit et le locataire doit quitter les lieux."
-  - question: "Puis je vendre moins cher à un tiers après le refus du locataire ?"
+  - question: "Puis-je vendre moins cher à un tiers après le refus du locataire ?"
     reponse: "Pas sans le lui reproposer. Si la vente se conclut finalement à des conditions ou à un prix plus avantageux pour l'acquéreur, l'article 15 II de la loi du 6 juillet 1989 impose au notaire de notifier ces conditions au locataire, qui retrouve sa priorité pendant un mois à compter de la réception."
   - question: "Vendre occupé fait il forcément perdre de l'argent ?"
     reponse: "Pas toujours. La décote constatée à Paris, le plus souvent entre 10 et 20 % du prix libre, se compare au coût d'une attente : mois de charges et de taxe foncière, parfois un crédit relais, et un marché qui peut bouger d'ici l'échéance du bail. Quand le loyer est proche du marché et que l'échéance est proche, l'écart devient faible. Le calcul se fait au cas par cas, chiffres sur table."

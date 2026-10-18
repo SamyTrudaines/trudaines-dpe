@@ -23,7 +23,7 @@ faits:
     valeur: 51 m²
 ---
 
-## Un marché de report, avec ses propres forces
+## Le marché de Lariboisière-Rocroy
 
 Beaucoup d'acheteurs arrivent ici après avoir cherché dans le 9e. Ils y trouvent des surfaces supérieures pour un budget identique, dans des immeubles souvent bien construits. La contrepartie est une hétérogénéité forte selon la proximité immédiate des gares.
 
@@ -42,7 +42,7 @@ Sur les douze derniers mois publiés, de janvier à décembre 2025, 165 ventes d
 
 Les 5 400 € le m² qui séparent le premier du neuvième décile ne sont pas du bruit statistique. Ils mesurent ce que pèsent ici l'étage, la vue, l'exposition et l'état du bien. C'est exactement la part qu'aucune base de données ne tranche à votre place, et que la visite sert à situer.
 
-Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est à dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la rue de Rocroy, à l'intérieur du 10e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
+Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est-à-dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la rue de Rocroy, à l'intérieur du 10e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
 
 ## Vendre dans ce quartier
 

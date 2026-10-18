@@ -12,7 +12,7 @@
  * plus que ce que la carte montre. Les quartiers administratifs (Rochechouart,
  * Saint-Georges...) ne recoupent pas les quartiers du site, qui sont des
  * périmètres de rues : ils sont déclarés « recouverts », jamais identiques,
- * sauf quand la page porte le nom du lieu lui même (Montmartre, Batignolles,
+ * sauf quand la page porte le nom du lieu lui-même (Montmartre, Batignolles,
  * Épinettes).
  */
 export type Lieu = {
@@ -108,7 +108,7 @@ export const arrondissementParCodePostal: Record<string, CleLieu> = {
 
 /**
  * Rattachements d'un périmètre du site : `identite` quand la page est le lieu
- * lui même, `recouvre` les quartiers administratifs dont le point Wikidata
+ * lui-même, `recouvre` les quartiers administratifs dont le point Wikidata
  * tombe dans le périmètre, `contient` les voies, places et monuments situés
  * dedans.
  */

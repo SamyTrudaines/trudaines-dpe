@@ -5,7 +5,7 @@ import { rues, arrondissements, periode } from '../lib/rues';
  * Jeu de données compact chargé par le calculateur du navigateur.
  *
  * Le jeu complet servi sur /prix-immobilier.json pèse deux cent kilooctets :
- * trop pour une page consultée au téléphone. Celui ci ne garde que ce dont le
+ * trop pour une page consultée au téléphone. Celui-ci ne garde que ce dont le
  * calcul a besoin, indexé par identifiant de voie pour une recherche directe.
  * Les clés sont courtes parce qu'elles sont répétées trois cent fois.
  */

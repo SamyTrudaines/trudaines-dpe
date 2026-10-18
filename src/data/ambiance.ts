@@ -24,7 +24,7 @@ export type Ambiance = {
 };
 
 /*
- * Les photographies ci dessous viennent de la collection « Site WEB » réunie
+ * Les photographies ci-dessous viennent de la collection « Site WEB » réunie
  * par Samy Santamarina sur Unsplash. Le choix des images est donc le sien ;
  * l'attribution de chacune à une page tient à son format et à son sujet.
  * Les vues hors périmètre de l'agence, Tour Eiffel, Arc de Triomphe, Notre Dame,

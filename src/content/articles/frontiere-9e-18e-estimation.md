@@ -5,7 +5,7 @@ image: /images/panorama/frontiere-9e-18e-estimation-photo.webp
 imageAlt: La basilique du Sacré-Cœur vue d'en bas
 chapo: Anvers, Abbesses, Trudaine, Rochechouart. Deux arrondissements séparés par un boulevard, des prix que tout le monde croit connaître, et un écart qui ne se situe pas là où on l'attend.
 titreSeo: "Vendre entre le 9e et le 18e | Trudaines"
-descriptionSeo: "Montmartre se vend au dessus de la médiane du 9e. Ce que le boulevard change vraiment pour estimer un bien, chiffres à l'appui."
+descriptionSeo: "Montmartre se vend au-dessus de la médiane du 9e. Ce que le boulevard change vraiment pour estimer un bien, chiffres à l'appui."
 motsCles:
   - estimation Paris 9e
   - estimation Paris 18e
@@ -24,9 +24,9 @@ Sur les ventes d'appartements de janvier à décembre 2025, issues du fichier de
 | Paris 9e, arrondissement entier | 1 120 | 10 900 € |
 | Paris 18e, arrondissement entier | 2 974 | 8 900 € |
 | Quartier Montmartre, dans le 18e | 455 | 11 000 € |
-| Quartier Trudaine Maubeuge, dans le 9e | 292 | 10 650 € |
+| Quartier Trudaine-Maubeuge, dans le 9e | 292 | 10 650 € |
 
-Le quartier de Montmartre, dans le 18e, se vend au dessus de la médiane du 9e entier, et au dessus du secteur Trudaine qui lui fait face de l'autre côté du boulevard. La frontière administrative ne mesure rien. L'écart de 2 100 € entre Montmartre et la médiane du 18e ne dit pas que Montmartre est cher : il dit que le 18e est vaste et hétérogène, de la Goutte d'Or à l'avenue Junot.
+Le quartier de Montmartre, dans le 18e, se vend au-dessus de la médiane du 9e entier, et au-dessus du secteur Trudaine qui lui fait face de l'autre côté du boulevard. La frontière administrative ne mesure rien. L'écart de 2 100 € entre Montmartre et la médiane du 18e ne dit pas que Montmartre est cher : il dit que le 18e est vaste et hétérogène, de la Goutte d'Or à l'avenue Junot.
 
 ## Ce que cela change pour un vendeur du 18e
 

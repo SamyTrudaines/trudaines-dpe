@@ -188,7 +188,7 @@ const donnees = [
     ...donneesDeRattachement(rattachementsQuartiers[id] ?? {}),
   },
   faqEnDonnees(faq),
-  /* La page elle même, datée de sa dernière révision, à propos du lieu ci-dessus. */
+  /* La page elle-même, datée de sa dernière révision, à propos du lieu ci-dessus. */
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -212,7 +212,7 @@ const donnees = [
   donnees={donnees}
   ctaProps={{
     titre: 'Parlons de votre bien',
-    texte: "Un avis de valeur écrit, le livre blanc des prix, ou simplement une conversation. Sans engagement, et sans relance commerciale insistante.",
+    texte: "Un avis de valeur écrit, le guide des prix ou un rendez-vous. Gratuit et sans engagement.",
     hrefEstimer: `#estimation-${id}`,
     hrefGuide: '#livre-blanc',
     libelleGuide: 'Recevoir le livre blanc',
@@ -249,7 +249,7 @@ const donnees = [
       */}
       <div class="mt-5 grid gap-x-6 gap-y-4 sm:grid-cols-3 lg:max-w-4xl">
         <dl class="sm:col-start-1 sm:row-start-1">
-          <div class="border-t border-[color:var(--color-encre)] pt-2">
+          <div class="border-t border-[color:var(--color-trait)] pt-2">
             <dt class="surtitre">Prix médian au m²</dt>
             <dd class="mt-2">
               <span class="block font-[family-name:var(--font-titre)] text-[2.75rem] font-semibold italic leading-none text-[color:var(--color-encre)] lining-nums">{prixMedian}</span>
@@ -270,12 +270,12 @@ const donnees = [
         )}
 
         <dl class="grid gap-x-6 gap-y-4 sm:col-span-2 sm:col-start-2 sm:row-start-1 sm:grid-cols-2">
-          <div class="border-t border-[color:var(--color-encre)] pt-2">
+          <div class="border-t border-[color:var(--color-trait)] pt-2">
             <dt class="surtitre">{chiffres ? 'Ventes analysées' : 'Fourchette observée'}</dt>
             <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{chiffres ? chiffres.ventesAnalysees : fourchette}</dd>
           </div>
           {liste.length > 0 && (
-            <div class="border-t border-[color:var(--color-encre)] pt-2">
+            <div class="border-t border-[color:var(--color-trait)] pt-2">
               <dt class="surtitre">D'une rue à l'autre</dt>
               <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">
                 De {euros(moinsChere)} à {euros(plusChere)} le m², médiane de chaque rue

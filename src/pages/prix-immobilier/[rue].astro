@@ -52,14 +52,14 @@ const euros = (valeur: number) => `${nombre(valeur)} €`;
 /* Lecture du positionnement, construite à partir des chiffres de la rue. */
 const position =
   rue.ecartArrondissement > 4
-    ? `Cette voie se situe ${rue.ecartArrondissement} % au dessus de la médiane de ${rue.arrondissement}.`
+    ? `Cette voie se situe ${rue.ecartArrondissement} % au-dessus de la médiane de ${rue.arrondissement}.`
     : rue.ecartArrondissement < -4
       ? `Cette voie se situe ${Math.abs(rue.ecartArrondissement)} % en dessous de la médiane de ${rue.arrondissement}.`
       : `Cette voie suit la médiane de ${rue.arrondissement}, à ${Math.abs(rue.ecartArrondissement)} % près.`;
 
 const ecartCourt =
   rue.ecartArrondissement > 4
-    ? `${rue.ecartArrondissement} % au dessus`
+    ? `${rue.ecartArrondissement} % au-dessus`
     : rue.ecartArrondissement < -4
       ? `${Math.abs(rue.ecartArrondissement)} % en dessous`
       : `Dans la médiane, à ${Math.abs(rue.ecartArrondissement)} % près`;
@@ -98,7 +98,7 @@ const questions = [
     name: `Quelle agence immobilière vend ${nomEnPhrase} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. L'agence ne détient aucun fonds.`,
+      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui-même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. L'agence ne détient aucun fonds.`,
     },
   },
   {
@@ -148,7 +148,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
   donnees={donnees}
   ctaProps={{
     titre: 'Parlons de votre bien',
-    texte: "Un avis de valeur écrit, le livre blanc des prix, ou simplement une conversation. Sans engagement, et sans relance commerciale insistante.",
+    texte: "Un avis de valeur écrit, le guide des prix ou un rendez-vous. Gratuit et sans engagement.",
     hrefEstimer: `#estimation-${rue.slug}`,
     hrefGuide: '#livre-blanc',
     libelleGuide: 'Recevoir le livre blanc',
@@ -163,7 +163,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
     <section class="section pb-0 pt-6">
       <div class="conteneur max-w-3xl">
         <p class="surtitre">{surtitre}</p>
-        <h1 class="titre-1 mt-3">Prix au m² {rue.nom}</h1>
+        <h1 class="titre-1 mt-3">Prix au m² {nomEnPhrase}</h1>
       </div>
     </section>
   )}
@@ -224,7 +224,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
         <>
           <p class="mt-4 max-w-2xl text-sm text-[color:var(--color-ardoise)]">
             Les rues les plus proches, à moins de 600 m, mesurées du centre d'une rue au centre de l'autre, avec leur
-            prix médian au mètre carré sur la même période. La proximité est une distance, pas une mitoyenneté.
+            prix médian au mètre carré sur la même période.
           </p>
           <ul class="mt-6 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
             {voisinesProches.map(({ rue: r }) => {
@@ -277,17 +277,16 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
     <div class="conteneur grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
         <p class="text-[color:var(--color-ardoise)]">
-          Le prix médian est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
-          {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
-          Trudaines, agence immobilière à Paris, dans le {rue.arrondissement.replace('Paris ', '')} comme dans les autres
-          arrondissements dont nous suivons les ventes.
+          Le prix médian donne un ordre de grandeur. La valeur de votre appartement {nomEnPhrase} se fixe en
+          visite : c'est le métier de Trudaines, agence immobilière à Paris, dans le {rue.arrondissement.replace('Paris ', '')}
+          et dans les autres arrondissements dont nous suivons les ventes.
         </p>
 
         <h2 class="titre-2 mt-14">Ce que ces chiffres disent</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
           {mois ? `Sur les ${mois} mois publiés, de ${periode}, ` : `De ${periode}, `}{rue.ventes} appartements ont été vendus {nomEnPhrase}.
           La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
-          mètre carré, la moitié au dessus. {position}
+          mètre carré, la moitié au-dessus. {position}
         </p>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
           {lectureDispersion} Sur un appartement de {nombre(rue.surface)} m², la surface médiane vendue dans
@@ -322,24 +321,21 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
               </tbody>
             </table>
             <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
-              Les typologies de moins de trois ventes ne sont pas publiées : une médiane sur deux ventes ne
-              mesure rien. Ni celles dont la surface et le prix médians ne se répondent pas, signe de biens trop
-              différents pour être comparés.
+              Une typologie n'est publiée qu'à partir de trois ventes, et seulement quand sa surface et son prix
+              médians concordent.
             </p>
           </>
         )}
 
         <h2 class="titre-2 mt-14">Ce que ces chiffres ne disent pas</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Ni l'étage, ni l'ascenseur, ni la vue, ni l'exposition, ni l'état du bien, ni celui de la
-          copropriété, ni les travaux votés en assemblée générale. Le fichier des valeurs foncières ne les
-          contient pas. Ils se lisent seulement dans l'écart entre {euros(rue.d1)} et {euros(rue.d9)}, et ils
-          se tranchent sur place, en visite.
+          Le fichier des valeurs foncières ne renseigne pas l'étage, l'ascenseur, la vue, l'exposition, l'état du
+          bien et de la copropriété, ni les travaux votés en assemblée générale. Ce sont eux qui expliquent l'écart
+          entre {euros(rue.d1)} et {euros(rue.d9)} ; ils s'apprécient en visite.
         </p>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Il ne dit pas non plus les délais de vente, qui n'y figurent pas, ni la classe énergie. Et il
-          mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez
-          inscrite dans votre acte.
+          Il ne donne pas non plus les délais de vente ni la classe énergie. Sa surface est la surface réelle
+          bâtie, qui peut différer de quelques mètres carrés de la surface Carrez inscrite dans votre acte.
         </p>
 
         <h2 class="titre-3 mt-14">Méthode</h2>

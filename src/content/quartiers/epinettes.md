@@ -23,7 +23,7 @@ faits:
     valeur: De 7 620 € le m² boulevard Bessières à 9 990 € rue Jean Leclaire, en médiane
 ---
 
-## L'ancien quartier ouvrier que la ville a rattrapé
+## Les Épinettes, un ancien quartier ouvrier
 
 Les Épinettes sont le nord du 17e, entre l'avenue de Clichy, l'avenue de Saint-Ouen et le boulevard Bessières. Le quartier s'est construit pour les ouvriers et les employés du dix-neuvième siècle, et il en garde le bâti : des immeubles de brique et de pierre modestes, des cours, des ateliers, et la cité des Fleurs, voie privée plantée dont les maisons à jardin n'ont pas d'équivalent dans l'arrondissement.
 

@@ -20,7 +20,7 @@ essentiel:
   - "Tant que le bien n'est ni vendu ni attribué, les ex-époux restent en indivision, avec les règles de l'indivision."
   - "Le rachat de la part de l'autre, la soulte, n'est pas une vente sur le marché : il se chiffre et se règle avec le notaire, sur la base d'une valeur que chacun accepte."
 faq:
-  - question: "Mon conjoint peut il bloquer la vente ?"
+  - question: "Mon conjoint peut-il bloquer la vente ?"
     reponse: "Pour un bien commun ou pour le logement de la famille, oui : sa signature est nécessaire, et une vente passée sans le consentement requis peut être annulée à sa demande dans l'année où il en a eu connaissance, selon l'article 215 du code civil. Le déblocage passe alors par la négociation, par la liquidation du régime matrimonial, ou dans certains cas par une autorisation du juge, ce qui relève de votre avocat."
   - question: "Faut il attendre le jugement de divorce pour vendre ?"
     reponse: "Non. Deux époux d'accord peuvent vendre à tout moment, avant, pendant ou après la procédure. Vendre tôt évite de payer à deux un logement que plus personne n'habite pareil, et transforme un bien à partager en une somme à partager, ce qui simplifie la liquidation. La décision dépend surtout du marché et de votre calendrier familial."
@@ -28,7 +28,7 @@ faq:
     reponse: "Le plus souvent, il est conservé sur le compte du notaire jusqu'à l'état liquidatif, qui fixe les droits de chacun en tenant compte des apports, des financements et des éventuelles récompenses entre patrimoine propre et communauté. Si les deux époux sont d'accord sur la répartition, le notaire peut distribuer tout ou partie des fonds sans attendre."
   - question: "Qui paie le crédit entre la mise en vente et la vente ?"
     reponse: "À l'égard de la banque, les co-emprunteurs restent tenus tous les deux : la solidarité inscrite dans le prêt ne disparaît ni avec la séparation ni avec le jugement. La répartition entre époux, elle, se règle dans la liquidation. En pratique, continuer à payer normalement jusqu'à la vente évite un incident bancaire qui compliquerait tout."
-  - question: "L'un de nous peut il garder l'appartement ?"
+  - question: "L'un de nous peut-il garder l'appartement ?"
     reponse: "Oui, par le rachat de la part de l'autre, la soulte, calculée sur la valeur du bien déduction faite du crédit restant. Ce n'est pas une vente sur le marché : elle se signe chez le notaire, et la banque doit accepter de désolidariser l'époux qui part. Un avis de valeur écrit sert alors de base de discussion acceptée par les deux."
 ---
 

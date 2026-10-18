@@ -172,7 +172,7 @@ const avis = defineCollection({
     auteur: z.string(),
     quartier: z.string(),
     secteur: z.string().optional(),
-    /** Renseigné seulement quand l'avis dit lui même de quel projet il s'agit. */
+    /** Renseigné seulement quand l'avis dit lui-même de quel projet il s'agit. */
     typeProjet: z.enum(['Vente', 'Achat', 'Recherche', 'Location']).optional(),
     /**
      * Absent quand le client a mis une note sans écrire de commentaire. L'avis

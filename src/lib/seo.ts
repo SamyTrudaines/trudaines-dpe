@@ -2,7 +2,7 @@
  * Composition des balises title et description.
  *
  * Les seuils sont ceux que contrôle scripts/verifier.mjs, et ils suivent ce que
- * Google affiche réellement : au delà, la fin de la ligne est remplacée par des
+ * Google affiche réellement : au-delà, la fin de la ligne est remplacée par des
  * points de suspension dans les résultats de recherche, et c'est la marque qui
  * saute la première puisqu'elle est en queue. Mieux vaut donc composer le titre
  * fragment par fragment et laisser tomber ce qui ne tient pas.

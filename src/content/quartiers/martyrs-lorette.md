@@ -4,7 +4,7 @@ arrondissement: Paris 9e
 secteur: paris-9
 prixMoyenM2: 11 150 € le m²
 fourchette: 8 100 à 14 600 € le m², du premier au neuvième décile
-chapo: Autour de Notre Dame de Lorette et de la rue des Martyrs, un quartier commerçant et recherché, où la demande dépasse durablement l'offre disponible.
+chapo: Autour de Notre-Dame-de-Lorette et de la rue des Martyrs, un quartier commerçant et recherché, où la demande dépasse durablement l'offre disponible.
 ordre: 2
 dateMaj: 2026-10-18
 titreSeo: Immobilier Martyrs Lorette, Paris 9e | Prix et vente - Trudaines
@@ -14,7 +14,7 @@ photos:
     alt: Terrasse de café dans une rue de Paris
 faits:
   - titre: Typologies dominantes
-    valeur: Studios et deux pièces en haut de rue, trois et quatre pièces vers Saint Georges
+    valeur: Studios et deux pièces en haut de rue, trois et quatre pièces vers Saint-Georges
   - titre: Profil des acheteurs
     valeur: Jeunes actifs, investisseurs patrimoniaux, familles en quête d'animation de quartier
   - titre: Ventes d'appartements analysées
@@ -27,7 +27,7 @@ faits:
 
 La rue des Martyrs concentre une densité de commerces rare à Paris. C'est son principal moteur de valeur, et aussi sa principale nuance : les appartements en étages bas sur rue subissent l'animation, ceux sur cour ou en étages élevés en profitent sans la subir.
 
-Autour de l'église Notre Dame de Lorette, les rues Saint Lazare, Fléchier et Laferrière offrent des immeubles haussmanniens classiques, avec des plans souvent intacts.
+Autour de l'église Notre-Dame-de-Lorette, les rues Saint-Lazare, Fléchier et Laferrière offrent des immeubles haussmanniens classiques, avec des plans souvent intacts.
 
 ## Ce que regardent les acheteurs
 
@@ -42,8 +42,8 @@ Sur les douze derniers mois publiés, de janvier à décembre 2025, 372 ventes d
 
 Les 6 500 € le m² qui séparent le premier du neuvième décile ne sont pas du bruit statistique. Ils mesurent ce que pèsent ici l'étage, la vue, l'exposition et l'état du bien. C'est exactement la part qu'aucune base de données ne tranche à votre place, et que la visite sert à situer.
 
-Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est à dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la rue des Martyrs, à l'intérieur du 9e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
+Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est-à-dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la rue des Martyrs, à l'intérieur du 9e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
 
 ## Vendre dans ce quartier
 
-La rotation y est plus rapide qu'ailleurs dans le 9e, portée par une demande de jeunes actifs et d'investisseurs. Cela ne dispense pas de la rigueur sur le prix : un bien affiché dix pour cent au dessus du marché ne se vend pas plus vite ici qu'ailleurs, il se vend simplement plus tard et plus bas.
+La rotation y est plus rapide qu'ailleurs dans le 9e, portée par une demande de jeunes actifs et d'investisseurs. Cela ne dispense pas de la rigueur sur le prix : un bien affiché dix pour cent au-dessus du marché ne se vend pas plus vite ici qu'ailleurs, il se vend simplement plus tard et plus bas.
