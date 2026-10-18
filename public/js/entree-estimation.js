@@ -25,7 +25,7 @@
       var premiere = cible.querySelector('[data-etape]');
       var suivant = premiere && premiere.querySelector('[data-suivant]');
       if (adresse && premiere && !premiere.hidden && suivant) suivant.click();
-      (bloc || cible).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      (adresse ? cible : bloc || cible).scrollIntoView({ behavior: 'smooth', block: 'start' });
       var suite = cible.querySelector(adresse ? '[name="surface"]' : '[name="adresse"]');
       if (suite) setTimeout(function () { suite.focus({ preventScroll: true }); }, 400);
       if (typeof window.trudainesEvent === 'function') window.trudainesEvent('entree_estimation', {});
