@@ -12,30 +12,30 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 1906,
+     "ventes": 1901,
      "surface": 21,
-     "mediane": 8730,
+     "mediane": 8750,
      "prix": 178000
     },
     {
      "pieces": 2,
-     "ventes": 2925,
+     "ventes": 2934,
      "surface": 35,
      "mediane": 8720,
      "prix": 300000
     },
     {
      "pieces": 3,
-     "ventes": 1505,
+     "ventes": 1509,
      "surface": 55,
-     "mediane": 9140,
-     "prix": 495000
+     "mediane": 9150,
+     "prix": 497000
     },
     {
      "pieces": 4,
-     "ventes": 515,
+     "ventes": 513,
      "surface": 89,
-     "mediane": 9330,
+     "mediane": 9340,
      "prix": 830000
     }
    ]
@@ -49,30 +49,30 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 1015,
+     "ventes": 1016,
      "surface": 19,
-     "mediane": 9240,
+     "mediane": 9250,
      "prix": 178000
     },
     {
      "pieces": 2,
-     "ventes": 1176,
+     "ventes": 1183,
      "surface": 36,
      "mediane": 9330,
      "prix": 330000
     },
     {
      "pieces": 3,
-     "ventes": 667,
+     "ventes": 668,
      "surface": 60,
-     "mediane": 9480,
-     "prix": 540000
+     "mediane": 9470,
+     "prix": 541000
     },
     {
      "pieces": 4,
-     "ventes": 485,
+     "ventes": 484,
      "surface": 94,
-     "mediane": 9190,
+     "mediane": 9200,
      "prix": 880000
     }
    ]
@@ -86,31 +86,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 1438,
+     "ventes": 1442,
      "surface": 20,
-     "mediane": 9790,
+     "mediane": 9810,
      "prix": 200000
     },
     {
      "pieces": 2,
-     "ventes": 1966,
+     "ventes": 1959,
      "surface": 37,
-     "mediane": 9820,
+     "mediane": 9810,
      "prix": 360000
     },
     {
      "pieces": 3,
-     "ventes": 1315,
-     "surface": 60,
-     "mediane": 10270,
+     "ventes": 1310,
+     "surface": 59,
+     "mediane": 10280,
      "prix": 601000
     },
     {
      "pieces": 4,
-     "ventes": 1130,
+     "ventes": 1134,
      "surface": 105,
-     "mediane": 11090,
-     "prix": 1168000
+     "mediane": 11070,
+     "prix": 1166000
     }
    ]
   },
@@ -123,31 +123,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 742,
+     "ventes": 744,
      "surface": 20,
-     "mediane": 10410,
+     "mediane": 10400,
      "prix": 200000
     },
     {
      "pieces": 2,
-     "ventes": 709,
-     "surface": 37,
-     "mediane": 10640,
+     "ventes": 714,
+     "surface": 38,
+     "mediane": 10650,
      "prix": 410000
     },
     {
      "pieces": 3,
-     "ventes": 570,
+     "ventes": 568,
      "surface": 60,
-     "mediane": 11010,
+     "mediane": 11020,
      "prix": 670000
     },
     {
      "pieces": 4,
-     "ventes": 563,
+     "ventes": 565,
      "surface": 102,
-     "mediane": 11150,
-     "prix": 1138000
+     "mediane": 11160,
+     "prix": 1140000
     }
    ]
   },
@@ -160,31 +160,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 428,
+     "ventes": 432,
      "surface": 22,
-     "mediane": 12660,
-     "prix": 279000
+     "mediane": 12630,
+     "prix": 280000
     },
     {
      "pieces": 2,
-     "ventes": 545,
+     "ventes": 550,
      "surface": 40,
-     "mediane": 13460,
-     "prix": 535000
+     "mediane": 13410,
+     "prix": 536000
     },
     {
      "pieces": 3,
-     "ventes": 432,
-     "surface": 69,
-     "mediane": 13910,
+     "ventes": 431,
+     "surface": 68,
+     "mediane": 13940,
      "prix": 950000
     },
     {
      "pieces": 4,
-     "ventes": 698,
+     "ventes": 705,
      "surface": 120,
      "mediane": 16140,
-     "prix": 1905000
+     "prix": 1900000
     }
    ]
   },
@@ -197,31 +197,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 1174,
+     "ventes": 1189,
      "surface": 24,
-     "mediane": 10480,
+     "mediane": 10490,
      "prix": 250000
     },
     {
      "pieces": 2,
-     "ventes": 1297,
+     "ventes": 1310,
      "surface": 49,
      "mediane": 10440,
-     "prix": 500000
+     "prix": 495000
     },
     {
      "pieces": 3,
-     "ventes": 1204,
-     "surface": 76,
-     "mediane": 10750,
-     "prix": 811000
+     "ventes": 1213,
+     "surface": 75,
+     "mediane": 10760,
+     "prix": 810000
     },
     {
      "pieces": 4,
-     "ventes": 1877,
+     "ventes": 1894,
      "surface": 128,
      "mediane": 11590,
-     "prix": 1462000
+     "prix": 1452000
     }
    ]
   }
@@ -230,38 +230,38 @@
   "7510701": {
    "nom": "Saint-Thomas-d'Aquin",
    "codePostal": "75007",
-   "ventes": 474,
-   "mediane": 16370,
-   "d1": 11190,
-   "d9": 22930,
+   "ventes": 467,
+   "mediane": 16380,
+   "d1": 11170,
+   "d9": 22940,
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 71,
+     "ventes": 72,
      "surface": 25,
-     "mediane": 14530,
-     "prix": 346000
+     "mediane": 14440,
+     "prix": 347000
     },
     {
      "pieces": 2,
-     "ventes": 121,
+     "ventes": 123,
      "surface": 45,
-     "mediane": 14650,
+     "mediane": 14620,
      "prix": 680000
     },
     {
      "pieces": 3,
-     "ventes": 98,
+     "ventes": 97,
      "surface": 73,
-     "mediane": 15930,
-     "prix": 1093000
+     "mediane": 15810,
+     "prix": 1087000
     },
     {
      "pieces": 4,
-     "ventes": 170,
+     "ventes": 175,
      "surface": 128,
      "mediane": 17990,
-     "prix": 2200000
+     "prix": 2220000
     }
    ]
   },
@@ -277,29 +277,29 @@
      "pieces": 1,
      "ventes": 101,
      "surface": 20,
-     "mediane": 13160,
+     "mediane": 13130,
      "prix": 270000
     },
     {
      "pieces": 2,
-     "ventes": 104,
-     "surface": 41,
-     "mediane": 12960,
-     "prix": 521000
+     "ventes": 106,
+     "surface": 42,
+     "mediane": 13070,
+     "prix": 523000
     },
     {
      "pieces": 3,
-     "ventes": 98,
+     "ventes": 100,
      "surface": 68,
-     "mediane": 13950,
+     "mediane": 13960,
      "prix": 965000
     },
     {
      "pieces": 4,
-     "ventes": 120,
-     "surface": 118,
-     "mediane": 16540,
-     "prix": 1938000
+     "ventes": 121,
+     "surface": 117,
+     "mediane": 16520,
+     "prix": 1920000
     }
    ]
   },
@@ -320,24 +320,24 @@
     },
     {
      "pieces": 2,
-     "ventes": 104,
+     "ventes": 105,
      "surface": 40,
      "mediane": 12930,
-     "prix": 521000
+     "prix": 522000
     },
     {
      "pieces": 3,
-     "ventes": 64,
-     "surface": 66,
-     "mediane": 13110,
-     "prix": 895000
+     "ventes": 65,
+     "surface": 67,
+     "mediane": 13090,
+     "prix": 890000
     },
     {
      "pieces": 4,
-     "ventes": 95,
+     "ventes": 93,
      "surface": 114,
-     "mediane": 14000,
-     "prix": 1610000
+     "mediane": 13980,
+     "prix": 1601000
     }
    ]
   },
@@ -351,31 +351,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 159,
+     "ventes": 162,
      "surface": 20,
-     "mediane": 12330,
-     "prix": 260000
+     "mediane": 12320,
+     "prix": 258000
     },
     {
      "pieces": 2,
      "ventes": 183,
      "surface": 38,
-     "mediane": 13250,
-     "prix": 460000
+     "mediane": 13110,
+     "prix": 458000
     },
     {
      "pieces": 3,
-     "ventes": 126,
+     "ventes": 123,
      "surface": 62,
-     "mediane": 13000,
-     "prix": 785000
+     "mediane": 12990,
+     "prix": 810000
     },
     {
      "pieces": 4,
-     "ventes": 198,
+     "ventes": 200,
      "surface": 114,
-     "mediane": 15780,
-     "prix": 1824000
+     "mediane": 15740,
+     "prix": 1803000
     }
    ]
   },
@@ -389,7 +389,7 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 239,
+     "ventes": 241,
      "surface": 20,
      "mediane": 10420,
      "prix": 200000
@@ -399,21 +399,21 @@
      "ventes": 237,
      "surface": 40,
      "mediane": 10770,
-     "prix": 428000
+     "prix": 425000
     },
     {
      "pieces": 3,
-     "ventes": 169,
+     "ventes": 168,
      "surface": 58,
-     "mediane": 11090,
-     "prix": 645000
+     "mediane": 11100,
+     "prix": 648000
     },
     {
      "pieces": 4,
-     "ventes": 201,
+     "ventes": 200,
      "surface": 108,
-     "mediane": 11290,
-     "prix": 1228000
+     "mediane": 11340,
+     "prix": 1229000
     }
    ]
   },
@@ -434,10 +434,10 @@
     },
     {
      "pieces": 2,
-     "ventes": 47,
-     "surface": 40,
+     "ventes": 48,
+     "surface": 39,
      "mediane": 11520,
-     "prix": 439000
+     "prix": 441000
     },
     {
      "pieces": 3,
@@ -448,10 +448,10 @@
     },
     {
      "pieces": 4,
-     "ventes": 34,
-     "surface": 122,
-     "mediane": 10600,
-     "prix": 1245000
+     "ventes": 36,
+     "surface": 120,
+     "mediane": 10940,
+     "prix": 1270000
     }
    ]
   },
@@ -465,31 +465,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 109,
+     "ventes": 108,
      "surface": 18,
-     "mediane": 10480,
+     "mediane": 10510,
      "prix": 175000
     },
     {
      "pieces": 2,
-     "ventes": 94,
+     "ventes": 95,
      "surface": 38,
-     "mediane": 10390,
+     "mediane": 10400,
      "prix": 422000
     },
     {
      "pieces": 3,
-     "ventes": 83,
+     "ventes": 82,
      "surface": 65,
-     "mediane": 10810,
-     "prix": 691000
+     "mediane": 10790,
+     "prix": 687000
     },
     {
      "pieces": 4,
-     "ventes": 70,
+     "ventes": 72,
      "surface": 91,
-     "mediane": 10960,
-     "prix": 954000
+     "mediane": 11000,
+     "prix": 969000
     }
    ]
   },
@@ -503,14 +503,14 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 288,
+     "ventes": 289,
      "surface": 20,
-     "mediane": 10340,
-     "prix": 206000
+     "mediane": 10310,
+     "prix": 205000
     },
     {
      "pieces": 2,
-     "ventes": 273,
+     "ventes": 275,
      "surface": 35,
      "mediane": 10560,
      "prix": 380000
@@ -524,10 +524,10 @@
     },
     {
      "pieces": 4,
-     "ventes": 182,
-     "surface": 93,
-     "mediane": 11290,
-     "prix": 1069000
+     "ventes": 180,
+     "surface": 94,
+     "mediane": 11340,
+     "prix": 1078000
     }
    ]
   },
@@ -541,31 +541,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 133,
-     "surface": 16,
-     "mediane": 8890,
+     "ventes": 131,
+     "surface": 17,
+     "mediane": 8710,
      "prix": 155000
     },
     {
      "pieces": 2,
-     "ventes": 185,
+     "ventes": 189,
      "surface": 37,
-     "mediane": 8330,
-     "prix": 318000
+     "mediane": 8360,
+     "prix": 320000
     },
     {
      "pieces": 3,
-     "ventes": 139,
+     "ventes": 138,
      "surface": 60,
      "mediane": 8380,
      "prix": 500000
     },
     {
      "pieces": 4,
-     "ventes": 113,
+     "ventes": 112,
      "surface": 94,
-     "mediane": 8570,
-     "prix": 752000
+     "mediane": 8530,
+     "prix": 751000
     }
    ]
   },
@@ -579,31 +579,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 230,
+     "ventes": 235,
      "surface": 19,
-     "mediane": 9410,
-     "prix": 193000
+     "mediane": 9440,
+     "prix": 195000
     },
     {
      "pieces": 2,
      "ventes": 237,
-     "surface": 37,
-     "mediane": 9600,
+     "surface": 36,
+     "mediane": 9460,
      "prix": 360000
     },
     {
      "pieces": 3,
-     "ventes": 166,
+     "ventes": 164,
      "surface": 64,
      "mediane": 9660,
-     "prix": 608000
+     "prix": 609000
     },
     {
      "pieces": 4,
-     "ventes": 176,
+     "ventes": 178,
      "surface": 104,
      "mediane": 9490,
-     "prix": 957000
+     "prix": 960000
     }
    ]
   },
@@ -617,30 +617,30 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 193,
+     "ventes": 192,
      "surface": 17,
-     "mediane": 9500,
+     "mediane": 9470,
      "prix": 166000
     },
     {
      "pieces": 2,
      "ventes": 232,
-     "surface": 34,
+     "surface": 35,
      "mediane": 9890,
      "prix": 335000
     },
     {
      "pieces": 3,
-     "ventes": 106,
+     "ventes": 108,
      "surface": 58,
-     "mediane": 10140,
-     "prix": 546000
+     "mediane": 10170,
+     "prix": 564000
     },
     {
      "pieces": 4,
-     "ventes": 70,
-     "surface": 92,
-     "mediane": 10290,
+     "ventes": 69,
+     "surface": 91,
+     "mediane": 10300,
      "prix": 925000
     }
    ]
@@ -655,107 +655,107 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 382,
+     "ventes": 379,
      "surface": 21,
      "mediane": 9230,
-     "prix": 188000
+     "prix": 186000
     },
     {
      "pieces": 2,
-     "ventes": 419,
+     "ventes": 423,
      "surface": 35,
-     "mediane": 9440,
-     "prix": 334000
+     "mediane": 9460,
+     "prix": 335000
     },
     {
      "pieces": 3,
-     "ventes": 211,
+     "ventes": 212,
      "surface": 57,
-     "mediane": 9640,
+     "mediane": 9620,
      "prix": 530000
     },
     {
      "pieces": 4,
-     "ventes": 96,
+     "ventes": 95,
      "surface": 86,
-     "mediane": 9790,
-     "prix": 843000
+     "mediane": 9800,
+     "prix": 850000
     }
    ]
   },
   "7511601": {
    "nom": "Auteuil",
    "codePostal": "75016",
-   "ventes": 2066,
-   "mediane": 9720,
+   "ventes": 2082,
+   "mediane": 9740,
    "d1": 7500,
-   "d9": 12590,
+   "d9": 12600,
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 450,
+     "ventes": 457,
      "surface": 25,
-     "mediane": 9690,
-     "prix": 235000
+     "mediane": 9700,
+     "prix": 236000
     },
     {
      "pieces": 2,
-     "ventes": 545,
+     "ventes": 550,
      "surface": 48,
-     "mediane": 9450,
-     "prix": 432000
+     "mediane": 9510,
+     "prix": 431000
     },
     {
      "pieces": 3,
      "ventes": 502,
      "surface": 72,
-     "mediane": 9520,
+     "mediane": 9530,
      "prix": 692000
     },
     {
      "pieces": 4,
-     "ventes": 567,
+     "ventes": 573,
      "surface": 110,
      "mediane": 10370,
-     "prix": 1120000
+     "prix": 1119000
     }
    ]
   },
   "7511602": {
    "nom": "Muette",
    "codePostal": "75016",
-   "ventes": 1297,
-   "mediane": 11460,
-   "d1": 8490,
-   "d9": 15370,
+   "ventes": 1305,
+   "mediane": 11480,
+   "d1": 8500,
+   "d9": 15500,
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 279,
+     "ventes": 282,
      "surface": 25,
      "mediane": 10600,
      "prix": 260000
     },
     {
      "pieces": 2,
-     "ventes": 278,
+     "ventes": 284,
      "surface": 50,
      "mediane": 11070,
      "prix": 570000
     },
     {
      "pieces": 3,
-     "ventes": 274,
-     "surface": 84,
-     "mediane": 11860,
+     "ventes": 281,
+     "surface": 83,
+     "mediane": 11840,
      "prix": 950000
     },
     {
      "pieces": 4,
      "ventes": 458,
      "surface": 132,
-     "mediane": 11870,
-     "prix": 1545000
+     "mediane": 11880,
+     "prix": 1529000
     }
    ]
   },
@@ -769,31 +769,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 221,
+     "ventes": 224,
      "surface": 22,
      "mediane": 11540,
-     "prix": 260000
+     "prix": 270000
     },
     {
      "pieces": 2,
-     "ventes": 201,
+     "ventes": 204,
      "surface": 48,
      "mediane": 11550,
-     "prix": 555000
+     "prix": 550000
     },
     {
      "pieces": 3,
-     "ventes": 187,
+     "ventes": 189,
      "surface": 79,
-     "mediane": 11900,
-     "prix": 895000
+     "mediane": 11890,
+     "prix": 900000
     },
     {
      "pieces": 4,
-     "ventes": 376,
-     "surface": 139,
+     "ventes": 378,
+     "surface": 138,
      "mediane": 12090,
-     "prix": 1740000
+     "prix": 1714000
     }
    ]
   },
@@ -807,31 +807,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 126,
+     "ventes": 127,
      "surface": 21,
-     "mediane": 12120,
-     "prix": 264000
+     "mediane": 12060,
+     "prix": 265000
     },
     {
      "pieces": 2,
-     "ventes": 148,
+     "ventes": 150,
      "surface": 50,
      "mediane": 11700,
      "prix": 584000
     },
     {
      "pieces": 3,
-     "ventes": 119,
-     "surface": 75,
-     "mediane": 12380,
-     "prix": 925000
+     "ventes": 116,
+     "surface": 74,
+     "mediane": 12420,
+     "prix": 922000
     },
     {
      "pieces": 4,
-     "ventes": 210,
+     "ventes": 213,
      "surface": 145,
-     "mediane": 13070,
-     "prix": 1897000
+     "mediane": 13200,
+     "prix": 1900000
     }
    ]
   },
@@ -845,21 +845,21 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 338,
+     "ventes": 339,
      "surface": 24,
-     "mediane": 10350,
-     "prix": 240000
+     "mediane": 10370,
+     "prix": 241000
     },
     {
      "pieces": 2,
-     "ventes": 363,
+     "ventes": 362,
      "surface": 43,
-     "mediane": 10240,
+     "mediane": 10260,
      "prix": 430000
     },
     {
      "pieces": 3,
-     "ventes": 297,
+     "ventes": 296,
      "surface": 64,
      "mediane": 10560,
      "prix": 667000
@@ -867,9 +867,9 @@
     {
      "pieces": 4,
      "ventes": 289,
-     "surface": 108,
-     "mediane": 10990,
-     "prix": 1184000
+     "surface": 110,
+     "mediane": 10970,
+     "prix": 1183000
     }
    ]
   },
@@ -883,31 +883,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 253,
+     "ventes": 255,
      "surface": 22,
-     "mediane": 10110,
-     "prix": 230000
+     "mediane": 10190,
+     "prix": 231000
     },
     {
      "pieces": 2,
-     "ventes": 279,
+     "ventes": 277,
      "surface": 43,
-     "mediane": 10570,
-     "prix": 447000
+     "mediane": 10520,
+     "prix": 445000
     },
     {
      "pieces": 3,
      "ventes": 230,
      "surface": 68,
      "mediane": 10880,
-     "prix": 742000
+     "prix": 744000
     },
     {
      "pieces": 4,
      "ventes": 451,
-     "surface": 121,
-     "mediane": 11400,
-     "prix": 1348000
+     "surface": 122,
+     "mediane": 11370,
+     "prix": 1350000
     }
    ]
   },
@@ -921,31 +921,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 405,
+     "ventes": 408,
      "surface": 19,
-     "mediane": 9940,
+     "mediane": 9950,
      "prix": 190000
     },
     {
      "pieces": 2,
-     "ventes": 618,
+     "ventes": 615,
      "surface": 36,
-     "mediane": 10200,
-     "prix": 372000
+     "mediane": 10170,
+     "prix": 371000
     },
     {
      "pieces": 3,
-     "ventes": 385,
+     "ventes": 384,
      "surface": 56,
      "mediane": 10670,
-     "prix": 597000
+     "prix": 598000
     },
     {
      "pieces": 4,
-     "ventes": 215,
+     "ventes": 218,
      "surface": 85,
-     "mediane": 11140,
-     "prix": 948000
+     "mediane": 11130,
+     "prix": 943000
     }
    ]
   },
@@ -959,23 +959,23 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 369,
+     "ventes": 367,
      "surface": 20,
      "mediane": 8880,
      "prix": 175000
     },
     {
      "pieces": 2,
-     "ventes": 632,
+     "ventes": 633,
      "surface": 33,
-     "mediane": 9080,
+     "mediane": 9090,
      "prix": 300000
     },
     {
      "pieces": 3,
-     "ventes": 333,
+     "ventes": 331,
      "surface": 54,
-     "mediane": 9070,
+     "mediane": 9100,
      "prix": 474000
     },
     {
@@ -983,7 +983,7 @@
      "ventes": 87,
      "surface": 79,
      "mediane": 9390,
-     "prix": 760000
+     "prix": 745000
     }
    ]
   },
@@ -997,31 +997,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 654,
+     "ventes": 651,
      "surface": 20,
      "mediane": 9150,
      "prix": 190000
     },
     {
      "pieces": 2,
-     "ventes": 994,
+     "ventes": 997,
      "surface": 36,
-     "mediane": 9360,
-     "prix": 336000
+     "mediane": 9330,
+     "prix": 335000
     },
     {
      "pieces": 3,
-     "ventes": 493,
+     "ventes": 496,
      "surface": 56,
-     "mediane": 9710,
-     "prix": 558000
+     "mediane": 9750,
+     "prix": 559000
     },
     {
      "pieces": 4,
-     "ventes": 188,
+     "ventes": 190,
      "surface": 91,
      "mediane": 10460,
-     "prix": 884000
+     "prix": 882000
     }
    ]
   },
@@ -1035,31 +1035,31 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 718,
+     "ventes": 713,
      "surface": 20,
-     "mediane": 9090,
+     "mediane": 9080,
      "prix": 182000
     },
     {
      "pieces": 2,
-     "ventes": 1232,
+     "ventes": 1240,
      "surface": 34,
-     "mediane": 8970,
+     "mediane": 9000,
      "prix": 300000
     },
     {
      "pieces": 3,
-     "ventes": 664,
+     "ventes": 668,
      "surface": 54,
      "mediane": 9530,
      "prix": 507000
     },
     {
      "pieces": 4,
-     "ventes": 215,
+     "ventes": 213,
      "surface": 90,
      "mediane": 9500,
-     "prix": 850000
+     "prix": 846000
     }
    ]
   },
@@ -1073,23 +1073,23 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 284,
+     "ventes": 286,
      "surface": 21,
-     "mediane": 7200,
-     "prix": 154000
+     "mediane": 7220,
+     "prix": 155000
     },
     {
      "pieces": 2,
-     "ventes": 353,
+     "ventes": 354,
      "surface": 35,
-     "mediane": 7140,
-     "prix": 248000
+     "mediane": 7120,
+     "prix": 249000
     },
     {
      "pieces": 3,
-     "ventes": 189,
+     "ventes": 186,
      "surface": 52,
-     "mediane": 7150,
+     "mediane": 7190,
      "prix": 360000
     },
     {
@@ -1111,17 +1111,17 @@
    "typologies": [
     {
      "pieces": 1,
-     "ventes": 120,
+     "ventes": 121,
      "surface": 27,
-     "mediane": 7190,
+     "mediane": 7200,
      "prix": 175000
     },
     {
      "pieces": 2,
-     "ventes": 180,
+     "ventes": 179,
      "surface": 33,
      "mediane": 7330,
-     "prix": 238000
+     "prix": 237000
     },
     {
      "pieces": 3,
