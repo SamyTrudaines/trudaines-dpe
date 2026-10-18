@@ -51,7 +51,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartier: 'montmartre',
     quartiersBiens: ['Montmartre'],
     quartiersLies: ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette'],
-    titreSeo: 'Agence immobilière Montmartre, Paris 18e | Trudaines',
+    titreSeo: 'Agence immobilière Montmartre, Abbesses | Trudaines',
     descriptionSeo:
       "Agence immobilière à Montmartre, au pied de la Butte : prix par rue, estimation offerte sous 48 h, vente confidentielle.",
     h1: 'Agence immobilière à Montmartre',

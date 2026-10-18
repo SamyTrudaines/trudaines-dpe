@@ -8,7 +8,7 @@ import ModuleEstimation from '../../components/ModuleEstimation.astro';
 import ReferencesProches from '../../components/ReferencesProches.astro';
 import LivreBlanc from '../../components/LivreBlanc.astro';
 import { nombre, prix as prixFr, enPhrase } from '../../lib/format';
-import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, type Rue } from '../../lib/rues';
+import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, typologieCoherente, type Rue } from '../../lib/rues';
 import { quartierDeRue, ruesVoisines, memeVoie, position as positionDeRue } from '../../lib/quartiers';
 import { evt, referencesProches, guidePertinent } from '../../lib/entonnoir';
 import { site } from '../../data/site';
@@ -25,6 +25,8 @@ export const getStaticPaths: GetStaticPaths = async () =>
 const { rue } = Astro.props;
 const arrondissement = arrondissements[rue.codePostal];
 const etendue = rue.d9 - rue.d1;
+/* Typologies dont surface, prix et prix au m² médians se répondent : les autres trompent le lecteur. */
+const typologiesAffichees = rue.typologies.filter(typologieCoherente);
 const dispersion = heterogeneite(rue);
 const secteur = secteurs.find((s) => s.arrondissement === rue.codePostal);
 
@@ -295,7 +297,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
           d'assez de ventes pour être mesurées, contre une médiane d'arrondissement de {euros(arrondissement.mediane)}.
         </p>
 
-        {rue.typologies.length > 1 && (
+        {typologiesAffichees.length > 1 && (
           <>
             <h2 class="titre-2 mt-14">Par typologie</h2>
             <table class="mt-8 w-full border-collapse text-sm">
@@ -308,7 +310,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
                 </tr>
               </thead>
               <tbody>
-                {rue.typologies.map((t) => (
+                {typologiesAffichees.map((t) => (
                   <tr class="border-b border-[color:var(--color-trait)]">
                     <td class="py-3 pr-4 text-[color:var(--color-ardoise)]">{libellePieces(t.pieces)}</td>
                     <td class="py-3 pr-4 text-right text-[color:var(--color-ardoise)]">{t.ventes}</td>
@@ -320,7 +322,8 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
             </table>
             <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
               Les typologies de moins de trois ventes ne sont pas publiées : une médiane sur deux ventes ne
-              mesure rien.
+              mesure rien. Ni celles dont la surface et le prix médians ne se répondent pas, signe de biens trop
+              différents pour être comparés.
             </p>
           </>
         )}

@@ -8,6 +8,8 @@ import { secteurs, fourchetteSecteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { getCollection } from 'astro:content';
 import Avis from '../../components/Avis.astro';
+import Faq from '../../components/Faq.astro';
+import { site } from '../../data/site';
 import { avisCommentés, agrégatAvis, preuveAvis } from '../../lib/avis';
 const preuve = await preuveAvis();
 
@@ -77,7 +79,37 @@ const livrable = [
   { titre: 'Ce que nous ignorons', texte: "Les limites de l'exercice, écrites noir sur blanc. Une estimation sans réserves est une estimation qui se trompe en silence." },
 ];
 
+/* Les questions posées avant de demander une estimation : affichées sous les inquiétudes, déclarées avec elles. */
+const principaux = secteurs.filter((x) => ['paris-9', 'paris-18', 'paris-17'].includes(x.slug)).map((x) => x.nom);
+const autres = secteurs.filter((x) => !['paris-9', 'paris-18', 'paris-17'].includes(x.slug)).map((x) => x.nom);
+const questions = [
+  {
+    question: 'Combien coûte une estimation chez Trudaines ?',
+    reponse: "Rien. L'estimation en ligne et l'avis de valeur écrit sont gratuits et sans engagement. Vous gardez le document, même si vous vendez plus tard ou avec une autre agence.",
+  },
+  {
+    question: 'Quelle différence entre une estimation en ligne et un avis de valeur ?',
+    reponse: "L'estimation en ligne situe votre bien dans les ventes signées de votre rue, d'après l'adresse, la surface, les pièces, l'étage et l'ascenseur. L'avis de valeur y ajoute ce qu'on ne voit qu'en visite : lumière, état, plan, copropriété. Il explique chaque ajustement par écrit.",
+  },
+  {
+    question: "Combien de temps faut-il pour recevoir l'avis de valeur ?",
+    reponse: "48 heures après la visite. Le document détaille les ventes de référence, les ajustements et une stratégie de prix pour la mise en vente. La fourchette en ligne, elle, s'affiche dès l'envoi du formulaire.",
+  },
+  {
+    question: 'Sur quels quartiers intervenez-vous ?',
+    reponse: `Surtout ${principaux.join(', ')} : Trudaine, Martyrs, Saint-Georges et la Nouvelle Athènes dans le 9e nord ; Montmartre, Abbesses, Lamarck et Jules-Joffrin dans le 18e ; Batignolles, Cardinet et Épinettes dans le 17e. Aussi ${autres.join(', ')}. Notre bureau est au ${site.adresse.rue}, ${site.adresse.codePostal} Paris.`,
+  },
+];
+
 const donnees = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      ...angoisses.map((a) => ({ '@type': 'Question', name: a.titre, acceptedAnswer: { '@type': 'Answer', text: a.texte } })),
+      ...questions.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: q.reponse } })),
+    ],
+  },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -176,6 +208,8 @@ const donnees = [
       </div>
     </div>
   </section>
+
+  <Faq questions={questions} titre="Questions avant de faire estimer" />
 
   <section class="section filet" aria-labelledby="secteurs">
     <div class="conteneur">
