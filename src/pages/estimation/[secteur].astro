@@ -11,7 +11,7 @@ import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
-import { arrondissements } from '../../lib/rues';
+import { arrondissements, periode } from '../../lib/rues';
 import { prix, nombre } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
@@ -71,8 +71,13 @@ const donnees = [
         <p class="chapo mt-8">{secteur.intro}</p>
         <div class="mt-10 border-t border-[color:var(--color-encre)] pt-6">
           <p class="surtitre">Niveau de prix constaté</p>
-          <p class="mt-3 text-lg">{secteur.prixMoyen}</p>
-          <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">{secteur.fourchette}</p>
+          {/* Chiffres recalculés à chaque mise à jour de rues.json, jamais recopiés à la main. */}
+          <p class="mt-3 text-lg">{chiffres ? `${prix(chiffres.mediane)} le m², prix médian` : secteur.prixMoyen}</p>
+          <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">
+            {chiffres
+              ? `${prix(chiffres.d1)} à ${prix(chiffres.d9)} le m², du premier au neuvième décile des ${nombre(chiffres.ventes)} ventes d'appartements signées de ${periode}`
+              : secteur.fourchette}
+          </p>
         </div>
         <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
           Estimation appartement {secteur.nom}, estimation maison et immeuble, vente maison {secteur.nom} :
@@ -88,7 +93,7 @@ const donnees = [
     </div>
   </CadreMoulure>
 
-  {quartiers.length > 0 && <TableauPrix quartiers={quartiers} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />}
+  <TableauPrix quartiers={quartiers} codePostal={secteur.arrondissement} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />
 
   <Faq questions={secteur.faq} titre={`Questions des vendeurs du ${secteur.nom.replace('Paris ', '')}`} />
 

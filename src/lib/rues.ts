@@ -37,6 +37,10 @@ export type Arrondissement = {
 export const rues = donnees.rues as Rue[];
 export const arrondissements = donnees.arrondissements as Record<string, Arrondissement>;
 export const periode = donnees.periode as string;
+/** Quartiers administratifs de la Ville de Paris, ventes rattachées par le centroïde de leur voie. */
+export type QuartierAdministratif = { nom: string; codePostal: string; ventes: number; mediane: number; d1: number; d9: number };
+export const quartiersAdministratifs = (donnees as { quartiersAdministratifs?: Record<string, QuartierAdministratif> })
+  .quartiersAdministratifs ?? {};
 /** Date de parution du fichier DVF utilisé, AAAA-MM-JJ. */
 export const millesime = donnees.millesime as string;
 export const ventesMinimum = donnees.ventesMinimum as number;

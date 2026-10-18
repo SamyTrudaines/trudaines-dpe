@@ -1,0 +1,174 @@
+{
+ "source": "Notaires du Grand Paris, base BIEN : prix standardisés des appartements anciens (arrondissements, quartiers), indice Notaires-INSEE (Paris)",
+ "paris": {
+  "periode": "2e trimestre 2026",
+  "prixM2": 9560,
+  "evolution1an": "+0,6 %",
+  "publication": "8 septembre 2026",
+  "url": "https://paris.notaires.fr/sites/default/files/2026-09/Dossier%20de%20presse_T2%202026.pdf"
+ },
+ "arrondissements": {
+  "periodePrix": "2e trimestre 2026",
+  "periodeEvolution": "fin décembre 2025",
+  "urlPrix": "https://paris.notaires.fr/sites/default/files/HistoriquedesprixaumappartementsanciensParispararrdt_4.pdf",
+  "urlEvolution": "https://paris.notaires.fr/sites/default/files/Prix_communes_arrd_quartiers%202025%2012.pdf",
+  "valeurs": {
+   "75007": {
+    "prixM2T2_2026": 13010,
+    "prixM2T4_2025": 12940,
+    "evolution1anT4_2025": "+4,2 %"
+   },
+   "75009": {
+    "prixM2T2_2026": 10140,
+    "prixM2T4_2025": 10280,
+    "evolution1anT4_2025": "+6,5 %"
+   },
+   "75010": {
+    "prixM2T2_2026": 9140,
+    "prixM2T4_2025": 8900,
+    "evolution1anT4_2025": "+1,3 %"
+   },
+   "75016": {
+    "prixM2T2_2026": 10220,
+    "prixM2T4_2025": 10050,
+    "evolution1anT4_2025": "-1,1 %"
+   },
+   "75017": {
+    "prixM2T2_2026": 9470,
+    "prixM2T4_2025": 9360,
+    "evolution1anT4_2025": "+1,1 %"
+   },
+   "75018": {
+    "prixM2T2_2026": 8490,
+    "prixM2T4_2025": 8530,
+    "evolution1anT4_2025": "+1,9 %"
+   }
+  }
+ },
+ "quartiers": {
+  "periode": "fin décembre 2025",
+  "url": "https://paris.notaires.fr/sites/default/files/Prix_communes_arrd_quartiers%202025%2012.pdf",
+  "valeurs": {
+   "saint-thomas-d-aquin": {
+    "nom": "Saint-Thomas-d'Aquin",
+    "prixM2": 14690,
+    "evolution1an": "-1,3 %"
+   },
+   "invalides": {
+    "nom": "Invalides",
+    "prixM2": 14000,
+    "evolution1an": "+0,4 %"
+   },
+   "ecole-militaire": {
+    "nom": "Ecole-Militaire",
+    "prixM2": 12570,
+    "evolution1an": "+7,0 %"
+   },
+   "gros-caillou": {
+    "nom": "Gros-Caillou",
+    "prixM2": 12170,
+    "evolution1an": "+4,2 %"
+   },
+   "saint-georges": {
+    "nom": "Saint-Georges",
+    "prixM2": 10490,
+    "evolution1an": "+9,0 %"
+   },
+   "chaussee-d-antin": {
+    "nom": "Chaussée-d'Antin",
+    "prixM2": 10380,
+    "evolution1an": "-3,3 %"
+   },
+   "faubourg-montmartre": {
+    "nom": "Faubourg-Montmartre",
+    "prixM2": 9790,
+    "evolution1an": "+1,6 %"
+   },
+   "rochechouart": {
+    "nom": "Rochechouart",
+    "prixM2": 10430,
+    "evolution1an": "+5,9 %"
+   },
+   "saint-vincent-de-paul": {
+    "nom": "Saint-Vincent-de-Paul",
+    "prixM2": 8660,
+    "evolution1an": "+5,9 %"
+   },
+   "porte-saint-denis": {
+    "nom": "Porte-Saint-Denis",
+    "prixM2": 9160,
+    "evolution1an": "-3,2 %"
+   },
+   "porte-saint-martin": {
+    "nom": "Porte-Saint-Martin",
+    "prixM2": 9910,
+    "evolution1an": "+2,7 %"
+   },
+   "hopital-saint-louis": {
+    "nom": "Hôpital-Saint-Louis",
+    "prixM2": 9070,
+    "evolution1an": "-0,9 %"
+   },
+   "auteuil": {
+    "nom": "Auteuil",
+    "prixM2": 9010,
+    "evolution1an": "-0,9 %"
+   },
+   "muette": {
+    "nom": "Muette",
+    "prixM2": 10220,
+    "evolution1an": "-1,3 %"
+   },
+   "porte-dauphine": {
+    "nom": "Porte-Dauphine",
+    "prixM2": 10480,
+    "evolution1an": "-1,0 %"
+   },
+   "chaillot": {
+    "nom": "Chaillot",
+    "prixM2": 11970,
+    "evolution1an": "+0,1 %"
+   },
+   "ternes": {
+    "nom": "Ternes",
+    "prixM2": 9530,
+    "evolution1an": "-1,3 %"
+   },
+   "plaine-monceau": {
+    "nom": "Plaine-Monceau",
+    "prixM2": 9720,
+    "evolution1an": "-1,7 %"
+   },
+   "batignolles": {
+    "nom": "Batignolles",
+    "prixM2": 9660,
+    "evolution1an": "+4,3 %"
+   },
+   "epinettes": {
+    "nom": "Epinettes",
+    "prixM2": 8470,
+    "evolution1an": "+1,3 %"
+   },
+   "grandes-carrieres": {
+    "nom": "Grandes-Carrières",
+    "prixM2": 9170,
+    "evolution1an": "+2,2 %"
+   },
+   "clignancourt": {
+    "nom": "Clignancourt",
+    "prixM2": 8660,
+    "evolution1an": "+3,0 %"
+   },
+   "goutte-d-or": {
+    "nom": "Goutte-d'Or",
+    "prixM2": 6640,
+    "evolution1an": "-3,7 %"
+   },
+   "la-chapelle": {
+    "nom": "La Chapelle",
+    "prixM2": 6930,
+    "evolution1an": "+4,8 %"
+   }
+  }
+ }
+}

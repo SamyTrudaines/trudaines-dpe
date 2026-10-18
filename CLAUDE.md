@@ -44,6 +44,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   racine redirigée en 301 par Gandi, production Cloudflare sur la branche main. La clé Brevo des
   secrets GitHub est aussi celle des formulaires dans Cloudflare : ne pas la révoquer sans la remplacer.
 - Coordonnées, navigation, réglages : `src/data/site.ts`.
+- DVF : ventes de janvier 2024 à juin 2026 (parution data.gouv.fr du 12 octobre 2026), six arrondissements. Prix par
+  quartier administratif (`quartiersAdministratifs` de rues.json, polygones Ville de Paris dans `scripts/data/`) affichés
+  sur /estimation/<secteur>. Tendances des Notaires du Grand Paris dans `src/data/notaires.json`, recopiées de leurs
+  publications avec l'URL : à mettre à jour à chaque note trimestrielle, jamais recalculées.
 - Rues : `src/data/rues.json`, `src/data/rues-geo.json` (`scripts/geocoder-rues.mjs`),
   rattachement aux quartiers dans `src/lib/quartiers.ts`.
 - Mise en ligne outillée : `scripts/mise-en-ligne/`, workflow `.github/workflows/mise-en-ligne.yml`,
