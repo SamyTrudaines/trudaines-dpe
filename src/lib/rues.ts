@@ -56,27 +56,53 @@ export function libellePieces(pieces: number): string {
 }
 
 /**
- * Prix par taille sur un groupe de voies : pour chaque typologie, médiane de voie
- * au rang de la moitié des ventes, voies classées par valeur. Même méthode que la
- * médiane pondérée des pages d'estimation de quartier. Une typologie n'est
+ * Prix par taille sur un groupe de voies : pour chaque typologie, médiane pondérée
+ * interpolée des voies, poids égal à leurs ventes. Même méthode que la médiane des
+ * pages d'estimation de quartier. Une typologie n'est
  * retenue qu'à partir de `minimum` ventes cumulées.
  */
+/**
+ * Médiane pondérée interpolée : chaque valeur est placée au milieu de son poids
+ * dans la distribution cumulée, puis on lit la valeur au point 0,5 entre les deux
+ * voisines. Contrairement à la médiane pondérée simple, elle ne retombe pas sur la
+ * valeur exacte d'une seule voie quand deux quartiers partagent leurs rues centrales.
+ */
+export function medianePonderee(lignes: { valeur: number; poids: number }[]): number {
+  const triees = lignes.filter((l) => l.poids > 0).sort((a, b) => a.valeur - b.valeur);
+  const total = triees.reduce((s, l) => s + l.poids, 0);
+  if (!triees.length) return 0;
+  let cumul = 0;
+  const points = triees.map((l) => {
+    const position = (cumul + l.poids / 2) / total;
+    cumul += l.poids;
+    return { position, valeur: l.valeur };
+  });
+  if (0.5 <= points[0].position) return points[0].valeur;
+  for (let i = 1; i < points.length; i++) {
+    if (points[i].position >= 0.5) {
+      const a = points[i - 1];
+      const b = points[i];
+      return a.valeur + ((0.5 - a.position) / (b.position - a.position)) * (b.valeur - a.valeur);
+    }
+  }
+  return points[points.length - 1].valeur;
+}
+
 export function typologiesDesRues(liste: Rue[], minimum = 20): Typologie[] {
   const parTaille = new Map<number, { rue: Rue; t: Typologie }[]>();
   for (const rue of liste) {
     for (const t of rue.typologies) parTaille.set(t.pieces, [...(parTaille.get(t.pieces) ?? []), { rue, t }]);
   }
-  const ponderee = (lignes: { t: Typologie }[], champ: 'surface' | 'mediane' | 'prix', total: number) => {
-    let cumul = 0;
-    return [...lignes].sort((a, b) => a.t[champ] - b.t[champ]).find((l) => (cumul += l.t.ventes) >= total / 2)!.t[champ];
-  };
+  const arrondi = { surface: 1, mediane: 10, prix: 1000 };
+  const ponderee = (lignes: { t: Typologie }[], champ: 'surface' | 'mediane' | 'prix') =>
+    Math.round(medianePonderee(lignes.map((l) => ({ valeur: l.t[champ], poids: l.t.ventes }))) / arrondi[champ]) * arrondi[champ];
   return [...parTaille.entries()]
     .sort(([a], [b]) => a - b)
     .map(([pieces, lignes]) => {
       const ventes = lignes.reduce((s, l) => s + l.t.ventes, 0);
       return ventes < minimum
         ? null
-        : { pieces, ventes, surface: ponderee(lignes, 'surface', ventes), mediane: ponderee(lignes, 'mediane', ventes), prix: ponderee(lignes, 'prix', ventes) };
+        : { pieces, ventes, surface: ponderee(lignes, 'surface'), mediane: ponderee(lignes, 'mediane'), prix: ponderee(lignes, 'prix') };
     })
     .filter((t): t is Typologie => t !== null);
 }

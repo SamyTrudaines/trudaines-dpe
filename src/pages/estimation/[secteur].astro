@@ -12,6 +12,7 @@ import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
+import { mesureQuartier } from '../../lib/estimation-quartier';
 import { arrondissements, periode, libellePieces, millesime } from '../../lib/rues';
 import { prix, nombre, dateFr } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
@@ -66,7 +67,18 @@ const faqTailles = typologies.length > 1
         : []),
     ]
   : [];
-const faq = [...faqTailles, ...secteur.faq];
+const faqQuartiers = pagesQuartiers.length > 1
+  ? [{
+      question: `Quel est le prix au m² selon le quartier du ${secteur.nom.replace('Paris ', '')} ?`,
+      reponse: `Médiane des ventes d'appartements signées de ${periode}, voies pondérées par leurs ventes : ${pagesQuartiers
+        .map((q) => {
+          const m = mesureQuartier(q);
+          return `${q.nom}, ${prix(Math.round(m.mediane / 10) * 10)} sur ${nombre(m.ventes)} ventes`;
+        })
+        .join(' ; ')}. Chaque quartier a sa page d'estimation, avec le prix de ses rues.`,
+    }]
+  : [];
+const faq = [...faqTailles, ...faqQuartiers, ...secteur.faq];
 
 const donnees = [
   {

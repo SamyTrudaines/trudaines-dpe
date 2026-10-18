@@ -1,5 +1,5 @@
 import { distance, memeVoie, position, ruesDuQuartier, type Point } from './quartiers';
-import { rues, typologiesDesRues, type Rue, type Typologie } from './rues';
+import { rues, typologiesDesRues, medianePonderee, type Rue, type Typologie } from './rues';
 import type { EstimationQuartier } from '../data/estimations-quartiers';
 
 /**
@@ -25,9 +25,8 @@ export function mesureQuartier(page: EstimationQuartier): MesureQuartier {
   const liste = brutes.filter((r) => !memeVoie(r).some((autre) => brutes.includes(autre) && (autre.ventes > r.ventes || (autre.ventes === r.ventes && autre.slug < r.slug))));
   if (liste.length < 3) throw new Error(`[estimation] ${page.slug} : ${liste.length} voies mesurées, trop peu pour publier`);
   const ventes = liste.reduce((s, r) => s + r.ventes, 0);
-  /* Médiane pondérée : la médiane de voie au rang de la moitié des ventes, voies classées par prix. */
-  let cumul = 0;
-  const mediane = [...liste].sort((a, b) => a.mediane - b.mediane).find((r) => (cumul += r.ventes) >= ventes / 2)!.mediane;
+  /* Médiane pondérée interpolée des médianes de voie, poids égal aux ventes de chaque voie. */
+  const mediane = medianePonderee(liste.map((r) => ({ valeur: r.mediane, poids: r.ventes })));
   return { liste, ventes, mediane, typologies: typologiesDesRues(liste) };
 }
 
