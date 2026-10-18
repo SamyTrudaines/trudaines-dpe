@@ -10,7 +10,7 @@ import LivreBlanc from '../../components/LivreBlanc.astro';
 import { nombre, prix as prixFr, enPhrase } from '../../lib/format';
 import { rues, arrondissements, periode, ventesMinimum, libellePieces, voisines, heterogeneite, typologieCoherente, type Rue } from '../../lib/rues';
 import { quartierDeRue, ruesVoisines, memeVoie, position as positionDeRue } from '../../lib/quartiers';
-import { evt, referencesProches, guidePertinent } from '../../lib/entonnoir';
+import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
 import { ambianceDeVoie } from '../../data/ambiance';
@@ -74,6 +74,7 @@ const lectureDispersion = {
 }[dispersion];
 
 const nomEnPhrase = enPhrase(rue.nom);
+const mois = dureeEnMois(periode);
 
 const assezDeVentes = rue.ventes >= 10;
 const libelleDeciles = assezDeVentes ? 'Huit ventes sur dix' : 'Hors ventes extrêmes';
@@ -209,7 +210,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
       {/* Le visiteur lit le prix de sa rue puis repart : la proposition d'estimation vient juste après le chiffre. */}
       <div class="mt-8 flex flex-col gap-4 border-l-2 border-[color:var(--color-or)] pl-5 sm:flex-row sm:items-center sm:justify-between">
         <p class="max-w-xl">
-          Votre appartement est {rue.nom} ? La médiane ne dit pas son prix. Avis de valeur écrit sous 48 h, gratuit et sans engagement.
+          Votre appartement est {nomEnPhrase} ? La médiane ne dit pas son prix : votre estimation en moins d'une minute, ou un avis de valeur écrit sous 48 h. Gratuit et sans engagement.
         </p>
         <a href={`#estimation-${rue.slug}`} class="bouton shrink-0" data-evt={evt('rue', 'vers_estimation', contexte)}>Estimer mon appartement</a>
       </div>
@@ -278,13 +279,13 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
         <p class="text-[color:var(--color-ardoise)]">
           Le prix médian est un ordre de grandeur, pas une estimation. Pour savoir ce que vaut votre appartement
           {' '}{nomEnPhrase}, il faut le visiter : c'est le travail d'un agent immobilier, et c'est ce que fait
-          Trudaines, agence immobilière à Paris, en {rue.arrondissement} comme dans les autres
+          Trudaines, agence immobilière à Paris, dans le {rue.arrondissement.replace('Paris ', '')} comme dans les autres
           arrondissements dont nous suivons les ventes.
         </p>
 
         <h2 class="titre-2 mt-14">Ce que ces chiffres disent</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Sur les vingt quatre derniers mois publiés, {rue.ventes} appartements ont été vendus {nomEnPhrase}.
+          {mois ? `Sur les ${mois} mois publiés, de ${periode}, ` : `De ${periode}, `}{rue.ventes} appartements ont été vendus {nomEnPhrase}.
           La médiane coupe ces ventes en deux : la moitié s'est faite en dessous de {euros(rue.mediane)} le
           mètre carré, la moitié au dessus. {position}
         </p>
