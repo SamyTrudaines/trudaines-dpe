@@ -161,7 +161,11 @@
       bloc.hidden = false;
       if (mention) mention.hidden = false;
       if (cache) cache.value = euros(bas * surface) + ' à ' + euros(haut * surface) + (rue ? ' (rue)' : ' (arrondissement)');
-      if (typeof window.trudainesEvent === 'function') window.trudainesEvent('estimation_fourchette', { source: rue ? 'rue' : 'arrondissement' });
+      /* Le calcul se refait à chaque étape : l'événement ne part qu'une fois par formulaire. */
+      if (!form.dataset.fourchetteMesuree && typeof window.trudainesEvent === 'function') {
+        form.dataset.fourchetteMesuree = '1';
+        window.trudainesEvent('estimation_fourchette', { source: rue ? 'rue' : 'arrondissement' });
+      }
     });
   }
 
