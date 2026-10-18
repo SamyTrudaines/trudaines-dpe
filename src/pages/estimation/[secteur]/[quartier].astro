@@ -11,7 +11,7 @@ import { avisCommentés, agrégatAvis, trierAvis } from '../../../lib/avis';
 import { secteurs } from '../../../data/secteurs';
 import { estimationsQuartiers, type EstimationQuartier } from '../../../data/estimations-quartiers';
 import { mesureQuartier } from '../../../lib/estimation-quartier';
-import { periode, libellePieces, millesime } from '../../../lib/rues';
+import { periode, libellePieces, millesime, arrondissements } from '../../../lib/rues';
 import { prix, nombre, dateFr } from '../../../lib/format';
 import { getCollection } from 'astro:content';
 import ReferencesProches from '../../../components/ReferencesProches.astro';
@@ -41,6 +41,30 @@ const deux = typologies.find((t) => t.pieces === 2);
 const trois = typologies.find((t) => t.pieces === 3);
 const medianeArrondie = prix(Math.round(mediane / 10) * 10);
 
+/* Le quartier face à son arrondissement, la part des petites surfaces, la voie la plus active : des faits propres à la page. */
+const medianeArrondissement = arrondissements[page.codePostal]?.mediane;
+const ecartArrondissement = medianeArrondissement ? Math.round(((mediane - medianeArrondissement) / medianeArrondissement) * 100) : null;
+const ventesTypees = typologies.reduce((s, t) => s + t.ventes, 0);
+const petites = typologies.filter((t) => t.pieces <= 2).reduce((s, t) => s + t.ventes, 0);
+const partPetites = ventesTypees ? Math.round((petites / ventesTypees) * 100) : null;
+const verdictEcart = ecartArrondissement === null
+  ? ''
+  : Math.abs(ecartArrondissement) > 2
+    ? ecartArrondissement > 0 ? `Oui, d'environ ${ecartArrondissement} %` : `Non, il est inférieur d'environ ${-ecartArrondissement} %`
+    : `Pas sensiblement, l'écart est de ${ecartArrondissement} %`;
+const plusActive = [...liste].sort((a, b) => b.ventes - a.ventes)[0];
+const chiffresCles = [
+  { valeur: `${nombre(ventes)}`, libelle: `ventes d'appartements signées ${page.dans}, de ${periode}` },
+  ...(ecartArrondissement !== null && medianeArrondissement
+    ? [{
+        valeur: ecartArrondissement === 0 ? 'Au niveau' : `${ecartArrondissement > 0 ? '+' : ''}${ecartArrondissement} %`,
+        libelle: `par rapport à la médiane de ${secteur.nom}, ${prix(medianeArrondissement)} le m²`,
+      }]
+    : []),
+  ...(partPetites !== null ? [{ valeur: `${partPetites} %`, libelle: 'des ventes sont des studios et des deux pièces' }] : []),
+  { valeur: plusActive.nom, libelle: `la voie la plus active, ${plusActive.ventes} ventes à ${prix(plusActive.mediane)} le m² en médiane` },
+];
+
 /* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */
 const reponseCourte = `${page.dans.charAt(0).toUpperCase()}${page.dans.slice(1)} (${secteur.nom}), les appartements se sont vendus ${medianeArrondie} le m² en médiane pondérée, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} voies (base DVF de la DGFiP).${
   deux && trois ? ` Un deux pièces de ${deux.surface} m² s'y vend autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.` : ''
@@ -63,6 +87,12 @@ const faq = [
         : `Pour un appartement de 50 m² vendu au prix médian du quartier, les ventes signées situent la valeur autour de ${prix(Math.round((mediane * 50) / 5000) * 5000)}.`
     } Le prix réel dépend de la rue, de l'étage, de l'ascenseur, de l'état et de la copropriété : l'estimation en ligne ou l'avis de valeur écrit après visite le précisent pour votre bien.`,
   },
+  ...(ecartArrondissement !== null && medianeArrondissement
+    ? [{
+        question: `Est-il plus cher d'acheter ${page.dans} que dans le reste du ${arrondissement} ?`,
+        reponse: `${verdictEcart} : la médiane pondérée des voies ${page.dans} est de ${medianeArrondie} le m², contre ${prix(medianeArrondissement)} pour l'ensemble de ${secteur.nom}, sur les ventes signées de ${periode}.`,
+      }]
+    : []),
   {
     question: 'Comment estimez-vous mon appartement ?',
     reponse: "Nous partons des ventes signées dans votre rue et dans les rues voisines, publiées par l'administration fiscale, puis nous visitons. L'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
@@ -141,6 +171,15 @@ const donnees = [
   <section class="section filet" aria-labelledby="methode">
     <div class="conteneur max-w-3xl">
       <h2 id="methode" class="titre-2">Ce qui fait le prix {page.dans}</h2>
+      <dl class="mt-8 grid gap-6 sm:grid-cols-2">
+        {chiffresCles.map((c) => (
+          <div class="border-t border-[color:var(--color-encre)] pt-4">
+            <dt class="sr-only">{c.libelle}</dt>
+            <dd class="titre-3">{c.valeur}</dd>
+            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{c.libelle}</dd>
+          </div>
+        ))}
+      </dl>
       {page.paragraphes.map((p) => <p class="mt-6">{p}</p>)}
     </div>
   </section>
