@@ -8,7 +8,7 @@ export async function onRequestPost({ request, env }) {
     const donnees = await request.formData();
     if (suspect(donnees)) return reponse(request, { ok: true, message: 'Reçu' });
 
-    const manquants = champsManquants(donnees, ['adresse', 'type', 'surface', 'pieces', 'etage', 'horizon', 'prenom', 'nom', 'email', 'telephone']);
+    const manquants = champsManquants(donnees, ['adresse', 'surface', 'prenom', 'email', 'telephone']);
     if (manquants.length || !emailValide(donnees.get('email'))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
     }
@@ -19,7 +19,7 @@ export async function onRequestPost({ request, env }) {
 
     const lignes = [
       ['Adresse', valeur('adresse')],
-      ['Type de bien', valeur('type')],
+      ['Type de bien', valeur('type') || 'Appartement'],
       ['Surface', `${valeur('surface')} m²`],
       ['Pièces', valeur('pieces')],
       ['Étage', valeur('etage')],
@@ -39,7 +39,7 @@ export async function onRequestPost({ request, env }) {
     ];
 
     await envoyerEmail(env, {
-      sujet: `Estimation · ${valeur('adresse')} · ${valeur('horizon')}`,
+      sujet: `Estimation · ${valeur('adresse')} · ${valeur('fourchette') || valeur('horizon') || 'horizon non précisé'}`,
       html: gabaritNotification('Nouvelle demande d’estimation', lignes),
       repondreA: email,
     });

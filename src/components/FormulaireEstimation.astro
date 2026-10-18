@@ -21,6 +21,7 @@ const listeId = `adresses-${identifiant}`;
   data-evt={evt}
   data-evenement-etape="estimation_etape1"
   data-formulaire-avis
+  data-fourchette
   novalidate={false}
 >
   <input type="hidden" name="secteur" value={secteur} />
@@ -90,8 +91,8 @@ const listeId = `adresses-${identifiant}`;
             </select>
           </div>
           <div>
-            <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
-            <input class="champ" id={`etage-${identifiant}`} name="etage" type="text" placeholder="3e avec ascenseur" required />
+            <label class="etiquette" for={`etage-${identifiant}`}>Étage, facultatif</label>
+            <input class="champ" id={`etage-${identifiant}`} name="etage" type="text" placeholder="Facultatif, 3e avec ascenseur" />
           </div>
         </div>
 
@@ -109,14 +110,16 @@ const listeId = `adresses-${identifiant}`;
 
     <fieldset data-etape class="border-0 p-0">
       <legend class="titre-3 mb-6">Vos coordonnées</legend>
+      {/* Rempli dans le navigateur : la fourchette des ventes signées de la rue, avant de demander le contact. */}
+      <div class="mb-8 border-l-2 border-[color:var(--color-or)] pl-4" data-fourchette-rue hidden aria-live="polite"></div>
       <div class="grid gap-6 sm:grid-cols-2">
         <div>
           <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
           <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
         </div>
         <div>
-          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
-          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom, facultatif</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" />
         </div>
         <div>
           <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
@@ -143,7 +146,7 @@ const listeId = `adresses-${identifiant}`;
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="submit" class="bouton">Recevoir mon estimation</button>
+        <button type="submit" class="bouton">Recevoir mon avis de valeur</button>
       </div>
     </fieldset>
 
@@ -159,3 +162,4 @@ const listeId = `adresses-${identifiant}`;
     </p>
   </div>
 </form>
+<script src="/js/fourchette-formulaire.js" defer is:inline></script>
