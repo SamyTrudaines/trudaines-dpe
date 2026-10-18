@@ -81,6 +81,23 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     ],
   },
   {
+    slug: 'saint-martin',
+    nom: 'Saint-Martin',
+    dans: 'entre la porte Saint-Martin et le canal',
+    secteur: 'paris-10',
+    codePostal: '75010',
+    reperes: ['rue-de-lancry-10', 'rue-lucien-sampaix-10', 'rue-rene-boulanger-10', 'rue-des-vinaigriers-10'],
+    rayon: 400,
+    quartiersBiens: [],
+    lien: { href: '/agence-immobiliere-paris-10', libelle: 'Agence immobilière Paris 10e' },
+    chapo:
+      "Entre la porte Saint-Martin, la rue de Lancry et le canal, le 10e change de prix d'une rue à l'autre et d'un immeuble à l'autre. L'estimation commence par les ventes signées de votre rue, pas par une moyenne de l'arrondissement.",
+    paragraphes: [
+      "Les acheteurs y viennent pour le canal, les commerces et la desserte de la gare de l'Est et de République. Ils comparent l'étage, le bruit côté rue, la lumière et l'état de l'immeuble, qui varient beaucoup dans ce bâti ancien et mixte.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
+    ],
+  },
+  {
     slug: 'saint-georges',
     nom: 'Saint-Georges',
     dans: 'dans le quartier Saint-Georges',
