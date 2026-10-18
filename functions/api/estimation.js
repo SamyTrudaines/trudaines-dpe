@@ -8,7 +8,7 @@ export async function onRequestPost({ request, env }) {
     const donnees = await request.formData();
     if (suspect(donnees)) return reponse(request, { ok: true, message: 'Reçu' });
 
-    const manquants = champsManquants(donnees, ['adresse', 'surface', 'prenom', 'email', 'telephone']);
+    const manquants = champsManquants(donnees, ['adresse', 'surface', 'pieces', 'chambres', 'etage', 'ascenseur', 'prenom', 'email', 'telephone']);
     if (manquants.length || !emailValide(donnees.get('email'))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
     }
@@ -22,7 +22,9 @@ export async function onRequestPost({ request, env }) {
       ['Type de bien', valeur('type') || 'Appartement'],
       ['Surface', `${valeur('surface')} m²`],
       ['Pièces', valeur('pieces')],
+      ['Chambres', valeur('chambres')],
       ['Étage', valeur('etage')],
+      ['Ascenseur', valeur('ascenseur')],
       ['Horizon de vente', valeur('horizon')],
       // Fourchette affichée par le calculateur immédiat, le cas échéant : savoir
       // ce que le propriétaire a eu sous les yeux change la première phrase de l'appel.

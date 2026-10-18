@@ -37,7 +37,7 @@ function requete(donnees, { json = true } = {}) {
 const recent = () => String(Date.now() - 20000);
 
 const cas = [
-  ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
+  ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
   ['visite', '../functions/api/visite.js', { prenom: 'Paul', nom: 'Durand', email: 'paul@example.com', telephone: '0601020304', creneaux: 'Samedi matin', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['fiche-bien', '../functions/api/fiche-bien.js', { email: 'paul@example.com', telephone: '0601020304', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['guide', '../functions/api/guide.js', { email: 'paul@example.com', telephone: '0601020304', guide: 'guide-prix-2026-9e-nord', titreGuide: 'Guide des prix 2026', horodatage: recent() }, 6],
@@ -82,7 +82,7 @@ console.log(`${piegeOk ? 'OK   ' : 'ÉCHEC'} piège à robots · appels réseau 
  * écartent l'envoi ; une saisie de moins de 2,5 secondes aussi ; un appareil
  * dont l'horloge avance de dix minutes n'est plus pris pour un robot.
  */
-const demandeComplete = { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9' };
+const demandeComplete = { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9' };
 const enAvance = String(Date.now() + 10 * 60 * 1000);
 for (const [nom, champs, ecarte] of [
   ['piège controle rempli', { controle: 'robot', horodatage: recent(), duree: '20000' }, true],
@@ -99,7 +99,7 @@ for (const [nom, champs, ecarte] of [
 }
 
 const sansJs = await estimation.onRequestPost({
-  request: requete({ adresse: '12 avenue Trudaine', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'c@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }, { json: false }),
+  request: requete({ adresse: '12 avenue Trudaine', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'c@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }, { json: false }),
   env,
 });
 if (sansJs.status !== 303) echecs++;
@@ -324,7 +324,7 @@ globalThis.fetch = async (url, options = {}) => {
 };
 appels.length = 0;
 const malgrePanne = await estimation.onRequestPost({
-  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }),
+  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', horodatage: recent() }),
   env,
 });
 verifier(
@@ -500,7 +500,7 @@ verifier(
 /* La page d'où part une demande d'estimation arrive dans la notification de l'agence. */
 appels.length = 0;
 await estimation.onRequestPost({
-  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', etage: '4e', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', origine: 'Rue des Dames, Paris 17e', quartier: 'Batignolles', horodatage: recent() }),
+  request: requete({ adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', origine: 'Rue des Dames, Paris 17e', quartier: 'Batignolles', horodatage: recent() }),
   env,
 });
 verifier(
