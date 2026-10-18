@@ -32,13 +32,15 @@ export type Arrondissement = {
   mediane: number;
   d1: number;
   d9: number;
+  /** Prix par taille d'appartement, groupes d'au moins dix ventes. */
+  typologies?: Typologie[];
 };
 
 export const rues = donnees.rues as Rue[];
 export const arrondissements = donnees.arrondissements as Record<string, Arrondissement>;
 export const periode = donnees.periode as string;
 /** Quartiers administratifs de la Ville de Paris, ventes rattachées par le centroïde de leur voie. */
-export type QuartierAdministratif = { nom: string; codePostal: string; ventes: number; mediane: number; d1: number; d9: number };
+export type QuartierAdministratif = { nom: string; codePostal: string; ventes: number; mediane: number; d1: number; d9: number; typologies?: Typologie[] };
 export const quartiersAdministratifs = (donnees as { quartiersAdministratifs?: Record<string, QuartierAdministratif> })
   .quartiersAdministratifs ?? {};
 /** Date de parution du fichier DVF utilisé, AAAA-MM-JJ. */
@@ -51,6 +53,32 @@ export function libellePieces(pieces: number): string {
   if (pieces === 2) return 'Deux pièces';
   if (pieces === 3) return 'Trois pièces';
   return 'Quatre pièces et plus';
+}
+
+/**
+ * Prix par taille sur un groupe de voies : pour chaque typologie, médiane de voie
+ * au rang de la moitié des ventes, voies classées par valeur. Même méthode que la
+ * médiane pondérée des pages d'estimation de quartier. Une typologie n'est
+ * retenue qu'à partir de `minimum` ventes cumulées.
+ */
+export function typologiesDesRues(liste: Rue[], minimum = 20): Typologie[] {
+  const parTaille = new Map<number, { rue: Rue; t: Typologie }[]>();
+  for (const rue of liste) {
+    for (const t of rue.typologies) parTaille.set(t.pieces, [...(parTaille.get(t.pieces) ?? []), { rue, t }]);
+  }
+  const ponderee = (lignes: { t: Typologie }[], champ: 'surface' | 'mediane' | 'prix', total: number) => {
+    let cumul = 0;
+    return [...lignes].sort((a, b) => a.t[champ] - b.t[champ]).find((l) => (cumul += l.t.ventes) >= total / 2)!.t[champ];
+  };
+  return [...parTaille.entries()]
+    .sort(([a], [b]) => a - b)
+    .map(([pieces, lignes]) => {
+      const ventes = lignes.reduce((s, l) => s + l.t.ventes, 0);
+      return ventes < minimum
+        ? null
+        : { pieces, ventes, surface: ponderee(lignes, 'surface', ventes), mediane: ponderee(lignes, 'mediane', ventes), prix: ponderee(lignes, 'prix', ventes) };
+    })
+    .filter((t): t is Typologie => t !== null);
 }
 
 /** Rues du même arrondissement dont la médiane est la plus proche. */

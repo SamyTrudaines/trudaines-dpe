@@ -6,12 +6,13 @@ import CadreMoulure from '../../components/CadreMoulure.astro';
 import FormulaireEstimation from '../../components/FormulaireEstimation.astro';
 import BoutonCreneau from '../../components/BoutonCreneau.astro';
 import TableauPrix from '../../components/TableauPrix.astro';
+import PrixParTaille from '../../components/PrixParTaille.astro';
 import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
 import { secteurs, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
-import { arrondissements, periode } from '../../lib/rues';
+import { arrondissements, periode, libellePieces } from '../../lib/rues';
 import { prix, nombre } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
@@ -35,11 +36,43 @@ const agregatAvis = await agrégatAvis();
 const pagesQuartiers = estimationsQuartiers.filter((q) => q.secteur === secteur.slug);
 const autresSecteurs = secteurs.filter((s) => s.slug !== secteur.slug);
 
+/* Prix selon la taille : la question que posent les vendeurs, et les assistants pour eux. */
+const typologies = chiffres?.typologies ?? [];
+const taille = (pieces: number) => typologies.find((t) => t.pieces === pieces);
+const deux = taille(2);
+const trois = taille(3);
+const reponseCourte = chiffres
+  ? `À ${secteur.nom}, les appartements se sont vendus ${prix(chiffres.mediane)} le m² en médiane, sur ${nombre(chiffres.ventes)} ventes signées de ${periode} (base DVF de la DGFiP).${
+      deux && trois
+        ? ` Un deux pièces de ${deux.surface} m² s'est vendu autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.`
+        : ''
+    } Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, gratuit et sans engagement.`
+  : '';
+const faqTailles = typologies.length > 1
+  ? [
+      {
+        question: `Combien vaut un appartement à ${secteur.nom} selon sa taille ?`,
+        reponse: `Sur les ventes signées de ${periode} : ${typologies
+          .map((t) => `${libellePieces(t.pieces).toLowerCase()}, ${t.surface} m² et ${prix(t.prix)} en médiane (${prix(t.mediane)} le m², ${nombre(t.ventes)} ventes)`)
+          .join(' ; ')}. Votre rue, l'étage, l'ascenseur et l'état du bien déplacent ce prix : l'estimation le précise pour votre adresse.`,
+      },
+      ...(deux
+        ? [
+            {
+              question: `Quel est le prix d'un deux pièces à ${secteur.nom} ?`,
+              reponse: `Les ${nombre(deux.ventes)} deux pièces vendus de ${periode} mesurent ${deux.surface} m² en médiane et se sont vendus ${prix(deux.prix)} en médiane, soit ${prix(deux.mediane)} le m². Les petites surfaces se vendent plus cher au mètre carré quand elles sont en étage, lumineuses et sans travaux.`,
+            },
+          ]
+        : []),
+    ]
+  : [];
+const faq = [...faqTailles, ...secteur.faq];
+
 const donnees = [
   {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: secteur.faq.map((q) => ({
+    mainEntity: faq.map((q) => ({
       '@type': 'Question',
       name: q.question,
       acceptedAnswer: { '@type': 'Answer', text: q.reponse },
@@ -52,6 +85,7 @@ const donnees = [
     serviceType: 'Estimation immobilière',
     provider: { '@id': 'https://www.trudaines.com/#agence' },
     areaServed: { '@type': 'AdministrativeArea', name: secteur.nomLong },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 48 heures, sans engagement" },
   },
 ];
 ---
@@ -68,6 +102,7 @@ const donnees = [
       <div>
         <p class="surtitre">Estimation · {secteur.arrondissement}</p>
         <h1 class="titre-1 mt-6">Estimation immobilière {secteur.nom}</h1>
+        {reponseCourte && <p class="mt-6 max-w-2xl" id="reponse-courte">{reponseCourte}</p>}
         <p class="chapo mt-8">{secteur.intro}</p>
         <div class="mt-10 border-t border-[color:var(--color-encre)] pt-6">
           <p class="surtitre">Niveau de prix constaté</p>
@@ -95,7 +130,13 @@ const donnees = [
 
   <TableauPrix quartiers={quartiers} codePostal={secteur.arrondissement} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />
 
-  <Faq questions={secteur.faq} titre={`Questions des vendeurs du ${secteur.nom.replace('Paris ', '')}`} />
+  <PrixParTaille
+    typologies={typologies}
+    titre={`Prix d'un appartement selon sa taille dans le ${secteur.nom.replace('Paris ', '')}`}
+    source={`Toutes les ventes d'appartements de l'arrondissement, par nombre de pièces.`}
+  />
+
+  <Faq questions={faq} titre={`Questions des vendeurs du ${secteur.nom.replace('Paris ', '')}`} />
 
   <Avis avis={avisSecteur} agregat={agregatAvis} titre="Des ventes racontées par leurs propriétaires" />
 

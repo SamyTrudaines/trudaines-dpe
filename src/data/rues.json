@@ -8,42 +8,222 @@
    "ventes": 6857,
    "mediane": 8857,
    "d1": 6143,
-   "d9": 12273
+   "d9": 12273,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 1906,
+     "surface": 21,
+     "mediane": 8730,
+     "prix": 178000
+    },
+    {
+     "pieces": 2,
+     "ventes": 2925,
+     "surface": 35,
+     "mediane": 8720,
+     "prix": 300000
+    },
+    {
+     "pieces": 3,
+     "ventes": 1505,
+     "surface": 55,
+     "mediane": 9140,
+     "prix": 495000
+    },
+    {
+     "pieces": 4,
+     "ventes": 515,
+     "surface": 89,
+     "mediane": 9330,
+     "prix": 830000
+    }
+   ]
   },
   "75010": {
    "nom": "Paris 10e",
    "ventes": 3351,
    "mediane": 9333,
    "d1": 6817,
-   "d9": 12188
+   "d9": 12188,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 1015,
+     "surface": 19,
+     "mediane": 9240,
+     "prix": 178000
+    },
+    {
+     "pieces": 2,
+     "ventes": 1176,
+     "surface": 36,
+     "mediane": 9330,
+     "prix": 330000
+    },
+    {
+     "pieces": 3,
+     "ventes": 667,
+     "surface": 60,
+     "mediane": 9480,
+     "prix": 540000
+    },
+    {
+     "pieces": 4,
+     "ventes": 485,
+     "surface": 94,
+     "mediane": 9190,
+     "prix": 880000
+    }
+   ]
   },
   "75017": {
    "nom": "Paris 17e",
    "ventes": 5845,
    "mediane": 10143,
    "d1": 7403,
-   "d9": 13249
+   "d9": 13249,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 1438,
+     "surface": 20,
+     "mediane": 9790,
+     "prix": 200000
+    },
+    {
+     "pieces": 2,
+     "ventes": 1966,
+     "surface": 37,
+     "mediane": 9820,
+     "prix": 360000
+    },
+    {
+     "pieces": 3,
+     "ventes": 1315,
+     "surface": 60,
+     "mediane": 10270,
+     "prix": 601000
+    },
+    {
+     "pieces": 4,
+     "ventes": 1130,
+     "surface": 105,
+     "mediane": 11090,
+     "prix": 1168000
+    }
+   ]
   },
   "75009": {
    "nom": "Paris 9e",
    "ventes": 2591,
    "mediane": 10779,
    "d1": 7672,
-   "d9": 14038
+   "d9": 14038,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 742,
+     "surface": 20,
+     "mediane": 10410,
+     "prix": 200000
+    },
+    {
+     "pieces": 2,
+     "ventes": 709,
+     "surface": 37,
+     "mediane": 10640,
+     "prix": 410000
+    },
+    {
+     "pieces": 3,
+     "ventes": 570,
+     "surface": 60,
+     "mediane": 11010,
+     "prix": 670000
+    },
+    {
+     "pieces": 4,
+     "ventes": 563,
+     "surface": 102,
+     "mediane": 11150,
+     "prix": 1138000
+    }
+   ]
   },
   "75007": {
    "nom": "Paris 7e",
    "ventes": 2118,
    "mediane": 14004,
    "d1": 10153,
-   "d9": 21166
+   "d9": 21166,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 428,
+     "surface": 22,
+     "mediane": 12660,
+     "prix": 279000
+    },
+    {
+     "pieces": 2,
+     "ventes": 545,
+     "surface": 40,
+     "mediane": 13460,
+     "prix": 535000
+    },
+    {
+     "pieces": 3,
+     "ventes": 432,
+     "surface": 69,
+     "mediane": 13910,
+     "prix": 950000
+    },
+    {
+     "pieces": 4,
+     "ventes": 698,
+     "surface": 120,
+     "mediane": 16140,
+     "prix": 1905000
+    }
+   ]
   },
   "75016": {
    "nom": "Paris 16e",
    "ventes": 5606,
    "mediane": 10930,
    "d1": 8010,
-   "d9": 15289
+   "d9": 15289,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 1174,
+     "surface": 24,
+     "mediane": 10480,
+     "prix": 250000
+    },
+    {
+     "pieces": 2,
+     "ventes": 1297,
+     "surface": 49,
+     "mediane": 10440,
+     "prix": 500000
+    },
+    {
+     "pieces": 3,
+     "ventes": 1204,
+     "surface": 76,
+     "mediane": 10750,
+     "prix": 811000
+    },
+    {
+     "pieces": 4,
+     "ventes": 1877,
+     "surface": 128,
+     "mediane": 11590,
+     "prix": 1462000
+    }
+   ]
   }
  },
  "quartiersAdministratifs": {
@@ -53,7 +233,37 @@
    "ventes": 474,
    "mediane": 16370,
    "d1": 11190,
-   "d9": 22930
+   "d9": 22930,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 71,
+     "surface": 25,
+     "mediane": 14530,
+     "prix": 346000
+    },
+    {
+     "pieces": 2,
+     "ventes": 121,
+     "surface": 45,
+     "mediane": 14650,
+     "prix": 680000
+    },
+    {
+     "pieces": 3,
+     "ventes": 98,
+     "surface": 73,
+     "mediane": 15930,
+     "prix": 1093000
+    },
+    {
+     "pieces": 4,
+     "ventes": 170,
+     "surface": 128,
+     "mediane": 17990,
+     "prix": 2200000
+    }
+   ]
   },
   "7510702": {
    "nom": "Invalides",
@@ -61,7 +271,37 @@
    "ventes": 428,
    "mediane": 13940,
    "d1": 10170,
-   "d9": 21850
+   "d9": 21850,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 101,
+     "surface": 20,
+     "mediane": 13160,
+     "prix": 270000
+    },
+    {
+     "pieces": 2,
+     "ventes": 104,
+     "surface": 41,
+     "mediane": 12960,
+     "prix": 521000
+    },
+    {
+     "pieces": 3,
+     "ventes": 98,
+     "surface": 68,
+     "mediane": 13950,
+     "prix": 965000
+    },
+    {
+     "pieces": 4,
+     "ventes": 120,
+     "surface": 118,
+     "mediane": 16540,
+     "prix": 1938000
+    }
+   ]
   },
   "7510703": {
    "nom": "Ecole-Militaire",
@@ -69,7 +309,37 @@
    "ventes": 324,
    "mediane": 13040,
    "d1": 10020,
-   "d9": 18020
+   "d9": 18020,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 61,
+     "surface": 25,
+     "mediane": 12380,
+     "prix": 310000
+    },
+    {
+     "pieces": 2,
+     "ventes": 104,
+     "surface": 40,
+     "mediane": 12930,
+     "prix": 521000
+    },
+    {
+     "pieces": 3,
+     "ventes": 64,
+     "surface": 66,
+     "mediane": 13110,
+     "prix": 895000
+    },
+    {
+     "pieces": 4,
+     "ventes": 95,
+     "surface": 114,
+     "mediane": 14000,
+     "prix": 1610000
+    }
+   ]
   },
   "7510704": {
    "nom": "Gros-Caillou",
@@ -77,7 +347,37 @@
    "ventes": 668,
    "mediane": 13450,
    "d1": 9720,
-   "d9": 19230
+   "d9": 19230,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 159,
+     "surface": 20,
+     "mediane": 12330,
+     "prix": 260000
+    },
+    {
+     "pieces": 2,
+     "ventes": 183,
+     "surface": 38,
+     "mediane": 13250,
+     "prix": 460000
+    },
+    {
+     "pieces": 3,
+     "ventes": 126,
+     "surface": 62,
+     "mediane": 13000,
+     "prix": 785000
+    },
+    {
+     "pieces": 4,
+     "ventes": 198,
+     "surface": 114,
+     "mediane": 15780,
+     "prix": 1824000
+    }
+   ]
   },
   "7510901": {
    "nom": "Saint-Georges",
@@ -85,7 +385,37 @@
    "ventes": 846,
    "mediane": 10850,
    "d1": 7780,
-   "d9": 14200
+   "d9": 14200,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 239,
+     "surface": 20,
+     "mediane": 10420,
+     "prix": 200000
+    },
+    {
+     "pieces": 2,
+     "ventes": 237,
+     "surface": 40,
+     "mediane": 10770,
+     "prix": 428000
+    },
+    {
+     "pieces": 3,
+     "ventes": 169,
+     "surface": 58,
+     "mediane": 11090,
+     "prix": 645000
+    },
+    {
+     "pieces": 4,
+     "ventes": 201,
+     "surface": 108,
+     "mediane": 11290,
+     "prix": 1228000
+    }
+   ]
   },
   "7510902": {
    "nom": "Chaussée-d'Antin",
@@ -93,7 +423,37 @@
    "ventes": 190,
    "mediane": 11210,
    "d1": 8030,
-   "d9": 14450
+   "d9": 14450,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 59,
+     "surface": 19,
+     "mediane": 11560,
+     "prix": 199000
+    },
+    {
+     "pieces": 2,
+     "ventes": 47,
+     "surface": 40,
+     "mediane": 11520,
+     "prix": 439000
+    },
+    {
+     "pieces": 3,
+     "ventes": 47,
+     "surface": 66,
+     "mediane": 11140,
+     "prix": 732000
+    },
+    {
+     "pieces": 4,
+     "ventes": 34,
+     "surface": 122,
+     "mediane": 10600,
+     "prix": 1245000
+    }
+   ]
   },
   "7510903": {
    "nom": "Faubourg-Montmartre",
@@ -101,7 +461,37 @@
    "ventes": 357,
    "mediane": 10650,
    "d1": 7110,
-   "d9": 13640
+   "d9": 13640,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 109,
+     "surface": 18,
+     "mediane": 10480,
+     "prix": 175000
+    },
+    {
+     "pieces": 2,
+     "ventes": 94,
+     "surface": 38,
+     "mediane": 10390,
+     "prix": 422000
+    },
+    {
+     "pieces": 3,
+     "ventes": 83,
+     "surface": 65,
+     "mediane": 10810,
+     "prix": 691000
+    },
+    {
+     "pieces": 4,
+     "ventes": 70,
+     "surface": 91,
+     "mediane": 10960,
+     "prix": 954000
+    }
+   ]
   },
   "7510904": {
    "nom": "Rochechouart",
@@ -109,7 +499,37 @@
    "ventes": 975,
    "mediane": 10640,
    "d1": 7740,
-   "d9": 13930
+   "d9": 13930,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 288,
+     "surface": 20,
+     "mediane": 10340,
+     "prix": 206000
+    },
+    {
+     "pieces": 2,
+     "ventes": 273,
+     "surface": 35,
+     "mediane": 10560,
+     "prix": 380000
+    },
+    {
+     "pieces": 3,
+     "ventes": 231,
+     "surface": 60,
+     "mediane": 10830,
+     "prix": 650000
+    },
+    {
+     "pieces": 4,
+     "ventes": 182,
+     "surface": 93,
+     "mediane": 11290,
+     "prix": 1069000
+    }
+   ]
   },
   "7511001": {
    "nom": "Saint-Vincent-de-Paul",
@@ -117,7 +537,37 @@
    "ventes": 570,
    "mediane": 8500,
    "d1": 6350,
-   "d9": 11080
+   "d9": 11080,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 133,
+     "surface": 16,
+     "mediane": 8890,
+     "prix": 155000
+    },
+    {
+     "pieces": 2,
+     "ventes": 185,
+     "surface": 37,
+     "mediane": 8330,
+     "prix": 318000
+    },
+    {
+     "pieces": 3,
+     "ventes": 139,
+     "surface": 60,
+     "mediane": 8380,
+     "prix": 500000
+    },
+    {
+     "pieces": 4,
+     "ventes": 113,
+     "surface": 94,
+     "mediane": 8570,
+     "prix": 752000
+    }
+   ]
   },
   "7511002": {
    "nom": "Porte-Saint-Denis",
@@ -125,7 +575,37 @@
    "ventes": 814,
    "mediane": 9520,
    "d1": 7040,
-   "d9": 12500
+   "d9": 12500,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 230,
+     "surface": 19,
+     "mediane": 9410,
+     "prix": 193000
+    },
+    {
+     "pieces": 2,
+     "ventes": 237,
+     "surface": 37,
+     "mediane": 9600,
+     "prix": 360000
+    },
+    {
+     "pieces": 3,
+     "ventes": 166,
+     "surface": 64,
+     "mediane": 9660,
+     "prix": 608000
+    },
+    {
+     "pieces": 4,
+     "ventes": 176,
+     "surface": 104,
+     "mediane": 9490,
+     "prix": 957000
+    }
+   ]
   },
   "7511003": {
    "nom": "Porte-Saint-Martin",
@@ -133,7 +613,37 @@
    "ventes": 601,
    "mediane": 9810,
    "d1": 7120,
-   "d9": 12770
+   "d9": 12770,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 193,
+     "surface": 17,
+     "mediane": 9500,
+     "prix": 166000
+    },
+    {
+     "pieces": 2,
+     "ventes": 232,
+     "surface": 34,
+     "mediane": 9890,
+     "prix": 335000
+    },
+    {
+     "pieces": 3,
+     "ventes": 106,
+     "surface": 58,
+     "mediane": 10140,
+     "prix": 546000
+    },
+    {
+     "pieces": 4,
+     "ventes": 70,
+     "surface": 92,
+     "mediane": 10290,
+     "prix": 925000
+    }
+   ]
   },
   "7511004": {
    "nom": "Hôpital-Saint-Louis",
@@ -141,7 +651,37 @@
    "ventes": 1109,
    "mediane": 9420,
    "d1": 6940,
-   "d9": 12000
+   "d9": 12000,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 382,
+     "surface": 21,
+     "mediane": 9230,
+     "prix": 188000
+    },
+    {
+     "pieces": 2,
+     "ventes": 419,
+     "surface": 35,
+     "mediane": 9440,
+     "prix": 334000
+    },
+    {
+     "pieces": 3,
+     "ventes": 211,
+     "surface": 57,
+     "mediane": 9640,
+     "prix": 530000
+    },
+    {
+     "pieces": 4,
+     "ventes": 96,
+     "surface": 86,
+     "mediane": 9790,
+     "prix": 843000
+    }
+   ]
   },
   "7511601": {
    "nom": "Auteuil",
@@ -149,7 +689,37 @@
    "ventes": 2066,
    "mediane": 9720,
    "d1": 7500,
-   "d9": 12590
+   "d9": 12590,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 450,
+     "surface": 25,
+     "mediane": 9690,
+     "prix": 235000
+    },
+    {
+     "pieces": 2,
+     "ventes": 545,
+     "surface": 48,
+     "mediane": 9450,
+     "prix": 432000
+    },
+    {
+     "pieces": 3,
+     "ventes": 502,
+     "surface": 72,
+     "mediane": 9520,
+     "prix": 692000
+    },
+    {
+     "pieces": 4,
+     "ventes": 567,
+     "surface": 110,
+     "mediane": 10370,
+     "prix": 1120000
+    }
+   ]
   },
   "7511602": {
    "nom": "Muette",
@@ -157,7 +727,37 @@
    "ventes": 1297,
    "mediane": 11460,
    "d1": 8490,
-   "d9": 15370
+   "d9": 15370,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 279,
+     "surface": 25,
+     "mediane": 10600,
+     "prix": 260000
+    },
+    {
+     "pieces": 2,
+     "ventes": 278,
+     "surface": 50,
+     "mediane": 11070,
+     "prix": 570000
+    },
+    {
+     "pieces": 3,
+     "ventes": 274,
+     "surface": 84,
+     "mediane": 11860,
+     "prix": 950000
+    },
+    {
+     "pieces": 4,
+     "ventes": 458,
+     "surface": 132,
+     "mediane": 11870,
+     "prix": 1545000
+    }
+   ]
   },
   "7511603": {
    "nom": "Porte-Dauphine",
@@ -165,7 +765,37 @@
    "ventes": 995,
    "mediane": 11770,
    "d1": 8950,
-   "d9": 15910
+   "d9": 15910,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 221,
+     "surface": 22,
+     "mediane": 11540,
+     "prix": 260000
+    },
+    {
+     "pieces": 2,
+     "ventes": 201,
+     "surface": 48,
+     "mediane": 11550,
+     "prix": 555000
+    },
+    {
+     "pieces": 3,
+     "ventes": 187,
+     "surface": 79,
+     "mediane": 11900,
+     "prix": 895000
+    },
+    {
+     "pieces": 4,
+     "ventes": 376,
+     "surface": 139,
+     "mediane": 12090,
+     "prix": 1740000
+    }
+   ]
   },
   "7511604": {
    "nom": "Chaillot",
@@ -173,7 +803,37 @@
    "ventes": 606,
    "mediane": 12370,
    "d1": 8990,
-   "d9": 17760
+   "d9": 17760,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 126,
+     "surface": 21,
+     "mediane": 12120,
+     "prix": 264000
+    },
+    {
+     "pieces": 2,
+     "ventes": 148,
+     "surface": 50,
+     "mediane": 11700,
+     "prix": 584000
+    },
+    {
+     "pieces": 3,
+     "ventes": 119,
+     "surface": 75,
+     "mediane": 12380,
+     "prix": 925000
+    },
+    {
+     "pieces": 4,
+     "ventes": 210,
+     "surface": 145,
+     "mediane": 13070,
+     "prix": 1897000
+    }
+   ]
   },
   "7511701": {
    "nom": "Ternes",
@@ -181,7 +841,37 @@
    "ventes": 1286,
    "mediane": 10500,
    "d1": 7700,
-   "d9": 13570
+   "d9": 13570,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 338,
+     "surface": 24,
+     "mediane": 10350,
+     "prix": 240000
+    },
+    {
+     "pieces": 2,
+     "ventes": 363,
+     "surface": 43,
+     "mediane": 10240,
+     "prix": 430000
+    },
+    {
+     "pieces": 3,
+     "ventes": 297,
+     "surface": 64,
+     "mediane": 10560,
+     "prix": 667000
+    },
+    {
+     "pieces": 4,
+     "ventes": 289,
+     "surface": 108,
+     "mediane": 10990,
+     "prix": 1184000
+    }
+   ]
   },
   "7511702": {
    "nom": "Plaine de Monceaux",
@@ -189,7 +879,37 @@
    "ventes": 1213,
    "mediane": 10920,
    "d1": 8110,
-   "d9": 13830
+   "d9": 13830,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 253,
+     "surface": 22,
+     "mediane": 10110,
+     "prix": 230000
+    },
+    {
+     "pieces": 2,
+     "ventes": 279,
+     "surface": 43,
+     "mediane": 10570,
+     "prix": 447000
+    },
+    {
+     "pieces": 3,
+     "ventes": 230,
+     "surface": 68,
+     "mediane": 10880,
+     "prix": 742000
+    },
+    {
+     "pieces": 4,
+     "ventes": 451,
+     "surface": 121,
+     "mediane": 11400,
+     "prix": 1348000
+    }
+   ]
   },
   "7511703": {
    "nom": "Batignolles",
@@ -197,7 +917,37 @@
    "ventes": 1625,
    "mediane": 10420,
    "d1": 7680,
-   "d9": 13320
+   "d9": 13320,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 405,
+     "surface": 19,
+     "mediane": 9940,
+     "prix": 190000
+    },
+    {
+     "pieces": 2,
+     "ventes": 618,
+     "surface": 36,
+     "mediane": 10200,
+     "prix": 372000
+    },
+    {
+     "pieces": 3,
+     "ventes": 385,
+     "surface": 56,
+     "mediane": 10670,
+     "prix": 597000
+    },
+    {
+     "pieces": 4,
+     "ventes": 215,
+     "surface": 85,
+     "mediane": 11140,
+     "prix": 948000
+    }
+   ]
   },
   "7511704": {
    "nom": "Epinettes",
@@ -205,7 +955,37 @@
    "ventes": 1418,
    "mediane": 9070,
    "d1": 6700,
-   "d9": 11600
+   "d9": 11600,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 369,
+     "surface": 20,
+     "mediane": 8880,
+     "prix": 175000
+    },
+    {
+     "pieces": 2,
+     "ventes": 632,
+     "surface": 33,
+     "mediane": 9080,
+     "prix": 300000
+    },
+    {
+     "pieces": 3,
+     "ventes": 333,
+     "surface": 54,
+     "mediane": 9070,
+     "prix": 474000
+    },
+    {
+     "pieces": 4,
+     "ventes": 87,
+     "surface": 79,
+     "mediane": 9390,
+     "prix": 760000
+    }
+   ]
   },
   "7511801": {
    "nom": "Grandes-Carrières",
@@ -213,7 +993,37 @@
    "ventes": 2334,
    "mediane": 9400,
    "d1": 6900,
-   "d9": 12720
+   "d9": 12720,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 654,
+     "surface": 20,
+     "mediane": 9150,
+     "prix": 190000
+    },
+    {
+     "pieces": 2,
+     "ventes": 994,
+     "surface": 36,
+     "mediane": 9360,
+     "prix": 336000
+    },
+    {
+     "pieces": 3,
+     "ventes": 493,
+     "surface": 56,
+     "mediane": 9710,
+     "prix": 558000
+    },
+    {
+     "pieces": 4,
+     "ventes": 188,
+     "surface": 91,
+     "mediane": 10460,
+     "prix": 884000
+    }
+   ]
   },
   "7511802": {
    "nom": "Clignancourt",
@@ -221,7 +1031,37 @@
    "ventes": 2834,
    "mediane": 9180,
    "d1": 6600,
-   "d9": 12440
+   "d9": 12440,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 718,
+     "surface": 20,
+     "mediane": 9090,
+     "prix": 182000
+    },
+    {
+     "pieces": 2,
+     "ventes": 1232,
+     "surface": 34,
+     "mediane": 8970,
+     "prix": 300000
+    },
+    {
+     "pieces": 3,
+     "ventes": 664,
+     "surface": 54,
+     "mediane": 9530,
+     "prix": 507000
+    },
+    {
+     "pieces": 4,
+     "ventes": 215,
+     "surface": 90,
+     "mediane": 9500,
+     "prix": 850000
+    }
+   ]
   },
   "7511803": {
    "nom": "Goutte-d'Or",
@@ -229,7 +1069,37 @@
    "ventes": 871,
    "mediane": 7150,
    "d1": 5170,
-   "d9": 9320
+   "d9": 9320,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 284,
+     "surface": 21,
+     "mediane": 7200,
+     "prix": 154000
+    },
+    {
+     "pieces": 2,
+     "ventes": 353,
+     "surface": 35,
+     "mediane": 7140,
+     "prix": 248000
+    },
+    {
+     "pieces": 3,
+     "ventes": 189,
+     "surface": 52,
+     "mediane": 7150,
+     "prix": 360000
+    },
+    {
+     "pieces": 4,
+     "ventes": 45,
+     "surface": 78,
+     "mediane": 6640,
+     "prix": 500000
+    }
+   ]
   },
   "7511804": {
    "nom": "La Chapelle",
@@ -237,7 +1107,37 @@
    "ventes": 395,
    "mediane": 7270,
    "d1": 5570,
-   "d9": 9120
+   "d9": 9120,
+   "typologies": [
+    {
+     "pieces": 1,
+     "ventes": 120,
+     "surface": 27,
+     "mediane": 7190,
+     "prix": 175000
+    },
+    {
+     "pieces": 2,
+     "ventes": 180,
+     "surface": 33,
+     "mediane": 7330,
+     "prix": 238000
+    },
+    {
+     "pieces": 3,
+     "ventes": 71,
+     "surface": 55,
+     "mediane": 7230,
+     "prix": 397000
+    },
+    {
+     "pieces": 4,
+     "ventes": 24,
+     "surface": 83,
+     "mediane": 6890,
+     "prix": 568000
+    }
+   ]
   }
  },
  "rues": [

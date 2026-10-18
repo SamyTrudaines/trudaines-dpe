@@ -12,6 +12,7 @@ import Avis from '../components/Avis.astro';
 import { ambiance } from '../data/ambiance';
 import { agencesLocales, type AgenceLocale } from '../data/agences-locales';
 import { secteurs } from '../data/secteurs';
+import { estimationsQuartiers } from '../data/estimations-quartiers';
 import { site } from '../data/site';
 import { avisCommentés, agrégatAvis, preuveAvis } from '../lib/avis';
 import { lignesEnBref, faqAgence, faqEnDonnees } from '../lib/agence';
@@ -38,6 +39,7 @@ const id = lieu.slug;
 const bureau = { lon: site.adresse.longitude, lat: site.adresse.latitude };
 const metresDuBureau = Math.round(distance(bureau, lieu.repere) / 10) * 10;
 const secteur = secteurs.find((s) => s.slug === lieu.secteur);
+const pageEstimation = estimationsQuartiers.find((q) => q.secteur === lieu.secteur && (q.slug === id || q.zone === (lieu.quartier ?? lieu.quartiersLies?.[0])));
 
 /* Les rues du lieu : celles de la zone du quartier publié, ou celles qui tiennent dans le rayon du repère. */
 const brutes: Rue[] = lieu.quartier
@@ -258,7 +260,7 @@ const donneeEstimation = `${lieu.nom} : de ${prix(moinsChere.mediane)} à ${prix
         evt={evt('agence', 'estimation', id)}
         evtCreneau={evt('agence', 'creneau', id)}
         donnee={donneeEstimation}
-        lienSecteur={secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('agence', 'secteur', id) } : undefined}
+        lienSecteur={pageEstimation ? { href: `/estimation/${pageEstimation.secteur}/${pageEstimation.slug}`, libelle: `Estimation appartement ${pageEstimation.nom}`, evt: evt('agence', 'secteur', id) } : secteur ? { href: `/estimation/${secteur.slug}`, libelle: `Estimation ${secteur.nom}`, evt: evt('agence', 'secteur', id) } : undefined}
       />
     </div>
   </section>

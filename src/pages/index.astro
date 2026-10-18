@@ -7,6 +7,7 @@ import Avis from '../components/Avis.astro';
 import { avisCommentés, agrégatAvis } from '../lib/avis';
 import { site, parrainage } from '../data/site';
 import { pourcent, primeVente } from '../lib/bareme';
+import { estimationsQuartiers } from '../data/estimations-quartiers';
 import { agencesLocales } from '../data/agences-locales';
 import { prix } from '../lib/format';
 import { secteurs } from '../data/secteurs';
@@ -288,6 +289,11 @@ const engagements = [
       <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
         {agencesLocales.map((l) => (
           <a href={`/agence-immobiliere-${l.slug}`} class="lien-souligne" data-evt="accueil_agence_locale">Agence immobilière {l.nom}</a>
+        ))}
+      </p>
+      <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {estimationsQuartiers.map((q) => (
+          <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
         ))}
       </p>
     </div>

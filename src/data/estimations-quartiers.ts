@@ -180,6 +180,23 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     ],
   },
   {
+    slug: 'pigalle',
+    nom: 'Pigalle',
+    dans: 'autour de Pigalle',
+    secteur: 'paris-9',
+    codePostal: '75009',
+    reperes: ['rue-jean-baptiste-pigalle-09', 'rue-victor-masse-09', 'rue-frochot-09', 'rue-duperre-09'],
+    rayon: 400,
+    quartiersBiens: ['Pigalle', 'SoPi'],
+    lien: { href: '/quartiers/martyrs-lorette', libelle: 'Le marché de Lorette-Martyrs' },
+    chapo:
+      "Au sud de la place Pigalle, côté 9e, les rues Jean-Baptiste-Pigalle, Victor-Massé, Frochot et Duperré vendent des appartements anciens à des acheteurs qui viennent pour le quartier autant que pour le bien. D'une rue à l'autre, et d'un immeuble à l'autre, le prix au mètre carré change.",
+    paragraphes: [
+      "Les petites surfaces y dominent, achetées par des primo-accédants et des investisseurs ; les grands appartements, plus rares, se négocient sur l'étage, la lumière et le calme côté cour. Le bruit côté boulevard et l'état de la copropriété font les plus gros écarts.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
+    ],
+  },
+  {
     slug: 'clichy-trinite',
     nom: 'Clichy-Trinité',
     dans: 'entre Clichy et la Trinité',
