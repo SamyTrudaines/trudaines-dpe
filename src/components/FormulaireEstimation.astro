@@ -1,5 +1,6 @@
 ---
 import { preuveAvis } from '../lib/avis';
+import { lienWhatsapp } from '../lib/whatsapp';
 
 interface Props {
   secteur?: string;
@@ -14,6 +15,8 @@ const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = 
 const listeId = `adresses-${identifiant}`;
 /* La preuve sociale sous la barre d'étapes : le chiffre vient des avis publiés, jamais écrit à la main. */
 const preuve = await preuveAvis();
+/* Après l'envoi : des photos par WhatsApp, pour que le premier appel parte du bien réel. */
+const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une estimation sur votre site. Voici quelques photos de mon appartement.");
 ---
 <div class="border border-[color:var(--color-trait)] bg-white p-4 sm:p-6 md:p-10" data-choix-estimation>
 {/*
@@ -226,6 +229,10 @@ const preuve = await preuveAvis();
       Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
       Un email vient de partir vers votre boîte, avec votre fourchette.
     </p>
+    <p class="mt-6">
+      <a href={lienPhotos} rel="noopener" target="_blank" class="bouton bouton-secondaire" data-evt="estimation_photos_whatsapp">Envoyer des photos par WhatsApp</a>
+    </p>
+    <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">Facultatif. Trois ou quatre photos suffisent à préparer la visite.</p>
   </div>
 </form>
 <form
