@@ -22,7 +22,8 @@
  * affiche à chaque lancement pour qu'on les relise.
  *
  * Sortie : src/data/rues-geo.json
- *   rues      slug de rue -> { lon, lat, score }
+ *   rues      slug de rue -> { lon, lat, score, nom? }, nom : nom officiel de la voie quand
+ *             il diffère du nom foncier par les seuls accents, traits d'union ou initiales
  *   ecartees  slug de rue -> { raison, score, propose }
  *   reperes   « code postal + voie » -> { lon, lat, score }, pour les rues repères
  *             listées dans src/data/quartiers-reperes.json
@@ -127,7 +128,22 @@ function trancher(tache, propositions) {
     return { ecart: { raison: 'type de voie différent', score: arrondi(score, 3), propose } };
   }
   const [lon, lat] = retenue.geometry.coordinates;
-  return { lon: arrondi(lon, 6), lat: arrondi(lat, 6), score: arrondi(score, 3), propose };
+  const officiel = nomOfficiel(tache.nom, retenue.properties.name ?? '');
+  return { lon: arrondi(lon, 6), lat: arrondi(lat, 6), score: arrondi(score, 3), propose, ...(officiel ? { nom: officiel } : {}) };
+}
+
+/**
+ * Nom officiel de la voie, accents et traits d'union compris (« Rue des Trois-Frères »),
+ * gardé seulement s'il désigne sans doute possible la voie du fichier foncier : mêmes
+ * mots une fois les accents et la ponctuation retirés, un mot abrégé du fichier
+ * (« M » pour « Marie ») pouvant être le début du mot officiel. Sinon rien : la page
+ * garde le nom foncier.
+ */
+function nomOfficiel(nomFoncier, nomBan) {
+  const a = normaliser(nomFoncier).split(' ');
+  const b = normaliser(nomBan).split(' ');
+  if (!nomBan || nomBan === nomFoncier || a.length !== b.length) return '';
+  return a.every((mot, i) => b[i] === mot || (mot.length === 1 && b[i].startsWith(mot))) ? nomBan : '';
 }
 
 function arrondi(valeur, decimales) {
@@ -197,7 +213,7 @@ for (const tache of taches) {
     else console.error(`  repère écarté : ${tache.cle} (${resultat.ecart.raison}, ${resultat.ecart.score}) ${resultat.ecart.propose}`);
     continue;
   }
-  const point = { lon: resultat.lon, lat: resultat.lat, score: resultat.score };
+  const point = { lon: resultat.lon, lat: resultat.lat, score: resultat.score, ...(tache.genre === 'rue' && resultat.nom ? { nom: resultat.nom } : {}) };
   if (tache.genre === 'rue') gardees[tache.cle] = point;
   else reperes[tache.cle] = point;
 }

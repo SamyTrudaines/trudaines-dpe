@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import donnees from '../data/rues.json';
+import { rues } from '../lib/rues';
 import { site } from '../data/site';
 
 /**
@@ -32,7 +33,7 @@ export const GET: APIRoute = () =>
         periode: donnees.periode,
         citation: `${site.nomLong}, d'après les valeurs foncières de la DGFiP, ${site.url}/prix-immobilier`,
         arrondissements: donnees.arrondissements,
-        voies: donnees.rues,
+        voies: rues,
       },
       null,
       1

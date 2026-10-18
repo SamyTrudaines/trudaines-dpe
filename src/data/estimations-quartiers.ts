@@ -27,6 +27,12 @@ export type EstimationQuartier = {
   lien: { href: string; libelle: string };
   chapo: string;
   paragraphes: string[];
+  /** Titre Google quand le nom tapé par les vendeurs diffère du nom du quartier (« rue des Martyrs »). */
+  titreSeo?: string;
+  /** Questions propres au quartier, sans chiffre : les prix viennent de `ruesQuestions`. */
+  questions?: { question: string; reponse: string }[];
+  /** Voies dont la page publie le prix en question, calculé depuis rues.json. */
+  ruesQuestions?: string[];
 };
 
 export const estimationsQuartiers: EstimationQuartier[] = [
@@ -129,6 +135,14 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Les acheteurs de Montmartre achètent un lieu de vie autant qu'un appartement : la vue, le calme d'une cour, une terrasse ou un dernier étage changent le prix bien plus qu'ailleurs. L'absence d'ascenseur, fréquente sur la Butte, se négocie ; elle ne bloque pas une vente bien présentée.",
       "Notre bureau est rue Livingstone, au pied de la Butte. Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Chaque ajustement est écrit dans votre avis de valeur.",
     ],
+    questions: [
+      {
+        question: 'Une vue sur Paris change-t-elle vraiment le prix ?',
+        reponse:
+          "Oui, souvent nettement. Une vue dégagée, un dernier étage et une rue calme sont ce que les acheteurs de la Butte paient le plus cher. Nous les comparons à des ventes réelles de biens équivalents, pas à une moyenne, et l'écart est écrit dans votre avis de valeur.",
+      },
+    ],
+    ruesQuestions: ['rue-lepic-18', 'rue-des-abbesses-18', 'rue-caulaincourt-18'],
   },
   {
     slug: 'abbesses',
@@ -146,10 +160,19 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Le périmètre retenu ici est un cercle de 400 mètres autour des rues des Abbesses, Yvonne Le Tac et Tholozé, soit cinq minutes de marche. Il ne correspond à aucune limite administrative : c'est le quartier tel que les acheteurs le désignent.",
       "Les biens les plus recherchés y sont les deux et trois pièces lumineux, en étage, dans des immeubles anciens bien tenus. Nous visitons votre appartement, puis nous vous remettons un avis de valeur écrit qui cite les ventes signées autour de chez vous.",
     ],
+    titreSeo: 'Estimation appartement Abbesses, Montmartre | Trudaines',
+    questions: [
+      {
+        question: 'Une vue sur Paris change-t-elle vraiment le prix ?',
+        reponse:
+          "Oui, souvent nettement. Une vue dégagée, un dernier étage et une rue calme sont ce que les acheteurs de la Butte paient le plus cher. Nous les comparons à des ventes réelles de biens équivalents, pas à une moyenne, et l'écart est écrit dans votre avis de valeur.",
+      },
+    ],
+    ruesQuestions: ['rue-des-abbesses-18', 'rue-lepic-18', 'rue-ravignan-18'],
   },
   {
     slug: 'lamarck',
-    nom: 'Lamarck',
+    nom: 'Lamarck-Caulaincourt',
     dans: 'autour de Lamarck-Caulaincourt',
     secteur: 'paris-18',
     codePostal: '75018',
@@ -163,6 +186,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Le périmètre retenu ici est un cercle de 400 mètres autour des rues Lamarck et Caulaincourt, soit cinq minutes de marche autour de la station Lamarck-Caulaincourt. Il ne correspond à aucune limite administrative : c'est le quartier tel que les acheteurs le désignent.",
       "Vue, étage, exposition et escalier pèsent lourd sur ce relief. Nous estimons à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite, chaque ajustement écrit dans votre avis de valeur.",
     ],
+    ruesQuestions: ['rue-lamarck-18', 'rue-caulaincourt-18', 'avenue-junot-18'],
   },
   {
     slug: 'trudaine-maubeuge',
@@ -174,11 +198,20 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     quartiersBiens: ['Trudaine', 'Trudaine Maubeuge'],
     lien: { href: '/quartiers/trudaine-maubeuge', libelle: 'Le marché de Trudaine-Maubeuge' },
     chapo:
-      "Entre l'avenue Trudaine, la rue de Maubeuge et la rue Rochechouart, le nord du 9e réunit des immeubles haussmanniens de belle facture et des rues plus modestes. Le prix au mètre carré suit cette différence, à quelques numéros près.",
+      "L'avenue Trudaine a donné son nom à notre agence. Avec son terre-plein planté et ses écoles, elle joue le rôle d'une place de village pour tout le 9e nord. Autour, de la rue de Maubeuge à la rue Condorcet, le prix se joue à la rue près.",
     paragraphes: [
+      "Avenue Trudaine, rue Lentonnet, rue Alfred-Stevens : les rues calmes et bien tenues se vendent au-dessus de la médiane du quartier. Rue de Dunkerque ou boulevard de Rochechouart, plus passants, les prix descendent. Entre les deux, les rues Marguerite-de-Rochechouart, Rodier, Maubeuge et Condorcet font l'essentiel des ventes.",
       "L'agence porte le nom de l'avenue Trudaine : c'est notre quartier. Les acheteurs y viennent pour les immeubles en pierre de taille, les écoles et la proximité de Montmartre comme des grands boulevards. Ils comparent votre appartement avec ceux de Rochechouart et de Saint-Georges.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
     ],
+    questions: [
+      {
+        question: "Pourquoi l'avenue Trudaine se vend-elle plus cher que les rues voisines ?",
+        reponse:
+          "Parce qu'elle réunit ce que les familles cherchent : des immeubles en pierre de taille, un terre-plein planté, des écoles et le square d'Anvers à deux pas. La rue Lentonnet et la rue Alfred-Stevens, juste à côté, profitent du même effet.",
+      },
+    ],
+    ruesQuestions: ['avenue-trudaine-09', 'rue-de-maubeuge-09', 'rue-condorcet-09'],
   },
   {
     slug: 'martyrs-lorette',
@@ -190,11 +223,20 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     quartiersBiens: ['Martyrs', 'Lorette', 'Martyrs Lorette'],
     lien: { href: '/quartiers/martyrs-lorette', libelle: 'Le marché de Lorette-Martyrs' },
     chapo:
-      "De Notre-Dame-de-Lorette au haut de la rue des Martyrs, le quartier vend à des acheteurs qui choisissent une rue autant qu'un appartement. La rue des Martyrs, ses commerces et sa pente font le prix, mais l'immeuble le confirme ou le corrige.",
+      "La rue des Martyrs concentre une densité de commerces rare à Paris. Autour d'elle, de Notre-Dame-de-Lorette à la place Saint-Georges, les écarts de prix entre rues sont parmi les plus faibles du 9e nord : c'est l'appartement lui-même qui fait la différence.",
     paragraphes: [
       "Les appartements anciens y sont très recherchés, du studio au quatre pièces. L'étage, le bruit côté rue, la cour et l'état de la copropriété créent des écarts nets entre deux biens de même surface, parfois dans le même immeuble.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
     ],
+    titreSeo: 'Estimation appartement rue des Martyrs, Paris 9e | Trudaines',
+    questions: [
+      {
+        question: 'Qu\'est-ce qui fait le prix autour de la rue des Martyrs ?',
+        reponse:
+          "Moins l'adresse que l'appartement : l'étage, la lumière, le bruit côté rue, l'état de la copropriété et la qualité du plan. Un deux pièces lumineux en étage se vend vite ; un rez-de-chaussée sur rue se négocie.",
+      },
+    ],
+    ruesQuestions: ['rue-des-martyrs-09', 'rue-des-martyrs-18', 'rue-notre-dame-de-lorette-09'],
   },
   {
     slug: 'pigalle',
@@ -212,6 +254,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Les studios et les deux pièces y font plus de la moitié des ventes ; les grands appartements, plus rares, se négocient sur l'étage, la lumière et le calme côté cour. Le bruit côté boulevard et l'état de la copropriété pèsent aussi sur le prix.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
     ],
+    ruesQuestions: ['rue-jean-baptiste-pigalle-09', 'rue-victor-masse-09', 'rue-des-martyrs-09'],
   },
   {
     slug: 'clichy-trinite',
@@ -225,9 +268,18 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     chapo:
       "Entre la place de Clichy, la rue de Clichy et l'église de la Trinité, l'ouest du 9e mêle grands appartements haussmanniens, petites surfaces et immeubles mixtes. Une moyenne de quartier y dit peu de chose de votre bien.",
     paragraphes: [
+      "Les rues calmes de la Nouvelle Athènes, comme la rue du Cardinal-Mercier ou la rue La Bruyère, se vendent au-dessus de la médiane du quartier. Les grands axes, rue de Clichy, rue Blanche, rue de Douai, se situent autour d'elle ou un peu en dessous. L'étage et l'isolation du bruit pèsent plus qu'ailleurs.",
       "Les acheteurs viennent pour la desserte de Saint-Lazare et de la place de Clichy, et pour des immeubles anciens de qualité. Ils regardent l'étage, l'ascenseur, la hauteur sous plafond et le bruit côté rue, qui pèsent ici plus qu'ailleurs.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Chaque ajustement est écrit dans votre avis de valeur, remis sous 48 heures.",
     ],
+    questions: [
+      {
+        question: 'Un appartement sur la rue de Clichy se vend-il moins cher ?',
+        reponse:
+          "Un peu, et surtout en étage bas. Sur rue passante, un appartement en étage élevé et bien isolé se vend au niveau des rues calmes ; côté cour, l'écart disparaît souvent. C'est un point que nous vérifions à la visite.",
+      },
+    ],
+    ruesQuestions: ['rue-de-clichy-09', 'rue-blanche-09', 'rue-saint-lazare-09'],
   },
   {
     slug: 'batignolles',
@@ -241,9 +293,11 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     chapo:
       "Aux Batignolles, entre la rue des Dames, la place du Docteur-Félix-Lobligeois et la rue Cardinet, le marché est porté par des familles et des actifs. Le prix varie nettement d'une rue à l'autre, et d'un immeuble à l'autre.",
     paragraphes: [
+      "Rue Legendre, rue Nollet, rue Lemercier, rue des Dames : ces quatre rues font à elles seules près d'un tiers des ventes. Les abords du square et du boulevard des Batignolles se vendent plus cher ; l'avenue de Clichy, très passante, nettement moins.",
       "Le square des Batignolles, le parc Martin Luther King et la ligne 14 ont renforcé la demande. Les acheteurs comparent l'ancien du village avec le neuf de Clichy Batignolles : l'état de votre appartement et de la copropriété pèse donc lourd dans le prix.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures. Pour le secteur de la rue Cardinet, voir aussi notre page dédiée.",
     ],
+    ruesQuestions: ['rue-legendre-17', 'rue-nollet-17', 'rue-des-dames-17'],
   },
   {
     slug: 'jules-joffrin',

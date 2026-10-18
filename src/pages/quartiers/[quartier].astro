@@ -38,6 +38,11 @@ const nom = quartier.data.nom;
 const secteur = secteurs.find((s) => s.slug === quartier.data.secteur);
 /* La page d'estimation du même quartier, quand elle existe : le lien le plus utile après le prix. */
 const pageEstimation = estimationsQuartiers.find((q) => q.zone === id);
+/* La page d'estimation du quartier, puis celles dont les rues repères y tombent (Abbesses, Lamarck pour Montmartre). */
+const estimationsLiees = [
+  ...(pageEstimation ? [pageEstimation] : []),
+  ...estimationsQuartiers.filter((q) => !q.zone && q.secteur === quartier.data.secteur && (q.reperes ?? []).some((r) => ruesDuQuartier(id).some((x) => x.slug === r))),
+];
 const zone = zones[id];
 if (!zone) throw new Error(`Quartier ${id} : aucune définition dans src/data/quartiers-reperes.json`);
 if (secteur && secteur.arrondissement !== zone.codePostal) {
@@ -63,7 +68,7 @@ const mois = dureeEnMois(periode);
 const lecture = /^(.+?€)\s*(.*)$/.exec(chiffres?.prix ?? quartier.data.prixMoyenM2);
 const prixMedian = lecture ? lecture[1] : chiffres?.prix ?? quartier.data.prixMoyenM2;
 const fourchette = chiffres?.fourchette ?? quartier.data.fourchette;
-const legendePrix = lecture ? lecture[2] : '';
+const legendePrix = chiffres ? 'le m², médiane pondérée des rues' : lecture ? lecture[2] : '';
 
 const biens = (await getCollection('biens', (b) => b.data.quartier === nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
 const archives = await getCollection('biens', (b) => b.data.archive);
@@ -229,6 +234,14 @@ const donnees = [
       {/* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */}
       <p class="chapo mt-6 max-w-3xl" id="reponse-courte">{reponseCourte}</p>
       <EntreeEstimation cible={`estimation-${id}`} libelle={`Votre appartement à ${nom} : son prix en moins d'une minute`} />
+      {estimationsLiees.length > 0 && (
+        <p class="mt-3 text-sm">
+          <span class="text-[color:var(--color-ardoise)]">Prix de chaque rue et prix selon la taille : </span>
+          {estimationsLiees.map((q, i) => (
+            <>{i > 0 && ' · '}<a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt={evt('quartier', 'estimer', id)}>Estimation appartement {q.nom}</a></>
+          ))}
+        </p>
+      )}
 
       {/*
         Sur téléphone : le prix médian, puis le champ de recherche, puis le reste des chiffres.

@@ -35,10 +35,14 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   Pages : /estimation/<secteur> et /estimation/<secteur>/<quartier> ; titre en « estimation appartement », h1 en
   « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
 - Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
-- Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, le contact demandé avant
-  de révéler le prix. Étape 1 : adresse, type, surface, pièces, chambres, étage et ascenseur (listes déroulantes) ;
-  étape 2 : prénom, email, téléphone ; la fourchette DVF de la rue, ajustée par étage, ascenseur et typologie
-  (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi.
+- Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
+  le contact demandé avant de révéler le prix. Étapes : 1 adresse et type ; 2 surface, pièces, chambres, avec
+  l'aperçu du nombre de ventes signées de la rue (jamais le prix) ; 3 étage, ascenseur, projet ; 4 prénom, email,
+  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, ajustée
+  par étage, ascenseur et typologie (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi et revient
+  dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
+  L'adresse saisie en tête de page (`EntreeEstimation`) ou sur l'accueil (`/estimation?adresse=`) fait passer
+  directement à l'étape 2. Événements GA4 `estimation_etape1` à `3`, `estimation_apercu`, `estimation_envoyee`.
 - Deux voies dans chaque bloc d'estimation : « Estimer en ligne » ou « Être rappelé » (`functions/api/rappel.js`,
   prénom et téléphone seulement). Estimation et rappel préviennent Samy par email et par SMS Brevo
   (`envoyerSmsAgence`, variable `NOTIFICATION_SMS`, expéditeur `BREVO_SMS_EXPEDITEUR`, 11 caractères au plus).
@@ -55,7 +59,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   sur /estimation/<secteur>. Tendances des Notaires du Grand Paris dans `src/data/notaires.json`, recopiées de leurs
   publications avec l'URL : à mettre à jour à chaque note trimestrielle, jamais recalculées.
 - Rues : `src/data/rues.json`, `src/data/rues-geo.json` (`scripts/geocoder-rues.mjs`),
-  rattachement aux quartiers dans `src/lib/quartiers.ts`.
+  rattachement aux quartiers dans `src/lib/quartiers.ts`. Le nom affiché est le nom officiel de la Base Adresse
+  Nationale (champ `nom` de rues-geo.json) quand il ne diffère du nom foncier que par les accents, traits d'union ou
+  initiales ; le slug ne change jamais. Une typologie de rue n'est affichée que si sa surface et son prix médians
+  se répondent (`typologieCoherente`).
 - Mise en ligne outillée : `scripts/mise-en-ligne/`, workflow `.github/workflows/mise-en-ligne.yml`,
   procédure dans `DEPLOIEMENT.md`.
 - Barème et Trudaines WinWin : `honoraires` et `parrainage` dans `src/data/site.ts` (vente : mandat simple

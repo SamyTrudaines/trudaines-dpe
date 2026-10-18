@@ -57,6 +57,10 @@ chiffres DVF calculés, réponse courte en tête (octobre 2026).
 | Estimation appartement rue des Martyrs | oui, /estimation/paris-9/martyrs-lorette |
 | Estimation appartement Pigalle | oui, /estimation/paris-9/pigalle |
 | Estimation appartement Batignolles | oui, /estimation/paris-17/batignolles |
+| Estimation appartement Abbesses | oui, /estimation/paris-18/abbesses |
+| Estimation appartement Lamarck-Caulaincourt | oui, /estimation/paris-18/lamarck |
+| Quel est le prix au m² rue des Martyrs ? | oui, côté 9e et côté 18e, /estimation/paris-9/martyrs-lorette |
+| Prix immobilier Montmartre, 9e nord, Batignolles | oui, /panorama/prix-montmartre-9e-batignolles-automne-2026 |
 | Estimation immobilière Paris 9 | oui, /estimation/paris-9 |
 | Estimation immobilière Paris 18 | oui, /estimation/paris-18 |
 | Combien vaut un deux pièces à Paris 9e ? | oui, prix par taille |
@@ -146,6 +150,10 @@ Estimation appartement Trudaine
 Estimation appartement rue des Martyrs
 Estimation appartement Pigalle
 Estimation appartement Batignolles
+Estimation appartement Abbesses
+Estimation appartement Lamarck-Caulaincourt
+Quel est le prix au m² rue des Martyrs ?
+Prix immobilier Montmartre, 9e nord, Batignolles
 Estimation immobilière Paris 9
 Estimation immobilière Paris 18
 Combien vaut un deux pièces à Paris 9e ?

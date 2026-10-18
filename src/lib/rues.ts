@@ -1,4 +1,5 @@
 import donnees from '../data/rues.json';
+import geo from '../data/rues-geo.json';
 import { TYPES_DE_VOIE } from './format';
 
 export type Typologie = {
@@ -36,7 +37,13 @@ export type Arrondissement = {
   typologies?: Typologie[];
 };
 
-export const rues = donnees.rues as Rue[];
+/*
+ * Nom affiché : le nom officiel de la Base Adresse Nationale quand le géocodage l'a
+ * reconnu comme la même voie (accents, traits d'union, initiales développées), sinon
+ * le nom du fichier foncier. Le slug, donc l'adresse de la page, ne change jamais.
+ */
+const nomsOfficiels = (geo as { rues?: Record<string, { nom?: string }> }).rues ?? {};
+export const rues = (donnees.rues as Rue[]).map((r) => (nomsOfficiels[r.slug]?.nom ? { ...r, nom: nomsOfficiels[r.slug].nom! } : r));
 export const arrondissements = donnees.arrondissements as Record<string, Arrondissement>;
 export const periode = donnees.periode as string;
 /** Quartiers administratifs de la Ville de Paris, ventes rattachées par le centroïde de leur voie. */
@@ -46,6 +53,16 @@ export const quartiersAdministratifs = (donnees as { quartiersAdministratifs?: R
 /** Date de parution du fichier DVF utilisé, AAAA-MM-JJ. */
 export const millesime = donnees.millesime as string;
 export const ventesMinimum = donnees.ventesMinimum as number;
+
+/**
+ * Une typologie de voie mesurée sur peu de ventes peut mêler un atelier de 70 m² et deux
+ * studios : sa surface, son prix et son prix au m² médians, calculés à part, ne se
+ * répondent plus. On ne l'affiche que si le prix médian reste à 30 % près du produit
+ * surface par prix au m². Sinon la ligne induirait le lecteur en erreur.
+ */
+export function typologieCoherente(t: Typologie): boolean {
+  return t.surface > 0 && t.mediane > 0 && Math.abs(t.prix / t.surface / t.mediane - 1) <= 0.3;
+}
 
 /** Libellé de typologie : 4 signifie « quatre pièces et plus ». */
 export function libellePieces(pieces: number): string {
@@ -91,7 +108,7 @@ export function medianePonderee(lignes: { valeur: number; poids: number }[]): nu
 export function typologiesDesRues(liste: Rue[], minimum = 20): Typologie[] {
   const parTaille = new Map<number, { rue: Rue; t: Typologie }[]>();
   for (const rue of liste) {
-    for (const t of rue.typologies) parTaille.set(t.pieces, [...(parTaille.get(t.pieces) ?? []), { rue, t }]);
+    for (const t of rue.typologies.filter(typologieCoherente)) parTaille.set(t.pieces, [...(parTaille.get(t.pieces) ?? []), { rue, t }]);
   }
   const arrondi = { surface: 1, mediane: 10, prix: 1000 };
   const ponderee = (lignes: { t: Typologie }[], champ: 'surface' | 'mediane' | 'prix') =>

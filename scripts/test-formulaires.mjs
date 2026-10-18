@@ -96,6 +96,17 @@ console.log(`${rappelRefuse.status === 400 ? 'OK   ' : 'ÉCHEC'} rappel : refus 
 
 const estimation = await import(new URL('../functions/api/estimation.js', import.meta.url).href);
 
+/* La fourchette vue à l'écran revient dans l'email du vendeur ; un texte libre glissé à sa place, jamais. */
+for (const [fourchette, attendue] of [['380 000 € à 440 000 € (rue)', true], ['<a href="x">gagné</a> (rue)', false]]) {
+  appels.length = 0;
+  await estimation.onRequestPost({ request: requete({ ...cas[0][2], fourchette }), env });
+  const client = appels.filter((a) => a.url.endsWith('/smtp/email')).find((a) => a.corps.to?.[0]?.email === cas[0][2].email);
+  const contenu = client ? JSON.stringify(client.corps) : '';
+  const ok = attendue ? contenu.includes('380 000') && contenu.includes('de votre rue') : !contenu.includes('gagné');
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation : fourchette dans l'email du vendeur${attendue ? '' : ', texte libre refusé'}`);
+}
+
 const incomplete = await estimation.onRequestPost({ request: requete({ adresse: 'x' }), env });
 if (incomplete.status !== 400) echecs++;
 console.log(`${incomplete.status === 400 ? 'OK   ' : 'ÉCHEC'} refus des champs manquants · statut ${incomplete.status}`);

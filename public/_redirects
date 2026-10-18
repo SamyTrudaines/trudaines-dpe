@@ -72,6 +72,10 @@
 /estimer                        /estimation             301
 /estimation-immobiliere         /estimation             301
 /estimation-en-ligne            /estimation             301
+# Adresses d'estimation de quartier citées dans des briefs et des posts : elles mènent à la page publiée.
+/estimation/paris-18/montmartre-abbesses     /estimation/paris-18/montmartre       301
+/estimation/paris-18/lamarck-caulaincourt    /estimation/paris-18/lamarck          301
+/estimation/paris-9/lorette-martyrs          /estimation/paris-9/martyrs-lorette   301
 /vendre-son-bien                /vendre                 301
 /vendre-mon-bien                /vendre                 301
 /acheter-un-bien                /acheter                301

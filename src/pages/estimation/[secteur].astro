@@ -13,7 +13,7 @@ import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/a
 import { secteurs, fourchetteSecteur, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { mesureQuartier } from '../../lib/estimation-quartier';
-import { arrondissements, periode, libellePieces, millesime } from '../../lib/rues';
+import { arrondissements, periode, libellePieces, millesime, rues } from '../../lib/rues';
 import { prix, nombre, dateFr } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
@@ -34,7 +34,10 @@ const avisSecteur = trierAvis(
   (await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug),
 ).slice(0, 3);
 const agregatAvis = await agrégatAvis();
-const pagesQuartiers = estimationsQuartiers.filter((q) => q.secteur === secteur.slug);
+/* Les quartiers visés d'abord : ce sont eux que les vendeurs cherchent (Search Console). */
+const PRIORITE = ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette', 'batignolles', 'clichy-trinite', 'saint-georges', 'abbesses', 'lamarck', 'pigalle'];
+const rang = (slug: string) => (PRIORITE.includes(slug) ? PRIORITE.indexOf(slug) : PRIORITE.length);
+const pagesQuartiers = estimationsQuartiers.filter((q) => q.secteur === secteur.slug).sort((a, b) => rang(a.slug) - rang(b.slug));
 const autresSecteurs = secteurs.filter((s) => s.slug !== secteur.slug);
 
 /* Prix selon la taille : la question que posent les vendeurs, et les assistants pour eux. */
@@ -80,6 +83,15 @@ const faqQuartiers = pagesQuartiers.length > 1
   : [];
 const faq = [...faqTailles, ...faqQuartiers, ...secteur.faq];
 
+/* Cartes « estimer par quartier » et rues les plus vendues de l'arrondissement : un clic vers la page la plus proche du bien. */
+const cartesQuartiers = pagesQuartiers.map((q) => ({ page: q, mesure: mesureQuartier(q) }));
+const ruesPlusVendues = rues
+  .filter((r) => r.codePostal === secteur.arrondissement)
+  .sort((a, b) => b.ventes - a.ventes)
+  .slice(0, 15);
+/* Trois quartiers au plus dans la description : au-delà, Google la coupe. */
+const nomsQuartiers = pagesQuartiers.slice(0, 3).map((q) => q.nom).join(', ');
+
 const donnees = [
   {
     '@context': 'https://schema.org',
@@ -102,9 +114,10 @@ const donnees = [
 ];
 ---
 <Layout
+  ancreEstimation={`#estimation-${secteur.slug}`}
   titre={secteur.titre}
   description={chiffres
-    ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² médian sur ${nombre(chiffres.ventes)} ventes signées. En ligne en une minute, ou avis de valeur écrit sous 48 h.`
+    ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² sur ${nombre(chiffres.ventes)} ventes signées.${nomsQuartiers ? ` ${nomsQuartiers}.` : ''} En ligne ou après visite.`
     : `${secteur.description} ${preuve}`}
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom }]}
   donnees={donnees}
@@ -153,6 +166,35 @@ const donnees = [
 
   <TableauPrix quartiers={quartiers} codePostal={secteur.arrondissement} titre={`Prix par quartier dans le ${secteur.nom.replace('Paris ', '')}`} />
 
+  {cartesQuartiers.length > 0 && (
+    <section class="section filet" aria-labelledby="par-quartier">
+      <div class="conteneur">
+        <h2 id="par-quartier" class="titre-2">Estimer votre appartement par quartier</h2>
+        <p class="mt-4 max-w-2xl text-[color:var(--color-ardoise)]">
+          Le {secteur.nom.replace('Paris ', '')} change de valeur d'une rue à l'autre. Choisissez votre quartier pour voir les ventes signées autour de chez vous et estimer votre appartement.
+        </p>
+        <ul class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {cartesQuartiers.map(({ page: q, mesure }) => (
+            <li>
+              <a href={`/estimation/${q.secteur}/${q.slug}`} class="bloc block no-underline" data-evt={evt('estimation', 'quartier', q.slug)}>
+                <span class="titre-3 block">{q.nom}</span>
+                <span class="mt-3 block">{prix(Math.round(mesure.mediane / 10) * 10)} le m², médiane</span>
+                <span class="mt-1 block text-sm text-[color:var(--color-ardoise)]">{nombre(mesure.ventes)} ventes signées sur {mesure.liste.length} voies</span>
+                <span class="lien-souligne mt-4 inline-block text-sm">Estimer à {q.nom}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-10 text-sm">
+          <span class="text-[color:var(--color-ardoise)]">Les rues les plus vendues : </span>
+          {ruesPlusVendues.map((r, i) => (
+            <>{i > 0 && ' · '}<a href={`/prix-immobilier/${r.slug}`} class="lien-souligne">{r.nom}</a></>
+          ))}
+        </p>
+      </div>
+    </section>
+  )}
+
   <PrixParTaille
     typologies={typologies}
     titre={`Prix d'un appartement selon sa taille dans le ${secteur.nom.replace('Paris ', '')}`}
@@ -163,9 +205,9 @@ const donnees = [
 
   <Avis avis={avisSecteur} agregat={agregatAvis} titre="Des ventes racontées par leurs propriétaires" />
 
-  <section class="section filet" aria-labelledby="ailleurs">
+  <nav class="section filet" aria-labelledby="ailleurs">
     <div class="conteneur">
-      <h2 id="ailleurs" class="titre-2">Continuer</h2>
+      <p id="ailleurs" class="titre-2">Continuer</p>
       <div class="mt-10 grid gap-8 md:grid-cols-3">
         {pagesQuartiers.map((q) => (
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="bloc no-underline">
@@ -185,5 +227,5 @@ const donnees = [
         ))}
       </div>
     </div>
-  </section>
+  </nav>
 </Layout>

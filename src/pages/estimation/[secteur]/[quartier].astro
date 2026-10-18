@@ -12,8 +12,8 @@ import { secteurs } from '../../../data/secteurs';
 import { estimationsQuartiers, type EstimationQuartier } from '../../../data/estimations-quartiers';
 import { mesureQuartier } from '../../../lib/estimation-quartier';
 import { agencesLocales } from '../../../data/agences-locales';
-import { periode, libellePieces, millesime, arrondissements } from '../../../lib/rues';
-import { prix, nombre, dateFr } from '../../../lib/format';
+import { periode, libellePieces, millesime, arrondissements, rues } from '../../../lib/rues';
+import { prix, nombre, dateFr, enPhrase } from '../../../lib/format';
 import { getCollection } from 'astro:content';
 import ReferencesProches from '../../../components/ReferencesProches.astro';
 import { evt, referencesProches } from '../../../lib/entonnoir';
@@ -72,8 +72,17 @@ const reponseCourte = `${page.dans.charAt(0).toUpperCase()}${page.dans.slice(1)}
 } Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, gratuit et sans engagement.`;
 
 /* Le titre porte « estimation appartement », le h1 « estimation immobilière » : les deux recherches visées. */
-const titre = `Estimation appartement ${page.nom}, ${secteur.nom} | Trudaines`;
+const titre = page.titreSeo ?? `Estimation appartement ${page.nom}, ${secteur.nom} | Trudaines`;
 const description = `Estimation appartement ${page.nom}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Gratuite, en ligne en une minute ou après visite.`;
+
+/* Le prix des rues que les vendeurs tapent dans Google, chacune comparée au quartier. */
+const questionsRues = (page.ruesQuestions ?? [])
+  .map((slug) => rues.find((r) => r.slug === slug))
+  .filter((r): r is NonNullable<typeof r> => Boolean(r))
+  .map((r) => ({
+    question: `Quel est le prix au mètre carré ${enPhrase(r.nom)}, ${r.arrondissement} ?`,
+    reponse: `${r.nom} (${r.arrondissement}) : ${prix(r.mediane)} le m² médian sur ${nombre(r.ventes)} ventes d'appartements signées de ${periode}, contre ${medianeArrondie} en médiane pondérée ${page.dans}. Votre étage, votre ascenseur et l'état de l'immeuble placent votre appartement au-dessus ou en dessous.`,
+  }));
 
 const faq = [
   {
@@ -94,6 +103,8 @@ const faq = [
         reponse: `${verdictEcart} : la médiane pondérée des voies ${page.dans} est de ${medianeArrondie} le m², contre ${prix(medianeArrondissement)} pour l'ensemble de ${secteur.nom}, sur les ventes signées de ${periode}.`,
       }]
     : []),
+  ...questionsRues,
+  ...(page.questions ?? []),
   {
     question: 'Comment estimez-vous mon appartement ?',
     reponse: "Nous partons des ventes signées dans votre rue et dans les rues voisines, publiées par l'administration fiscale, puis nous visitons. L'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
@@ -141,6 +152,7 @@ const donnees = [
 ];
 ---
 <Layout
+  ancreEstimation={`#estimation-${page.slug}`}
   titre={titre}
   description={description}
   filAriane={[{ nom: 'Estimation', href: '/estimation' }, { nom: secteur.nom, href: `/estimation/${secteur.slug}` }, { nom: page.nom }]}
@@ -239,10 +251,16 @@ const donnees = [
 
   <Avis avis={avis} agregat={agregat} titre="Des ventes racontées par leurs propriétaires" />
 
-  <section class="section filet" aria-labelledby="ailleurs">
+  <nav class="section filet" aria-labelledby="ailleurs">
     <div class="conteneur">
-      <h2 id="ailleurs" class="titre-2">Continuer</h2>
+      <p id="ailleurs" class="titre-2">Continuer</p>
       <div class="mt-10 grid gap-8 md:grid-cols-3">
+        {['paris-9', 'paris-17', 'paris-18'].includes(page.secteur) && (
+          <a href="/panorama/prix-montmartre-9e-batignolles-automne-2026" class="bloc no-underline">
+            <span class="titre-3 block">Les prix rue par rue, automne 2026</span>
+            <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Montmartre, haut du 9e, Batignolles</span>
+          </a>
+        )}
         <a href={`/estimation/${secteur.slug}`} class="bloc no-underline">
           <span class="titre-3 block">Estimation {secteur.nom}</span>
           <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Tout le {arrondissement}</span>
@@ -262,5 +280,5 @@ const donnees = [
         ))}
       </div>
     </div>
-  </section>
+  </nav>
 </Layout>
