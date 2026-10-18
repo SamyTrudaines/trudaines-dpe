@@ -16,7 +16,7 @@ essentiel:
   - "L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il s'impose aux maisons individuelles et aux immeubles en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025."
 faq:
   - question: "Peut-on vendre un appartement classé F ou G à Paris ?"
-    reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter, mais ce n'est pas un obstacle à la vente : c'est un paramètre de prix, qui se prépare avant la mise en vente."
+    reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter ; la vente reste possible, et la classe pèse sur le prix et se prépare avant la mise en vente."
   - question: "Faut-il faire un audit énergétique pour vendre un appartement en copropriété ?"
     reponse: "Non. L'audit énergétique réglementaire s'impose à la vente des maisons individuelles et des immeubles d'habitation en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025. Beaucoup de vendeurs parisiens paient un audit dont ils n'ont pas besoin."
   - question: "Un DPE F ou G fait-il baisser le prix d'un appartement ?"
