@@ -248,7 +248,7 @@ const donnees = [
         <a href={page.lien.href} class="bloc no-underline">
           <span class="titre-3 block">{page.lien.libelle}</span>
         </a>
-        {agence && (
+        {agence && page.lien.href !== `/agence-immobiliere-${agence.slug}` && (
           <a href={`/agence-immobiliere-${agence.slug}`} class="bloc no-underline">
             <span class="titre-3 block">Agence immobilière {agence.nom}</span>
           </a>
