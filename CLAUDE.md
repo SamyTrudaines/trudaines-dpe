@@ -88,6 +88,15 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin ;
   Abbesses, Lamarck, Pigalle et Saint-Martin : 400 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
   requêtes que Search Console attribue déjà au site.
+  Mesure commune dans `src/lib/estimation-quartier.ts` : médiane pondérée interpolée des médianes de voie
+  (`medianePonderee`, `src/lib/rues.ts`), prix par taille (`typologiesDesRues`). Les pages `/quartiers/<id>`, le tableau
+  des prix par quartier, les blocs agence et llms.txt lisent `chiffresZone` : le prix et la fourchette du frontmatter des
+  quartiers ne servent plus que de repli.
+- Prix par taille (studio, 2, 3, 4 pièces et plus) : `typologies` des arrondissements et des quartiers administratifs
+  dans rues.json (`scripts/prix-rues.py`, groupes d'au moins dix ventes), tableau `PrixParTaille` sur les pages
+  d'estimation, agence et quartier. Le calcul de fourchette en ligne s'en sert quand la rue manque de ventes.
+- Suivi des requêtes visées : bloc « Requêtes visées » (colonnes AB à AF) de l'onglet `synthese` de la feuille
+  Search Console, formules sur l'onglet `donnees`.
 
 - Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),
   `/feeds/trovit.xml` (français) et `/feeds/trovit-<langue>.xml` (en, de, es, it, pt, zh, ar), construits par

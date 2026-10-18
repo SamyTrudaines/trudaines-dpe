@@ -209,7 +209,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     chapo:
       "Au sud de la place Pigalle, côté 9e, les rues Jean-Baptiste-Pigalle, Victor-Massé, Frochot et Duperré vendent des appartements anciens à des acheteurs qui viennent pour le quartier autant que pour le bien. D'une rue à l'autre, et d'un immeuble à l'autre, le prix au mètre carré change.",
     paragraphes: [
-      "Les petites surfaces y dominent, achetées par des primo-accédants et des investisseurs ; les grands appartements, plus rares, se négocient sur l'étage, la lumière et le calme côté cour. Le bruit côté boulevard et l'état de la copropriété font les plus gros écarts.",
+      "Les studios et les deux pièces y font plus de la moitié des ventes ; les grands appartements, plus rares, se négocient sur l'étage, la lumière et le calme côté cour. Le bruit côté boulevard et l'état de la copropriété pèsent aussi sur le prix.",
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
     ],
   },
