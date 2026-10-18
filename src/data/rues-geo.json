@@ -127,6 +127,7 @@
     "place-du-dr-f-lobligeois-17": { "lon": 2.318088, "lat": 48.886649, "score": 0.624 },
     "place-jacques-bonsergent-10": { "lon": 2.361023, "lat": 48.87119, "score": 0.967 },
     "place-robert-desnos-10": { "lon": 2.368258, "lat": 48.877976, "score": 0.962 },
+    "place-rodin-16": { "lon": 2.27097, "lat": 48.853328, "score": 0.967 },
     "place-vauban-07": { "lon": 2.312216, "lat": 48.853219, "score": 0.962 },
     "quai-d-orsay-07": { "lon": 2.307987, "lat": 48.862359, "score": 0.97 },
     "quai-de-jemmapes-10": { "lon": 2.366706, "lat": 48.875883, "score": 0.977 },
@@ -135,6 +136,7 @@
     "rue-achille-martinet-18": { "lon": 2.336992, "lat": 48.892224, "score": 0.974 },
     "rue-affre-18": { "lon": 2.355669, "lat": 48.886129, "score": 0.975 },
     "rue-agar-16": { "lon": 2.273982, "lat": 48.851377, "score": 0.972 },
+    "rue-alberic-magnard-16": { "lon": 2.271753, "lat": 48.860295, "score": 0.973 },
     "rue-albert-roussel-17": { "lon": 2.305407, "lat": 48.892028, "score": 0.976 },
     "rue-albert-samain-17": { "lon": 2.294354, "lat": 48.886599, "score": 0.969 },
     "rue-albert-thomas-10": { "lon": 2.362558, "lat": 48.869962, "score": 0.972 },
@@ -678,6 +680,7 @@
     "rue-richer-09": { "lon": 2.344995, "lat": 48.874039, "score": 0.972 },
     "rue-riquet-18": { "lon": 2.363449, "lat": 48.889913, "score": 0.977 },
     "rue-robert-planquette-18": { "lon": 2.3348, "lat": 48.884851, "score": 0.971 },
+    "rue-robert-turquan-16": { "lon": 2.266623, "lat": 48.852882, "score": 0.969 },
     "rue-roberval-17": { "lon": 2.32222, "lat": 48.894371, "score": 0.967 },
     "rue-rocroy-10": { "lon": 2.350927, "lat": 48.879958, "score": 0.744 },
     "rue-roger-bacon-17": { "lon": 2.289564, "lat": 48.88266, "score": 0.973 },
@@ -687,7 +690,6 @@
     "rue-saint-dominique-07": { "lon": 2.311019, "lat": 48.85924, "score": 0.976 },
     "rue-saint-ferdinand-17": { "lon": 2.288288, "lat": 48.878049, "score": 0.976 },
     "rue-saint-georges-09": { "lon": 2.337204, "lat": 48.87622, "score": 0.972 },
-    "rue-saint-guillaume-07": { "lon": 2.328722, "lat": 48.854498, "score": 0.968 },
     "rue-saint-jean-17": { "lon": 2.324351, "lat": 48.888737, "score": 0.972 },
     "rue-saint-lazare-09": { "lon": 2.333174, "lat": 48.876448, "score": 0.975 },
     "rue-saint-luc-18": { "lon": 2.354211, "lat": 48.886158, "score": 0.971 },
@@ -759,9 +761,7 @@
     "villa-saint-michel-18": { "lon": 2.32755, "lat": 48.889917, "score": 0.974 }
   },
   "ecartees": {
-    "avenue-bugeaud-16": { "raison": "score faible", "score": 0.49, "propose": "Avenue Boudon 75016 Paris" },
-    "vc-chaussee-de-la-muette-16": { "raison": "type de voie différent", "score": 0.852, "propose": "Chaussée de la Muette 75016 Paris" },
-    "vc-pge-de-l-industrie-10": { "raison": "introuvable", "score": 0, "propose": "" }
+    "avenue-bugeaud-16": { "raison": "score faible", "score": 0.49, "propose": "Avenue Boudon 75016 Paris" }
   },
   "reperes": {
     "75009 Avenue Trudaine": { "lon": 2.343221, "lat": 48.881253, "score": 0.971 },
