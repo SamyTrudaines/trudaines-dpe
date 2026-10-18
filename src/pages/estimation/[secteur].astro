@@ -10,7 +10,7 @@ import PrixParTaille from '../../components/PrixParTaille.astro';
 import Faq from '../../components/Faq.astro';
 import Avis from '../../components/Avis.astro';
 import { avisCommentés, agrégatAvis, preuveAvis, trierAvis } from '../../lib/avis';
-import { secteurs, type Secteur } from '../../data/secteurs';
+import { secteurs, fourchetteSecteur, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { mesureQuartier } from '../../lib/estimation-quartier';
 import { arrondissements, periode, libellePieces, millesime } from '../../lib/rues';
@@ -178,7 +178,7 @@ const donnees = [
         {autresSecteurs.map((s) => (
           <a href={`/estimation/${s.slug}`} class="bloc no-underline">
             <span class="titre-3 block">Estimation {s.nom}</span>
-            <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">{s.fourchette}</span>
+            <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">{fourchetteSecteur(s.arrondissement)}</span>
           </a>
         ))}
       </div>
