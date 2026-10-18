@@ -94,7 +94,7 @@ Un couple de 72 et 70 ans, marié sous le régime de la communauté, a deux enfa
   <figcaption>Donner la nue-propriété, c'est préparer la suite sans rien changer au présent.</figcaption>
 </figure>
 
-## 5. Le sujet que personne n'aborde : et si l'on doit vendre ?
+## 5. Et si l'on doit vendre ?
 
 C'est là que la plupart des familles se trompent, et que l'accompagnement d'un professionnel de l'immobilier change tout.
 

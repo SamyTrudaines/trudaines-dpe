@@ -57,6 +57,7 @@ const services = [
   description={`${secteur.descriptionAgence} ${preuve}`}
   filAriane={[{ nom: `Agence immobilière ${secteur.nom}` }]}
   donnees={[faqEnDonnees(faq)]}
+  ancreEstimation={`/estimation/${slug}#estimation-${slug}`}
 >
   <BlocAgence
     h1={h1}

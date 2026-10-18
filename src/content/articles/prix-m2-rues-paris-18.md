@@ -23,13 +23,13 @@ Ce sont des médianes de ventes d'appartements signées : la moitié des ventes 
 
 Une rue n'est classée qu'à partir de 8 ventes sur la période : le 18e en compte 155. Le nombre de ventes pèse autant que la médiane. Sur 10 ou 11 ventes, comme aux deux extrêmes, quelques transactions de plus ou de moins déplacent le chiffre ; sur 183 ventes, comme rue Marcadet, il est solide. La surface et le prix médians d'une rue sont calculés à part : ils ne se déduisent pas du prix au mètre carré.
 
-## Montmartre et ses pentes : le haut de l'échelle
+## Les prix à Montmartre
 
 Les douze voies les plus chères du 18e, de 11 330 € à 12 850 € le mètre carré, sont toutes autour de la butte Montmartre. Le passage Lepic arrive en tête, sur 11 ventes. Suivent la [rue Charles Nodier](/prix-immobilier/rue-charles-nodier-18) et la [villa Dancourt](/prix-immobilier/villa-dancourt-18), à 12 300 € (9 et 14 ventes), la [rue Ravignan](/prix-immobilier/rue-ravignan-18) à 12 200 € (24 ventes), l'[avenue Junot](/prix-immobilier/avenue-junot-18) à 11 830 € (26 ventes) et la [rue des Abbesses](/prix-immobilier/rue-des-abbesses-18) à 11 470 € (28 ventes).
 
 Dans plusieurs de ces voies, la surface médiane est celle d'un petit appartement : 30 m² passage Lepic (prix de vente médian de 407 000 €), 29 m² rue Ravignan (370 000 €), 30 m² villa Dancourt (350 000 €). Elle est plus grande rue Charles Nodier (53 m², 615 000 €) et avenue Junot (55 m², 679 000 €). Les repères les plus sûrs viennent des voies où l'on vend davantage : la [rue Lepic](/prix-immobilier/rue-lepic-18) à 10 680 € (43 ventes) et la [rue Caulaincourt](/prix-immobilier/rue-caulaincourt-18) à 10 480 € (96 ventes). Voir aussi le quartier [Montmartre](/quartiers/montmartre).
 
-## La Chapelle et la Goutte d'Or : le bas de l'échelle
+## Les prix à La Chapelle et à la Goutte d'Or
 
 À l'est de la butte, la [rue de la Chapelle](/prix-immobilier/rue-de-la-chapelle-18) ressort à 6 180 € sur 74 ventes, la [rue Marx Dormoy](/prix-immobilier/rue-marx-dormoy-18) à 6 900 € sur 101 ventes et la [rue Doudeauville](/prix-immobilier/rue-doudeauville-18) à 7 730 € sur 107 ventes. Avec 74 à 107 ventes, ces médianes sont solides. La [rue Léon](/prix-immobilier/rue-leon-18) se situe plus bas, à 6 050 € (18 ventes), et la [rue de la Goutte d'Or](/prix-immobilier/rue-de-la-goutte-d-or-18) à 7 580 € (17 ventes).
 

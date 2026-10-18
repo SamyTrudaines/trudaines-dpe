@@ -46,7 +46,7 @@ C'est un levier réel, mais encadré. Le juge doit constater l'urgence et l'int�
 
 À côté, le recours des héritiers détenant les deux tiers des droits, prévu à l'article 815-5-1, existe toujours. Notre page sur [l'indivision](/vendre/indivision) détaille cette voie. Votre notaire ou votre avocat vous dira laquelle convient à votre dossier.
 
-## Le don familial à 50 000 € : un projet, pas encore une règle
+## Le don familial à 50 000 €, encore en projet
 
 Le projet de loi de finances pour 2027, déposé le 1er octobre 2026, prévoit de porter le don familial de sommes d'argent exonéré à 50 000 €, pour les dons faits entre le 1er janvier et le 30 juin 2027. Le texte est en discussion au Parlement jusqu'en décembre : montants, dates et conditions peuvent encore changer, et aucun notaire ne peut l'appliquer aujourd'hui.
 
@@ -78,7 +78,7 @@ Refaire la cuisine ou la salle de bains, en revanche, l'est rarement. L'acquére
 
 Vendre l'appartement d'un parent vivant obéit à d'autres règles. C'est lui qui vend, ou une personne à qui il a donné procuration. S'il fait l'objet d'une mesure de protection, tutelle, curatelle ou habilitation familiale, la vente de son logement suppose en principe l'autorisation du juge des contentieux de la protection (article 426 du code civil).
 
-## Familles, notaires : sortons votre bien de l'impasse
+## Familles et notaires
 
 Familles, vous voulez connaître la vraie valeur de votre héritage : je remets un avis de valeur écrit, appuyé sur les ventes signées de la rue, à tous les héritiers en même temps. Notaires de la place de Paris, vous cherchez un partenaire réactif pour faire avancer vos dossiers de succession : je travaille dans tout Paris, avec discrétion, et je fais les visites sans imposer aux familles de revenir dans l'appartement.
 

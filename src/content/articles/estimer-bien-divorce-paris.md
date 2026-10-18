@@ -17,7 +17,7 @@ motsCles:
 
 Sur la table, deux trousseaux, posés à distance. Un pour chacun. C'est souvent ainsi que commence une vente ou un rachat de part après une séparation : chacun garde ses clés, et chacun a son idée du prix.
 
-## Un seul critère : la valeur vénale d'aujourd'hui
+## La valeur vénale d'aujourd'hui
 
 Le prix payé il y a dix ans, les travaux que l'un a financés, le crédit qu'il reste à rembourser : tout cela compte dans le partage, mais rien de cela ne fixe la valeur du bien. Un appartement vaut ce qu'un acquéreur le paierait aujourd'hui, dans son état, à son adresse.
 
