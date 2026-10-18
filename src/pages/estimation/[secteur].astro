@@ -115,6 +115,8 @@ const donnees = [
         <p class="surtitre">Estimation · {secteur.arrondissement}</p>
         <h1 class="titre-1 mt-6">Estimation immobilière {secteur.nom}</h1>
         {reponseCourte && <p class="mt-6 max-w-2xl" id="reponse-courte">{reponseCourte}</p>}
+        {/* Sur téléphone, le formulaire vient après le texte : un accès direct, sans défiler. */}
+        <a href={`#estimation-${secteur.slug}`} class="bouton mt-6 lg:hidden" data-evt={evt('estimation', 'formulaire', secteur.slug)}>Estimer mon appartement</a>
         <p class="chapo mt-8">{secteur.intro}</p>
         <div class="mt-10 border-t border-[color:var(--color-encre)] pt-6">
           <p class="surtitre">Niveau de prix constaté</p>
