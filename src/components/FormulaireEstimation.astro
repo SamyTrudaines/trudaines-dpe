@@ -164,6 +164,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         <div class="sm:col-span-2">
           <label class="etiquette" for={`horizon-${identifiant}`}>Votre projet</label>
           <select class="champ" id={`horizon-${identifiant}`} name="horizon" required>
+            <option value="" disabled selected>Choisir</option>
             <option value="Moins de 3 mois">Vendre dans les 3 mois</option>
             <option value="3 à 6 mois">Vendre dans 3 à 6 mois</option>
             <option value="Plus tard">Connaître la valeur, vendre plus tard</option>
@@ -177,14 +178,18 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
     </fieldset>
 
     <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-2">Votre estimation est prête</legend>
+      <legend class="titre-3 mb-2">Où recevoir votre estimation ?</legend>
       <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
-        Indiquez où la recevoir : votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées de votre rue.
+        Dans nos six arrondissements, votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées.
       </p>
       <div class="grid gap-6 sm:grid-cols-2">
-        <div class="sm:col-span-2">
+        <div>
           <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
           <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
         </div>
         <div>
           <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
@@ -227,7 +232,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
     <div class="mt-6 border-l-2 border-[color:var(--color-or)] pl-4" data-fourchette-rue hidden></div>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
       Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
-      Un email vient de partir vers votre boîte, avec votre fourchette.
+      <span data-mention-email hidden>Un email vient de partir vers votre boîte, avec votre fourchette.</span>
     </p>
     <p class="mt-6">
       <a href={lienPhotos} rel="noopener" target="_blank" class="bouton bouton-secondaire" data-evt="estimation_photos_whatsapp">Envoyer des photos par WhatsApp</a>

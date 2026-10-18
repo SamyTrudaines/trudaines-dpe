@@ -78,8 +78,8 @@
           ' ventes d\'appartements signées de ' + echapper(d.periode) + '. Votre estimation part de ces ventes.';
       } else if (arrondissement) {
         zone.innerHTML = '<strong>' + echapper(arrondissement.n) + '</strong> : ' + nombreVentes(arrondissement.v) +
-          ' ventes d\'appartements signées de ' + echapper(d.periode) + '. Votre rue en compte trop peu pour être mesurée seule : ' +
-          'l\'estimation part de l\'arrondissement, la visite affine.';
+          ' ventes d\'appartements signées de ' + echapper(d.periode) + '. Votre estimation part des ventes de ' +
+          'l\'arrondissement ; la visite l\'affine rue par rue.';
       } else {
         zone.textContent = 'Votre adresse est hors des arrondissements que nous mesurons rue par rue : Samy Santamarina vous rappelle pour une estimation sur place.';
       }
@@ -111,6 +111,7 @@
   function calculer(form) {
     var bloc = form.querySelector('[data-fourchette-rue]');
     var cache = form.querySelector('input[name="fourchette"]');
+    var mention = form.querySelector('[data-mention-email]');
     var adresse = valeur(form, 'adresse').trim();
     var surface = parseFloat(valeur(form, 'surface'));
     var pieces = parseInt(valeur(form, 'pieces'), 10) || 0;
@@ -120,6 +121,7 @@
       var d = r[0];
       var lieu = r[1];
       bloc.hidden = true;
+      if (mention) mention.hidden = true;
       if (cache) cache.value = '';
       if (!d || !lieu) return;
       var codePostal = lieu.postcode || '';
@@ -157,6 +159,7 @@
         ' (' + d.periode + '), selon l\'étage, l\'ascenseur et la typologie. L\'avis de valeur écrit, après visite, ' +
         'tient compte de l\'état, de la vue et de la copropriété.</p>';
       bloc.hidden = false;
+      if (mention) mention.hidden = false;
       if (cache) cache.value = euros(bas * surface) + ' à ' + euros(haut * surface) + (rue ? ' (rue)' : ' (arrondissement)');
       if (typeof window.trudainesEvent === 'function') window.trudainesEvent('estimation_fourchette', { source: rue ? 'rue' : 'arrondissement' });
     });
