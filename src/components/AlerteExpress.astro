@@ -23,7 +23,7 @@ const { id, titre, texte, origine, evt, secteur, budget } = Astro.props;
 const choix = [...secteurs].sort((a, b) => a.arrondissement.localeCompare(b.arrondissement));
 ---
 <section class="section filet" aria-labelledby={`${id}-titre`}>
-  <div class="conteneur grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end lg:gap-16">
+  <div class="conteneur grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-16">
     <div>
       <p class="surtitre">Acheter avec Trudaines</p>
       <h2 id={`${id}-titre`} class="titre-2 mt-6">{titre}</h2>
