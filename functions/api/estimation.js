@@ -1,5 +1,5 @@
 import {
-  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
+  reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn, envoyerSmsAgence,
   liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
 
@@ -45,6 +45,8 @@ export async function onRequestPost({ request, env }) {
       html: gabaritNotification('Nouvelle demande d’estimation', lignes),
       repondreA: email,
     });
+
+    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p. ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
 
     await embaser(env, {
       email,

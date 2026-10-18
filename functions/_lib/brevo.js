@@ -340,6 +340,38 @@ export async function embaser(env, contact) {
   }
 }
 
+/**
+ * SMS à l'agence pour une demande à rappeler vite (estimation, rappel).
+ * Destinataire : variable NOTIFICATION_SMS, sinon le portable de l'agence de site.ts.
+ * Expéditeur alphanumérique de 11 caractères au plus. Un échec n'empêche jamais la
+ * demande d'aboutir : l'email de notification et Brevo la portent déjà.
+ */
+export async function envoyerSmsAgence(env, texte) {
+  if (!env.BREVO_API_KEY) return false;
+  const destinataire = String(env.NOTIFICATION_SMS || '33620465912').replace(/\D/g, '');
+  try {
+    const reponseApi = await fetch(`${API}/transactionalSMS/send`, {
+      method: 'POST',
+      headers: { 'api-key': env.BREVO_API_KEY, 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        sender: String(env.BREVO_SMS_EXPEDITEUR || 'Trudaines').slice(0, 11),
+        recipient: destinataire,
+        content: borner(texte.replace(/\s+/g, ' ').trim(), 300),
+        type: 'transactional',
+        tag: 'notification-agence',
+      }),
+    });
+    if (!reponseApi.ok) {
+      console.error(`SMS agence refusé par Brevo : ${reponseApi.status} ${await reponseApi.text()}`);
+      return false;
+    }
+    return true;
+  } catch (erreur) {
+    console.error('SMS agence échoué', erreur);
+    return false;
+  }
+}
+
 /** Listes Brevo, identifiants numériques passés en variables d'environnement. */
 export function liste(env, nom) {
   const table = {

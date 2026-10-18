@@ -38,6 +38,7 @@ const recent = () => String(Date.now() - 20000);
 
 const cas = [
   ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
+  ['rappel', '../functions/api/rappel.js', { prenom: 'Odile', telephone: '06 01 02 03 04', moment: 'Le matin', adresse: '8 rue Lepic, 75018 Paris', consentement: 'oui', secteur: 'paris-18', horodatage: recent() }, 3],
   ['visite', '../functions/api/visite.js', { prenom: 'Paul', nom: 'Durand', email: 'paul@example.com', telephone: '0601020304', creneaux: 'Samedi matin', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['fiche-bien', '../functions/api/fiche-bien.js', { email: 'paul@example.com', telephone: '0601020304', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['guide', '../functions/api/guide.js', { email: 'paul@example.com', telephone: '0601020304', guide: 'guide-prix-2026-9e-nord', titreGuide: 'Guide des prix 2026', horodatage: recent() }, 6],
@@ -64,6 +65,34 @@ for (const [nom, chemin, donnees, listeAttendue] of cas) {
   if (!ok) echecs++;
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} ${nom} · statut ${reponse.status} · emails ${emails} · listes ${JSON.stringify(listes)}`);
 }
+
+/* SMS à l'agence : une estimation et une demande de rappel envoient chacune un SMS au portable de l'agence. */
+for (const [nom, chemin, donnees] of [
+  ['estimation', '../functions/api/estimation.js', cas[0][2]],
+  ['rappel', '../functions/api/rappel.js', cas.find((c) => c[0] === 'rappel')[2]],
+]) {
+  appels.length = 0;
+  const module = await import(new URL(chemin, import.meta.url).href);
+  await module.onRequestPost({ request: requete(donnees), env });
+  const sms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send'));
+  const ok = sms.length === 1 && sms[0].corps.recipient === '33620465912' && sms[0].corps.sender.length <= 11 && sms[0].corps.type === 'transactional';
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} ${nom} : SMS à l'agence · ${sms[0] ? sms[0].corps.content : 'aucun'}`);
+}
+
+/* Rappel sans email : la demande passe, le contact Brevo est créé par son numéro. */
+appels.length = 0;
+const rappel = await import(new URL('../functions/api/rappel.js', import.meta.url).href);
+const sansEmail = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '0601020304', consentement: 'oui', horodatage: recent() }), env });
+const contactSms = appels.find((a) => a.url.endsWith('/contacts'));
+{
+  const ok = sansEmail.status === 200 && contactSms && !contactSms.corps.email && contactSms.corps.attributes.SMS === '+33601020304';
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} rappel sans email : contact Brevo par le téléphone`);
+}
+const rappelRefuse = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '12', consentement: 'oui', horodatage: recent() }), env });
+if (rappelRefuse.status !== 400) echecs++;
+console.log(`${rappelRefuse.status === 400 ? 'OK   ' : 'ÉCHEC'} rappel : refus d'un numéro invalide · statut ${rappelRefuse.status}`);
 
 const estimation = await import(new URL('../functions/api/estimation.js', import.meta.url).href);
 
