@@ -115,6 +115,14 @@ const donnees = [
             {chiffres && <> Base parue le <time datetime={millesime}>{dateFr(new Date(millesime))}</time>.</>}
           </p>
         </div>
+        {pagesQuartiers.length > 0 && (
+          <p class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <span class="text-[color:var(--color-ardoise)]">Par quartier :</span>
+            {pagesQuartiers.map((q) => (
+              <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne">{q.nom}</a>
+            ))}
+          </p>
+        )}
         <p class="mt-8 text-sm text-[color:var(--color-ardoise)]">
           Estimation appartement {secteur.nom}, estimation maison et immeuble, vente maison {secteur.nom} :
           la méthode est la même, seule la base de comparaison change.
