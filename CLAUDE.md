@@ -28,6 +28,17 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Le titre de l'accueil est « L'immobilier au-delà des murs. » ; sa fin, « au-delà des murs. », est le
   marqueur que la recette de mise en ligne cherche sur la page (`scripts/mise-en-ligne/config.mjs`).
 
+## Objectifs de Samy (priorité absolue)
+- Top 3 sur Google, les réponses IA de Google, ChatGPT, Claude et Gemini pour : estimation Montmartre,
+  estimation Trudaine, estimation Paris 18, estimation Paris 9, estimation Saint-Georges, estimation rue des Martyrs.
+  Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
+- Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, le contact demandé avant
+  de révéler le prix. Étape 1 : adresse, type, surface, pièces, chambres, étage et ascenseur (listes déroulantes) ;
+  étape 2 : prénom, email, téléphone ; la fourchette DVF de la rue, ajustée par étage, ascenseur et typologie
+  (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi.
+- La réception des demandes dans la boîte Gmail de Samy est déterminante : toute modification d'une fonction
+  de formulaire se vérifie par `npm run test-formulaires`, et chaque demande reste aussi enregistrée dans Brevo.
+
 ## Repères
 - trudaines.com est en ligne depuis le 3 octobre 2026 (recette réussie) : www sur Cloudflare Pages,
   racine redirigée en 301 par Gandi, production Cloudflare sur la branche main. La clé Brevo des

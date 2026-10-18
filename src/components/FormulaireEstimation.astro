@@ -21,6 +21,7 @@ const listeId = `adresses-${identifiant}`;
   data-evt={evt}
   data-evenement-etape="estimation_etape1"
   data-formulaire-avis
+  data-fourchette
   novalidate={false}
 >
   <input type="hidden" name="secteur" value={secteur} />
@@ -81,6 +82,7 @@ const listeId = `adresses-${identifiant}`;
           <div>
             <label class="etiquette" for={`pieces-${identifiant}`}>Nombre de pièces</label>
             <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
+              <option value="" disabled selected>Choisir</option>
               <option value="1">1 pièce</option>
               <option value="2">2 pièces</option>
               <option value="3">3 pièces</option>
@@ -90,8 +92,35 @@ const listeId = `adresses-${identifiant}`;
             </select>
           </div>
           <div>
+            <label class="etiquette" for={`chambres-${identifiant}`}>Chambres</label>
+            <select class="champ" id={`chambres-${identifiant}`} name="chambres" required>
+              <option value="" disabled selected>Choisir</option>
+              <option value="0">Aucune, studio</option>
+              <option value="1">1 chambre</option>
+              <option value="2">2 chambres</option>
+              <option value="3">3 chambres</option>
+              <option value="4">4 chambres</option>
+              <option value="5 et plus">5 chambres et plus</option>
+            </select>
+          </div>
+          <div>
             <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
-            <input class="champ" id={`etage-${identifiant}`} name="etage" type="text" placeholder="3e avec ascenseur" required />
+            <select class="champ" id={`etage-${identifiant}`} name="etage" required>
+              <option value="" disabled selected>Choisir</option>
+              <option value="Rez-de-chaussée">Rez-de-chaussée</option>
+              <option value="1er">1er étage</option>
+              <option value="2e à 4e">2e à 4e étage</option>
+              <option value="5e et plus">5e étage et plus</option>
+              <option value="Dernier étage">Dernier étage</option>
+            </select>
+          </div>
+          <div>
+            <label class="etiquette" for={`ascenseur-${identifiant}`}>Ascenseur</label>
+            <select class="champ" id={`ascenseur-${identifiant}`} name="ascenseur" required>
+              <option value="" disabled selected>Choisir</option>
+              <option value="Oui">Oui</option>
+              <option value="Non">Non</option>
+            </select>
           </div>
         </div>
 
@@ -109,14 +138,15 @@ const listeId = `adresses-${identifiant}`;
 
     <fieldset data-etape class="border-0 p-0">
       <legend class="titre-3 mb-6">Vos coordonnées</legend>
+
       <div class="grid gap-6 sm:grid-cols-2">
         <div>
           <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
           <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
         </div>
         <div>
-          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
-          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom, facultatif</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" />
         </div>
         <div>
           <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
@@ -139,11 +169,12 @@ const listeId = `adresses-${identifiant}`;
         </label>
       </div>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
-        Vous êtes rappelé sous 24 heures ouvrées. L'estimation est gratuite et sans engagement.
+        Votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées de votre rue. Samy Santamarina
+        vous rappelle sous 24 heures ouvrées pour l'avis de valeur écrit, gratuit et sans engagement.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="submit" class="bouton">Recevoir mon estimation</button>
+        <button type="submit" class="bouton">Voir ma fourchette de prix</button>
       </div>
     </fieldset>
 
@@ -153,9 +184,12 @@ const listeId = `adresses-${identifiant}`;
   <div data-confirmation hidden class="py-4">
     <p class="surtitre">Demande envoyée</p>
     <h2 class="titre-3 mt-4">Merci, votre demande est enregistrée.</h2>
+    {/* Rempli dans le navigateur à l'envoi : la fourchette n'apparaît qu'une fois le contact reçu. */}
+    <div class="mt-6 border-l-2 border-[color:var(--color-or)] pl-4" data-fourchette-rue hidden></div>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
       Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
       Un email de confirmation vient de partir vers votre boîte.
     </p>
   </div>
 </form>
+<script src="/js/fourchette-formulaire.js" defer is:inline></script>
