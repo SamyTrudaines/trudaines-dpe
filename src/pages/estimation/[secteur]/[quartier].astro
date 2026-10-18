@@ -16,7 +16,7 @@ import { prix, nombre, dateFr } from '../../../lib/format';
 import { getCollection } from 'astro:content';
 import ReferencesProches from '../../../components/ReferencesProches.astro';
 import { evt, referencesProches } from '../../../lib/entonnoir';
-import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations } from '../../../data/lieux';
+import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsEstimations, rattachementsQuartiers } from '../../../data/lieux';
 
 /**
  * Estimation d'un quartier : textes dans src/data/estimations-quartiers.ts,
@@ -128,7 +128,8 @@ const donnees = [
       '@type': 'Place',
       name: `${page.nom}, ${secteur.nomLong}`,
       ...(arrondissementParCodePostal[page.codePostal] ? { containedInPlace: lieuEnDonnees(arrondissementParCodePostal[page.codePostal]) } : {}),
-      ...donneesDeRattachement(rattachementsEstimations[page.slug] ?? {}),
+      /* Une page bâtie sur la zone d'un quartier publié en partage le périmètre, donc les rattachements. */
+      ...donneesDeRattachement(rattachementsEstimations[page.slug] ?? (page.zone ? rattachementsQuartiers[page.zone] : undefined) ?? {}),
     },
   },
 ];
