@@ -83,6 +83,7 @@ const engagements = [
 ];
 ---
 <Layout
+  ancreEstimation="#accueil-adresse"
   titre="Trudaines, agence immobilière à Paris 9e, 18e et Montmartre"
   description={`Agence immobilière indépendante à Paris : vente, recherche, gestion locative. Avis de valeur écrit offert sous 48 heures. ${preuveAvis}.`}
   enteteSurPhoto
@@ -116,7 +117,7 @@ const engagements = [
             </a>
           )}
         </div>
-        <form action="/estimation#estimation-immediate" method="get" class="estimer-adresse" data-cta-estimation>
+        <form action="/estimation#avis-de-valeur" method="get" class="estimer-adresse" data-cta-estimation>
           <label for="accueil-adresse" class="etiquette">Combien vaut votre bien ?</label>
           <div class="estimer-adresse-ligne">
             <input
@@ -131,7 +132,7 @@ const engagements = [
             <button type="submit" class="bouton" data-evt="accueil_estimer_adresse">Estimer</button>
           </div>
           <p class="estimer-adresse-note">
-            Une fourchette tirée des ventes signées dans votre rue, sans inscription.{' '}
+            Gratuit, moins d'une minute, à partir des ventes signées dans votre rue.{' '}
             <a href="/vendre" class="lien-souligne whitespace-nowrap">Notre méthode de vente</a>
           </p>
         </form>

@@ -114,6 +114,7 @@ const donnees = [
 ];
 ---
 <Layout
+  ancreEstimation={`#estimation-${secteur.slug}`}
   titre={secteur.titre}
   description={chiffres
     ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² sur ${nombre(chiffres.ventes)} ventes signées.${nomsQuartiers ? ` ${nomsQuartiers}.` : ''} En ligne ou après visite.`

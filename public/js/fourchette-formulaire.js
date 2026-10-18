@@ -166,6 +166,28 @@
     return Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ');
   }
 
+  /*
+   * Arrivée avec ?adresse= (champ de l'accueil) : l'adresse remplit le premier formulaire
+   * d'estimation de la page, qui passe à l'étape de la surface. Le prix n'est jamais
+   * montré avant les coordonnées.
+   */
+  function reprendreAdresse() {
+    var demandee = (new URLSearchParams(window.location.search).get('adresse') || '').trim().slice(0, 200);
+    var form = document.querySelector('form[data-fourchette]');
+    if (demandee.length < 5 || !form) return;
+    var champ = form.querySelector('[name="adresse"]');
+    var premiere = form.querySelector('[data-etape]');
+    var suivant = premiere && premiere.querySelector('[data-suivant]');
+    if (!champ) return;
+    champ.value = demandee;
+    if (premiere && !premiere.hidden && suivant) suivant.click();
+    var bloc = form.closest('[data-choix-estimation]') || form;
+    bloc.scrollIntoView({ block: 'start' });
+    var surface = form.querySelector('[name="surface"]');
+    if (surface) setTimeout(function () { surface.focus({ preventScroll: true }); }, 300);
+    if (typeof window.trudainesEvent === 'function') window.trudainesEvent('estimation_adresse_reprise', {});
+  }
+
   /* Le script peut être inclus par plusieurs formulaires d'une même page : chaque formulaire n'est lié qu'une fois. */
   document.querySelectorAll('form[data-fourchette]').forEach(function (form) {
     if (form.dataset.fourchetteLie) return;
@@ -176,4 +198,7 @@
       calculer(form);
     });
   });
+  /* Après formulaires.js, qui monte les étapes au chargement du document : sinon le passage d'étape serait annulé. */
+  if (document.readyState === 'complete') reprendreAdresse();
+  else document.addEventListener('DOMContentLoaded', function () { setTimeout(reprendreAdresse, 0); });
 })();
