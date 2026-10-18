@@ -254,6 +254,12 @@ const donnees = [
     <div class="conteneur">
       <p id="ailleurs" class="titre-2">Continuer</p>
       <div class="mt-10 grid gap-8 md:grid-cols-3">
+        {['paris-9', 'paris-17', 'paris-18'].includes(page.secteur) && (
+          <a href="/panorama/prix-montmartre-9e-batignolles-automne-2026" class="bloc no-underline">
+            <span class="titre-3 block">Les prix rue par rue, automne 2026</span>
+            <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Montmartre, haut du 9e, Batignolles</span>
+          </a>
+        )}
         <a href={`/estimation/${secteur.slug}`} class="bloc no-underline">
           <span class="titre-3 block">Estimation {secteur.nom}</span>
           <span class="mt-3 block text-sm text-[color:var(--color-ardoise)]">Tout le {arrondissement}</span>
