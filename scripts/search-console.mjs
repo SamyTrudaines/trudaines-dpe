@@ -211,6 +211,8 @@ const PAGES_CLES = [
   '/quartiers/montmartre', '/quartiers/trudaine-maubeuge', '/quartiers/martyrs-lorette',
   '/agence-immobiliere-paris-9', '/agence-immobiliere-paris-18', '/agence-immobiliere-montmartre',
   '/estimation/paris-17/epinettes',
+  '/estimation/paris-9', '/estimation/paris-18', '/estimation/paris-18/montmartre', '/estimation/paris-9/trudaine-maubeuge',
+  '/agence-immobiliere-trudaine',
 ];
 const PORTES = ['http://trudaines.com/', 'https://trudaines.com/', 'http://www.trudaines.com/'];
 /* États de lecture qui veulent dire : Googlebot n'a pas pu lire la page. */
