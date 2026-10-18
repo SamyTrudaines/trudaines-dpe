@@ -5,6 +5,7 @@ import { agencesLocales } from '../data/agences-locales';
 import { faqAgence } from '../lib/agence';
 import { llmsTexte, milliers } from '../lib/llms';
 import { distance } from '../lib/quartiers';
+import { faitsQuartier } from '../lib/estimation-quartier';
 
 /**
  * /llms-full.txt : /llms.txt suivi du texte intégral des pages éditoriales,
@@ -77,7 +78,7 @@ export const GET: APIRoute = async () => {
         `Source : ${site.url}/quartiers/${q.id}`,
         '',
         q.data.chapo,
-        ...q.data.faits.map((f) => `- ${f.titre} : ${f.valeur}`),
+        ...faitsQuartier(q.id, q.data.faits).map((f) => `- ${f.titre} : ${f.valeur}`),
         '',
         corps(q.body),
       ].join('\n')

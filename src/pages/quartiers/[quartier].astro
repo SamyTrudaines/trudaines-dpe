@@ -19,7 +19,7 @@ import { site } from '../../data/site';
 import { nombre, dateFr, dateIso } from '../../lib/format';
 import { periode, ventesMinimum, millesime, typologiesDesRues } from '../../lib/rues';
 import PrixParTaille from '../../components/PrixParTaille.astro';
-import { mesureQuartier } from '../../lib/estimation-quartier';
+import { mesureQuartier, chiffresZone, faitsQuartier } from '../../lib/estimation-quartier';
 import { zones, ruesDuQuartier, distance } from '../../lib/quartiers';
 import { arrondissementParCodePostal, donneesDeRattachement, lieuEnDonnees, rattachementsQuartiers } from '../../data/lieux';
 import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/entonnoir';
@@ -47,7 +47,9 @@ const codePostal = zone.codePostal;
 const arrondissement = quartier.data.arrondissement;
 
 /* Les rues du quartier, et ce que leur liste dit en un coup d'œil. */
-const liste = ruesDuQuartier(id);
+const chiffres = chiffresZone(id);
+/* Les voies retenues par la mesure, une seule graphie par voie, sinon toutes les rues de la zone. */
+const liste = chiffres?.mesure.liste ?? ruesDuQuartier(id);
 const medianes = liste.map((r) => r.mediane);
 const moinsChere = Math.min(...medianes);
 const plusChere = Math.max(...medianes);
@@ -58,8 +60,9 @@ const euros = (valeur: number) => `${nombre(valeur)} €`;
 const mois = dureeEnMois(periode);
 
 /* « 11 150 € le m², ... » : le chiffre en grand, la suite en légende. */
-const lecture = /^(.+?€)\s*(.*)$/.exec(quartier.data.prixMoyenM2);
-const prixMedian = lecture ? lecture[1] : quartier.data.prixMoyenM2;
+const lecture = /^(.+?€)\s*(.*)$/.exec(chiffres?.prix ?? quartier.data.prixMoyenM2);
+const prixMedian = lecture ? lecture[1] : chiffres?.prix ?? quartier.data.prixMoyenM2;
+const fourchette = chiffres?.fourchette ?? quartier.data.fourchette;
 const legendePrix = lecture ? lecture[2] : '';
 
 const biens = (await getCollection('biens', (b) => b.data.quartier === nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
@@ -87,9 +90,11 @@ const plusVendue = liste.length ? liste.reduce((a, b) => (b.ventes > a.ventes ? 
 const ruePlusChere = liste.length ? liste.reduce((a, b) => (b.mediane > a.mediane ? b : a)) : null;
 const rueMoinsChere = liste.length ? liste.reduce((a, b) => (b.mediane < a.mediane ? b : a)) : null;
 /* Chaque chiffre reste attaché à sa base : la médiane du quartier à sa fourchette, les extrêmes aux ventes par rue. */
-const reponseCourte = liste.length
-  ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
-  : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${quartier.data.fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
+const reponseCourte = chiffres
+  ? `À ${nom} (${arrondissement}), les appartements se sont vendus ${prixMedian} le m² en médiane pondérée des rues, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, source DVF de la DGFiP. Selon la rue, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
+  : liste.length
+  ? `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${fourchette}, source DVF de la DGFiP. Rue par rue, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} rues, la médiane va de ${euros(moinsChere)} (${rueMoinsChere!.nom}) à ${euros(plusChere)} (${ruePlusChere!.nom}).`
+  : `À ${nom} (${arrondissement}), le prix médian des appartements vendus est de ${prixMedian} le m², fourchette observée ${fourchette}, d'après les ventes signées, source DVF de la DGFiP.`;
 
 /* Date de révision de la page, millésime de la base et distance du bureau : les faits que les réponses citent. */
 const dateMaj = quartier.data.dateMaj;
@@ -253,8 +258,8 @@ const donnees = [
 
         <dl class="grid gap-x-6 gap-y-4 sm:col-span-2 sm:col-start-2 sm:row-start-1 sm:grid-cols-2">
           <div class="border-t border-[color:var(--color-encre)] pt-2">
-            <dt class="surtitre">Fourchette observée</dt>
-            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{quartier.data.fourchette}</dd>
+            <dt class="surtitre">{chiffres ? 'Ventes analysées' : 'Fourchette observée'}</dt>
+            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{chiffres ? chiffres.ventesAnalysees : fourchette}</dd>
           </div>
           {liste.length > 0 && (
             <div class="border-t border-[color:var(--color-encre)] pt-2">
@@ -323,7 +328,7 @@ const donnees = [
         <h2 id="le-quartier" class="titre-2 mt-6">{nom} en bref</h2>
         <p class="chapo mt-6">{quartier.data.chapo}</p>
         <dl class="mt-10 grid gap-6 sm:grid-cols-2">
-          {quartier.data.faits.map((f) => (
+          {faitsQuartier(id, quartier.data.faits).map((f) => (
             <div class="border-t border-[color:var(--color-trait)] pt-4">
               <dt class="surtitre">{f.titre}</dt>
               <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{f.valeur}</dd>

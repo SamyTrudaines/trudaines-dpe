@@ -8,7 +8,7 @@ import { fourchetteVente, pourcent, primeVente } from './bareme';
 import { agencesLocales } from '../data/agences-locales';
 import { rues, arrondissements, periode, ventesMinimum, libellePieces } from './rues';
 import { estimationsQuartiers } from '../data/estimations-quartiers';
-import { mesureQuartier } from './estimation-quartier';
+import { mesureQuartier, chiffresZone } from './estimation-quartier';
 
 /** Séparateur de milliers en espace simple : un fichier texte doit rester lisible et analysable. */
 export const milliers = (valeur: number) => valeur.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
@@ -169,7 +169,12 @@ ${situations.map((s) => `- [${s.data.question}](${site.url}/vendre/${s.id})`).jo
 
 ## Quartiers couverts
 Prix médian au mètre carré des appartements vendus, puis fourchette du premier au neuvième décile, source DVF. Chaque page publie en plus le prix de chacune de ses rues.
-${quartiers.map((q) => `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${q.data.prixMoyenM2}${q.data.faits.find((f) => /ventes/i.test(f.titre)) ? ` (${q.data.faits.find((f) => /ventes/i.test(f.titre))?.valeur})` : ''} ; ${q.data.fourchette}.`).join('\n')}
+${quartiers.map((q) => {
+  const c = chiffresZone(q.id);
+  return c
+    ? `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${c.prix}, médiane pondérée des voies (${c.ventesAnalysees}) ; de ${c.fourchette}.`
+    : `- [${q.data.nom}, ${q.data.arrondissement}](${site.url}/quartiers/${q.id}) : ${q.data.prixMoyenM2} ; ${q.data.fourchette}.`;
+}).join('\n')}
 
 ## Publications récentes
 ${articles.slice(0, 10).map((a) => `- [${a.data.titre}](${site.url}/panorama/${a.id})`).join('\n')}

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { site } from '../data/site';
+import { chiffresZone } from '../lib/estimation-quartier';
 interface Props {
   h1: string;
   intro: string;
@@ -65,7 +66,7 @@ const { h1, intro, secteurNom, hrefEstimation, quartiers, services } = Astro.pro
           <div class="bloc">
             <h3 class="titre-3"><a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a></h3>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{q.data.chapo}</p>
-            <p class="mt-4 text-sm">{q.data.prixMoyenM2}</p>
+            <p class="mt-4 text-sm">{chiffresZone(q.id)?.prix ?? q.data.prixMoyenM2}</p>
           </div>
         ))}
       </div>

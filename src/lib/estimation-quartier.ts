@@ -1,5 +1,6 @@
 import { distance, memeVoie, position, ruesDuQuartier, type Point } from './quartiers';
-import { rues, typologiesDesRues, medianePonderee, type Rue, type Typologie } from './rues';
+import { rues, typologiesDesRues, medianePonderee, periode, type Rue, type Typologie } from './rues';
+import { prix, nombre } from './format';
 import type { EstimationQuartier } from '../data/estimations-quartiers';
 
 /**
@@ -41,4 +42,33 @@ export function estimationsDeRue(slug: string, pages: EstimationQuartier[]): Est
     }
   }
   return index.get(slug) ?? [];
+}
+
+/**
+ * Chiffres d'un quartier publié (/quartiers/<id>) tirés des mêmes ventes que le reste du
+ * site : médiane pondérée des voies de sa zone et écart d'une voie à l'autre. Ils remplacent
+ * à l'affichage les valeurs du frontmatter, relevées sur une période plus ancienne.
+ */
+export type ChiffresZone = { prix: string; fourchette: string; ventesAnalysees: string; mesure: MesureQuartier };
+
+export function chiffresZone(id: string): ChiffresZone | null {
+  let mesure: MesureQuartier;
+  try {
+    mesure = mesureQuartier({ slug: id, zone: id } as EstimationQuartier);
+  } catch {
+    return null;
+  }
+  const medianes = mesure.liste.map((r) => r.mediane);
+  return {
+    prix: `${prix(Math.round(mesure.mediane / 10) * 10)} le m²`,
+    fourchette: `${nombre(Math.min(...medianes))} à ${prix(Math.max(...medianes))} le m² selon la rue, ventes de ${periode}`,
+    ventesAnalysees: `${nombre(mesure.ventes)} ventes sur ${mesure.liste.length} voies mesurées, de ${periode}`,
+    mesure,
+  };
+}
+
+/** Faits d'un quartier, la ligne des ventes analysées remplacée par le décompte à jour. */
+export function faitsQuartier(id: string, faits: { titre: string; valeur: string }[]) {
+  const chiffres = chiffresZone(id);
+  return chiffres ? faits.map((f) => (/ventes/i.test(f.titre) ? { ...f, valeur: chiffres.ventesAnalysees } : f)) : faits;
 }
