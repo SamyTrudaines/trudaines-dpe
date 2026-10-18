@@ -45,7 +45,7 @@ export function faqAgence({ dans, bureau }: Pick<OptionsAgence, 'dans' | 'bureau
     },
     {
       question: 'Combien de temps pour obtenir une estimation ?',
-      reponse: "Une visite d'environ quarante-cinq minutes, puis un avis de valeur écrit remis sous 48 heures, avec les ventes comparables de votre rue. Il est gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
+      reponse: "Moins d'une minute en ligne : la fourchette, tirée des ventes signées de votre rue, s'affiche dès l'envoi de vos coordonnées. Pour l'avis de valeur écrit, une visite d'environ quarante-cinq minutes, puis le document sous 48 heures, avec les ventes comparables de votre rue. Gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
     },
     {
       question: "Où se trouve l'agence ?",
