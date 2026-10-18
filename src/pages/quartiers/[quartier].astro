@@ -68,7 +68,7 @@ const mois = dureeEnMois(periode);
 const lecture = /^(.+?€)\s*(.*)$/.exec(chiffres?.prix ?? quartier.data.prixMoyenM2);
 const prixMedian = lecture ? lecture[1] : chiffres?.prix ?? quartier.data.prixMoyenM2;
 const fourchette = chiffres?.fourchette ?? quartier.data.fourchette;
-const legendePrix = lecture ? lecture[2] : '';
+const legendePrix = chiffres ? 'le m², médiane pondérée des rues' : lecture ? lecture[2] : '';
 
 const biens = (await getCollection('biens', (b) => b.data.quartier === nom && b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive)).slice(0, 3);
 const archives = await getCollection('biens', (b) => b.data.archive);
