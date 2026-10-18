@@ -1,6 +1,7 @@
 ---
 titre: "Paris 9e : de la place d'Anvers à la rue de Bruxelles, 5 470 € d'écart au mètre carré"
 date: 2026-10-03
+dateMaj: 2026-10-18
 image: /images/panorama/prix-m2-rues-paris-9.webp
 imageAlt: "Façades haussmanniennes à balcons à garde-corps métalliques, Paris"
 chapo: "Dans le 9e, la médiane du mètre carré va de 14 040 € place d'Anvers à 8 570 € rue de Bruxelles. Les ventes signées en 2024 et 2025 situent votre rue, avec son nombre de ventes, avant de fixer un prix ou un budget."
@@ -85,6 +86,8 @@ Dans une même rue, le prix d'un bien dépend de l'étage, de la lumière, de l'
 ## Faire estimer votre bien
 
 Pour savoir où se place votre appartement entre le haut et le bas de sa rue, [demandez une estimation](/estimation) sur place.
+
+Par quartier, avec le prix de chaque rue et le prix selon la taille : [Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge), [Lorette-Martyrs](/estimation/paris-9/martyrs-lorette), [Pigalle](/estimation/paris-9/pigalle), [Saint-Georges](/estimation/paris-9/saint-georges), [Clichy-Trinité](/estimation/paris-9/clichy-trinite).
 
 Source : base DVF (demandes de valeurs foncières), ventes portant sur un seul appartement, janvier 2024 à décembre 2025, traitement Trudaines. Les surfaces sont celles du fichier (surface réelle bâtie), qui peuvent s'écarter de quelques mètres carrés de la surface Carrez.
 
