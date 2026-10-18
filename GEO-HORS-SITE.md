@@ -8,6 +8,45 @@ juillet 2026), LinkedIn apparaît dans 14,3 % des réponses de ChatGPT Search et
 une étude SE Ranking sur 129 000 domaines donne 4,6 à 6,3 citations en moyenne aux
 domaines présents sur plusieurs plateformes d'avis contre 1,8 aux absents.
 
+
+## Ce que montrent les mesures, 18 octobre 2026
+
+**Ce que ChatGPT cite quand on lui demande un agent.** Omni Eclipse, 334 réponses ChatGPT à « meilleurs agents
+immobiliers à [ville] », 197 marchés (États-Unis, Royaume-Uni, Émirats), avril et mai 2026 : sur 1 567 liens cités,
+57,6 % vont vers la fiche Google de l'agence, 40,5 % vers son site, 1,4 % vers la presse locale, 0,5 % vers les
+portails. La réponse nomme six agences en médiane. Ce que ChatGPT avance pour justifier un nom : le nombre d'avis
+(52,7 % des réponses), les années d'activité (47,6 %), le volume de ventes (45,2 %), les prix et classements (42,2 %),
+la note (40,7 %). Étude d'un éditeur d'outil, marchés étrangers, achat et non vente : un ordre de grandeur, pas une loi.
+
+**Conséquence pour Trudaines.** La fiche Google pèse plus que n'importe quelle page du site. Chaque avis qui nomme le
+quartier et l'estimation (« estimation de notre deux pièces rue Lepic ») nourrit à la fois Google, Gemini et ChatGPT.
+Le site doit, lui, afficher des faits que l'assistant peut reprendre : nombre d'avis, date de création, carte
+professionnelle, ventes signées. Ils sont déjà dans llms.txt.
+
+**Tests faits à la main le 18 octobre 2026.**
+
+| Recherche | Bing (lu par ChatGPT) | Brave (lu par Claude) |
+| --- | --- | --- |
+| trudaines immobilier | présent | présent, accueil et pages principales |
+| estimation appartement montmartre | présent en tête, page estimation Montmartre | absent des quinze premiers |
+| estimation appartement paris 9 trudaine | présent en tête, page Trudaine-Maubeuge | non testé |
+| prix m2 rue lepic | absent | absent ; MeilleursAgents, Efficity, Nestenn, L'Apporteur d'immo |
+| meilleure agence immobilière montmartre | non testé | absent ; MeilleursAgents, Barnes, Junot, Engel & Völkers, Pages Jaunes |
+| meilleure agence immobilière paris 9 | absent ; MeilleursAgents, Le Figaro | non testé |
+
+Lecture : Bing a déjà pris les pages d'estimation de quartier. Brave, qui sert Claude, ne connaît encore que la marque :
+il découvre les pages par les liens qui pointent vers elles. Sur « meilleure agence », les deux moteurs renvoient vers
+des annuaires d'agences (MeilleursAgents, Pages Jaunes) et non vers les sites des agences.
+
+**Décisions qui en découlent, par ordre.**
+1. Fiche Google : avis au fil de l'eau, texte qui nomme le quartier et l'estimation, réponse à chaque avis.
+2. Fiche Pages Jaunes complète (déjà 11 avis) : elle sort sur « meilleure agence immobilière montmartre ».
+3. Meilleurs Agents : fiche agence gratuite à revendiquer et à compléter avant toute décision d'abonnement ;
+   c'est le domaine le plus présent sur les recherches « meilleure agence » dans Bing et dans Brave.
+4. Liens entrants vers les pages d'estimation et de prix : presse, associations de quartier, partenaires
+   (notaires, syndics), chacun vers la page du quartier concerné, pas vers l'accueil.
+5. Bing Places et Apple Business Connect, mêmes données que la fiche Google.
+
 ## Reddit
 
 Compte à créer par Samy lui même, depuis son téléphone : Reddit refuse les

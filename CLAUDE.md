@@ -105,6 +105,11 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Suivi des requêtes visées : bloc « Requêtes visées » (colonnes AB à AF) de l'onglet `synthese` de la feuille
   Search Console, formules sur l'onglet `donnees`.
 
+- Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
+  chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
+- Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans
+  projet de vente avec l'agence, déduits des honoraires si la vente est finalement confiée.
+
 - Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),
   `/feeds/trovit.xml` (français) et `/feeds/trovit-<langue>.xml` (en, de, es, it, pt, zh, ar), construits par
   `src/lib/flux.ts` et `src/lib/flux-trovit.ts` depuis les biens à vendre publiés ; photos JPEG 1600 px tirées au

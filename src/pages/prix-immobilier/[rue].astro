@@ -14,6 +14,7 @@ import { evt, referencesProches, guidePertinent, dureeEnMois } from '../../lib/e
 import { site } from '../../data/site';
 import { secteurs } from '../../data/secteurs';
 import { ambianceDeVoie } from '../../data/ambiance';
+import { regardsRues, dateRegards } from '../../data/regards-rues';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { estimationsDeRue } from '../../lib/estimation-quartier';
 
@@ -136,6 +137,8 @@ const donnees = [
 
 const chapo = `${euros(rue.mediane)} le mètre carré, prix médian des appartements vendus ${nomEnPhrase} de ${periode}. ${position}`;
 const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : rue.arrondissement;
+/* Texte de l'agence propre à la rue, s'il existe : rien n'est affiché sinon. */
+const regard = regardsRues[rue.slug] ?? [];
 ---
 <Layout
   ancreEstimation={`#estimation-${rue.slug}`}
@@ -296,6 +299,16 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
           Classée {rue.rang}<sup>e</sup> sur {rue.ruesClassees} voies de {rue.arrondissement} disposant
           d'assez de ventes pour être mesurées, contre une médiane d'arrondissement de {euros(arrondissement.mediane)}.
         </p>
+
+        {regard.length > 0 && (
+          <>
+            <h2 class="titre-2 mt-14">Le regard de l'agence</h2>
+            {regard.map((p) => <p class="mt-6">{p}</p>)}
+            <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
+              <a href="/samy-santamarina" class="lien-souligne">Samy Santamarina</a>, Trudaines, {dateRegards}.
+            </p>
+          </>
+        )}
 
         {typologiesAffichees.length > 1 && (
           <>

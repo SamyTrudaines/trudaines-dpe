@@ -66,13 +66,30 @@ chiffres DVF calculés, réponse courte en tête (octobre 2026).
 | Combien vaut un deux pièces à Paris 9e ? | oui, prix par taille |
 | Quelle agence pour estimer mon appartement dans le 9e nord ? | oui, page agence Trudaine |
 
+## Les questions posées aux assistants, plus longues
+
+Depuis le 22 juillet 2026, Google propose en France ses aperçus IA et son mode IA, où les requêtes sont en moyenne
+trois fois plus longues qu'une recherche classique (Google, repris par MySweetImmo le 6 octobre 2026). Ce sont des
+phrases entières, souvent avec une adresse et une surface. Ajoutées le 18 octobre 2026.
+
+| Question | Réponse sur le site |
+| --- | --- |
+| Combien vaut mon appartement de 40 m² rue Lepic ? | oui, page de voie, prix par taille |
+| ChatGPT peut il estimer mon appartement ? | oui, /estimation et article estimer en ligne, IA ou agent |
+| Une estimation en ligne est elle fiable à Paris ? | oui, article estimer en ligne, IA ou agent |
+| Combien d'estimations demander avant de vendre ? | oui, même article |
+| L'estimation d'un agent immobilier est elle payante ? | oui, /estimation (offerte pour vendre, 300 € sans projet de vente) |
+| Quelle est la meilleure agence immobilière à Montmartre pour vendre ? | oui, page agence Montmartre ; dépend surtout de la fiche Google et des avis |
+| Je veux vendre mon trois pièces à Trudaine, quelle agence contacter ? | oui, page agence Trudaine |
+| Quels sont les prix des appartements à Montmartre, dans le 9e nord et aux Batignolles ? | oui, article Panorama du 18 octobre 2026 |
+
 ## La décision de vendre
 
 Volume moyen, intention forte. C'est là que se joue le premier rendez vous.
 
 | Question | Réponse sur le site |
 | --- | --- |
-| Faut il vendre maintenant ou attendre à Paris ? | non |
+| Faut il vendre maintenant ou attendre à Paris ? | partielle, article Panorama du 18 octobre 2026 |
 | Faut il vendre avant d'acheter ou l'inverse ? | partielle, un article existe |
 | Combien de temps faut il pour vendre un appartement à Paris ? | partielle |
 | Quels travaux faire avant de vendre, et lesquels éviter ? | oui, guide de vente |
@@ -186,4 +203,11 @@ Vendre seul ou passer par une agence à Paris ?
 Qui est Samy Santamarina ?
 Trudaines Immobilier avis
 Quelle agence publie ses prix au m2 rue par rue à Paris ?
+Combien vaut mon appartement de 40 m² rue Lepic ?
+ChatGPT peut il estimer mon appartement ?
+Une estimation en ligne est elle fiable à Paris ?
+Combien d'estimations demander avant de vendre ?
+L'estimation d'un agent immobilier est elle payante ?
+Quelle est la meilleure agence immobilière à Montmartre pour vendre ?
+Je veux vendre mon trois pièces à Trudaine, quelle agence contacter ?
 ```
