@@ -11,6 +11,7 @@ import { avisCommentés, agrégatAvis, trierAvis } from '../../../lib/avis';
 import { secteurs } from '../../../data/secteurs';
 import { estimationsQuartiers, type EstimationQuartier } from '../../../data/estimations-quartiers';
 import { mesureQuartier } from '../../../lib/estimation-quartier';
+import { agencesLocales } from '../../../data/agences-locales';
 import { periode, libellePieces, millesime, arrondissements } from '../../../lib/rues';
 import { prix, nombre, dateFr } from '../../../lib/format';
 import { getCollection } from 'astro:content';
@@ -105,6 +106,8 @@ const faq = [
 
 const avis = trierAvis((await avisCommentés()).filter((a) => !a.data.secteur || a.data.secteur === secteur.slug)).slice(0, 3);
 const agregat = await agrégatAvis();
+/* La page agence du même lieu, quand elle existe : même périmètre, autre intention de recherche. */
+const agence = agencesLocales.find((l) => l.secteur === page.secteur && (l.slug === page.slug || (page.zone && (l.quartier ?? l.quartiersLies[0]) === page.zone)));
 /* Les quartiers du même arrondissement d'abord : ce sont ceux que le vendeur compare. */
 const voisines = estimationsQuartiers
   .filter((q) => q.slug !== page.slug)
@@ -245,6 +248,11 @@ const donnees = [
         <a href={page.lien.href} class="bloc no-underline">
           <span class="titre-3 block">{page.lien.libelle}</span>
         </a>
+        {agence && (
+          <a href={`/agence-immobiliere-${agence.slug}`} class="bloc no-underline">
+            <span class="titre-3 block">Agence immobilière {agence.nom}</span>
+          </a>
+        )}
         {voisines.map((q) => (
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="bloc no-underline">
             <span class="titre-3 block">Estimation {q.nom}</span>
