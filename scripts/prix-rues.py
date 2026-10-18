@@ -31,7 +31,7 @@ from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
 VENTES_MINIMUM = 8
-ANNEES = ('2024', '2025')
+ANNEES = ('2024', '2025', '2026')
 
 # scripts/prix-dvf.py porte un tiret : il se charge par son chemin.
 _spec = importlib.util.spec_from_file_location('prix_dvf', RACINE / 'scripts' / 'prix-dvf.py')
@@ -152,6 +152,43 @@ def quantile(valeurs, rang):
     return prix_dvf.quantile(valeurs, rang)
 
 
+def dans_polygone(lon, lat, anneau):
+    """Test du rayon : le point est-il à l'intérieur de l'anneau (liste de [lon, lat]) ?"""
+    dedans = False
+    j = len(anneau) - 1
+    for i in range(len(anneau)):
+        xi, yi = anneau[i]
+        xj, yj = anneau[j]
+        if (yi > lat) != (yj > lat) and lon < (xj - xi) * (lat - yi) / (yj - yi) + xi:
+            dedans = not dedans
+        j = i
+    return dedans
+
+
+def quartier_administratif(lon, lat, quartiers):
+    for q in quartiers:
+        geometrie = q['geometry']
+        polygones = geometrie['coordinates'] if geometrie['type'] == 'MultiPolygon' else [geometrie['coordinates']]
+        for polygone in polygones:
+            if dans_polygone(lon, lat, polygone[0]) and not any(dans_polygone(lon, lat, trou) for trou in polygone[1:]):
+                return q['properties']
+    return None
+
+
+
+def date_de_parution(annee):
+    """Date de parution du fichier d'une année au catalogue data.gouv.fr, vide si injoignable."""
+    try:
+        catalogue = json.loads(prix_dvf.lire(prix_dvf.DATASET, essais=1))
+    except (SystemExit, Exception):
+        return ''
+    for ressource in catalogue.get('resources', []):
+        titre = ressource.get('title', '')
+        if ressource.get('format') == 'txt.zip' and ''.join(c for c in titre if c.isdigit())[-4:] == annee:
+            return ressource.get('last_modified', '')[:10]
+    return ''
+
+
 def main():
     minimum = VENTES_MINIMUM
     if '--minimum' in sys.argv:
@@ -165,7 +202,7 @@ def main():
         # injoignable, et rien n'est retéléchargé sans raison.
         cache = prix_dvf.CACHE / f'ValeursFoncieres-{annee}.txt'
         if cache.exists():
-            chemin, publication = cache, 'millésime en cache'
+            chemin, publication = cache, date_de_parution(annee)
         else:
             chemin, _, publication = prix_dvf.telecharger(annee)
         publications.append(publication)
@@ -181,7 +218,8 @@ def main():
     graphies = defaultdict(Counter)
     for v in ventes:
         nom = v['rue'].strip()
-        if not nom or VOIES_ECARTEES.match(nom):
+        # « VC » : voie communale codée par la base foncière, nom illisible pour une page.
+        if not nom or VOIES_ECARTEES.match(nom) or re.match(r'^vc\s', nom, re.I):
             continue
         joli = capitaliser(nom)
         cle = (v['code_postal'], ardoise(joli))
@@ -254,11 +292,46 @@ def main():
             rue['rang'] = rang
             rue['ruesClassees'] = len(lot)
 
+    # Prix par quartier administratif : les ventes de chaque voie géocodée sont
+    # rattachées au quartier qui contient le centroïde de la voie (polygones de la
+    # Ville de Paris dans scripts/data). Une voie à cheval sur deux quartiers compte
+    # entièrement dans celui de son centroïde ; les voies trop peu vendues pour être
+    # géocodées ne comptent pas.
+    geo = json.loads((RACINE / 'src' / 'data' / 'rues-geo.json').read_text(encoding='utf-8'))['rues']
+    polygones = json.loads((RACINE / 'scripts' / 'data' / 'quartiers-administratifs.geojson').read_text(encoding='utf-8'))['features']
+    par_quartier = defaultdict(list)
+    infos_quartier = {}
+    for (code_postal, slug), lot in par_rue.items():
+        point = geo.get(f"{slug}-{code_postal[-2:]}")
+        if not point:
+            continue
+        q = quartier_administratif(point['lon'], point['lat'], polygones)
+        if not q or f"750{q['arrondissement']:02d}" != code_postal:
+            continue
+        par_quartier[q['code']].extend(v['prix_m2'] for v in lot)
+        infos_quartier[q['code']] = q
+    quartiers = {}
+    for code, prix in sorted(par_quartier.items()):
+        if len(prix) < 30:
+            continue
+        prix = sorted(prix)
+        q = infos_quartier[code]
+        quartiers[code] = {
+            'nom': q['nom'],
+            'codePostal': f"750{q['arrondissement']:02d}",
+            'ventes': len(prix),
+            'mediane': round(quantile(prix, 0.5) / 10) * 10,
+            'd1': round(quantile(prix, 0.1) / 10) * 10,
+            'd9': round(quantile(prix, 0.9) / 10) * 10,
+        }
+
     sortie = {
-        'periode': 'janvier 2024 à décembre 2025',
-        'millesime': max(publications),
+        'periode': 'janvier 2024 à juin 2026',
+        # Date de parution la plus récente ; un millésime lu en cache n'en porte pas.
+        'millesime': max((p for p in publications if p[:1].isdigit()), default=''),
         'ventesMinimum': minimum,
         'arrondissements': arrondissements,
+        'quartiersAdministratifs': quartiers,
         'rues': sorted(rues, key=lambda r: (r['codePostal'], -r['mediane'])),
     }
 

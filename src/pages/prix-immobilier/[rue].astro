@@ -133,7 +133,7 @@ const surtitre = quartier ? `${rue.arrondissement} · ${quartier.data.nom}` : ru
   ancreEstimation={`#estimation-${rue.slug}`}
   evtEstimation={evt('rue', 'estimer', contexte)}
   titre={`Prix au m² ${rue.nom}, ${rue.arrondissement} | Trudaines`}
-  description={`${rue.nom}, ${rue.arrondissement} : ${euros(rue.mediane)} le m² médian sur ${rue.ventes} ventes signées de 2024 et 2025. Fourchette, typologies, méthode.`}
+  description={`${rue.nom}, ${rue.arrondissement} : ${euros(rue.mediane)} le m² médian sur ${rue.ventes} ventes signées de 2024 à mi-2026. Fourchette, typologies, méthode.`}
   filAriane={quartier
     ? [{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom, href: `/quartiers/${quartier.id}` }, { nom: rue.nom }]
     : [{ nom: 'Prix par rue', href: '/prix-immobilier' }, { nom: rue.nom }]}

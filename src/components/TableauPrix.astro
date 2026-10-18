@@ -1,7 +1,21 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-interface Props { quartiers: CollectionEntry<'quartiers'>[]; titre?: string; }
-const { quartiers, titre = 'Prix par quartier' } = Astro.props;
+import { quartiersAdministratifs, periode } from '../lib/rues';
+import { nombre } from '../lib/format';
+import notaires from '../data/notaires.json';
+/** `codePostal` : ajoute les quartiers administratifs de l'arrondissement, calculés sur les ventes DVF. */
+interface Props { quartiers: CollectionEntry<'quartiers'>[]; titre?: string; codePostal?: string }
+const { quartiers, titre = 'Prix par quartier', codePostal } = Astro.props;
+const administratifs = codePostal
+  ? Object.values(quartiersAdministratifs).filter((q) => q.codePostal === codePostal).sort((a, b) => b.mediane - a.mediane)
+  : [];
+/* Rapprochement des noms DVF (Ville de Paris) et Notaires : sans accent, et un nom qui diffère. */
+const cleNom = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const ALIAS: Record<string, string> = { 'plaine-de-monceaux': 'plaine-monceau' };
+const valeursNotaires = notaires.quartiers.valeurs as Record<string, { evolution1an: string }>;
+const evolution = (nom: string) => valeursNotaires[ALIAS[cleNom(nom)] ?? cleNom(nom)]?.evolution1an ?? '';
+const notairesArr = codePostal ? (notaires.arrondissements.valeurs as Record<string, { prixM2T2_2026: number; evolution1anT4_2025: string }>)[codePostal] : undefined;
+const numero = codePostal ? `${Number(codePostal.slice(-2))}e` : '';
 ---
 <section class="section filet" aria-labelledby="prix-quartiers">
   <div class="conteneur">
@@ -16,7 +30,8 @@ const { quartiers, titre = 'Prix par quartier' } = Astro.props;
           <tr class="border-b border-[color:var(--color-encre)]">
             <th scope="col" class="py-4 pr-6 font-semibold">Quartier</th>
             <th scope="col" class="py-4 pr-6 font-semibold">Prix médian au m²</th>
-            <th scope="col" class="py-4 font-semibold">Fourchette observée</th>
+            <th scope="col" class="py-4 pr-6 font-semibold">Fourchette observée</th>
+            {administratifs.length > 0 && <th scope="col" class="py-4 font-semibold">Sur un an, Notaires</th>}
           </tr>
         </thead>
         <tbody>
@@ -26,11 +41,45 @@ const { quartiers, titre = 'Prix par quartier' } = Astro.props;
                 <a href={`/quartiers/${q.id}`} class="no-underline hover:underline">{q.data.nom}</a>
               </th>
               <td class="py-4 pr-6">{q.data.prixMoyenM2}</td>
-              <td class="py-4 text-[color:var(--color-ardoise)]">{q.data.fourchette}</td>
+              <td class="py-4 pr-6 text-[color:var(--color-ardoise)]">{q.data.fourchette}</td>
+              {administratifs.length > 0 && <td class="py-4" />}
+            </tr>
+          ))}
+          {administratifs.map((q) => (
+            <tr class="border-b border-[color:var(--color-trait)]">
+              <th scope="row" class="py-4 pr-6 font-medium">{q.nom}</th>
+              <td class="py-4 pr-6">{nombre(q.mediane)} € le m²</td>
+              <td class="py-4 pr-6 text-[color:var(--color-ardoise)]">
+                {nombre(q.d1)} à {nombre(q.d9)} € le m², sur {nombre(q.ventes)} ventes
+              </td>
+              <td class="py-4 whitespace-nowrap">{evolution(q.nom) || 'non publié'}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+    {administratifs.length > 0 && (
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+        Quartiers administratifs de la Ville de Paris : ventes d'appartements signées de {periode} (DVF), fourchette du
+        premier au neuvième décile du prix au mètre carré. Évolution sur un an à {notaires.quartiers.periode} :{' '}
+        <a href={notaires.quartiers.url} class="lien-souligne" rel="noopener">Notaires du Grand Paris</a>.
+      </p>
+    )}
+    {notairesArr && (
+      <div class="mt-10 border-t border-[color:var(--color-trait)] pt-6">
+        <p class="surtitre">Tendance du marché</p>
+        <p class="mt-3 max-w-2xl">
+          Selon les Notaires du Grand Paris, l'appartement ancien se vend {nombre(notairesArr.prixM2T2_2026)} € le m² dans le{' '}
+          {numero} au {notaires.arrondissements.periodePrix}, {notairesArr.evolution1anT4_2025} sur un an à{' '}
+          {notaires.arrondissements.periodeEvolution}. Dans tout Paris : {nombre(notaires.paris.prixM2)} € le m²,{' '}
+          {notaires.paris.evolution1an} sur un an au {notaires.paris.periode}.
+        </p>
+        <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
+          Prix standardisés et indice Notaires-INSEE, différents des médianes DVF ci-dessus. Sources :{' '}
+          <a href={notaires.arrondissements.urlPrix} class="lien-souligne" rel="noopener">historique par arrondissement</a>,{' '}
+          <a href={notaires.paris.url} class="lien-souligne" rel="noopener">note du {notaires.paris.publication}</a>.
+        </p>
+      </div>
+    )}
   </div>
 </section>
