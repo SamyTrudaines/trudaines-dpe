@@ -46,7 +46,8 @@
           });
           return;
         }
-        if (courante === 0 && form.dataset.evenementEtape) evt(form.dataset.evenementEtape, {});
+        /* Une étape franchie, un événement : estimation_etape1, estimation_etape2... mesurent où le tunnel perd ses visiteurs. */
+        if (form.dataset.evenementEtape) evt(form.dataset.evenementEtape.replace(/\d+$/, '') + (courante + 1), {});
         afficher(Math.min(courante + 1, etapes.length - 1));
       }
       if (precedent) {

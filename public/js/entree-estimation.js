@@ -1,6 +1,6 @@
 /*
  * Entrée d'estimation en tête de page : reporte l'adresse dans le formulaire
- * d'estimation de la page, l'affiche et place le curseur sur la surface.
+ * d'estimation de la page, passe à l'étape de la surface et y place le curseur.
  * Le lien « être rappelé » ouvre directement la voie du rappel.
  */
 (function () {
@@ -21,6 +21,10 @@
       var adresse = entree.querySelector('input').value.trim();
       var champ = cible.querySelector('[name="adresse"]');
       if (champ && adresse) champ.value = adresse;
+      /* L'adresse est déjà donnée : le formulaire passe seul à l'étape suivante, celle de la surface. */
+      var premiere = cible.querySelector('[data-etape]');
+      var suivant = premiere && premiere.querySelector('[data-suivant]');
+      if (adresse && premiere && !premiere.hidden && suivant) suivant.click();
       (bloc || cible).scrollIntoView({ behavior: 'smooth', block: 'start' });
       var suite = cible.querySelector(adresse ? '[name="surface"]' : '[name="adresse"]');
       if (suite) setTimeout(function () { suite.focus({ preventScroll: true }); }, 400);

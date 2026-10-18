@@ -1,4 +1,6 @@
 ---
+import { preuveAvis } from '../lib/avis';
+
 interface Props {
   secteur?: string;
   quartier?: string;
@@ -10,6 +12,8 @@ interface Props {
 }
 const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
 const listeId = `adresses-${identifiant}`;
+/* La preuve sociale sous la barre d'étapes : le chiffre vient des avis publiés, jamais écrit à la main. */
+const preuve = await preuveAvis();
 ---
 <div class="border border-[color:var(--color-trait)] bg-white p-6 md:p-10" data-choix-estimation>
 {/*
@@ -46,14 +50,19 @@ const listeId = `adresses-${identifiant}`;
 
   <div data-corps>
     <div class="mb-8">
-      <p class="surtitre" data-compteur>Étape 1 sur 2</p>
+      <p class="surtitre" data-compteur>Étape 1 sur 4</p>
       <div class="mt-3 h-[2px] w-full bg-[color:var(--color-trait)]" role="presentation">
-        <div class="h-[2px] bg-[color:var(--color-nuit)] transition-[width] duration-200" style="width:50%" data-barre></div>
+        <div class="h-[2px] bg-[color:var(--color-nuit)] transition-[width] duration-200" style="width:25%" data-barre></div>
       </div>
+      <p class="mt-3 text-xs text-[color:var(--color-ardoise)]">Gratuit, moins d'une minute.{preuve && ` ${preuve}`}</p>
     </div>
 
+    {/*
+      Une question par écran, la plus simple d'abord : l'adresse. Le visiteur voit ensuite combien
+      de ventes signées fondent son estimation, puis donne son contact pour la recevoir.
+    */}
     <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-6">Votre bien</legend>
+      <legend class="titre-3 mb-6">Où se trouve votre bien ?</legend>
       <div class="grid gap-6">
         <div>
           <label class="etiquette" for={`adresse-${identifiant}`}>Adresse du bien</label>
@@ -70,120 +79,138 @@ const listeId = `adresses-${identifiant}`;
           />
           <datalist id={listeId}></datalist>
           <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">
-            Adresse utilisée uniquement pour l'estimation. Elle n'est jamais publiée.
+            Utilisée uniquement pour retrouver les ventes signées de votre rue. Jamais publiée.
           </p>
         </div>
-
-        <div class="grid gap-6 sm:grid-cols-2">
-          <div>
-            <label class="etiquette" for={`type-${identifiant}`}>Type de bien</label>
-            <select class="champ" id={`type-${identifiant}`} name="type" required>
-              <option value="Appartement">Appartement</option>
-              <option value="Maison">Maison</option>
-              <option value="Immeuble">Immeuble</option>
-              <option value="Local ou autre">Local ou autre</option>
-            </select>
-          </div>
-          <div>
-            <label class="etiquette" for={`surface-${identifiant}`}>Surface en m²</label>
-            <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="5" max="1000" required inputmode="numeric" />
-          </div>
-          <div>
-            <label class="etiquette" for={`pieces-${identifiant}`}>Nombre de pièces</label>
-            <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
-              <option value="" disabled selected>Choisir</option>
-              <option value="1">1 pièce</option>
-              <option value="2">2 pièces</option>
-              <option value="3">3 pièces</option>
-              <option value="4">4 pièces</option>
-              <option value="5">5 pièces</option>
-              <option value="6 et plus">6 pièces et plus</option>
-            </select>
-          </div>
-          <div>
-            <label class="etiquette" for={`chambres-${identifiant}`}>Chambres</label>
-            <select class="champ" id={`chambres-${identifiant}`} name="chambres" required>
-              <option value="" disabled selected>Choisir</option>
-              <option value="0">Aucune, studio</option>
-              <option value="1">1 chambre</option>
-              <option value="2">2 chambres</option>
-              <option value="3">3 chambres</option>
-              <option value="4">4 chambres</option>
-              <option value="5 et plus">5 chambres et plus</option>
-            </select>
-          </div>
-          <div>
-            <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
-            <select class="champ" id={`etage-${identifiant}`} name="etage" required>
-              <option value="" disabled selected>Choisir</option>
-              <option value="Rez-de-chaussée">Rez-de-chaussée</option>
-              <option value="1er">1er étage</option>
-              <option value="2e à 4e">2e à 4e étage</option>
-              <option value="5e et plus">5e étage et plus</option>
-              <option value="Dernier étage">Dernier étage</option>
-            </select>
-          </div>
-          <div>
-            <label class="etiquette" for={`ascenseur-${identifiant}`}>Ascenseur</label>
-            <select class="champ" id={`ascenseur-${identifiant}`} name="ascenseur" required>
-              <option value="" disabled selected>Choisir</option>
-              <option value="Oui">Oui</option>
-              <option value="Non">Non</option>
-            </select>
-          </div>
-        </div>
-
         <div>
-          <label class="etiquette" for={`horizon-${identifiant}`}>Horizon de vente</label>
-          <select class="champ" id={`horizon-${identifiant}`} name="horizon" required>
-            <option value="Moins de 3 mois">Moins de 3 mois</option>
-            <option value="3 à 6 mois">3 à 6 mois</option>
-            <option value="Plus tard">Plus tard, je prépare mon projet</option>
+          <label class="etiquette" for={`type-${identifiant}`}>Type de bien</label>
+          <select class="champ" id={`type-${identifiant}`} name="type" required>
+            <option value="Appartement">Appartement</option>
+            <option value="Maison">Maison</option>
+            <option value="Immeuble">Immeuble</option>
+            <option value="Local ou autre">Local ou autre</option>
           </select>
         </div>
       </div>
-      <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Continuer</button>
+      <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Commencer l'estimation</button>
     </fieldset>
 
     <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-6">Vos coordonnées</legend>
+      <legend class="titre-3 mb-6">Sa surface et ses pièces</legend>
+      {/* Rempli après l'adresse : le nombre de ventes signées sur lesquelles l'estimation s'appuie. */}
+      <p class="mb-6 border-l-2 border-[color:var(--color-or)] pl-4 text-sm" data-apercu-ventes hidden></p>
+      <div class="grid gap-6 sm:grid-cols-3">
+        <div>
+          <label class="etiquette" for={`surface-${identifiant}`}>Surface en m²</label>
+          <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="5" max="1000" required inputmode="numeric" />
+        </div>
+        <div>
+          <label class="etiquette" for={`pieces-${identifiant}`}>Pièces</label>
+          <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
+            <option value="" disabled selected>Choisir</option>
+            <option value="1">1 pièce</option>
+            <option value="2">2 pièces</option>
+            <option value="3">3 pièces</option>
+            <option value="4">4 pièces</option>
+            <option value="5">5 pièces</option>
+            <option value="6 et plus">6 pièces et plus</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for={`chambres-${identifiant}`}>Chambres</label>
+          <select class="champ" id={`chambres-${identifiant}`} name="chambres" required>
+            <option value="" disabled selected>Choisir</option>
+            <option value="0">Aucune, studio</option>
+            <option value="1">1 chambre</option>
+            <option value="2">2 chambres</option>
+            <option value="3">3 chambres</option>
+            <option value="4">4 chambres</option>
+            <option value="5 et plus">5 chambres et plus</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Continuer</button>
+      </div>
+    </fieldset>
 
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3 mb-6">Étage et ascenseur</legend>
+      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">Ce sont eux qui placent votre bien en haut ou en bas des prix de la rue.</p>
       <div class="grid gap-6 sm:grid-cols-2">
         <div>
+          <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
+          <select class="champ" id={`etage-${identifiant}`} name="etage" required>
+            <option value="" disabled selected>Choisir</option>
+            <option value="Rez-de-chaussée">Rez-de-chaussée</option>
+            <option value="1er">1er étage</option>
+            <option value="2e à 4e">2e à 4e étage</option>
+            <option value="5e et plus">5e étage et plus</option>
+            <option value="Dernier étage">Dernier étage</option>
+          </select>
+        </div>
+        <div>
+          <label class="etiquette" for={`ascenseur-${identifiant}`}>Ascenseur</label>
+          <select class="champ" id={`ascenseur-${identifiant}`} name="ascenseur" required>
+            <option value="" disabled selected>Choisir</option>
+            <option value="Oui">Oui</option>
+            <option value="Non">Non</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="etiquette" for={`horizon-${identifiant}`}>Votre projet</label>
+          <select class="champ" id={`horizon-${identifiant}`} name="horizon" required>
+            <option value="Moins de 3 mois">Vendre dans les 3 mois</option>
+            <option value="3 à 6 mois">Vendre dans 3 à 6 mois</option>
+            <option value="Plus tard">Connaître la valeur, vendre plus tard</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Calculer mon estimation</button>
+      </div>
+    </fieldset>
+
+    <fieldset data-etape class="border-0 p-0">
+      <legend class="titre-3 mb-2">Votre estimation est prête</legend>
+      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
+        Indiquez où la recevoir : votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées de votre rue.
+      </p>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div class="sm:col-span-2">
           <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
           <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
         </div>
         <div>
-          <label class="etiquette" for={`nom-${identifiant}`}>Nom, facultatif</label>
-          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" />
-        </div>
-        <div>
           <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
-          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" required />
+          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" inputmode="email" required />
         </div>
         <div>
           <label class="etiquette" for={`telephone-${identifiant}`}>Téléphone</label>
-          <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" required />
+          <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" inputmode="tel" required />
         </div>
       </div>
-      <div class="mt-6">
-        <label class="etiquette" for={`message-${identifiant}`}>Précisions utiles, facultatif</label>
-        <textarea class="champ" id={`message-${identifiant}`} name="message" rows="3" placeholder="Travaux récents, vue, exposition, contexte de la vente"></textarea>
-      </div>
+      <details class="mt-6 text-sm">
+        <summary class="cursor-pointer text-[color:var(--color-ardoise)]">Ajouter une précision, facultatif</summary>
+        <label class="sr-only" for={`message-${identifiant}`}>Précisions utiles</label>
+        <textarea class="champ mt-3" id={`message-${identifiant}`} name="message" rows="3" placeholder="Travaux récents, vue, exposition, contexte de la vente"></textarea>
+      </details>
       <div class="mt-6 flex items-start gap-3">
-        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
+        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" value="oui" />
         <label class="text-sm text-[color:var(--color-ardoise)]" for={`consentement-${identifiant}`}>
-          J'accepte d'être recontacté par Trudaines au sujet de ma demande. Mes données ne sont ni vendues ni cédées.{' '}
-          <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+          Recevoir aussi, deux fois par an, les prix signés de mon quartier. Facultatif.
         </label>
       </div>
-      <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
-        Votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées de votre rue. Samy Santamarina
-        vous rappelle sous 24 heures ouvrées pour l'avis de valeur écrit, gratuit et sans engagement.
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+        Vos coordonnées servent seulement à répondre à votre demande : Samy Santamarina vous rappelle sous 24 heures
+        ouvrées pour l'avis de valeur écrit, gratuit et sans engagement. Elles ne sont ni vendues ni cédées.{' '}
+        <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="submit" class="bouton">Voir ma fourchette de prix</button>
+        <button type="submit" class="bouton">Voir mon estimation</button>
       </div>
     </fieldset>
 
@@ -192,7 +219,7 @@ const listeId = `adresses-${identifiant}`;
 
   <div data-confirmation hidden class="py-4">
     <p class="surtitre">Demande envoyée</p>
-    <h2 class="titre-3 mt-4">Merci, votre demande est enregistrée.</h2>
+    <p class="titre-3 mt-4" role="status">Merci, votre demande est enregistrée.</p>
     {/* Rempli dans le navigateur à l'envoi : la fourchette n'apparaît qu'une fois le contact reçu. */}
     <div class="mt-6 border-l-2 border-[color:var(--color-or)] pl-4" data-fourchette-rue hidden></div>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
@@ -255,7 +282,7 @@ const listeId = `adresses-${identifiant}`;
   </div>
   <div data-confirmation hidden class="py-4">
     <p class="surtitre">Demande envoyée</p>
-    <h2 class="titre-3 mt-4">Merci, Samy vous rappelle.</h2>
+    <p class="titre-3 mt-4" role="status">Merci, Samy vous rappelle.</p>
     <p class="mt-4 text-[color:var(--color-ardoise)]">En jours ouvrés, au moment que vous avez choisi. Si c'est urgent : 06 20 46 59 12.</p>
   </div>
 </form>
