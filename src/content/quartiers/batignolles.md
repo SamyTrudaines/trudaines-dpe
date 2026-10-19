@@ -23,7 +23,7 @@ faits:
     valeur: De 9 860 € le m² rue des Moines à 11 060 € boulevard des Batignolles, en médiane
 ---
 
-## Un village qui a changé d'échelle sans changer d'esprit
+## Le marché des Batignolles
 
 Les Batignolles restent un bourg dans Paris : le square dessiné sous le Second Empire, l'église Sainte-Marie sur sa place, le marché bio du samedi sur le boulevard, les terrasses de la place du Docteur Félix Lobligeois. C'est cette vie de quartier qui fait venir les acheteurs, et c'est elle qui les retient : on achète ici pour y rester, ce qui raréfie l'offre.
 

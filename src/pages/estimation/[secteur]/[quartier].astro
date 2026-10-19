@@ -81,7 +81,7 @@ const questionsRues = (page.ruesQuestions ?? [])
   .filter((r): r is NonNullable<typeof r> => Boolean(r))
   .map((r) => ({
     question: `Quel est le prix au mètre carré ${enPhrase(r.nom)}, ${r.arrondissement} ?`,
-    reponse: `${r.nom} (${r.arrondissement}) : ${prix(r.mediane)} le m² médian sur ${nombre(r.ventes)} ventes d'appartements signées de ${periode}, contre ${medianeArrondie} en médiane pondérée ${page.dans}. Votre étage, votre ascenseur et l'état de l'immeuble placent votre appartement au-dessus ou en dessous.`,
+    reponse: `${prix(r.mediane)} le m² en médiane ${enPhrase(r.nom)}, sur ${nombre(r.ventes)} ventes d'appartements signées de ${periode}, contre ${medianeArrondie} ${page.dans}. Huit ventes sur dix s'y sont faites entre ${prix(r.d1)} et ${prix(r.d9)} le m².`,
   }));
 
 const faq = [
@@ -194,7 +194,7 @@ const donnees = [
       <h2 id="methode" class="titre-2">Ce qui fait le prix {page.dans}</h2>
       <dl class="mt-8 grid gap-6 sm:grid-cols-2">
         {chiffresCles.map((c) => (
-          <div class="flex flex-col border-t border-[color:var(--color-encre)] pt-4">
+          <div class="flex flex-col border-t border-[color:var(--color-trait)] pt-4">
             <dt class="order-2 mt-2 text-sm text-[color:var(--color-ardoise)]">{c.libelle}</dt>
             <dd class="order-1 titre-3">{c.valeur}</dd>
           </div>

@@ -33,7 +33,7 @@ Ce guide ne contient aucune estimation. Il contient des ventes signées, devant 
 
 Source unique : le fichier des demandes de valeurs foncières publié par la direction générale des finances publiques. Millésime du 5 avril 2026, le dernier disponible à la date de ce guide, qui couvre les ventes de janvier à décembre 2025.
 
-Une réserve à connaître avant d'aller plus loin : ce fichier mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez inscrite dans votre acte. Les prix au mètre carré ci dessous s'entendent avec cette réserve.
+Une réserve à connaître avant d'aller plus loin : ce fichier mesure la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez inscrite dans votre acte. Les prix au mètre carré ci-dessous s'entendent avec cette réserve.
 
 ## Les prix constatés par quartier
 
@@ -112,13 +112,13 @@ Une lecture possible, et nous la donnons comme une lecture et non comme une dém
 ```encadre
 {
   "titre": "Conséquence pour un vendeur",
-  "texte": "Si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface que l'on vous annoncera peut être fausse. Demandez les ventes comparables, pas la règle générale."
+  "texte": "Si vous détenez un grand appartement de caractère dans le 9e nord, la décote de surface que l'on vous annoncera peut être fausse. Demandez les ventes comparables de votre rue."
 }
 ```
 
 ## Pourquoi une médiane vaut mieux qu'une moyenne
 
-La médiane est le prix qui coupe le marché en deux : la moitié des ventes s'est faite en dessous, la moitié au dessus. La moyenne, elle, se déforme dès qu'une vente exceptionnelle entre dans l'échantillon. Un hôtel particulier vendu 6 millions dans une rue de trente transactions tire la moyenne vers le haut sans rien dire du marché réel.
+La médiane est le prix qui coupe le marché en deux : la moitié des ventes s'est faite en dessous, la moitié au-dessus. La moyenne, elle, se déforme dès qu'une vente exceptionnelle entre dans l'échantillon. Un hôtel particulier vendu 6 millions dans une rue de trente transactions tire la moyenne vers le haut sans rien dire du marché réel.
 
 Les portails d'annonces et les estimateurs en ligne publient presque toujours des moyennes, parce qu'elles sont plus faciles à calculer et souvent plus flatteuses.
 
@@ -126,7 +126,7 @@ Les portails d'annonces et les estimateurs en ligne publient presque toujours de
 
 ## Ce que mesure l'écart entre le premier et le neuvième décile
 
-Le premier décile est le prix en dessous duquel se situent les dix pour cent de ventes les moins chères. Le neuvième décile, celui au dessus duquel se situent les dix pour cent les plus chères. Entre les deux, quatre ventes sur cinq.
+Le premier décile est le prix en dessous duquel se situent les dix pour cent de ventes les moins chères. Le neuvième décile, celui au-dessus duquel se situent les dix pour cent les plus chères. Entre les deux, quatre ventes sur cinq.
 
 ```barres
 {
@@ -163,7 +163,7 @@ Dans cet ordre, et pas dans un autre.
 
 1. **Situez votre quartier**, pas votre arrondissement. Prenez la médiane du quartier du graphique de la section 01.
 2. **Situez votre typologie.** Un trois pièces et un studio ne se lisent pas sur la même ligne.
-3. **Placez vous dans l'étendue, pas sur la médiane.** La médiane est le milieu, pas votre prix. Un rez de chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile. Un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième.
+3. **Placez vous dans l'étendue, pas sur la médiane.** La médiane est le milieu, pas votre prix. Un rez-de-chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile. Un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième.
 4. **Retranchez ce qui se voit.** Travaux votés en assemblée, procédure en cours, absence de cave, servitude. Tout ce que l'acheteur découvre tard se paie cher, et se négocie deux fois.
 5. **Demandez les comparables.** Cinq à dix ventes signées dans votre rue ou dans votre immeuble sur les douze derniers mois valent mieux que n'importe quelle médiane de quartier.
 

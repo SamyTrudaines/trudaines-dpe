@@ -23,11 +23,11 @@ Le prix au mètre carré d'une voie est la médiane de ses ventes d'appartements
 
 Sur les 78 voies classées du 9e, 38 sont à moins de 4,5 % de la médiane de l'arrondissement, près d'une sur deux. Parmi les dix voies où l'on a vendu au moins 50 appartements, de la [rue des Martyrs](/prix-immobilier/rue-des-martyrs-09) (11 190 €, 64 ventes) à la [rue de la Tour d'Auvergne](/prix-immobilier/rue-de-la-tour-d-auvergne-09) (10 000 €, 51 ventes), l'écart n'est que de 1 190 €. Les grands écarts se trouvent aux extrémités du classement, souvent sur peu de ventes. La place d'Anvers repose sur 9 ventes, avec une étendue de 9 200 € à 22 330 € entre le premier et le neuvième décile : sa médiane se lit avec prudence.
 
-## Trudaine et la place d'Anvers : le nord-est
+## Les prix autour de Trudaine et de la place d'Anvers
 
 Le nord-est du 9e compte la voie la plus chère : la place d'Anvers, au pied de la butte Montmartre, à 14 040 €. L'[avenue Trudaine](/prix-immobilier/avenue-trudaine-09), voisine, ressort à 12 290 € sur 30 ventes, pour une surface médiane de 50 m² et un prix de vente médian de 498 000 €. Le [boulevard de Rochechouart](/prix-immobilier/boulevard-de-rochechouart-09), à deux pas, est inscrit sous deux noms dans la base, et les deux séries de ventes ne sont pas additionnées : 8 730 € sur 11 ventes, et 10 190 € sur 18 ventes sous le nom de [boulevard Marguerite de Rochechouart](/prix-immobilier/boulevard-marguerite-de-rochechouart-09). Dans les deux cas, il reste en dessous de l'avenue, de 3 560 € et de 2 100 €. La [rue Saint-Georges](/prix-immobilier/rue-saint-georges-09), plus au sud-ouest, ressort à 12 170 €, soit 120 € de moins que l'avenue Trudaine. Ici, la proximité ne garantit pas le même prix. Voyez aussi le quartier [Trudaine Maubeuge](/quartiers/trudaine-maubeuge).
 
-## Saint-Georges et Notre-Dame-de-Lorette : le centre
+## Les prix à Saint-Georges et à Notre-Dame-de-Lorette
 
 Autour de la place Saint-Georges, desservie par la station du même nom (ligne 12), la [rue Manuel](/prix-immobilier/rue-manuel-09) est à 12 280 € sur 22 ventes, la rue Saint-Georges à 12 170 € sur 16 ventes et la [rue de la Rochefoucauld](/prix-immobilier/rue-de-la-rochefoucauld-09) à 11 500 € sur 23 ventes. La [rue Notre-Dame de Lorette](/prix-immobilier/rue-notre-dame-de-lorette-09), voisine de l'église du même nom, est à 10 900 € sur 39 ventes. La rue des Martyrs figure dans les deux arrondissements : 11 190 € sur 64 ventes pour les adresses du 9e, 11 820 € sur 17 ventes pour celles du [18e](/prix-immobilier/rue-des-martyrs-18). Voyez aussi le quartier [Martyrs Lorette](/quartiers/martyrs-lorette).
 

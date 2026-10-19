@@ -18,15 +18,15 @@ essentiel:
   - "L'état daté demandé au syndic est à la charge du vendeur et ses honoraires sont plafonnés à 380 € TTC (décret du 21 février 2020)."
   - "Les procès-verbaux des trois dernières assemblées générales sont remis à l'acheteur avant la vente : il lira les travaux votés, autant les lui dire d'abord."
   - "Les sommes versées au fonds de travaux restent attachées au lot et ne sont pas remboursées au vendeur ; elles se valorisent dans la négociation."
-  - "Des travaux votés, chiffrés et financés rassurent souvent plus qu'ils n'inquiètent : c'est l'incertitude qui fait fuir, pas le ravalement."
+  - "Des travaux votés, chiffrés et financés rassurent souvent plus qu'ils n'inquiètent : ce qui fait fuir un acheteur, c'est un montant inconnu."
 faq:
   - question: "Le ravalement a été voté mais aucun appel n'est encore parti. Qui paiera ?"
     reponse: "Selon la règle de l'article 6-2 du décret du 17 mars 1967, les appels qui deviendront exigibles après la vente seront dus par l'acquéreur. C'est exactement le cas qui se négocie : soit le prix en tient compte, soit l'acte met tout ou partie des travaux à la charge du vendeur. L'important est que le sujet soit sur la table avant l'offre, chiffres à l'appui."
   - question: "Une assemblée générale a lieu entre le compromis et l'acte. Qui vote ?"
     reponse: "Tant que la vente n'est pas signée, le vendeur reste copropriétaire et titulaire du vote. L'usage est d'en parler avec l'acquéreur : selon les cas, le vendeur peut recevoir un mandat ou une consigne de vote, et le compromis peut prévoir le sort des travaux qui seraient votés dans l'intervalle. Votre notaire cadre ce point en une clause."
-  - question: "Récupère t on le fonds de travaux au moment de la vente ?"
+  - question: "Récupère-t-on le fonds de travaux au moment de la vente ?"
     reponse: "Non. Les sommes versées au fonds de travaux prévu par la loi de 1965 restent acquises au syndicat des copropriétaires et attachées au lot : elles ne sont pas remboursées au vendeur. Rien n'interdit en revanche d'en tenir compte dans le prix, comme d'un entretien déjà provisionné."
-  - question: "Qu'est ce que l'état daté, et pourquoi le vendeur le paie ?"
+  - question: "Qu'est-ce que l'état daté, et pourquoi le vendeur le paie ?"
     reponse: "C'est le document par lequel le syndic arrête les comptes du lot vendu : sommes dues par le vendeur, sommes qui incomberont à l'acquéreur, avances et fonds attachés au lot. La loi le met à la charge du vendeur et un décret du 21 février 2020 plafonne ses honoraires à 380 € TTC. Il est établi pour l'acte de vente ; en amont, un pré-état daté est souvent demandé pour le compromis, avec une facturation variable selon les syndics."
   - question: "Faut il faire les travaux avant de vendre plutôt que de les laisser à l'acheteur ?"
     reponse: "Rarement pour des travaux de copropriété : vous n'en maîtrisez ni le calendrier ni l'exécution, et l'acheteur valorise mal des travaux payés mais non réalisés. Le calcul se fait dossier par dossier, mais la voie la plus sûre reste un prix juste accompagné d'un dossier complet : montants votés, échéancier des appels, devis et procès-verbaux."
@@ -34,7 +34,7 @@ faq:
 
 ## La règle légale : l'exigibilité décide
 
-Le partage des travaux entre vendeur et acquéreur n'est pas une affaire d'équité au jugé, c'est un texte. L'article 6-2 du décret du 17 mars 1967 rattache chaque paiement à celui qui est copropriétaire au moment où la somme devient exigible : les appels de fonds exigibles avant la vente incombent au vendeur, ceux qui deviennent exigibles après incombent à l'acquéreur. La date du vote en assemblée générale ne fait donc pas tout : c'est le calendrier des appels décidé par l'assemblée qui répartit la charge.
+Le partage des travaux entre vendeur et acquéreur suit un texte précis. L'article 6-2 du décret du 17 mars 1967 rattache chaque paiement à celui qui est copropriétaire au moment où la somme devient exigible : les appels de fonds exigibles avant la vente incombent au vendeur, ceux qui deviennent exigibles après incombent à l'acquéreur. La date du vote en assemblée générale ne fait donc pas tout : c'est le calendrier des appels décidé par l'assemblée qui répartit la charge.
 
 Vous pouvez convenir d'autre chose avec votre acquéreur, et cela se fait tous les jours : l'acte prévoit alors, par exemple, que le vendeur prend à sa charge les travaux votés avant le compromis. Mais cet accord ne vaut qu'entre vous deux. Le syndic, lui, continue d'appeler les fonds selon la règle du décret, et la compensation convenue se règle entre vendeur et acquéreur, généralement par le compte du notaire.
 

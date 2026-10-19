@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { site } from '../data/site';
 
 export type Avis = CollectionEntry<'avis'>;
 
@@ -18,6 +19,31 @@ function anciennetéEnJours(texte?: string): number {
   if (normalisé.includes('mois')) return nombre * 30;
   if (normalisé.includes('an')) return nombre * 365;
   return 99_999;
+}
+
+const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+
+/**
+ * Date de publication tirée de l'ancienneté relevée et du mois du relevé : « il y a 19 heures »
+ * resterait vrai un jour seulement. Le mois quand Google le donne à quelques semaines près,
+ * l'année seule au-delà d'un an, puisque « il y a 3 ans » ne dit pas mieux.
+ */
+export function datePublication(texte?: string): string | undefined {
+  if (!texte) return undefined;
+  const [moisReleve, anneeReleve] = site.avis.releve.split(' ');
+  const indexReleve = MOIS.indexOf(moisReleve);
+  const annee = Number(anneeReleve);
+  if (indexReleve < 0 || !annee) return undefined;
+  const normalisé = texte.toLowerCase();
+  const nombre = Number(normalisé.match(/\d+/)?.[0] ?? (/\bune?\b/.test(normalisé) ? 1 : NaN));
+  if (Number.isNaN(nombre)) return undefined;
+  if (/heure|jour|semaine/.test(normalisé)) return site.avis.releve;
+  if (normalisé.includes('mois')) {
+    const total = annee * 12 + indexReleve - nombre;
+    return `${MOIS[total % 12]} ${Math.floor(total / 12)}`;
+  }
+  if (normalisé.includes('an')) return String(annee - nombre);
+  return undefined;
 }
 
 /** Le plus récent d'abord, les avis commentés avant les notes seules. */

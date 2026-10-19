@@ -4,11 +4,11 @@ arrondissement: Paris 9e
 secteur: paris-9
 prixMoyenM2: 10 650 € le m²
 fourchette: 8 000 à 14 300 € le m², du premier au neuvième décile
-chapo: L'avenue Trudaine et ses rues adjacentes forment l'un des micro marchés les plus tendus du 9e, porté par les familles et par des immeubles de belle facture.
+chapo: L'avenue Trudaine et ses rues adjacentes forment l'un des micro-marchés les plus tendus du 9e, porté par les familles et par des immeubles de belle facture.
 ordre: 1
 dateMaj: 2026-10-18
-titreSeo: Immobilier Trudaine Maubeuge, Paris 9e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine Maubeuge, Paris 9e. Estimation écrite par l'agence Trudaines.
+titreSeo: Immobilier Trudaine-Maubeuge, Paris 9e | Prix et vente - Trudaines
+descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine-Maubeuge, Paris 9e. Estimation écrite par l'agence Trudaines.
 photos:
   - src: /images/quartiers/trudaine-maubeuge-rue.webp
     alt: Vélo contre un réverbère devant une façade fleurie
@@ -23,7 +23,7 @@ faits:
     valeur: 45 m²
 ---
 
-## Un marché qui se joue à la rue près
+## Le marché de Trudaine-Maubeuge, rue par rue
 
 L'avenue Trudaine, avec son terre plein planté et son école, joue le rôle d'une place de village. Les immeubles qui la bordent affichent les niveaux de prix les plus hauts du secteur. À mesure que l'on remonte vers le boulevard de Rochechouart, les valeurs se détendent, parfois de façon marquée sur cent cinquante mètres.
 
@@ -42,7 +42,7 @@ Sur les douze derniers mois publiés, de janvier à décembre 2025, 292 ventes d
 
 Les 6 300 € le m² qui séparent le premier du neuvième décile ne sont pas du bruit statistique. Ils mesurent ce que pèsent ici l'étage, la vue, l'exposition et l'état du bien. C'est exactement la part qu'aucune base de données ne tranche à votre place, et que la visite sert à situer.
 
-Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est à dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de l'avenue Trudaine, à l'intérieur du 9e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
+Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est-à-dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de l'avenue Trudaine, à l'intérieur du 9e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
 
 ## Vendre dans ce quartier
 

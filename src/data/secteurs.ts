@@ -80,7 +80,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Mon DPE est en F ou en G, qu'est-ce que cela change ?",
         reponse:
-          "Cela change le prix et le profil des acheteurs, pas la possibilité de vendre. Nous lisons le diagnostic avec vous, nous identifions les postes qui pèsent le plus et nous faisons chiffrer les travaux par des entreprises que nous connaissons. Présenter un devis sérieux vaut mieux que de laisser l'acheteur imaginer le pire : son imagination coûte toujours plus cher que le devis.",
+          "La vente reste possible ; le prix et le profil des acheteurs changent. Nous lisons le diagnostic avec vous, nous identifions les postes qui pèsent le plus et nous faisons chiffrer les travaux par des entreprises que nous connaissons. Avec un devis dans le dossier, l'acheteur négocie sur un chiffre réel.",
       },
       {
         question: "Puis-je vendre sans que l'immeuble et mes voisins le sachent ?",
@@ -107,9 +107,9 @@ export const secteurs: Secteur[] = [
       "Agence immobilière au 2 rue Livingstone, au pied de la Butte : vente d'appartements à Montmartre, Abbesses, Lamarck.",
     hrefAgence: '/agence-immobiliere-paris-18',
     intro:
-      "Le 18e est l'arrondissement où les écarts de prix sont les plus larges de Paris. Entre un immeuble de l'avenue Junot et un immeuble des années soixante situé deux rues plus loin, la différence se compte en milliers d'euros au mètre carré. Une moyenne d'arrondissement n'a aucun sens ici : notre estimation part de votre rue, de votre immeuble et de votre étage.",
+      "Dans le 18e, le prix du mètre carré va du simple au double d'une vente à l'autre. Entre un immeuble de l'avenue Junot et un immeuble des années soixante situé deux rues plus loin, la différence se compte en milliers d'euros au mètre carré. Une moyenne d'arrondissement y renseigne mal : notre estimation part de votre rue, de votre immeuble et de votre étage.",
     introAgence:
-      "Notre bureau est au 2 rue Livingstone, entre Anvers et Château Rouge. Nous couvrons Montmartre, les Abbesses, Lamarck Caulaincourt et le sud de l'arrondissement, là où le 18e rejoint le 9e nord. C'est le même bassin d'acheteurs, nous le traitons comme un seul territoire.",
+      "Notre bureau est au 2 rue Livingstone, entre Anvers et Château Rouge. Nous couvrons Montmartre, les Abbesses, Lamarck-Caulaincourt et le sud de l'arrondissement, là où le 18e rejoint le 9e nord. C'est le même bassin d'acheteurs, nous le traitons comme un seul territoire.",
     quartiers: ['montmartre'],
     prixMoyen: '8 900 € le m², prix médian',
     fourchette:
@@ -123,22 +123,22 @@ export const secteurs: Secteur[] = [
       {
         question: "Vendre à Montmartre demande-t-il une approche particulière ?",
         reponse:
-          "Oui, sur deux points. L'acheteur d'abord : une partie des candidats vient d'autres arrondissements ou de province et achète un lieu de vie autant qu'un logement, la présentation compte donc énormément. Le bâti ensuite : immeubles anciens, escaliers, absence fréquente d'ascenseur, contraintes de copropriété. Nous préparons ces sujets avant la première visite plutôt que de les subir pendant.",
+          "Oui, sur deux points. L'acheteur d'abord : une partie des candidats vient d'autres arrondissements ou de province et achète un lieu de vie autant qu'un logement, la présentation pèse donc lourd. Le bâti ensuite : immeubles anciens, escaliers, absence fréquente d'ascenseur, contraintes de copropriété. Nous préparons ces sujets avant la première visite plutôt que de les subir pendant.",
       },
       {
         question: "Mon bien est en étage élevé sans ascenseur, est-ce bloquant ?",
         reponse:
-          "Ce n'est pas bloquant, c'est un paramètre de prix et de ciblage. Au-delà du quatrième étage sans ascenseur, la demande se resserre sur des profils précis. Nous ajustons la décote, nous orientons la communication vers ces acheteurs et nous mettons en avant ce qui compense : la lumière, la vue, le calme.",
+          "La vente se fait, avec un prix et un ciblage adaptés. Au-delà du quatrième étage sans ascenseur, la demande se resserre sur des profils précis. Nous ajustons la décote, nous orientons la communication vers ces acheteurs et nous mettons en avant ce qui compense : la lumière, la vue, le calme.",
       },
       {
         question: "Les travaux de copropriété votés freinent-ils la vente ?",
         reponse:
-          "Ils ne freinent pas la vente, ils se négocient. La règle est simple : tout ce que l'acheteur découvre tard se paie cher. Nous réunissons les procès-verbaux d'assemblée et le montant appelé avant la mise en vente, puis nous annonçons la répartition des appels de fonds dès l'annonce.",
+          "Ils se négocient. Ce que l'acheteur découvre tard lui sert d'argument pour baisser le prix. Nous réunissons les procès-verbaux d'assemblée et le montant appelé avant la mise en vente, puis nous annonçons la répartition des appels de fonds dès l'annonce.",
       },
       {
         question: "Combien de visites faut-il pour vendre un bien dans le 18e ?",
         reponse:
-          "Nous suivons ce chiffre mandat par mandat et nous vous le communiquons chaque semaine. Ce qui compte n'est pas le nombre brut mais le rapport entre visites et offres. Beaucoup de visites sans offre signifie presque toujours un écart entre le prix affiché et ce que le bien offre réellement.",
+          "Nous suivons ce chiffre mandat par mandat et nous vous le communiquons chaque semaine. Le chiffre utile est le rapport entre visites et offres. Beaucoup de visites sans offre signifie presque toujours un écart entre le prix affiché et ce que le bien offre réellement.",
       },
       {
         question: "Travaillez-vous aussi le nord du 18e ?",
@@ -266,7 +266,7 @@ export const secteurs: Secteur[] = [
       "Agence immobilière Paris 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Estimation offerte sous 48 h.",
     hrefAgence: '/agence-immobiliere-paris-7',
     intro:
-      "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue, pas d'une moyenne.",
+      "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue.",
     introAgence:
       "Nous vendons dans le 7e pour des propriétaires qui attendent deux choses : un prix argumenté par écrit, et une commercialisation discrète. Peu de visites, des acheteurs qualifiés, un interlocuteur unique du premier rendez-vous à l'acte.",
     quartiers: [],

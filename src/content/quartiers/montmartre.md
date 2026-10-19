@@ -23,9 +23,9 @@ faits:
     valeur: 34 m²
 ---
 
-## Un marché de désir, avec ses règles
+## Le marché de Montmartre
 
-Montmartre attire des acheteurs qui ne cherchent pas seulement des mètres carrés. Une vue dégagée sur Paris, un dernier étage lumineux, une rue pavée calme : ces éléments se paient, parfois très au dessus de la moyenne du quartier.
+Montmartre attire des acheteurs qui ne cherchent pas seulement des mètres carrés. Une vue dégagée sur Paris, un dernier étage lumineux, une rue pavée calme : ces éléments se paient, parfois très au-dessus de la moyenne du quartier.
 
 L'avenue Junot et ses abords constituent un marché à part, avec peu de transactions par an et des niveaux de prix qui s'y comparent mal au reste de l'arrondissement. À l'inverse, les rues très fréquentées par les visiteurs souffrent d'une décote d'usage réelle en résidence principale.
 
@@ -34,7 +34,7 @@ L'avenue Junot et ses abords constituent un marché à part, avec peu de transac
 - **La vue et l'étage**, souvent déterminants, davantage que dix mètres carrés supplémentaires.
 - **L'escalier**, dans des immeubles anciens rarement équipés d'ascenseur.
 - **L'état de la copropriété**, avec des ravalements coûteux sur des façades classées ou contraintes.
-- **Le calme réel**, à vérifier un samedi après midi plutôt qu'un mardi matin.
+- **Le calme réel**, à vérifier un samedi après-midi plutôt qu'un mardi matin.
 
 ## Ce que disent les ventes signées
 
@@ -42,7 +42,7 @@ Sur les douze derniers mois publiés, de janvier à décembre 2025, 455 ventes d
 
 Les 6 700 € le m² qui séparent le premier du neuvième décile ne sont pas du bruit statistique. Ils mesurent ce que pèsent ici l'étage, la vue, l'exposition et l'état du bien. C'est exactement la part qu'aucune base de données ne tranche à votre place, et que la visite sert à situer.
 
-Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est à dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la place des Abbesses, à l'intérieur du 18e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
+Source : demandes de valeurs foncières publiées par la direction générale des finances publiques, millésime du 5 avril 2026, dernier disponible. Appartements uniquement, ventes hors multilots, c'est-à-dire les actes ne portant que sur un seul logement. Le périmètre retenu est un rayon de 500 mètres autour de la place des Abbesses, à l'intérieur du 18e arrondissement. La surface de ce fichier est la surface réelle bâtie, qui peut s'écarter de quelques mètres carrés de la surface Carrez.
 
 ## Vendre à Montmartre
 

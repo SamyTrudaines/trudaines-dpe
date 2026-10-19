@@ -20,7 +20,7 @@ const etapes = [
   {
     titre: 'Les ventes réellement signées',
     texte:
-      "Nous partons de la base Demandes de valeurs foncières, dite DVF, publiée par l'administration fiscale à partir des actes enregistrés chez le notaire. C'est la seule source qui contienne des prix signés et non des prix demandés ; elle paraît en avril et en octobre, avec six mois de recul environ, et nous corrigeons ce décalage avec la tendance du moment. Nous isolons votre rue, votre typologie, puis nous écartons les ventes atypiques qui fausseraient la lecture.",
+      "Nous partons de la base Demandes de valeurs foncières, dite DVF, publiée par l'administration fiscale à partir des actes enregistrés chez le notaire. Elle donne des prix signés, et non des prix demandés ; elle paraît en avril et en octobre, avec six mois de recul environ, et nous corrigeons ce décalage avec la tendance du moment. Nous isolons votre rue, votre typologie, puis nous écartons les ventes atypiques qui fausseraient la lecture.",
   },
   {
     titre: 'La concurrence du moment',
@@ -35,7 +35,7 @@ const etapes = [
   {
     titre: "L'avis de valeur écrit",
     texte:
-      "Vous recevez un document daté et signé : fourchette de valeur, prix de mise en marché conseillé, comparables cités, points forts et points faibles assumés, calendrier prévisionnel. Il est à vous, sans contrepartie.",
+      "Vous recevez un document daté et signé : fourchette de valeur, prix de mise en marché conseillé, comparables cités, points forts et points faibles, calendrier prévisionnel. Il est à vous, sans contrepartie.",
   },
 ];
 
@@ -53,7 +53,7 @@ const angoisses = [
   {
     titre: 'Un DPE défavorable et des travaux à prévoir',
     texte:
-      "Nous lisons le diagnostic ligne par ligne, nous identifions les postes qui pèsent réellement sur la valeur, et nous faisons chiffrer par des entreprises et des diagnostiqueurs que nous connaissons. Un devis précis dans les mains de l'acheteur vaut toujours mieux qu'une inquiétude sans chiffre.",
+      "Nous lisons le diagnostic ligne par ligne, nous identifions les postes qui pèsent réellement sur la valeur, et nous faisons chiffrer par des entreprises et des diagnostiqueurs que nous connaissons.",
   },
   {
     titre: 'La discrétion, quand la vente ne regarde personne',
@@ -69,13 +69,13 @@ const angoisses = [
  */
 const livrable = [
   { titre: 'Les ventes comparables', texte: "Cinq à dix ventes signées de votre rue ou de votre immeuble sur douze mois, avec leur date, leur surface et leur prix au mètre carré." },
-  { titre: 'Les ajustements', texte: "Étage, ascenseur, exposition, vue, état, plan : chaque écart appliqué à la médiane est chiffré et justifié, pas laissé à l'intuition." },
-  { titre: 'La fourchette assumée', texte: "Un prix bas et un prix haut, et ce qui fait passer de l'un à l'autre. Un chiffre unique n'est jamais honnête." },
+  { titre: 'Les ajustements', texte: "Étage, ascenseur, exposition, vue, état, plan : chaque écart appliqué à la médiane est chiffré et justifié." },
+  { titre: 'La fourchette de prix', texte: "Un prix bas et un prix haut, et ce qui fait passer de l'un à l'autre." },
   { titre: 'Le prix de mise en marché', texte: "Le prix conseillé au premier jour, qui n'est ni la fourchette haute ni une moyenne, avec la raison du choix." },
   { titre: "L'état de la concurrence", texte: "Les biens que votre acheteur visitera juste avant ou juste après le vôtre, et ce qui vous en distingue." },
   { titre: 'Le calendrier de décision', texte: "La date du point chiffré en semaine 5, et les seuils qui déclencheront une correction de prix." },
   { titre: 'Les pièces à réunir', texte: "Diagnostics, documents de copropriété, devis à faire établir. La liste, dans l'ordre, avec les délais." },
-  { titre: 'Ce que nous ignorons', texte: "Les limites de l'exercice, écrites noir sur blanc. Une estimation sans réserves est une estimation qui se trompe en silence." },
+  { titre: 'Ce que nous ignorons', texte: "Les limites de l'exercice, écrites noir sur blanc." },
 ];
 
 /* Les questions posées avant de demander une estimation : affichées sous les inquiétudes, déclarées avec elles. */
@@ -135,11 +135,11 @@ const donnees = [
     <div class="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
       <div>
         <p class="surtitre">Estimation</p>
-        <h1 class="titre-1 mt-6">Savoir ce que vaut votre bien, avant d'en parler à qui que ce soit</h1>
+        <h1 class="titre-1 mt-6">Estimation immobilière à Paris, en ligne ou après visite</h1>
         <p class="chapo mt-8">
           Ce que nous remettons porte un nom : l'avis de valeur. Un document écrit, remis après visite sous
-          48 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et assume
-          une fourchette. Ce n'est pas un chiffre lancé au téléphone pour emporter un mandat.
+          48 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et donne
+          une fourchette de prix.
         </p>
         <ul class="mt-10 space-y-4 text-sm">
           <li class="flex gap-3"><span aria-hidden="true" class="text-[color:var(--color-nuit)]">·</span> Un document que vous gardez, même si vous vendez ailleurs ou plus tard.</li>
@@ -185,7 +185,7 @@ const donnees = [
 
   <section class="section filet" aria-labelledby="methode">
     <div class="conteneur">
-      <h2 id="methode" class="titre-2 max-w-2xl">Quatre étapes, aucune approximation</h2>
+      <h2 id="methode" class="titre-2 max-w-2xl">Notre méthode en quatre étapes</h2>
       <ol class="mt-14 grid gap-12 md:grid-cols-2">
         {etapes.map((e, i) => (
           <li class="border-t border-[color:var(--color-encre)] pt-6">

@@ -178,7 +178,7 @@ const agence = {
     {filAriane.length > 0 && <FilAriane etapes={filAriane} large={filArianeLarge} />}
     <main id="contenu">
       <slot />
-      {cta && <BlocCta {...ctaProps} />}
+      {cta && <BlocCta hrefEstimer={ancreEstimation} {...ctaProps} />}
     </main>
     <PiedDePage colleAuBloc={cta} />
     <BarreMobile ancreEstimation={ancreEstimation} evtEstimation={evtEstimation} messageWhatsapp={messageWhatsapp} action={barreAction} />

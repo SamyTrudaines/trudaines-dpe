@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormulaireTemoignage from '../components/FormulaireTemoignage.astro';
-import { agrégatAvis, tousLesAvis } from '../lib/avis';
+import { agrégatAvis, datePublication, tousLesAvis } from '../lib/avis';
 import { site } from '../data/site';
 
 const avis = await tousLesAvis();
@@ -99,7 +99,7 @@ const donnees = [
               </span>
               <span class="mt-1 block">
                 {libelléSource(a.data.source)}
-                {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
+                {datePublication(a.data.anciennete) ? `, ${datePublication(a.data.anciennete)}` : ''}
                 {a.data.dateVisite ? ` · ${a.data.dateVisite}` : ''}
               </span>
             </figcaption>
@@ -128,7 +128,7 @@ const donnees = [
                 <span class="mt-2 block text-xs text-[color:var(--color-ardoise)]">
                   <span class="sr-only">Note de {a.data.note} sur 5. </span>
                   {libelléSource(a.data.source)}
-                  {a.data.anciennete ? `, ${a.data.anciennete}` : ''}
+                  {datePublication(a.data.anciennete) ? `, ${datePublication(a.data.anciennete)}` : ''}
                 </span>
               </li>
             ))}
@@ -167,7 +167,7 @@ const donnees = [
         <p class="surtitre">Vous avez travaillé avec nous</p>
         <h2 id="deposer-avis" class="titre-2 mt-6">Déposer un témoignage</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Un avis utile n'est pas un compliment, c'est un récit : ce que vous vouliez, ce qui a été difficile, ce
+          Un avis utile raconte la vente : ce que vous vouliez, ce qui a été difficile, ce
           qui s'est passé. Cela vaut mieux qu'une étoile de plus, pour vous comme pour le prochain vendeur qui
           lira cette page.
         </p>

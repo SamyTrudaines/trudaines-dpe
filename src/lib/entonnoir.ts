@@ -26,7 +26,7 @@ import type { CollectionEntry } from 'astro:content';
  * rue_quartier, rue_estimer...), et le quartier de la rue pour contexte, ou
  * « arr_09 » pour une rue qui n'appartient à aucun quartier.
  *
- * Google Analytics coupe un nom d'événement au delà de 40 caractères et le perd
+ * Google Analytics coupe un nom d'événement au-delà de 40 caractères et le perd
  * sans rien dire. La fonction évite ce silence : elle fait échouer la
  * construction.
  */

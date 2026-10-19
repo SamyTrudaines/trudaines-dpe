@@ -3,20 +3,20 @@ titre: Vendre un appartement classé F ou G à Paris
 date: 2026-04-22
 image: /images/panorama/dpe-f-et-g-vendre-photo.webp
 imageAlt: Fenêtre ouverte sur les toits de zinc de Paris
-chapo: Le diagnostic énergétique est devenu un sujet de négociation à part entière. Le traiter avant la mise en vente vaut mieux que de le subir en deuxième visite.
+chapo: Le diagnostic énergétique est devenu un sujet de négociation à part entière. Mieux vaut le traiter avant la mise en vente qu'en deuxième visite.
 motsCles:
   - DPE
   - rénovation énergétique
   - vente immobilière
 essentiel:
-  - "Un classement F ou G n'empêche pas de vendre un appartement à Paris : c'est un paramètre de prix et de préparation, pas un obstacle."
+  - "Un classement F ou G n'empêche pas de vendre un appartement à Paris : la classe pèse sur le prix et sur la préparation du dossier."
   - "Faire établir un devis d'entreprise avant la mise en vente remplace l'inquiétude de l'acheteur par un montant documenté, et ce devis se joint au dossier remis à l'acquéreur."
   - "Annoncer la classe énergie dès l'annonce, avec le chiffrage des travaux, réduit les visites inutiles et améliore la qualité des offres reçues."
   - "En copropriété, le gain énergétique dépend surtout de décisions collectives (façades, chaudière commune, menuiseries en parties communes) ; un propriétaire seul agit sur les fenêtres privatives, la ventilation, le chauffage individuel et parfois l'isolation par l'intérieur."
   - "L'audit énergétique réglementaire ne concerne pas les appartements en copropriété : il s'impose aux maisons individuelles et aux immeubles en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025."
 faq:
   - question: "Peut-on vendre un appartement classé F ou G à Paris ?"
-    reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter, mais ce n'est pas un obstacle à la vente : c'est un paramètre de prix, qui se prépare avant la mise en vente."
+    reponse: "Oui. Depuis le calendrier de restriction à la location, les classes F et G attirent l'attention des acheteurs, y compris de ceux qui achètent pour habiter ; la vente reste possible, et la classe pèse sur le prix et se prépare avant la mise en vente."
   - question: "Faut-il faire un audit énergétique pour vendre un appartement en copropriété ?"
     reponse: "Non. L'audit énergétique réglementaire s'impose à la vente des maisons individuelles et des immeubles d'habitation en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025. Beaucoup de vendeurs parisiens paient un audit dont ils n'ont pas besoin."
   - question: "Un DPE F ou G fait-il baisser le prix d'un appartement ?"
@@ -29,7 +29,7 @@ faq:
     reponse: "Parce que l'acheteur qui découvre un classement défavorable sans chiffrage imagine toujours le pire. Un devis d'entreprise établi avant la mise en vente, joint au dossier, permet de discuter d'un montant documenté plutôt que d'une inquiétude. Aucun coût moyen au mètre carré ne vaut : d'un immeuble à l'autre, les devis n'ont pas d'ordre de grandeur commun."
 ---
 
-Depuis l'entrée en vigueur du calendrier de restriction à la location, les classes F et G attirent une attention particulière des acheteurs, y compris de ceux qui achètent pour habiter. Ce n'est pas un obstacle à la vente, c'est un paramètre de prix et de préparation.
+Depuis l'entrée en vigueur du calendrier de restriction à la location, les classes F et G attirent une attention particulière des acheteurs, y compris de ceux qui achètent pour habiter. La vente reste possible ; la classe pèse sur le prix et sur la préparation du dossier.
 
 ## Lire le diagnostic avant l'acheteur
 
@@ -55,6 +55,6 @@ En copropriété, l'essentiel du gain énergétique dépend de décisions collec
 
 Nous ne publions pas de coût moyen au mètre carré pour ces travaux. D'un immeuble à l'autre, pour une même surface, les devis n'ont pas d'ordre de grandeur commun : tout dépend de l'état des parties communes, de l'accès, de la configuration et de ce que l'assemblée générale a déjà voté. Un chiffre moyen publié ici serait repris en négociation contre vous.
 
-Ce que nous faisons à la place, avant la mise en vente : faire établir des devis d'entreprise sur le périmètre réellement réalisable, et les joindre au dossier remis à l'acheteur. Un devis dans le dossier vaut mieux que l'imagination de l'acheteur, qui coûte toujours plus cher.
+Ce que nous faisons à la place, avant la mise en vente : faire établir des devis d'entreprise sur le périmètre réellement réalisable, et les joindre au dossier remis à l'acheteur. L'acheteur chiffre alors les travaux sur une base réelle.
 
 Dernier point souvent mal compris : l'audit énergétique réglementaire ne concerne pas les appartements en copropriété. Il s'impose à la vente des maisons individuelles et des immeubles d'habitation en monopropriété, pour les classes F et G depuis avril 2023 et la classe E depuis le 1er janvier 2025. Beaucoup de vendeurs parisiens s'inquiètent d'une obligation qui ne les concerne pas, ou paient un audit dont ils n'ont pas besoin.

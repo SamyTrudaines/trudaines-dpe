@@ -18,13 +18,13 @@ Le 17e se lit en trois niveaux. Sur les ventes d'appartements signées de janvie
 
 Il s'agit de médianes de ventes d'appartements signées, c'est-à-dire du prix au mètre carré qui sépare les ventes en deux moitiés égales. Une voie n'est classée qu'à partir de 8 ventes sur la période. La surface médiane et le prix de vente médian, cités plus bas, sont calculés à part : ils ne se déduisent pas du prix au mètre carré. Dans une même rue, le prix d'un bien tient à l'étage, à la lumière, à l'état et à l'immeuble. D'où l'intérêt d'une estimation sur place : la médiane d'une rue situe un appartement, elle ne le chiffre pas.
 
-## La plaine Monceau : des budgets d'un autre ordre
+## Les prix de la plaine Monceau
 
 La plaine Monceau, dans le 17e, s'étend au nord du parc Monceau, qui est dans le 8e. La rue de Thann, voisine du parc, ressort à 13 830 €, et le [boulevard de Courcelles](/prix-immobilier/boulevard-de-courcelles-17), qui longe le parc, à 13 230 € sur 18 ventes. Dans ces deux voies, la surface médiane est grande : 110 m² et un prix de vente médian de 1 542 000 € boulevard de Courcelles, 112 m² et 1 310 000 € rue de Thann. C'est un budget d'un autre ordre, pas seulement un prix au mètre carré plus haut.
 
 Des voies plus vendues donnent des repères plus sûrs : l'[avenue de Wagram](/prix-immobilier/avenue-de-wagram-17) à 11 100 € (112 ventes), le [boulevard Pereire](/prix-immobilier/boulevard-pereire-17) à 10 940 € (137 ventes) et la [rue Jouffroy d'Abbans](/prix-immobilier/rue-jouffroy-d-abbans-17) à 11 170 € (70 ventes). Vers la place des Ternes, l'[avenue des Ternes](/prix-immobilier/avenue-des-ternes-17) est à 11 340 € (56 ventes).
 
-## Les Batignolles : un couloir étroit
+## Les prix aux Batignolles
 
 Plus à l'est, cinq voies des Batignolles tiennent dans un couloir de 790 € : la [rue des Moines](/prix-immobilier/rue-des-moines-17) à 9 860 € (99 ventes), la [rue Legendre](/prix-immobilier/rue-legendre-17) à 10 000 € (134 ventes), la [rue des Dames](/prix-immobilier/rue-des-dames-17) et la [rue Nollet](/prix-immobilier/rue-nollet-17) à 10 500 € (79 et 96 ventes), la [rue Lemercier](/prix-immobilier/rue-lemercier-17) à 10 650 € (74 ventes). Le quartier n'est pourtant pas un bloc : la [rue Mariotte](/prix-immobilier/rue-mariotte-17) atteint 13 320 € sur 14 ventes, 3 460 € de plus que la rue des Moines. Voir aussi le quartier [Batignolles](/quartiers/batignolles).
 

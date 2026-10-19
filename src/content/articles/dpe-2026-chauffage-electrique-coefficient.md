@@ -40,7 +40,7 @@ Un acheteur lit la lettre avant les mètres carrés. Passer de F à E change la 
 
 - Vérifiez la classe actualisée **avant** la mise en vente.
 - Affichez-la dans l'annonce. La mention « logement à consommation énergétique excessive » reste obligatoire pour les classes F et G.
-- Si le bien reste en F ou G, joignez un devis de travaux réel au dossier. Un chiffre documenté vaut mieux que l'imagination de l'acheteur.
+- Si le bien reste en F ou G, joignez un devis de travaux réel au dossier. L'acheteur négocie alors sur un chiffre réel.
 
 ## Ce que nous faisons pour nos vendeurs
 

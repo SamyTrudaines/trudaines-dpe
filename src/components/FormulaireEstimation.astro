@@ -232,7 +232,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
     <div class="mt-6 border-l-2 border-[color:var(--color-or)] pl-4" data-fourchette-rue hidden></div>
     <p class="mt-4 text-[color:var(--color-ardoise)]">
       Samy Santamarina vous rappelle sous 24 heures ouvrées pour convenir de la visite d'estimation.
-      <span data-mention-email hidden>Un email vient de partir vers votre boîte, avec votre fourchette.</span>
+      {' '}<span data-mention-email hidden>Un email vient de partir vers votre boîte, avec votre fourchette.</span>
     </p>
     <p class="mt-6">
       <a href={lienPhotos} rel="noopener" target="_blank" class="bouton bouton-secondaire" data-evt="estimation_photos_whatsapp">Envoyer des photos par WhatsApp</a>
@@ -258,7 +258,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
   </div>
   <div data-corps>
     <p class="titre-3">Samy Santamarina vous rappelle</p>
-    <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Deux champs suffisent. Le reste se dit au téléphone.</p>
+    <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Votre prénom et votre numéro suffisent.</p>
     <div class="mt-6 grid gap-6 sm:grid-cols-2">
       <div>
         <label class="etiquette" for={`rappel-prenom-${identifiant}`}>Prénom</label>
@@ -283,12 +283,9 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         <input class="champ" id={`rappel-adresse-${identifiant}`} name="adresse" type="text" autocomplete="street-address" />
       </div>
     </div>
-    <div class="mt-6 flex items-start gap-3">
-      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`rappel-consentement-${identifiant}`} name="consentement" type="checkbox" required value="oui" />
-      <label class="text-sm text-[color:var(--color-ardoise)]" for={`rappel-consentement-${identifiant}`}>
-        J'accepte d'être rappelé par Trudaines au sujet de ma demande. <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
-      </label>
-    </div>
+    <p class="mt-6 text-xs text-[color:var(--color-ardoise)]">
+      Votre numéro sert seulement à ce rappel. <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+    </p>
     <button type="submit" class="bouton mt-8">Être rappelé</button>
     <p class="mt-6 text-sm text-[#a4262c]" data-erreur hidden></p>
   </div>

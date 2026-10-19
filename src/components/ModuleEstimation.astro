@@ -35,11 +35,11 @@ const colonnes = disposition === 'colonnes';
 <div class={colonnes ? 'grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-start' : ''}>
   <div>
     <p class="surtitre marque-filet">Estimation</p>
-    <h2 class="titre-2 mt-6">Votre appartement n'est pas une médiane</h2>
+    <h2 class="titre-2 mt-6">Faire estimer votre appartement</h2>
     <p class={colonnes ? 'chapo mt-6' : 'mt-6 text-[color:var(--color-encre)]'}>
-      Le prix médian d'une rue mélange des rez-de-chaussée sur cour et des derniers étages avec vue. Ce qui place
-      votre appartement au dessus ou en dessous, c'est l'étage, l'ascenseur, l'exposition, l'état du bien et celui de
-      la copropriété.
+      Le prix médian d'une rue réunit des rez-de-chaussée sur cour et des derniers étages avec vue. L'étage,
+      l'ascenseur, l'exposition, l'état du bien et celui de la copropriété placent votre appartement au-dessus ou
+      au-dessous.
     </p>
     {donnee && <p class="mt-6 text-[color:var(--color-ardoise)]">{donnee}</p>}
     {colonnes ? (

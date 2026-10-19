@@ -90,6 +90,10 @@ const contactSms = appels.find((a) => a.url.endsWith('/contacts'));
   if (!ok) echecs++;
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} rappel sans email : contact Brevo par le téléphone`);
 }
+const rappelSansCase = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '0601020304', horodatage: recent() }), env });
+if (rappelSansCase.status !== 200) echecs++;
+console.log(`${rappelSansCase.status === 200 ? 'OK   ' : 'ÉCHEC'} rappel sans case à cocher : demande acceptée · statut ${rappelSansCase.status}`);
+
 const rappelRefuse = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '12', consentement: 'oui', horodatage: recent() }), env });
 if (rappelRefuse.status !== 400) echecs++;
 console.log(`${rappelRefuse.status === 400 ? 'OK   ' : 'ÉCHEC'} rappel : refus d'un numéro invalide · statut ${rappelRefuse.status}`);

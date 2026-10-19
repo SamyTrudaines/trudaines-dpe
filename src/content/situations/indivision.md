@@ -16,16 +16,16 @@ essentiel:
   - "Vendre le bien entier est un acte de disposition : il faut en principe l'accord de tous les indivisaires (article 815-3 du code civil)."
   - "Les indivisaires détenant au moins deux tiers des droits peuvent demander au tribunal judiciaire l'autorisation de vendre malgré un refus (article 815-5-1 du code civil)."
   - "Depuis la loi n° 2026-248 du 7 avril 2026, le président du tribunal judiciaire peut aussi autoriser un indivisaire à conclure seul la vente d'un bien indivis, en cas d'urgence et dans l'intérêt commun (article 815-6 du code civil)."
-  - "La vente autorisée par le tribunal sur ce fondement se fait par licitation, c'est à dire aux enchères, ce qui se pèse avant d'engager la procédure."
+  - "La vente autorisée par le tribunal sur ce fondement se fait par licitation, c'est-à-dire aux enchères, ce qui se pèse avant d'engager la procédure."
   - "Nul ne peut être contraint à demeurer dans l'indivision : le partage peut toujours être demandé en justice (article 815 du code civil)."
   - "Chaque indivisaire peut vendre sa seule quote-part, mais les autres indivisaires sont prioritaires pour la racheter (article 815-14 du code civil)."
   - "Un avis de valeur écrit et argumenté est souvent ce qui débloque une indivision : on ne se dispute plus sur le prix, seulement sur la décision."
 faq:
-  - question: "Un seul indivisaire peut il mettre le bien en vente ?"
+  - question: "Un seul indivisaire peut-il mettre le bien en vente ?"
     reponse: "Non. La mise en vente du bien entier suppose l'accord de tous, et le mandat de vente se signe par tous les indivisaires ou leurs mandataires. Un indivisaire seul peut en revanche vendre sa quote-part, en respectant le droit de préemption des autres prévu à l'article 815-14 du code civil, mais les acheteurs de quote-part sont rares et les prix faibles."
-  - question: "Que se passe t il si un indivisaire est introuvable ou ne répond pas ?"
+  - question: "Que se passe-t-il si un indivisaire est introuvable ou ne répond pas ?"
     reponse: "Le silence ne vaut pas accord. Selon les cas, le notaire peut faire signifier les actes, et le code civil prévoit des recours devant le juge, notamment lorsque l'inertie d'un indivisaire met en péril l'intérêt commun. La marche à suivre dépend du dossier : c'est une question pour le notaire, très en amont de la mise en vente."
-  - question: "L'indivisaire qui occupe le logement doit il payer quelque chose ?"
+  - question: "L'indivisaire qui occupe le logement doit-il payer quelque chose ?"
     reponse: "En principe oui : celui qui jouit privativement d'un bien indivis doit une indemnité d'occupation à l'indivision, sauf accord contraire entre indivisaires. Cette indemnité se règle le plus souvent au moment du partage, en venant diminuer sa part. Elle pèse dans les discussions, et il vaut mieux la chiffrer tôt."
   - question: "Combien de temps prend une vente autorisée par le tribunal ?"
     reponse: "Aucun délai ne peut être promis sérieusement : la procédure de l'article 815-5-1 comporte une expression de l'intention devant notaire, une signification aux autres indivisaires, puis une décision du tribunal judiciaire, avant une vente par licitation. On parle en mois, pas en semaines. C'est la raison pour laquelle l'accord amiable, même laborieux, reste presque toujours la meilleure voie."
@@ -43,7 +43,7 @@ Cette règle paraît fragile, elle est en réalité protectrice : personne ne pe
 
 Quand le désaccord porte vraiment sur le principe, la loi a prévu une sortie. L'article 815-5-1 du code civil permet aux indivisaires titulaires d'au moins deux tiers des droits indivis de faire connaître devant notaire leur intention de vendre. Le notaire la fait signifier aux autres indivisaires. En cas d'opposition ou de silence dans les trois mois, le tribunal judiciaire peut autoriser la vente, à condition qu'elle ne porte pas une atteinte excessive aux droits des autres indivisaires.
 
-Deux réalités tempèrent ce recours. La première : la vente ainsi autorisée se fait par licitation, c'est à dire aux enchères, et non de gré à gré ; le prix obtenu dépend alors de la salle, pas d'une négociation menée. La seconde : ce chemin suppose des indivisaires majeurs et capables, et une indivision en pleine propriété ; un mineur, un majeur protégé ou un démembrement entre usufruit et nue-propriété le ferment. C'est donc une voie de dernier recours, précieuse parce qu'elle existe, et dissuasive parce que chacun sait qu'elle existe.
+Deux réalités tempèrent ce recours. La première : la vente ainsi autorisée se fait par licitation, c'est-à-dire aux enchères, et non de gré à gré ; le prix obtenu dépend alors de la salle, pas d'une négociation menée. La seconde : ce chemin suppose des indivisaires majeurs et capables, et une indivision en pleine propriété ; un mineur, un majeur protégé ou un démembrement entre usufruit et nue-propriété le ferment. C'est donc une voie de dernier recours, précieuse parce qu'elle existe, et dissuasive parce que chacun sait qu'elle existe.
 
 ## Le partage judiciaire, l'autre porte
 
@@ -57,4 +57,4 @@ Une vente en indivision suit le même chemin qu'une vente ordinaire, avec une si
 
 ## Ce que l'agence fait dans cette situation
 
-Nous commençons par ce qui met d'accord : un avis de valeur écrit, remis sous 48 heures après la visite, qui cite les ventes signées comparables et assume une fourchette. Chaque indivisaire le reçoit, le lit, peut le contester sur pièces. Nous organisons ensuite la vente avec le notaire de la succession ou de l'indivision, nous faisons circuler les documents pour signature, y compris à distance, et nous rendons compte par écrit à tous les indivisaires en même temps, pas seulement à celui qui nous a appelés. Quand le dossier relève du juge plutôt que du marché, nous le disons clairement et nous vous orientons vers le notaire, sans facturer une attente inutile.
+Nous commençons par ce qui met d'accord : un avis de valeur écrit, remis sous 48 heures après la visite, qui cite les ventes signées comparables et donne une fourchette. Chaque indivisaire le reçoit, le lit, peut le contester sur pièces. Nous organisons ensuite la vente avec le notaire de la succession ou de l'indivision, nous faisons circuler les documents pour signature, y compris à distance, et nous rendons compte par écrit à tous les indivisaires en même temps, pas seulement à celui qui nous a appelés. Quand le dossier relève du juge plutôt que du marché, nous le disons clairement et nous vous orientons vers le notaire, sans facturer une attente inutile.

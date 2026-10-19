@@ -9,7 +9,7 @@
  *
  * 1. Géocodage. scripts/geocoder-rues.mjs interroge la Base Adresse Nationale
  *    pour chaque rue de rues.json et pour chaque rue repère des quartiers. Le
- *    résultat est le centroïde de la voie, c'est à dire un seul point. Un résultat
+ *    résultat est le centroïde de la voie, c'est-à-dire un seul point. Un résultat
  *    douteux (score faible, autre code postal, autre type de voie) est écarté :
  *    la rue n'a alors ni quartier ni rues voisines, elle reste dans la liste de
  *    son arrondissement.
@@ -140,7 +140,7 @@ for (const zone of Object.values(zones)) {
     const point = reperesGeocodes[`${zone.codePostal} ${voie}`];
     const metres = distance(point, zone.centre);
     if (metres > zone.rayon) {
-      console.warn(`[quartiers] ${zone.slug} : la rue repère ${voie} est à ${Math.round(metres)} m du centre, au delà du rayon de ${zone.rayon} m.`);
+      console.warn(`[quartiers] ${zone.slug} : la rue repère ${voie} est à ${Math.round(metres)} m du centre, au-delà du rayon de ${zone.rayon} m.`);
     }
     for (const autre of Object.values(zones)) {
       if (autre.slug === zone.slug || autre.codePostal !== zone.codePostal || !autre.centre) continue;

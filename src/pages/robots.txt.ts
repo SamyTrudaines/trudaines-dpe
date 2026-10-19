@@ -27,7 +27,7 @@ const MOTEURS = [
   'Google-Extended',
   'GoogleOther',
   'Applebot-Extended',
-  // Siri, Spotlight et Apple Intelligence passent par Applebot lui même.
+  // Siri, Spotlight et Apple Intelligence passent par Applebot lui-même.
   'Applebot',
   'Bingbot',
   'Amazonbot',
