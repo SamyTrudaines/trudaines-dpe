@@ -41,6 +41,7 @@ export async function onRequestPost({ request, env }) {
       ['Salles de bain', valeur('sallesDeBain')],
       ['État', valeur('etat')],
       ['DPE', valeur('dpe')],
+      ['Extérieur', ['Balcon', 'Terrasse'].includes(valeur('exterieur')) ? `${valeur('exterieur')}${valeur('surfaceExterieure') ? ` de ${valeur('surfaceExterieure')} m²` : ''}` : valeur('exterieur')],
       ['Atouts', donnees.getAll('atouts').map((a) => String(a).trim()).filter(Boolean).join(', ')],
       ['Étage', etageLisible(valeur('etage'), valeur('etages'))],
       ['Ascenseur', valeur('ascenseur')],
@@ -93,7 +94,7 @@ export async function onRequestPost({ request, env }) {
      */
     const vue = /^([\d\s]+ €) à ([\d\s]+ €) \((rue|arrondissement)\)$/.exec(valeur('fourchette').replace(/[\u00a0\u202f]/g, ' '));
     const phraseFourchette = vue
-      ? `Votre fourchette, calculée sur les ventes signées ${vue[3] === 'rue' ? 'de votre rue' : 'de votre arrondissement'} et ajustée selon l'étage, l'ascenseur et la taille : ${vue[1]} à ${vue[2]}. Elle ne voit ni l'état, ni la vue, ni la copropriété : c'est ce que la visite précise.`
+      ? `Votre fourchette, calculée sur les ventes signées ${vue[3] === 'rue' ? 'de votre rue' : 'de votre arrondissement'} et ajustée selon l'étage, l'ascenseur, la taille, l'état et l'extérieur : ${vue[1]} à ${vue[2]}. Elle ne voit ni le plan, ni la vue, ni la copropriété : c'est ce que la visite précise.`
       : '';
 
     await envoyerEmail(env, {

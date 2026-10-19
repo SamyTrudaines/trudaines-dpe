@@ -2,10 +2,10 @@
  * Fourchette de prix du formulaire d'estimation.
  *
  * Calculée pendant les étapes, elle n'est révélée qu'une fois la demande
- * envoyée, dans la confirmation. Le calcul place le bien dans la distribution
- * des ventes DVF signées de sa voie (/estimation-rues.json), entre le premier et
- * le neuvième décile, selon l'étage, l'ascenseur et la typologie ; faute de
- * ventes assez nombreuses dans la voie, il part de l'arrondissement et le dit.
+ * envoyée, dans la confirmation. Le calcul part de la médiane DVF de la voie
+ * (/estimation-rues.json), rapprochée de celle de son voisinage selon le nombre de
+ * ventes, puis place le bien entre le premier et le neuvième décile selon l'étage,
+ * l'ascenseur, l'état et les atouts ; faute de voie mesurée, il part de l'arrondissement et le dit.
  * Hors du périmètre mesuré, rien ne s'affiche.
  */
 (function () {
@@ -125,12 +125,10 @@
   var ETAT = { 'Neuf ou récent': 0.1, 'Rénové': 0.07, 'Très bon état': 0.03, 'État correct': -0.02, 'À rénover': -0.14 };
   /* La classe énergie pèse surtout en F et G, que le calendrier de location écarte d'une partie des acheteurs. */
   var DPE = { A: 0.03, B: 0.03, C: 0.01, D: 0, E: -0.02, F: -0.06, G: -0.09 };
-  var ATOUTS = { 'Balcon ou terrasse': 0.05, 'Vue dégagée': 0.04, 'Calme': 0.02, 'Lumineux': 0.02, 'Cave': 0.01, 'Parking': 0.02 };
+  var ATOUTS = { 'Vue dégagée': 0.04, 'Calme': 0.02, 'Lumineux': 0.02, 'Cave': 0.01, 'Parking': 0.02 };
 
-  function prixPourPosition(r, position) {
-    if (position <= 0.5) return r.a + ((position - 0.1) / 0.4) * (r.m - r.a);
-    return r.m + ((position - 0.5) / 0.4) * (r.b - r.m);
-  }
+  /* Poids d'une rue face à son voisinage : v / (v + K). */
+  var K = 10;
 
   /* form.elements lit aussi un groupe de boutons radio : la valeur cochée. */
   function valeur(form, nom) {
@@ -174,6 +172,27 @@
       var reference = rue || d.arrondissements[codePostal];
       if (!reference) return;
 
+      /*
+       * Repère du calcul. La médiane d'une rue de dix ventes bouge d'une parution à l'autre :
+       * elle est rapprochée de celle de son voisinage (voies à moins de 400 m) en proportion de
+       * ses ventes, poids v / (v + 10). La constante 10 est mesurée sur les ventes DVF : c'est
+       * le rapport entre la dispersion des ventes dans une rue et l'écart réel entre rues voisines.
+       * La dispersion (premier et neuvième décile) vient du voisinage : sur dix ventes, un
+       * neuvième décile ne se mesure pas.
+       */
+      var arrondissement = d.arrondissements[codePostal];
+      var cadre = rue && rue.c;
+      if (!cadre && arrondissement) {
+        cadre = { m: arrondissement.m, a: arrondissement.a / arrondissement.m, b: arrondissement.b / arrondissement.m, t: {} };
+        Object.keys(arrondissement.t || {}).forEach(function (k) {
+          if (arrondissement.t[k][1] >= 10) cadre.t[k] = arrondissement.t[k][0] / arrondissement.m;
+        });
+      }
+      if (!cadre) return;
+      var mediane = rue ? (rue.v * rue.m + K * cadre.m) / (rue.v + K) : cadre.m;
+      var basRel = cadre.a;
+      var hautRel = cadre.b;
+
       var position = 0.5;
       position += ecartEtage(valeur(form, 'etage'), valeur(form, 'etages'));
       position += ecartAscenseur(valeur(form, 'ascenseur'), valeur(form, 'etage'));
@@ -182,22 +201,24 @@
       /* Les atouts s'additionnent, plafonnés : ils affinent, ils ne déplacent pas un bien d'un marché à l'autre. */
       position += Math.min(0.1, coches(form, 'atouts').reduce(function (t, a) { return t + (ATOUTS[a] || 0); }, 0));
       position = Math.max(0.1, Math.min(0.9, position));
+      var relatif = position <= 0.5
+        ? 1 - ((0.5 - position) / 0.4) * (1 - basRel)
+        : 1 + ((position - 0.5) / 0.4) * (hautRel - 1);
+
+      /* Prix par taille : l'écart mesuré dans le voisinage (ou l'arrondissement) entre cette taille et l'ensemble. */
+      var taille = (cadre.t && cadre.t[String(Math.min(Math.max(pieces, 1), 4))]) || 1;
+
+      var centre = Math.max(mediane * basRel, Math.min(mediane * hautRel, mediane * relatif * taille));
       /*
-       * Recentrage sur la typologie, borné aux déciles observés : celle de la voie quand elle compte
-       * assez de ventes, sinon l'écart relatif mesuré sur tout l'arrondissement, appliqué à la voie.
+       * Balcon ou terrasse : surface comptée au tiers, sans que le gain dépasse 10 % de la surface
+       * habitable (une terrasse de plus de 20 m² n'ajoute pas plus de 10 % à un appartement de 66 m² ou plus).
        */
-      var cle = String(Math.min(Math.max(pieces, 1), 4));
-      var typologie = reference.t && reference.t[cle];
-      var arrondissement = d.arrondissements[codePostal];
-      var typeArrondissement = arrondissement && arrondissement.t && arrondissement.t[cle];
-      var decalage = typologie && typologie[1] >= 5
-        ? typologie[0] - reference.m
-        : typeArrondissement && typeArrondissement[1] >= 10
-          ? reference.m * (typeArrondissement[0] / arrondissement.m - 1)
-          : 0;
-      var centre = Math.max(reference.a, Math.min(reference.b, prixPourPosition(reference, position) + decalage));
-      var bas = Math.max(reference.a, centre * 0.93);
-      var haut = Math.min(reference.b, centre * 1.07);
+      var dehors = valeur(form, 'exterieur');
+      var exterieur = dehors === 'Balcon' || dehors === 'Terrasse' ? parseFloat(valeur(form, 'surfaceExterieure')) || 0 : 0;
+      var ponderee = surface + Math.min(exterieur / 3, surface * 0.1);
+      var marge = rue && rue.v >= 30 ? 0.05 : 0.06;
+      var bas = centre * (1 - marge) * ponderee / surface;
+      var haut = centre * (1 + marge) * ponderee / surface;
 
       var ventes = rue ? rue.v : reference.v;
       bloc.innerHTML =
@@ -205,7 +226,7 @@
         '<p class="mt-3 text-2xl">' + euros(bas * surface) + ' à ' + euros(haut * surface) + '</p>' +
         '<p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Soit ' + euros(bas).replace('\u00a0€', '') + ' à ' +
         euros(haut) + ' le m², calculé sur ' + nombreVentes(ventes) + ' ventes signées, ' + (rue ? rue.n : reference.n) +
-        ' (' + d.periode + '), selon l\'étage, l\'ascenseur, la typologie, l\'état, le DPE et les atouts indiqués. L\'avis de valeur écrit, après visite, ' +
+        ' (' + d.periode + ')' + (rue && rue.c ? ', rapprochées de celles des rues à moins de 400 m' : '') + ', selon l\'étage, l\'ascenseur, la taille, l\'état, le DPE, l\'extérieur et les atouts indiqués. L\'avis de valeur écrit, après visite, ' +
         'vérifie ces points et ajoute la copropriété et le plan.</p>' +
         '<p class="mt-2 text-sm"><strong>Fiabilité : ' + fiabilite(rue) + '</strong></p>';
       bloc.hidden = false;
@@ -277,11 +298,22 @@
     bascule('[data-si-maison]', categorie === 'maison');
   }
 
+  /* La surface du balcon ou de la terrasse ne se demande qu'une fois l'un ou l'autre choisi. */
+  function suivreExterieur(form) {
+    var choix = valeur(form, 'exterieur');
+    var avec = choix === 'Balcon' || choix === 'Terrasse';
+    form.querySelectorAll('[data-si-exterieur]').forEach(function (bloc) {
+      bloc.hidden = !avec;
+      bloc.querySelectorAll('input').forEach(function (c) { c.disabled = !avec; });
+    });
+  }
+
   /* Le script peut être inclus par plusieurs formulaires d'une même page : chaque formulaire n'est lié qu'une fois. */
   document.querySelectorAll('form[data-fourchette]').forEach(function (form) {
     if (form.dataset.fourchetteLie) return;
     form.dataset.fourchetteLie = '1';
     suivreType(form);
+    suivreExterieur(form);
     /*
      * Compteurs − / + : l'étage monte, l'immeuble suit s'il était plus bas ; l'immeuble descend,
      * l'étage suit. Le champ reste un nombre saisissable au clavier.
@@ -313,6 +345,7 @@
     });
     form.addEventListener('change', function (e) {
       if (e.target.name === 'type') suivreType(form);
+      if (e.target.name === 'exterieur') suivreExterieur(form);
     });
     form.addEventListener('click', function (e) {
       if (!e.target.closest('[data-suivant]')) return;

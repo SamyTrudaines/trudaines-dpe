@@ -39,12 +39,14 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   le contact demandé avant de révéler le prix. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
   type en six cases illustrées (`PictoBien` : appartement, maison, duplex, loft ou atelier, hôtel particulier, immeuble
   ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
-  ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover) et atouts facultatifs ;
+  ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
   4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
   5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, nom, email,
-  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, placée entre
+  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF part de la médiane de la rue rapprochée de celle
+  des rues à moins de 400 m (poids v / (v + 10), constante mesurée sur les ventes ; voisinage `c` de
+  `/estimation-rues.json`), avec la dispersion et l'écart par taille du voisinage ; elle est placée entre
   les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
-  l'état et les atouts (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
+  l'état et les atouts, balcon ou terrasse comptés au tiers de leur surface sans dépasser 10 % de la surface habitable (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
   et revient dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
   L'adresse saisie en tête de page (`EntreeEstimation`) ou sur l'accueil (`/estimation?adresse=`) fait passer
   directement à l'étape 2. Événements GA4 `estimation_etape1` à `3`, `estimation_apercu`, `estimation_envoyee`.
