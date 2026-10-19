@@ -17,6 +17,7 @@ import { ambianceDeVoie } from '../../data/ambiance';
 import { regardsRues, dateRegards } from '../../data/regards-rues';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { estimationsDeRue } from '../../lib/estimation-quartier';
+import SuiviRue from '../../components/SuiviRue.astro';
 
 interface Props { rue: Rue }
 
@@ -309,6 +310,8 @@ const regard = regardsRues[rue.slug] ?? [];
             </p>
           </>
         )}
+
+        <SuiviRue identifiant={`suivi-${rue.slug}`} rue={nomEnPhrase} origine={`/prix-immobilier/${rue.slug}`} periode={periode} />
 
         {typologiesAffichees.length > 1 && (
           <>

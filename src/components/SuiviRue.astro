@@ -1,0 +1,58 @@
+---
+/**
+ * Suivi des prix d'une rue en un champ, sur /prix-immobilier/<rue> : la plupart des
+ * visiteurs de ces pages viennent lire un prix, pas encore vendre. L'email les garde ;
+ * la case « propriétaire » signale à Samy un vendeur de demain (functions/api/suivi-rue.js).
+ */
+interface Props {
+  identifiant: string;
+  /** Nom de la voie tel qu'il se lit dans une phrase, « rue Lepic ». */
+  rue: string;
+  origine: string;
+  periode: string;
+}
+const { identifiant, rue, origine, periode } = Astro.props;
+---
+<form
+  class="mt-10 border-t border-[color:var(--color-trait)] pt-8"
+  method="POST"
+  action="/api/suivi-rue"
+  data-trudaines
+  data-evenement="suivi_rue"
+  aria-labelledby={`${identifiant}-titre`}
+>
+  <input type="hidden" name="horodatage" value="" />
+  <input type="hidden" name="rue" value={rue} />
+  <input type="hidden" name="origine" value={origine} />
+  <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+    <label for={`${identifiant}-controle`}>Ne pas remplir</label>
+    <input type="text" id={`${identifiant}-controle`} name="controle" tabindex="-1" autocomplete="off" />
+  </div>
+  <div data-corps>
+    <h3 id={`${identifiant}-titre`} class="titre-3">Suivre les ventes {rue}</h3>
+    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+      Les nouvelles ventes signées {rue}, par email, à chaque parution de la base : en avril et en octobre.
+      Ces chiffres couvrent {periode}.
+    </p>
+    <div class="mt-5 flex flex-col gap-3 sm:flex-row">
+      <label class="sr-only" for={`${identifiant}-email`}>Adresse email</label>
+      <input class="champ sm:flex-1" id={`${identifiant}-email`} name="email" type="email" autocomplete="email" inputmode="email" required placeholder="Votre adresse email" />
+      <button type="submit" class="bouton bouton-secondaire">Recevoir les ventes</button>
+    </div>
+    <div class="mt-4 flex items-start gap-3">
+      <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`${identifiant}-proprietaire`} name="proprietaire" type="checkbox" value="oui" />
+      <label class="text-sm text-[color:var(--color-ardoise)]" for={`${identifiant}-proprietaire`}>Je suis propriétaire dans cette rue.</label>
+    </div>
+    <p class="mt-3 text-xs text-[color:var(--color-ardoise)]">
+      Désinscription en un clic dans chaque envoi. <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+    </p>
+    <p class="mt-3 text-sm text-[#a4262c]" data-erreur hidden></p>
+  </div>
+  <div data-confirmation hidden>
+    <p class="titre-3" role="status">C'est noté.</p>
+    <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
+      Un email de confirmation vient de partir. Pour la valeur de votre appartement dès maintenant,
+      l'estimation en ligne prend moins d'une minute.
+    </p>
+  </div>
+</form>

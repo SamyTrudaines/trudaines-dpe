@@ -105,6 +105,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Suivi des requêtes visées : bloc « Requêtes visées » (colonnes AB à AF) de l'onglet `synthese` de la feuille
   Search Console, formules sur l'onglet `donnees`.
 
+- Suivi de rue : formulaire d'un champ (`SuiviRue`, `functions/api/suivi-rue.js`) sur /prix-immobilier/<slug>, email
+  seul, case « propriétaire » qui envoie le contact dans la liste vendeurs (sinon téléchargements) ; Samy prévenu par email.
+- Robots du formulaire de contact : `suspect()` écarte aussi la signature « CharlestotNZ / Charlestot » (prénom = nom + deux
+  majuscules), sans rien inscrire dans Brevo.
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
 - Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans
