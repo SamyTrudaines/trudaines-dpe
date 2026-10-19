@@ -1122,6 +1122,37 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 }
 .preuve-avis-etoiles { letter-spacing: 0.25em; color: var(--color-or-fonce); }
 /*
+ * Choix en pastilles du formulaire d'estimation : un toucher au lieu d'un menu déroulant.
+ * Le bouton radio ou la case reste dans la page, invisible, pour le clavier et la validation.
+ */
+.choix-groupe { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.choix { position: relative; display: inline-flex; }
+.choix input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.choix span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--color-encre);
+  background-color: #ffffff;
+  border: 1px solid var(--color-trait);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.choix:hover span { border-color: var(--color-encre); }
+.choix input:checked + span { color: #ffffff; background-color: var(--color-encre); border-color: var(--color-encre); }
+.choix input:focus-visible + span { outline: 2px solid var(--color-or); outline-offset: 2px; }
+.choix-groupe-large .choix { flex: 1 1 9rem; }
+.choix-groupe-large .choix span { width: 100%; min-height: 3.5rem; font-weight: 500; }
+.choix-groupe-liste { flex-direction: column; }
+.choix-groupe-liste .choix span { width: 100%; justify-content: flex-start; }
+.champ-unite { position: relative; max-width: 14rem; }
+.champ-unite .champ { padding-right: 3rem; font-size: 1.125rem; }
+.champ-unite span { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); color: var(--color-ardoise); pointer-events: none; }
+
+/*
  * Deux colonnes de hauteurs très différentes (un texte court à côté d'un formulaire) : sur grand écran,
  * la colonne courte suit la lecture au lieu de laisser un vide sous elle.
  */

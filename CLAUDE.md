@@ -36,11 +36,14 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
 - Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
-  le contact demandé avant de révéler le prix. Étapes : 1 adresse et type ; 2 surface, pièces, chambres, avec
-  l'aperçu du nombre de ventes signées de la rue (jamais le prix) ; 3 étage, ascenseur, projet ; 4 prénom, email,
-  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, ajustée
-  par étage, ascenseur et typologie (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi et revient
-  dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
+  le contact demandé avant de révéler le prix. Cinq étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
+  type (appartement, maison, immeuble ou local) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
+  ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover) et atouts facultatifs ;
+  4 étage au détail, étages de l'immeuble, ascenseur, projet (désactivés hors appartement) ; 5 prénom, nom, email,
+  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, placée entre
+  les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
+  l'état et les atouts (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
+  et revient dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
   L'adresse saisie en tête de page (`EntreeEstimation`) ou sur l'accueil (`/estimation?adresse=`) fait passer
   directement à l'étape 2. Événements GA4 `estimation_etape1` à `3`, `estimation_apercu`, `estimation_envoyee`.
 - Deux voies dans chaque bloc d'estimation : « Estimer en ligne » ou « Être rappelé » (`functions/api/rappel.js`,

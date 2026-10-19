@@ -8,7 +8,11 @@ export async function onRequestPost({ request, env }) {
     const donnees = await request.formData();
     if (suspect(donnees)) return reponse(request, { ok: true, message: 'Reçu' });
 
-    const manquants = champsManquants(donnees, ['adresse', 'surface', 'pieces', 'chambres', 'etage', 'ascenseur', 'prenom', 'email', 'telephone']);
+    // Étage et ascenseur n'existent que pour un appartement : le formulaire les retire pour une maison.
+    const type = String(donnees.get('type') || 'Appartement').trim();
+    const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'email', 'telephone'];
+    if (type === 'Appartement') requis.push('etage', 'ascenseur');
+    const manquants = champsManquants(donnees, requis);
     if (manquants.length || !emailValide(donnees.get('email'))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
     }
@@ -23,7 +27,10 @@ export async function onRequestPost({ request, env }) {
       ['Surface', `${valeur('surface')} m²`],
       ['Pièces', valeur('pieces')],
       ['Chambres', valeur('chambres')],
-      ['Étage', valeur('etage')],
+      ['Salles de bain', valeur('sallesDeBain')],
+      ['État', valeur('etat')],
+      ['Atouts', donnees.getAll('atouts').map((a) => String(a).trim()).filter(Boolean).join(', ')],
+      ['Étage', valeur('etage') && valeur('etages') ? `${valeur('etage')}, immeuble de ${valeur('etages')} étage(s)` : valeur('etage')],
       ['Ascenseur', valeur('ascenseur')],
       ['Horizon de vente', valeur('horizon')],
       // Fourchette affichée après l'envoi, le cas échéant : savoir
@@ -46,7 +53,7 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p. ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
+    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
 
     await embaser(env, {
       email,

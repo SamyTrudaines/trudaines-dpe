@@ -38,6 +38,7 @@ const recent = () => String(Date.now() - 20000);
 
 const cas = [
   ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
+  ['estimation maison, sans étage', '../functions/api/estimation.js', { adresse: '8 villa des Lilas, 75019 Paris', type: 'Maison', surface: '140', pieces: '6 et plus', chambres: '4', sallesDeBain: '2', etat: 'Rénové', horizon: 'Plus tard', prenom: 'Luc', nom: 'Bernard', email: 'luc@example.com', telephone: '0601020304', horodatage: recent() }, 3],
   ['rappel', '../functions/api/rappel.js', { prenom: 'Odile', telephone: '06 01 02 03 04', moment: 'Le matin', adresse: '8 rue Lepic, 75018 Paris', consentement: 'oui', secteur: 'paris-18', horodatage: recent() }, 3],
   ['visite', '../functions/api/visite.js', { prenom: 'Paul', nom: 'Durand', email: 'paul@example.com', telephone: '0601020304', creneaux: 'Samedi matin', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['fiche-bien', '../functions/api/fiche-bien.js', { email: 'paul@example.com', telephone: '0601020304', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
