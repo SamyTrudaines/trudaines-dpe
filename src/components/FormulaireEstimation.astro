@@ -1,6 +1,7 @@
 ---
 import { preuveAvis } from '../lib/avis';
 import { lienWhatsapp } from '../lib/whatsapp';
+import PictoBien from './PictoBien.astro';
 
 interface Props {
   secteur?: string;
@@ -13,6 +14,15 @@ interface Props {
 }
 const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
 const listeId = `adresses-${identifiant}`;
+/* Types de bien : la catégorie dit ce que le formulaire demande ensuite (étage pour un appartement, terrain pour une maison). */
+const types = [
+  { valeur: 'Appartement', picto: 'appartement', libelle: 'Votre appartement', categorie: 'appartement' },
+  { valeur: 'Maison', picto: 'maison', libelle: 'Votre maison', categorie: 'maison' },
+  { valeur: 'Duplex', picto: 'duplex', libelle: 'Votre duplex', categorie: 'appartement' },
+  { valeur: 'Loft ou atelier', picto: 'loft', libelle: 'Votre loft', categorie: 'appartement' },
+  { valeur: 'Hôtel particulier', picto: 'hotel', libelle: 'Votre hôtel particulier', categorie: 'maison' },
+  { valeur: 'Immeuble ou local', picto: 'immeuble', libelle: 'Votre bien', categorie: 'autre' },
+] as const;
 /* La preuve sociale sous la barre d'étapes : le chiffre vient des avis publiés, jamais écrit à la main. */
 const preuve = await preuveAvis();
 /* Après l'envoi : des photos par WhatsApp, pour que le premier appel parte du bien réel. */
@@ -88,10 +98,13 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         </div>
         <fieldset class="border-0 p-0">
           <legend class="etiquette">Type de bien</legend>
-          <div class="choix-groupe choix-groupe-large">
-            <label class="choix"><input type="radio" name="type" value="Appartement" checked required data-type-libelle="Votre appartement" /><span>Appartement</span></label>
-            <label class="choix"><input type="radio" name="type" value="Maison" data-type-libelle="Votre maison" /><span>Maison</span></label>
-            <label class="choix"><input type="radio" name="type" value="Immeuble ou local" data-type-libelle="Votre bien" /><span>Immeuble ou local</span></label>
+          <div class="types-bien">
+            {types.map((t, i) => (
+              <label class="type-bien">
+                <input type="radio" name="type" value={t.valeur} checked={i === 0} required={i === 0} data-type-libelle={t.libelle} data-categorie={t.categorie} />
+                <span><PictoBien type={t.picto} /><span class="type-bien-nom">{t.valeur}</span></span>
+              </label>
+            ))}
           </div>
         </fieldset>
       </div>
@@ -190,6 +203,9 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
           <label class="choix"><input type="checkbox" name="atouts" value="Lumineux" /><span>Très lumineux</span></label>
           <label class="choix"><input type="checkbox" name="atouts" value="Cave" /><span>Cave</span></label>
           <label class="choix"><input type="checkbox" name="atouts" value="Parking" /><span>Parking</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Chambre de service" /><span>Chambre de service</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Parties communes rénovées" /><span>Parties communes rénovées</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Ravalement récent" /><span>Ravalement récent</span></label>
           </div>
         </fieldset>
       </div>
@@ -205,39 +221,23 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         {/* Sans objet pour une maison : les champs sont alors désactivés et ne bloquent pas l'étape. */}
         <div class="grid gap-5" data-si-appartement>
           <p class="text-sm text-[color:var(--color-ardoise)]">L'étage et l'ascenseur placent votre bien en haut ou en bas des prix de la rue.</p>
-          <div class="grid gap-6 sm:grid-cols-2">
-            <div>
+          {/* Compteurs : l'étage du bien et la hauteur de l'immeuble se règlent ensemble, l'un ne dépassant jamais l'autre. */}
+          <div class="grid gap-4">
+            <div class="compteur" data-compteur-champ>
               <label class="etiquette" for={`etage-${identifiant}`}>Étage du bien</label>
-              <select class="champ" id={`etage-${identifiant}`} name="etage" required>
-                <option value="" disabled selected>Choisir</option>
-                <option value="Rez-de-chaussée">Rez-de-chaussée</option>
-            <option value="1er">1er étage</option>
-            <option value="2e">2e étage</option>
-            <option value="3e">3e étage</option>
-            <option value="4e">4e étage</option>
-            <option value="5e">5e étage</option>
-            <option value="6e">6e étage</option>
-            <option value="7e">7e étage</option>
-            <option value="8e">8e étage</option>
-            <option value="9e">9e étage</option>
-            <option value="10e et plus">10e étage et plus</option>
-              </select>
+              <div class="compteur-ligne">
+                <button type="button" data-moins aria-label="Un étage de moins">−</button>
+                <input class="champ" id={`etage-${identifiant}`} name="etage" type="number" min="0" max="40" required inputmode="numeric" placeholder="0 = rez-de-chaussée" data-etage />
+                <button type="button" data-plus aria-label="Un étage de plus">+</button>
+              </div>
             </div>
-            <div>
+            <div class="compteur" data-compteur-champ>
               <label class="etiquette" for={`etages-${identifiant}`}>Étages de l'immeuble</label>
-              <select class="champ" id={`etages-${identifiant}`} name="etages" required>
-                <option value="" disabled selected>Choisir</option>
-            <option value="1">1 étage</option>
-            <option value="2">2 étages</option>
-            <option value="3">3 étages</option>
-            <option value="4">4 étages</option>
-            <option value="5">5 étages</option>
-            <option value="6">6 étages</option>
-            <option value="7">7 étages</option>
-            <option value="8">8 étages</option>
-            <option value="9">9 étages</option>
-            <option value="10 et plus">10 étages et plus</option>
-              </select>
+              <div class="compteur-ligne">
+                <button type="button" data-moins aria-label="Un étage de moins">−</button>
+                <input class="champ" id={`etages-${identifiant}`} name="etages" type="number" min="1" max="40" required inputmode="numeric" placeholder="6" data-etages />
+                <button type="button" data-plus aria-label="Un étage de plus">+</button>
+              </div>
             </div>
           </div>
           <fieldset class="border-0 p-0">

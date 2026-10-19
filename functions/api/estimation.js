@@ -3,6 +3,16 @@ import {
   liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
 
+/* « 3 » et « 7 » deviennent « 3e étage, immeuble de 7 étages » ; 0 est le rez-de-chaussée. */
+function etageLisible(etage, etages) {
+  if (!etage) return '';
+  const n = Number(etage);
+  const libelle = !Number.isFinite(n) ? etage : n === 0 ? 'Rez-de-chaussée' : n === 1 ? '1er étage' : `${n}e étage`;
+  const total = Number(etages);
+  if (!etages || !Number.isFinite(total)) return libelle;
+  return `${libelle}, immeuble de ${total} étage${total > 1 ? 's' : ''}${total >= 9 ? ' (grande hauteur, souvent après 1950)' : ''}`;
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     const donnees = await request.formData();
@@ -11,7 +21,7 @@ export async function onRequestPost({ request, env }) {
     // Étage et ascenseur n'existent que pour un appartement : le formulaire les retire pour une maison.
     const type = String(donnees.get('type') || 'Appartement').trim();
     const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'email', 'telephone'];
-    if (type === 'Appartement') requis.push('etage', 'ascenseur');
+    if (['Appartement', 'Duplex', 'Loft ou atelier'].includes(type)) requis.push('etage', 'ascenseur');
     const manquants = champsManquants(donnees, requis);
     if (manquants.length || !emailValide(donnees.get('email'))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
@@ -32,7 +42,7 @@ export async function onRequestPost({ request, env }) {
       ['État', valeur('etat')],
       ['DPE', valeur('dpe')],
       ['Atouts', donnees.getAll('atouts').map((a) => String(a).trim()).filter(Boolean).join(', ')],
-      ['Étage', valeur('etage') && valeur('etages') ? `${valeur('etage')}, immeuble de ${valeur('etages')} étage(s)` : valeur('etage')],
+      ['Étage', etageLisible(valeur('etage'), valeur('etages'))],
       ['Ascenseur', valeur('ascenseur')],
       ['Horizon de vente', valeur('horizon')],
       // Fourchette affichée après l'envoi, le cas échéant : savoir
