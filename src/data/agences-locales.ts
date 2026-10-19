@@ -53,7 +53,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette'],
     titreSeo: 'Agence immobilière Montmartre, Abbesses | Trudaines',
     descriptionSeo:
-      "Agence immobilière à Montmartre, au pied de la Butte : prix par rue, estimation offerte sous 48 h, vente confidentielle.",
+      "Agence immobilière à Montmartre, au pied de la Butte : biens de caractère et d'exception, prix par rue, estimation offerte sous 48 h, vente confidentielle.",
     h1: 'Agence immobilière à Montmartre',
     surtitre: 'Paris 18e · Abbesses, Lepic, Junot',
     chapo:
@@ -74,12 +74,29 @@ export const agencesLocales: AgenceLocale[] = [
           "Sur la Butte, beaucoup de propriétaires ne veulent ni panneau ni annonce. Nous menons ces ventes en confidentiel, auprès d'acheteurs déjà qualifiés, et nous disons dès le départ ce que ce choix coûte en délai.",
         ],
       },
+      {
+        titre: "Les biens d'exception de la Butte",
+        paragraphes: [
+          "Dernier étage ouvert sur Paris, atelier d'artiste sous verrière, appartement de l'avenue Junot ou des rues pavées autour de la place du Tertre : ces biens n'ont pas de prix moyen. Ils se vendent à des acheteurs qui comparent Montmartre avec le Marais ou Saint-Germain, parfois depuis l'étranger.",
+        ],
+        points: [
+          { titre: 'Une vue chiffrée.', texte: "L'avis de valeur compare votre bien aux ventes signées des mêmes rues, étage par étage, pour dire ce que la vue et le calme valent réellement, plutôt que de les promettre." },
+          { titre: 'Une présentation à la hauteur.', texte: "Reportage photographique en lumière naturelle, plan des surfaces, dossier de copropriété complet avant la première visite." },
+          { titre: 'Des acheteurs au-delà de Paris.', texte: "Nos annonces sont traduites en anglais, allemand, espagnol, italien, portugais, chinois et arabe, et diffusées aux portails internationaux." },
+          { titre: 'La discrétion, si vous la choisissez.', texte: "Vente confidentielle, sans panneau ni annonce publique, réservée aux acheteurs qualifiés de notre fichier." },
+        ],
+      },
     ],
     faq: [
       {
         question: "Comment faire estimer mon appartement à Montmartre ?",
         reponse:
           "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+      },
+      {
+        question: 'Vendez-vous des biens haut de gamme à Montmartre ?',
+        reponse:
+          "Oui : derniers étages avec vue, ateliers, appartements de caractère. Nous les estimons à partir des ventes signées des mêmes rues, nous les présentons en sept langues aux acheteurs français et étrangers, et nous pouvons les vendre en confidentiel, sans panneau ni annonce publique.",
       },
       {
         question: 'Vendez-vous sans annonce publique à Montmartre ?',

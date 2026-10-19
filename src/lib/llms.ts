@@ -49,6 +49,7 @@ export async function llmsTexte() {
 ## Services
 - [Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle](${site.url}/mandat-exclusif)
 - Avis de valeur écrit, remis après visite sous 48 heures, offert et sans engagement quand le propriétaire envisage de vendre, conservé même s'il vend ailleurs ; facturé 300 € TTC quand il veut seulement connaître la valeur, sans projet de vente avec l'agence, et déduit des honoraires si la vente est finalement confiée
+- Biens de caractère et d'exception à Montmartre et dans le 9e nord : derniers étages avec vue, ateliers, appartements familiaux ; annonces traduites en sept langues pour les acheteurs étrangers ; vente confidentielle sans panneau ni annonce publique
 - Mandat de recherche pour acquéreurs
 - Gestion locative
 
