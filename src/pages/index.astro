@@ -293,6 +293,9 @@ const engagements = [
         ))}
       </p>
       <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {secteurs.map((s) => (
+          <a href={`/estimation/${s.slug}`} class="lien-souligne" data-evt="accueil_estimation_secteur">Estimation {s.nom}</a>
+        ))}
         {estimationsQuartiers.map((q) => (
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
         ))}
