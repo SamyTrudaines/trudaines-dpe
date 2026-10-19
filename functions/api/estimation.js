@@ -44,7 +44,9 @@ export async function onRequestPost({ request, env }) {
       ['Atouts', donnees.getAll('atouts').map((a) => String(a).trim()).filter(Boolean).join(', ')],
       ['Étage', etageLisible(valeur('etage'), valeur('etages'))],
       ['Ascenseur', valeur('ascenseur')],
-      ['Horizon de vente', valeur('horizon')],
+      ['Propriétaire', valeur('proprietaire')],
+      ['Le bien est', valeur('usage')],
+      ['Projet de vente', valeur('horizon')],
       // Fourchette affichée après l'envoi, le cas échéant : savoir
       // ce que le propriétaire a eu sous les yeux change la première phrase de l'appel.
       ['Fourchette vue sur le site', valeur('fourchette') || 'Non calculée'],
@@ -65,7 +67,7 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
+    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} A rappeler.`);
 
     await embaser(env, {
       email,
