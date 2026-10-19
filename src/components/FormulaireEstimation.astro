@@ -195,9 +195,23 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
           </select>
         </div>
         <fieldset class="border-0 p-0">
+          <legend class="etiquette">Extérieur, facultatif</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="exterieur" value="Aucun" /><span>Aucun</span></label>
+          <label class="choix"><input type="radio" name="exterieur" value="Balcon" /><span>Balcon</span></label>
+          <label class="choix"><input type="radio" name="exterieur" value="Terrasse" /><span>Terrasse</span></label>
+          </div>
+          <div class="mt-4 max-w-xs" data-si-exterieur hidden>
+            <label class="etiquette" for={`exterieur-${identifiant}`}>Sa surface</label>
+            <div class="champ-unite">
+              <input class="champ" id={`exterieur-${identifiant}`} name="surfaceExterieure" type="number" min="1" max="500" required disabled inputmode="numeric" placeholder="6" />
+              <span aria-hidden="true">m²</span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
           <legend class="etiquette">Atouts, facultatif</legend>
           <div class="choix-groupe">
-          <label class="choix"><input type="checkbox" name="atouts" value="Balcon ou terrasse" /><span>Balcon ou terrasse</span></label>
           <label class="choix"><input type="checkbox" name="atouts" value="Vue dégagée" /><span>Vue dégagée</span></label>
           <label class="choix"><input type="checkbox" name="atouts" value="Calme" /><span>Calme</span></label>
           <label class="choix"><input type="checkbox" name="atouts" value="Lumineux" /><span>Très lumineux</span></label>
