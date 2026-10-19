@@ -215,8 +215,8 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       </div>
     </fieldset>
 
-    <fieldset data-etape data-nom-etape="Étage et projet" class="border-0 p-0">
-      <legend class="titre-3 mb-6">Étage et projet</legend>
+    <fieldset data-etape data-nom-etape="Étage" class="border-0 p-0">
+      <legend class="titre-3 mb-6">Étage</legend>
       <div class="grid gap-5">
         {/* Sans objet pour une maison : les champs sont alors désactivés et ne bloquent pas l'étape. */}
         <div class="grid gap-5" data-si-appartement>
@@ -248,12 +248,43 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
             </div>
           </fieldset>
         </div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Continuer</button>
+      </div>
+    </fieldset>
+
+    <fieldset data-etape data-nom-etape="Ce bien et vous" class="border-0 p-0">
+      <legend class="titre-3 mb-6">Ce bien et vous</legend>
+      <div class="grid gap-5">
         <fieldset class="border-0 p-0">
-          <legend class="etiquette">Votre projet</legend>
+          <legend class="etiquette">Êtes-vous propriétaire ?</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="proprietaire" value="Oui" required /><span>Oui</span></label>
+          <label class="choix"><input type="radio" name="proprietaire" value="Non" /><span>Non</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Ce bien est</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="usage" value="Résidence principale" /><span>Résidence principale</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Résidence secondaire" /><span>Résidence secondaire</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Loué" /><span>Loué</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Autre" /><span>Autre</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Envisagez-vous de vendre ?</legend>
           <div class="choix-groupe choix-groupe-liste">
-          <label class="choix"><input type="radio" name="horizon" value="Moins de 3 mois" required /><span>Vendre dans les 3 mois</span></label>
-          <label class="choix"><input type="radio" name="horizon" value="3 à 6 mois" /><span>Vendre dans 3 à 6 mois</span></label>
-          <label class="choix"><input type="radio" name="horizon" value="Plus tard" /><span>Connaître la valeur, vendre plus tard</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Vente commencée" required /><span>Oui, la vente est commencée</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Dès que possible" /><span>Oui, dès que possible</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Moins de 3 mois" /><span>Oui, d'ici 3 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="3 à 6 mois" /><span>Oui, d'ici 6 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Plus de 6 mois" /><span>Oui, dans plus de 6 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Pas de projet" /><span>Non, pas de projet de vente</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Vient de vendre" /><span>Non, je viens de le vendre</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Mise en location" /><span>Non, je souhaite le louer</span></label>
           </div>
         </fieldset>
       </div>

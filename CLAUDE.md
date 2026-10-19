@@ -36,11 +36,12 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
 - Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
-  le contact demandé avant de révéler le prix. Cinq étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
+  le contact demandé avant de révéler le prix. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
   type en six cases illustrées (`PictoBien` : appartement, maison, duplex, loft ou atelier, hôtel particulier, immeuble
   ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
   ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover) et atouts facultatifs ;
-  4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur, projet (désactivés hors appartement) ; 5 prénom, nom, email,
+  4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
+  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, nom, email,
   téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, placée entre
   les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
   l'état et les atouts (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
