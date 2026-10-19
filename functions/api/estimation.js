@@ -16,6 +16,8 @@ export async function onRequestPost({ request, env }) {
     const valeur = (champ) => String(donnees.get(champ) || '').trim();
     const prenom = valeur('prenom');
     const email = valeur('email');
+    // Le nom n'est plus demandé par le formulaire : il ne reste que s'il arrive d'un ancien envoi.
+    const nomComplet = [prenom, valeur('nom')].filter(Boolean).join(' ');
 
     const lignes = [
       ['Adresse', valeur('adresse')],
@@ -33,7 +35,7 @@ export async function onRequestPost({ request, env }) {
       ['Quartier', valeur('quartier')],
       // Page quartier ou rue d'où part la demande : dit à l'agence ce que le visiteur lisait.
       ['Page d’origine', valeur('origine')],
-      ['Nom', `${prenom} ${valeur('nom')}`],
+      ['Nom', nomComplet],
       ['Email', email],
       ['Téléphone', valeur('telephone')],
       ['Message', valeur('message')],
@@ -46,7 +48,7 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p. ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
+    await envoyerSmsAgence(env, `Trudaines, estimation : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p. ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} A rappeler.`);
 
     await embaser(env, {
       email,
