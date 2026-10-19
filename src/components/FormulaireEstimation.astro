@@ -173,23 +173,21 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="button" class="bouton" data-suivant>Calculer mon estimation</button>
+        <button type="button" class="bouton" data-suivant>Dernière étape</button>
       </div>
     </fieldset>
 
     <fieldset data-etape class="border-0 p-0">
       <legend class="titre-3 mb-2">Où recevoir votre estimation ?</legend>
       <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
-        Dans nos six arrondissements, votre fourchette s'affiche dès l'envoi, calculée sur les ventes signées.
+        Dans nos six arrondissements, votre fourchette s'affiche à l'écran dès l'envoi, calculée sur les ventes
+        signées, et vous arrive aussi par email.
       </p>
+      {/* Trois champs, pas un de plus : chaque champ ajouté à ce dernier écran fait partir des vendeurs. */}
       <div class="grid gap-6 sm:grid-cols-2">
-        <div>
+        <div class="sm:col-span-2">
           <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
           <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
-        </div>
-        <div>
-          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
-          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
         </div>
         <div>
           <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
@@ -212,8 +210,8 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         </label>
       </div>
       <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
-        Vos coordonnées servent seulement à répondre à votre demande : Samy Santamarina vous rappelle sous 24 heures
-        ouvrées pour l'avis de valeur écrit, gratuit et sans engagement. Elles ne sont ni vendues ni cédées.{' '}
+        Vos coordonnées servent seulement à vous envoyer votre estimation, puis à vous proposer un avis de valeur
+        écrit, gratuit et sans engagement. Elles ne sont ni vendues ni cédées.{' '}
         <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
