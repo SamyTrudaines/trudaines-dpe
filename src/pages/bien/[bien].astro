@@ -8,6 +8,9 @@ import FormulaireFiche from '../../components/FormulaireFiche.astro';
 import GalerieBien from '../../components/GalerieBien.astro';
 import CarteBien from '../../components/CarteBien.astro';
 import AlerteExpress from '../../components/AlerteExpress.astro';
+import Avis from '../../components/Avis.astro';
+import BlocWinWin from '../../components/BlocWinWin.astro';
+import { avisCommentés, agrégatAvis } from '../../lib/avis';
 import { secteurs } from '../../data/secteurs';
 import { prix, prixAffiche, nombre, prixM2, libelleStatut, lieuBien, referencePrixEnergie, faitsBien } from '../../lib/format';
 import { site } from '../../data/site';
@@ -122,6 +125,8 @@ const donnees = [
     floorSize: { '@type': 'QuantitativeValue', value: d.surface, unitCode: 'MTK' },
   },
 ];
+const avisFiche = await avisCommentés(3);
+const agregatAvisFiche = await agrégatAvis();
 ---
 <Layout
   titre={titreSeo([d.titre, !archive && `${d.quartier} ${d.arrondissement}`, 'Trudaines'])}
@@ -375,4 +380,6 @@ const donnees = [
     secteur={secteurBien}
     budget={budgetAlerte}
   />
+  <Avis avis={avisFiche} agregat={agregatAvisFiche} />
+  <BlocWinWin />
 </Layout>
