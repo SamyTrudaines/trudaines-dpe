@@ -51,6 +51,8 @@ const { titre, chapo, sommaire, pages, edition, prochaineEdition, slug, couvertu
         {prochaineEdition ? `Prochaine édition : ${prochaineEdition}. ` : ''}Cochez la case du formulaire et vous la recevez dès sa parution.
       </p>
     </div>
-    <FormulaireGuide guide={slug} titreGuide={titre} identifiant={identifiant} evt={evt} contexte={contexte} />
+    <div class="colonne-suit">
+      <FormulaireGuide guide={slug} titreGuide={titre} identifiant={identifiant} evt={evt} contexte={contexte} />
+    </div>
   </div>
 </section>

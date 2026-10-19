@@ -98,7 +98,7 @@ const engagements = [
         <span class="surtitre marque-filet block">Agence immobilière à Paris</span>
         <span class="titre-1 mt-5 block">L'immobilier <span class="whitespace-nowrap">au-delà des murs.</span></span>
       </h1>
-      <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,29rem)] lg:items-end lg:gap-16">
+      <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,29rem)] lg:items-stretch lg:gap-16">
         <div>
           <p class="chapo max-w-2xl">
             <span class="block">Guidés par la passion et l'humain.</span>
@@ -293,6 +293,9 @@ const engagements = [
         ))}
       </p>
       <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+        {secteurs.map((s) => (
+          <a href={`/estimation/${s.slug}`} class="lien-souligne" data-evt="accueil_estimation_secteur">Estimation {s.nom}</a>
+        ))}
         {estimationsQuartiers.map((q) => (
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
         ))}

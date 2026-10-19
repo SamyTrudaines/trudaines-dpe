@@ -213,6 +213,9 @@ const PAGES_CLES = [
   '/estimation/paris-17/epinettes',
   '/estimation/paris-9', '/estimation/paris-18', '/estimation/paris-18/montmartre', '/estimation/paris-9/trudaine-maubeuge',
   '/agence-immobiliere-trudaine',
+  '/estimation/paris-17', '/estimation/paris-9/martyrs-lorette', '/estimation/paris-9/clichy-trinite',
+  '/estimation/paris-9/saint-georges', '/estimation/paris-17/batignolles', '/estimation/paris-17/cardinet',
+  '/estimation/paris-18/abbesses', '/estimation/paris-18/lamarck', '/estimation/paris-18/jules-joffrin',
 ];
 const PORTES = ['http://trudaines.com/', 'https://trudaines.com/', 'http://www.trudaines.com/'];
 /* États de lecture qui veulent dire : Googlebot n'a pas pu lire la page. */

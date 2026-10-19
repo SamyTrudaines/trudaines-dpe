@@ -21,7 +21,7 @@
         et.hidden = i !== index;
       });
       if (barre) barre.style.width = ((index + 1) / etapes.length) * 100 + '%';
-      if (compteur) compteur.textContent = 'Étape ' + (index + 1) + ' sur ' + etapes.length;
+      if (compteur) compteur.textContent = 'Étape ' + (index + 1) + ' sur ' + etapes.length + (etapes[index].dataset.nomEtape ? ' · ' + etapes[index].dataset.nomEtape : '');
       courante = index;
       var premier = etapes[index].querySelector('input, select, textarea');
       if (premier && index > 0) premier.focus();
