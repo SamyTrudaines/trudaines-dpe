@@ -99,7 +99,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 18e | Trudaines',
+    titre: 'Estimation appartement Paris 18, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
     titreAgence: 'Agence immobilière Paris 18e, rue Livingstone | Trudaines',
@@ -139,6 +139,16 @@ export const secteurs: Secteur[] = [
         question: "Combien de visites faut-il pour vendre un bien dans le 18e ?",
         reponse:
           "Nous suivons ce chiffre mandat par mandat et nous vous le communiquons chaque semaine. Le chiffre utile est le rapport entre visites et offres. Beaucoup de visites sans offre signifie presque toujours un écart entre le prix affiché et ce que le bien offre réellement.",
+      },
+      {
+        question: "Comment se passe une estimation immobilière à Paris 18 ?",
+        reponse:
+          "En deux temps, et l'un n'oblige pas à l'autre. En ligne d'abord : votre adresse, la surface, l'étage, l'état et vos coordonnées suffisent pour recevoir une fourchette calculée sur les ventes signées de votre rue et des rues voisines. Puis, si vous envisagez de vendre, une visite de quarante-cinq minutes et un avis de valeur écrit sous 48 heures, qui cite les ventes comparables. L'estimation est offerte quand vous envisagez de vendre.",
+      },
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 18e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier d'artiste, maison de ville, hôtel particulier ou immeuble. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour une maison, un atelier ou un immeuble, l'estimation se fait sur place, de Jules-Joffrin aux Abbesses et de Lamarck à la Goutte-d'Or.",
       },
       {
         question: "Travaillez-vous aussi le nord du 18e ?",

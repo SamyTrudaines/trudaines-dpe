@@ -86,13 +86,13 @@ const DELAI_MINIMUM = 2500;
  * robot. Sans elle, l'horodatage n'écarte un envoi que sur un écart positif.
  */
 /*
- * Signature des robots qui remplissent le formulaire de contact depuis octobre 2026 :
- * le prénom reprend le nom suivi de deux majuscules (« Charlestot », « CharlestotNZ »).
+ * Signature des robots qui remplissent les formulaires depuis octobre 2026 : un prénom d'un seul
+ * mot collé à deux majuscules (« CharlestotNZ », « DanieltedGM », « RobertGM »). Aucun prénom réel
+ * ne s'écrit ainsi ; un prénom tout en capitales (« JEAN ») ou composé (« Jean-Marie ») passe.
  */
 function signatureRobot(donnees) {
   const prenom = String(donnees.get('prenom') || '').trim();
-  const nom = String(donnees.get('nom') || '').trim();
-  return Boolean(nom) && prenom.length > nom.length && prenom.startsWith(nom) && /^[A-Z]{2}$/.test(prenom.slice(nom.length));
+  return /^\p{Lu}\p{Ll}+\p{Lu}{2}$/u.test(prenom);
 }
 
 export function suspect(donnees) {

@@ -103,6 +103,16 @@ const robot = await contactModule.onRequestPost({ request: requete({ prenom: 'Ch
 const robotIgnore = robot.status === 200 && !appels.some((a) => a.url.endsWith('/contacts'));
 if (!robotIgnore) echecs++;
 console.log(`${robotIgnore ? 'OK   ' : 'ÉCHEC'} contact : robot « CharlestotNZ Charlestot » ignoré, rien dans Brevo`);
+appels.length = 0;
+const robot2 = await contactModule.onRequestPost({ request: requete({ prenom: 'DanieltedGM', nom: 'Robertted', email: 'bot@example.com', telephone: '87868869324', sujet: 'Acheter', message: 'Xin chào, tôi muốn biết giá của bạn.', consentement: 'oui', horodatage: recent() }), env });
+const robot2Ignore = robot2.status === 200 && appels.length === 0;
+if (!robot2Ignore) echecs++;
+console.log(`${robot2Ignore ? 'OK   ' : 'ÉCHEC'} contact : robot « DanieltedGM Robertted » ignoré, ni email ni Brevo`);
+appels.length = 0;
+const prenomCompose = await contactModule.onRequestPost({ request: requete({ prenom: 'Jean-Marie', nom: 'Dupont', email: 'jm@example.com', telephone: '0601020304', sujet: 'Acheter', message: 'Bonjour', consentement: 'oui', horodatage: recent() }), env });
+const prenomComposeOk = prenomCompose.status === 200 && appels.length > 0;
+if (!prenomComposeOk) echecs++;
+console.log(`${prenomComposeOk ? 'OK   ' : 'ÉCHEC'} contact : prénom composé « Jean-Marie » bien transmis`);
 
 const rappelRefuse = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '12', consentement: 'oui', horodatage: recent() }), env });
 if (rappelRefuse.status !== 400) echecs++;
