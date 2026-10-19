@@ -1121,6 +1121,30 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   text-underline-offset: 0.35em;
 }
 .preuve-avis-etoiles { letter-spacing: 0.25em; color: var(--color-or-fonce); }
+/*
+ * Deux colonnes de hauteurs très différentes (un texte court à côté d'un formulaire) : sur grand écran,
+ * la colonne courte suit la lecture au lieu de laisser un vide sous elle.
+ */
+@media (min-width: 1024px) {
+  .colonne-suit {
+    position: sticky;
+    top: calc(var(--entete-compact) + 2rem);
+    align-self: start;
+  }
+}
+/*
+ * Sur grand écran, le bloc d'estimation de l'accueil prend la hauteur du texte d'ouverture :
+ * contenu centré, séparé par un filet vertical, pour que les deux colonnes se répondent.
+ */
+@media (min-width: 1024px) {
+  .estimer-adresse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--color-trait);
+    padding-left: 3rem;
+  }
+}
 .estimer-adresse .etiquette {
   font-size: 0.75rem;
   font-weight: 600;
