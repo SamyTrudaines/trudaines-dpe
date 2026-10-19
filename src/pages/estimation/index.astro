@@ -125,6 +125,7 @@ const donnees = [
 ];
 ---
 <Layout
+  filArianeMasqueMobile
   ancreEstimation="#avis-de-valeur"
   titre="Estimation immobilière gratuite à Paris 9e et 18e | Trudaines"
   description={`Estimation immobilière gratuite à Paris 7e, 9e, 10e, 16e, 17e et 18e : visite, ventes signées, avis de valeur écrit sous 48 h. ${preuve}`}
@@ -132,10 +133,16 @@ const donnees = [
   donnees={donnees}
 >
   <CadreMoulure enTete>
-    <div class="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
-      <div>
-        <p class="surtitre">Estimation</p>
-        <h1 class="titre-1 mt-6">Estimation immobilière à Paris, en ligne ou après visite</h1>
+    <div class="grid gap-5 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-x-10 lg:gap-y-2">
+      <div class="lg:col-start-1 lg:row-start-1">
+        <p class="surtitre hidden sm:block">Estimation</p>
+        <h1 class="titre-1 sm:mt-6">Estimation immobilière à Paris, en ligne ou après visite</h1>
+      </div>
+      {/* Sur téléphone, le formulaire suit directement le titre : l'adresse se saisit sans défiler. */}
+      <div class="lg:col-start-2 lg:row-start-1 lg:row-span-2">
+        <FormulaireEstimation identifiant="avis-de-valeur" />
+      </div>
+      <div class="lg:col-start-1 lg:row-start-2">
         <p class="chapo mt-8">
           Ce que nous remettons porte un nom : l'avis de valeur. Un document écrit, remis après visite sous
           48 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et donne
@@ -152,7 +159,6 @@ const donnees = [
           intro="Vous préférez choisir le jour et l'heure de la visite d'estimation ?"
         />
       </div>
-      <FormulaireEstimation identifiant="avis-de-valeur" />
     </div>
   </CadreMoulure>
 

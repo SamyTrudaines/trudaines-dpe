@@ -63,7 +63,7 @@
     var zone = form.querySelector('[data-apercu-ventes]');
     var adresse = valeur(form, 'adresse').trim();
     if (!zone || adresse.length < 5) return;
-    if (valeur(form, 'type') && valeur(form, 'type') !== 'Appartement') {
+    if (!enAppartement(form)) {
       zone.dataset.adresse = '';
       zone.textContent = 'Les ventes que nous mesurons rue par rue sont des appartements : pour une maison, un immeuble ou un local, ' +
         'Samy Santamarina estime votre bien sur place, gratuitement.';
@@ -108,7 +108,7 @@
    * et avec l'ascenseur, dont l'absence pèse d'autant plus que l'on monte.
    */
   function ecartEtage(etage, etages) {
-    var n = etage === 'Rez-de-chaussée' ? 0 : parseInt(etage, 10);
+    var n = parseInt(etage, 10);
     var total = parseInt(etages, 10);
     if (isNaN(n)) return 0;
     if (n >= 1 && total && n >= total) return 0.1;
@@ -117,7 +117,7 @@
     return n >= 5 ? 0.06 : 0;
   }
   function ecartAscenseur(ascenseur, etage) {
-    var n = etage === 'Rez-de-chaussée' ? 0 : parseInt(etage, 10) || 0;
+    var n = parseInt(etage, 10) || 0;
     if (ascenseur === 'Oui') return n >= 3 ? 0.03 : 0.01;
     if (ascenseur !== 'Non' || n === 0) return 0;
     return n <= 2 ? -0.03 : n <= 4 ? -0.08 : -0.12;
@@ -137,6 +137,11 @@
     var champ = form.elements[nom];
     return champ && champ.value ? champ.value : '';
   }
+  /* Duplex et loft se mesurent sur les ventes d'appartements ; maison, hôtel particulier ou immeuble, non. */
+  function enAppartement(form) {
+    var choisi = form.querySelector('[name="type"]:checked');
+    return !choisi || (choisi.getAttribute('data-categorie') || 'appartement') === 'appartement';
+  }
   function coches(form, nom) {
     return Array.prototype.map.call(form.querySelectorAll('[name="' + nom + '"]:checked'), function (c) { return c.value; });
   }
@@ -150,7 +155,7 @@
     var pieces = parseInt(valeur(form, 'pieces'), 10) || 0;
     if (!bloc || adresse.length < 5 || !surface || surface < 9) return;
     /* Les ventes mesurées sont des appartements : une maison ou un immeuble s'estime sur place. */
-    if (valeur(form, 'type') && valeur(form, 'type') !== 'Appartement') {
+    if (!enAppartement(form)) {
       bloc.hidden = true;
       if (mention) mention.hidden = true;
       if (cache) cache.value = '';
@@ -259,7 +264,8 @@
     var choisi = form.querySelector('[name="type"]:checked');
     if (!choisi) return;
     form.querySelectorAll('[data-type-titre]').forEach(function (t) { t.textContent = choisi.getAttribute('data-type-libelle') || 'Votre bien'; });
-    var appartement = choisi.value === 'Appartement';
+    var categorie = choisi.getAttribute('data-categorie') || 'autre';
+    var appartement = categorie === 'appartement';
     var bascule = function (selecteur, visible) {
       form.querySelectorAll(selecteur).forEach(function (bloc) {
         bloc.hidden = !visible;
@@ -268,7 +274,7 @@
     };
     bascule('[data-si-appartement]', appartement);
     /* Le terrain ne se demande que pour une maison. */
-    bascule('[data-si-maison]', choisi.value === 'Maison');
+    bascule('[data-si-maison]', categorie === 'maison');
   }
 
   /* Le script peut être inclus par plusieurs formulaires d'une même page : chaque formulaire n'est lié qu'une fois. */
@@ -276,6 +282,35 @@
     if (form.dataset.fourchetteLie) return;
     form.dataset.fourchetteLie = '1';
     suivreType(form);
+    /*
+     * Compteurs − / + : l'étage monte, l'immeuble suit s'il était plus bas ; l'immeuble descend,
+     * l'étage suit. Le champ reste un nombre saisissable au clavier.
+     */
+    var etage = form.querySelector('[data-etage]');
+    var etages = form.querySelector('[data-etages]');
+    var accorder = function (source) {
+      if (!etage || !etages || etage.value === '' || etages.value === '') {
+        if (source === etage && etage && etage.value !== '' && etages && etages.value === '') etages.value = Math.max(1, parseInt(etage.value, 10) || 1);
+        return;
+      }
+      var e = parseInt(etage.value, 10);
+      var t = parseInt(etages.value, 10);
+      if (source === etage && e > t) etages.value = e;
+      if (source === etages && t < e) etage.value = t;
+    };
+    form.querySelectorAll('[data-compteur-champ]').forEach(function (bloc) {
+      var champ = bloc.querySelector('input');
+      bloc.addEventListener('click', function (e) {
+        var bouton = e.target.closest('[data-moins], [data-plus]');
+        if (!bouton || champ.disabled) return;
+        var min = parseInt(champ.min, 10) || 0;
+        var max = parseInt(champ.max, 10) || 40;
+        var actuel = champ.value === '' ? (bouton.hasAttribute('data-plus') ? min - 1 : min + 1) : parseInt(champ.value, 10);
+        champ.value = Math.max(min, Math.min(max, actuel + (bouton.hasAttribute('data-plus') ? 1 : -1)));
+        accorder(champ);
+      });
+      champ.addEventListener('change', function () { accorder(champ); });
+    });
     form.addEventListener('change', function (e) {
       if (e.target.name === 'type') suivreType(form);
     });

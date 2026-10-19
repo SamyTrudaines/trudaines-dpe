@@ -38,9 +38,11 @@ interface Props {
   barreAction?: { href: string; libelle: string; evt?: string };
   /** Fil d'Ariane aligné sur le conteneur large (fiche d'un bien). */
   filArianeLarge?: boolean;
+  /** Fil d'Ariane masqué sur téléphone, où chaque ligne repousse le formulaire sous le pli. Les données structurées restent. */
+  filArianeMasqueMobile?: boolean;
 }
 
-const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true, ctaProps = {}, ancreEstimation, evtEstimation, messageWhatsapp, enteteSurPhoto = false, barreAction, filArianeLarge = false } = Astro.props;
+const { titre, description, image, type = 'website', noindex = false, filAriane = [], donnees = [], cta = true, ctaProps = {}, ancreEstimation, evtEstimation, messageWhatsapp, enteteSurPhoto = false, barreAction, filArianeLarge = false, filArianeMasqueMobile = false } = Astro.props;
 
 /*
  * Note et volume repris des avis publiés sur /avis, et de rien d'autre :
@@ -175,7 +177,7 @@ const agence = {
   </head>
   <body>
     <Entete surPhoto={enteteSurPhoto} />
-    {filAriane.length > 0 && <FilAriane etapes={filAriane} large={filArianeLarge} />}
+    {filAriane.length > 0 && <FilAriane etapes={filAriane} large={filArianeLarge} masqueMobile={filArianeMasqueMobile} />}
     <main id="contenu">
       <slot />
       {cta && <BlocCta hrefEstimer={ancreEstimation} {...ctaProps} />}
