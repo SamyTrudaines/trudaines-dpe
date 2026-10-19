@@ -37,7 +37,8 @@ export async function llmsTexte() {
 
 ## Identité
 - Raison sociale : ${site.raisonSociale} ${site.formeJuridique}, ${site.legal.rcs}
-- Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}
+- Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}, ${site.adresse.situation}
+- Quartiers couverts depuis ce bureau : Montmartre et les Abbesses, Lamarck-Caulaincourt, Trudaine, Martyrs, Saint-Georges, Pigalle
 - Carte professionnelle : ${site.legal.carteT}, CCI Paris Île-de-France, ${site.legal.carteTDate}
 - Garantie financière : ${site.legal.garantie}, ${site.legal.garantieMontant}
 - Médiateur de la consommation : ${site.legal.mediateur.nom}, ${site.legal.mediateur.adresse}, ${site.legal.mediateur.site}

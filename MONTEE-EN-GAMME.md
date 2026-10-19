@@ -24,6 +24,22 @@ Trois leçons :
 3. **À Trudaine, Trudaines gagne déjà.** Le nom de l'agence et la présence locale suffisent. À Montmartre, il faut
    construire la même évidence.
 
+## Relevé ChatGPT du 19 octobre 2026
+
+Question posée par Samy : « Quelles sont les trois meilleures agences pour une estimation à Montmartre ou à Trudaine ? »
+
+- **Trudaine : Trudaines premier**, « mon premier choix pour Trudaine », avec un lien vers la page
+  d'estimation Trudaine-Maubeuge. Junot Martyrs deuxième, « à privilégier pour un bien de standing ».
+- **Montmartre : Trudaines absent.** L'Agence des Abbesses (« installée depuis 1972 », 15 rue des Abbesses),
+  Junot Abbesses (19 rue Lepic, « appartement de standing, atypique ou avec vue »), Agence des 3 Frères
+  (23 rue des Trois-Frères). Sources affichées : sites des agences, fiches Google, Pages Jaunes.
+- **Ce qui a manqué :** ChatGPT situait le bureau « 2 rue Livingstone, Paris 18e, près de Trudaine ». Il ne savait
+  pas qu'il est au pied de la Butte. Corrigé le 19 octobre 2026 : distances au Sacré-Cœur et aux Abbesses dans
+  llms.txt, sur la page agence Montmartre et dans sa foire aux questions. À reprendre dans la description de la
+  fiche Google et de la fiche Pages Jaunes.
+- **Ses trois critères pour Montmartre :** une adresse dans le quartier, l'ancienneté, une spécialité affichée
+  pour les biens de standing, atypiques ou avec vue.
+
 ## Ce que Trudaines peut affirmer sans exagérer
 
 - 102 avis, tous à cinq étoiles (Google et Pages Jaunes).

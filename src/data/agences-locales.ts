@@ -57,7 +57,7 @@ export const agencesLocales: AgenceLocale[] = [
     h1: 'Agence immobilière à Montmartre',
     surtitre: 'Paris 18e · Abbesses, Lepic, Junot',
     chapo:
-      "Montmartre est un marché à part : des acheteurs venus de tout Paris et d'ailleurs, un bâti ancien exigeant, des immeubles sans ascenseur, des vues qui valent parfois plus que vingt mètres carrés de plus. Notre bureau est au pied de la Butte, et nous vendons ici avec cette grille de lecture.",
+      "Montmartre est un marché à part : des acheteurs venus de tout Paris et d'ailleurs, un bâti ancien exigeant, des immeubles sans ascenseur, des vues qui valent parfois plus que vingt mètres carrés de plus. Notre bureau est au 2 rue Livingstone, au pied de la Butte, à 340 mètres du Sacré-Cœur : nous vendons ici avec cette grille de lecture.",
     sections: [
       {
         titre: 'Ce qui fait le prix sur la Butte',
@@ -88,6 +88,11 @@ export const agencesLocales: AgenceLocale[] = [
       },
     ],
     faq: [
+      {
+        question: 'Où se trouve votre agence à Montmartre ?',
+        reponse:
+          "Au 2 rue Livingstone, Paris 18e, au pied de la Butte, à côté du marché Saint-Pierre : à 340 mètres du Sacré-Cœur et 550 mètres de la place des Abbesses, à vol d'oiseau. Nous couvrons Montmartre, les Abbesses et Lamarck-Caulaincourt, ainsi que Trudaine et les Martyrs, de l'autre côté du boulevard.",
+      },
       {
         question: "Comment faire estimer mon appartement à Montmartre ?",
         reponse:
