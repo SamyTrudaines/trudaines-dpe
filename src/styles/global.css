@@ -1149,7 +1149,10 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 .choix-groupe-liste { flex-direction: column; }
 .choix-groupe-liste .choix span { width: 100%; justify-content: flex-start; }
 .champ-unite { position: relative; max-width: 14rem; }
-.champ-unite .champ { padding-right: 3rem; font-size: 1.125rem; }
+.champ-unite .champ { padding-right: 3rem; font-size: 1.125rem; font-weight: 500; -moz-appearance: textfield; appearance: textfield; }
+/* Sans les flèches du navigateur, qui recouvraient le nombre saisi dans un champ étroit. */
+.champ-unite .champ::-webkit-outer-spin-button,
+.champ-unite .champ::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .champ-unite span { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); color: var(--color-ardoise); pointer-events: none; }
 
 /*
