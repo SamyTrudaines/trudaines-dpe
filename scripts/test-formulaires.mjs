@@ -47,6 +47,8 @@ const cas = [
   ['contact', '../functions/api/contact.js', { prenom: 'Marc', nom: 'Petit', email: 'marc@example.com', telephone: '0601020304', sujet: 'Vendre', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 3],
   ['recommandation', '../functions/api/recommandation.js', { prenom: 'Hélène', nom: 'Girard', email: 'helene@example.com', telephone: '0601020304', projet: 'Vente', contexte: 'Un voisin vend son trois pièces au printemps.', consentement: 'oui', horodatage: recent() }, 3],
   ['temoignage', '../functions/api/temoignage.js', { prenom: 'Julien', email: 'julien@example.com', note: '5', texte: 'Vente conclue en trois semaines, comptes rendus après chaque visite.', quartier: 'Montmartre', projet: 'Vente', publication: 'oui', horodatage: recent() }, null],
+  ['suivi de rue, propriétaire', '../functions/api/suivi-rue.js', { email: 'anne@example.com', rue: 'rue Lepic', proprietaire: 'oui', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 3],
+  ['suivi de rue, visiteur', '../functions/api/suivi-rue.js', { email: 'yves@example.com', rue: 'rue Lepic', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 6],
   ['candidature', '../functions/api/candidature.js', { prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304', profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 5],
 ];
 
@@ -93,6 +95,13 @@ const contactSms = appels.find((a) => a.url.endsWith('/contacts'));
 const rappelSansCase = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '0601020304', horodatage: recent() }), env });
 if (rappelSansCase.status !== 200) echecs++;
 console.log(`${rappelSansCase.status === 200 ? 'OK   ' : 'ÉCHEC'} rappel sans case à cocher : demande acceptée · statut ${rappelSansCase.status}`);
+
+const contactModule = await import(new URL('../functions/api/contact.js', import.meta.url).href);
+appels.length = 0;
+const robot = await contactModule.onRequestPost({ request: requete({ prenom: 'CharlestotNZ', nom: 'Charlestot', email: 'bot@example.com', sujet: 'Acheter', message: 'x', consentement: 'oui', horodatage: recent() }), env });
+const robotIgnore = robot.status === 200 && !appels.some((a) => a.url.endsWith('/contacts'));
+if (!robotIgnore) echecs++;
+console.log(`${robotIgnore ? 'OK   ' : 'ÉCHEC'} contact : robot « CharlestotNZ Charlestot » ignoré, rien dans Brevo`);
 
 const rappelRefuse = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '12', consentement: 'oui', horodatage: recent() }), env });
 if (rappelRefuse.status !== 400) echecs++;

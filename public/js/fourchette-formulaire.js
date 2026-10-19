@@ -157,7 +157,8 @@
         '<p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Soit ' + euros(bas).replace('\u00a0€', '') + ' à ' +
         euros(haut) + ' le m², calculé sur ' + nombreVentes(ventes) + ' ventes signées, ' + (rue ? rue.n : reference.n) +
         ' (' + d.periode + '), selon l\'étage, l\'ascenseur et la typologie. L\'avis de valeur écrit, après visite, ' +
-        'tient compte de l\'état, de la vue et de la copropriété.</p>';
+        'tient compte de l\'état, de la vue et de la copropriété.</p>' +
+        '<p class="mt-2 text-sm"><strong>Fiabilité : ' + fiabilite(rue) + '</strong></p>';
       bloc.hidden = false;
       if (mention) mention.hidden = false;
       if (cache) cache.value = euros(bas * surface) + ' à ' + euros(haut * surface) + (rue ? ' (rue)' : ' (arrondissement)');
@@ -167,6 +168,17 @@
         window.trudainesEvent('estimation_fourchette', { source: rue ? 'rue' : 'arrondissement' });
       }
     });
+  }
+
+  /*
+   * Indice de fiabilité, lu sur le nombre de ventes de la voie : au moins 30, la médiane
+   * de la rue est stable ; de 8 à 29, elle bouge d'une parution à l'autre ; sans voie
+   * mesurée, la fourchette part de l'arrondissement et reste indicative.
+   */
+  function fiabilite(rue) {
+    if (!rue) return 'indicative, calculée sur l\'arrondissement faute de ventes suffisantes dans votre rue';
+    if (rue.v >= 30) return 'élevée, ' + rue.v + ' ventes dans votre rue';
+    return 'moyenne, ' + rue.v + ' ventes dans votre rue ; la visite la précise';
   }
 
   function nombreVentes(n) {
