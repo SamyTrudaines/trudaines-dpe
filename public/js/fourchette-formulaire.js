@@ -123,6 +123,8 @@
     return n <= 2 ? -0.03 : n <= 4 ? -0.08 : -0.12;
   }
   var ETAT = { 'Neuf ou récent': 0.1, 'Rénové': 0.07, 'Très bon état': 0.03, 'État correct': -0.02, 'À rénover': -0.14 };
+  /* La classe énergie pèse surtout en F et G, que le calendrier de location écarte d'une partie des acheteurs. */
+  var DPE = { A: 0.03, B: 0.03, C: 0.01, D: 0, E: -0.02, F: -0.06, G: -0.09 };
   var ATOUTS = { 'Balcon ou terrasse': 0.05, 'Vue dégagée': 0.04, 'Calme': 0.02, 'Lumineux': 0.02, 'Cave': 0.01, 'Parking': 0.02 };
 
   function prixPourPosition(r, position) {
@@ -171,6 +173,7 @@
       position += ecartEtage(valeur(form, 'etage'), valeur(form, 'etages'));
       position += ecartAscenseur(valeur(form, 'ascenseur'), valeur(form, 'etage'));
       position += ETAT[valeur(form, 'etat')] || 0;
+      position += DPE[valeur(form, 'dpe')] || 0;
       /* Les atouts s'additionnent, plafonnés : ils affinent, ils ne déplacent pas un bien d'un marché à l'autre. */
       position += Math.min(0.1, coches(form, 'atouts').reduce(function (t, a) { return t + (ATOUTS[a] || 0); }, 0));
       position = Math.max(0.1, Math.min(0.9, position));
@@ -197,7 +200,7 @@
         '<p class="mt-3 text-2xl">' + euros(bas * surface) + ' à ' + euros(haut * surface) + '</p>' +
         '<p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Soit ' + euros(bas).replace('\u00a0€', '') + ' à ' +
         euros(haut) + ' le m², calculé sur ' + nombreVentes(ventes) + ' ventes signées, ' + (rue ? rue.n : reference.n) +
-        ' (' + d.periode + '), selon l\'étage, l\'ascenseur, la typologie, l\'état et les atouts indiqués. L\'avis de valeur écrit, après visite, ' +
+        ' (' + d.periode + '), selon l\'étage, l\'ascenseur, la typologie, l\'état, le DPE et les atouts indiqués. L\'avis de valeur écrit, après visite, ' +
         'vérifie ces points et ajoute la copropriété et le plan.</p>' +
         '<p class="mt-2 text-sm"><strong>Fiabilité : ' + fiabilite(rue) + '</strong></p>';
       bloc.hidden = false;
@@ -250,17 +253,22 @@
 
   /*
    * Type de bien : le titre de l'étape suivante le reprend (« Votre maison ») et, hors appartement,
-   * l'étage et l'ascenseur sont désactivés : sans objet, ils ne bloquent pas l'étape.
+   * l'étage et l'ascenseur sont désactivés : sans objet, ils ne bloquent pas l'étape. Le terrain, à l'inverse, n'est demandé que pour une maison.
    */
   function suivreType(form) {
     var choisi = form.querySelector('[name="type"]:checked');
     if (!choisi) return;
     form.querySelectorAll('[data-type-titre]').forEach(function (t) { t.textContent = choisi.getAttribute('data-type-libelle') || 'Votre bien'; });
     var appartement = choisi.value === 'Appartement';
-    form.querySelectorAll('[data-si-appartement]').forEach(function (bloc) {
-      bloc.hidden = !appartement;
-      bloc.querySelectorAll('input, select').forEach(function (c) { c.disabled = !appartement; });
-    });
+    var bascule = function (selecteur, visible) {
+      form.querySelectorAll(selecteur).forEach(function (bloc) {
+        bloc.hidden = !visible;
+        bloc.querySelectorAll('input, select').forEach(function (c) { c.disabled = !visible; });
+      });
+    };
+    bascule('[data-si-appartement]', appartement);
+    /* Le terrain ne se demande que pour une maison. */
+    bascule('[data-si-maison]', choisi.value === 'Maison');
   }
 
   /* Le script peut être inclus par plusieurs formulaires d'une même page : chaque formulaire n'est lié qu'une fois. */
