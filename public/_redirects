@@ -150,6 +150,9 @@
 /l/podcast        /samy-santamarina?utm_source=podcast&utm_medium=audio               302
 /l/panneau        /estimation?utm_source=panneau&utm_medium=qr                        302
 /l/flyer          /estimation?utm_source=flyer&utm_medium=qr                          302
+/l/flyer-montmartre   /estimation/paris-18/montmartre?utm_source=flyer&utm_medium=qr&utm_campaign=boitage-montmartre                 302
+/l/flyer-trudaine     /estimation/paris-9/trudaine-maubeuge?utm_source=flyer&utm_medium=qr&utm_campaign=boitage-trudaine           302
+/l/flyer-martyrs      /estimation/paris-9/martyrs-lorette?utm_source=flyer&utm_medium=qr&utm_campaign=boitage-martyrs              302
 /l/carte          /estimation?utm_source=carte-de-visite&utm_medium=qr                302
 /l/winwin         /recommander?utm_source=winwin&utm_medium=partage                   302
 /l/prix           /prix-immobilier?utm_source=partage&utm_medium=message              302
