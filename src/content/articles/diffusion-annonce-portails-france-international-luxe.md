@@ -30,13 +30,6 @@ faq:
     reponse: "Oui, la vente confidentielle existe : aucune annonce, aucun panneau, le bien est présenté aux seuls acheteurs qualifiés de notre fichier. Le délai est en général plus long ; vous choisissez en connaissance de cause."
 ---
 
-**L'essentiel au 19 octobre 2026**
-
-- **Vingt-quatre supports** dès le premier jour, en France et à l'étranger.
-- Les **sites du luxe** pour les biens de prestige.
-- **Plus de 100 portails dans plus de 60 pays** par Properstar.
-- Un **reporting** qui montre ce que chaque support a obtenu.
-
 ## Une annonce, vingt-quatre supports
 
 Un acheteur parisien ne fait plus le tour des vitrines. Il cherche en ligne, sur deux ou trois sites, et il a activé des alertes. Un acheteur qui vit à Londres, à New York ou à Singapour fait de même, sur d'autres sites. Un acquéreur qui vise un bien de prestige consulte encore d'autres vitrines.

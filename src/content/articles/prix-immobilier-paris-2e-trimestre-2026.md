@@ -33,12 +33,6 @@ faq:
     reponse: "À partir des ventes signées de la rue, pas des annonces du quartier : les annonces montrent ce que les vendeurs espèrent, les actes ce que les acheteurs ont payé. L'acheteur de 2026 compare tout et négocie dès qu'un bien est affiché au-dessus de sa valeur ; le premier prix affiché fait la vente."
 ---
 
-**L'essentiel au 4 octobre 2026**
-
-- Appartements anciens à Paris : **9 560 € le m²** au 2e trimestre 2026, **+0,6 %** sur un an (Notaires du Grand Paris).
-- Île-de-France : **31 750 ventes** d'avril à juin 2026, **+10 %** sur un an.
-- Médiane des ventes signées à Paris en 2025 : **9 800 € le m²**, après 9 683 € en 2024 et 10 949 € en 2021 (DVF, calculs Trudaines).
-
 ## Le marché parisien a-t-il fini de baisser ?
 
 Les chiffres disent une chose simple : la baisse engagée en 2022 s'est arrêtée. Sur un an, le prix des appartements parisiens est stable. Les volumes, eux, remontent nettement.
