@@ -46,7 +46,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 9e | Trudaines',
+    titre: 'Estimation appartement Paris 9, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 9e nord, Trudaine | Trudaines',
@@ -66,6 +66,11 @@ export const secteurs: Secteur[] = [
         question: "Comment estimez-vous un appartement dans le 9e arrondissement ?",
         reponse:
           "Nous partons des ventes signées les douze derniers mois dans votre quartier, extraites de la base des valeurs foncières publiée par l'administration fiscale, puis nous les confrontons aux biens en concurrence aujourd'hui. La visite ajoute ce qu'aucune donnée ne contient : la lumière réelle, la vue, le bruit, l'état des parties communes, la qualité du plan. Vous recevez un avis de valeur écrit qui explique chaque ajustement.",
+      },
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 9e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier, hôtel particulier ou immeuble, de Trudaine-Maubeuge à Saint-Georges et de Lorette-Martyrs à Clichy-Trinité. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
       },
       {
         question: "Le marché a corrigé, vais-je vendre sous le prix ?",
