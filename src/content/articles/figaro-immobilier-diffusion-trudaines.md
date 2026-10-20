@@ -25,12 +25,6 @@ faq:
     reponse: "Aucun. La diffusion est comprise dans nos honoraires, quel que soit le nombre de supports."
 ---
 
-**L'essentiel au 19 octobre 2026**
-
-- Une **sélection de biens** sur Figaro Immobilier depuis le **13 octobre 2026**.
-- Des lecteurs qu'on ne croise pas toujours sur les autres portails.
-- Des résultats **comptés à part** dans chaque reporting.
-
 ## Ce qui change
 
 Depuis le 13 octobre 2026, une sélection de biens Trudaines paraît chaque mois sur Figaro Immobilier. Elle s'ajoute aux supports sur lesquels part déjà chaque annonce : SeLoger, Logic-Immo, Jinka, les sites du luxe, Properstar pour l'étranger, le fichier partagé entre agences.

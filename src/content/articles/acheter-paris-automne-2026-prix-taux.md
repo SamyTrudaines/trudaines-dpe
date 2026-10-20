@@ -29,13 +29,6 @@ faq:
     reponse: "Pour connaître son budget réel avant de tomber amoureux d'un appartement. Un courtier comme Artémis Courtage, partenaire de Trudaines, établit un plan de financement indicatif à partir de vos revenus, de votre apport et de vos charges. Vous visitez ensuite les biens qui entrent dans ce budget, et votre offre est prise au sérieux."
 ---
 
-**L'essentiel au 20 octobre 2026**
-
-- Appartements à Paris : **-0,41 %** entre septembre et octobre.
-- Crédit immobilier : **3,40 %** en septembre, contre 3,16 % en décembre 2025.
-- Sur 400 000 € empruntés : la hausse des taux coûte **plus de 11 000 €**, la baisse des prix en rapporte **1 640 €**.
-- Moins d'acheteurs financés : **plus de place pour négocier**.
-
 ## Ce que disent les chiffres de l'automne
 
 Le 15 octobre, la rédaction de MoneyVox publiait son relevé mensuel des prix parisiens, tiré des données de SeLoger et de MeilleursAgents. Le prix moyen d'un appartement à Paris est passé de 9 670 € le mètre carré en septembre à 9 630 € en octobre. Un recul de 0,41 % en un mois. Les maisons suivent la même pente, de 10 101 € à 10 059 €.
