@@ -1,9 +1,9 @@
 ---
-titre: "Encadrement des loyers en sursis : bailleurs du 9e au 18e, la bonne question n'est pas celle du Sénat"
+titre: "Encadrement des loyers prolongé par le Sénat : bailleurs du 9e au 18e, la bonne question est ailleurs"
 date: 2026-10-21
-chapo: "L'encadrement des loyers parisien arrive au bout de son expérimentation fin novembre 2026, et le Sénat examine une prolongation de deux ans. Pour un propriétaire de studio ou de deux pièces dans le 9e, le 10e, le 17e ou le 18e, le vote compte moins que trois dates : celle du bail, celle du DPE et celle où il veut récupérer son capital."
-titreSeo: "Fin de l'encadrement des loyers 2026 : bailleur à Paris, vendre ou garder ?"
-descriptionSeo: "Encadrement des loyers à Paris : fin de l'expérimentation fin novembre 2026, prolongation de deux ans examinée au Sénat. Ce que les ventes DVF des 9e, 10e, 17e et 18e disent aux bailleurs."
+chapo: "L'expérimentation de l'encadrement des loyers arrive à son terme le 23 novembre 2026. Le Sénat a voté le 21 octobre sa prolongation pour deux ans. Pour un propriétaire de studio ou de deux pièces dans le 9e, le 10e, le 17e ou le 18e, le vote compte moins que trois dates : celle du bail, celle du DPE et celle où il veut récupérer son capital."
+titreSeo: "Encadrement des loyers prolongé : bailleur à Paris, vendre ou garder ?"
+descriptionSeo: "Encadrement des loyers : le Sénat vote deux ans de plus le 21 octobre 2026. Ce que les ventes DVF des 9e, 10e, 17e et 18e disent aux bailleurs."
 motsCles:
   - encadrement des loyers fin novembre 2026
   - fin encadrement des loyers Paris
@@ -12,14 +12,14 @@ motsCles:
   - congé pour vente bailleur
   - estimation appartement Paris 18
 essentiel:
-  - "L'expérimentation de l'encadrement des loyers prend fin fin novembre 2026 si aucune loi ne la prolonge (le 24 novembre selon la FNAIM). La commission des affaires économiques du Sénat a adopté le 14 octobre une prolongation de deux ans, examinée en séance à partir du 21 octobre."
-  - "À Paris, 46 % des annonces locatives dépassaient les plafonds légaux selon le baromètre de la Fondation pour le logement, cité par franceinfo le 3 septembre 2026."
+  - "L'expérimentation de l'encadrement des loyers arrive à son terme le 23 novembre 2026. Le Sénat a adopté le 21 octobre 2026 une proposition de loi qui la prolonge de deux ans, sur les mêmes communes ; l'Assemblée nationale avait voté en décembre 2025 une version qui la rend définitive. La loi n'est pas encore définitive."
+  - "Selon une évaluation de l'APUR citée par la Cour des comptes (rapport d'octobre 2026), l'encadrement a freiné la hausse des loyers parisiens d'environ 5 % de juillet 2019 à juin 2025, surtout sur les petites surfaces."
   - "Les petites surfaces font la majorité du marché des bailleurs : studios et deux pièces représentent 71 % des ventes d'appartements dans le 18e, 66 % dans le 10e, 58 % dans le 17e et 56 % dans le 9e (DVF, janvier 2024 à juin 2026)."
   - "Sur la même période, le studio ne se vend plus plus cher au mètre carré que le trois pièces : 8 750 € contre 9 150 € de médiane dans le 18e, 10 400 € contre 11 020 € dans le 9e."
   - "Pour vendre libre un logement loué vide, le congé pour vente se donne au moins six mois avant la fin du bail, avec un droit de préemption du locataire. En meublé, le délai est de trois mois."
 faq:
   - question: "L'encadrement des loyers s'arrête-t-il à Paris fin novembre 2026 ?"
-    reponse: "Pas forcément. L'expérimentation prévue par la loi arrive à son terme fin novembre 2026. La commission des affaires économiques du Sénat a adopté le 14 octobre 2026 un texte qui la prolonge de deux ans, examiné en séance à partir du 21 octobre. Tant que la loi n'est pas définitivement votée, rien n'est acquis dans un sens ou dans l'autre."
+    reponse: "Probablement pas. L'expérimentation arrive à son terme le 23 novembre 2026, mais le Sénat a adopté le 21 octobre 2026 une prolongation de deux ans, après le vote par l'Assemblée nationale en décembre 2025 d'un texte qui la rendait définitive. Les deux chambres doivent encore s'accorder sur une version commune avant que la loi soit définitive."
   - question: "Si l'encadrement prend fin, puis-je augmenter le loyer de mon locataire ?"
     reponse: "Pas du jour au lendemain. Un bail en cours garde son loyer, révisé une fois par an selon l'indice de référence des loyers si le bail le prévoit. La fin de l'encadrement jouerait sur les nouveaux baux et les renouvellements, dans le respect des règles propres à Paris, qui reste en zone tendue."
   - question: "Vaut-il mieux vendre un appartement loué ou libre ?"
@@ -30,13 +30,15 @@ faq:
     reponse: "Sur les ventes signées de janvier 2024 à juin 2026, la médiane du 18e est de 8 750 € le mètre carré pour un studio et de 8 720 € pour un deux pièces, avec de forts écarts entre Montmartre et la Chapelle. Le prix d'un bien précis dépend de la rue, de l'étage, de l'état et du DPE : l'estimation en ligne de Trudaines part des ventes de votre rue."
 ---
 
-Ce 21 octobre 2026, le Sénat examine l'avenir de l'encadrement des loyers. Depuis la rentrée, les bailleurs que je rencontre me posent tous la même question : « Et si ça s'arrête, je fais quoi ? » Ma réponse les surprend un peu. Le vote compte, mais il ne devrait pas décider à votre place.
+Depuis la rentrée, les bailleurs que je rencontre me posent tous la même question : « Et si l'encadrement s'arrête, je fais quoi ? » Le Sénat vient de répondre en partie, le 21 octobre 2026. Ma réponse à moi les surprend un peu : le vote compte, mais il ne devrait pas décider à votre place.
 
 ## Où en est le texte
 
-L'encadrement des loyers parisien repose sur une expérimentation qui arrive à son terme fin novembre 2026, le 24 novembre selon la [FNAIM](https://www.fnaim.fr). Une proposition de loi du député Iñaki Echaniz, adoptée par l'Assemblée nationale en décembre 2025, a été reprise au Sénat : sa commission des affaires économiques a adopté le 14 octobre une prolongation de deux ans, sans nouvelles communes. Le texte est examiné en séance à partir du 21 octobre. Le ministre du Logement s'était engagé devant les élus à reconduire le dispositif « pour deux ans », selon l'adjoint au logement de la Ville de Paris interrogé par [franceinfo](https://www.franceinfo.fr/economie/immobilier/encadrement-des-loyers/la-prolongation-de-l-encadrement-des-loyers-debattue-a-partir-du-21-octobre-au-senat-selon-la-mairie-de-paris_8175380.html) le 3 septembre.
+L'encadrement des loyers parisien repose sur une expérimentation créée par la loi Élan de 2018, prolongée en 2022, qui arrive à son terme le 23 novembre 2026. Le 21 octobre 2026, [le Sénat a adopté](https://www.senat.fr/travaux-parlementaires/textes-legislatifs/la-loi-en-clair/proposition-de-loi-pour-retrouver-la-confiance-et-lequilibre-dans-les-rapports-locatifs.html) la proposition de loi du député Iñaki Echaniz, que l'Assemblée nationale avait votée en décembre 2025. Les deux chambres ne disent pas la même chose : l'Assemblée voulait rendre l'encadrement définitif, le Sénat le prolonge de deux ans, sur les mêmes communes, en laissant aux villes qui le souhaitent la possibilité d'en sortir. Il reste à trouver une version commune.
 
-Le même article cite un chiffre qui dit beaucoup du climat : 46 % des annonces locatives parisiennes dépassaient les plafonds, selon la Fondation pour le logement. Une partie des propriétaires a déjà anticipé la fin du dispositif. Si la prolongation passe, ceux-là s'exposent à des contestations.
+La version du Sénat touche aussi directement les bailleurs. Le locataire aurait un an après la signature du bail, au lieu de trois mois, pour contester un complément de loyer. Un complément mal justifié devient donc un risque plus long à porter.
+
+Sur l'effet réel du dispositif, la source la plus solide est la [Cour des comptes](https://www.ccomptes.fr/sites/default/files/2026-10/20261014-Encadrement-des-loyers.pdf), dans son rapport d'octobre 2026. Elle cite une évaluation de l'Atelier parisien d'urbanisme : l'encadrement aurait freiné la hausse des loyers parisiens d'environ 5 % entre juillet 2019 et juin 2025, un effet plus marqué sur les petites surfaces. La Cour reste prudente sur ces mesures, mais le sens est clair : ce sont les studios et les deux pièces qui sont le plus concernés.
 
 ## Ce que vos rues disent des bailleurs
 
