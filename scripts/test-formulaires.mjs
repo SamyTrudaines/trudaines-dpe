@@ -50,6 +50,8 @@ const cas = [
   ['temoignage', '../functions/api/temoignage.js', { prenom: 'Julien', email: 'julien@example.com', note: '5', texte: 'Vente conclue en trois semaines, comptes rendus après chaque visite.', quartier: 'Montmartre', projet: 'Vente', publication: 'oui', horodatage: recent() }, null],
   ['suivi de rue, propriétaire', '../functions/api/suivi-rue.js', { email: 'anne@example.com', rue: 'rue Lepic', proprietaire: 'oui', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 3],
   ['suivi de rue, visiteur', '../functions/api/suivi-rue.js', { email: 'yves@example.com', rue: 'rue Lepic', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 6],
+  ['lettre, propriétaire', '../functions/api/lettre.js', { email: 'anne@example.com', proprietaire: 'oui', origine: '/', horodatage: recent() }, 3],
+  ['lettre, visiteur', '../functions/api/lettre.js', { email: 'yves@example.com', origine: '/', horodatage: recent() }, 6],
   ['candidature', '../functions/api/candidature.js', { prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304', profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 5],
 ];
 
