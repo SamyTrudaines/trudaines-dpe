@@ -121,6 +121,10 @@ export const regardsRues: Record<string, string[]> = {
     "Rue animée et commerçante entre Clignancourt et la Butte, la rue Ramey vend surtout des deux pièces. Elle profite de sa position entre Montmartre et Jules-Joffrin.",
     "La partie proche du Sacré-Cœur est la plus recherchée. Nous comparons toujours avec la rue Custine et le passage Ramey, légèrement plus chers.",
   ],
+  'rue-d-orsel-18': [
+    "La rue d'Orsel relie le quartier d'Anvers à la place Charles-Dullin et au théâtre de l'Atelier, en passant à deux pas du marché Saint-Pierre et de notre bureau. Elle se vend au-dessus de la médiane du 18e : c'est déjà Montmartre, sans la pente.",
+    "Les deux pièces font plus de la moitié des ventes. Côté place Charles-Dullin, la rue est plus calme ; côté Anvers, plus commerçante. Nous passons devant chaque jour : une estimation ici peut commencer par une visite le jour même.",
+  ],
   'rue-livingstone-18': [
     "C'est la rue de notre bureau, au 2 rue Livingstone, au pied de la Butte, près du marché Saint-Pierre. Petite rue, peu de ventes, entourée d'adresses très différentes : la rue Charles-Nodier se vend nettement plus cher, la rue Pierre-Picard un peu moins.",
     "À quelques mètres près, le prix change. Nous voyons passer chaque jour les propriétaires du quartier : pousser la porte du bureau reste le moyen le plus simple de connaître la valeur de votre appartement.",
