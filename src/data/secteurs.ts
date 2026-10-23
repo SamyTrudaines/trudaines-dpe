@@ -220,7 +220,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75017',
     nom: 'Paris 17e',
     nomLong: '17e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 17e | Trudaines',
+    titre: 'Estimation appartement Paris 17, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e, Batignolles | Trudaines',
@@ -236,6 +236,11 @@ export const secteurs: Secteur[] = [
     fourchette:
       "7 375 à 13 246 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
     faq: [
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 17e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier, maison de ville, hôtel particulier ou immeuble, des Batignolles aux Épinettes et de Cardinet à la place de Clichy. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
+      },
       {
         question: "Quel est le prix au mètre carré dans le 17e arrondissement ?",
         reponse:
