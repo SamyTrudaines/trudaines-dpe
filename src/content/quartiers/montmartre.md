@@ -8,7 +8,7 @@ chapo: De la place des Abbesses à l'avenue Junot, un marché où la vue, l'éta
 ordre: 4
 dateMaj: 2026-10-18
 titreSeo: Immobilier Montmartre, Paris 18e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré à Montmartre, physionomie du marché et vente accompagnée par l'agence Trudaines, installée au pied de la Butte.
+descriptionSeo: "Prix au m² de chaque rue de Montmartre, d'après les ventes notariées : du studio au grand appartement familial de Caulaincourt. Agence Trudaines."
 photos:
   - src: /images/quartiers/montmartre-rue.webp
     alt: Église de pierre près du Sacré-Cœur, Montmartre

@@ -8,7 +8,7 @@ chapo: Autour de Notre-Dame-de-Lorette et de la rue des Martyrs, un quartier com
 ordre: 2
 dateMaj: 2026-10-18
 titreSeo: Immobilier Martyrs Lorette, Paris 9e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré et marché du quartier Martyrs Lorette, Paris 9e. Estimation écrite et vente accompagnée par l'agence Trudaines.
+descriptionSeo: "Prix au m² rue des Martyrs, rue Notre-Dame-de-Lorette et alentour, ventes notariées : du studio au grand haussmannien. Agence Trudaines."
 photos:
   - src: /images/quartiers/martyrs-lorette-rue.webp
     alt: Terrasse de café dans une rue de Paris
