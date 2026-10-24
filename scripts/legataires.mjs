@@ -189,13 +189,19 @@ const surDeuxLignes = (adresse) => adresse.replace(/,\s*(\d{5}\s[^,]+)$/, '\n$1'
 
 const SIGNATURE = 'Samy Santamarina\nTrudaines Immobilier\n2 rue Livingstone, 75018 Paris\n06 20 46 59 12 · samy.santamarina@trudaines.com';
 
+/** « 16, rue Paul Féval, 75018 Paris » devient « rue Paul Féval ». */
+/** « de Marie », « d'Annie ». */
+const de = (nom) => (/^[aeiouyhàâéèêîôû]/i.test(nom) ? `d'${nom}` : `de ${nom}`);
+
+const rue = (adresse) => adresse.replace(/^\d+\s*(?:bis|ter)?\s*,?\s*/i, '').split(',')[0].trim();
+
 /** Courrier au notaire chargé de la succession. */
 export function lettreNotaire(a) {
   return [
     [a.notaire || 'Maître', a.adresse_notaire, a.ville_notaire].filter(Boolean).join('\n'),
-    `Objet : succession de ${a.defunt || 'votre client'}${a.adresse ? `, ${a.adresse}` : ''}`,
+    `Objet : succession ${de(a.defunt || 'votre client')}${a.adresse ? `, ${a.adresse}` : ''}`,
     'Maître,',
-    `J'ai lu l'avis de saisine de légataire universel paru le ${dateLongue(a.publication)} dans ${a.journal}. Le logement de ${a.defunt || 'votre client'} se trouve dans le quartier où mon agence travaille chaque jour.`,
+    `J'ai lu l'avis de saisine de légataire universel paru le ${dateLongue(a.publication)} dans ${a.journal}. Ce logement${rue(a.adresse) ? `, ${rue(a.adresse)},` : ''} se trouve dans le quartier où mon agence travaille chaque jour.`,
     "S'il fait partie de la succession, je peux en établir l'avis de valeur sous huit jours, appuyé sur les ventes réellement signées dans la rue. Il sert à la déclaration de succession comme à une éventuelle mise en vente, et il est offert si le légataire envisage de vendre.",
     "Un légataire universel vit souvent loin de Paris et découvre le bien. Je prends en charge les visites, les diagnostics et le dossier de vente, et je vous transmets un dossier complet pour l'avant-contrat.",
     'Si vous le jugez utile, je vous remercie de transmettre mes coordonnées au légataire.',
@@ -207,7 +213,7 @@ export function lettreNotaire(a) {
 /** Courrier aux ayants droit, à l'adresse du défunt. */
 export function lettreAyantsDroit(a) {
   return [
-    `Aux ayants droit de ${a.defunt || 'la succession'}${a.adresse ? `\n${surDeuxLignes(a.adresse)}` : ''}`,
+    `Aux ayants droit ${de(a.defunt || 'la succession')}${a.adresse ? `\n${surDeuxLignes(a.adresse)}` : ''}`,
     'Madame, Monsieur,',
     "Je vous présente mes sincères condoléances.",
     "Je dirige Trudaines, une agence immobilière du quartier. Quand un appartement entre dans une succession, la première question est souvent sa valeur : pour la déclaration au notaire, puis pour décider de le garder, de le louer ou de le vendre.",
