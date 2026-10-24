@@ -177,7 +177,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['trudaine-maubeuge', 'martyrs-lorette', 'montmartre'],
     titreSeo: 'Agence immobilière Trudaine, Paris 9e | Trudaines',
     descriptionSeo:
-      "Trudaines, l'agence qui porte le nom de l'avenue Trudaine : prix au m² des rues voisines, estimation offerte sous 48 h.",
+      "Agence immobilière avenue Trudaine, Paris 9e : l'agence qui porte le nom de l'avenue. Prix signés rue par rue, estimation offerte sous 48 h si vous vendez.",
     h1: "Agence immobilière avenue Trudaine, Paris 9e",
     surtitre: 'Paris 9e · Trudaine, Anvers, Rochechouart',
     chapo:

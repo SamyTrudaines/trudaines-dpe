@@ -70,11 +70,12 @@ const chiffresCles = [
 /* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */
 const reponseCourte = `${page.dans.charAt(0).toUpperCase()}${page.dans.slice(1)} (${secteur.nom}), les appartements se sont vendus ${medianeArrondie} le m² en médiane pondérée, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} voies (base DVF de la DGFiP).${
   deux && trois ? ` Un deux pièces de ${deux.surface} m² s'y vend autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.` : ''
-} Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, gratuit et sans engagement.`;
+} Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, offert aux propriétaires qui envisagent de vendre.`;
 
 /* Le titre porte « estimation appartement », le h1 « estimation immobilière » : les deux recherches visées. */
-const titre = page.titreSeo ?? `Estimation appartement ${page.nom}, ${secteur.nom} | Trudaines`;
-const description = `Estimation appartement ${page.nom}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Gratuite, en ligne en une minute ou après visite.`;
+/* Le prix au m² dans le titre : un chiffre signé se clique plus qu'un titre générique (CTR Search Console d'octobre 2026). */
+const titre = page.titreSeo ?? `Estimation appartement ${page.nom} : ${medianeArrondie} le m² | Trudaines`;
+const description = `Estimation appartement ${page.nom}, ${secteur.nom} : ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Estimation en ligne en une minute, avis de valeur écrit sous 48 h, offert si vous vendez.`;
 
 /* Le prix des rues que les vendeurs tapent dans Google, chacune comparée au quartier. */
 const questionsRues = (page.ruesQuestions ?? [])
