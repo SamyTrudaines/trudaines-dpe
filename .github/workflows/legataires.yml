@@ -1,0 +1,58 @@
+# Veille hebdomadaire des légataires universels à Paris (scripts/legataires.mjs) :
+# les avis parus vont dans l'onglet « legataires » de la feuille Google privée de
+# Samy et dans un email à Samy, avec les courriers prêts à imprimer.
+#
+# Le dépôt et ce journal sont publics : le script n'y écrit que des nombres.
+# Sur une branche de travail, c'est un essai sur trente jours : l'email part à
+# Samy seul, la feuille n'est pas touchée (la fédération n'accepte que main).
+name: Légataires universels
+
+on:
+  schedule:
+    # Le lundi à 5 h 23 UTC : les courriers sont prêts pour la matinée.
+    - cron: '23 5 * * 1'
+  push:
+    branches: ['main', 'claude/**']
+    paths:
+      - 'scripts/legataires.mjs'
+      - '.github/workflows/legataires.yml'
+  workflow_dispatch:
+    inputs:
+      jours:
+        description: 'Profondeur de lecture en jours'
+        default: '10'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  veiller:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Identification auprès de Google, sans clé
+        id: google
+        if: github.ref == 'refs/heads/main'
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/1043190760192/locations/global/workloadIdentityPools/github/providers/depot
+          service_account: releve-search-console@trudaines-511314.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_lifetime: 900s
+          access_token_scopes: https://www.googleapis.com/auth/spreadsheets
+
+      - name: Veille
+        env:
+          GSC_JETON: ${{ steps.google.outputs.access_token }}
+          GSC_FEUILLE: ${{ steps.google.outcome == 'success' && '1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8' || '' }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          JOURS: ${{ inputs.jours || (github.ref == 'refs/heads/main' && '10' || '30') }}
+        run: node scripts/legataires.mjs
