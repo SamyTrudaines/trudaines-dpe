@@ -36,3 +36,7 @@ Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation
 ## Cookies
 
 Le site ne dépose aucun cookie publicitaire. Seule une mesure d'audience est déposée après acceptation explicite du bandeau. Le refus n'a aucune conséquence sur votre navigation. Vous pouvez modifier votre choix à tout moment en effaçant les données du site dans votre navigateur.
+
+## Connecteur IA
+
+Le connecteur de l'agence (www.trudaines.com/mcp, présenté sur la page /connecteur-ia) permet à un assistant comme Claude ou ChatGPT de lire les biens en vente et les prix au mètre carré publiés sur ce site. Il fonctionne en lecture seule : il ne demande ni nom, ni email, ni téléphone, ne crée aucun compte, ne dépose aucun cookie et n'enregistre pas les questions posées. Les appels viennent des serveurs de l'assistant utilisé, dont la politique de confidentialité régit la conversation elle-même. Cloudflare, hébergeur du site, traite l'adresse IP de chaque appel le temps nécessaire à la sécurité du service. Une demande de visite passe par la fiche du bien ou par WhatsApp : elle relève alors des sections ci-dessus.
