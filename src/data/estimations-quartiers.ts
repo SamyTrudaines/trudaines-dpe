@@ -119,6 +119,13 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "La Nouvelle Athènes attire des acheteurs exigeants. Un étage élevé et dégagé, un immeuble en pierre bien tenu, un plan sans perte : ce sont les écarts qui font la différence entre deux ventes de la même rue.",
       "Nous estimons à partir des ventes signées dans les rues autour de la place, puis nous affinons après visite. Vous recevez une fourchette, un prix de mise en marché et le raisonnement qui les relie.",
     ],
+    questions: [
+      {
+        question: "Comment estimez-vous un appartement familial à Saint-Georges ?",
+        reponse:
+          "Sur les ventes d'appartements de la même taille dans les rues voisines de la place Saint-Georges, de la rue La Bruyère à la rue de La Rochefoucauld, puis après visite selon l'étage, la lumière, le plan et les éléments d'origine. Les grands appartements du quartier se vendent plus cher au mètre carré que les studios : une moyenne de quartier ne suffit pas à les estimer.",
+      },
+    ],
   },
   {
     slug: 'montmartre',
@@ -187,6 +194,13 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Vue, étage, exposition et escalier pèsent lourd sur ce relief. Nous estimons à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite, chaque ajustement écrit dans votre avis de valeur.",
     ],
     ruesQuestions: ['rue-lamarck-18', 'rue-caulaincourt-18', 'avenue-junot-18'],
+    questions: [
+      {
+        question: "Comment estimez-vous un grand appartement rue Caulaincourt ou rue Lamarck ?",
+        reponse:
+          "Sur les ventes d'appartements de la même taille dans les mêmes rues, pas sur la médiane du quartier, tirée par les studios et les deux pièces. Un quatre ou cinq pièces en pierre de taille, avec gardien ou ascenseur, se compare à des ventes équivalentes, puis nous ajustons après visite selon l'étage, la vue, le plan et l'état. L'avis de valeur écrit vous est remis sous 48 heures.",
+      },
+    ],
   },
   {
     slug: 'trudaine-maubeuge',
@@ -205,6 +219,11 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
     ],
     questions: [
+      {
+        question: "Comment estimez-vous un appartement familial haussmannien près de l'avenue Trudaine ?",
+        reponse:
+          "Sur les ventes de quatre pièces et plus des mêmes rues : la médiane du quartier, tirée par les petites surfaces, sous-estime les grands appartements. Nous ajustons ensuite après visite selon l'immeuble (pierre de taille, gardien, ascenseur), l'étage, le plan et les éléments d'origine, parquet, moulures et cheminées, dont nous préparons la mise en valeur avec des artisans qui travaillent avec nous en direct.",
+      },
       {
         question: "Pourquoi l'avenue Trudaine se vend-elle plus cher que les rues voisines ?",
         reponse:
@@ -230,6 +249,11 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     ],
     titreSeo: 'Estimation appartement rue des Martyrs, Paris 9e | Trudaines',
     questions: [
+      {
+        question: "Vendez-vous des grands appartements rue des Martyrs et rue Notre-Dame-de-Lorette ?",
+        reponse:
+          "Oui : quatre et cinq pièces dans des immeubles en pierre de taille, appartements haussmanniens à parquet et moulures, souvent avec gardien. Nous les estimons sur les ventes d'appartements de la même taille des mêmes rues, et nous qualifions chaque famille acheteuse avant la visite.",
+      },
       {
         question: 'Qu\'est-ce qui fait le prix autour de la rue des Martyrs ?',
         reponse:

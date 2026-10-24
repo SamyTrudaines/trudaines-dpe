@@ -51,11 +51,11 @@ export const agencesLocales: AgenceLocale[] = [
     quartier: 'montmartre',
     quartiersBiens: ['Montmartre'],
     quartiersLies: ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette'],
-    titreSeo: 'Agence immobilière Montmartre, Abbesses | Trudaines',
+    titreSeo: 'Agence immobilière Montmartre, Abbesses, Caulaincourt | Trudaines',
     descriptionSeo:
-      "Agence immobilière à Montmartre, au pied de la Butte : biens de caractère et d'exception, prix par rue, estimation offerte sous 48 h, vente confidentielle.",
+      "Agence immobilière à Montmartre, au pied de la Butte : appartements familiaux, haussmanniens et biens d'exception, prix signés par rue, avis de valeur sous 48 h.",
     h1: 'Agence immobilière à Montmartre',
-    surtitre: 'Paris 18e · Abbesses, Lepic, Junot',
+    surtitre: 'Paris 18e · Abbesses, Lepic, Junot, Caulaincourt',
     chapo:
       "Montmartre est un marché à part : des acheteurs venus de tout Paris et d'ailleurs, un bâti ancien exigeant, des immeubles sans ascenseur, des vues qui valent parfois plus que vingt mètres carrés de plus. Notre bureau est au 2 rue Livingstone, au pied de la Butte, à 340 mètres du Sacré-Cœur : nous vendons ici avec cette grille de lecture.",
     sections: [
@@ -72,6 +72,17 @@ export const agencesLocales: AgenceLocale[] = [
         titre: 'Vendre sans tout montrer',
         paragraphes: [
           "Sur la Butte, beaucoup de propriétaires ne veulent ni panneau ni annonce. Nous menons ces ventes en confidentiel, auprès d'acheteurs déjà qualifiés, et nous disons dès le départ ce que ce choix coûte en délai.",
+        ],
+      },
+      {
+        titre: 'Les grands appartements du versant Caulaincourt',
+        paragraphes: [
+          "Entre la rue Caulaincourt, la rue Lamarck et l'avenue Junot, Montmartre a aussi ses immeubles en pierre de taille, ses loges de gardien et ses quatre et cinq pièces familiaux, recherchés par des familles qui veulent la Butte sans l'agitation des Abbesses. Ces appartements sont rares : ceux qui les cherchent comparent peu d'offres et regardent tout.",
+        ],
+        points: [
+          { titre: 'Des comparables de la même taille.', texte: "Un grand appartement ne s'estime pas sur la médiane du quartier, tirée par les studios : nous le comparons aux ventes de quatre pièces et plus des mêmes rues." },
+          { titre: 'Les artisans du détail.', texte: "Parqueteurs, artisans des moulures, fumistes : nous travaillons avec eux en direct pour reprendre parquets, corniches et conduits de cheminée avant les photos, avec votre accord." },
+          { titre: 'Des familles qualifiées.', texte: "Apport, accord bancaire, vente préalable : chaque acheteur est vérifié avant la visite, et chaque visite fait l'objet d'un compte rendu écrit." },
         ],
       },
       {
@@ -96,12 +107,17 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement à Montmartre ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
       },
       {
         question: 'Vendez-vous des biens haut de gamme à Montmartre ?',
         reponse:
           "Oui : derniers étages avec vue, ateliers, appartements de caractère. Nous les estimons à partir des ventes signées des mêmes rues, nous les présentons en sept langues aux acheteurs français et étrangers, et nous pouvons les vendre en confidentiel, sans panneau ni annonce publique.",
+      },
+      {
+        question: 'Vendez-vous des appartements familiaux à Montmartre ?',
+        reponse:
+          "Oui, et c'est une part importante de notre travail : quatre et cinq pièces du versant Caulaincourt et de l'avenue Junot, immeubles en pierre de taille avec gardien, appartements haussmanniens à parquet et moulures. Nous les estimons sur les ventes d'appartements de la même taille dans les mêmes rues, et nous préparons leurs détails d'origine avec des artisans qui travaillent avec nous en direct.",
       },
       {
         question: 'Vendez-vous sans annonce publique à Montmartre ?',
@@ -155,7 +171,7 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement dans le quartier Saint-Georges ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
       },
     ],
   },
@@ -175,11 +191,11 @@ export const agencesLocales: AgenceLocale[] = [
     rayon: 500,
     quartiersBiens: ['Trudaine Maubeuge'],
     quartiersLies: ['trudaine-maubeuge', 'martyrs-lorette', 'montmartre'],
-    titreSeo: 'Agence immobilière Trudaine, Paris 9e | Trudaines',
+    titreSeo: 'Agence immobilière Trudaine, Martyrs, Paris 9e | Trudaines',
     descriptionSeo:
-      "Agence immobilière avenue Trudaine, Paris 9e : l'agence qui porte le nom de l'avenue. Prix signés rue par rue, estimation offerte sous 48 h si vous vendez.",
+      "Agence immobilière avenue Trudaine, Paris 9e : appartements familiaux et haussmanniens, prix signés rue par rue, avis de valeur sous 48 h, offert si vous vendez.",
     h1: "Agence immobilière avenue Trudaine, Paris 9e",
-    surtitre: 'Paris 9e · Trudaine, Anvers, Rochechouart',
+    surtitre: 'Paris 9e · Trudaine, Martyrs, Anvers, Rochechouart',
     chapo:
       "Trudaines tient son nom de l'avenue Trudaine. C'est le territoire de l'agence : l'avenue, ses rues calmes et les pentes qui montent vers Anvers et Montmartre. Nous y avons déjà conduit des mandats, et notre bureau est à quelques minutes à pied.",
     sections: [
@@ -188,6 +204,17 @@ export const agencesLocales: AgenceLocale[] = [
         paragraphes: [
           "Large, plantée, face au lycée Jacques-Decour, l'avenue Trudaine joue le rôle d'une place de village pour le 9e nord. Les immeubles qui la bordent affichent les prix les plus hauts du secteur ; à mesure que l'on remonte vers le boulevard de Rochechouart, les valeurs se détendent, parfois nettement sur cent cinquante mètres.",
           "Les rues Turgot, Lallier et Bochart-de-Saron offrent le calme que cherchent les familles, avec des immeubles souvent bien tenus. La rue des Martyrs, à deux pas, attire un autre profil, tourné vers le commerce de bouche et l'animation.",
+        ],
+      },
+      {
+        titre: 'Appartements familiaux et haussmanniens',
+        paragraphes: [
+          "Autour de l'avenue, rue de Maubeuge, rue Condorcet, rue des Martyrs ou rue de La Rochefoucauld, les immeubles en pierre de taille abritent les grands appartements que les familles du 9e se disputent : double séjour, parquet en point de Hongrie, moulures, cheminées, souvent une loge de gardien. Dans le quartier Rochechouart, de janvier 2024 à juin 2026, les quatre pièces et plus se sont vendus plus cher au mètre carré que les studios (base DVF) : la rareté se paie.",
+        ],
+        points: [
+          { titre: 'Des comparables de la même taille.', texte: "Nous estimons un quatre ou cinq pièces sur les ventes d'appartements de même taille des mêmes rues, pas sur une médiane tirée par les petites surfaces." },
+          { titre: 'Les artisans du détail.', texte: "Parqueteurs, artisans des moulures, fumistes : nous les faisons intervenir en direct pour préparer parquets, corniches et cheminées avant les photos, avec votre accord." },
+          { titre: 'Un seul interlocuteur.', texte: "De l'estimation à la signature chez le notaire, la même personne connaît votre appartement, son dossier et ses acheteurs." },
         ],
       },
       {
@@ -206,7 +233,12 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement près de l'avenue Trudaine ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures. Les deux sont gratuites et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
+      },
+      {
+        question: 'Vendez-vous des appartements familiaux dans le 9e nord ?',
+        reponse:
+          "Oui : quatre et cinq pièces autour de l'avenue Trudaine, de la rue des Martyrs et de Saint-Georges, dans des immeubles en pierre de taille, souvent avec gardien. Nous les comparons aux ventes d'appartements de même taille des mêmes rues, nous préparons parquets, moulures et cheminées avec des artisans qui travaillent avec nous en direct, et nous qualifions chaque famille acheteuse avant la visite.",
       },
       {
         question: "Pourquoi l'agence s'appelle-t-elle Trudaines ?",

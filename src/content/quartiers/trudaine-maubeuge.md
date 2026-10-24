@@ -8,7 +8,7 @@ chapo: L'avenue Trudaine et ses rues adjacentes forment l'un des micro-marchés 
 ordre: 1
 dateMaj: 2026-10-18
 titreSeo: Immobilier Trudaine-Maubeuge, Paris 9e | Prix et vente - Trudaines
-descriptionSeo: Prix au mètre carré, physionomie du marché et biens à vendre dans le quartier Trudaine-Maubeuge, Paris 9e. Estimation écrite par l'agence Trudaines.
+descriptionSeo: "Prix au m² de chaque rue autour de l'avenue Trudaine, d'après les ventes notariées : appartements familiaux, haussmanniens. Agence Trudaines, 9e."
 photos:
   - src: /images/quartiers/trudaine-maubeuge-rue.webp
     alt: Vélo contre un réverbère devant une façade fleurie
