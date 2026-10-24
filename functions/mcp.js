@@ -323,25 +323,36 @@ const ENTETES = {
   'X-Content-Type-Options': 'nosniff',
 };
 
-const json = (corps, status = 200) =>
-  new Response(JSON.stringify(corps), { status, headers: { 'Content-Type': 'application/json; charset=utf-8', ...ENTETES } });
+/*
+ * Taille annoncée en octets sur chaque réponse : sans elle, Cloudflare envoyait les réponses
+ * en morceaux mal délimités et laissait la connexion ouverte (GET bloqués 20 secondes).
+ */
+function reponse(corps, status, entetes = {}) {
+  const octets = corps == null ? new Uint8Array(0) : new TextEncoder().encode(corps);
+  return new Response(corps == null ? null : octets, {
+    status,
+    headers: { ...ENTETES, ...entetes, 'Content-Length': String(octets.byteLength) },
+  });
+}
+
+const json = (corps, status = 200) => reponse(JSON.stringify(corps), status, { 'Content-Type': 'application/json; charset=utf-8' });
 
 export async function onRequest(contexte) {
   const { request, env } = contexte;
 
-  if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: ENTETES });
-  if (request.method === 'DELETE') return new Response(null, { status: 204, headers: ENTETES });
+  if (request.method === 'OPTIONS') return reponse(null, 204);
+  if (request.method === 'DELETE') return reponse(null, 204);
   if (request.method === 'GET' || request.method === 'HEAD') {
     /* Un visiteur qui ouvre l'adresse dans son navigateur arrive sur la page de présentation. */
     if ((request.headers.get('Accept') ?? '').includes('text/html')) {
-      return Response.redirect(new URL('/connecteur-ia', request.url).toString(), 302);
+      return reponse(null, 302, { Location: new URL('/connecteur-ia', request.url).toString() });
     }
-    return new Response('Connecteur MCP Trudaines : utiliser POST (transport Streamable HTTP).', {
-      status: 405,
-      headers: { Allow: 'POST', 'Content-Type': 'text/plain; charset=utf-8', ...ENTETES },
+    return reponse('Connecteur MCP Trudaines : utiliser POST (transport Streamable HTTP).', 405, {
+      Allow: 'POST',
+      'Content-Type': 'text/plain; charset=utf-8',
     });
   }
-  if (request.method !== 'POST') return new Response(null, { status: 405, headers: { Allow: 'POST', ...ENTETES } });
+  if (request.method !== 'POST') return reponse(null, 405, { Allow: 'POST' });
 
   let corps;
   try {
@@ -360,8 +371,8 @@ export async function onRequest(contexte) {
 
   if (Array.isArray(corps)) {
     const reponses = (await Promise.all(corps.map((m) => repondre(m, lire)))).filter(Boolean);
-    return reponses.length ? json(reponses) : new Response(null, { status: 202, headers: ENTETES });
+    return reponses.length ? json(reponses) : reponse(null, 202);
   }
-  const reponse = await repondre(corps, lire);
-  return reponse ? json(reponse) : new Response(null, { status: 202, headers: ENTETES });
+  const resultat = await repondre(corps, lire);
+  return resultat ? json(resultat) : reponse(null, 202);
 }
