@@ -6,8 +6,8 @@
  * civil, article 1378-1 du code de procédure civile) que les notaires publient
  * dans les journaux d'annonces légales. Deux sources couvrent l'essentiel de Paris :
  * - le Journal spécial des sociétés, qui en publie le plus : son API publique
- *   (celle de jss.fr) donne les avis « Envoi en possession » du plus récent au
- *   plus ancien, cent par page, puis le texte de chacun ;
+ *   (celle de jss.fr) donne les avis de type « Envoi en possession » du plus récent
+ *   au plus ancien, cent par page, puis le texte de chacun ;
  * - annonces-legales.fr (Les Echos, Le Parisien, Libération). Son robots.txt
  *   interdit les pages filtrées (?department=) : le script ne lit que la liste
  *   générale de Paris, page par page, puis chaque avis « Testament / Succession ».
@@ -114,7 +114,7 @@ export function lireAvis(html) {
     plat.match(/([A-ZÀ-Ý][A-ZÀ-Ý' -]{1,40}\s*\([^)]{3,80}\))\s*,?\s*(?:en son vivant\s+)?(?:demeurant|domicili)/)?.[1] ??
     '';
   const adresse =
-    plat.match(/(?:demeurant|domicili[ée]e?)\s+(?:en son vivant\s+)?(?:à|au|a)\s+(.{5,160}?)(?:\s*,\s*n[ée]e?\s|\.\s|\s*,\s*d[ée]c[ée]d)/i)?.[1]
+    plat.match(/(?:demeurant|domicili[ée]e?)\s+(?:(?:en|de) son vivant\s+)?(?:à|au|a)\s+(.{5,160}?)(?:\s*,\s*n[ée]e?\s|\.\s|\s*,\s*d[ée]c[ée]d)/i)?.[1]
       ?.replace(/\s*,\s*$/, '') ?? '';
   const codePostal = (adresse.match(/\b75\d{3}\b/) ?? plat.match(/\b75(?:0\d{2}|116)\b/))?.[0] ?? '';
   const deces = plat.match(/d[ée]c[ée]d[ée]e?\s.{0,160}?\ble\s+(\d{2}\/\d{2}\/\d{4}|\d{1,2}(?:er)?\s+\p{L}+\s+\d{4})/iu)?.[1] ?? '';
@@ -174,11 +174,21 @@ const plusLongue = (valeur) =>
     ? valeur
     : Object.values(valeur ?? {}).map(plusLongue).reduce((a, b) => (b.length > a.length ? b : a), '');
 
-/** JSS : avis « Envoi en possession » parus à Paris depuis la date limite, du plus récent au plus ancien. */
+/**
+ * JSS : avis « Envoi en possession » parus à Paris depuis la date limite. La liste par type
+ * (related) est complète, du plus récent au plus ancien ; la recherche plein texte manque les
+ * avis rédigés sans l'expression « envoi en possession ».
+ */
 async function avisJss(limite) {
-  const { content = [] } = await jss('search?page=0&pageSize=100&searchText=envoi%20en%20possession');
-  if (!content.length) throw new Error('JSS : liste vide, l\'API a changé');
-  if (content.at(-1).publicationDate >= limite) console.log('JSS : la page ne remonte pas jusqu\'à la date limite, lecture incomplète.');
+  const content = [];
+  for (let n = 0; n < 5; n += 1) {
+    const { content: page = [] } = await jss(
+      `related?page=${n}&pageSize=100&excludeAnnouncementId=0&noticeTypeId=${JSS_ENVOI_EN_POSSESSION}`
+    );
+    if (!page.length && !n) throw new Error('JSS : liste vide, l\'API a changé');
+    content.push(...page);
+    if (!page.length || page.at(-1).publicationDate < limite) break;
+  }
   const retenus = content.filter(
     (a) =>
       a.department?.code === '75' &&
