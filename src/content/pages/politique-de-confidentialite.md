@@ -12,6 +12,7 @@ Trudaines Immobilier (MIGA, RCS Paris 930 663 646), 2 rue Livingstone, 75018 Par
 - **Demande de visite ou de dossier de bien** : identité, email, téléphone, créneaux souhaités. Finalité : organiser la visite et transmettre le dossier.
 - **Alerte acquéreur et téléchargement de guide** : email, prénom, téléphone, critères de recherche, calendrier, financement et, si vous l'indiquez, le bien à vendre avant votre achat. Finalité : vous adresser les biens et documents correspondants et, à votre demande, organiser l'estimation de votre bien. Base légale : votre consentement.
 - **Recommandation Trudaines WinWin** : identité et coordonnées de la personne qui recommande, projet et contexte, et, seulement avec l'accord de la personne recommandée, ses nom et téléphone. Finalité : organiser la mise en relation et verser la prime convenue. La personne recommandée n'est inscrite dans aucune liste ; ses coordonnées servent à la seule prise de contact convenue, et l'origine de ses données lui est indiquée dès le premier échange. Base légale : l'intérêt légitime de l'agence et l'accord WinWin.
+- **Suivi de votre projet** : chaque demande rejoint votre dossier dans le fichier de l'agence (coordonnées, adresse du bien, échanges avec l'agence), pour vous rappeler et suivre votre projet sans vous faire répéter ce que vous avez déjà dit. Un message court peut vous être adressé au sujet de votre propre projet, par exemple après un appel manqué ou une semaine après un avis de valeur ; les nouvelles du marché ne vous sont envoyées que si vous l'avez accepté, et une réponse « stop » suffit à les arrêter. Base légale : mesures précontractuelles prises à votre demande et, pour l'information, votre consentement.
 - **Candidature** : identité, coordonnées, CV. Finalité : étudier votre candidature.
 - **Mesure d'audience** : données de navigation agrégées, déposées uniquement après acceptation du bandeau.
 - **Fréquentation** : Cloudflare Web Analytics compte les pages vues, la provenance et le type d'appareil, sans cookie ni identifiant enregistré sur votre appareil, et ne conserve que des données agrégées.
@@ -27,7 +28,7 @@ Trudaines Immobilier (MIGA, RCS Paris 930 663 646), 2 rue Livingstone, 75018 Par
 
 ## Destinataires
 
-Les données sont traitées par l'agence et par ses sous-traitants techniques : Cloudflare pour l'hébergement et le traitement des formulaires, Brevo pour l'envoi des emails et la gestion de la relation client, Google Analytics pour la mesure d'audience anonymisée. Aucune donnée n'est vendue ni cédée à des fins publicitaires.
+Les données sont traitées par l'agence et par ses sous-traitants techniques : Cloudflare pour l'hébergement, le traitement des formulaires et le fichier clients de l'agence, Brevo pour l'envoi des emails et la gestion de la relation client, Google Analytics pour la mesure d'audience anonymisée. Aucune donnée n'est vendue ni cédée à des fins publicitaires.
 
 ## Vos droits
 

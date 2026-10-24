@@ -146,6 +146,13 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   lu sur les pages clés et les quatre portes du domaine), `synthese` (formules QUERY, séparateur `;` car la feuille est en
   français). Si Googlebot ne peut plus lire une page clé, le relevé échoue et GitHub prévient Samy.
 
+- CRM : conception, fichiers et mise en service dans `CRM.md`. Base D1 liée sous le nom `CRM` (schéma
+  `crm/migrations`, préparée par `.github/workflows/crm.yml` selon `.crm/ordre.json`, mode `preparer` sur ordre de Samy seulement). Tout formulaire passe aussi
+  par `noterDemande` (`functions/_lib/crm.js`), qui ne lève jamais d'erreur : sans base, le formulaire marche comme
+  avant. Écrans `/crm` derrière la connexion GitHub, connecteur privé `/crm/mcp` (OAuth), jamais mêlé au `/mcp`
+  public. Relances dans `functions/_lib/crm-relances.js`, `envoiActif` à false tant que Samy ne l'a pas ordonné.
+  Aucune donnée de contact dans le dépôt. Toute modification du CRM se vérifie par `npm run test-crm`.
+
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
-`npm run test-mise-en-ligne`, `npm run verifier-mobile`, `npm run verifier-flux`.
+`npm run test-mise-en-ligne`, `npm run verifier-mobile`, `npm run verifier-flux`, `npm run test-crm`.

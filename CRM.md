@@ -1,7 +1,7 @@
 # CRM Trudaines
 
-24 octobre 2026. Cahier de conception, première version. Rien n'est construit : ce document fixe le modèle, l'ordre
-de construction et ce qu'on ne fait pas.
+24 octobre 2026. Cahier de conception, puis première version construite dans la nuit du 24 octobre 2026 (section
+« Ce qui est construit »). Le CRM s'active en trois gestes de Samy (section « Mise en service »).
 
 ## La décision
 
@@ -118,6 +118,9 @@ Toute écriture se confirme avant d'être enregistrée.
 
 ## L'ordre de construction
 
+Étapes 1 à 4 construites le 24 octobre 2026, à l'exception des signaux DPE et DVF de l'étape 3 ; l'écran web de
+l'étape 5 aussi, parce qu'il sert dès maintenant au téléphone.
+
 1. **Pipeline vendeurs.** Tables `personne`, `projet`, `echange` ; estimation et rappel les alimentent ; outil
    `ma_journee`. Critère de réussite : aucune demande d'estimation sans prochaine action, et le taux estimation vers
    mandat mesuré dès le premier mois.
@@ -126,6 +129,41 @@ Toute écriture se confirme avant d'être enregistrée.
 4. **Acquéreurs et WinWin.** Rapprochement avant diffusion, suivi des primes.
 5. **Écran web.** Liste du jour et fiche immeuble, pour le premier collaborateur.
 6. **Biens et mandats.** Le CRM devient la source des fiches et des flux.
+
+## Ce qui est construit
+
+| Pièce | Fichiers | Ce qu'elle fait |
+| --- | --- | --- |
+| Base | `crm/migrations/0001_init.sql` | Immeubles, personnes, projets, échanges, relances, accès des assistants. D1 `trudaines-crm` en production, `trudaines-crm-essai` pour les aperçus de branche |
+| Formulaires | `functions/api/*.js`, `functions/_lib/crm.js` (`noterDemande`) | Estimation, rappel, contact, visite, dossier de bien, guide, alerte, acquéreur prioritaire, WinWin et suivi de rue (propriétaire) entrent dans le CRM, en plus de l'email, du SMS et de Brevo. Sans base liée ou en panne, rien ne change pour le visiteur |
+| Écrans | `functions/crm/[[chemin]].js`, `functions/_lib/crm-vues.js` | `/crm` : ma journée, fiche personne (appel, SMS, WhatsApp en un geste), saisie terrain en trente secondes, fiche immeuble, tableau de conversion par source, primes WinWin, export CSV et JSON. Sans script, lisible à 360 px |
+| Accès | `functions/_lib/crm-session.js`, `functions/api/callback/crm.js` | Connexion GitHub avec l'application OAuth du back office, comptes de `CRM_UTILISATEURS` (à défaut SamyTrudaines), cookie signé limité à /crm |
+| Agent | `functions/crm/mcp.js`, `functions/crm/oauth/[action].js`, `functions/_lib/crm-oauth.js` | Connecteur privé `/crm/mcp` pour Claude ou ChatGPT : ma_journee, chercher, fiche, noter, consigner_echange, changer_etape, fixer_action, appel_sans_reponse, fiche_immeuble, tableau_de_bord. OAuth 2.1 avec PKCE, jetons gardés en empreinte |
+| Relances | `functions/_lib/crm-relances.js` | Appel manqué (SMS le lendemain), avis de valeur à une semaine et un mois, projet en veille à deux et six mois, après la signature (avis et WinWin) à quinze jours et un an. Relues avant envoi, annulées si le projet a bougé. Nouvelles du marché réservées aux personnes qui l'acceptent |
+| Matin | `scripts/crm/quotidien.mjs`, `.github/workflows/crm.yml` | Du lundi au samedi à 7 h 40 (heure d'hiver) : retrait des prospects sans contact depuis trois ans, relances du jour, email « Ma journée » à Samy |
+| Préparation | `scripts/crm/preparer.mjs`, `.crm/ordre.json` | Crée les deux bases, applique le schéma, les lie au projet Pages sous le nom `CRM`, vérifie que les variables du projet n'ont pas bougé |
+| Tests | `scripts/test-crm.mjs` (`npm run test-crm`) | Base SQLite en mémoire au comportement de D1 : formulaires, panne, étapes, relances, écrans, OAuth, connecteur |
+
+Les relances partent en essai : chacune arrive à `samy.santamarina@trudaines.com` avec le nom du client prévu. Une
+relance passée en essai ne repart jamais, activer ne déverse donc aucun arriéré. Activation : `envoiActif: true` dans
+`functions/_lib/crm-relances.js`, sur ordre de Samy après lecture des essais.
+
+## Mise en service
+
+1. **Cloudflare, une permission.** Tableau de bord Cloudflare, Mon profil, Jetons d'API : modifier le jeton enregistré
+   dans le secret GitHub `CLOUDFLARE_API_TOKEN` et lui ajouter « Compte, D1, Modifier ». La valeur du jeton ne change
+   pas, rien à recopier. Le 24 octobre 2026, le workflow a constaté que cette permission manquait.
+2. **Donner l'ordre de préparer.** Dire à Claude « prépare la base du CRM » : il passe `.crm/ordre.json` en mode
+   `preparer`, ce qui lance le workflow « CRM ». Il crée les bases, applique le schéma et lie la base au projet
+   Pages, production et aperçus. Comme pour la mise en ligne, ce mode touche à la configuration de production et ne
+   part que sur ordre de Samy ; le mode `audit` ne fait que lire.
+3. **Fusionner la pull request.** Le déploiement de main qui suit porte la base : /crm s'ouvre, les formulaires
+   écrivent dans le CRM. Si la fusion a eu lieu avant l'étape 2, relancer le dernier déploiement de production dans
+   Cloudflare Pages.
+
+Ensuite : ouvrir https://www.trudaines.com/crm, se connecter avec GitHub, puis ajouter le connecteur dans Claude
+(Paramètres, Connecteurs, connecteur personnalisé, adresse `https://www.trudaines.com/crm/mcp`), comme l'explique
+la page Réglages du CRM.
 
 ## Ce qu'on ne fait pas
 

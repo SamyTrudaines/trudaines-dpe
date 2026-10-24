@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -48,6 +49,19 @@ export async function onRequestPost({ request, env }) {
       },
       listes: liste(env, listeCible),
     });
+
+    if (sujet !== 'Rejoindre') {
+      const nature = ['Vendre', 'Estimer'].includes(sujet) ? 'vente' : sujet === 'Acheter' ? 'achat' : /gestion|louer/i.test(sujet) ? 'gestion' : 'autre';
+      await noterDemande(env, {
+        source: 'Formulaire contact',
+        personne: {
+          prenom: valeur('prenom'), nom: valeur('nom'), email, telephone: valeur('telephone'),
+          role: nature === 'achat' ? 'acquereur' : nature === 'vente' ? 'proprietaire' : '', consentement: valeur('consentement') === 'oui',
+        },
+        projet: { nature, details: { sujet } },
+        resume: `Message (${sujet}) : ${valeur('message')}`,
+      });
+    }
 
     await envoyerEmail(env, {
       destinataire: email,

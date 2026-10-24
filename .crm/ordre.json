@@ -1,4 +1,4 @@
 {
   "mode": "audit",
-  "motif": "Première lecture : droits du jeton sur D1 et état des liaisons du projet Pages"
+  "motif": "Lecture seule par défaut. Passer à preparer sur ordre de Samy, une fois la permission D1 ajoutée au jeton Cloudflare : création des bases, schéma, liaison CRM au projet Pages."
 }

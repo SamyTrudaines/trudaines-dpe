@@ -17,7 +17,8 @@
     "test-mise-en-ligne": "node scripts/test-mise-en-ligne.mjs",
     "mise-en-ligne": "node scripts/mise-en-ligne/index.mjs",
     "verifier-flux": "node scripts/verifier-flux.mjs",
-    "verifier-connecteur": "node scripts/verifier-connecteur.mjs"
+    "verifier-connecteur": "node scripts/verifier-connecteur.mjs",
+    "test-crm": "node --no-warnings scripts/test-crm.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

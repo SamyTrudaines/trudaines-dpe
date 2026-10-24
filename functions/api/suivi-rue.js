@@ -1,6 +1,7 @@
 import {
   reponse, suspect, emailValide, envoyerEmail, embaser, liste, gabaritNotification, gabaritClient, borner,
 } from '../_lib/brevo.js';
+import { dansJours, noterDemande } from '../_lib/crm.js';
 
 /**
  * Suivi des prix d'une rue, posé sur les pages /prix-immobilier/<rue>.
@@ -45,6 +46,16 @@ export async function onRequestPost({ request, env }) {
       },
       listes: liste(env, proprietaire ? 'vendeurs' : 'telechargements'),
     });
+
+    /* Un propriétaire qui suit sa rue est un vendeur de demain : projet en veille, avis de valeur à proposer. */
+    if (proprietaire) {
+      await noterDemande(env, {
+        source: 'Suivi de rue',
+        personne: { email, role: 'proprietaire', consentement: true },
+        projet: { nature: 'vente', etape: 'veille', details: { rue, origine: valeur('origine') }, action: 'Proposer un avis de valeur', actionLe: dansJours(3) },
+        resume: `Suit les ventes signées ${rue}.`,
+      });
+    }
 
     await envoyerEmail(env, {
       destinataire: email,

@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, borner, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 /**
  * Alerte acquéreur, deux formules sur le même point d'entrée.
@@ -78,6 +79,28 @@ export async function onRequestPost({ request, env }) {
       },
       listes: [...liste(env, 'acheteurs'), ...(venteAvecEstimation ? liste(env, 'vendeurs') : [])],
     });
+
+    await noterDemande(env, {
+      source: express ? 'Alerte express' : 'Alerte acquéreur',
+      personne: { prenom, email, telephone: valeur('telephone'), role: 'acquereur', consentement: true },
+      projet: {
+        nature: 'achat',
+        details: {
+          secteur, budget: `${milliers(budget)} €`, pieces, surface: surface && `${surface} m²`, delai: valeur('delai'),
+          financement: valeur('financement'), vente_prealable: valeur('vente_prealable'), origine,
+        },
+        action: 'Appeler pour qualifier la recherche',
+      },
+      resume: `Alerte ${secteur}, budget ${milliers(budget)} €${pieces ? `, ${pieces} pièces` : ''}.`,
+    });
+    if (venteAvecEstimation) {
+      await noterDemande(env, {
+        source: 'Alerte acquéreur',
+        personne: { email, role: 'proprietaire' },
+        projet: { nature: 'vente', action: 'Proposer l’estimation du bien à vendre avant l’achat' },
+        resume: 'Doit vendre avant d’acheter et demande une estimation.',
+      });
+    }
 
     const criteres = [
       secteur === 'Tout Paris' ? 'tout Paris' : secteur,

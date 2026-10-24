@@ -50,8 +50,9 @@ try {
   bases = await cf.bases();
   journal(`D1 : accès en lecture, ${bases.length} base(s) dans le compte`);
 } catch (erreur) {
-  journal(`D1 : accès refusé (${erreur.statut}). Ajouter au jeton CLOUDFLARE_API_TOKEN la permission « Account, D1, Edit ».`);
-  process.exit(1);
+  /* Avertissement plutôt qu'échec : le site n'en dépend pas, et la marche à suivre s'affiche sur la pull request. */
+  journal(`::warning::CRM : accès D1 refusé (${erreur.statut}). Ajouter au jeton CLOUDFLARE_API_TOKEN la permission « Account, D1, Edit », puis relancer ce workflow.`);
+  process.exit(0);
 }
 
 const projet = await cf.lireProjet();

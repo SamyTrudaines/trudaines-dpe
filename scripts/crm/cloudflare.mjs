@@ -51,3 +51,28 @@ export function cloudflare(jeton) {
       }),
   };
 }
+
+/**
+ * Base D1 distante avec l'interface d'une liaison Pages (prepare, bind, first, all, run) :
+ * les requêtes de functions/_lib/crm.js servent telles quelles depuis GitHub Actions.
+ */
+export function d1Distant(cf, uuid) {
+  return {
+    prepare(sql) {
+      let params = [];
+      const instruction = {
+        bind(...valeurs) {
+          params = valeurs;
+          return instruction;
+        },
+        all: async () => ({ results: await cf.requete(uuid, sql, params) }),
+        first: async () => (await cf.requete(uuid, sql, params))[0] ?? null,
+        run: async () => {
+          await cf.requete(uuid, sql, params);
+          return {};
+        },
+      };
+      return instruction;
+    },
+  };
+}

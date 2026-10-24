@@ -3,6 +3,7 @@ import {
   liste, gabaritNotification, gabaritClient, identifiantValide,
   configurationDoubleOptIn, demanderConfirmation, telephoneInternational,
 } from '../_lib/brevo.js';
+import { dansJours, noterDemande } from '../_lib/crm.js';
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -69,6 +70,14 @@ export async function onRequestPost({ request, env }) {
     const doubleOptIn = configurationDoubleOptIn(env) !== null && listes.length > 0;
     const abonnement = valeur('consentement') === 'oui';
     const attributsContact = { SMS: telephoneInternational(valeur('telephone')), GUIDE: titreGuide, ORIGINE: 'Téléchargement de guide' };
+
+    /* Qui télécharge un guide des prix est souvent un vendeur de demain : projet en veille, appel dans deux jours. */
+    await noterDemande(env, {
+      source: 'Guide téléchargé',
+      personne: { email, telephone: valeur('telephone'), role: 'proprietaire' },
+      projet: { nature: 'vente', etape: 'veille', details: { guide: titreGuide, origine: valeur('contexte') }, action: `Appeler : guide « ${titreGuide} » téléchargé`, actionLe: dansJours(2) },
+      resume: `Guide téléchargé : ${titreGuide}.`,
+    });
 
     let confirmation = 'sans objet';
     if (doubleOptIn && abonnement) {
