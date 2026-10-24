@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, demanderConfirmation,
   gabaritNotification, borner, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 import { acquereurs, ARRONDISSEMENTS } from '../_lib/acquereurs.js';
 
 /**
@@ -81,6 +82,20 @@ export async function onRequestPost({ request, env }) {
         OPT_IN: true,
         DATE_OPTIN: new Date().toISOString().slice(0, 10),
       },
+    });
+
+    await noterDemande(env, {
+      source: 'Acquéreurs prioritaires',
+      personne: { prenom, nom, email, telephone: valeur('telephone'), role: 'acquereur' },
+      projet: {
+        nature: 'achat',
+        details: {
+          secteur: arrondissements.join(', '), budget: `${milliers(budget)} €`, surface: surface && `${surface} m²`, pieces,
+          financement, entree,
+        },
+        action: 'Appeler pour qualifier la recherche',
+      },
+      resume: `Inscription acquéreur prioritaire, budget ${milliers(budget)} €, financement ${financement.toLowerCase()}.`,
     });
 
     return reponse(request, {

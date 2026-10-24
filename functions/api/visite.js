@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 export async function onRequestPost({ request, env }) {
   try {
@@ -44,6 +45,16 @@ export async function onRequestPost({ request, env }) {
         ...optIn(donnees),
       },
       listes: liste(env, 'acheteurs'),
+    });
+
+    await noterDemande(env, {
+      source: 'Demande de visite',
+      personne: {
+        prenom: valeur('prenom'), nom: valeur('nom'), email, telephone: valeur('telephone'), role: 'acquereur',
+        consentement: valeur('consentement') === 'oui',
+      },
+      projet: { nature: 'achat', details: { reference: `${valeur('reference')} ${valeur('bien')}`.trim() }, action: `Confirmer la visite de ${valeur('reference')}` },
+      resume: `Demande de visite ${valeur('reference')}, créneaux : ${valeur('creneaux')}.`,
     });
 
     await envoyerEmail(env, {

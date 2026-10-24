@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn, envoyerSmsAgence,
   liste, gabaritNotification, gabaritClient, telephoneInternational, borner,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 /**
  * Demande de rappel par Samy, l'autre voie du formulaire d'estimation.
@@ -60,6 +61,18 @@ export async function onRequestPost({ request, env }) {
         ...optIn(donnees),
       },
       listes: liste(env, 'vendeurs'),
+    });
+
+    await noterDemande(env, {
+      source: 'Demande de rappel',
+      personne: { prenom, email, telephone, role: 'proprietaire', consentement: valeur('consentement') === 'oui' },
+      projet: {
+        nature: 'vente',
+        adresse,
+        details: { moment, secteur: valeur('secteur'), origine: valeur('origine') },
+        action: `Rappeler (${moment.toLowerCase()})`,
+      },
+      resume: `Demande à être rappelé, ${moment.toLowerCase()}.`,
     });
 
     if (email) {

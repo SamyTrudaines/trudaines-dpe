@@ -15,6 +15,8 @@
  * Console lisait leur renvoi vers /acheter ou l'accueil comme une « soft 404 » ;
  * le 410 les fait sortir de l'index sans toucher aux redirections précises.
  */
+import { metadonnees } from './_lib/crm-oauth.js';
+
 const FICHIER = /\.(?:avif|webp|jpe?g|png|gif|svg|ico|css|js|mjs|map|json|xml|txt|pdf|mp3|mp4|woff2?|ttf)$/i;
 
 const supprimee = () =>
@@ -29,6 +31,17 @@ const ANCIENNE_FICHE = /^\/vente\/[^/]+\/[^/]+\/[^/]+\/?$/;
 export async function onRequest(context) {
   const { method, url } = context.request;
   const chemin = new URL(url).pathname;
+  /*
+   * Métadonnées d'autorisation du connecteur privé /crm/mcp, sous des chemins propres au CRM
+   * (se terminant par /crm ou /crm/mcp). La racine de /.well-known reste vide : le connecteur
+   * public /mcp, sans connexion, ne doit jamais sembler en demander une.
+   */
+  const meta = chemin.startsWith('/.well-known/') ? metadonnees(chemin, new URL(url).origin) : null;
+  if (meta) {
+    return new Response(JSON.stringify(meta), {
+      headers: { 'Content-Type': 'application/json; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'max-age=3600' },
+    });
+  }
   const reponse = await context.next();
   if (ANCIENNE_FICHE.test(chemin) && reponse.status === 301) {
     const cible = new URL(reponse.headers.get('location') ?? '/', url).pathname;

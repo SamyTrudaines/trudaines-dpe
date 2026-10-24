@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, borner, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 /**
  * Recommandation Trudaines WinWin : quelqu'un présente à l'agence un proche
@@ -61,6 +62,17 @@ export async function onRequestPost({ request, env }) {
         ...optIn(donnees),
       },
       listes: liste(env, 'vendeurs'),
+    });
+
+    /* Le recommandant entre comme apporteur ; son proche n'entre qu'après la présentation, saisi par l'agence. */
+    await noterDemande(env, {
+      source: 'WinWin',
+      personne: {
+        prenom: valeur('prenom'), nom: valeur('nom'), email, telephone: valeur('telephone'), role: 'apporteur',
+        consentement: valeur('consentement') === 'oui',
+      },
+      projet: { nature: 'recommandation', details: { projet, contexte: valeur('contexte') } },
+      resume: `Recommande un proche pour un projet ${projet.toLowerCase()}. ${valeur('contexte')}`,
     });
 
     const prime =

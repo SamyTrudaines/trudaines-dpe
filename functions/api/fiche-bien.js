@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn,
   liste, gabaritNotification, gabaritClient, identifiantValide, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 /**
  * Envoie le dossier PDF du bien. Le PDF est généré à la construction du site
@@ -69,6 +70,13 @@ export async function onRequestPost({ request, env }) {
         ...optIn(donnees),
       },
       listes: liste(env, 'acheteurs'),
+    });
+
+    await noterDemande(env, {
+      source: 'Dossier de bien',
+      personne: { email, telephone: valeur('telephone'), role: 'acquereur', consentement: valeur('consentement') === 'oui' },
+      projet: { nature: 'achat', details: { reference: `${valeur('reference')} ${valeur('bien')}`.trim() }, action: `Appeler : dossier ${valeur('reference')} téléchargé` },
+      resume: `Dossier du bien ${valeur('reference')} téléchargé.`,
     });
 
     return reponse(request, { ok: true, message: 'Dossier envoyé' });

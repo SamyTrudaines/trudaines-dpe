@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn, envoyerSmsAgence,
   liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
+import { noterDemande } from '../_lib/crm.js';
 
 /* « 3 » et « 7 » deviennent « 3e étage, immeuble de 7 étages » ; 0 est le rez-de-chaussée. */
 function etageLisible(etage, etages) {
@@ -86,6 +87,26 @@ export async function onRequestPost({ request, env }) {
         ...optIn(donnees),
       },
       listes: liste(env, 'vendeurs'),
+    });
+
+    await noterDemande(env, {
+      source: 'Formulaire estimation',
+      personne: {
+        prenom, nom: valeur('nom'), email, telephone: valeur('telephone'),
+        role: valeur('proprietaire') === 'Non' ? '' : 'proprietaire', consentement: valeur('consentement') === 'oui',
+      },
+      projet: {
+        nature: 'vente',
+        adresse: valeur('adresse'),
+        horizon: valeur('horizon'),
+        details: {
+          type, surface: `${valeur('surface')} m²`, pieces: valeur('pieces'), chambres: valeur('chambres'),
+          etage: etageLisible(valeur('etage'), valeur('etages')), ascenseur: valeur('ascenseur'), etat: valeur('etat'),
+          exterieur: valeur('exterieur'), fourchette: valeur('fourchette'), usage: valeur('usage'), secteur: valeur('secteur'),
+          origine: valeur('origine'),
+        },
+      },
+      resume: `Estimation en ligne : ${valeur('surface')} m², ${valeur('pieces')} pièces${valeur('fourchette') ? `, fourchette vue ${valeur('fourchette')}` : ''}${valeur('horizon') ? `, projet ${valeur('horizon').toLowerCase()}` : ''}.`,
     });
 
     /*
