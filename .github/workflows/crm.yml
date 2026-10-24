@@ -1,0 +1,67 @@
+# CRM Trudaines.
+#
+# preparer : à chaque changement de .crm/ordre.json, du schéma ou du script,
+# lit (audit) ou prépare (preparer) les bases D1 et leur liaison au projet
+# Pages. Détail et garde-fous : scripts/crm/preparer.mjs.
+#
+# quotidien : chaque matin, envoie « Ma journée » à Samy et les relances
+# arrivées à échéance (scripts/crm/quotidien.mjs). Tant que les relances ne
+# sont pas activées, elles partent à l'adresse d'essai.
+name: CRM
+
+on:
+  push:
+    branches: ['claude/**', 'main']
+    paths:
+      - '.crm/ordre.json'
+      - 'crm/migrations/**'
+      - 'scripts/crm/preparer.mjs'
+      - 'scripts/crm/cloudflare.mjs'
+      - '.github/workflows/crm.yml'
+  schedule:
+    # 6 h 40 UTC : 7 h 40 à Paris en hiver, 8 h 40 en été.
+    - cron: '40 6 * * 1-6'
+  workflow_dispatch:
+    inputs:
+      tache:
+        description: 'preparer ou quotidien'
+        type: choice
+        options: [quotidien, preparer]
+        default: quotidien
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crm
+  cancel-in-progress: false
+
+jobs:
+  preparer:
+    if: github.event_name == 'push' || github.event.inputs.tache == 'preparer'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Bases et liaisons
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: node scripts/crm/preparer.mjs
+
+  quotidien:
+    if: github.event_name == 'schedule' || github.event.inputs.tache == 'quotidien'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ma journée et relances
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: node scripts/crm/quotidien.mjs
