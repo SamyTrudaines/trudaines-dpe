@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+
+/**
+ * Présentation du connecteur IA (functions/mcp.js) : l'adresse à coller dans
+ * Claude ou ChatGPT, ce que l'assistant sait répondre, la confidentialité.
+ * Page demandée par les annuaires de connecteurs d'Anthropic et d'OpenAI.
+ */
+const adresse = `${site.url}/mcp`;
+const questions = [
+  'Quels appartements Trudaines sont en vente dans le 18e à moins de 700 000 € ?',
+  'Montre-moi la fiche du T-2619 : étage, DPE, honoraires.',
+  "Quel est le prix au mètre carré aux Abbesses, et pour un deux pièces ?",
+  'Je voudrais visiter ce bien samedi, comment faire ?',
+];
+---
+<Layout
+  titre="Connecteur IA Trudaines pour Claude et ChatGPT | Trudaines"
+  description="Les biens en vente de Trudaines Immobilier et les prix de vente réels par quartier, directement dans Claude et ChatGPT. Adresse du connecteur et mode d'emploi."
+  filAriane={[{ nom: 'Connecteur IA' }]}
+>
+  <section class="section pt-10">
+    <div class="conteneur max-w-3xl">
+      <p class="surtitre">Connecteur IA</p>
+      <h1 class="titre-1 mt-6">Nos biens et nos prix, dans votre assistant</h1>
+      <p class="chapo mt-8">
+        Trudaines Immobilier publie un connecteur pour Claude, ChatGPT et tout assistant compatible MCP. Demandez-lui un
+        appartement à Paris 7e, 9e, 10e, 16e, 17e ou 18e : il répond avec nos biens en vente, leur fiche complète et les
+        prix de vente constatés dans le quartier.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Adresse du connecteur</h2>
+      <p class="mt-6 border-y border-[color:var(--color-trait)] py-5 font-mono text-lg break-all">{adresse}</p>
+      <p class="mt-6">Aucun compte à créer, aucune identification : collez l'adresse, c'est tout.</p>
+
+      <h3 class="titre-3 mt-12">Dans Claude</h3>
+      <p class="mt-4">Paramètres, Connecteurs, Ajouter un connecteur personnalisé. Nom : Trudaines. Adresse : celle ci-dessus.</p>
+
+      <h3 class="titre-3 mt-10">Dans ChatGPT</h3>
+      <p class="mt-4">Paramètres, Applications, Paramètres avancés, mode développeur, puis Créer une application avec l'adresse ci-dessus, sans authentification.</p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Ce que vous pouvez lui demander</h2>
+      <ul class="mt-6 divide-y divide-[color:var(--color-trait)] border-y border-[color:var(--color-trait)]">
+        {questions.map((q) => <li class="py-4">« {q} »</li>)}
+      </ul>
+      <p class="mt-6">
+        Les biens sont ceux de la page <a href="/acheter" class="lien-souligne">Acheter</a>, mis à jour à chaque publication.
+        Les prix au mètre carré viennent des ventes signées devant notaire (base DVF de la DGFiP), les mêmes que nos pages <a href="/estimation" class="lien-souligne">estimation</a>. La visite se demande sur la fiche du bien, par téléphone ou par
+        WhatsApp : l'assistant vous donne le lien.
+      </p>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="conteneur max-w-3xl">
+      <h2 class="titre-2">Confidentialité</h2>
+      <p class="mt-6">
+        Le connecteur fonctionne en lecture seule. Il ne demande ni nom, ni email, ni téléphone, ne dépose aucun cookie et
+        n'enregistre pas vos questions. Détail dans notre <a href="/politique-de-confidentialite" class="lien-souligne">politique de confidentialité</a>.
+      </p>
+      <p class="mt-6">
+        Une question, un usage presse ou professionnel : <a href={`mailto:${site.email}`} class="lien-souligne">{site.email}</a>, <a href={`tel:${site.telephoneLien}`} class="lien-souligne">{site.telephone}</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
