@@ -2,7 +2,7 @@
 titre: "Vendre un appartement haussmannien : moulures, parquet, cheminées, ce que les acheteurs regardent"
 date: 2026-10-24
 image: /images/panorama/vendre-appartement-haussmannien-moulures-parquet-cheminee.webp
-imageAlt: "Parquet ancien à bâtons rompus, ciré et lumineux"
+imageAlt: "Façade d'immeuble en pierre de taille, frontons sculptés et balcons en fer forgé"
 chapo: "Dans un immeuble en pierre de taille du 9e ou de Montmartre, l'acheteur d'un grand appartement regarde le parquet avant les murs, lève les yeux vers les moulures et demande si la cheminée fonctionne. Ces détails se préparent avant la mise en vente, avec les bons artisans, et ils se défendent dans le prix."
 titreSeo: "Vendre un appartement haussmannien Paris 9e, Montmartre | Trudaines"
 descriptionSeo: "Moulures, parquet en point de Hongrie, cheminée et conduit : ce que l'acheteur d'un appartement haussmannien vérifie, et comment le préparer avant la vente."
@@ -91,4 +91,4 @@ Commencer par votre quartier : [estimation Trudaine-Maubeuge](/estimation/paris-
 
 *Sources : demandes de valeurs foncières (DVF), direction générale des finances publiques, ventes d'appartements de janvier 2024 à juin 2026, calculs Trudaines.*
 
-<!-- Photographie : Madalozzo, Unsplash, https://unsplash.com/photos/_e2Jw79ssKo -->
+<!-- Photographie : Samy Santamarina, Trudaines, original dans assets/photos -->

@@ -2,7 +2,7 @@
 titre: "Rénovation d'architecte, domotique, décoration : vendre un appartement d'exception dans le 9e et à Montmartre"
 date: 2026-10-24
 image: /images/panorama/renovation-premium-vendre-appartement-exception-paris-9-montmartre.webp
-imageAlt: "Salon ancien avec cheminée, trumeau et miroir doré, lumière du soir"
+imageAlt: "Immeuble ancien aux volets blancs, toiture en rénovation sous bâche"
 chapo: "Un appartement rénové par un architecte, équipé d'une domotique soignée, décoré pièce par pièce, ne se vend pas sur ses mètres carrés. Il se vend sur la preuve de ce qui a été fait, à des acheteurs qui comparent Montmartre avec le Marais ou Saint-Germain. Ce qu'il faut réunir, montrer et dire pour que le prix suive."
 titreSeo: "Vendre un appartement d'exception Paris 9e, Montmartre | Trudaines"
 descriptionSeo: "Rénovation d'architecte, domotique, matériaux nobles : comment présenter et chiffrer un appartement d'exception dans le 9e et à Montmartre pour vendre au haut de la fourchette."
@@ -84,4 +84,4 @@ Les prix par rue : [avenue Junot](/prix-immobilier/avenue-junot-18), [rue Caulai
 
 *Sources : demandes de valeurs foncières (DVF), direction générale des finances publiques, ventes d'appartements de janvier 2024 à juin 2026, calculs Trudaines.*
 
-<!-- Photographie : Magic Fan, Unsplash, https://unsplash.com/photos/r0RKyY5ZHCM -->
+<!-- Photographie : Samy Santamarina, Trudaines, original dans assets/photos -->

@@ -2,7 +2,7 @@
 titre: "Appartement familial à Trudaine, Martyrs et Montmartre : ce qui fait le prix d'un 4 ou 5 pièces"
 date: 2026-10-24
 image: /images/panorama/appartement-familial-4-5-pieces-trudaine-martyrs-montmartre.webp
-imageAlt: "Immeuble haussmannien en pierre de taille, balcons filants en fer forgé"
+imageAlt: "Immeuble en pierre de taille sous les platanes, balcon filant fleuri"
 chapo: "Les familles qui cherchent un grand appartement dans le 9e nord ou sur le versant Caulaincourt de Montmartre sont nombreuses, et les quatre pièces rares. Ce qu'elles paient, rue par rue, et les critères qui font monter ou baisser le prix : immeuble, gardien, ascenseur, plan, écoles."
 titreSeo: "Prix appartement familial 4-5 pièces Paris 9e, Montmartre | Trudaines"
 descriptionSeo: "Prix des 4 et 5 pièces à Trudaine, Martyrs, Saint-Georges et Montmartre (ventes DVF), et les critères des familles : pierre de taille, gardien, ascenseur, plan."
@@ -100,4 +100,4 @@ Estimer par quartier : [Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge
 
 *Sources : demandes de valeurs foncières (DVF), direction générale des finances publiques, ventes d'appartements de janvier 2024 à juin 2026 ; quartiers administratifs de la Ville de Paris ; calculs Trudaines.*
 
-<!-- Photographie : Howard Walsh, Unsplash, https://unsplash.com/photos/zM4_vC_9qvI -->
+<!-- Photographie : Samy Santamarina, Trudaines, original dans assets/photos -->
