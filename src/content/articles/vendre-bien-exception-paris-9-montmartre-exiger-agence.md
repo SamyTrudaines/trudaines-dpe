@@ -4,7 +4,7 @@ date: 2026-10-25
 image: /images/panorama/vendre-bien-exception-paris-9-montmartre-exiger-agence.webp
 imageAlt: "Dernier étage d'un immeuble en pierre de taille, lucarnes et balcon filant"
 chapo: "Pour un appartement qui n'a pas de prix moyen, le choix de l'agence se joue rarement sur l'enseigne. Il se joue sur ce qu'elle prouve : les ventes qui fondent son prix, la personne qui vendra vraiment, ses honoraires à votre niveau de prix, ce que vous saurez de chaque visite. Dix exigences à poser sur la table avant de signer, et nos réponses, par écrit."
-titreSeo: "Vendre un bien d'exception Paris 9e, Montmartre : choisir l'agence | Trudaines"
+titreSeo: "Bien d'exception Paris 9e, Montmartre : choisir son agence | Trudaines"
 descriptionSeo: "Prix fondé sur les ventes signées, interlocuteur unique, honoraires publiés, mandat, préparation, diffusion, comptes rendus : dix exigences avant de confier un bien d'exception."
 motsCles:
   - vendre bien d'exception Paris 9
