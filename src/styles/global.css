@@ -1124,6 +1124,14 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 
 .pied-detache { margin-top: 3rem; border-top: 1px solid var(--color-trait); }
 .pied-trait { border-top: 1px solid var(--color-trait); }
+.pied-reseaux { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+
+/* Lettre de Trudaines : un champ, au-dessus des mentions légales. */
+.pied-lettre { padding-block: 2rem; }
+.pied-lettre-corps { display: grid; gap: 1.25rem; }
+@media (min-width: 1024px) {
+  .pied-lettre-corps { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; gap: 3rem; }
+}
 
 /* Mentions légales : le texte à gauche, les liens sur une ligne à droite. */
 .pied-legal {
