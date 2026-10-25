@@ -1,17 +1,17 @@
-# Fichier de publipostage des courriers de la veille des légataires
-# (scripts/legataires-envoi.mjs), envoyé à Samy pour Merci Facteur. Il part aussi chaque
-# lundi après la veille (legataires.yml) ; ce workflow sert à le relancer à la main.
-# En essai la feuille n'est pas touchée ; en réel les avis repris sont marqués.
+# Envoi postal des courriers de la veille des légataires par MySendingBox
+# (scripts/legataires-envoi.mjs). Il part aussi chaque lundi après la veille
+# (legataires.yml) ; ce workflow sert à le relancer à la main. En essai, lettres de test
+# sans envoi ni facture et feuille intacte ; en réel, les lettres partent et les avis sont marqués.
 #
 # La feuille se lit par la même fédération sans clé que le relevé Search Console, qui
 # n'accepte que main. Le journal, public, ne montre que des nombres.
-name: Légataires universels, publipostage
+name: Légataires universels, envoi postal
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'essai (feuille intacte) ou reel (avis marqués)'
+        description: 'essai (rien n’est posté) ou reel (lettres postées, avis marqués)'
         default: 'essai'
         type: choice
         options: ['essai', 'reel']
@@ -42,10 +42,11 @@ jobs:
           access_token_lifetime: 900s
           access_token_scopes: https://www.googleapis.com/auth/spreadsheets
 
-      - name: Publipostage
+      - name: Envoi postal
         env:
           GSC_JETON: ${{ steps.google.outputs.access_token }}
           GSC_FEUILLE: 1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MYSENDINGBOX_API_KEY: ${{ secrets.MYSENDINGBOX_API_KEY }}
           MODE: ${{ inputs.mode }}
         run: node scripts/legataires-envoi.mjs
