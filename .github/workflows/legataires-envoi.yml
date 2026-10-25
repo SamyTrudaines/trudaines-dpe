@@ -1,17 +1,17 @@
-# Envoi postal des courriers de la veille des légataires (scripts/legataires-envoi.mjs) par
-# l'API de Merci Facteur. Lancé à la main : en essai, Samy reçoit les courriers en un PDF
-# par email ; en réel, ils sont imprimés et postés le jour même et la feuille est mise à jour.
+# Fichier de publipostage des courriers de la veille des légataires
+# (scripts/legataires-envoi.mjs), envoyé à Samy pour Merci Facteur. Il part aussi chaque
+# lundi après la veille (legataires.yml) ; ce workflow sert à le relancer à la main.
+# En essai la feuille n'est pas touchée ; en réel les avis repris sont marqués.
 #
-# Clés dans les secrets du dépôt : MERCI_FACTEUR_SERVICE_ID et MERCI_FACTEUR_SECRET. La
-# feuille se lit par la même fédération sans clé que le relevé Search Console, qui
+# La feuille se lit par la même fédération sans clé que le relevé Search Console, qui
 # n'accepte que main. Le journal, public, ne montre que des nombres.
-name: Légataires universels, envoi des courriers
+name: Légataires universels, publipostage
 
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: 'essai (PDF à Samy) ou reel (postés)'
+        description: 'essai (feuille intacte) ou reel (avis marqués)'
         default: 'essai'
         type: choice
         options: ['essai', 'reel']
@@ -32,8 +32,6 @@ jobs:
         with:
           node-version: '22'
 
-      - run: npm ci --ignore-scripts
-
       - name: Identification auprès de Google, sans clé
         id: google
         uses: google-github-actions/auth@v2
@@ -44,14 +42,10 @@ jobs:
           access_token_lifetime: 900s
           access_token_scopes: https://www.googleapis.com/auth/spreadsheets
 
-      - name: Envoi
+      - name: Publipostage
         env:
           GSC_JETON: ${{ steps.google.outputs.access_token }}
           GSC_FEUILLE: 1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8
-          MERCI_FACTEUR_SERVICE_ID: ${{ secrets.MERCI_FACTEUR_SERVICE_ID }}
-          MERCI_FACTEUR_SECRET: ${{ secrets.MERCI_FACTEUR_SECRET }}
-          MERCI_FACTEUR_EMAIL: ${{ vars.MERCI_FACTEUR_EMAIL }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           MODE: ${{ inputs.mode }}
-          CHROMIUM_PATH: /usr/bin/google-chrome
         run: node scripts/legataires-envoi.mjs
