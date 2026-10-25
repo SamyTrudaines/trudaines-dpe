@@ -254,10 +254,10 @@ const surDeuxLignes = (adresse) => adresse.replace(/,\s*(\d{5}\s[^,]+)$/, '\n$1'
 
 const SIGNATURE = 'Samy Santamarina\nTrudaines Immobilier\n2 rue Livingstone, 75018 Paris\n06 20 46 59 12 · samy.santamarina@trudaines.com';
 
-/** « 16, rue Paul Féval, 75018 Paris » et « 10-14 rue Baudelique, 75018 Paris » donnent le nom de la rue. */
 /** « de Marie », « d'Annie ». */
 const de = (nom) => (/^[aeiouyhàâéèêîôû]/i.test(nom) ? `d'${nom}` : `de ${nom}`);
 
+/** « 16, rue Paul Féval, 75018 Paris » et « 10-14 rue Baudelique, 75018 Paris » donnent le nom de la rue. */
 const rue = (adresse) => adresse.replace(/^\d+(?:\s*[-/]\s*\d+)?\s*(?:bis|ter)?\s*,?\s*/i, '').split(',')[0].trim();
 
 /** Courrier au notaire chargé de la succession. */
@@ -270,6 +270,23 @@ export function lettreNotaire(a) {
     "S'il fait partie de la succession, je peux en établir l'avis de valeur sous huit jours, appuyé sur les ventes réellement signées dans la rue. Il sert à la déclaration de succession comme à une éventuelle mise en vente, et il est offert si le légataire envisage de vendre.",
     "Un légataire universel vit souvent loin de Paris et découvre le bien. Je prends en charge les visites, les diagnostics et le dossier de vente, et je vous transmets un dossier complet pour l'avant-contrat.",
     'Si vous le jugez utile, je vous remercie de transmettre mes coordonnées au légataire.',
+    "Je vous prie d'agréer, Maître, l'expression de mes salutations respectueuses.",
+    SIGNATURE,
+  ].join('\n\n');
+}
+
+/** Un seul courrier au notaire qui règle plusieurs des successions. */
+export function lettreNotaireGroupee(liste) {
+  if (liste.length === 1) return lettreNotaire(liste[0]);
+  const [a] = liste;
+  return [
+    [a.notaire || 'Maître', a.adresse_notaire, a.ville_notaire].filter(Boolean).join('\n'),
+    `Objet : successions ${liste.map((x) => `${de(x.defunt || 'votre client')}${x.adresse ? `, ${x.adresse}` : ''}`).join(' et ')}`,
+    'Maître,',
+    `J'ai lu les avis de saisine de légataire universel parus ${liste.map((x) => `le ${dateLongue(x.publication)} dans ${x.journal}`).join(' et ')}. Ces logements se trouvent dans les quartiers où mon agence travaille chaque jour.`,
+    "S'ils font partie des successions, je peux en établir l'avis de valeur sous huit jours, appuyé sur les ventes réellement signées dans chaque rue. Il sert à la déclaration de succession comme à une éventuelle mise en vente, et il est offert si le légataire envisage de vendre.",
+    "Un légataire universel vit souvent loin de Paris et découvre le bien. Je prends en charge les visites, les diagnostics et le dossier de vente, et je vous transmets un dossier complet pour l'avant-contrat.",
+    'Si vous le jugez utile, je vous remercie de transmettre mes coordonnées aux légataires.',
     "Je vous prie d'agréer, Maître, l'expression de mes salutations respectueuses.",
     SIGNATURE,
   ].join('\n\n');
