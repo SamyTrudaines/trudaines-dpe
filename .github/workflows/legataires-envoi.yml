@@ -1,6 +1,6 @@
-# Envoi postal des courriers de la veille des légataires par MySendingBox
+# Envoi postal des courriers de la veille des légataires par Service Postal
 # (scripts/legataires-envoi.mjs). Il part aussi chaque lundi après la veille
-# (legataires.yml) ; ce workflow sert à le relancer à la main. En essai, lettres de test
+# (legataires.yml) ; ce workflow sert à le relancer à la main. En essai, lettres prévisualisées
 # sans envoi ni facture et feuille intacte ; en réel, les lettres partent et les avis sont marqués.
 #
 # La feuille se lit par la même fédération sans clé que le relevé Search Console, qui
@@ -47,6 +47,6 @@ jobs:
           GSC_JETON: ${{ steps.google.outputs.access_token }}
           GSC_FEUILLE: 1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          MYSENDINGBOX_API_KEY: ${{ secrets.MYSENDINGBOX_API_KEY }}
+          SERVICEPOSTAL_API_KEY: ${{ secrets.SERVICEPOSTAL_API_KEY }}
           MODE: ${{ inputs.mode }}
         run: node scripts/legataires-envoi.mjs

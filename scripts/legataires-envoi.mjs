@@ -1,6 +1,7 @@
 /**
  * Envoi postal des courriers de la veille des légataires (scripts/legataires.mjs), sans
- * abonnement : MySendingBox imprime, met sous pli et poste chaque lettre, payée à l'unité.
+ * abonnement : Service Postal (offre API Volume, gratuite) imprime, met sous pli et poste
+ * chaque lettre en écopli, payée à l'unité (1,23 € HT en 2026, api.servicepostal.com/tarifs).
  *
  * Lit l'onglet « legataires » de la feuille privée : chaque avis prioritaire (9e, 10e, 17e,
  * 18e) dont la colonne statut est vide donne un courrier au notaire (un seul par notaire quand
@@ -10,39 +11,44 @@
  * son statut.
  *
  * Modes :
- *   essai (par défaut)  lettres de test chez MySendingBox (rien n'est posté ni facturé), liens
- *                       vers les PDF envoyés à Samy, feuille intacte ;
- *   reel                avec la clé « live_ », les lettres partent ; la colonne statut note
- *                       « lettre envoyée le ... », ou l'adresse qui manque. Avec une clé
- *                       « test_ », c'est encore un essai.
- * Sans clé MySendingBox, Samy reçoit le fichier destinataires.csv du publipostage Merci Facteur.
+ *   essai (par défaut)  chaque lettre est prévisualisée chez Service Postal sans être validée :
+ *                       rien n'est posté ni facturé, les liens vers les PDF partent à Samy ;
+ *   reel                les lettres partent le jour même ; la colonne statut note « lettre
+ *                       envoyée le ... », ou l'adresse qui manque.
+ * Une clé de la sandbox (refusée en production) ne poste jamais rien, quel que soit le mode.
+ * Sans clé, Samy reçoit le fichier destinataires.csv du publipostage Merci Facteur.
  *
+ * Le PDF de chaque lettre est imprimé par Chrome (présent sur les machines GitHub).
  * Le journal de GitHub Actions, public, ne montre que des nombres.
  *
  * Variables : GSC_JETON, GSC_FEUILLE (feuille), BREVO_API_KEY (email),
- * MYSENDINGBOX_API_KEY (envoi), MODE.
+ * SERVICEPOSTAL_API_KEY (envoi), MODE, CHROME (chemin du navigateur, facultatif).
  * Lancer : node scripts/legataires-envoi.mjs
  */
+import { execFileSync } from 'node:child_process';
+import { existsSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { lettreAyantsDroit, lettreNotaireGroupee } from './legataires.mjs';
 
 const MODE = process.env.MODE === 'reel' ? 'reel' : 'essai';
 const jeton = process.env.GSC_JETON;
 const feuille = process.env.GSC_FEUILLE;
-const CLE_MSB = process.env.MYSENDINGBOX_API_KEY ?? '';
-/** Les lettres ne partent que sur ordre réel et avec la clé de production. */
-const POSTER = MODE === 'reel' && CLE_MSB.startsWith('live_');
+const CLE = process.env.SERVICEPOSTAL_API_KEY ?? '';
+const PRODUCTION = 'https://prod-api.servicepostal.com';
+const SANDBOX = 'https://sandbox-api.servicepostal.com';
 /** Garde-fou de dépense : au-delà, les avis attendent la semaine suivante. */
 const MAX_LETTRES = 40;
 const SAMY = { email: 'samy.santamarina@trudaines.com', nom: 'Samy Santamarina' };
 const SHEETS = `https://sheets.googleapis.com/v4/spreadsheets/${feuille}`;
 const COLONNES = ['nom', 'adresse', 'code_postal', 'ville', 'pays', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7'];
 const EXPEDITEUR = {
-  company: 'Trudaines',
-  name: 'Samy Santamarina',
-  address_line1: '2 rue Livingstone',
-  address_postalcode: '75018',
-  address_city: 'Paris',
-  address_country: 'France',
+  nom: 'Samy Santamarina',
+  nom_societe: 'Trudaines',
+  adresse_ligne1: '2 rue Livingstone',
+  code_postal: '75018',
+  ville: 'PARIS',
+  pays: 'FRANCE',
 };
 
 async function google(url, options = {}) {
@@ -88,8 +94,8 @@ const csv = (lignes) => `﻿${[COLONNES, ...lignes].map((l) => l.map(cellule).jo
 const echapper = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /**
- * La lettre en HTML, une page A4. L'adresse du destinataire est imprimée par MySendingBox sur
- * une page de garde (insert_blank_page) : la mise en page n'a pas à réserver la fenêtre.
+ * La lettre en HTML, une page A4. L'adresse du destinataire est imprimée par Service Postal sur
+ * un porte-adresse (insertion_page_adresse) : la mise en page n'a pas à réserver la fenêtre.
  */
 export function lettreHtml(texte, signature, jour) {
   const date = new Date(`${jour}T12:00:00Z`).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -118,30 +124,73 @@ ${paragraphes}
 </body></html>`;
 }
 
-/** Une lettre chez MySendingBox : imprimée, mise sous pli et postée en écopli, noir et blanc. */
-async function poster(courrier, html) {
+/** Le PDF de la lettre, imprimé par Chrome sans en-tête ni pied de page. */
+function pdf(html) {
+  const chrome =
+    process.env.CHROME ||
+    ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser'].find((c) => {
+      try {
+        execFileSync('which', [c], { stdio: 'ignore' });
+        return true;
+      } catch {
+        return false;
+      }
+    });
+  if (!chrome) throw new Error('Chrome introuvable : variable CHROME à renseigner.');
+  const dossier = mkdtempSync(join(tmpdir(), 'lettre-'));
+  writeFileSync(join(dossier, 'lettre.html'), html);
+  const sortie = join(dossier, 'lettre.pdf');
+  execFileSync(
+    chrome,
+    ['--headless=new', '--no-sandbox', '--disable-gpu', '--no-pdf-header-footer', `--print-to-pdf=${sortie}`, `file://${join(dossier, 'lettre.html')}`],
+    { stdio: 'ignore', timeout: 60000 }
+  );
+  if (!existsSync(sortie)) throw new Error('PDF non produit.');
+  return readFileSync(sortie).toString('base64');
+}
+
+/** Hôte de l'API : la production, ou la sandbox si la clé n'est valable que là. */
+let hote = PRODUCTION;
+const sandbox = () => hote === SANDBOX;
+
+async function appel(chemin, corps) {
+  const essayer = () =>
+    fetch(`${hote}${chemin}`, { method: 'POST', headers: { apiKey: CLE, 'content-type': 'application/json' }, body: JSON.stringify(corps) });
+  let reponse = await essayer();
+  if ((reponse.status === 401 || reponse.status === 403) && hote === PRODUCTION) {
+    hote = SANDBOX;
+    reponse = await essayer();
+    if (reponse.status === 401 || reponse.status === 403) hote = PRODUCTION;
+  }
+  return { ok: reponse.ok, status: reponse.status, json: await reponse.json().catch(() => ({})) };
+}
+
+/**
+ * Une lettre chez Service Postal, en écopli noir et blanc. En réel elle part le jour même
+ * (POST /lettres) ; en essai elle est seulement prévisualisée (POST /lettres/previsualiser),
+ * sans validation, donc ni postée ni facturée.
+ */
+async function poster(courrier, html, reel) {
   const [nom, adresse, cp, ville] = courrier.ligne;
-  const reponse = await fetch('https://api.mysendingbox.fr/letters', {
-    method: 'POST',
-    headers: {
-      authorization: `Basic ${Buffer.from(`${CLE_MSB}:`).toString('base64')}`,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      description: `Légataires, ${courrier.type}`,
-      to: { name: nom, address_line1: adresse, address_postalcode: cp, address_city: ville, address_country: 'France' },
-      from: EXPEDITEUR,
-      color: 'bw',
-      postage_type: 'ecopli',
-      both_sides: false,
-      address_placement: 'insert_blank_page',
-      source_file: html,
-      source_file_type: 'html',
-    }),
+  let contenu;
+  try {
+    contenu = pdf(html);
+  } catch (e) {
+    return { erreur: e.message };
+  }
+  const { ok, status, json } = await appel(reel ? '/lettres' : '/lettres/previsualiser', {
+    type_affranchissement: 'ecopli',
+    couleur: 'nb',
+    recto_verso: 'recto',
+    placement_adresse: 'insertion_page_adresse',
+    impression_expediteur: true,
+    reference: `Legataires ${courrier.type}`,
+    adresse_expedition: EXPEDITEUR,
+    adresse_destination: { nom, adresse_ligne1: adresse, code_postal: cp, ville: ville.toUpperCase(), pays: 'FRANCE' },
+    fichier: { format: 'pdf', contenu_base64: contenu },
   });
-  const reponseJson = await reponse.json().catch(() => ({}));
-  if (!reponse.ok) return { erreur: reponseJson.error?.message ?? reponseJson.message ?? `HTTP ${reponse.status}` };
-  return { id: reponseJson._id, prix: Number(reponseJson.price?.total) || 0, pdf: reponseJson.file?.url };
+  if (!ok || !json.uid) return { erreur: json.message ?? `HTTP ${status}` };
+  return { id: json.uid, prix: Number(json.total) || 0, pdf: json.fichier_previsualisation?.url };
 }
 
 async function prevenir(sujet, html, fichier) {
@@ -175,7 +224,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     .map((l, i) => ({ ...Object.fromEntries(entete.map((c, j) => [c, l[j] ?? ''])), ligne: i + 2 }))
     .filter((a) => a.priorite === 'oui' && !a.statut.trim())
     .map((a) => ({ ...a, publication: iso(a.publication) }));
-  console.log(`${avis.length} avis prioritaire(s) sans statut. Mode ${MODE}, ${CLE_MSB ? (POSTER ? 'envoi postal' : 'lettres de test') : 'fichier de publipostage'}.`);
+  console.log(`${avis.length} avis prioritaire(s) sans statut. Mode ${MODE}, ${CLE ? 'Service Postal' : 'fichier de publipostage'}.`);
   if (!avis.length) process.exit(0);
 
   const notaires = new Map();
@@ -214,31 +263,28 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     for (const a of c.avis) statuts.set(a.ligne, [...(statuts.get(a.ligne) ?? []), texte]);
   };
 
-  if (CLE_MSB) {
+  if (CLE) {
     const { values: [[, signature = ''] = []] = [] } = await google(`${SHEETS}/values/reglages!A1:B1`);
     if (!signature) console.log('Signature absente de reglages!B1 : lettres sans signature dessinée.');
     const lot = courriers.slice(0, MAX_LETTRES);
     const resultats = [];
-    // Avec la clé de production, MySendingBox poste tout ce qu'il reçoit : un essai ne l'appelle pas.
-    const appeler = POSTER || CLE_MSB.startsWith('test_');
-    for (const c of lot) resultats.push({ c, ...(appeler ? await poster(c, lettreHtml(c.texte, signature, jour)) : { id: 'essai', prix: 0 }) });
+    for (const c of lot) resultats.push({ c, ...(await poster(c, lettreHtml(c.texte, signature, jour), MODE === 'reel')) });
+    const poste = MODE === 'reel' && !sandbox();
     const reussis = resultats.filter((r) => r.id);
     const echecs = resultats.filter((r) => !r.id);
     const total = reussis.reduce((s, r) => s + r.prix, 0);
-    console.log(`${reussis.length} lettre(s) ${POSTER ? 'postée(s)' : 'de test'}, ${echecs.length} refusée(s), ${courriers.length - lot.length} reportée(s).`);
-    if (POSTER) for (const r of reussis) noter(r.c, `lettre ${r.c.type} envoyée le ${jour}`);
+    console.log(`${reussis.length} lettre(s) ${poste ? 'postée(s)' : 'prévisualisée(s)'}, ${echecs.length} refusée(s), ${courriers.length - lot.length} reportée(s).`);
+    if (poste) for (const r of reussis) noter(r.c, `lettre ${r.c.type} envoyée le ${jour}`);
 
     const ligne = (r) =>
       `<li>${echapper(r.c.type)} : ${echapper(r.c.ligne[0])}, ${echapper(r.c.ligne[2])} ${echapper(r.c.ligne[3])}${r.pdf ? ` · <a href="${echapper(r.pdf)}">la lettre</a>` : ''}${r.erreur ? ` · refusée : ${echapper(r.erreur)}` : ''}</li>`;
     await prevenir(
-      POSTER ? `${reussis.length} courriers légataires postés` : `Essai · ${reussis.length} courriers légataires prêts`,
+      poste ? `${reussis.length} courriers légataires postés` : `Essai · ${reussis.length} courriers légataires prêts`,
       `<div style="${STYLE}">
 <p>${
-        POSTER
-          ? `${reussis.length} lettres sont parties ce matin chez MySendingBox, pour ${total.toFixed(2).replace('.', ',')} € HT environ. Rien à faire de ton côté.`
-          : appeler
-            ? `Essai : ${reussis.length} lettres ont été composées chez MySendingBox, rien n'est posté ni facturé. Ouvre une lettre pour voir le rendu.`
-            : `Essai : ces ${reussis.length} lettres partiraient en réel. Rien n'est posté.`
+        poste
+          ? `${reussis.length} lettres partent aujourd'hui par Service Postal, pour ${total.toFixed(2).replace('.', ',')} € HT environ. Rien à faire de ton côté.`
+          : `Essai : ${reussis.length} lettres sont prêtes chez Service Postal, rien n'est posté ni facturé${sandbox() ? ' (clé de test)' : ''}. Ouvre une lettre pour voir le rendu.`
       }</p>
 <ul>${resultats.map(ligne).join('')}</ul>${
         courriers.length > lot.length ? `<p>${courriers.length - lot.length} courriers attendent la semaine prochaine (plafond de ${MAX_LETTRES}).</p>` : ''
@@ -258,7 +304,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
   console.log('Email envoyé à Samy.');
 
-  if (MODE === 'reel' && (POSTER || !CLE_MSB)) {
+  if (MODE === 'reel' && (!CLE || !sandbox())) {
     for (const { a, motif } of incomplets) statuts.set(a.ligne, [...(statuts.get(a.ligne) ?? []), `non repris : ${motif}`]);
     const donnees = [...statuts].map(([ligne, textes]) => ({ range: `legataires!${colStatut}${ligne}`, values: [[textes.join(' ; ')]] }));
     if (donnees.length) await google(`${SHEETS}/values:batchUpdate`, { method: 'POST', body: JSON.stringify({ valueInputOption: 'RAW', data: donnees }) });
