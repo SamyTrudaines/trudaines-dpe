@@ -2,7 +2,7 @@
 titre: "Marché immobilier à Paris, fin octobre 2026 : ce que dit la presse, ce que nous en retenons"
 date: 2026-10-27
 image: /images/panorama/marche-immobilier-paris-fin-octobre-2026.webp
-imageAlt: "Toits de Paris vers la porte Maillot, lumière d'automne"
+imageAlt: "Façade en pierre de taille et balcons filants d'un immeuble haussmannien"
 chapo: "Moins d'acheteurs en ligne, des taux qui montent, des bailleurs qui vendent, une proposition de loi sur les successions. Nous avons lu la presse de la semaine, source par source. Voici ce qu'elle dit, et ce que cela change pour vendre à Paris cet automne."
 titreSeo: "Marché immobilier Paris fin octobre 2026 : prix, taux, négociation"
 descriptionSeo: "Demande -22 % (Bien'ici), crédit à 3,73 % sur 20 ans, négociation, DPE, succession : la revue de presse immobilière de fin octobre 2026 et ce qu'elle change pour vendre à Paris."
@@ -93,4 +93,4 @@ Moins d'acheteurs, un crédit plus cher, des prix signés qui reculent un peu : 
 
 Vous voulez savoir ce que vaut votre bien dans ce marché ? Commencez par une [estimation en ligne](/estimation), ou demandez à être rappelé.
 
-*Sources : Observatoire Bien'ici, 20 octobre 2026, repris par Actual Immo (Micheal M.), 27 octobre 2026. Insee, prix des logements anciens, 8 septembre 2026. Notaires du Grand Paris, conférence de presse du 8 septembre 2026. MoneyVox, 15 octobre 2026. MeilleursAgents (Vincent Cuzon), 26 octobre 2026. Empruntis (Hugo Boudjlal), baromètre d'octobre 2026. Observatoire Crédit Logement/CSA, troisième trimestre 2026, repris par Selectra (Misitia Ravaloson), 24 octobre 2026, et Magnolia (Astrid Cousin), 27 octobre 2026. Capital (Justine Ferrari), 22 octobre 2026. Assemblée nationale, proposition de loi n° 3230, 6 octobre 2026. Photo : Clément Dellandrea, Unsplash.*
+*Sources : Observatoire Bien'ici, 20 octobre 2026, repris par Actual Immo (Micheal M.), 27 octobre 2026. Insee, prix des logements anciens, 8 septembre 2026. Notaires du Grand Paris, conférence de presse du 8 septembre 2026. MoneyVox, 15 octobre 2026. MeilleursAgents (Vincent Cuzon), 26 octobre 2026. Empruntis (Hugo Boudjlal), baromètre d'octobre 2026. Observatoire Crédit Logement/CSA, troisième trimestre 2026, repris par Selectra (Misitia Ravaloson), 24 octobre 2026, et Magnolia (Astrid Cousin), 27 octobre 2026. Capital (Justine Ferrari), 22 octobre 2026. Assemblée nationale, proposition de loi n° 3230, 6 octobre 2026. Photo : Howard Walsh, Unsplash.*
