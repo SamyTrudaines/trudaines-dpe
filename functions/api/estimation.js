@@ -2,6 +2,7 @@ import {
   reponse, suspect, champsManquants, emailValide, envoyerEmail, embaser, optIn, envoyerSmsAgence,
   liste, gabaritNotification, gabaritClient, telephoneInternational,
 } from '../_lib/brevo.js';
+import { acquereursPour, lignesRapprochement, arrondissementDe, fourchetteDe } from '../_lib/rapprochement.js';
 
 /* « 3 » et « 7 » deviennent « 3e étage, immeuble de 7 étages » ; 0 est le rez-de-chaussée. */
 function etageLisible(etage, etages) {
@@ -62,13 +63,27 @@ export async function onRequestPost({ request, env }) {
       ['Consentement', valeur('consentement') === 'oui' ? 'Oui' : 'Non'],
     ];
 
+    // Acquéreurs du fichier notés sur 10 pour ce bien, lus avant la notification.
+    const pieces = Number(String(valeur('pieces')).replace(/\D/g, '')) || 0;
+    const rapprochement = await acquereursPour(env, {
+      appartement: ['Appartement', 'Duplex', 'Loft ou atelier'].includes(type),
+      arrondissement: arrondissementDe({ adresse: valeur('adresse'), secteur: valeur('secteur') }),
+      surface: Number(valeur('surface').replace(',', '.')) || 0,
+      pieces,
+      fourchette: fourchetteDe(valeur('fourchette')),
+    });
+    lignes.push(...lignesRapprochement(rapprochement));
+    const phraseAcquereurs = rapprochement.total
+      ? ` ${rapprochement.total} acquéreur${rapprochement.total > 1 ? 's' : ''} en fichier, meilleur ${String(rapprochement.retenus[0].note).replace('.', ',')}/10.`
+      : '';
+
     await envoyerEmail(env, {
       sujet: `Estimation · ${valeur('adresse')} · ${valeur('fourchette') || valeur('horizon') || 'horizon non précisé'}`,
       html: gabaritNotification('Nouvelle demande d’estimation', lignes),
       repondreA: email,
     });
 
-    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} A rappeler.`);
+    await envoyerSmsAgence(env, `Trudaines, estimation : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''}${phraseAcquereurs} A rappeler.`);
 
     await embaser(env, {
       email,

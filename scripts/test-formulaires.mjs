@@ -770,5 +770,37 @@ const partSite = Number(/parrainage\s*=\s*\{[\s\S]*?part:\s*([\d.]+)/.exec(readF
 const partFonction = Number(/PART_WINWIN\s*=\s*([\d.]+)/.exec(readFileSync(new URL('../functions/api/recommandation.js', import.meta.url), 'utf8'))?.[1]);
 verifier('part WinWin identique dans site.ts et dans la fonction', partSite > 0 && partSite === partFonction, `${partSite} et ${partFonction}`);
 
+/*
+ * Rapprochement : une estimation note les acquéreurs du fichier sur 10.
+ * Léa (9e, budget au-dessus de la fourchette, crédit accordé) arrive en tête ;
+ * Marc (18e) est écarté ; Paul (budget trop court) aussi. Le nombre arrive dans le SMS.
+ */
+{
+  const fetchOrigine = globalThis.fetch;
+  const fichier = {
+    contacts: [
+      { email: 'lea@example.com', attributes: { PRENOM: 'Léa', SECTEUR_RECHERCHE: 'Paris 9e', BUDGET_MAX: 900000, SURFACE_MIN: 60, PIECES_MIN: 3, FINANCEMENT: 'Accord de principe obtenu', DELAI_ACHAT: 'Dès que possible' } },
+      { email: 'marc@example.com', attributes: { PRENOM: 'Marc', SECTEUR_RECHERCHE: 'Paris 18e', BUDGET_MAX: 900000 } },
+      { email: 'paul@example.com', attributes: { PRENOM: 'Paul', ARRONDISSEMENTS: '75009', BUDGET_MAX: 300000 } },
+      { email: 'zoe@example.com', attributes: { PRENOM: 'Zoé', SECTEUR_RECHERCHE: 'Tout Paris', BUDGET_MAX: 700000 } },
+    ],
+  };
+  globalThis.fetch = async (url, options = {}) => {
+    if (String(url).includes('/contacts/lists/')) return new Response(JSON.stringify(fichier), { status: 200 });
+    return fetchOrigine(url, options);
+  };
+  appels.length = 0;
+  const module = await import(new URL('../functions/api/estimation.js', import.meta.url).href);
+  await module.onRequestPost({ request: requete({ ...cas[0][2], fourchette: '640 000 € à 720 000 € (rue)' }), env });
+  globalThis.fetch = fetchOrigine;
+  const notification = appels.find((a) => a.url.endsWith('/smtp/email'))?.corps?.htmlContent || '';
+  const sms = appels.find((a) => a.url.endsWith('/transactionalSMS/send'))?.corps?.content || '';
+  const ok = notification.includes('Acquéreur 1 · 10/10') && notification.includes('lea@example.com')
+    && !notification.includes('marc@example.com') && !notification.includes('paul@example.com')
+    && notification.includes('zoe@example.com') && sms.includes('2 acquéreurs en fichier, meilleur 10/10');
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation : acquéreurs du fichier notés sur 10 · ${sms.slice(-60)}`);
+}
+
 console.log(echecs ? `${echecs} échec(s)` : 'Tous les formulaires répondent correctement.');
 process.exit(echecs ? 1 : 0);
