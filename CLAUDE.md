@@ -114,6 +114,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 
 - Suivi de rue : formulaire d'un champ (`SuiviRue`, `functions/api/suivi-rue.js`) sur /prix-immobilier/<slug>, email
   seul, case « propriétaire » qui envoie le contact dans la liste vendeurs (sinon téléchargements) ; Samy prévenu par email.
+- Rapprochement acquéreurs : chaque estimation d'appartement note sur 10 les acquéreurs des listes acheteurs et
+  Acquéreurs prioritaires (`functions/_lib/rapprochement.js` : secteur 3, budget face à la fourchette 3, surface 1,5,
+  pièces 1,5, financement et calendrier 1) ; les cinq premiers et le compte arrivent dans l'email et le SMS de Samy.
+  Lecture Brevo bornée à quatre secondes : l'estimation part toujours.
 - Robots des formulaires : `suspect()` écarte aussi tout prénom d'un mot collé à deux majuscules (« CharlestotNZ »,
   « DanieltedGM »), sans email ni inscription dans Brevo.
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
