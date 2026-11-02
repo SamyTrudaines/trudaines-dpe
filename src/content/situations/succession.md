@@ -8,7 +8,7 @@ chapo: >-
   se calcule sur la valeur inscrite dans la déclaration de succession, ce qui la
   rend souvent faible quand la vente suit le décès de près. Les droits de
   succession, eux, sont dus dans les six mois.
-titreSeo: Vendre un appartement après une succession | Trudaines
+titreSeo: "Vendre un appartement après un décès : succession, délais | Trudaines"
 descriptionSeo: >-
   Attestation notariée, accord des héritiers, plus-value calculée sur la valeur
   déclarée : ce qu'il faut régler pour vendre un bien hérité, et dans quel
