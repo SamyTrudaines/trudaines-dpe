@@ -168,7 +168,11 @@
       if (cache) cache.value = '';
       if (!d || !lieu) return;
       var codePostal = lieu.postcode || '';
-      var rue = d.voies[identifiant(lieu.street || lieu.name || '', codePostal)];
+      var cle = identifiant(lieu.street || lieu.name || '', codePostal);
+      var rue = d.voies[cle];
+      /* La page de prix de la rue, renvoyée dans l'email de confirmation de qui vérifie seulement un prix. */
+      var champRue = form.querySelector('input[name="rue"]');
+      if (champRue) champRue.value = rue ? cle : '';
       var reference = rue || d.arrondissements[codePostal];
       if (!reference) return;
 

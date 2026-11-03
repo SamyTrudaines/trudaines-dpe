@@ -133,6 +133,30 @@ for (const [fourchette, attendue] of [['380 000 € à 440 000 € (rue)', true]
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation : fourchette dans l'email du vendeur${attendue ? '' : ', texte libre refusé'}`);
 }
 
+/*
+ * Tri des demandes : l'objet de la notification porte la priorité, le SMS ne part que pour un
+ * projet de vente, et la confirmation suit le projet (rappel promis, ou page de la rue et guide).
+ */
+for (const [nom, champs, prefixe, sms, attendus, absents] of [
+  ['vendeur < 6 mois', { proprietaire: 'Oui', horizon: 'Moins de 3 mois' }, 'VENDEUR MOINS DE 6 MOIS ·', 1, ['24 heures ouvrées', 'gratuit'], ['300 €']],
+  ['vendeur non propriétaire', { proprietaire: 'Non', horizon: 'Vente commencée' }, 'VENDEUR MOINS DE 6 MOIS, NON PROPRIÉTAIRE ·', 1, ['24 heures ouvrées'], ['300 €']],
+  ['vendeur > 6 mois', { proprietaire: 'Oui', horizon: 'Plus de 6 mois' }, 'VENDEUR PLUS DE 6 MOIS ·', 1, ['24 heures ouvrées'], ['300 €']],
+  ['curiosité', { proprietaire: 'Oui', horizon: 'Pas de projet', rue: 'avenue-trudaine-09' }, 'CURIOSITÉ ·', 0, ['/prix-immobilier/avenue-trudaine-09', 'bien-vendre-paris-2026.pdf', '300 € TTC'], ['24 heures ouvrées']],
+  ['curiosité, rue douteuse', { proprietaire: 'Non', horizon: 'Vient de vendre', rue: '<a>piege</a>' }, 'CURIOSITÉ ·', 0, ['/prix-immobilier', '300 € TTC'], ['piege']],
+  ['location', { proprietaire: 'Oui', horizon: 'Mise en location' }, 'CURIOSITÉ, LOCATION ·', 0, ['300 € TTC'], ['24 heures ouvrées']],
+]) {
+  appels.length = 0;
+  await estimation.onRequestPost({ request: requete({ ...cas[0][2], ...champs }), env });
+  const courriels = appels.filter((a) => a.url.endsWith('/smtp/email'));
+  const agence = courriels.find((a) => a.corps.to?.[0]?.email === env.NOTIFICATION_EMAIL);
+  const client = JSON.stringify(courriels.find((a) => a.corps.to?.[0]?.email === cas[0][2].email)?.corps || '');
+  const nbSms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send')).length;
+  const ok = agence?.corps.subject.startsWith(prefixe) && nbSms === sms
+    && attendus.every((t) => client.includes(t)) && absents.every((t) => !client.includes(t));
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation, ${nom} : « ${agence?.corps.subject} » · SMS ${nbSms}`);
+}
+
 const incomplete = await estimation.onRequestPost({ request: requete({ adresse: 'x' }), env });
 if (incomplete.status !== 400) echecs++;
 console.log(`${incomplete.status === 400 ? 'OK   ' : 'ÉCHEC'} refus des champs manquants · statut ${incomplete.status}`);
