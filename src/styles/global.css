@@ -111,6 +111,14 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
+  /*
+   * Sur grand écran, tout le site passe à 17 px de base : textes, marges et
+   * titres grandissent ensemble, le gris des légendes devient lisible à un
+   * mètre de l'écran. Le téléphone garde ses 16 px.
+   */
+  @media (min-width: 1280px) {
+    html { font-size: 106.25%; }
+  }
   body {
     background-color: #ffffff;
     color: var(--color-encre);

@@ -81,6 +81,8 @@ const engagements = [
       "Samy Santamarina fait l'estimation, les visites, la négociation et le suivi jusqu'à la signature. Personne ne reprend votre dossier en cours de route.",
   },
 ];
+/* Les quatre arrondissements contigus du coeur de l'agence ; le 7e et le 16e restent en liens. */
+const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
 ---
 <Layout
   ancreEstimation="#accueil-adresse"
@@ -280,7 +282,7 @@ const engagements = [
         ventes signées des rues voisines, pas sur une moyenne de ville.
       </p>
       <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        {secteurs.map((s) => (
+        {secteurs.filter((s) => coeur.includes(s.slug)).map((s) => (
           <a href={s.hrefAgence} class="bloc group block no-underline">
             <h3 class="titre-3 group-hover:underline group-hover:decoration-[color:var(--color-or)] group-hover:decoration-1 group-hover:underline-offset-4">{s.nom}</h3>
             <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
@@ -300,6 +302,26 @@ const engagements = [
           <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
         ))}
       </p>
+    </div>
+  </section>
+
+  <section class="section filet" aria-labelledby="rejoindre-accueil">
+    <div class="conteneur">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
+        <div class="max-w-2xl">
+          <p class="surtitre marque-filet">Nous rejoindre</p>
+          <h2 id="rejoindre-accueil" class="titre-2 mt-6">Apprendre le métier sur quelques rues, pas sur un département.</h2>
+          <p class="mt-6 text-[color:var(--color-ardoise)]">
+            Trudaines recrute des profils qui veulent faire de la transaction en profondeur, autour de la Butte,
+            du 9e et des Batignolles : sortie d'école, reconversion ou agent confirmé. Un secteur, une formation
+            au métier, des outils qui font gagner du temps, une rémunération claire.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <a href="/nous-rejoindre#candidature" class="bouton" data-evt="accueil_recrutement_candidature">Déposer ma candidature</a>
+          <a href="/nous-rejoindre" class="bouton bouton-secondaire" data-evt="accueil_recrutement_decouvrir">Découvrir le poste</a>
+        </div>
+      </div>
     </div>
   </section>
 
