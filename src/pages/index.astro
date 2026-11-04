@@ -228,7 +228,13 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
           </a>
         ))}
       </div>
-      <details class="liens-territoire mt-12">
+      <p class="mt-12 text-[color:var(--color-ardoise)]">
+        Nous vendons aussi dans le 7e et le 16e :{' '}
+        {secteurs.filter((s) => !coeur.includes(s.slug)).map((s, i) => (
+          <>{i > 0 && ' et '}<a href={s.hrefAgence} class="lien-souligne whitespace-nowrap" data-evt="accueil_agence_secteur">{s.nom}</a></>
+        ))}.
+      </p>
+      <details class="liens-territoire mt-8">
         <summary class="lien-souligne text-sm">Toutes nos pages d'estimation et d'agence</summary>
         <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
           {agencesLocales.map((l) => (
