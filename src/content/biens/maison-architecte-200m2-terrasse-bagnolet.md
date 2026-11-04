@@ -12,6 +12,7 @@ etage: "Non précisé"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Maison de ville rénovée, terrasse"
 statut: vendu
 offMarket: true
 archive: true

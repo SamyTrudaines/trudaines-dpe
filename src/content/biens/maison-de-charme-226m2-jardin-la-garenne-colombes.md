@@ -12,6 +12,7 @@ etage: "Non précisé"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Maison de charme, jardin paysager"
 statut: vendu
 offMarket: true
 archive: true
