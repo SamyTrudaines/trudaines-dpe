@@ -16,15 +16,36 @@ import { lieuxDeVente } from '../lib/ventes';
  * Aucun prix, aucun formulaire de visite : la page rend compte du travail
  * accompli, elle ne propose rien à la vente.
  */
-/* Les ventes d'abord, puis les plus grandes surfaces. */
+/*
+ * Ordre choisi par l'agence : les adresses les plus parlantes d'abord. Un bien absent de la liste
+ * vient après, les ventes d'abord, puis les plus grandes surfaces.
+ */
+const ORDRE = [
+  'appartement-4-pieces-89m2-haussmannien-trudaine-condorcet',
+  'appartement-familial-6-pieces-158m2-montholon-paradis',
+  'appartement-2-pieces-46m2-balcon-abbesses',
+  'appartement-3-pieces-65m2-traversant-brochant-epinettes',
+  'appartement-2-pieces-43m2-renove-rue-vaneau',
+  'appartement-3-pieces-68m2-oriente-sud-secteur-trudaine',
+  'appartement-4-pieces-96m2-deux-balcons-pyrenees',
+  'demeure-300m2-jardin-vaucresson-centre',
+  'duplex-6-pieces-136m2-becon-les-bruyeres',
+  'appartement-3-pieces-77m2-terrasse-boulogne-marcel-sembat',
+  'maison-familiale-130m2-bois-colombes-centre',
+  'maison-moderne-145m2-cinq-chambres-petit-colombes',
+  'maison-de-charme-226m2-jardin-la-garenne-colombes',
+  'maison-architecte-200m2-terrasse-bagnolet',
+];
+const rang = (id: string) => (ORDRE.includes(id) ? ORDRE.indexOf(id) : ORDRE.length);
 const mandats = (await getCollection('biens', (b) => b.data.archive)).sort(
-  (a, b) => Number(b.data.statut === 'vendu') - Number(a.data.statut === 'vendu') || b.data.surface - a.data.surface
+  (a, b) =>
+    rang(a.id) - rang(b.id) ||
+    Number(b.data.statut === 'vendu') - Number(a.data.statut === 'vendu') ||
+    b.data.surface - a.data.surface
 );
 
 const paris = mandats.filter((b) => b.data.ville === 'Paris');
 const ouest = mandats.filter((b) => b.data.ville !== 'Paris');
-
-const villes = [...new Set(ouest.map((b) => b.data.ville))].sort();
 
 /** « 75009 » vers « 9e », pour dire où les mandats se sont réellement trouvés. */
 const arrondissements = [...new Set(paris.map((b) => b.data.arrondissement))]
@@ -40,24 +61,20 @@ const groupes = [
   },
   {
     cle: 'ouest',
-    titre: 'Ouest parisien et Hauts-de-Seine',
-    chapo: `Des mandats conduits hors du périmètre parisien, à ${villes.join(', ')}, pour des clients recommandés. Nous les présentons parce qu'ils disent quelque chose d'utile : la même méthode tient sur une maison de famille comme sur un deux pièces de la Butte.`,
+    titre: 'Aux portes de Paris',
+    chapo: `Des mandats conduits en première couronne, souvent pour des clients recommandés : demeure avec jardin, duplex familial, maisons d'architecte. La même méthode tient sur une maison de famille comme sur un deux pièces de la Butte.`,
     biens: ouest,
   },
 ].filter((groupe) => groupe.biens.length > 0);
 
 const lieux = await lieuxDeVente();
 
-const surfaces = mandats.map((b) => b.data.surface).sort((a, b) => a - b);
-const surfaceMin = surfaces[0];
-const surfaceMax = surfaces[surfaces.length - 1];
-
 const donnees = [
   {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Nos références',
-    description: `Les ${mandats.length} biens présentés par ${site.nomLong} depuis 2024.`,
+    description: `Les biens présentés par ${site.nomLong} depuis 2024, à Paris et en première couronne.`,
     url: `${site.url}/references`,
     isPartOf: { '@id': `${site.url}/#site` },
   },
@@ -65,7 +82,7 @@ const donnees = [
 ---
 <Layout
   titre="Nos références | Les biens présentés par Trudaines"
-  description={`Les ${mandats.length} biens confiés à l'agence Trudaines depuis 2024, de ${Math.round(surfaceMin)} à ${Math.round(surfaceMax)} m², à Paris et dans l'ouest parisien.`}
+  description="Les biens confiés à l'agence Trudaines depuis 2024, du deux pièces de la Butte à la demeure avec jardin, à Paris et en première couronne."
   filAriane={[{ nom: 'Nos références' }]}
   donnees={donnees}
   cta={false}
@@ -83,8 +100,8 @@ const donnees = [
     <div class="conteneur max-w-3xl">
       <h1 class="titre-1">Nos références</h1>
       <p class="chapo mt-8">
-        {mandats.length} mandats, de {Math.round(surfaceMin)} à {Math.round(surfaceMax)} m², du deux pièces de la
-        Butte à la demeure avec jardin. Les photographies sont celles des dossiers, prises pour l'agence.
+        Du deux pièces de la Butte à la demeure avec jardin, à Paris et aux portes de Paris. Chaque bien est
+        présenté avec des photographes et des vidéastes professionnels.
       </p>
       <p class="mt-6 text-sm text-[color:var(--color-ardoise)]">
         Ces biens ne sont plus proposés à la vente. Aucun prix n'est affiché et aucune visite n'est organisée
@@ -98,9 +115,9 @@ const donnees = [
     <div class="conteneur">
       <div class="max-w-2xl">
         <p class="surtitre marque-filet">Ventes signées</p>
-        <h2 id="lieux-ventes" class="titre-2 mt-6">Partout dans Paris, et de l'autre côté du périphérique</h2>
+        <h2 id="lieux-ventes" class="titre-2 mt-6">À Paris et en première couronne</h2>
         <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Samy Santamarina a déjà conduit des ventes jusqu'à la signature dans ces arrondissements et ces communes.
+          Samy Santamarina a déjà conduit des ventes jusqu'à la signature dans ces arrondissements et ces départements.
           Votre adresse n'y figure pas ? La méthode est la même partout : les ventes signées de votre rue, une visite,
           un avis de valeur écrit.
         </p>
@@ -114,8 +131,8 @@ const donnees = [
         </div>
         <div>
           <h3 class="surtitre">Première couronne</h3>
-          <ul class="lieux-ventes lieux-ventes-communes mt-4" aria-label="Communes où une vente a été signée">
-            {lieux.communes.map((c) => <li>{c}</li>)}
+          <ul class="lieux-ventes lieux-ventes-communes mt-4" aria-label="Départements où une vente a été signée">
+            {lieux.departements.map((d) => <li>{d}</li>)}
           </ul>
         </div>
       </div>
