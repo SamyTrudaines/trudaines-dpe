@@ -87,7 +87,7 @@ const TAILLES_DIAPO = '(min-width: 1024px) 720px, 100vw';
                 {photo && (
                   <img src={photo.src.replace('.webp', '-800.webp')} alt="" aria-hidden="true" width="800" height="533" loading="lazy" decoding="async" />
                 )}
-                <span class="vitrine-vignette-lieu">{lieuBien(d.arrondissement, d.ville)}</span>
+                <span class="vitrine-vignette-lieu">{lieuBien(d.arrondissement, d.ville)}, {d.quartier}</span>
                 <span class="vitrine-vignette-prix">{prixAffiche(d.prix)}</span>
                 <span class="vitrine-vignette-surface">{nombre(d.surface)} m²</span>
               </button>
