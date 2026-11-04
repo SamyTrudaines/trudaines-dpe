@@ -1,5 +1,4 @@
 ---
-import { evt } from '../lib/entonnoir';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import CarteArticle from '../components/CarteArticle.astro';
@@ -15,7 +14,6 @@ import Ouverture from '../components/Ouverture.astro';
 import Manifeste from '../components/Manifeste.astro';
 import ReferencesAccueil from '../components/ReferencesAccueil.astro';
 import VitrineBiens from '../components/VitrineBiens.astro';
-import AlerteExpress from '../components/AlerteExpress.astro';
 
 const biens = (await getCollection('biens', (b) => b.data.statut !== 'vendu' && !b.data.offMarket && !b.data.archive))
   .sort((a, b) => a.data.ordre - b.data.ordre || b.data.prix - a.data.prix)
@@ -55,14 +53,6 @@ const siteWeb = {
   inLanguage: 'fr-FR',
   publisher: { '@id': `${site.url}/#agence` },
 };
-
-/* Changements de vie qui amènent à vendre, chacun vers sa page de situation. */
-const moments = [
-  { cle: 'demenagement', titre: 'Un départ, une nouvelle adresse', texte: "Vendre et racheter dans le bon ordre, sans porter deux logements.", href: '/vendre/demenagement' },
-  { cle: 'separation', titre: 'Une séparation', texte: "Une valeur acceptée par les deux, une vente menée sans tension.", href: '/vendre/divorce' },
-  { cle: 'succession', titre: 'Une succession', texte: "Des héritiers d'accord sur un prix, le notaire et les démarches coordonnés.", href: '/vendre/succession' },
-  { cle: 'etranger', titre: 'Vendre à distance', texte: "Visites, comptes rendus et signatures sans revenir à Paris.", href: '/vendre/depuis-l-etranger' },
-];
 
 const engagements = [
   {
@@ -186,45 +176,24 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
 
   <Avis avis={avis} agregat={agregatAvis} />
 
-  {/*
-    Les ventes qui arrivent avec un changement de vie : un départ, une séparation,
-    une succession. Chaque entrée mène à sa page, écrite pour la question que le
-    vendeur pose vraiment.
-  */}
-  <section class="section filet" aria-labelledby="moments-de-vie">
-    <div class="conteneur">
-      <div class="max-w-2xl">
-        <p class="surtitre marque-filet">Vendre au bon moment</p>
-        <h2 id="moments-de-vie" class="titre-2 mt-6">Une vente arrive rarement seule.</h2>
-        <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Un départ, une séparation, une succession : avant de parler de prix, nous prenons le temps de
-          comprendre ce que vous traversez. Puis nous organisons la vente autour de votre calendrier, avec
-          le notaire, la banque et chacun des signataires.
-        </p>
+  {presse.length > 0 && (
+    <section class="section filet" aria-labelledby="presse-accueil">
+      <div class="conteneur">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <h2 id="presse-accueil" class="titre-2">Ils parlent de nous</h2>
+          <a href="/presse" class="lien-souligne text-sm">Toutes les retombées</a>
+        </div>
+        <div class="mt-12 grid gap-10 md:grid-cols-4">
+          {presse.map((p) => (
+            <div>
+              <p class="surtitre">{p.data.media}</p>
+              <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{p.data.citation}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <ul class="moments mt-12">
-        {moments.map((m) => (
-          <li>
-            <a href={m.href} class="moments-lien" data-evt={evt('accueil', 'moment', m.cle)}>
-              <span class="moments-titre">{m.titre}</span>
-              <span class="moments-texte">{m.texte}</span>
-              <span class="moments-suite" aria-hidden="true">Lire</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
-
-  <AlerteExpress
-    id="alerte-accueil"
-    titre="Nos biens partent souvent avant les portails"
-    texte="Chaque nouveau bien est présenté d'abord à notre fichier d'acquéreurs. Trois champs, et vous en faites partie."
-    origine="Accueil"
-    evt={evt('alerte', 'accueil')}
-  />
-
-  <Manifeste />
+    </section>
+  )}
 
   <section class="section filet" aria-labelledby="engagements">
     <div class="conteneur">
@@ -243,6 +212,42 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
       <a href="/vendre" class="lien-souligne mt-12 inline-block text-sm">Les sept engagements de la méthode Trudaines</a>
     </div>
   </section>
+
+  <section class="section filet" aria-labelledby="territoire">
+    <div class="conteneur">
+      <h2 id="territoire" class="titre-2 max-w-2xl">Notre territoire</h2>
+      <p class="chapo mt-6 max-w-2xl">
+        Quatre arrondissements contigus, un seul bassin d'acheteurs. Chaque estimation s'y appuie sur les
+        ventes signées des rues voisines, pas sur une moyenne de ville.
+      </p>
+      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {secteurs.filter((s) => coeur.includes(s.slug)).map((s) => (
+          <a href={s.hrefAgence} class="bloc group block no-underline">
+            <h3 class="titre-3 group-hover:underline group-hover:decoration-[color:var(--color-or)] group-hover:decoration-1 group-hover:underline-offset-4">{s.nom}</h3>
+            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
+          </a>
+        ))}
+      </div>
+      <details class="liens-territoire mt-12">
+        <summary class="lien-souligne text-sm">Toutes nos pages d'estimation et d'agence</summary>
+        <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          {agencesLocales.map((l) => (
+            <a href={`/agence-immobiliere-${l.slug}`} class="lien-souligne" data-evt="accueil_agence_locale">Agence immobilière {l.nom}</a>
+          ))}
+        </p>
+        <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          {secteurs.map((s) => (
+            <a href={`/estimation/${s.slug}`} class="lien-souligne" data-evt="accueil_estimation_secteur">Estimation {s.nom}</a>
+          ))}
+          {estimationsQuartiers.map((q) => (
+            <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
+          ))}
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <Manifeste />
 
   <section class="section filet" aria-labelledby="winwin-accueil">
     <div class="conteneur">
@@ -274,37 +279,6 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
     </div>
   </section>
 
-  <section class="section filet" aria-labelledby="territoire">
-    <div class="conteneur">
-      <h2 id="territoire" class="titre-2 max-w-2xl">Notre territoire</h2>
-      <p class="chapo mt-6 max-w-2xl">
-        Quatre arrondissements contigus, un seul bassin d'acheteurs. Chaque estimation s'y appuie sur les
-        ventes signées des rues voisines, pas sur une moyenne de ville.
-      </p>
-      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        {secteurs.filter((s) => coeur.includes(s.slug)).map((s) => (
-          <a href={s.hrefAgence} class="bloc group block no-underline">
-            <h3 class="titre-3 group-hover:underline group-hover:decoration-[color:var(--color-or)] group-hover:decoration-1 group-hover:underline-offset-4">{s.nom}</h3>
-            <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{s.intro.split('.')[0]}.</p>
-          </a>
-        ))}
-      </div>
-      <p class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        {agencesLocales.map((l) => (
-          <a href={`/agence-immobiliere-${l.slug}`} class="lien-souligne" data-evt="accueil_agence_locale">Agence immobilière {l.nom}</a>
-        ))}
-      </p>
-      <p class="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        {secteurs.map((s) => (
-          <a href={`/estimation/${s.slug}`} class="lien-souligne" data-evt="accueil_estimation_secteur">Estimation {s.nom}</a>
-        ))}
-        {estimationsQuartiers.map((q) => (
-          <a href={`/estimation/${q.secteur}/${q.slug}`} class="lien-souligne" data-evt="accueil_estimation_quartier">Estimation {q.nom}</a>
-        ))}
-      </p>
-    </div>
-  </section>
-
   <section class="section filet" aria-labelledby="rejoindre-accueil">
     <div class="conteneur">
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
@@ -324,25 +298,6 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
       </div>
     </div>
   </section>
-
-  {presse.length > 0 && (
-    <section class="section filet" aria-labelledby="presse-accueil">
-      <div class="conteneur">
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 id="presse-accueil" class="titre-2">Ils parlent de nous</h2>
-          <a href="/presse" class="lien-souligne text-sm">Toutes les retombées</a>
-        </div>
-        <div class="mt-12 grid gap-10 md:grid-cols-4">
-          {presse.map((p) => (
-            <div>
-              <p class="surtitre">{p.data.media}</p>
-              <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">{p.data.citation}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 
   {articles.length > 0 && (
     <section class="section" aria-labelledby="panorama-accueil">
