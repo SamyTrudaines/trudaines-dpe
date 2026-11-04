@@ -12,7 +12,7 @@ etage: "1er étage"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
-statut: a-vendre
+statut: vendu
 offMarket: true
 archive: true
 ordre: 50

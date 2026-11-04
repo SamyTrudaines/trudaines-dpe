@@ -78,7 +78,7 @@ Beaucoup de propriétaires de ces appartements ne veulent ni panneau, ni annonce
 
 ![Séjour rénové avec cheminée en marbre rouge, moulures, rosace et bibliothèque sur mesure, rue Vaneau, Paris 7e](/images/biens/appartement-2-pieces-43m2-renove-rue-vaneau/01.webp)
 
-Rue Vaneau, entre Le Bon Marché et les Invalides, nous présentons en exclusivité un appartement de deux pièces de 43 m² environ, au deuxième étage d'une petite copropriété de 26 lots, sur cour végétalisée. Tout ce qui fait la valeur d'un appartement ancien rénové y est réuni : cheminée en marbre, moulures et rosace conservées, parquet clair en lame longue, cuisine ouverte avec plan de travail en marbre, bibliothèque, bureau et penderie sur mesure dans la chambre, salle d'eau en grandes dalles avec fenêtre.
+Rue Vaneau, entre Le Bon Marché et les Invalides, nous avons présenté en exclusivité un appartement de deux pièces de 43 m² environ, au deuxième étage d'une petite copropriété de 26 lots, sur cour végétalisée. Tout ce qui fait la valeur d'un appartement ancien rénové y est réuni : cheminée en marbre, moulures et rosace conservées, parquet clair en lame longue, cuisine ouverte avec plan de travail en marbre, bibliothèque, bureau et penderie sur mesure dans la chambre, salle d'eau en grandes dalles avec fenêtre.
 
 La présentation suit la méthode décrite plus haut : reportage photographique en lumière naturelle, description pièce par pièce des matériaux, copropriété documentée (aucune procédure en cours), DPE et dépenses d'énergie affichés. [Voir la fiche du bien](/bien/appartement-2-pieces-43m2-renove-rue-vaneau).
 
