@@ -12,6 +12,7 @@ etage: "Non précisé"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Demeure bourgeoise, jardin clos"
 statut: vendu
 offMarket: true
 archive: true

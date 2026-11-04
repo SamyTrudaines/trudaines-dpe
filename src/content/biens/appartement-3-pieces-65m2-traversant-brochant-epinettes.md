@@ -12,6 +12,7 @@ etage: "4e étage"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Traversant et lumineux, orienté sud-est"
 statut: vendu
 offMarket: true
 archive: true

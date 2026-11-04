@@ -12,6 +12,7 @@ etage: "Non précisé"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Maison contemporaine, grand jardin"
 statut: vendu
 offMarket: true
 archive: true

@@ -12,6 +12,7 @@ etage: "2e et 3e étage"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Duplex familial, moulures et cheminées"
 statut: vendu
 offMarket: true
 archive: true

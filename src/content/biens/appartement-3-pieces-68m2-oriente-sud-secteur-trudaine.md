@@ -12,6 +12,7 @@ etage: "4e étage"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Traversant, ensoleillé, refait à neuf"
 statut: vendu
 offMarket: true
 archive: true

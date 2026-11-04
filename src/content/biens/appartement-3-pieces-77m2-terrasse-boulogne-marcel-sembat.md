@@ -12,6 +12,7 @@ etage: "1er étage"
 ascenseur: true
 dpe: Vierge
 ges: Vierge
+accroche: "Terrasse, ascenseur, copropriété récente"
 statut: vendu
 offMarket: true
 archive: true

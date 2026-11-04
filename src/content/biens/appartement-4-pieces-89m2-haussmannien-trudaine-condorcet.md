@@ -12,6 +12,7 @@ etage: "4e étage"
 ascenseur: false
 dpe: Vierge
 ges: Vierge
+accroche: "Haussmannien traversant, en étage élevé"
 statut: vendu
 offMarket: true
 archive: true
