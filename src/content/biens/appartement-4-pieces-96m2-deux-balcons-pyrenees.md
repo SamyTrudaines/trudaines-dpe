@@ -12,7 +12,7 @@ etage: "3e étage"
 ascenseur: true
 dpe: Vierge
 ges: Vierge
-statut: a-vendre
+statut: vendu
 offMarket: true
 archive: true
 ordre: 50

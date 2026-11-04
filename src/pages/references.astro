@@ -161,6 +161,7 @@ const donnees = [
                       class="h-full w-full object-cover transition-opacity duration-200 group-hover:opacity-90"
                     />
                   )}
+                  {b.data.statut === 'vendu' && <span class="cartouche-vendu">Vendu</span>}
                 </div>
                 <p class="surtitre mt-5">{b.data.quartier} · {b.data.ville} {b.data.arrondissement}</p>
                 <h3 class="titre-3 mt-2 text-[color:var(--color-encre)]">{b.data.titre}</h3>

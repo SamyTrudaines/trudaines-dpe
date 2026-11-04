@@ -1715,3 +1715,24 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 .liens-territoire summary { cursor: pointer; list-style: none; display: inline-block; }
 .liens-territoire summary::-webkit-details-marker { display: none; }
 .liens-territoire[open] summary { margin-bottom: 1.5rem; }
+
+/*
+ * Cartouche « Vendu » posé en haut à droite de la photographie d'un bien vendu :
+ * blanc, lettres d'encre espacées, filet orange dessous. Il ne masque rien du sujet.
+ */
+.cartouche-vendu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ffffff;
+  color: var(--color-encre);
+  padding: 0.5rem 0.875rem 0.4375rem;
+  font-family: var(--font-texte);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-or);
+  pointer-events: none;
+}
