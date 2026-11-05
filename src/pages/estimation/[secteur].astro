@@ -36,7 +36,7 @@ const avisSecteur = trierAvis(
 ).slice(0, 3);
 const agregatAvis = await agrégatAvis();
 /* Les quartiers visés d'abord : ce sont eux que les vendeurs cherchent (Search Console). */
-const PRIORITE = ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette', 'batignolles', 'clichy-trinite', 'saint-georges', 'abbesses', 'lamarck', 'pigalle'];
+const PRIORITE = ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette', 'batignolles', 'legendre-levis', 'clichy-trinite', 'saint-georges', 'abbesses', 'lamarck', 'pigalle'];
 const rang = (slug: string) => (PRIORITE.includes(slug) ? PRIORITE.indexOf(slug) : PRIORITE.length);
 const pagesQuartiers = estimationsQuartiers.filter((q) => q.secteur === secteur.slug).sort((a, b) => rang(a.slug) - rang(b.slug));
 const autresSecteurs = secteurs.filter((s) => s.slug !== secteur.slug);

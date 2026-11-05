@@ -70,6 +70,25 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     ],
   },
   {
+    slug: 'legendre-levis',
+    nom: 'Legendre-Lévis',
+    dans: 'autour des rues Legendre et de Lévis',
+    secteur: 'paris-17',
+    codePostal: '75017',
+    reperes: ['rue-de-levis-17', 'rue-legendre-17'],
+    rayon: 450,
+    quartiersBiens: [],
+    lien: { href: '/agence-immobiliere-paris-17', libelle: 'Agence immobilière Paris 17e' },
+    titreSeo: 'Estimation appartement Legendre-Lévis, Paris 17 | Trudaines',
+    chapo:
+      "Entre la rue de Lévis et sa rue commerçante, la place de Villiers et la rue Legendre, le 17e passe des Batignolles à la plaine Monceau. Les immeubles, les acheteurs et les prix changent en quelques rues : votre estimation part de la vôtre.",
+    paragraphes: [
+      "Les acheteurs du secteur sont souvent des familles et des cadres qui veulent le métro Villiers, les commerces de la rue de Lévis et le parc Monceau à pied. Ils comparent votre appartement avec ceux des Batignolles d'un côté, de la plaine Monceau de l'autre : la qualité de l'immeuble, l'étage et la lumière font la différence.",
+      "Nous estimons à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, chaque ajustement expliqué.",
+    ],
+    ruesQuestions: ['rue-de-levis-17', 'rue-legendre-17', 'avenue-de-villiers-17'],
+  },
+  {
     slug: 'bonne-nouvelle',
     nom: 'Bonne-Nouvelle',
     dans: 'autour du boulevard de Bonne-Nouvelle',

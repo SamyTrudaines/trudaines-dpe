@@ -99,8 +99,8 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
 - Estimation par quartier : `/estimation/<secteur>/<quartier>` (Épinettes, Cardinet, Batignolles, Bonne-Nouvelle, Saint-Martin,
-  Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin ;
-  Abbesses, Lamarck, Pigalle et Saint-Martin : 400 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
+  Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin, Legendre-Lévis ;
+  Abbesses, Lamarck, Pigalle, Saint-Martin et Legendre-Lévis : 400 à 450 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
   requêtes que Search Console attribue déjà au site.
   Mesure commune dans `src/lib/estimation-quartier.ts` : médiane pondérée interpolée des médianes de voie
   (`medianePonderee`, `src/lib/rues.ts`), prix par taille (`typologiesDesRues`). Les pages `/quartiers/<id>`, le tableau

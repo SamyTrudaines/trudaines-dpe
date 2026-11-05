@@ -222,7 +222,7 @@ export const secteurs: Secteur[] = [
     nomLong: '17e arrondissement de Paris',
     titre: 'Estimation appartement Paris 17, estimation immobilière gratuite | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
+      "Estimation immobilière gratuite à Paris 17e : Batignolles, Legendre-Lévis, Épinettes. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e, Batignolles | Trudaines',
     descriptionAgence:
       "Agence immobilière pour vendre aux Batignolles, rue Legendre, Cardinet et Épinettes. Prix par rue, ventes signées.",
