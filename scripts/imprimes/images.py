@@ -58,9 +58,6 @@ def qr(adresse: str, sortie: str) -> None:
 
 if __name__ == "__main__":
     SORTIE.mkdir(parents=True, exist_ok=True)
-    dessin("public/images/marque/facade-paris-2560.webp", "encre-facade.jpg", 1.4)
-    dessin("public/images/marque/facade-haussmannienne-2000.webp", "encre-facade-2.jpg", 1.2)
-    dessin("assets/photos/facade-pierre-de-taille-balcons-9e.jpg", "encre-perspective.jpg", 1.3)
     photo("assets/photos/immeuble-pierre-de-taille-platanes-15.jpg", "photo-platanes.jpg", (0, 0.05, 1, 0.86))
     photo("assets/photos/facade-pierre-de-taille-balcons-9e.jpg", "photo-facade-9e.jpg", (0, 0.3, 1, 1))
     photo("assets/photos/square-anvers-trudaine.jpg", "photo-anvers.jpg", (0.22, 0.16, 0.76, 0.86), 2600)

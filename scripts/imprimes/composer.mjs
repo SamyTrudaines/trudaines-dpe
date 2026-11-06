@@ -21,6 +21,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { register } from 'node:module';
 import { PDFDocument } from 'pdf-lib';
+import { scene } from './dessin.mjs';
 
 /*
  * Les modules du site sont écrits pour Astro : imports sans extension, import.meta.env.
@@ -179,7 +180,7 @@ const flyers = [
   <h1 class="abs titre" style="left:${X}mm;top:${A5.fp + 33}mm;font-size:27pt;line-height:1.12">L'immobilier<br>au-delà des murs.</h1>
   <div class="abs filet" style="left:${X}mm;top:${A5.fp + 62}mm"></div>
   <p class="abs cap" style="left:${X}mm;top:${A5.fp + 66}mm;font-size:6.2pt;color:var(--gris)">${lieux}</p>
-  <img class="img" src="${url('encre-facade.jpg')}" style="left:0;bottom:0;width:100%;height:${A5.h - 80}mm;object-position:50% 0">
+  ${scene({ l: A5.l, h: A5.h - 80, batiments: 1, style: 'left:0;bottom:0' })}
 </section>`,
     verso: versoBlanc,
   },
@@ -190,7 +191,7 @@ const flyers = [
     idee: 'Votre façade du 9e vue d’en bas, en dessin. Le titre se loge dans le ciel blanc : de l’élan, comme l’angle d’immeuble d’Immopolis.',
     recto: `
 <section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
-  <img class="img" src="${url('encre-perspective.jpg')}" style="right:0;bottom:0;width:112mm;height:${A5.h}mm;object-position:50% 100%">
+  ${scene({ l: A5.l, h: A5.h - 50, batiments: 1, butte: false, cote: 'droite', style: 'left:0;bottom:0' })}
   <div class="abs" style="left:${X}mm;top:${A5.fp + 10}mm">${marque({ largeur: 40 })}</div>
   <h1 class="abs titre" style="left:${X}mm;top:${A5.fp + 31}mm;width:78mm;font-size:22pt;line-height:1.16;background:#fff;padding:0 2mm 2mm 0">On vend mieux<br>ce qu'on connaît<br>par cœur.</h1>
   <div class="abs filet" style="left:${X}mm;top:${A5.fp + 74}mm"></div>
@@ -209,7 +210,7 @@ const flyers = [
   <div class="abs" style="left:50%;transform:translateX(-50%);top:${A5.fp + 12}mm">${marque({ largeur: 52 })}</div>
   <h1 class="abs titre" style="left:${X}mm;right:${X}mm;top:${A5.fp + 36}mm;text-align:center;font-size:20pt;line-height:1.2">De l'estimation à l'acte,<br>nous menons tout.</h1>
   <div class="abs filet" style="left:50%;transform:translateX(-50%);top:${A5.fp + 59}mm"></div>
-  <img class="img" src="${url('encre-facade-2.jpg')}" style="left:0;top:${A5.fp + 67}mm;width:100%;height:110mm;object-position:50% 40%">
+  ${scene({ l: A5.l, h: 112, batiments: 1, style: `left:0;top:${A5.fp + 65}mm` })}
   <div class="abs" style="left:0;bottom:0;width:100%;height:${A5.fp + 27}mm;background:var(--noir);color:#fff;text-align:center;padding-top:7mm">
     <p class="cap" style="font-size:5.8pt;color:#c9c9c4">Estimation offerte, à votre rythme</p>
     <p class="romain" style="font-size:15pt;margin-top:2mm">${tel}</p>
@@ -276,12 +277,12 @@ const flyers = [
     idee: 'La composition Immopolis : l’immeuble dessiné en contre-plongée occupe la gauche, le logo et le titre se logent dans le ciel blanc à droite.',
     recto: `
 <section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
-  <img class="img" src="${url('encre-perspective.jpg')}" style="left:0;bottom:0;width:104mm;height:${A5.h}mm;object-position:50% 100%;transform:scaleX(-1)">
+  ${scene({ l: A5.l, h: A5.h - 36, batiments: 1, style: 'left:0;bottom:0' })}
   <div class="abs" style="right:${X}mm;top:${A5.fp + 11}mm">${marque({ largeur: 42 })}</div>
-  <h1 class="abs titre" style="right:${X}mm;top:${A5.fp + 36}mm;width:66mm;text-align:right;font-size:21pt;line-height:1.18;background:#fff;padding:0 0 2mm 2mm">De l'avenue Trudaine<br>à la Butte,<br>chaque rue<br>a son prix.</h1>
+  <h1 class="abs titre" style="right:${X}mm;top:${A5.fp + 34}mm;width:56mm;text-align:right;font-size:20pt;line-height:1.18;background:#fff;">De l'avenue Trudaine<br>à la Butte,<br>chaque rue<br>a son prix.</h1>
   <div class="abs filet" style="right:${X}mm;top:${A5.fp + 88}mm"></div>
-  <p class="abs cap" style="right:${X}mm;top:${A5.fp + 92}mm;width:60mm;text-align:right;font-size:5.6pt;line-height:1.9;color:var(--gris);background:#fff">Les prix de votre rue<br>sur trudaines.com</p>
-  <p class="abs cap" style="right:${X}mm;bottom:${A5.fp + 7}mm;width:36mm;text-align:right;font-size:5.4pt;line-height:1.9;color:var(--gris)">Agence immobilière<br>Vente · Gestion<br>Recherche</p>
+  <p class="abs cap" style="right:${X}mm;top:${A5.fp + 92}mm;width:56mm;text-align:right;font-size:5.6pt;line-height:1.9;color:var(--gris)">Les prix de votre rue<br>sur trudaines.com<br><br>Agence immobilière<br>Vente · Gestion · Recherche</p>
+  
 </section>`,
     verso: versoBlanc,
   },
@@ -292,7 +293,7 @@ const flyers = [
     idee: 'La mise en page du Pierre 2, la photo remplacée par une façade haussmannienne à l’encre.',
     recto: `
 <section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
-  <img class="img" src="${url('encre-facade.jpg')}" style="left:0;top:0;width:100%;height:122mm;object-position:50% 30%">
+  ${scene({ l: A5.l, h: 118, batiments: 1, style: 'left:0;top:4mm' })}
   <div class="abs" style="left:0;top:122mm;width:100%;border-top:0.25mm solid var(--trait)"></div>
   <div class="abs" style="left:${X}mm;top:${122 + 10}mm;right:${X}mm">
     ${marque({ largeur: 38 })}
@@ -347,7 +348,7 @@ const pochettes = [
 <section class="page" style="width:${P.l}mm;height:${P.h}mm">
   <div class="abs" style="left:50%;transform:translateX(-50%);top:58mm">${marque({ largeur: 84 })}</div>
   <p class="abs titre" style="left:0;right:0;top:96mm;text-align:center;font-size:15pt">L'immobilier au-delà des murs.</p>
-  <img class="img" src="${url('encre-facade.jpg')}" style="left:0;bottom:0;width:100%;height:170mm;object-position:50% 0">
+  ${scene({ l: P.l, h: 170, batiments: 2, style: 'left:0;bottom:0' })}
 </section>`,
     dos: dos('#fff', 'var(--encre)'),
   },
