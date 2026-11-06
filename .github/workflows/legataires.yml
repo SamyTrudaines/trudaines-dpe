@@ -5,7 +5,7 @@
 # Le dépôt et ce journal sont publics : le script n'y écrit que des nombres.
 # Sur une branche de travail, c'est un essai sur trente jours : l'email part à
 # Samy seul, la feuille n'est pas touchée (la fédération n'accepte que main).
-# Sur main, le lundi, les nouveaux courriers partent par MySendingBox (scripts/legataires-envoi.mjs).
+# Sur main, le lundi, les nouveaux courriers partent par Service Postal (scripts/legataires-envoi.mjs).
 name: Légataires universels
 
 on:
@@ -64,6 +64,6 @@ jobs:
           GSC_JETON: ${{ steps.google.outputs.access_token }}
           GSC_FEUILLE: 1W2pG82faVGaflLlWP6qaWuCT2zdEFf2bTJTUaRgmLe8
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
-          MYSENDINGBOX_API_KEY: ${{ secrets.MYSENDINGBOX_API_KEY }}
+          SERVICEPOSTAL_API_KEY: ${{ secrets.SERVICEPOSTAL_API_KEY }}
           MODE: reel
         run: node scripts/legataires-envoi.mjs

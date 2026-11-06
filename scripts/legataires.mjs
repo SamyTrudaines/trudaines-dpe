@@ -29,6 +29,8 @@
  *
  * Lancer : node scripts/legataires.mjs
  */
+import { readFileSync } from 'node:fs';
+
 const SITE = 'https://www.annonces-legales.fr';
 const JSS = 'https://server.jss.fr/myjss/wordpress/announcement';
 const JSS_ENVOI_EN_POSSESSION = 114974;
@@ -252,7 +254,7 @@ export function adressePostale(adresse) {
 /** Adresse sur deux lignes pour l'enveloppe. */
 const surDeuxLignes = (adresse) => adresse.replace(/,\s*(\d{5}\s[^,]+)$/, '\n$1');
 
-const SIGNATURE = 'Samy Santamarina\nTrudaines Immobilier\n2 rue Livingstone, 75018 Paris\n06 20 46 59 12 · samy.santamarina@trudaines.com';
+const SIGNATURE = 'Samy Santamarina\nTrudaines\n2 rue Livingstone, 75018 Paris\n06 20 46 59 12 · samy.santamarina@trudaines.com';
 
 /** « de Marie », « d'Annie ». */
 const de = (nom) => (/^[aeiouyhàâéèêîôû]/i.test(nom) ? `d'${nom}` : `de ${nom}`);
@@ -260,17 +262,43 @@ const de = (nom) => (/^[aeiouyhàâéèêîôû]/i.test(nom) ? `d'${nom}` : `de 
 /** « 16, rue Paul Féval, 75018 Paris » et « 10-14 rue Baudelique, 75018 Paris » donnent le nom de la rue. */
 const rue = (adresse) => adresse.replace(/^\d+(?:\s*[-/]\s*\d+)?\s*(?:bis|ter)?\s*,?\s*/i, '').split(',')[0].trim();
 
+/** Ventes DVF de la rue du bien (src/data/rues.json), pour citer un chiffre que le lecteur peut vérifier. */
+let donneesRues;
+export function ventesDeLaRue(a) {
+  donneesRues ??= JSON.parse(readFileSync(new URL('../src/data/rues.json', import.meta.url), 'utf8'));
+  const nom = rue(a.adresse ?? '');
+  const cp = a.code_postal || a.adresse?.match(/\b(75\d{3})\b/)?.[1];
+  if (!nom || !cp) return null;
+  const base = nom.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const candidats = [base, base.replace(/^bd-/, 'boulevard-').replace(/^av-/, 'avenue-'), base.replace('faubourg', 'fbg')];
+  const fiche = donneesRues.rues.find((r) => candidats.some((c) => r.slug === `${c}-${cp.slice(-2)}`));
+  return fiche ? { nom, ventes: fiche.ventes, periode: donneesRues.periode, lien: `trudaines.com/prix-immobilier/${fiche.slug}` } : null;
+}
+
+/** La phrase sur les ventes : chiffrée quand la rue est connue, sinon la source seule. */
+function preuve(a) {
+  const v = ventesDeLaRue(a);
+  if (!v) return "Elle s'appuie sur les ventes enregistrées par les services fiscaux (DVF) dans la rue et ses voisines.";
+  return `Elle s'appuie sur les ${v.ventes} ventes signées ${v.nom} de ${v.periode}, dont le relevé est en ligne sur ${v.lien}.`;
+}
+
+const EN_LETTRES = { 2: 'deux', 3: 'trois', 4: 'quatre', 5: 'cinq', 6: 'six' };
+const POLITESSE_NOTAIRE = 'Je vous prie de croire, Maître, à mes sentiments respectueux.';
+const CLES =
+  "Le légataire vit souvent loin et découvre l'appartement. Il peut me laisser les clés : visites et diagnostics se font sans lui, et votre étude reçoit un dossier complet pour l'avant-contrat.";
+
 /** Courrier au notaire chargé de la succession. */
 export function lettreNotaire(a) {
+  const ou = rue(a.adresse ?? '');
   return [
     [a.notaire || 'Maître', a.adresse_notaire, a.ville_notaire].filter(Boolean).join('\n'),
     `Objet : succession ${de(a.defunt || 'votre client')}${a.adresse ? `, ${a.adresse}` : ''}`,
     'Maître,',
-    `J'ai lu l'avis de saisine de légataire universel paru le ${dateLongue(a.publication)} dans ${a.journal}. Ce logement${rue(a.adresse) ? `, ${rue(a.adresse)},` : ''} se trouve dans le quartier où mon agence travaille chaque jour.`,
-    "S'il fait partie de la succession, je peux en établir l'avis de valeur sous huit jours, appuyé sur les ventes réellement signées dans la rue. Il sert à la déclaration de succession comme à une éventuelle mise en vente, et il est offert si le légataire envisage de vendre.",
-    "Un légataire universel vit souvent loin de Paris et découvre le bien. Je prends en charge les visites, les diagnostics et le dossier de vente, et je vous transmets un dossier complet pour l'avant-contrat.",
-    'Si vous le jugez utile, je vous remercie de transmettre mes coordonnées au légataire.',
-    "Je vous prie d'agréer, Maître, l'expression de mes salutations respectueuses.",
+    `L'avis de saisine paru le ${dateLongue(a.publication)} dans ${a.journal} concerne une personne domiciliée ${ou || 'dans mon secteur'}. Si l'appartement fait partie de la succession, la déclaration en demandera la valeur vénale au jour du décès.`,
+    `Je peux vous la remettre sous huit jours, datée et motivée. ${preuve(a)}`,
+    CLES,
+    "L'avis de valeur est offert si le légataire envisage de vendre. S'il vous semble utile, donnez-lui simplement mon numéro : 06 20 46 59 12.",
+    POLITESSE_NOTAIRE,
     SIGNATURE,
   ].join('\n\n');
 }
@@ -279,28 +307,35 @@ export function lettreNotaire(a) {
 export function lettreNotaireGroupee(liste) {
   if (liste.length === 1) return lettreNotaire(liste[0]);
   const [a] = liste;
+  const preuves = liste.map((x) => ventesDeLaRue(x)).filter(Boolean);
   return [
     [a.notaire || 'Maître', a.adresse_notaire, a.ville_notaire].filter(Boolean).join('\n'),
     `Objet : successions ${liste.map((x) => `${de(x.defunt || 'votre client')}${x.adresse ? `, ${x.adresse}` : ''}`).join(' et ')}`,
     'Maître,',
-    `J'ai lu les avis de saisine de légataire universel parus ${liste.map((x) => `le ${dateLongue(x.publication)} dans ${x.journal}`).join(' et ')}. Ces logements se trouvent dans les quartiers où mon agence travaille chaque jour.`,
-    "S'ils font partie des successions, je peux en établir l'avis de valeur sous huit jours, appuyé sur les ventes réellement signées dans chaque rue. Il sert à la déclaration de succession comme à une éventuelle mise en vente, et il est offert si le légataire envisage de vendre.",
-    "Un légataire universel vit souvent loin de Paris et découvre le bien. Je prends en charge les visites, les diagnostics et le dossier de vente, et je vous transmets un dossier complet pour l'avant-contrat.",
-    'Si vous le jugez utile, je vous remercie de transmettre mes coordonnées aux légataires.',
-    "Je vous prie d'agréer, Maître, l'expression de mes salutations respectueuses.",
+    `Votre étude a publié ${EN_LETTRES[liste.length] ?? liste.length} avis de saisine pour des personnes domiciliées dans mon secteur : ${liste.map((x) => `${rue(x.adresse ?? '') || 'adresse non précisée'} (${dateLongue(x.publication)})`).join(', ')}. Quand l'appartement fait partie de la succession, la déclaration en demandera la valeur vénale au jour du décès.`,
+    `Je peux vous les remettre sous huit jours, datées et motivées, appuyées sur les ventes enregistrées par les services fiscaux (DVF) dans chaque rue.${preuves.length ? ` Les relevés sont en ligne : ${preuves.map((v) => `${v.lien} (${v.ventes} ventes)`).join(', ')}.` : ''}`,
+    "Les légataires vivent souvent loin et découvrent les lieux. Ils peuvent me laisser les clés : visites et diagnostics se font sans eux, et votre étude reçoit des dossiers complets pour les avant-contrats.",
+    "L'avis de valeur est offert au légataire qui envisage de vendre. S'il vous semble utile, donnez-leur simplement mon numéro : 06 20 46 59 12.",
+    POLITESSE_NOTAIRE,
     SIGNATURE,
   ].join('\n\n');
 }
 
 /** Courrier aux ayants droit, à l'adresse du défunt. */
 export function lettreAyantsDroit(a) {
+  const v = ventesDeLaRue(a);
   return [
     `Aux ayants droit ${de(a.defunt || 'la succession')}${a.adresse ? `\n${surDeuxLignes(a.adresse)}` : ''}`,
     'Madame, Monsieur,',
-    "Je vous présente mes sincères condoléances.",
-    "Je dirige Trudaines, une agence immobilière du quartier. Quand un appartement entre dans une succession, la première question est souvent sa valeur : pour la déclaration au notaire, puis pour décider de le garder, de le louer ou de le vendre.",
-    "Je peux vous donner cette valeur, appuyée sur les ventes réellement signées dans la rue, sans engagement et sans vous presser. Si vous habitez loin de Paris, je m'occupe des visites sur place et je vous tiens au courant à chaque étape.",
-    'Vous pouvez me joindre au 06 20 46 59 12 quand le moment vous conviendra.',
+    `J'écris à cette adresse sans savoir qui ouvrira ma lettre. Si c'est vous qui veillez sur la succession ${de(a.defunt || 'du défunt')}, permettez-moi d'abord de vous présenter mes condoléances.`,
+    "Je m'appelle Samy Santamarina et je dirige Trudaines, une agence immobilière du 18e arrondissement.",
+    `Si l'appartement fait partie de la succession, le notaire vous demandera tôt ou tard ce qu'il vaut. Je peux vous le dire, sans engagement, ${
+      v
+        ? `à partir des ${v.ventes} ventes signées ${v.nom} de ${v.periode}. Leur relevé est en ligne sur ${v.lien}.`
+        : 'à partir des ventes réellement signées dans la rue et ses voisines.'
+    }`,
+    "Si vous habitez loin de Paris, vous pouvez me confier les clés. Je m'occupe des visites sur place et je vous appelle à chaque étape.",
+    'Rien ne presse. Le jour où vous voudrez en parler, je suis au 06 20 46 59 12.',
     'Bien à vous,',
     SIGNATURE,
   ].join('\n\n');
