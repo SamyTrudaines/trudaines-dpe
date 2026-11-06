@@ -104,63 +104,66 @@ body { font-family: "MS", sans-serif; color: var(--encre); -webkit-print-color-a
 const A5 = { l: 152, h: 214, fp: 2 };
 const X = A5.fp + 9; // marge intérieure de lecture, à 9 mm de la coupe
 
-const versoBlanc = `
-<section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
-  <img class="img" src="${url('portrait.jpg')}" style="left:${X}mm;top:${A5.fp + 10}mm;width:56mm;height:58mm;object-position:50% 30%">
-  <div class="abs" style="left:${X + 63}mm;top:${A5.fp + 12}mm;width:66mm">
-    <p style="font-weight:600;font-size:10pt">Samy Santamarina</p>
-    <p class="cap" style="font-size:5.8pt;color:var(--gris);margin-top:1.4mm">Fondateur de Trudaines</p>
-    <div class="filet" style="margin:5mm 0 4.2mm"></div>
-    <p class="romain" style="font-size:15pt;letter-spacing:0.01em">${tel}</p>
-    <p style="font-size:7.6pt;margin-top:2mm">${site.email}</p>
-    <p style="font-size:7.6pt;margin-top:0.8mm">trudaines.com</p>
+/*
+ * Verso commun : la maison d'abord, le fondateur ensuite. Logo et métiers en tête,
+ * partenaires, adresse et horaires de l'agence : rien qui fasse croire à un
+ * indépendant seul. Le portrait reste, en signature du fondateur.
+ */
+const horaires = 'Du lundi au samedi';
+const metiers = [
+  ['Vente', "Estimation offerte, prix de votre rue tiré des ventes réelles."],
+  ['Gestion locative', 'Mise en location et suivi de votre bien.'],
+  ['Recherche', "Chasse d'appartement pour les acquéreurs."],
+];
+function verso(sombre) {
+  const c = sombre
+    ? { fond: '#000', texte: '#fff', doux: '#e9e9e4', gris: '#b9b9b4', trait: '#3a3a38', mot: '#fff' }
+    : { fond: '#fff', texte: 'var(--encre)', doux: 'var(--encre)', gris: 'var(--gris)', trait: 'var(--trait)', mot: 'var(--encre)' };
+  const L = 148 - 18; // largeur de lecture
+  return `
+<section class="page" style="width:${A5.l}mm;height:${A5.h}mm;background:${c.fond};color:${c.texte}">
+  <div class="abs" style="left:${X}mm;top:${A5.fp + 10}mm">${marque({ mot: c.mot, largeur: 40 })}</div>
+  <div class="abs cap" style="right:${X}mm;top:${A5.fp + 11}mm;text-align:right;font-size:5.6pt;line-height:1.9;color:${c.gris}">Agence immobilière<br>Vente · Gestion · Recherche</div>
+  <div class="abs" style="left:${X}mm;top:${A5.fp + 26}mm;width:${L}mm;border-top:0.25mm solid ${c.trait}"></div>
+  <div class="abs" style="left:${X}mm;top:${A5.fp + 33}mm;width:86mm">
+    <h2 class="titre" style="font-size:18pt;line-height:1.2">Ni agence de luxe,<br>ni mandataire.</h2>
+    <p class="titre" style="font-size:11.5pt;line-height:1.35;margin-top:2.4mm;color:${c.gris}">Une troisième voie, entre Montmartre<br>et la rue des Martyrs.</p>
+    <div class="filet" style="margin-top:4.4mm"></div>
   </div>
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 79}mm;width:${148 - 18}mm">
-    <h2 class="titre" style="font-size:19pt;line-height:1.18">Ni agence de luxe, ni mandataire.</h2>
-    <p class="titre" style="font-size:12pt;line-height:1.35;margin-top:2.2mm;color:var(--gris)">Une troisième voie, entre Montmartre<br>et la rue des Martyrs.</p>
-    <p class="corps" style="margin-top:5mm;width:118mm">Vous voulez optimiser votre prix de vente ou la gestion de votre bien locatif&nbsp;? Nous vous conseillons et vous accompagnons, jusqu'au bout.</p>
+  <img class="img" src="${url('portrait.jpg')}" style="right:${X}mm;top:${A5.fp + 32}mm;width:35mm;height:37mm;object-position:50% 28%">
+  <p class="abs petit" style="right:${X}mm;top:${A5.fp + 70.5}mm;width:35mm;text-align:right;color:${c.gris}">Samy Santamarina, fondateur</p>
+  <p class="abs corps" style="left:${X}mm;top:${A5.fp + 80}mm;width:${L}mm;color:${c.doux}">Vous voulez optimiser votre prix de vente ou la gestion de votre bien locatif&nbsp;? Nous vous conseillons et vous accompagnons, jusqu'au bout.</p>
+  <div class="abs" style="left:${X}mm;top:${A5.fp + 95}mm;width:${L}mm;display:flex;gap:5mm">
+    ${metiers
+      .map(
+        ([titre, texte]) => `<div style="flex:1;border-top:0.25mm solid ${c.trait};padding-top:2.6mm">
+      <p class="cap" style="font-size:5.8pt;font-weight:600">${titre}</p>
+      <p style="font-size:7pt;line-height:1.45;margin-top:1.4mm;color:${c.doux}">${texte}</p></div>`,
+      )
+      .join('')}
   </div>
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 122}mm;width:${148 - 18}mm;border-top:0.25mm solid var(--trait);border-bottom:0.25mm solid var(--trait);padding:4mm 0">
-    <p class="cap" style="font-size:6pt;font-weight:600">Trudaines WinWin</p>
-    <p class="corps" style="margin-top:1.8mm">Vous nous présentez un vendeur&nbsp;: ${part} de nos honoraires HT vous reviennent, soit <strong style="font-weight:600">${euros(prime)}</strong> pour un bien vendu ${euros(exemple)}.</p>
-    <p class="petit" style="color:var(--gris);margin-top:1.4mm">Barème exclusif. Prime versée à la signature de l'acte, sur accord écrit préalable. trudaines.com/recommander</p>
+  <p class="abs" style="left:${X}mm;top:${A5.fp + 117}mm;width:${L}mm;font-size:7pt;line-height:1.45;color:${c.gris}">Avec nos partenaires&nbsp;: courtier en crédit, diagnostiqueur, architecte d'intérieur, ingénieur patrimonial et artisans.</p>
+  <div class="abs" style="left:${X}mm;top:${A5.fp + 127}mm;width:${L}mm;border-top:0.25mm solid ${c.trait};border-bottom:0.25mm solid ${c.trait};padding:3.4mm 0">
+    <p class="cap" style="font-size:5.8pt;font-weight:600">Trudaines WinWin</p>
+    <p class="corps" style="margin-top:1.4mm;color:${c.doux}">Vous nous présentez un vendeur&nbsp;: ${part} de nos honoraires HT vous reviennent, soit <strong style="font-weight:600">${euros(prime)}</strong> pour un bien vendu ${euros(exemple)}.</p>
+    <p class="petit" style="color:${c.gris};margin-top:1.2mm">Barème exclusif. Prime versée à la signature de l'acte, sur accord écrit préalable. trudaines.com/recommander</p>
   </div>
-  <div class="abs qr" style="left:${X - 1.6}mm;top:${A5.fp + 160}mm;width:25mm;height:25mm">${qrSvg}</div>
-  <div class="abs" style="left:${X + 27}mm;top:${A5.fp + 162}mm;width:48mm">
-    <p class="cap" style="font-size:6pt;font-weight:600">Estimer en ligne</p>
-    <p class="corps" style="font-size:7.4pt;margin-top:1.4mm">Le prix de votre appartement, à partir des ventes de votre rue.</p>
+  <div class="abs qr" style="left:${X - (sombre ? 0 : 1.6)}mm;top:${A5.fp + 162}mm;width:22mm;height:22mm">${qrSvg}</div>
+  <div class="abs" style="left:${X + 25}mm;top:${A5.fp + 163}mm;width:40mm">
+    <p class="cap" style="font-size:5.8pt;font-weight:600">Estimer en ligne</p>
+    <p style="font-size:7pt;line-height:1.45;margin-top:1.2mm;color:${c.doux}">Le prix de votre appartement, à partir des ventes de votre rue.</p>
   </div>
-  <div class="abs" style="right:${X}mm;top:${A5.fp + 166}mm">${marque({ largeur: 38 })}</div>
-  <p class="abs petit" style="left:${X}mm;bottom:${A5.fp + 6}mm;width:${148 - 18}mm;color:var(--gris)">${mentions}</p>
+  <div class="abs" style="right:${X}mm;top:${A5.fp + 162}mm;text-align:right">
+    <p class="cap" style="font-size:5.8pt;font-weight:600">L'agence</p>
+    <p style="font-size:7pt;line-height:1.5;margin-top:1.2mm;color:${c.doux}">${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}<br>${horaires}</p>
+    <p class="romain" style="font-size:13pt;margin-top:1.6mm">${tel}</p>
+    <p style="font-size:7pt;margin-top:0.6mm;color:${c.doux}">trudaines.com</p>
+  </div>
+  <p class="abs petit" style="left:${X}mm;bottom:${A5.fp + 4.5}mm;width:${L}mm;color:${c.gris}">${mentions}</p>
 </section>`;
-
-const versoNoir = `
-<section class="page" style="width:${A5.l}mm;height:${A5.h}mm;background:#000;color:#fff">
-  <img class="img" src="${url('portrait.jpg')}" style="right:0;top:0;width:92mm;height:95mm;object-position:50% 25%">
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 11}mm">${marque({ mot: '#fff', largeur: 40 })}</div>
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 60}mm;width:44mm">
-    <p style="font-weight:600;font-size:9.5pt">Samy Santamarina</p>
-    <p class="cap" style="font-size:5.6pt;color:#b9b9b4;margin-top:1.4mm">Fondateur</p>
-  </div>
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 98}mm;width:${148 - 18}mm">
-    <h2 class="titre" style="font-size:19pt;line-height:1.18">Ni agence de luxe, ni mandataire.</h2>
-    <p class="titre" style="font-size:12pt;line-height:1.35;margin-top:2.2mm;color:#c9c9c4">Une troisième voie, entre Montmartre et la rue des Martyrs.</p>
-    <div class="filet" style="margin:4.5mm 0"></div>
-    <p class="corps" style="width:120mm;color:#e9e9e4">Vous voulez optimiser votre prix de vente ou la gestion de votre bien locatif&nbsp;? Nous vous conseillons et vous accompagnons, jusqu'au bout.</p>
-  </div>
-  <div class="abs" style="left:${X}mm;top:${A5.fp + 145}mm;width:${148 - 18}mm;border-top:0.25mm solid #3a3a38;border-bottom:0.25mm solid #3a3a38;padding:3.6mm 0">
-    <p class="cap" style="font-size:6pt;font-weight:600;color:var(--orange)">Trudaines WinWin</p>
-    <p class="corps" style="margin-top:1.6mm;color:#e9e9e4">Vous nous présentez un vendeur&nbsp;: ${part} de nos honoraires HT vous reviennent, soit <strong style="font-weight:600;color:#fff">${euros(prime)}</strong> pour un bien vendu ${euros(exemple)}.</p>
-    <p class="petit" style="color:#a9a9a4;margin-top:1.2mm">Barème exclusif. Prime versée à la signature de l'acte, sur accord écrit préalable. trudaines.com/recommander</p>
-  </div>
-  <div class="abs qr" style="left:${X}mm;top:${A5.fp + 175}mm;width:21mm;height:21mm">${qrSvg}</div>
-  <div class="abs" style="left:${X + 25}mm;top:${A5.fp + 176}mm">
-    <p class="romain" style="font-size:14pt">${tel}</p>
-    <p style="font-size:7.4pt;margin-top:1.4mm;color:#e9e9e4">${site.email}</p>
-    <p class="cap" style="font-size:5.6pt;margin-top:1.8mm;color:#b9b9b4">Estimer en ligne avec le QR code</p>
-  </div>
-  <p class="abs petit" style="left:${X}mm;bottom:${A5.fp + 4}mm;width:${148 - 18}mm;color:#a9a9a4">${mentions}</p>
-</section>`;
+}
+const versoBlanc = verso(false);
+const versoNoir = verso(true);
 
 const lieux = 'Montmartre · Martyrs · Trudaine · Batignolles';
 
@@ -196,15 +199,15 @@ const flyers = [
     verso: versoBlanc,
   },
   {
-    id: 'flyer-encre-3-interlocuteur',
+    id: 'flyer-encre-3-suivi',
     famille: 'Flyer A5 « Encre »',
-    nom: 'Un seul interlocuteur',
+    nom: 'De l’estimation à l’acte',
     conseil: true,
     idee: 'Logo centré, promesse centrée, façade en bandeau, téléphone en pied : on peut appeler sans retourner le flyer.',
     recto: `
 <section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
   <div class="abs" style="left:50%;transform:translateX(-50%);top:${A5.fp + 12}mm">${marque({ largeur: 52 })}</div>
-  <h1 class="abs titre" style="left:${X}mm;right:${X}mm;top:${A5.fp + 36}mm;text-align:center;font-size:20pt;line-height:1.2">Un seul interlocuteur,<br>de l'estimation à l'acte.</h1>
+  <h1 class="abs titre" style="left:${X}mm;right:${X}mm;top:${A5.fp + 36}mm;text-align:center;font-size:20pt;line-height:1.2">De l'estimation à l'acte,<br>nous menons tout.</h1>
   <div class="abs filet" style="left:50%;transform:translateX(-50%);top:${A5.fp + 59}mm"></div>
   <img class="img" src="${url('encre-facade-2.jpg')}" style="left:0;top:${A5.fp + 67}mm;width:100%;height:110mm;object-position:50% 40%">
   <div class="abs" style="left:0;bottom:0;width:100%;height:${A5.fp + 27}mm;background:var(--noir);color:#fff;text-align:center;padding-top:7mm">
@@ -224,7 +227,7 @@ const flyers = [
   <img class="img" src="${url('photo-platanes.jpg')}" style="left:0;top:0;width:100%;height:${A5.h - 64}mm;object-position:50% 40%">
   <div class="abs" style="left:0;bottom:0;width:100%;height:66mm;background:var(--noir);color:#fff;padding:9mm ${X}mm 0">
     ${marque({ mot: '#fff', largeur: 38 })}
-    <h1 class="titre" style="font-size:18.5pt;line-height:1.2;margin-top:7mm">Vendre à Paris, avec quelqu'un<br>qui connaît votre rue.</h1>
+    <h1 class="titre" style="font-size:18.5pt;line-height:1.2;margin-top:7mm">Vendre à Paris, avec une agence<br>qui connaît votre rue.</h1>
     <p class="cap" style="font-size:5.8pt;color:#c9c9c4;margin-top:4mm">${lieux}</p>
   </div>
 </section>`,
@@ -235,18 +238,19 @@ const flyers = [
     famille: 'Flyer A5 « Pierre »',
     nom: 'Square d’Anvers',
     conseil: true,
-    idee: 'L’avenue Trudaine et le Sacré-Cœur au fond : votre adresse en photo. Le titre parle du prix de chaque rue, ce que le site sait faire.',
+    idee: 'L’avenue Trudaine et le Sacré-Cœur au fond, sur fond blanc. Le titre parle du prix de chaque rue, ce que le site sait faire.',
     recto: `
-<section class="page" style="width:${A5.l}mm;height:${A5.h}mm;background:#000">
+<section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
   <img class="img" src="${url('photo-anvers.jpg')}" style="left:0;top:0;width:100%;height:122mm;object-position:50% 70%">
-  <div class="abs" style="left:0;top:122mm;width:100%;bottom:0;background:var(--noir);color:#fff;padding:10mm ${X}mm 0">
-    ${marque({ mot: '#fff', largeur: 38 })}
+  <div class="abs" style="left:${X}mm;top:${122 + 10}mm;right:${X}mm">
+    ${marque({ largeur: 38 })}
     <h1 class="titre" style="font-size:19pt;line-height:1.2;margin-top:8mm">De l'avenue Trudaine à la Butte,<br>chaque rue a son prix.</h1>
     <div class="filet" style="margin-top:5mm"></div>
-    <p class="cap" style="font-size:5.8pt;color:#c9c9c4;margin-top:3.4mm">Les prix de votre rue sur trudaines.com</p>
+    <p class="cap" style="font-size:5.8pt;color:var(--gris);margin-top:3.4mm">Les prix de votre rue sur trudaines.com</p>
   </div>
+  <p class="abs cap" style="left:${X}mm;bottom:${A5.fp + 7}mm;font-size:5.4pt;color:var(--gris)">Agence immobilière · Vente · Gestion · Recherche</p>
 </section>`,
-    verso: versoNoir,
+    verso: versoBlanc,
   },
   {
     id: 'flyer-pierre-3-facade',
