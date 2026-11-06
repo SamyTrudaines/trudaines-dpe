@@ -268,6 +268,42 @@ const flyers = [
 </section>`,
     verso: versoNoir,
   },
+  {
+    id: 'flyer-dessin-1-angle',
+    famille: 'Flyer A5 « Dessin »',
+    nom: 'Immeuble dessiné',
+    conseil: true,
+    idee: 'La composition Immopolis : l’immeuble dessiné en contre-plongée occupe la gauche, le logo et le titre se logent dans le ciel blanc à droite.',
+    recto: `
+<section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
+  <img class="img" src="${url('encre-perspective.jpg')}" style="left:0;bottom:0;width:104mm;height:${A5.h}mm;object-position:50% 100%;transform:scaleX(-1)">
+  <div class="abs" style="right:${X}mm;top:${A5.fp + 11}mm">${marque({ largeur: 42 })}</div>
+  <h1 class="abs titre" style="right:${X}mm;top:${A5.fp + 36}mm;width:66mm;text-align:right;font-size:21pt;line-height:1.18;background:#fff;padding:0 0 2mm 2mm">De l'avenue Trudaine<br>à la Butte,<br>chaque rue<br>a son prix.</h1>
+  <div class="abs filet" style="right:${X}mm;top:${A5.fp + 88}mm"></div>
+  <p class="abs cap" style="right:${X}mm;top:${A5.fp + 92}mm;width:60mm;text-align:right;font-size:5.6pt;line-height:1.9;color:var(--gris);background:#fff">Les prix de votre rue<br>sur trudaines.com</p>
+  <p class="abs cap" style="right:${X}mm;bottom:${A5.fp + 7}mm;width:36mm;text-align:right;font-size:5.4pt;line-height:1.9;color:var(--gris)">Agence immobilière<br>Vente · Gestion<br>Recherche</p>
+</section>`,
+    verso: versoBlanc,
+  },
+  {
+    id: 'flyer-dessin-2-facade',
+    famille: 'Flyer A5 « Dessin »',
+    nom: 'Façade dessinée',
+    idee: 'La mise en page du Pierre 2, la photo remplacée par une façade haussmannienne à l’encre.',
+    recto: `
+<section class="page" style="width:${A5.l}mm;height:${A5.h}mm">
+  <img class="img" src="${url('encre-facade.jpg')}" style="left:0;top:0;width:100%;height:122mm;object-position:50% 30%">
+  <div class="abs" style="left:0;top:122mm;width:100%;border-top:0.25mm solid var(--trait)"></div>
+  <div class="abs" style="left:${X}mm;top:${122 + 10}mm;right:${X}mm">
+    ${marque({ largeur: 38 })}
+    <h1 class="titre" style="font-size:19pt;line-height:1.2;margin-top:8mm">De l'avenue Trudaine à la Butte,<br>chaque rue a son prix.</h1>
+    <div class="filet" style="margin-top:5mm"></div>
+    <p class="cap" style="font-size:5.8pt;color:var(--gris);margin-top:3.4mm">Les prix de votre rue sur trudaines.com</p>
+  </div>
+  <p class="abs cap" style="left:${X}mm;bottom:${A5.fp + 7}mm;font-size:5.4pt;color:var(--gris)">Agence immobilière · Vente · Gestion · Recherche</p>
+</section>`,
+    verso: versoBlanc,
+  },
 ];
 
 /* ---------- Pochettes A4 : panneaux 226 x 316 mm, fond perdu 3 mm ---------- */
@@ -396,7 +432,7 @@ figcaption b { font-weight: 600; background: var(--orange); padding: 1px 6px; ma
 <h1>Imprimés Trudaines, bons à tirer</h1>
 <p>Fichiers Printoclock : flyer A5 152 x 214 mm (fond perdu 2 mm), pochette A4 en panneaux 226 x 316 mm (fond perdu 3 mm).</p>
 ${rangee('Flyer A5 « Encre », esprit Immopolis', flyers.slice(0, 3), 'Verso commun')}
-${rangee('Flyer A5 « Pierre », esprit Biens de Famille', flyers.slice(3), 'Verso commun')}
+${rangee('Flyer A5 « Pierre », esprit Biens de Famille', flyers.slice(3, 6), 'Verso commun')}\n${rangee('Flyer A5 « Dessin », Pierre 2 en dessin à la Immopolis', flyers.slice(6), 'Verso blanc')}
 ${rangee('Pochette A4, esprit Daniel Féau', pochettes, 'Dos (pochette 1)')}
 </body></html>`;
 writeFileSync(join(sortie, 'planche.html'), planche);
