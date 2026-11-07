@@ -27,6 +27,14 @@ export const site = {
     /* Base Adresse Nationale, « 2 Rue Livingstone 75018 Paris », score 0,97, relevé le 5 octobre 2026. */
     latitude: 48.884252,
     longitude: 2.345882,
+    /*
+     * Où se trouve le bureau, en repères que tout le monde connaît. Distances à vol d'oiseau entre les points de la
+     * Base Adresse Nationale, relevées le 19 octobre 2026 : parvis du Sacré-Cœur 338 m, place du Tertre 457 m,
+     * place des Abbesses 544 m, avenue Trudaine 386 m, place d'Anvers 243 m. Les assistants recommandent d'abord
+     * les agences situées dans le quartier : sans ces repères, ChatGPT plaçait le bureau « près de Trudaine » seulement.
+     */
+    situation:
+      'au pied de la Butte Montmartre, à 340 mètres du Sacré-Cœur et 550 mètres de la place des Abbesses, à 400 mètres de l\'avenue Trudaine',
   },
   horaires: [
     { jours: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], ouverture: '09:00', fermeture: '19:30' },

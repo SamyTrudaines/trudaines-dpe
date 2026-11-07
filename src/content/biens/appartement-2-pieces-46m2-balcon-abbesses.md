@@ -12,7 +12,8 @@ etage: "1er étage"
 ascenseur: true
 dpe: Vierge
 ges: Vierge
-statut: a-vendre
+accroche: "Balcon plein sud, vue dégagée"
+statut: vendu
 offMarket: true
 archive: true
 ordre: 50

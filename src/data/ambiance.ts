@@ -122,3 +122,31 @@ export function ambianceDeVoie(arrondissement: string, slug: string): Ambiance |
   for (let i = 0; i < slug.length; i += 1) somme = (somme * 31 + slug.charCodeAt(i)) % 100000;
   return ambiance[jeu[somme % jeu.length]];
 }
+
+/*
+ * Photographie posée en tête du formulaire d'estimation, choisie par quartier, à défaut par
+ * arrondissement. Le texte de remplacement reste celui de l'image : une rue pavée n'est pas
+ * présentée comme une rue des Batignolles quand elle n'en est pas une.
+ */
+const PHOTOS_QUARTIERS: [RegExp, string][] = [
+  [/trudaine|anvers/i, 'squareAnvers'],
+  [/abbesses/i, 'brasserieAbbesses'],
+  [/montmartre/i, 'maisonRose'],
+  [/lamarck|caulaincourt/i, 'montmartreDepuisLesToits'],
+  [/pigalle|martyrs|lorette/i, 'cafeDeCoin'],
+  [/saint-georges|clichy|trinit/i, 'facadeParis'],
+  [/batignolles|cardinet|epinettes|épinettes|joffrin/i, 'ruePavee'],
+  [/bonne-nouvelle|saint-martin/i, 'fenetreSurLesToits'],
+];
+const PHOTOS_SECTEURS: Record<string, string> = {
+  'paris-18': 'montmartreDepuisLesToits',
+  'paris-9': 'squareAnvers',
+  'paris-17': 'ruePavee',
+  'paris-10': 'cafeDeCoin',
+};
+
+export function photoEstimation(secteur = '', quartier = ''): Ambiance {
+  const parQuartier = quartier && PHOTOS_QUARTIERS.find(([motif]) => motif.test(quartier));
+  const cle = parQuartier ? parQuartier[1] : PHOTOS_SECTEURS[secteur] ?? 'facadeParis';
+  return ambiance[cle] ?? ambiance.facadeParis;
+}

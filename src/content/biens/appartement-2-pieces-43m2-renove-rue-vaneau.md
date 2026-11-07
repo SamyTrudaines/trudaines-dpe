@@ -14,9 +14,9 @@ etage: "2e étage"
 ascenseur: false
 dpe: D
 ges: B
-statut: a-vendre
+statut: vendu
 offMarket: false
-archive: false
+archive: true
 ordre: 50
 honorairesCharge: vendeur
 depensesEnergieAnnee: "2021, 2022 et 2023"

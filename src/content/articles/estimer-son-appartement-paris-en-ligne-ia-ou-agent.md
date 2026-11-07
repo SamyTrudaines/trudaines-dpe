@@ -32,13 +32,6 @@ faq:
     reponse: "Le plus souvent non quand vous envisagez de vendre. Chez Trudaines, l'estimation est offerte dans ce cas et vous gardez l'avis de valeur même si vous vendez ailleurs. Si vous voulez seulement connaître la valeur de votre bien, sans projet de vente avec l'agence, l'avis de valeur écrit est facturé 300 € TTC, déduit des honoraires si la vente nous est finalement confiée."
 ---
 
-**L'essentiel au 18 octobre 2026**
-
-- Estimation en ligne et assistants IA : un **ordre de grandeur**, pas un prix.
-- Base DVF : les **prix réellement signés**, rue par rue, avec quelques mois de retard.
-- À Montmartre, entre deux rues du même quartier : **140 000 €** d'écart sur 40 m².
-- La visite situe votre appartement dans la fourchette de sa rue.
-
 ## Quatre méthodes, quatre questions différentes
 
 | Méthode | Ce qu'elle sait faire | Ce qu'elle ne voit pas |

@@ -64,46 +64,52 @@ if (article.data.faq.length > 0) {
   donnees={donnees}
 >
   <article>
-    <header class="section pb-0 pt-10">
-      <div class="conteneur-texte">
+    {/*
+      Mise en page d'éditorial : titre centré sur une colonne de lecture, photographie plus large
+      au ratio 3:2, puis une seule colonne pour l'essentiel, le texte et les questions.
+    */}
+    <header class="pt-12 sm:pt-20">
+      <div class="conteneur-texte text-center">
         <p class="surtitre">
           <time datetime={dateIso(article.data.date)}>{dateFr(article.data.date)}</time>
           {dateMaj && <> · mis à jour le <time datetime={dateIso(dateMaj)}>{dateFr(dateMaj)}</time></>}
         </p>
-        <h1 class="titre-1 mt-6">{article.data.titre}</h1>
-        <p class="chapo mt-8">{article.data.chapo}</p>
-
-        {article.data.essentiel.length > 0 && (
-          <div class="bloc mt-12">
-            <h2 class="titre-3">L'essentiel</h2>
-            <ul class="mt-5 space-y-3 text-[color:var(--color-ardoise)]">
-              {article.data.essentiel.map((point) => (
-                <li class="flex gap-3">
-                  <span aria-hidden="true" class="text-[color:var(--color-or-fonce)]">·</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <h1 class="titre-1 mt-8 text-balance">{article.data.titre}</h1>
+        <span aria-hidden="true" class="mx-auto mt-10 block h-px w-10 bg-[color:var(--color-or-fonce)]"></span>
+        <p class="chapo mx-auto mt-10 max-w-[38rem] text-pretty">{article.data.chapo}</p>
       </div>
       {article.data.image && (
-        <div class="conteneur mt-12">
+        <div class="mx-auto mt-14 w-full max-w-[64rem] sm:mt-20 sm:px-6">
           <img
             src={article.data.image}
             alt={article.data.imageAlt}
             width="1400"
-            height="800"
+            height="933"
             fetchpriority="high"
             decoding="async"
-            class="aspect-[16/9] w-full object-cover"
+            class="aspect-[3/2] w-full object-cover"
           />
         </div>
       )}
     </header>
 
-    <div class="section">
-      <div class="conteneur-texte prose-trudaines">
+    <div class="section pt-14 sm:pt-20">
+      {article.data.essentiel.length > 0 && (
+        <div class="conteneur-texte">
+          <aside class="essentiel" aria-labelledby="essentiel">
+            <h2 id="essentiel" class="surtitre">L'essentiel</h2>
+            <ol>
+              {article.data.essentiel.map((point, i) => (
+                <li>
+                  <span aria-hidden="true" class="essentiel-numero">{String(i + 1).padStart(2, '0')}</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ol>
+          </aside>
+        </div>
+      )}
+      <div class="conteneur-texte prose-trudaines mt-14">
         <Content />
       </div>
       {article.data.faq.length > 0 && <Faq questions={article.data.faq} titre="Les questions que cet article règle" />}

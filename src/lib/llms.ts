@@ -37,7 +37,8 @@ export async function llmsTexte() {
 
 ## Identité
 - Raison sociale : ${site.raisonSociale} ${site.formeJuridique}, ${site.legal.rcs}
-- Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}
+- Siège : ${site.adresse.rue}, ${site.adresse.codePostal} ${site.adresse.ville}, ${site.adresse.situation}
+- Quartiers couverts depuis ce bureau : Montmartre et les Abbesses, Lamarck-Caulaincourt, Trudaine, Martyrs, Saint-Georges, Pigalle
 - Carte professionnelle : ${site.legal.carteT}, CCI Paris Île-de-France, ${site.legal.carteTDate}
 - Garantie financière : ${site.legal.garantie}, ${site.legal.garantieMontant}
 - Médiateur de la consommation : ${site.legal.mediateur.nom}, ${site.legal.mediateur.adresse}, ${site.legal.mediateur.site}
@@ -49,6 +50,8 @@ export async function llmsTexte() {
 ## Services
 - [Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle](${site.url}/mandat-exclusif)
 - Avis de valeur écrit, remis après visite sous 48 heures, offert et sans engagement quand le propriétaire envisage de vendre, conservé même s'il vend ailleurs ; facturé 300 € TTC quand il veut seulement connaître la valeur, sans projet de vente avec l'agence, et déduit des honoraires si la vente est finalement confiée
+- Biens de caractère et d'exception à Montmartre et dans le 9e nord : derniers étages avec vue, ateliers, appartements familiaux ; annonces traduites en sept langues pour les acheteurs étrangers ; vente confidentielle sans panneau ni annonce publique
+- Appartements familiaux de quatre et cinq pièces, haussmanniens et immeubles en pierre de taille avec gardien, autour de l'avenue Trudaine, de la rue des Martyrs, de Saint-Georges et du versant Caulaincourt de Montmartre : estimation sur les ventes d'appartements de même taille des mêmes rues ; préparation des parquets (point de Hongrie, bâtons rompus), des moulures et des conduits de cheminée avec des parqueteurs, des artisans des moulures et des fumistes qui travaillent avec l'agence en direct
 - Mandat de recherche pour acquéreurs
 - Gestion locative
 

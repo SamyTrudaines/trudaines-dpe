@@ -27,6 +27,17 @@
       if (premier && index > 0) premier.focus();
     }
 
+    /* Une étape dont tous les champs sont désactivés (l'étage pour une maison) est sans objet : on la saute. */
+    function sansObjet(et) {
+      var champs = et.querySelectorAll('input, select, textarea');
+      return champs.length > 0 && Array.prototype.every.call(champs, function (c) { return c.disabled; });
+    }
+    function voisine(index, sens) {
+      var i = index + sens;
+      while (i > 0 && i < etapes.length - 1 && sansObjet(etapes[i])) i += sens;
+      return Math.min(Math.max(i, 0), etapes.length - 1);
+    }
+
     form.addEventListener('click', function (e) {
       var suivant = e.target.closest('[data-suivant]');
       var precedent = e.target.closest('[data-precedent]');
@@ -48,11 +59,11 @@
         }
         /* Une étape franchie, un événement : estimation_etape1, estimation_etape2... mesurent où le tunnel perd ses visiteurs. */
         if (form.dataset.evenementEtape) evt(form.dataset.evenementEtape.replace(/\d+$/, '') + (courante + 1), {});
-        afficher(Math.min(courante + 1, etapes.length - 1));
+        afficher(voisine(courante, 1));
       }
       if (precedent) {
         e.preventDefault();
-        afficher(Math.max(courante - 1, 0));
+        afficher(voisine(courante, -1));
       }
     });
 

@@ -46,7 +46,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75009',
     nom: 'Paris 9e',
     nomLong: '9e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 9e | Trudaines',
+    titre: 'Estimation appartement Paris 9, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 9e nord, Trudaine | Trudaines',
@@ -66,6 +66,11 @@ export const secteurs: Secteur[] = [
         question: "Comment estimez-vous un appartement dans le 9e arrondissement ?",
         reponse:
           "Nous partons des ventes signées les douze derniers mois dans votre quartier, extraites de la base des valeurs foncières publiée par l'administration fiscale, puis nous les confrontons aux biens en concurrence aujourd'hui. La visite ajoute ce qu'aucune donnée ne contient : la lumière réelle, la vue, le bruit, l'état des parties communes, la qualité du plan. Vous recevez un avis de valeur écrit qui explique chaque ajustement.",
+      },
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 9e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier, hôtel particulier ou immeuble, de Trudaine-Maubeuge à Saint-Georges et de Lorette-Martyrs à Clichy-Trinité. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
       },
       {
         question: "Le marché a corrigé, vais-je vendre sous le prix ?",
@@ -99,7 +104,7 @@ export const secteurs: Secteur[] = [
     arrondissement: '75018',
     nom: 'Paris 18e',
     nomLong: '18e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 18e | Trudaines',
+    titre: 'Estimation appartement Paris 18, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
     titreAgence: 'Agence immobilière Paris 18e, rue Livingstone | Trudaines',
@@ -139,6 +144,16 @@ export const secteurs: Secteur[] = [
         question: "Combien de visites faut-il pour vendre un bien dans le 18e ?",
         reponse:
           "Nous suivons ce chiffre mandat par mandat et nous vous le communiquons chaque semaine. Le chiffre utile est le rapport entre visites et offres. Beaucoup de visites sans offre signifie presque toujours un écart entre le prix affiché et ce que le bien offre réellement.",
+      },
+      {
+        question: "Comment se passe une estimation immobilière à Paris 18 ?",
+        reponse:
+          "En deux temps, et l'un n'oblige pas à l'autre. En ligne d'abord : votre adresse, la surface, l'étage, l'état et vos coordonnées suffisent pour recevoir une fourchette calculée sur les ventes signées de votre rue et des rues voisines. Puis, si vous envisagez de vendre, une visite de quarante-cinq minutes et un avis de valeur écrit sous 48 heures, qui cite les ventes comparables. L'estimation est offerte quand vous envisagez de vendre.",
+      },
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 18e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier d'artiste, maison de ville, hôtel particulier ou immeuble. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour une maison, un atelier ou un immeuble, l'estimation se fait sur place, de Jules-Joffrin aux Abbesses et de Lamarck à la Goutte-d'Or.",
       },
       {
         question: "Travaillez-vous aussi le nord du 18e ?",
@@ -205,9 +220,9 @@ export const secteurs: Secteur[] = [
     arrondissement: '75017',
     nom: 'Paris 17e',
     nomLong: '17e arrondissement de Paris',
-    titre: 'Estimation immobilière et appartement Paris 17e | Trudaines',
+    titre: 'Estimation appartement Paris 17, estimation immobilière gratuite | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 17e : Batignolles, Épinettes, Brochant. Avis de valeur écrit sous 48 heures.",
+      "Estimation immobilière gratuite à Paris 17e : Batignolles, Legendre-Lévis, Épinettes. Avis de valeur écrit sous 48 heures.",
     titreAgence: 'Agence immobilière Paris 17e, Batignolles | Trudaines',
     descriptionAgence:
       "Agence immobilière pour vendre aux Batignolles, rue Legendre, Cardinet et Épinettes. Prix par rue, ventes signées.",
@@ -221,6 +236,11 @@ export const secteurs: Secteur[] = [
     fourchette:
       "7 375 à 13 246 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
     faq: [
+      {
+        question: "Estimez-vous tout type de bien immobilier dans le 17e ?",
+        reponse:
+          "Oui : appartement, duplex, atelier, maison de ville, hôtel particulier ou immeuble, des Batignolles aux Épinettes et de Cardinet à la place de Clichy. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
+      },
       {
         question: "Quel est le prix au mètre carré dans le 17e arrondissement ?",
         reponse:

@@ -1,0 +1,31 @@
+---
+/**
+ * Encart Trudaines WinWin en fin de fiche : la prime, un exemple chiffré par le barème
+ * (src/lib/bareme.ts, jamais un taux recopié) et le lien vers /recommander.
+ */
+import { parrainage } from '../data/site';
+import { pourcent, primeVente } from '../lib/bareme';
+import { prix as euros } from '../lib/format';
+
+interface Props { origine?: string }
+const { origine = 'fiche' } = Astro.props;
+const part = pourcent(parrainage.part);
+const exemple = { prix: 1000000, prime: primeVente(1000000) };
+---
+<section class="section filet" aria-labelledby="winwin">
+  <div class="conteneur grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-end">
+    <div>
+      <p class="surtitre marque-filet">{parrainage.nom}</p>
+      <h2 id="winwin" class="titre-2 mt-6 max-w-2xl">Un proche veut vendre, acheter ou louer ? Vous recevez {part} de nos honoraires.</h2>
+      <p class="mt-6 max-w-2xl text-[color:var(--color-ardoise)]">
+        Présentez-le-nous, nous faisons le reste. Votre prime est versée après la signature chez le notaire, ou au terme de la première année pour une location en gestion, selon un
+        accord écrit signé avant la mise en relation.
+      </p>
+    </div>
+    <div>
+      <p class="text-sm text-[color:var(--color-ardoise)]">Pour la vente d'un bien à {euros(exemple.prix)}</p>
+      <p class="mt-2 font-[family-name:var(--font-titre)] text-4xl text-[color:var(--color-encre)]">{euros(exemple.prime)}</p>
+      <a href="/recommander" class="bouton mt-6" data-evt={`winwin_${origine}`}>Recommander un proche</a>
+    </div>
+  </div>
+</section>

@@ -37,7 +37,8 @@ function requete(donnees, { json = true } = {}) {
 const recent = () => String(Date.now() - 20000);
 
 const cas = [
-  ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '2e à 4e', ascenseur: 'Oui', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
+  ['estimation', '../functions/api/estimation.js', { adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', surface: '72', pieces: '3', chambres: '2', etage: '3', etages: '7', ascenseur: 'Oui', exterieur: 'Balcon', surfaceExterieure: '6', proprietaire: 'Oui', usage: 'Résidence principale', horizon: 'Moins de 3 mois', prenom: 'Claire', nom: 'Martin', email: 'claire@example.com', telephone: '0601020304', consentement: 'oui', secteur: 'paris-9', horodatage: recent() }, 3],
+  ['estimation maison, sans étage', '../functions/api/estimation.js', { adresse: '8 villa des Lilas, 75019 Paris', type: 'Maison', surface: '140', terrain: '320', pieces: '6 et plus', chambres: '4', sallesDeBain: '2', etat: 'Rénové', horizon: 'Plus tard', prenom: 'Luc', nom: 'Bernard', email: 'luc@example.com', telephone: '0601020304', horodatage: recent() }, 3],
   ['rappel', '../functions/api/rappel.js', { prenom: 'Odile', telephone: '06 01 02 03 04', moment: 'Le matin', adresse: '8 rue Lepic, 75018 Paris', consentement: 'oui', secteur: 'paris-18', horodatage: recent() }, 3],
   ['visite', '../functions/api/visite.js', { prenom: 'Paul', nom: 'Durand', email: 'paul@example.com', telephone: '0601020304', creneaux: 'Samedi matin', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
   ['fiche-bien', '../functions/api/fiche-bien.js', { email: 'paul@example.com', telephone: '0601020304', reference: 'EXEMPLE-01', bien: 'Trois pièces', horodatage: recent() }, 4],
@@ -47,6 +48,10 @@ const cas = [
   ['contact', '../functions/api/contact.js', { prenom: 'Marc', nom: 'Petit', email: 'marc@example.com', telephone: '0601020304', sujet: 'Vendre', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 3],
   ['recommandation', '../functions/api/recommandation.js', { prenom: 'Hélène', nom: 'Girard', email: 'helene@example.com', telephone: '0601020304', projet: 'Vente', contexte: 'Un voisin vend son trois pièces au printemps.', consentement: 'oui', horodatage: recent() }, 3],
   ['temoignage', '../functions/api/temoignage.js', { prenom: 'Julien', email: 'julien@example.com', note: '5', texte: 'Vente conclue en trois semaines, comptes rendus après chaque visite.', quartier: 'Montmartre', projet: 'Vente', publication: 'oui', horodatage: recent() }, null],
+  ['suivi de rue, propriétaire', '../functions/api/suivi-rue.js', { email: 'anne@example.com', rue: 'rue Lepic', proprietaire: 'oui', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 3],
+  ['suivi de rue, visiteur', '../functions/api/suivi-rue.js', { email: 'yves@example.com', rue: 'rue Lepic', origine: '/prix-immobilier/rue-lepic-18', horodatage: recent() }, 6],
+  ['lettre, propriétaire', '../functions/api/lettre.js', { email: 'anne@example.com', proprietaire: 'oui', origine: '/', horodatage: recent() }, 3],
+  ['lettre, visiteur', '../functions/api/lettre.js', { email: 'yves@example.com', origine: '/', horodatage: recent() }, 6],
   ['candidature', '../functions/api/candidature.js', { prenom: 'Inès', nom: 'Roux', email: 'ines@example.com', telephone: '0601020304', profil: 'Étudiant ou jeune diplômé', secteurSouhaite: 'Paris 9e', message: 'Bonjour', consentement: 'oui', horodatage: recent() }, 5],
 ];
 
@@ -94,6 +99,23 @@ const rappelSansCase = await rappel.onRequestPost({ request: requete({ prenom: '
 if (rappelSansCase.status !== 200) echecs++;
 console.log(`${rappelSansCase.status === 200 ? 'OK   ' : 'ÉCHEC'} rappel sans case à cocher : demande acceptée · statut ${rappelSansCase.status}`);
 
+const contactModule = await import(new URL('../functions/api/contact.js', import.meta.url).href);
+appels.length = 0;
+const robot = await contactModule.onRequestPost({ request: requete({ prenom: 'CharlestotNZ', nom: 'Charlestot', email: 'bot@example.com', sujet: 'Acheter', message: 'x', consentement: 'oui', horodatage: recent() }), env });
+const robotIgnore = robot.status === 200 && !appels.some((a) => a.url.endsWith('/contacts'));
+if (!robotIgnore) echecs++;
+console.log(`${robotIgnore ? 'OK   ' : 'ÉCHEC'} contact : robot « CharlestotNZ Charlestot » ignoré, rien dans Brevo`);
+appels.length = 0;
+const robot2 = await contactModule.onRequestPost({ request: requete({ prenom: 'DanieltedGM', nom: 'Robertted', email: 'bot@example.com', telephone: '87868869324', sujet: 'Acheter', message: 'Xin chào, tôi muốn biết giá của bạn.', consentement: 'oui', horodatage: recent() }), env });
+const robot2Ignore = robot2.status === 200 && appels.length === 0;
+if (!robot2Ignore) echecs++;
+console.log(`${robot2Ignore ? 'OK   ' : 'ÉCHEC'} contact : robot « DanieltedGM Robertted » ignoré, ni email ni Brevo`);
+appels.length = 0;
+const prenomCompose = await contactModule.onRequestPost({ request: requete({ prenom: 'Jean-Marie', nom: 'Dupont', email: 'jm@example.com', telephone: '0601020304', sujet: 'Acheter', message: 'Bonjour', consentement: 'oui', horodatage: recent() }), env });
+const prenomComposeOk = prenomCompose.status === 200 && appels.length > 0;
+if (!prenomComposeOk) echecs++;
+console.log(`${prenomComposeOk ? 'OK   ' : 'ÉCHEC'} contact : prénom composé « Jean-Marie » bien transmis`);
+
 const rappelRefuse = await rappel.onRequestPost({ request: requete({ prenom: 'Odile', telephone: '12', consentement: 'oui', horodatage: recent() }), env });
 if (rappelRefuse.status !== 400) echecs++;
 console.log(`${rappelRefuse.status === 400 ? 'OK   ' : 'ÉCHEC'} rappel : refus d'un numéro invalide · statut ${rappelRefuse.status}`);
@@ -109,6 +131,30 @@ for (const [fourchette, attendue] of [['380 000 € à 440 000 € (rue)', true]
   const ok = attendue ? contenu.includes('380 000') && contenu.includes('de votre rue') : !contenu.includes('gagné');
   if (!ok) echecs++;
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation : fourchette dans l'email du vendeur${attendue ? '' : ', texte libre refusé'}`);
+}
+
+/*
+ * Tri des demandes : l'objet de la notification porte la priorité, le SMS ne part que pour un
+ * projet de vente, et la confirmation suit le projet (rappel promis, ou page de la rue et guide).
+ */
+for (const [nom, champs, prefixe, sms, attendus, absents] of [
+  ['vendeur < 6 mois', { proprietaire: 'Oui', horizon: 'Moins de 3 mois' }, 'VENDEUR MOINS DE 6 MOIS ·', 1, ['24 heures ouvrées', 'gratuit'], ['300 €']],
+  ['vendeur non propriétaire', { proprietaire: 'Non', horizon: 'Vente commencée' }, 'VENDEUR MOINS DE 6 MOIS, NON PROPRIÉTAIRE ·', 1, ['24 heures ouvrées'], ['300 €']],
+  ['vendeur > 6 mois', { proprietaire: 'Oui', horizon: 'Plus de 6 mois' }, 'VENDEUR PLUS DE 6 MOIS ·', 1, ['24 heures ouvrées'], ['300 €']],
+  ['curiosité', { proprietaire: 'Oui', horizon: 'Pas de projet', rue: 'avenue-trudaine-09' }, 'CURIOSITÉ ·', 0, ['/prix-immobilier/avenue-trudaine-09', 'bien-vendre-paris-2026.pdf', '300 € TTC'], ['24 heures ouvrées']],
+  ['curiosité, rue douteuse', { proprietaire: 'Non', horizon: 'Vient de vendre', rue: '<a>piege</a>' }, 'CURIOSITÉ ·', 0, ['/prix-immobilier', '300 € TTC'], ['piege']],
+  ['location', { proprietaire: 'Oui', horizon: 'Mise en location' }, 'CURIOSITÉ, LOCATION ·', 0, ['300 € TTC'], ['24 heures ouvrées']],
+]) {
+  appels.length = 0;
+  await estimation.onRequestPost({ request: requete({ ...cas[0][2], ...champs }), env });
+  const courriels = appels.filter((a) => a.url.endsWith('/smtp/email'));
+  const agence = courriels.find((a) => a.corps.to?.[0]?.email === env.NOTIFICATION_EMAIL);
+  const client = JSON.stringify(courriels.find((a) => a.corps.to?.[0]?.email === cas[0][2].email)?.corps || '');
+  const nbSms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send')).length;
+  const ok = agence?.corps.subject.startsWith(prefixe) && nbSms === sms
+    && attendus.every((t) => client.includes(t)) && absents.every((t) => !client.includes(t));
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation, ${nom} : « ${agence?.corps.subject} » · SMS ${nbSms}`);
 }
 
 const incomplete = await estimation.onRequestPost({ request: requete({ adresse: 'x' }), env });

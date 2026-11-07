@@ -83,6 +83,10 @@ const annee = new Date().getFullYear();
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </p>
         <p class="pied-horaires">{site.horairesTexte}</p>
+        <p class="pied-reseaux">
+          <a href={site.reseaux.instagram} target="_blank" rel="noopener" data-evt="clic_reseau">Instagram</a>
+          <a href={site.reseaux.linkedin} target="_blank" rel="noopener" data-evt="clic_reseau">LinkedIn</a>
+        </p>
       </address>
     </div>
 
@@ -94,6 +98,40 @@ const annee = new Date().getFullYear();
         </ul>
       </div>
     ))}
+  </div>
+
+  <div class="pied-trait">
+    <form class="conteneur pied-lettre" method="POST" action="/api/lettre" data-trudaines data-evenement="inscription_lettre" aria-labelledby="lettre-titre">
+      <input type="hidden" name="horodatage" value="" />
+      <input type="hidden" name="origine" value={Astro.url.pathname} />
+      <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label for="lettre-controle">Ne pas remplir</label>
+        <input type="text" id="lettre-controle" name="controle" tabindex="-1" autocomplete="off" />
+      </div>
+      <div data-corps class="pied-lettre-corps">
+        <div>
+          <h2 id="lettre-titre" class="titre-3">La lettre de Trudaines</h2>
+          <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Une fois par mois au plus : les ventes signées dans nos quartiers, et ce qu'elles disent du marché.</p>
+        </div>
+        <div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <label class="sr-only" for="lettre-email">Adresse email</label>
+            <input class="champ sm:flex-1" id="lettre-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="Votre adresse email" />
+            <button type="submit" class="bouton bouton-secondaire">S'inscrire</button>
+          </div>
+          <div class="mt-3 flex items-start gap-3">
+            <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id="lettre-proprietaire" name="proprietaire" type="checkbox" value="oui" />
+            <label class="text-sm text-[color:var(--color-ardoise)]" for="lettre-proprietaire">Je suis propriétaire à Paris.</label>
+          </div>
+          <p class="mt-2 text-xs text-[color:var(--color-ardoise)]">Désinscription en un clic dans chaque envoi. <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.</p>
+          <p class="mt-2 text-sm text-[#a4262c]" data-erreur hidden></p>
+        </div>
+      </div>
+      <div data-confirmation hidden>
+        <p class="titre-3" role="status">C'est noté.</p>
+        <p class="mt-2 text-sm text-[color:var(--color-ardoise)]">Un email de confirmation vient de partir.</p>
+      </div>
+    </form>
   </div>
 
   <div class="pied-trait">

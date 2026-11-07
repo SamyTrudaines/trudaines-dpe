@@ -36,11 +36,18 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
 - Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
-  le contact demandé avant de révéler le prix. Étapes : 1 adresse et type ; 2 surface, pièces, chambres, avec
-  l'aperçu du nombre de ventes signées de la rue (jamais le prix) ; 3 étage, ascenseur, projet ; 4 prénom, email,
-  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF de la rue, ajustée
-  par étage, ascenseur et typologie (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi et revient
-  dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
+  le contact demandé avant de révéler le prix. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
+  type en six cases illustrées (`PictoBien` : appartement, maison, duplex, loft ou atelier, hôtel particulier, immeuble
+  ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
+  ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
+  4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
+  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, nom, email,
+  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF part de la médiane de la rue rapprochée de celle
+  des rues à moins de 400 m (poids v / (v + 10), constante mesurée sur les ventes ; voisinage `c` de
+  `/estimation-rues.json`), avec la dispersion et l'écart par taille du voisinage ; elle est placée entre
+  les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
+  l'état et les atouts, balcon ou terrasse comptés au tiers de leur surface sans dépasser 10 % de la surface habitable (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
+  et revient dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
   L'adresse saisie en tête de page (`EntreeEstimation`) ou sur l'accueil (`/estimation?adresse=`) fait passer
   directement à l'étape 2. Événements GA4 `estimation_etape1` à `3`, `estimation_apercu`, `estimation_envoyee`.
 - Deux voies dans chaque bloc d'estimation : « Estimer en ligne » ou « Être rappelé » (`functions/api/rappel.js`,
@@ -73,7 +80,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   `src/data/agences-locales.ts`, gabarit `src/pages/agence-immobiliere-[lieu].astro`, faits communs (en bref,
   questions) dans `src/lib/agence.ts`. Repères géocodés par la Base Adresse Nationale, prix tirés de rues.json.
 - Acquéreurs : alerte complète `FormulaireAlerte` (/acheter#alerte) et alerte express `AlerteExpress`
-  (accueil, fiches, références, quartiers), une seule fonction `functions/api/alerte.js`. Attributs Brevo
+  (fiches, références, quartiers ; plus sur l'accueil depuis novembre 2026), une seule fonction `functions/api/alerte.js`. Attributs Brevo
   `DELAI_ACHAT`, `FINANCEMENT`, `VENTE_PREALABLE` à créer : tant qu'ils manquent, le contact entre sans eux.
 - Photo d'accueil : original dans `assets/photos/square-anvers-trudaine.jpg` (7360 px), variantes AVIF et WebP
   par `scripts/photo-ouverture.mjs`, jamais agrandies ; largeurs dans `OUVERTURE` (`src/lib/images.ts`).
@@ -92,8 +99,8 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   (`scripts/marche-paris.py`). Le PDF est versionné : Cloudflare ne le régénère pas.
 
 - Estimation par quartier : `/estimation/<secteur>/<quartier>` (Épinettes, Cardinet, Batignolles, Bonne-Nouvelle, Saint-Martin,
-  Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin ;
-  Abbesses, Lamarck, Pigalle et Saint-Martin : 400 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
+  Saint-Georges, Trudaine-Maubeuge, Lorette-Martyrs, Pigalle, Clichy-Trinité, Montmartre, Abbesses, Lamarck, Jules-Joffrin, Legendre-Lévis ;
+  Abbesses, Lamarck, Pigalle, Saint-Martin et Legendre-Lévis : 400 à 450 m autour de leurs rues repères, sans limite administrative), textes dans `src/data/estimations-quartiers.ts`, prix calculés depuis rues.json. Choisis d'après les
   requêtes que Search Console attribue déjà au site.
   Mesure commune dans `src/lib/estimation-quartier.ts` : médiane pondérée interpolée des médianes de voie
   (`medianePonderee`, `src/lib/rues.ts`), prix par taille (`typologiesDesRues`). Les pages `/quartiers/<id>`, le tableau
@@ -105,6 +112,10 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Suivi des requêtes visées : bloc « Requêtes visées » (colonnes AB à AF) de l'onglet `synthese` de la feuille
   Search Console, formules sur l'onglet `donnees`.
 
+- Suivi de rue : formulaire d'un champ (`SuiviRue`, `functions/api/suivi-rue.js`) sur /prix-immobilier/<slug>, email
+  seul, case « propriétaire » qui envoie le contact dans la liste vendeurs (sinon téléchargements) ; Samy prévenu par email.
+- Robots des formulaires : `suspect()` écarte aussi tout prénom d'un mot collé à deux majuscules (« CharlestotNZ »,
+  « DanieltedGM »), sans email ni inscription dans Brevo.
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
 - Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans

@@ -12,7 +12,8 @@ etage: "3e étage"
 ascenseur: true
 dpe: Vierge
 ges: Vierge
-statut: a-vendre
+accroche: "Traversant, deux balcons et une suite"
+statut: vendu
 offMarket: true
 archive: true
 ordre: 50

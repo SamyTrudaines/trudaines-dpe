@@ -4,8 +4,8 @@ import { site } from '../data/site';
  * `large` : aligné sur le conteneur large de la fiche d'un bien. La page
  * courante n'y est pas répétée sur téléphone : son titre suit immédiatement.
  */
-interface Props { etapes: { nom: string; href?: string }[]; large?: boolean }
-const { etapes, large = false } = Astro.props;
+interface Props { etapes: { nom: string; href?: string }[]; large?: boolean; masqueMobile?: boolean }
+const { etapes, large = false, masqueMobile = false } = Astro.props;
 const complet = [{ nom: 'Accueil', href: '/' }, ...etapes];
 const donnees = {
   '@context': 'https://schema.org',
@@ -18,7 +18,7 @@ const donnees = {
   })),
 };
 ---
-<nav aria-label="Fil d'Ariane" class={`${large ? 'conteneur-large' : 'conteneur'} pt-6`}>
+<nav aria-label="Fil d'Ariane" class={`${large ? 'conteneur-large' : 'conteneur'} pt-6${masqueMobile ? ' hidden sm:block' : ''}`}>
   <ol class="flex flex-wrap items-center gap-2 text-xs text-[color:var(--color-ardoise)]">
     {complet.map((e, i) => (
       <li class={large && i === complet.length - 1 ? 'hidden items-center gap-2 sm:flex' : 'flex items-center gap-2'}>

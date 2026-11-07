@@ -101,6 +101,7 @@ export const partenaires: Partenaire[] = [
     nom: 'Pierre-Marie Gérard',
     metier: 'Plombier chauffagiste, fondateur',
     structure: 'Gérard Plomberie',
+    photo: '/images/partenaires/pierre-marie-gerard.webp',
     presentation: [
       'Pierre-Marie Gérard a créé Gérard Plomberie en 2024, après un premier parcours de dessinateur, de chef de projet et d’architecte d’intérieur dans le commerce. Il est passé par l’apprentissage en génie climatique avant de s’installer à son compte.',
       'Ce double parcours lui donne un regard d’architecte sur une rénovation. Il voit le chantier dans son ensemble : les réseaux, les volumes, l’usage des pièces, l’ordre des travaux.',

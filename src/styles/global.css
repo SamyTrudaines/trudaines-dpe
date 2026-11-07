@@ -111,6 +111,14 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
+  /*
+   * Sur grand écran, tout le site passe à 17 px de base : textes, marges et
+   * titres grandissent ensemble, le gris des légendes devient lisible à un
+   * mètre de l'écran. Le téléphone garde ses 16 px.
+   */
+  @media (min-width: 1280px) {
+    html { font-size: 106.25%; }
+  }
   body {
     background-color: #ffffff;
     color: var(--color-encre);
@@ -346,20 +354,77 @@
   /* Fond crème, pour marquer un changement de propos sans tracer de ligne. */
   .section-creme { background-color: var(--color-papier); }
 
-  .prose-trudaines :where(p, ul, ol) { margin-block: 1.25rem; }
-  .prose-trudaines :where(h2) { font-family: var(--font-titre); font-size: 1.3rem; margin-top: 3rem; margin-bottom: 1rem; }
-  .prose-trudaines :where(h3) { font-family: var(--font-titre); font-size: 1rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-  .prose-trudaines :where(ul) { list-style: disc; padding-left: 1.25rem; }
-  .prose-trudaines :where(ol) { list-style: decimal; padding-left: 1.25rem; }
-  .prose-trudaines :where(li) { margin-block: 0.5rem; }
-  .prose-trudaines :where(a) { text-decoration: underline; text-underline-offset: 0.25em; }
-  .prose-trudaines :where(blockquote) {
-    border-left: 2px solid var(--color-nuit);
-    padding-left: 1.5rem;
+  /* Texte des articles : une colonne de lecture, des repères fins à la couleur de la marque. */
+  .prose-trudaines { font-size: 1.0625rem; line-height: 1.85; color: var(--color-encre); }
+  .prose-trudaines :where(p, ul, ol) { margin-block: 1.4rem; }
+  .prose-trudaines :where(h2) {
     font-family: var(--font-titre);
-    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.75rem);
+    line-height: 1.3;
+    margin-top: 4rem;
+    margin-bottom: 1.25rem;
+  }
+  .prose-trudaines :where(h2)::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1px;
+    margin-bottom: 1.25rem;
+    background-color: var(--color-or-fonce);
+  }
+  .prose-trudaines :where(h3) { font-family: var(--font-titre); font-style: italic; font-size: 1.15rem; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+  .prose-trudaines :where(strong) { font-weight: 600; color: var(--color-encre); }
+  .prose-trudaines :where(ul) { list-style: none; padding-left: 0; }
+  .prose-trudaines :where(ul > li) { position: relative; padding-left: 1.5rem; }
+  .prose-trudaines :where(ul > li)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.8em;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: var(--color-or-fonce);
+  }
+  .prose-trudaines :where(ol) { list-style: none; padding-left: 0; counter-reset: point; }
+  .prose-trudaines :where(ol > li) { position: relative; padding-left: 2.5rem; counter-increment: point; }
+  .prose-trudaines :where(ol > li)::before {
+    content: counter(point, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-titre);
+    font-style: italic;
+    color: var(--color-or-fonce);
+  }
+  .prose-trudaines :where(li) { margin-block: 0.75rem; }
+  .prose-trudaines :where(a) { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; text-decoration-color: var(--color-or-fonce); }
+  .prose-trudaines :where(blockquote) {
+    margin-block: 2.75rem;
+    border-left: 1px solid var(--color-or-fonce);
+    padding-left: 1.75rem;
+    font-family: var(--font-titre);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
     color: var(--color-encre);
   }
+  /* Ligne de sources en fin d'article, écrite en italique dans le texte. */
+  .prose-trudaines > p:last-child:has(> em:only-child) {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-trait);
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: var(--color-ardoise);
+  }
+
+  /* Encadré « L'essentiel » des articles : filets fins, numéros en italique. */
+  .essentiel { border-block: 1px solid var(--color-trait); padding-block: 2.25rem; }
+  .essentiel ol { margin-top: 1.5rem; display: grid; gap: 1.1rem; }
+  .essentiel li { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); line-height: 1.7; color: var(--color-encre); }
+  .essentiel-numero { font-family: var(--font-titre); font-style: italic; color: var(--color-or-fonce); }
   .prose-trudaines :where(img) { margin-block: 2rem; }
   /* Photographie prise sur place, légendée sous l'image. */
   .prose-trudaines :where(figure) { margin-block: 2.5rem; }
@@ -1067,6 +1132,14 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 
 .pied-detache { margin-top: 3rem; border-top: 1px solid var(--color-trait); }
 .pied-trait { border-top: 1px solid var(--color-trait); }
+.pied-reseaux { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+
+/* Lettre de Trudaines : un champ, au-dessus des mentions légales. */
+.pied-lettre { padding-block: 2rem; }
+.pied-lettre-corps { display: grid; gap: 1.25rem; }
+@media (min-width: 1024px) {
+  .pied-lettre-corps { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; gap: 3rem; }
+}
 
 /* Mentions légales : le texte à gauche, les liens sur une ligne à droite. */
 .pied-legal {
@@ -1121,6 +1194,95 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   text-underline-offset: 0.35em;
 }
 .preuve-avis-etoiles { letter-spacing: 0.25em; color: var(--color-or-fonce); }
+/*
+ * Choix en pastilles du formulaire d'estimation : un toucher au lieu d'un menu déroulant.
+ * Le bouton radio ou la case reste dans la page, invisible, pour le clavier et la validation.
+ */
+.choix-groupe { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.choix { position: relative; display: inline-flex; }
+.choix input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.choix span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+  color: var(--color-encre);
+  background-color: #ffffff;
+  border: 1px solid var(--color-trait);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.choix:hover span { border-color: var(--color-encre); }
+.choix input:checked + span { color: #ffffff; background-color: var(--color-encre); border-color: var(--color-encre); }
+.choix input:focus-visible + span { outline: 2px solid var(--color-or); outline-offset: 2px; }
+.choix-groupe-large .choix { flex: 1 1 9rem; }
+.choix-groupe-large .choix span { width: 100%; min-height: 3.5rem; font-weight: 500; }
+.choix-groupe-liste { flex-direction: column; }
+.choix-groupe-liste .choix span { width: 100%; justify-content: flex-start; }
+/* Types de bien : six cases illustrées, deux colonnes sur téléphone, trois au-delà. */
+.types-bien { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; margin-top: 0.5rem; }
+@media (min-width: 640px) { .types-bien { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.type-bien { position: relative; display: block; }
+.type-bien input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.type-bien > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 6.25rem;
+  padding: 0.875rem 0.5rem;
+  color: var(--color-encre);
+  background-color: #ffffff;
+  border: 1px solid var(--color-trait);
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.type-bien-nom { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; line-height: 1.35; }
+.type-bien:hover > span { border-color: var(--color-encre); }
+.type-bien input:checked + span { color: #ffffff; background-color: var(--color-encre); border-color: var(--color-encre); }
+.type-bien input:focus-visible + span { outline: 2px solid var(--color-or); outline-offset: 2px; }
+.picto-bien .picto-accent { stroke: var(--color-or); }
+/* Compteurs − / + de l'étage et de la hauteur de l'immeuble. */
+.compteur-ligne { display: grid; grid-template-columns: 3rem minmax(0, 7rem) 3rem; margin-top: 0.5rem; }
+.compteur-ligne button { min-height: 3.125rem; font-size: 1.25rem; color: var(--color-encre); background: #ffffff; border: 1px solid var(--color-trait); cursor: pointer; }
+.compteur-ligne button:hover { border-color: var(--color-encre); }
+.compteur-ligne .champ { text-align: center; font-size: 1.125rem; font-weight: 500; border-left: 0; border-right: 0; -moz-appearance: textfield; appearance: textfield; }
+.compteur-ligne .champ::placeholder { font-size: 0.75rem; font-weight: 400; }
+.compteur-ligne .champ::-webkit-outer-spin-button,
+.compteur-ligne .champ::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.champ-unite { position: relative; max-width: 14rem; }
+.champ-unite .champ { padding-right: 3rem; font-size: 1.125rem; font-weight: 500; -moz-appearance: textfield; appearance: textfield; }
+/* Sans les flèches du navigateur, qui recouvraient le nombre saisi dans un champ étroit. */
+.champ-unite .champ::-webkit-outer-spin-button,
+.champ-unite .champ::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.champ-unite span { position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); color: var(--color-ardoise); pointer-events: none; }
+
+/*
+ * Deux colonnes de hauteurs très différentes (un texte court à côté d'un formulaire) : sur grand écran,
+ * la colonne courte suit la lecture au lieu de laisser un vide sous elle.
+ */
+@media (min-width: 1024px) {
+  .colonne-suit {
+    position: sticky;
+    top: calc(var(--entete-compact) + 2rem);
+    align-self: start;
+  }
+}
+/*
+ * Sur grand écran, le bloc d'estimation de l'accueil prend la hauteur du texte d'ouverture :
+ * contenu centré, séparé par un filet vertical, pour que les deux colonnes se répondent.
+ */
+@media (min-width: 1024px) {
+  .estimer-adresse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid var(--color-trait);
+    padding-left: 3rem;
+  }
+}
 .estimer-adresse .etiquette {
   font-size: 0.75rem;
   font-weight: 600;
@@ -1548,3 +1710,29 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 .choix-voie { padding: 0.85rem 0.5rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; color: var(--color-encre); background: #ffffff; border: 0; cursor: pointer; }
 .choix-voie + .choix-voie { border-left: 1px solid var(--color-encre); }
 .choix-voie[aria-pressed='true'] { background: var(--color-encre); color: #ffffff; }
+
+/* Accueil : les pages d'estimation et d'agence, repliées sous le territoire. */
+.liens-territoire summary { cursor: pointer; list-style: none; display: inline-block; }
+.liens-territoire summary::-webkit-details-marker { display: none; }
+.liens-territoire[open] summary { margin-bottom: 1.5rem; }
+
+/*
+ * Cartouche « Vendu » posé en haut à droite de la photographie d'un bien vendu :
+ * blanc, lettres d'encre espacées, filet orange dessous. Il ne masque rien du sujet.
+ */
+.cartouche-vendu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ffffff;
+  color: var(--color-encre);
+  padding: 0.5rem 0.875rem 0.4375rem;
+  font-family: var(--font-texte);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  line-height: 1;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-or);
+  pointer-events: none;
+}

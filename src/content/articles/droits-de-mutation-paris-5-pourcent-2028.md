@@ -30,11 +30,6 @@ faq:
     reponse: "Pas directement. Ce que l'acheteur paie en frais, il ne le met pas dans le prix : son budget total reste le même. Les primo-accédants, souvent acheteurs d'un deux ou trois-pièces, gardent une longueur d'avance, et présenter clairement leur avantage fiscal dans la négociation aide à conclure."
 ---
 
-**L'essentiel au 4 octobre 2026**
-
-- Part départementale des droits de mutation à Paris : **5 %** au lieu de **4,5 %**, pour les actes signés du **1er avril 2025 au 31 mars 2028** (Conseil de Paris, février 2025).
-- **Primo-accédants** qui achètent leur résidence principale : la hausse ne s'applique pas.
-
 ## Qui paie et combien ?
 
 Les droits de mutation sont payés par l'acheteur, au moment de l'acte, avec les autres frais d'acquisition. La hausse de 0,5 point sur la part départementale s'applique au prix de vente : sur un appartement de 700 000 €, elle représente 3 500 € de plus.

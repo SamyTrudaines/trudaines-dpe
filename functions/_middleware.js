@@ -36,6 +36,11 @@ export async function onRequest(context) {
   }
   if (reponse.status !== 404 || (method !== 'GET' && method !== 'HEAD')) return reponse;
   const adresse = new URL(url);
-  if (FICHIER.test(adresse.pathname) || adresse.pathname.startsWith('/api/')) return reponse;
+  /*
+   * /.well-known/ : adresses lues par des machines, jamais par un visiteur. Les assistants
+   * (Claude, ChatGPT) y cherchent si le connecteur /mcp demande une connexion ; une
+   * redirection vers l'accueil leur ferait croire que oui et bloquerait l'ajout.
+   */
+  if (FICHIER.test(adresse.pathname) || adresse.pathname.startsWith('/api/') || adresse.pathname.startsWith('/.well-known/')) return reponse;
   return Response.redirect(`${adresse.origin}/`, 301);
 }

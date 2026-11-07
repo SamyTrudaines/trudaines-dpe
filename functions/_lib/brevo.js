@@ -85,8 +85,19 @@ const DELAI_MINIMUM = 2500;
  * une horloge d'appareil en avance ne fait plus passer un visiteur pour un
  * robot. Sans elle, l'horodatage n'écarte un envoi que sur un écart positif.
  */
+/*
+ * Signature des robots qui remplissent les formulaires depuis octobre 2026 : un prénom d'un seul
+ * mot collé à deux majuscules (« CharlestotNZ », « DanieltedGM », « RobertGM »). Aucun prénom réel
+ * ne s'écrit ainsi ; un prénom tout en capitales (« JEAN ») ou composé (« Jean-Marie ») passe.
+ */
+function signatureRobot(donnees) {
+  const prenom = String(donnees.get('prenom') || '').trim();
+  return /^\p{Lu}\p{Ll}+\p{Lu}{2}$/u.test(prenom);
+}
+
 export function suspect(donnees) {
   if (PIEGES.some((champ) => String(donnees.get(champ) || '').trim() !== '')) return true;
+  if (signatureRobot(donnees)) return true;
   const duree = parseInt(donnees.get('duree') || '', 10);
   if (Number.isFinite(duree)) return duree >= 0 && duree < DELAI_MINIMUM;
   const horodatage = parseInt(donnees.get('horodatage') || '0', 10);

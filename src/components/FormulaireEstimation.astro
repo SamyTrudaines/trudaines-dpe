@@ -1,6 +1,7 @@
 ---
 import { preuveAvis } from '../lib/avis';
 import { lienWhatsapp } from '../lib/whatsapp';
+import PictoBien from './PictoBien.astro';
 
 interface Props {
   secteur?: string;
@@ -13,17 +14,26 @@ interface Props {
 }
 const { secteur = '', quartier = '', identifiant = 'estimation', evt, origine = '' } = Astro.props;
 const listeId = `adresses-${identifiant}`;
+/* Types de bien : la catégorie dit ce que le formulaire demande ensuite (étage pour un appartement, terrain pour une maison). */
+const types = [
+  { valeur: 'Appartement', picto: 'appartement', libelle: 'Votre appartement', categorie: 'appartement' },
+  { valeur: 'Maison', picto: 'maison', libelle: 'Votre maison', categorie: 'maison' },
+  { valeur: 'Duplex', picto: 'duplex', libelle: 'Votre duplex', categorie: 'appartement' },
+  { valeur: 'Loft ou atelier', picto: 'loft', libelle: 'Votre loft', categorie: 'appartement' },
+  { valeur: 'Hôtel particulier', picto: 'hotel', libelle: 'Votre hôtel particulier', categorie: 'maison' },
+  { valeur: 'Immeuble ou local', picto: 'immeuble', libelle: 'Votre bien', categorie: 'autre' },
+] as const;
 /* La preuve sociale sous la barre d'étapes : le chiffre vient des avis publiés, jamais écrit à la main. */
 const preuve = await preuveAvis();
 /* Après l'envoi : des photos par WhatsApp, pour que le premier appel parte du bien réel. */
 const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une estimation sur votre site. Voici quelques photos de mon appartement.");
 ---
-<div class="border border-[color:var(--color-trait)] bg-white p-4 sm:p-6 md:p-10" data-choix-estimation>
+<div class="border border-[color:var(--color-trait)] bg-white p-3 sm:p-4 xl:p-5" data-choix-estimation>
 {/*
   Deux voies, comme sur l'ancien site : estimer en ligne, ou être rappelé. Dans les deux cas Samy reçoit
   un email et un SMS et rappelle ; seule la seconde le promet au visiteur.
 */}
-<div class="mb-8 grid grid-cols-2 border border-[color:var(--color-encre)]" role="group" aria-label="Comment souhaitez-vous procéder ?">
+<div class="mb-5 grid grid-cols-2 border border-[color:var(--color-encre)]" role="group" aria-label="Comment souhaitez-vous procéder ?">
   <button type="button" class="choix-voie" aria-pressed="true" data-voie="en-ligne">Estimer en ligne</button>
   <button type="button" class="choix-voie" aria-pressed="false" data-voie="rappel">Être rappelé</button>
 </div>
@@ -46,16 +56,18 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
   <input type="hidden" name="horodatage" value="" />
   {/* Rempli pendant les étapes : l'agence voit la fourchette que le visiteur a eue sous les yeux. */}
   <input type="hidden" name="fourchette" value="" />
+  <input type="hidden" name="rue" value="" />
   <div class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
     <label for={`controle-${identifiant}`}>Ne pas remplir</label>
     <input type="text" id={`controle-${identifiant}`} name="controle" tabindex="-1" autocomplete="off" />
   </div>
 
   <div data-corps>
-    <div class="mb-8">
-      <p class="surtitre" data-compteur>Étape 1 sur 4</p>
-      <div class="mt-3 h-[2px] w-full bg-[color:var(--color-trait)]" role="presentation">
-        <div class="h-[2px] bg-[color:var(--color-nuit)] transition-[width] duration-200" style="width:25%" data-barre></div>
+    <div class="mb-5">
+      {/* Le numéro d'étape reste pour les lecteurs d'écran ; à l'œil, la barre suffit. */}
+      <p class="sr-only" data-compteur>Étape 1 sur 5</p>
+      <div class="h-[3px] w-full bg-[color:var(--color-trait)]" role="presentation">
+        <div class="h-[3px] bg-[color:var(--color-or)] transition-[width] duration-500 ease-out" style="width:20%" data-barre></div>
       </div>
       <p class="mt-3 text-xs text-[color:var(--color-ardoise)]">Gratuit, moins d'une minute.{preuve && ` ${preuve}`}</p>
     </div>
@@ -64,11 +76,11 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       Une question par écran, la plus simple d'abord : l'adresse. Le visiteur voit ensuite combien
       de ventes signées fondent son estimation, puis donne son contact pour la recevoir.
     */}
-    <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-6">Où se trouve votre bien ?</legend>
+    <fieldset data-etape data-nom-etape="Adresse" class="border-0 p-0">
+      <legend class="sr-only">Où se trouve votre bien ?</legend>
       <div class="grid gap-6">
         <div>
-          <label class="etiquette" for={`adresse-${identifiant}`}>Adresse du bien</label>
+          <label class="etiquette" for={`adresse-${identifiant}`}>Adresse du bien à estimer</label>
           <input
             class="champ"
             id={`adresse-${identifiant}`}
@@ -85,51 +97,171 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
             Utilisée uniquement pour retrouver les ventes signées de votre rue. Jamais publiée.
           </p>
         </div>
-        <div>
-          <label class="etiquette" for={`type-${identifiant}`}>Type de bien</label>
-          <select class="champ" id={`type-${identifiant}`} name="type" required>
-            <option value="Appartement">Appartement</option>
-            <option value="Maison">Maison</option>
-            <option value="Immeuble">Immeuble</option>
-            <option value="Local ou autre">Local ou autre</option>
-          </select>
-        </div>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Type de bien</legend>
+          <div class="types-bien">
+            {types.map((t, i) => (
+              <label class="type-bien">
+                <input type="radio" name="type" value={t.valeur} checked={i === 0} required={i === 0} data-type-libelle={t.libelle} data-categorie={t.categorie} />
+                <span><PictoBien type={t.picto} /><span class="type-bien-nom">{t.valeur}</span></span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
       </div>
       <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Commencer l'estimation</button>
     </fieldset>
 
-    <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-6">Sa surface et ses pièces</legend>
+    <fieldset data-etape data-nom-etape="Le bien" class="border-0 p-0">
+      <legend class="titre-3 mb-6"><span data-type-titre>Votre appartement</span>, sa surface et ses pièces</legend>
       {/* Rempli après l'adresse : le nombre de ventes signées sur lesquelles l'estimation s'appuie. */}
       <p class="mb-6 border-l-2 border-[color:var(--color-or)] pl-4 text-sm" data-apercu-ventes hidden></p>
-      <div class="grid gap-6 sm:grid-cols-3">
+      <div class="grid gap-5">
         <div>
-          <label class="etiquette" for={`surface-${identifiant}`}>Surface en m²</label>
-          <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="5" max="1000" required inputmode="numeric" />
+          <label class="etiquette" for={`surface-${identifiant}`}>Surface habitable</label>
+          <div class="champ-unite">
+            <input class="champ" id={`surface-${identifiant}`} name="surface" type="number" min="9" max="1000" required inputmode="numeric" placeholder="45" />
+            <span aria-hidden="true">m²</span>
+          </div>
         </div>
-        <div>
-          <label class="etiquette" for={`pieces-${identifiant}`}>Pièces</label>
-          <select class="champ" id={`pieces-${identifiant}`} name="pieces" required>
-            <option value="" disabled selected>Choisir</option>
-            <option value="1">1 pièce</option>
-            <option value="2">2 pièces</option>
-            <option value="3">3 pièces</option>
-            <option value="4">4 pièces</option>
-            <option value="5">5 pièces</option>
-            <option value="6 et plus">6 pièces et plus</option>
+        <div data-si-maison hidden>
+          <label class="etiquette" for={`terrain-${identifiant}`}>Surface du terrain</label>
+          <div class="champ-unite">
+            <input class="champ" id={`terrain-${identifiant}`} name="terrain" type="number" min="0" max="100000" required disabled inputmode="numeric" placeholder="300" />
+            <span aria-hidden="true">m²</span>
+          </div>
+        </div>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Nombre de pièces</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="pieces" value="1" required /><span>1</span></label>
+          <label class="choix"><input type="radio" name="pieces" value="2" /><span>2</span></label>
+          <label class="choix"><input type="radio" name="pieces" value="3" /><span>3</span></label>
+          <label class="choix"><input type="radio" name="pieces" value="4" /><span>4</span></label>
+          <label class="choix"><input type="radio" name="pieces" value="5" /><span>5</span></label>
+          <label class="choix"><input type="radio" name="pieces" value="6 et plus" /><span>6 et +</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Nombre de chambres</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="chambres" value="0" required /><span>Aucune</span></label>
+          <label class="choix"><input type="radio" name="chambres" value="1" /><span>1</span></label>
+          <label class="choix"><input type="radio" name="chambres" value="2" /><span>2</span></label>
+          <label class="choix"><input type="radio" name="chambres" value="3" /><span>3</span></label>
+          <label class="choix"><input type="radio" name="chambres" value="4" /><span>4</span></label>
+          <label class="choix"><input type="radio" name="chambres" value="5 et plus" /><span>5 et +</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Salles de bain ou salles d'eau</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="sallesDeBain" value="1" required /><span>1</span></label>
+          <label class="choix"><input type="radio" name="sallesDeBain" value="2" /><span>2</span></label>
+          <label class="choix"><input type="radio" name="sallesDeBain" value="3 et plus" /><span>3 et +</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Continuer</button>
+      </div>
+    </fieldset>
+
+    <fieldset data-etape data-nom-etape="État et atouts" class="border-0 p-0">
+      <legend class="titre-3 mb-6">Son état et ses atouts</legend>
+      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">Deux biens de la même rue s'écartent souvent de 20 % selon leur état et leurs atouts.</p>
+      <div class="grid gap-5">
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">État du bien</legend>
+          <div class="choix-groupe choix-groupe-liste">
+          <label class="choix"><input type="radio" name="etat" value="Neuf ou récent" required /><span>Neuf ou récent</span></label>
+          <label class="choix"><input type="radio" name="etat" value="Rénové" /><span>Rénové récemment</span></label>
+          <label class="choix"><input type="radio" name="etat" value="Très bon état" /><span>Très bon état</span></label>
+          <label class="choix"><input type="radio" name="etat" value="État correct" /><span>État correct</span></label>
+          <label class="choix"><input type="radio" name="etat" value="À rénover" /><span>À rénover</span></label>
+          </div>
+        </fieldset>
+        <div class="max-w-xs">
+          <label class="etiquette" for={`dpe-${identifiant}`}>DPE, facultatif</label>
+          <select class="champ" id={`dpe-${identifiant}`} name="dpe">
+            <option value="">Je ne sais pas</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
           </select>
         </div>
-        <div>
-          <label class="etiquette" for={`chambres-${identifiant}`}>Chambres</label>
-          <select class="champ" id={`chambres-${identifiant}`} name="chambres" required>
-            <option value="" disabled selected>Choisir</option>
-            <option value="0">Aucune, studio</option>
-            <option value="1">1 chambre</option>
-            <option value="2">2 chambres</option>
-            <option value="3">3 chambres</option>
-            <option value="4">4 chambres</option>
-            <option value="5 et plus">5 chambres et plus</option>
-          </select>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Extérieur, facultatif</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="exterieur" value="Aucun" /><span>Aucun</span></label>
+          <label class="choix"><input type="radio" name="exterieur" value="Balcon" /><span>Balcon</span></label>
+          <label class="choix"><input type="radio" name="exterieur" value="Terrasse" /><span>Terrasse</span></label>
+          </div>
+          <div class="mt-4 max-w-xs" data-si-exterieur hidden>
+            <label class="etiquette" for={`exterieur-${identifiant}`}>Sa surface</label>
+            <div class="champ-unite">
+              <input class="champ" id={`exterieur-${identifiant}`} name="surfaceExterieure" type="number" min="1" max="500" required disabled inputmode="numeric" placeholder="6" />
+              <span aria-hidden="true">m²</span>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Atouts, facultatif</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="checkbox" name="atouts" value="Vue dégagée" /><span>Vue dégagée</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Calme" /><span>Calme</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Lumineux" /><span>Très lumineux</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Cave" /><span>Cave</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Parking" /><span>Parking</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Chambre de service" /><span>Chambre de service</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Parties communes rénovées" /><span>Parties communes rénovées</span></label>
+          <label class="choix"><input type="checkbox" name="atouts" value="Ravalement récent" /><span>Ravalement récent</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Continuer</button>
+      </div>
+    </fieldset>
+
+    <fieldset data-etape data-nom-etape="Étage" class="border-0 p-0">
+      <legend class="titre-3 mb-6">Étage</legend>
+      <div class="grid gap-5">
+        {/* Sans objet pour une maison : les champs sont alors désactivés et ne bloquent pas l'étape. */}
+        <div class="grid gap-5" data-si-appartement>
+          <p class="text-sm text-[color:var(--color-ardoise)]">L'étage et l'ascenseur placent votre bien en haut ou en bas des prix de la rue.</p>
+          {/* Compteurs : l'étage du bien et la hauteur de l'immeuble se règlent ensemble, l'un ne dépassant jamais l'autre. */}
+          <div class="grid gap-4">
+            <div class="compteur" data-compteur-champ>
+              <label class="etiquette" for={`etage-${identifiant}`}>Étage du bien</label>
+              <div class="compteur-ligne">
+                <button type="button" data-moins aria-label="Un étage de moins">−</button>
+                <input class="champ" id={`etage-${identifiant}`} name="etage" type="number" min="0" max="40" required inputmode="numeric" placeholder="0 = rez-de-chaussée" data-etage />
+                <button type="button" data-plus aria-label="Un étage de plus">+</button>
+              </div>
+            </div>
+            <div class="compteur" data-compteur-champ>
+              <label class="etiquette" for={`etages-${identifiant}`}>Étages de l'immeuble</label>
+              <div class="compteur-ligne">
+                <button type="button" data-moins aria-label="Un étage de moins">−</button>
+                <input class="champ" id={`etages-${identifiant}`} name="etages" type="number" min="1" max="40" required inputmode="numeric" placeholder="6" data-etages />
+                <button type="button" data-plus aria-label="Un étage de plus">+</button>
+              </div>
+            </div>
+          </div>
+          <fieldset class="border-0 p-0">
+            <legend class="etiquette">Ascenseur</legend>
+            <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="ascenseur" value="Oui" required /><span>Oui</span></label>
+          <label class="choix"><input type="radio" name="ascenseur" value="Non" /><span>Non</span></label>
+            </div>
+          </fieldset>
         </div>
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
@@ -138,38 +270,38 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       </div>
     </fieldset>
 
-    <fieldset data-etape class="border-0 p-0">
-      <legend class="titre-3 mb-6">Étage et ascenseur</legend>
-      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">Ce sont eux qui placent votre bien en haut ou en bas des prix de la rue.</p>
-      <div class="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label class="etiquette" for={`etage-${identifiant}`}>Étage</label>
-          <select class="champ" id={`etage-${identifiant}`} name="etage" required>
-            <option value="" disabled selected>Choisir</option>
-            <option value="Rez-de-chaussée">Rez-de-chaussée</option>
-            <option value="1er">1er étage</option>
-            <option value="2e à 4e">2e à 4e étage</option>
-            <option value="5e et plus">5e étage et plus</option>
-            <option value="Dernier étage">Dernier étage</option>
-          </select>
-        </div>
-        <div>
-          <label class="etiquette" for={`ascenseur-${identifiant}`}>Ascenseur</label>
-          <select class="champ" id={`ascenseur-${identifiant}`} name="ascenseur" required>
-            <option value="" disabled selected>Choisir</option>
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-          </select>
-        </div>
-        <div class="sm:col-span-2">
-          <label class="etiquette" for={`horizon-${identifiant}`}>Votre projet</label>
-          <select class="champ" id={`horizon-${identifiant}`} name="horizon" required>
-            <option value="" disabled selected>Choisir</option>
-            <option value="Moins de 3 mois">Vendre dans les 3 mois</option>
-            <option value="3 à 6 mois">Vendre dans 3 à 6 mois</option>
-            <option value="Plus tard">Connaître la valeur, vendre plus tard</option>
-          </select>
-        </div>
+    <fieldset data-etape data-nom-etape="Ce bien et vous" class="border-0 p-0">
+      <legend class="titre-3 mb-6">Ce bien et vous</legend>
+      <div class="grid gap-5">
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Êtes-vous propriétaire ?</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="proprietaire" value="Oui" required /><span>Oui</span></label>
+          <label class="choix"><input type="radio" name="proprietaire" value="Non" /><span>Non</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Ce bien est</legend>
+          <div class="choix-groupe">
+          <label class="choix"><input type="radio" name="usage" value="Résidence principale" /><span>Résidence principale</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Résidence secondaire" /><span>Résidence secondaire</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Loué" /><span>Loué</span></label>
+          <label class="choix"><input type="radio" name="usage" value="Autre" /><span>Autre</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="border-0 p-0">
+          <legend class="etiquette">Envisagez-vous de vendre ?</legend>
+          <div class="choix-groupe choix-groupe-liste">
+          <label class="choix"><input type="radio" name="horizon" value="Vente commencée" required /><span>Oui, la vente est commencée</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Dès que possible" /><span>Oui, dès que possible</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Moins de 3 mois" /><span>Oui, d'ici 3 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="3 à 6 mois" /><span>Oui, d'ici 6 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Plus de 6 mois" /><span>Oui, dans plus de 6 mois</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Pas de projet" /><span>Non, pas de projet de vente</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Vient de vendre" /><span>Non, je viens de le vendre</span></label>
+          <label class="choix"><input type="radio" name="horizon" value="Mise en location" /><span>Non, je souhaite le louer</span></label>
+          </div>
+        </fieldset>
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
@@ -177,7 +309,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       </div>
     </fieldset>
 
-    <fieldset data-etape class="border-0 p-0">
+    <fieldset data-etape data-nom-etape="Vos coordonnées" class="border-0 p-0">
       <legend class="titre-3 mb-2">Où recevoir votre estimation ?</legend>
       <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
         Dans nos six arrondissements, votre fourchette s'affiche à l'écran dès l'envoi, calculée sur les ventes

@@ -1,0 +1,74 @@
+---
+/**
+ * Pictogrammes des types de bien du formulaire d'estimation : un trait fin, couleur du texte,
+ * un seul détail en orange de la marque. Dessinés pour Trudaines, sur une grille de 48.
+ */
+interface Props {
+  type: 'appartement' | 'maison' | 'duplex' | 'loft' | 'hotel' | 'immeuble';
+}
+const { type } = Astro.props;
+---
+<svg viewBox="0 0 48 48" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" aria-hidden="true" class="picto-bien">
+  {type === 'appartement' && (
+    <>
+      {/* Façade haussmannienne : toit mansardé, balcon filant au deuxième étage */}
+      <path d="M11 44V14l3-5h20l3 5v30" />
+      <path d="M11 14h26" />
+      <path d="M17 19v4M24 19v4M31 19v4M17 28v4M24 28v4M31 28v4" />
+      <path d="M14 25.5h20" class="picto-accent" />
+      <path d="M21 44v-6h6v6" />
+      <path d="M7 44h34" />
+    </>
+  )}
+  {type === 'maison' && (
+    <>
+      <path d="M9 22 24 9l15 13" />
+      <path d="M13 19v25h22V19" />
+      <path d="M21 44v-9h6v9" />
+      <path d="M17 25h4v4h-4zM27 25h4v4h-4z" />
+      <path d="M31 12v-3h3v6" class="picto-accent" />
+      <path d="M6 44h36" />
+    </>
+  )}
+  {type === 'duplex' && (
+    <>
+      {/* Deux niveaux reliés par un escalier intérieur */}
+      <path d="M10 44V8h28v36" />
+      <path d="M10 26h14" />
+      <path d="M24 44v-4h4v-4h4v-4h4" class="picto-accent" />
+      <path d="M15 13v6M22 13v6M30 13v6" />
+      <path d="M15 31v6" />
+      <path d="M6 44h36" />
+    </>
+  )}
+  {type === 'loft' && (
+    <>
+      {/* Verrière d'atelier sous un toit à un pan */}
+      <path d="M8 44V18l32-8v34" />
+      <path d="M14 22.5V40h20V18" />
+      <path d="M20.5 21v19M27 19.4V40M14 31h20" class="picto-accent" />
+      <path d="M5 44h38" />
+    </>
+  )}
+  {type === 'hotel' && (
+    <>
+      {/* Hôtel particulier : fronton central, ailes symétriques, porte cochère */}
+      <path d="M6 44V20h36v24" />
+      <path d="M6 20l4-5h28l4 5" />
+      <path d="M18 15l6-6 6 6" class="picto-accent" />
+      <path d="M11 25v5M17 25v5M31 25v5M37 25v5" />
+      <path d="M21 44v-8a3 3 0 0 1 6 0v8" />
+      <path d="M3 44h42" />
+    </>
+  )}
+  {type === 'immeuble' && (
+    <>
+      {/* Immeuble entier, commerce au rez-de-chaussée */}
+      <path d="M12 44V6h24v38" />
+      <path d="M17 11v4M24 11v4M31 11v4M17 19v4M24 19v4M31 19v4" />
+      <path d="M10 31h28l-2 3H12z" class="picto-accent" />
+      <path d="M15 44v-7h10v7M29 37h4v7" />
+      <path d="M7 44h34" />
+    </>
+  )}
+</svg>
