@@ -48,6 +48,8 @@ export async function onRequestPost({ request, env }) {
 
     const valeur = (champ) => String(donnees.get(champ) || '').trim();
     const prenom = valeur('prenom');
+    // Le nom n'est plus demandé par le formulaire : il ne reste que s'il arrive d'un ancien envoi.
+    const nomComplet = [prenom, valeur('nom')].filter(Boolean).join(' ');
     const email = valeur('email');
 
     const lignes = [
@@ -74,7 +76,7 @@ export async function onRequestPost({ request, env }) {
       ['Quartier', valeur('quartier')],
       // Page quartier ou rue d'où part la demande : dit à l'agence ce que le visiteur lisait.
       ['Page d’origine', valeur('origine')],
-      ['Nom', `${prenom} ${valeur('nom')}`],
+      ['Nom', nomComplet],
       ['Email', email],
       ['Téléphone', valeur('telephone')],
       ['Message', valeur('message')],
@@ -90,7 +92,7 @@ export async function onRequestPost({ request, env }) {
     });
 
     // SMS seulement pour un projet de vente : les vérifications de prix restent dans l'email.
-    if (vendeur) await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${prenom} ${valeur('nom')}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} A rappeler.`);
+    if (vendeur) await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} A rappeler.`);
 
     await embaser(env, {
       email,

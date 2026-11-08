@@ -41,7 +41,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
   ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
   4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
-  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, nom, email,
+  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, email,
   téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF part de la médiane de la rue rapprochée de celle
   des rues à moins de 400 m (poids v / (v + 10), constante mesurée sur les ventes ; voisinage `c` de
   `/estimation-rues.json`), avec la dispersion et l'écart par taille du voisinage ; elle est placée entre
