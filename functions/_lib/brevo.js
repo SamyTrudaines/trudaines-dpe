@@ -92,7 +92,21 @@ const DELAI_MINIMUM = 2500;
  */
 function signatureRobot(donnees) {
   const prenom = String(donnees.get('prenom') || '').trim();
-  return /^\p{Lu}\p{Ll}+\p{Lu}{2}$/u.test(prenom);
+  if (/^\p{Lu}\p{Ll}+\p{Lu}{2}$/u.test(prenom)) return true;
+
+  /*
+   * Rafale du 12 novembre 2026 à 2 h 59 : une centaine d'envois en une seconde, avec dans « prénom » et
+   * « nom » un appât russe (« Вам перевод … забрать тут https://tinyurl.com/… »). Un prénom ou un nom
+   * n'a ni lien, ni alphabet cyrillique, arabe ou asiatique, ni plus de 60 signes. Les champs d'identité
+   * et de sujet sont contrôlés ici, donc pour tous les formulaires du site.
+   */
+  const identite = ['prenom', 'nom', 'sujet', 'ville', 'adresse']
+    .map((champ) => String(donnees.get(champ) || ''))
+    .join(' ');
+  if (/https?:|www\.|\b(?:tinyurl|goo\.su|bit\.ly|t\.me|cutt\.ly)\b/i.test(identite)) return true;
+  if (/[Ѐ-ӿ؀-ۿ฀-๿぀-ヿ一-鿿가-힯]/.test(identite)) return true;
+  if (['prenom', 'nom'].some((champ) => String(donnees.get(champ) || '').trim().length > 60)) return true;
+  return false;
 }
 
 export function suspect(donnees) {
