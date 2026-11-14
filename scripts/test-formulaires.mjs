@@ -110,6 +110,27 @@ const robot2 = await contactModule.onRequestPost({ request: requete({ prenom: 'D
 const robot2Ignore = robot2.status === 200 && appels.length === 0;
 if (!robot2Ignore) echecs++;
 console.log(`${robot2Ignore ? 'OK   ' : 'ÉCHEC'} contact : robot « DanieltedGM Robertted » ignoré, ni email ni Brevo`);
+
+const robot3 = await contactModule.onRequestPost({ request: requete({ prenom: 'Вам перевод 184073 руб. забрать тут https://goo.su/Y2af70AxndTcR', nom: 'Вам перевод', email: 'victime@example.com', telephone: '0601020304', sujet: 'Acheter', message: 'x', consentement: 'oui', horodatage: recent() }), env });
+const robot3Ignore = robot3.status === 200 && appels.length === 0;
+if (!robot3Ignore) echecs++;
+console.log(`${robot3Ignore ? 'OK   ' : 'ÉCHEC'} contact : appât russe avec lien dans le prénom ignoré, aucun accusé envoyé`);
+
+const { salutation } = await import('../functions/_lib/brevo.js');
+const salutations = [
+  ['Bonjour Marie-Hélène,', 'Bonjour Marie-Hélène,'],
+  ["Bonjour Anne d'Arc,", "Bonjour Anne d'Arc,"],
+  ['Bonjour Gagnez 500 € sur exemple.top,', 'Bonjour,'],
+  ['Bonjour Вам перевод,', 'Bonjour,'],
+  ['Bonjour gain.top,', 'Bonjour,'],
+  ['Bonjour J.-P. Martin,', 'Bonjour J.-P. Martin,'],
+  ['Votre guide est en pièce jointe', 'Votre guide est en pièce jointe'],
+];
+for (const [entree, attendu] of salutations) {
+  const ok = salutation(entree) === attendu;
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} salutation « ${entree} » donne « ${salutation(entree)} »`);
+}
 appels.length = 0;
 const prenomCompose = await contactModule.onRequestPost({ request: requete({ prenom: 'Jean-Marie', nom: 'Dupont', email: 'jm@example.com', telephone: '0601020304', sujet: 'Acheter', message: 'Bonjour', consentement: 'oui', horodatage: recent() }), env });
 const prenomComposeOk = prenomCompose.status === 200 && appels.length > 0;

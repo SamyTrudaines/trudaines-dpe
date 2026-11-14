@@ -464,7 +464,25 @@ export const SIGNATURE = `<table cellpadding="0" cellspacing="0" border="0" styl
  * jamais du balisage : c'est ce qui empêche qu'une valeur de formulaire glisse un
  * lien dans un message expédié par notre domaine.
  */
+/*
+ * Le prénom d'une salutation vient du formulaire, et l'accusé de réception part à l'adresse saisie :
+ * un robot qui écrit son appât dans « prénom » fait alors porter son lien par notre expéditeur, à
+ * des inconnus (rafales des 11 au 14 novembre 2026, 150 accusés par nuit, quota Brevo épuisé).
+ * Seul un prénom plausible, en lettres latines, sans chiffre ni lien et court, reste dans
+ * « Bonjour … , » ; sinon la salutation devient « Bonjour, ».
+ */
+const PRENOM_PLAUSIBLE = /^\p{Script=Latin}[\p{Script=Latin}' .-]{0,39}$/u;
+
+export function salutation(titre) {
+  const trouve = /^Bonjour (.+),$/.exec(String(titre || ''));
+  if (!trouve) return titre;
+  const prenom = trouve[1].trim();
+  const plausible = PRENOM_PLAUSIBLE.test(prenom) && !/\.\p{L}{2,}/u.test(prenom);
+  return plausible ? `Bonjour ${prenom},` : 'Bonjour,';
+}
+
 export function gabaritClient(titre, paragraphes) {
+  titre = salutation(titre);
   const corps = paragraphes
     .filter(Boolean)
     .map(
