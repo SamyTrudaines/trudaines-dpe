@@ -25,6 +25,12 @@
 /images/*
   Cache-Control: public, max-age=2592000
 
+# Images de la signature mail : appelées depuis les messageries (Orange, Yahoo,
+# Outlook...), donc hors de la règle same-site, et tenues hors de l'index.
+/images/mail/*
+  ! Cross-Origin-Resource-Policy
+  X-Robots-Tag: noindex
+
 /fiches/*
   Cache-Control: public, max-age=3600
 
