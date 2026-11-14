@@ -136,7 +136,7 @@ export function emailValide(valeur) {
  * étranger au site ni d'alphabet non latin, et dans la limite d'un plafond horaire.
  */
 const HOTES_AUTORISES = /^(?:www\.)?(?:trudaines\.com|linkedin\.com|g\.page|[a-z0-9-]+\.googleusercontent\.com)$/i;
-const PLAFOND_EXTERNES_HEURE = 25;
+const PLAFOND_EXTERNES_HEURE = 10;
 
 function contenuDouteux(texte) {
   if (/[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/.test(texte)) return true;

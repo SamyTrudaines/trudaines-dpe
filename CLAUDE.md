@@ -118,7 +118,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   « DanieltedGM »), sans email ni inscription dans Brevo.
 - Défenses des formulaires (attaques des nuits du 12 et 13 novembre 2026) : 6 envois par IP et par quart d'heure
   (`functions/_middleware.js`, compteur Cache API), aucun email à un visiteur s'il contient un lien étranger au site ou un
-  alphabet non latin, 25 emails visiteurs par heure au plus (`envoyerEmail`). Une notification agence refusée par Brevo
+  alphabet non latin, 10 emails visiteurs par heure au plus (`envoyerEmail`, choix de Samy : le relever seulement si de vrais clients l'atteignent). Une notification agence refusée par Brevo
   (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile prêt, actif seulement avec
   `PUBLIC_TURNSTILE_SITEKEY` et `TURNSTILE_SECRET` dans Cloudflare.
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
