@@ -2,9 +2,9 @@
 titre: "Vendre un bien en indivision"
 question: "Comment vendre un appartement en indivision si un indivisaire refuse ?"
 chapo: "Vendre un bien indivis suppose en principe l'accord de tous. Quand un indivisaire bloque, l'article 815-5-1 du code civil permet à ceux qui détiennent au moins deux tiers des droits de faire autoriser la vente par le tribunal. La plupart des indivisions se dénouent pourtant sans juge : avec un chiffre incontestable sur la table, on se dispute moins."
-titreSeo: "Vendre en indivision : refus d'un héritier, partage judiciaire | Trudaines"
-descriptionSeo: "Unanimité, recours des deux tiers de l'article 815-5-1, partage judiciaire : ce que la loi permet quand un indivisaire refuse de vendre, expliqué calmement."
-dateMaj: 2026-10-09
+titreSeo: "Vendre en indivision : refus, partage judiciaire, licitation | Trudaines"
+descriptionSeo: "Un indivisaire refuse de vendre ? Recours des deux tiers, partage judiciaire, licitation, droit de partage : les voies prévues par la loi, et comment vendre au prix du marché."
+dateMaj: 2026-11-14
 ordre: 3
 motsCles:
   - vendre un bien en indivision
@@ -12,6 +12,9 @@ motsCles:
   - article 815-5-1 du code civil
   - sortir d'une indivision
   - vendre sa quote-part
+  - partage judiciaire vente
+  - licitation appartement
+  - droit de partage
 essentiel:
   - "Vendre le bien entier est un acte de disposition : il faut en principe l'accord de tous les indivisaires (article 815-3 du code civil)."
   - "Les indivisaires détenant au moins deux tiers des droits peuvent demander au tribunal judiciaire l'autorisation de vendre malgré un refus (article 815-5-1 du code civil)."
@@ -20,6 +23,7 @@ essentiel:
   - "Nul ne peut être contraint à demeurer dans l'indivision : le partage peut toujours être demandé en justice (article 815 du code civil)."
   - "Chaque indivisaire peut vendre sa seule quote-part, mais les autres indivisaires sont prioritaires pour la racheter (article 815-14 du code civil)."
   - "Un avis de valeur écrit et argumenté est souvent ce qui débloque une indivision : on ne se dispute plus sur le prix, seulement sur la décision."
+  - "Le partage d'un bien indivis est taxé par le droit de partage : 2,5 % de l'actif net partagé, ramené à 1,1 % pour les époux et partenaires de PACS qui se séparent (article 746 du code général des impôts)."
 faq:
   - question: "Un seul indivisaire peut-il mettre le bien en vente ?"
     reponse: "Non. La mise en vente du bien entier suppose l'accord de tous, et le mandat de vente se signe par tous les indivisaires ou leurs mandataires. Un indivisaire seul peut en revanche vendre sa quote-part, en respectant le droit de préemption des autres prévu à l'article 815-14 du code civil, mais les acheteurs de quote-part sont rares et les prix faibles."
@@ -29,6 +33,10 @@ faq:
     reponse: "En principe oui : celui qui jouit privativement d'un bien indivis doit une indemnité d'occupation à l'indivision, sauf accord contraire entre indivisaires. Cette indemnité se règle le plus souvent au moment du partage, en venant diminuer sa part. Elle pèse dans les discussions, et il vaut mieux la chiffrer tôt."
   - question: "Combien de temps prend une vente autorisée par le tribunal ?"
     reponse: "Aucun délai ne peut être promis sérieusement : la procédure de l'article 815-5-1 comporte une expression de l'intention devant notaire, une signification aux autres indivisaires, puis une décision du tribunal judiciaire, avant une vente par licitation. On parle en mois, pas en semaines. C'est la raison pour laquelle l'accord amiable, même laborieux, reste presque toujours la meilleure voie."
+  - question: "Partage judiciaire : faut-il un avocat ?"
+    reponse: "Oui. L'action en partage se porte devant le tribunal judiciaire, où chaque partie doit être représentée par un avocat. Le tribunal désigne en général un notaire pour dresser l'état liquidatif et peut ordonner la vente du bien par licitation s'il ne se partage pas en nature."
+  - question: "Une licitation fait-elle perdre de l'argent ?"
+    reponse: "Elle peut. Le bien est vendu aux enchères à partir d'une mise à prix, et rien ne garantit que les enchères atteignent le prix du marché. Une vente amiable, préparée avec un avis de valeur et présentée à tous les acheteurs, reste la voie qui protège le mieux la part de chacun."
   - question: "Et si l'un des indivisaires est mineur ou protégé ?"
     reponse: "Le recours des deux tiers de l'article 815-5-1 est alors écarté, et la vente suppose les autorisations propres aux mineurs et majeurs protégés, données par le juge. Le calendrier s'allonge, mais la vente reste possible : elle se prépare avec le notaire et, le cas échéant, le juge des tutelles."
 ---
@@ -48,6 +56,10 @@ Deux réalités tempèrent ce recours. La première : la vente ainsi autorisée 
 ## Le partage judiciaire, l'autre porte
 
 L'article 815 du code civil pose que nul ne peut être contraint à demeurer dans l'indivision : le partage peut toujours être provoqué. Si l'appartement ne peut pas être commodément partagé en nature, ce qui est le cas général d'un logement, le juge peut ordonner sa vente pour en partager le prix. C'est une procédure plus longue et plus coûteuse que le recours des deux tiers, mais elle est ouverte à tout indivisaire, quelle que soit sa part.
+
+Concrètement, le partage judiciaire commence par une assignation devant le tribunal judiciaire, avec un avocat pour chaque partie. Le tribunal désigne le plus souvent un notaire chargé des comptes entre indivisaires. Si le bien ne se partage pas, il est vendu par licitation : aux enchères, à partir d'une mise à prix fixée par le jugement. Les indivisaires peuvent enchérir eux-mêmes. Les enchères ne garantissent pas le prix du marché, et c'est souvent la perspective de cette vente forcée qui ramène tout le monde vers un accord amiable.
+
+Dernier point à chiffrer avant de décider : le droit de partage. Il est de 2,5 % de l'actif net partagé, et de 1,1 % lorsque le partage suit un divorce, une séparation de corps ou la rupture d'un PACS (article 746 du code général des impôts). Vendre le bien puis partager le prix, ou l'attribuer à l'un des indivisaires contre une soulte, ne coûte pas la même chose : le notaire fait le calcul, nous apportons la valeur.
 
 Entre ces deux extrémités, la convention d'indivision, prévue aux articles 815-9 et suivants du code civil, permet d'organiser la période intermédiaire : qui occupe, qui paie quoi, comment se décident les travaux. Elle ne règle pas la vente, elle évite que l'attente ne dégrade le bien et les relations.
 
