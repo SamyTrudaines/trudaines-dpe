@@ -186,6 +186,18 @@ const agence = {
     <BarreMobile ancreEstimation={ancreEstimation} evtEstimation={evtEstimation} messageWhatsapp={messageWhatsapp} action={barreAction} />
     <BandeauCookies />
     <script src="/js/formulaires.js" defer is:inline></script>
+    {site.turnstile && (
+      <script is:inline define:vars={{ cle: site.turnstile }}>
+        window.trudainesTurnstile = function () {
+          document.querySelectorAll('form[action^="/api/"]').forEach(function (form) {
+            var zone = document.createElement('div');
+            form.appendChild(zone);
+            window.turnstile.render(zone, { sitekey: cle, appearance: 'interaction-only', size: 'flexible' });
+          });
+        };
+      </script>
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=trudainesTurnstile" async defer is:inline></script>
+    )}
     <script>
       /*
        * Un clic sur un élément portant data-evt envoie l'événement du même nom.

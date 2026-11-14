@@ -127,9 +127,56 @@ export function emailValide(valeur) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(valeur || '').trim());
 }
 
+/**
+ * Garde des emails envoyés hors de l'agence (confirmation, fourchette, guide).
+ *
+ * Nuits du 12 et du 13 novembre 2026 : des robots ont rempli les formulaires avec l'adresse
+ * de victimes et une arnaque dans le nom, pour que Trudaines leur envoie l'appât et épuise le
+ * quota Brevo. Un email destiné à un visiteur ne part donc que s'il ne contient aucun lien
+ * étranger au site ni d'alphabet non latin, et dans la limite d'un plafond horaire.
+ */
+const HOTES_AUTORISES = /^(?:www\.)?(?:trudaines\.com|linkedin\.com|g\.page|[a-z0-9-]+\.googleusercontent\.com)$/i;
+const PLAFOND_EXTERNES_HEURE = 10;
+
+function contenuDouteux(texte) {
+  if (/[\u0400-\u04FF\u0600-\u06FF\u0E00-\u0E7F\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]/.test(texte)) return true;
+  for (const lien of texte.matchAll(/https?:\/\/([^\/\s"'<>?#]+)/gi)) {
+    if (!HOTES_AUTORISES.test(lien[1])) return true;
+  }
+  return /\b(?:tinyurl|goo\.su|bit\.ly|t\.me|cutt\.ly)\b/i.test(texte);
+}
+
+/** Compteur horaire partagé par les fonctions d'un même centre Cloudflare (Cache API). */
+export async function compter(cle, dureeSecondes) {
+  try {
+    if (typeof caches === 'undefined' || !caches.default) return 0;
+    const fenetre = Math.floor(Date.now() / 1000 / dureeSecondes);
+    const adresse = `https://compteur.trudaines.invalid/${encodeURIComponent(cle)}/${fenetre}`;
+    const existant = await caches.default.match(adresse);
+    const total = (existant ? parseInt(await existant.text(), 10) || 0 : 0) + 1;
+    await caches.default.put(adresse, new Response(String(total), { headers: { 'Cache-Control': `max-age=${dureeSecondes}` } }));
+    return total;
+  } catch {
+    return 0;
+  }
+}
+
 /** Envoi d'un email transactionnel via Brevo. */
 export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, piecesJointes }) {
   if (!env.BREVO_API_KEY) throw new Error('BREVO_API_KEY absente');
+
+  const agence = String(env.NOTIFICATION_EMAIL || 'samy.santamarina@trudaines.com').toLowerCase();
+  const externe = Boolean(destinataire) && String(destinataire).trim().toLowerCase() !== agence;
+  if (externe) {
+    if (contenuDouteux(`${sujet} ${html}`)) {
+      console.error(`Email visiteur bloqué, contenu douteux : ${destinataire}`);
+      return null;
+    }
+    if ((await compter('emails-externes', 3600)) > PLAFOND_EXTERNES_HEURE) {
+      console.error(`Email visiteur bloqué, plafond horaire atteint : ${destinataire}`);
+      return null;
+    }
+  }
 
   const corps = {
     sender: {
@@ -158,6 +205,15 @@ export async function envoyerEmail(env, { sujet, html, destinataire, repondreA, 
 
   if (!reponseApi.ok) {
     const detail = await reponseApi.text();
+    /*
+     * La notification de l'agence ne doit jamais faire échouer une demande : quota Brevo épuisé
+     * ou panne, le contact est quand même enregistré et le SMS part. Seuls les emails aux
+     * visiteurs remontent l'erreur, que chaque formulaire traite déjà.
+     */
+    if (!externe) {
+      console.error(`Notification agence refusée par Brevo : ${reponseApi.status} ${detail}`);
+      return null;
+    }
     throw new Error(`Brevo smtp/email ${reponseApi.status} ${detail}`);
   }
   return reponseApi.json().catch(() => ({}));
