@@ -26,9 +26,55 @@ const supprimee = () =>
 /** Fiche de l'ancien site : /vente/<ville>/<type>/<numéro-titre>. */
 const ANCIENNE_FICHE = /^\/vente\/[^/]+\/[^/]+\/[^/]+\/?$/;
 
+import { compter } from './_lib/brevo.js';
+
+/*
+ * Formulaires : au plus 6 envois par adresse IP et par quart d'heure. Un visiteur réel en
+ * fait un ou deux ; les rafales de robots (une centaine en une seconde, nuits du 12 et du
+ * 13 novembre 2026) s'arrêtent là, avant tout appel à Brevo.
+ */
+const ENVOIS_PAR_IP = 6;
+const FENETRE_SECONDES = 900;
+
+const refus = (message, statut) =>
+  new Response(JSON.stringify({ ok: false, message }), {
+    status: statut,
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+  });
+
+/**
+ * Turnstile, le contrôle anti-robot invisible de Cloudflare : actif dès que la variable
+ * TURNSTILE_SECRET existe dans Cloudflare et que la clé publique est renseignée dans
+ * site.ts (`turnstile`). Sans la variable, rien n'est vérifié et les formulaires marchent.
+ */
+async function turnstileValide(env, request) {
+  if (!env.TURNSTILE_SECRET) return true;
+  const donnees = await request.clone().formData().catch(() => null);
+  const jeton = donnees ? String(donnees.get('cf-turnstile-response') || '') : '';
+  if (!jeton) return false;
+  const corps = new FormData();
+  corps.append('secret', env.TURNSTILE_SECRET);
+  corps.append('response', jeton);
+  const ip = request.headers.get('CF-Connecting-IP');
+  if (ip) corps.append('remoteip', ip);
+  const verdict = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: corps })
+    .then((r) => r.json())
+    .catch(() => ({ success: true }));
+  return Boolean(verdict.success);
+}
+
 export async function onRequest(context) {
   const { method, url } = context.request;
   const chemin = new URL(url).pathname;
+  if (method === 'POST' && chemin.startsWith('/api/')) {
+    const ip = context.request.headers.get('CF-Connecting-IP') || 'inconnue';
+    if ((await compter(`formulaire-${ip}`, FENETRE_SECONDES)) > ENVOIS_PAR_IP) {
+      return refus("Trop d'envois depuis votre connexion. Merci de réessayer dans un quart d'heure ou de nous appeler.", 429);
+    }
+    if (!(await turnstileValide(context.env, context.request))) {
+      return refus("La vérification anti-robot n'a pas abouti. Merci de recharger la page ou de nous appeler.", 403);
+    }
+  }
   const reponse = await context.next();
   if (ANCIENNE_FICHE.test(chemin) && reponse.status === 301) {
     const cible = new URL(reponse.headers.get('location') ?? '/', url).pathname;

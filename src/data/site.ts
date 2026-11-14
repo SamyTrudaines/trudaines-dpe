@@ -86,6 +86,11 @@ export const site = {
    * traceur n'est posé et le bandeau des cookies ne s'affiche pas.
    */
   ga4: import.meta.env.PUBLIC_GA4_ID || 'G-VP03SDNLJG',
+  /**
+   * Clé publique Cloudflare Turnstile (contrôle anti-robot invisible). Vide : aucun contrôle.
+   * À renseigner avec la variable secrète TURNSTILE_SECRET dans Cloudflare, jamais l'une sans l'autre.
+   */
+  turnstile: import.meta.env.PUBLIC_TURNSTILE_SITEKEY || '',
   /** Code de vérification Bing Webmaster Tools (balise msvalidate.01), variable Cloudflare PUBLIC_BING_VALIDATION. */
   bing: import.meta.env.PUBLIC_BING_VALIDATION || '',
   /**
