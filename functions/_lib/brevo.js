@@ -106,6 +106,14 @@ function signatureRobot(donnees) {
   if (/https?:|www\.|\b(?:tinyurl|goo\.su|bit\.ly|t\.me|cutt\.ly)\b/i.test(identite)) return true;
   if (/[Ѐ-ӿ؀-ۿ฀-๿぀-ヿ一-鿿가-힯]/.test(identite)) return true;
   if (['prenom', 'nom'].some((champ) => String(donnees.get(champ) || '').trim().length > 60)) return true;
+
+  /*
+   * Vague du 16 novembre 2026 : démarchage commercial en noms latins (« AndrewBag AndrewBag »,
+   * « PRESTALGO PRESTALGO »). Le robot remplit prénom et nom avec le même mot. Un prénom identique
+   * au nom, de quatre signes ou plus, n'existe pas chez un vrai visiteur.
+   */
+  const nom = String(donnees.get('nom') || '').trim().toLowerCase();
+  if (nom.length >= 4 && nom === prenom.toLowerCase()) return true;
   return false;
 }
 
