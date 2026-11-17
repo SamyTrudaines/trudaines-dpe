@@ -1,13 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Avis from '../components/Avis.astro';
 import Logo from '../components/Logo.astro';
-import { avisCommentés, agrégatAvis } from '../lib/avis';
+import marche from '../data/marche-paris.json';
 import { site } from '../data/site';
 
-const avis = await avisCommentés(3);
-const agregatAvis = await agrégatAvis();
+/* Ventes d'appartements signées à Paris depuis janvier 2024 (DVF), lues dans marche-paris.json. */
+const anneesSuivies = marche.annees.filter((a) => a.annee >= 2024);
+const ventesParis = anneesSuivies.reduce((total, a) => total + a.paris.ventes, 0).toLocaleString('fr-FR').replace(/\u202f/g, '\u00a0');
+const derniereAnnee = anneesSuivies.at(-1)?.annee;
 
 /*
  * Le manifeste et les sept engagements sont ceux que l'agence publie depuis
@@ -33,36 +34,28 @@ const engagements = [
 ];
 
 const concret = [
-  { titre: 'Dire le prix, même quand il déplaît', texte: "Une agence qui flatte pour prendre un mandat vous fait perdre trois mois et finit par vous faire vendre plus bas. Nous préférons perdre le mandat." },
-  { titre: 'Un territoire, pas une couverture', texte: "Trois arrondissements limitrophes travaillés rue par rue. Nous refusons les biens hors de ce périmètre plutôt que de promettre une connaissance que nous n'avons pas." },
-  { titre: 'La donnée au service du jugement', texte: "Les ventes signées cadrent la discussion, la visite la tranche. Un algorithme ne sent pas une cage d'escalier ni le bruit d'une cour à 18 heures." },
-  { titre: "L'écrit plutôt que la promesse", texte: "Avis de valeur, comptes rendus de visite, offres, points hebdomadaires : ce qui est écrit peut être vérifié, discuté, et reproché. C'est le but." },
+  { titre: 'Le prix, même quand il déplaît', texte: "Flatter pour prendre un mandat fait perdre trois mois au vendeur. Nous préférons perdre le mandat." },
+  { titre: 'Un territoire, rue par rue', texte: "Peu d'arrondissements, connus au mètre carré. Hors de ce périmètre, nous le disons." },
+  { titre: 'La donnée, puis le jugement', texte: "Les ventes signées cadrent le prix. La visite le tranche." },
+  { titre: "L'écrit, pas la promesse", texte: "Avis de valeur, comptes rendus de visite, offres : tout est écrit, donc vérifiable." },
 ];
 ---
 <Layout
   titre="L'agence Trudaines | Vente immobilière Paris 9e et Montmartre"
-  description="Agence immobilière fondée en 2024 par Samy Santamarina : un territoire restreint, une méthode écrite, un interlocuteur unique."
+  description="Agence immobilière fondée en 2024 à Paris : un territoire restreint, une méthode écrite, un interlocuteur unique. Estimation en 24 heures."
   filAriane={[{ nom: "L'agence" }]}
+  cta={false}
 >
   <section class="section pt-10">
     <div class="conteneur max-w-3xl">
-      <p class="surtitre">L'immobilier au-delà des murs</p>
+      <p class="surtitre marque-filet">L'immobilier au-delà des murs</p>
       <h1 class="titre-1 mt-6">Une agence de vente, pas une vitrine de plus</h1>
       <p class="chapo mt-8">
-        Trudaines est né en septembre 2024 d'un constat simple : entre les réseaux qui multiplient les mandats et
-        les maisons d'image qui vendent surtout leur nom, il manquait une agence qui fasse le travail de fond et qui
-        l'écrive.
+        Fondée en septembre 2024. Peu de mandats, un territoire connu rue par rue, tout par écrit.
       </p>
-    </div>
-  </section>
-
-  <section class="section filet" aria-labelledby="manifeste">
-    <div class="conteneur max-w-3xl">
-      <h2 id="manifeste" class="surtitre">Notre manifeste</h2>
-      <div class="mt-10 grid gap-8">
-        {manifeste.map((phrase, index) => (
-          <p class={index === 0 ? 'titre-2' : 'text-lg text-[color:var(--color-ardoise)]'}>{phrase}</p>
-        ))}
+      <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <a href="/estimation" class="bouton" data-evt="agence_estimer">Estimer mon bien</a>
+        <a href={`tel:${site.telephoneLien}`} class="lien-souligne whitespace-nowrap" data-evt="clic_telephone">Appeler le {site.telephone}</a>
       </div>
     </div>
   </section>
@@ -76,116 +69,95 @@ const concret = [
         </div>
         <h2 id="le-nom" class="titre-2 mt-12">Deux lettres en orange, au milieu du mot</h2>
         <p class="mt-8 text-[color:var(--color-ardoise)]">
-          Trudaine est une avenue du 9e nord, bordée d'arbres, face au lycée Jacques Decour, entre Anvers et
-          Pigalle. C'est le territoire de l'agence, et c'est de là que vient son nom.
+          Trudaine, une avenue du 9e nord, entre Anvers et Pigalle. Notre territoire.
         </p>
-        <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Au milieu de ce nom de rue, deux lettres se détachent en orange. AI, pour l'intelligence
-          artificielle. Elles sont à l'intérieur du mot, pas posées à côté, et c'est volontaire : la
-          technologie est dans le travail, elle n'est pas sur l'enseigne. Un vendeur n'achète pas un outil,
-          il achète un prix tenu et un calendrier respecté.
+        <p class="mt-4 text-[color:var(--color-ardoise)]">
+          AI, pour l'intelligence artificielle. Dans le mot, pas sur l'enseigne : la technologie est dans le travail.
         </p>
       </div>
-      <div class="mx-auto mt-16 grid max-w-4xl gap-10 sm:grid-cols-3">
-        <div class="border-t border-[color:var(--color-trait)] pt-5">
-          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">5 498</p>
-          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-            ventes d'appartements dépouillées pour établir les prix publiés sur ce site, quartier par
-            quartier, au lieu d'une moyenne d'arrondissement.
-          </p>
-        </div>
-        <div class="border-t border-[color:var(--color-trait)] pt-5">
-          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">48 h</p>
-          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-            pour un avis de valeur écrit après visite. Le temps que la machine prend sur la recherche de
-            comparables et la mise en forme revient au vendeur.
-          </p>
-        </div>
-        <div class="border-t border-[color:var(--color-trait)] pt-5">
-          <p class="text-2xl font-semibold text-[color:var(--color-encre)]">0</p>
-          <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">
-            visite, négociation ou conversation difficile déléguée à un algorithme. Ce qui se décide dans
-            une cage d'escalier se décide sur place.
-          </p>
-        </div>
-      </div>
+      <ul class="reperes mx-auto mt-16 max-w-5xl">
+        <li>
+          <span class="reperes-chiffre">{ventesParis}</span>
+          <span class="reperes-texte">
+            ventes d'appartements signées à Paris de janvier 2024 à décembre {derniereAnnee}, analysées une à une
+            (DVF, DGFiP).
+          </span>
+        </li>
+        <li>
+          <span class="reperes-chiffre">24 h</span>
+          <span class="reperes-texte">pour estimer votre bien. La machine cherche les comparables, l'agent fixe le prix.</span>
+        </li>
+        <li>
+          <span class="reperes-chiffre">0</span>
+          <span class="reperes-texte">
+            rendez-vous, négociation ou décision difficile délégué à l'intelligence artificielle. La machine sert
+            l'agent. L'agent Trudaines relie, valide et décide.
+          </span>
+        </li>
+      </ul>
       <p class="mt-14 text-center text-sm">
         <a href="/quartiers" class="lien-souligne">Les prix au mètre carré, quartier par quartier</a>
       </p>
     </div>
   </section>
 
-  <section class="section filet" aria-labelledby="engagements">
+  <section class="section filet" aria-labelledby="methode">
     <div class="conteneur">
-      <h2 id="engagements" class="titre-2 max-w-2xl">Nos engagements</h2>
-      <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-        {engagements.map((e) => (
-          <div class="border-t border-[color:var(--color-trait)] pt-5">
-            <h3 class="titre-3">{e.titre}</h3>
-            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{e.texte}</p>
-          </div>
+      <div class="max-w-3xl">
+        <p class="surtitre marque-filet">La méthode</p>
+        <h2 id="methode" class="titre-2 mt-6">Peu de mandats. Chacun suivi par écrit.</h2>
+        <p class="mt-6 text-[color:var(--color-ardoise)]">
+          Estimé sur les ventes signées de sa rue. Préparé avant la première visite. Présenté à des acheteurs
+          vérifiés. Un compte rendu écrit après chaque visite.
+        </p>
+      </div>
+      <ol class="mt-14 grid gap-x-12 gap-y-12 md:grid-cols-2 xl:grid-cols-4">
+        {concret.map((v, n) => (
+          <li class="border-t border-[color:var(--color-encre)] pt-6">
+            <p class="chiffre" aria-hidden="true">{String(n + 1).padStart(2, '0')}</p>
+            <h3 class="titre-3 mt-4">{v.titre}</h3>
+            <p class="mt-3 text-sm text-[color:var(--color-ardoise)]">{v.texte}</p>
+          </li>
         ))}
-      </div>
+      </ol>
+      <p class="mt-12 text-sm"><a href="/vendre" class="lien-souligne">Les sept engagements de vente</a></p>
     </div>
   </section>
 
-  <section class="section filet">
-    <div class="conteneur grid gap-16 lg:grid-cols-2">
-      <div>
-        <h2 class="titre-2">La méthode</h2>
-        <p class="mt-6 text-[color:var(--color-ardoise)]">
-          Nous travaillons peu de mandats à la fois, volontairement. Chaque bien est estimé sur la base des ventes
-          réellement signées dans sa rue, préparé avant la première visite, présenté à des acheteurs vérifiés, et
-          suivi par un compte rendu écrit après chaque visite.
-        </p>
-        <p class="mt-6 text-[color:var(--color-ardoise)]">
-          La technologie sert à gagner du temps sur ce qui peut l'être : recherche de comparables, mise en forme des
-          dossiers, suivi des acheteurs, relances. Elle ne remplace jamais la visite, la négociation, ni la
-          conversation difficile qu'il faut parfois avoir avec un vendeur.
-        </p>
-        <p class="mt-8 text-sm"><a href="/vendre" class="lien-souligne">Les sept engagements de vente</a></p>
-      </div>
-      <div>
-        <h2 class="titre-2">Ce que cela veut dire concrètement</h2>
-        <div class="mt-8 grid gap-8">
-          {concret.map((v) => (
-            <div class="border-t border-[color:var(--color-trait)] pt-5">
-              <h3 class="titre-3">{v.titre}</h3>
-              <p class="mt-3 text-[color:var(--color-ardoise)]">{v.texte}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section filet">
+  <section class="section filet" aria-labelledby="valeurs">
     <div class="conteneur max-w-3xl">
-      <h2 class="titre-2">Le cadre réglementaire</h2>
-      <p class="mt-6 text-[color:var(--color-ardoise)]">
-        {site.nomLong} est exploité par {site.raisonSociale} {site.formeJuridique}, {site.legal.rcs}, dont le siège
-        est au {site.adresse.rue}, {site.adresse.codePostal} {site.adresse.ville}. {site.legal.carteTDetail}
-        Garantie financière {site.legal.garantie}, à hauteur de {site.legal.garantieMontant},
-        numéro de sociétaire {site.legal.garantieSocietaire}. {site.legal.detentionFonds}
-      </p>
-      <p class="mt-6 text-sm">
-        <a href="/mentions-legales" class="lien-souligne">Mentions légales complètes</a>
+      <h2 id="valeurs" class="surtitre">Ce qui nous anime</h2>
+      <p class="titre-2 mt-8">{manifeste[0]}</p>
+      <p class="mt-8 text-sm uppercase tracking-[0.2em] text-[color:var(--color-ardoise)]">
+        {engagements.map((e) => e.titre).join('  ·  ')}
       </p>
     </div>
   </section>
 
-  <Avis avis={avis} agregat={agregatAvis} />
-
-  <section class="section filet">
-    <div class="conteneur">
-      <h2 class="titre-2">Aller plus loin</h2>
-      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-        <a href="/references" class="lien-souligne">Nos références</a>
-        <a href="/samy-santamarina" class="lien-souligne">Samy Santamarina, fondateur</a>
-        <a href="/presse" class="lien-souligne">Ce que la presse en dit</a>
-        <a href="/nous-rejoindre" class="lien-souligne">Nous rejoindre</a>
-        <a href="/honoraires" class="lien-souligne">Honoraires</a>
+  <section class="section bg-[color:var(--color-papier)]" aria-labelledby="contact-agence">
+    <div class="conteneur max-w-3xl">
+      <h2 id="contact-agence" class="titre-2">Combien vaut votre bien ? Réponse en 24 heures.</h2>
+      <p class="chapo mt-6">Sans frais dans le cadre de votre projet immobilier. Un seul interlocuteur, du premier appel à l'acte.</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="/estimation" class="bouton" data-evt="agence_cta_estimer">Estimer mon bien</a>
+        <a href={`tel:${site.telephoneLien}`} class="bouton bouton-secondaire" data-evt="clic_telephone">Appeler le {site.telephone}</a>
       </div>
+      <p class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <a href="/references" class="lien-souligne">Nos références</a>
+        <a href="/samy-santamarina" class="lien-souligne">Le mot du fondateur</a>
+        <a href="/avis" class="lien-souligne">Avis clients</a>
+        <a href="/presse" class="lien-souligne">Presse</a>
+        <a href="/honoraires" class="lien-souligne">Honoraires</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10">
+    <div class="conteneur max-w-3xl text-xs leading-relaxed text-[color:var(--color-ardoise)]">
+      {site.nomLong} est exploité par {site.raisonSociale} {site.formeJuridique}, {site.legal.rcs}, siège au
+      {' '}{site.adresse.rue}, {site.adresse.codePostal} {site.adresse.ville}. {site.legal.carteTDetail} Garantie
+      financière {site.legal.garantie}, {site.legal.garantieMontant}, sociétaire {site.legal.garantieSocietaire}.
+      {' '}{site.legal.detentionFonds} <a href="/mentions-legales" class="lien-souligne">Mentions légales</a>.
     </div>
   </section>
 </Layout>

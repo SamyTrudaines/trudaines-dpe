@@ -1,8 +1,8 @@
 ---
 titre: "Paris : pourquoi les acheteurs avisés signent quand tout le monde hésite"
 date: 2026-10-25
-image: "https://images.unsplash.com/photo-1790623943590-e012ff488a1b?ixlib=rb-4.1.0&q=80&fm=jpg&crop=entropy&cs=srgb&w=1600"
-imageAlt: "Façades d'immeubles vues depuis l'encadrement d'une fenêtre, par une journée claire"
+image: /images/panorama/paris-acheter-vendre-quand-tout-le-monde-hesite.webp
+imageAlt: "Derniers étages d'un immeuble haussmannien au soleil couchant, toit de zinc, lucarnes et balcon filant en fer forgé"
 chapo: "Le taux auquel l'État emprunte vient de passer 5 %, une première depuis 2002. Les gros titres parlent de crise. Sur le terrain, entre Pigalle et les Batignolles, Samy Santamarina, fondateur de Trudaines, voit surtout un marché redevenu lisible, et des acheteurs qui visitent enfin sans se bousculer."
 titreSeo: "Acheter ou vendre à Paris fin 2026 : le bon moment ? | Trudaines"
 descriptionSeo: "OAT à 5 %, moins d'acheteurs en concurrence, prix en recul sur cinq ans, grands appartements rares : ce que l'automne 2026 change à Paris 9e, 10e, 17e et 18e."
@@ -70,3 +70,5 @@ Si vous vendez, faites estimer votre bien sur les ventes réellement signées de
 Le marché parisien ne récompense plus l'audace. Il récompense ceux qui se sont préparés.
 
 Samy Santamarina, fondateur de Trudaines
+
+*Photo : Thomas K, Unsplash.*

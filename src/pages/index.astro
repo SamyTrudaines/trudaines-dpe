@@ -75,7 +75,7 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
 <Layout
   ancreEstimation="#accueil-adresse"
   titre="Trudaines, agence immobilière à Paris 9e, 18e et Montmartre"
-  description={`Agence immobilière indépendante à Paris : vente, recherche, gestion locative. Avis de valeur écrit offert sous 48 heures. ${preuveAvis}.`}
+  description={`Agence immobilière indépendante à Paris : vente, recherche, gestion locative. Estimation en 24 heures, avis de valeur écrit offert. ${preuveAvis}.`}
   enteteSurPhoto
   donnees={[siteWeb]}
 >
@@ -148,10 +148,10 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
 
   <section class="pb-2 md:pb-4">
     <div class="conteneur">
-      <ul class="reperes" aria-label="Estimation : conditions et délais">
+      <ul class="reperes reperes-deux" aria-label="Estimation : conditions et délais">
         <li>
           <span class="reperes-chiffre">0 €</span>
-          <span class="reperes-texte">Estimation sans frais et sans engagement</span>
+          <span class="reperes-texte">Estimation sans frais dans le cadre de votre projet immobilier</span>
         </li>
         <li>
           <span class="reperes-chiffre">24 h</span>
@@ -159,10 +159,6 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
             Estimation en 24 heures. Appelez le{' '}
             <a href={`tel:${site.telephoneLien}`} data-evt="clic_telephone" class="lien-souligne whitespace-nowrap">{site.telephone}</a>
           </span>
-        </li>
-        <li>
-          <span class="reperes-chiffre">48 h</span>
-          <span class="reperes-texte">Avis de valeur écrit, remis après la visite</span>
         </li>
       </ul>
     </div>
