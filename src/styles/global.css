@@ -1736,3 +1736,15 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   border-bottom: 2px solid var(--color-or);
   pointer-events: none;
 }
+
+/* Presse de l'accueil : une colonne par retombée, citation en italique de titre. */
+@media (min-width: 768px) {
+  .presse-accueil { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+}
+.presse-citation {
+  font-family: var(--font-titre);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--color-encre);
+}
