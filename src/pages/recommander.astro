@@ -17,18 +17,23 @@ const exemple = { prix: 1000000, prime: primeVente(1000000) };
 const etapes = [
   {
     titre: 'Vous nous présentez',
-    texte:
-      "Le formulaire, un appel ou un message. Si votre proche est d'accord, laissez ses coordonnées ; sinon, je vous rappelle et nous décidons ensemble comment faire les présentations.",
+    texte: 'Formulaire, appel ou message. Votre proche est prévenu par vous, jamais démarché.',
   },
   {
     titre: 'Nous faisons le reste',
-    texte:
-      "Estimation, mandat, visites, négociation : vous n'avez rien à faire. Vous savez si le rendez-vous a eu lieu et si le mandat est signé. Le prix et les raisons du projet restent entre votre proche et moi.",
+    texte: 'Estimation, mandat, visites, négociation. Vous êtes tenu informé des étapes, pas du prix.',
   },
   {
     titre: 'Vous recevez votre prime',
-    texte: `${part} de nos honoraires hors taxes, versés dès leur encaissement, après la signature chez le notaire ; en gestion, au terme de la première année. Un accord écrit, signé avant la mise en relation, fixe tout.`,
+    texte: `${part} de nos honoraires HT, versés dès leur encaissement. Un accord écrit, signé avant la mise en relation.`,
   },
+];
+
+const faits = [
+  { valeur: part, libelle: 'de nos honoraires hors taxes' },
+  { valeur: 'À l’encaissement', libelle: 'versée dès que nos honoraires sont encaissés' },
+  { valeur: euros(exemple.prime), libelle: `pour un bien vendu ${euros(exemple.prix)} en mandat exclusif` },
+  { valeur: '0 démarche', libelle: 'ni visite, ni négociation, ni signature de votre part' },
 ];
 
 const faq = [
@@ -97,10 +102,17 @@ const donnees = [
       <p class="surtitre marque-filet">{parrainage.nom}</p>
       <h1 class="titre-1 mt-6">Vous recommandez. Vous recevez {part}.</h1>
       <p class="chapo mt-8">
-        Un proche vend, achète ou met en location ? Présentez-le-nous. Quand votre proche nous confie son projet,
-        {' '}{part} de nos honoraires hors taxes vous reviennent. Votre proche est entre de bonnes mains, vous
-        recevez votre part : c'est WinWin.
+        Un proche vend, achète ou loue à Paris ? Présentez-le-nous. {part} de nos honoraires hors taxes vous
+        reviennent, une fois les honoraires encaissés.
       </p>
+      <dl class="mt-10 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-[color:var(--color-encre)] pt-8 md:grid-cols-4">
+        {faits.map((f) => (
+          <div>
+            <dt class="titre-3">{f.valeur}</dt>
+            <dd class="mt-2 text-sm text-[color:var(--color-ardoise)]">{f.libelle}</dd>
+          </div>
+        ))}
+      </dl>
       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#simulateur" class="bouton" data-evt="winwin_calculer">Calculer ma prime</a>
         <a href="#formulaire-winwin" class="bouton bouton-secondaire" data-evt="winwin_formulaire">Recommander maintenant</a>
