@@ -170,6 +170,24 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
 
   <Avis avis={avis} agregat={agregatAvis} />
 
+  <section class="pb-16 md:pb-20" aria-labelledby="winwin-accueil">
+    <div class="conteneur">
+      <div class="carre-winwin">
+        <p class="surtitre">{parrainage.nom}</p>
+        <h2 id="winwin-accueil" class="titre-3 mt-5">Vos proches, entre de bonnes mains.</h2>
+        <p class="mt-4 text-sm text-[color:var(--color-ardoise)]">
+          Trudaines grandit par la recommandation de ses clients. Quand vous nous présentez un proche qui vend,
+          achète ou loue, nous vous remercions : {pourcent(parrainage.part)} de nos honoraires hors taxes, une fois
+          l'opération signée.
+        </p>
+        <p class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href="/recommander#formulaire-winwin" class="lien-souligne" data-evt="accueil_winwin_recommander">Recommander un proche</a>
+          <a href="/recommander#simulateur" class="lien-souligne" data-evt="accueil_winwin_simulateur">Calculer ma prime</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   {presse.length > 0 && (
     <section class="section filet" aria-labelledby="presse-accueil">
       <div class="conteneur">
@@ -248,24 +266,6 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
   </section>
 
   <Manifeste />
-
-  <section class="section filet" aria-labelledby="winwin-accueil">
-    <div class="conteneur">
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
-        <div class="max-w-2xl">
-          <p class="surtitre marque-filet">{parrainage.nom}</p>
-          <h2 id="winwin-accueil" class="titre-2 mt-6">Un proche vend ? Recommandez-le.</h2>
-          <p class="mt-6 text-[color:var(--color-ardoise)]">
-            {pourcent(parrainage.part)} de nos honoraires hors taxes vous reviennent, une fois la vente signée.
-          </p>
-        </div>
-        <div class="flex flex-wrap items-center gap-x-8 gap-y-4">
-          <a href="/recommander#formulaire-winwin" class="bouton" data-evt="accueil_winwin_recommander">Faire une recommandation</a>
-          <a href="/recommander#simulateur" class="lien-souligne text-sm" data-evt="accueil_winwin_simulateur">Calculer ma prime</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="section filet" aria-labelledby="rejoindre-accueil">
     <div class="conteneur">

@@ -1763,3 +1763,11 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   grid-template-rows: subgrid;
   row-gap: 0;
 }
+
+/* Trudaines WinWin sur l'accueil : un encadré discret sous les avis, filet fin, sans ombre. */
+.carre-winwin {
+  max-width: 34rem;
+  padding: 2rem;
+  border: 1px solid var(--color-trait);
+  border-top: 2px solid var(--color-or);
+}
