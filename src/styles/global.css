@@ -1751,3 +1751,15 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
 @media (min-width: 768px) {
   .reperes-deux { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 56rem; }
 }
+
+/*
+ * Cartes de biens alignées d'une colonne à l'autre : le quartier peut tenir sur une ou deux lignes,
+ * les titres et les mentions restent sur la même ligne horizontale (sous-grille).
+ */
+.cartes-alignees > article,
+.cartes-alignees > article > a {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
