@@ -653,6 +653,40 @@ verifier(
   `statut ${sansOrigine.status}`
 );
 
+/*
+ * Turnstile, dans le garde de tout le site : un envoi sans jeton passe (navigateur qui n'a pas pu
+ * charger le contrôle ; du 17 au 21 novembre 2026, toutes les demandes étaient refusées ainsi),
+ * un jeton que Cloudflare juge faux est refusé, un jeton valide passe.
+ */
+const gardeSite = await import(new URL('../functions/_middleware.js', import.meta.url).href);
+const envTurnstile = { TURNSTILE_SECRET: 'secret-de-test' };
+function requeteTurnstile(jeton) {
+  const fd = new FormData();
+  fd.append('prenom', 'Claire');
+  if (jeton) fd.append('cf-turnstile-response', jeton);
+  return new Request('https://www.trudaines.com/api/estimation', { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
+}
+
+fonctionAtteinte = false;
+const sansJeton = await gardeSite.onRequest({ request: requeteTurnstile(''), env: envTurnstile, next: suivant });
+verifier('Turnstile : envoi sans jeton accepté', sansJeton.status === 200 && fonctionAtteinte, `statut ${sansJeton.status}`);
+
+const fetchOriginal = globalThis.fetch;
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: false }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonFaux = await gardeSite.onRequest({ request: requeteTurnstile('jeton-faux'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton jugé faux refusé', jetonFaux.status === 403 && !fonctionAtteinte, `statut ${jetonFaux.status}`);
+
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: true }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonValide = await gardeSite.onRequest({ request: requeteTurnstile('jeton-valide'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton valide accepté', jetonValide.status === 200 && fonctionAtteinte, `statut ${jetonValide.status}`);
+globalThis.fetch = fetchOriginal;
+
 /* ------------------------------------- acquéreurs, WinWin et embasement ---- */
 
 const alerte = await import(new URL('../functions/api/alerte.js', import.meta.url).href);

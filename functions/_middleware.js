@@ -46,12 +46,22 @@ const refus = (message, statut) =>
  * Turnstile, le contrôle anti-robot invisible de Cloudflare : actif dès que la variable
  * TURNSTILE_SECRET existe dans Cloudflare et que la clé publique est renseignée dans
  * site.ts (`turnstile`). Sans la variable, rien n'est vérifié et les formulaires marchent.
+ *
+ * Un envoi sans jeton passe : le navigateur du visiteur n'a pas pu charger le contrôle
+ * (bloqueur, réseau d'entreprise, politique de sécurité du site). Du 17 au 21 novembre 2026,
+ * la politique de sécurité l'interdisait chez tout le monde et chaque demande était refusée.
+ * Perdre un vendeur coûte plus cher que laisser passer un robot, que les autres filtres
+ * (champ piège, délai, signatures, limite par IP) arrêtent déjà. Seul un jeton présent et
+ * jugé faux par Cloudflare fait refuser l'envoi.
  */
 async function turnstileValide(env, request) {
   if (!env.TURNSTILE_SECRET) return true;
   const donnees = await request.clone().formData().catch(() => null);
   const jeton = donnees ? String(donnees.get('cf-turnstile-response') || '') : '';
-  if (!jeton) return false;
+  if (!jeton) {
+    console.warn(`Turnstile : envoi sans jeton accepté sur ${new URL(request.url).pathname}`);
+    return true;
+  }
   const corps = new FormData();
   corps.append('secret', env.TURNSTILE_SECRET);
   corps.append('response', jeton);
