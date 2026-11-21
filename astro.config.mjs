@@ -58,7 +58,8 @@ export default defineConfig({
         "default-src 'self'",
         "base-uri 'self'",
         "object-src 'none'",
-        "frame-src 'none'",
+        // Turnstile (Cloudflare) affiche sa vérification dans un cadre de challenges.cloudflare.com.
+        "frame-src https://challenges.cloudflare.com",
         // frame-ancestors est ignoré dans un meta http-equiv : c'est l'en-tête
         // X-Frame-Options de public/_headers qui interdit la mise en cadre.
         "form-action 'self'",
@@ -71,7 +72,7 @@ export default defineConfig({
         'upgrade-insecure-requests',
       ],
       styleDirective: { resources: ["'self'", "'unsafe-inline'"] },
-      scriptDirective: { resources: ["'self'", 'https://www.googletagmanager.com', 'https://static.cloudflareinsights.com'] },
+      scriptDirective: { resources: ["'self'", 'https://www.googletagmanager.com', 'https://static.cloudflareinsights.com', 'https://challenges.cloudflare.com'] },
     },
   },
 });
