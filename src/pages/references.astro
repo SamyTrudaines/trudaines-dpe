@@ -160,10 +160,10 @@ const donnees = [
           <h2 id={`groupe-${groupe.cle}`} class="titre-2">{groupe.titre}</h2>
           <p class="mt-6 text-[color:var(--color-ardoise)]">{groupe.chapo}</p>
         </div>
-        <div class="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="cartes-alignees mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {groupe.biens.map((b, index) => (
             <article class="group">
-              <a href={`/bien/${b.id}`} class="block no-underline">
+              <a href={`/bien/${b.id}`} class="no-underline">
                 <div class="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-papier)]">
                   {b.data.photos[0] && (
                     <img
@@ -180,7 +180,7 @@ const donnees = [
                   )}
                   {b.data.statut === 'vendu' && <span class="cartouche-vendu">Vendu</span>}
                 </div>
-                <p class="surtitre mt-5">{b.data.quartier} · {lieuBien(b.data.arrondissement, b.data.ville)}</p>
+                <p class="surtitre mt-5">{b.data.quartier} · <span class="whitespace-nowrap">{lieuBien(b.data.arrondissement, b.data.ville)}</span></p>
                 <h3 class="titre-3 mt-2 text-[color:var(--color-encre)]">{b.data.accroche ?? b.data.titre}</h3>
                 <p class="surtitre mt-4">
                   {b.data.statut === 'vendu' ? 'Vendu par Trudaines' : 'Confié à Trudaines'}

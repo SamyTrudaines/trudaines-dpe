@@ -1736,3 +1736,38 @@ input[type='checkbox'] + label { padding-block: 0.625rem; }
   border-bottom: 2px solid var(--color-or);
   pointer-events: none;
 }
+
+/* Presse de l'accueil : une colonne par retombée, citation en italique de titre. */
+@media (min-width: 768px) {
+  .presse-accueil { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); }
+}
+.presse-citation {
+  font-family: var(--font-titre);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--color-encre);
+}
+@media (min-width: 768px) {
+  .reperes-deux { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 56rem; }
+}
+
+/*
+ * Cartes de biens alignées d'une colonne à l'autre : le quartier peut tenir sur une ou deux lignes,
+ * les titres et les mentions restent sur la même ligne horizontale (sous-grille).
+ */
+.cartes-alignees > article,
+.cartes-alignees > article > a {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+
+/* Trudaines WinWin sur l'accueil : un encadré discret sous les avis, filet fin, sans ombre. */
+.carre-winwin {
+  max-width: 34rem;
+  padding: 2rem;
+  border: 1px solid var(--color-trait);
+  border-top: 2px solid var(--color-or);
+}

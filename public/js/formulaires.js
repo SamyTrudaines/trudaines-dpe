@@ -109,6 +109,7 @@
         bouton.disabled = true;
         bouton.textContent = 'Envoi en cours...';
       }
+      attendreTurnstile(form, function () {
       var donnees = new FormData(form);
       /* Durée de saisie mesurée sur l'horloge de l'appareil : son avance ou son retard s'annulent. */
       var champHorodatage = form.querySelector('[name="horodatage"]');
@@ -156,7 +157,22 @@
             bouton.textContent = libelle;
           }
         });
+      });
     });
+  }
+
+  /*
+   * Turnstile valide le visiteur en arrière-plan, en une ou deux secondes. Un envoi plus rapide
+   * partirait sans jeton et serait refusé : on attend le jeton six secondes au plus.
+   */
+  function attendreTurnstile(form, suite) {
+    if (!form.querySelector('.zone-turnstile')) return suite();
+    var debut = Date.now();
+    (function verifier() {
+      var jeton = form.querySelector('[name="cf-turnstile-response"]');
+      if ((jeton && jeton.value) || Date.now() - debut > 6000) return suite();
+      setTimeout(verifier, 250);
+    })();
   }
 
   function afficherErreur(form, message) {
