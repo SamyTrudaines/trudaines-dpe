@@ -15,7 +15,7 @@ import { secteurs, fourchetteSecteur, type Secteur } from '../../data/secteurs';
 import { estimationsQuartiers } from '../../data/estimations-quartiers';
 import { mesureQuartier } from '../../lib/estimation-quartier';
 import { arrondissements, periode, libellePieces, millesime, rues } from '../../lib/rues';
-import { prix, nombre, dateFr } from '../../lib/format';
+import { prix, nombre, dateFr, enPhrase } from '../../lib/format';
 import { evt } from '../../lib/entonnoir';
 const preuve = await preuveAvis();
 
@@ -82,7 +82,19 @@ const faqQuartiers = pagesQuartiers.length > 1
         .join(' ; ')}. Chaque quartier a sa page d'estimation, avec le prix de ses rues.`,
     }]
   : [];
-const faq = [...faqTailles, ...faqQuartiers, ...secteur.faq];
+/* Prix des rues que les vendeurs cherchent déjà (pages de rue vues dans Search Console). */
+const faqRues = (secteur.ruesQuestions ?? [])
+  .map((slug) => rues.find((r) => r.slug === slug))
+  .filter((r): r is NonNullable<typeof r> => Boolean(r))
+  .map((r) => ({
+    question: `Quel est le prix au mètre carré ${enPhrase(r.nom)}, ${r.arrondissement} ?`,
+    reponse: `${prix(r.mediane)} le m² en médiane ${enPhrase(r.nom)}, sur ${nombre(r.ventes)} ventes d'appartements signées de ${periode}${chiffres ? `, contre ${prix(chiffres.mediane)} pour l'ensemble du ${secteur.nom.replace('Paris ', '')}` : ''}. Huit ventes sur dix s'y sont faites entre ${prix(r.d1)} et ${prix(r.d9)} le m². Le détail est sur la page de la rue.`,
+  }));
+const faq = [...faqTailles, ...faqQuartiers, ...faqRues, ...secteur.faq];
+/* Titre de recherche : le prix médian, arrondi à la dizaine, quand la donnée existe. */
+const titrePage = secteur.titrePrix && chiffres
+  ? `Estimation appartement ${secteur.nom.replace(/e$/, '')} : ${prix(Math.round(chiffres.mediane / 10) * 10)}/m² | Trudaines`
+  : secteur.titre;
 
 /* Cartes « estimer par quartier » et rues les plus vendues de l'arrondissement : un clic vers la page la plus proche du bien. */
 const cartesQuartiers = pagesQuartiers.map((q) => ({ page: q, mesure: mesureQuartier(q) }));
@@ -117,7 +129,7 @@ const donnees = [
 <Layout
   filArianeMasqueMobile
   ancreEstimation={`#estimation-${secteur.slug}`}
-  titre={secteur.titre}
+  titre={titrePage}
   description={chiffres
     ? `Estimation immobilière gratuite à ${secteur.nom} : ${prix(chiffres.mediane)} le m² sur ${nombre(chiffres.ventes)} ventes signées.${nomsQuartiers ? ` ${nomsQuartiers}.` : ''} En ligne ou après visite.`
     : `${secteur.description} ${preuve}`}
