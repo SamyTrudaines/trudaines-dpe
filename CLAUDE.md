@@ -28,6 +28,20 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Le titre de l'accueil est « L'immobilier au-delà des murs. » ; sa fin, « au-delà des murs. », est le
   marqueur que la recette de mise en ligne cherche sur la page (`scripts/mise-en-ligne/config.mjs`).
 
+## Stratégie commerciale de Samy
+- Plus des trois quarts du chiffre d'affaires vient de la recommandation, dans tout Paris. Samy travaille beaucoup
+  dans les 3e, 6e, 7e, 8e, 11e, 12e, 14e, 15e, 19e et 20e, en plus de sa zone. Le site ne doit jamais donner l'impression
+  que Trudaines refuse ces clients : un client recommandé tape « Trudaines » et vérifie références, avis et parcours
+  WinWin (/recommander), pas une page de quartier.
+- Le SEO et le GEO restent concentrés sur les 9e, 10e, 17e et 18e (objectifs ci-dessous). Aucune page de quartier ni
+  d'annonce indexée pour un mandat hors de cette zone : cela dilue le signal local sans rien rapporter.
+- Métiers : vente, gestion, chasse. La gestion est l'axe à développer (revenu récurrent, accès aux ventes futures),
+  sous réserve de la mention « Gestion immobilière » sur la carte professionnelle et d'une garantie financière gestion,
+  absentes à ce jour (`site.legal`). La chasse est réservée aux clients recommandés.
+- Honoraires de location et de mise en location : un mois de loyer hors charges à la charge du bailleur, un mois à la
+  charge du locataire, sans frais d'entremise en plus. En bail loi de 1989, la part du locataire reste plafonnée par
+  la loi (Paris : 12 € TTC/m² pour visite, dossier et bail, 3 € TTC/m² pour l'état des lieux).
+
 ## Objectifs de Samy (priorité absolue)
 - Top 3 sur Google, les réponses IA de Google, ChatGPT, Claude et Gemini, en « estimation immobilière » et
   « estimation appartement » pour : Paris 18, Paris 9, Paris 17, Montmartre, Trudaine-Maubeuge, Lorette-Martyrs,
