@@ -38,6 +38,10 @@ export type Secteur = {
   prixMoyen: string;
   fourchette: string;
   faq: QuestionFaq[];
+  /** Titre de recherche avec le prix médian au m² de l'arrondissement, calculé depuis rues.json. */
+  titrePrix?: boolean;
+  /** Rues dont le prix au m² fait l'objet d'une question, d'après les pages que Search Console montre déjà. */
+  ruesQuestions?: string[];
 };
 
 export const secteurs: Secteur[] = [
@@ -232,6 +236,8 @@ export const secteurs: Secteur[] = [
     introAgence:
       "Le 17e nord prolonge naturellement notre terrain : même bassin d'acheteurs que le 9e et le 18e ouest, mêmes immeubles de rapport de la fin du XIXe, et des vendeurs qui arbitrent souvent entre les deux rives de la place de Clichy.",
     quartiers: ['batignolles', 'epinettes'],
+    titrePrix: true,
+    ruesQuestions: ['rue-dulong-17', 'rue-des-dames-17', 'rue-pouchet-17', 'rue-cardinet-17', 'rue-jacquemont-17'],
     prixMoyen: '10 130 € le m², prix médian',
     fourchette:
       "7 375 à 13 246 € le m², du premier au neuvième décile des ventes d'appartements de janvier 2024 à décembre 2025",
