@@ -73,6 +73,35 @@ async function turnstileValide(env, request) {
   return Boolean(verdict.success);
 }
 
+/*
+ * Aucun lien ni code dans un formulaire : ni adresse web, ni balise, ni script. Un prospect, un
+ * concurrent ou un robot ne peut pas faire transiter un lien par le site (appât relayé, nuits
+ * des 12 et 13 novembre 2026), ni glisser du code dans les emails de l'agence. Seul le champ
+ * LinkedIn des candidatures accepte une adresse, et seulement vers linkedin.com.
+ * Le visiteur voit pourquoi son envoi est refusé et peut le corriger.
+ */
+const LIEN = /(?:https?:\/\/|ftp:\/\/|www\.|\b[a-z0-9-]+\.(?:com|net|org|ru|su|io|ly|me|link|site|top|xyz|info|biz|click|online|shop|app|dev|co|cc|tk)\/)/i;
+const CODE = /<\s*\/?\s*[a-z!][^>]*>|javascript\s*:|data\s*:\s*text\/html|\[\/?(?:url|link|a)\b/i;
+const CHAMPS_LIBRES = new Set(['cf-turnstile-response', 'origine', 'contexte']);
+const LINKEDIN = /^\s*(?:https?:\/\/)?(?:[a-z]{2,3}\.)?linkedin\.com\/[^\s<>"']*\s*$/i;
+
+async function contenuInterdit(request) {
+  const type = request.headers.get('content-type') || '';
+  if (!/form/i.test(type)) return null;
+  const donnees = await request.clone().formData().catch(() => null);
+  if (!donnees) return null;
+  for (const [champ, valeur] of donnees.entries()) {
+    if (typeof valeur !== 'string' || CHAMPS_LIBRES.has(champ)) continue;
+    if (CODE.test(valeur)) return 'code';
+    if (champ === 'linkedin') {
+      if (valeur.trim() && !LINKEDIN.test(valeur)) return 'lien';
+      continue;
+    }
+    if (LIEN.test(valeur)) return 'lien';
+  }
+  return null;
+}
+
 export async function onRequest(context) {
   const { method, url } = context.request;
   const chemin = new URL(url).pathname;
@@ -80,6 +109,16 @@ export async function onRequest(context) {
     const ip = context.request.headers.get('CF-Connecting-IP') || 'inconnue';
     if ((await compter(`formulaire-${ip}`, FENETRE_SECONDES)) > ENVOIS_PAR_IP) {
       return refus("Trop d'envois depuis votre connexion. Merci de réessayer dans un quart d'heure ou de nous appeler.", 429);
+    }
+    const interdit = await contenuInterdit(context.request);
+    if (interdit) {
+      console.warn(`Formulaire refusé (${interdit}) sur ${chemin}`);
+      return refus(
+        interdit === 'lien'
+          ? "Pour votre sécurité, les liens ne sont pas acceptés dans nos formulaires. Merci de les retirer, ou de nous appeler au 06 20 46 59 12."
+          : "Votre message contient des caractères non acceptés. Merci de le reformuler, ou de nous appeler au 06 20 46 59 12.",
+        400,
+      );
     }
     if (!(await turnstileValide(context.env, context.request))) {
       return refus("La vérification anti-robot n'a pas abouti. Merci de recharger la page ou de nous appeler.", 403);
