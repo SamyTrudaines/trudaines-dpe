@@ -79,7 +79,32 @@ const criteres = [
   },
 ];
 
+/*
+ * Questions telles que les vendeurs les tapent (suggestions Google relevées le 26 novembre 2026) :
+ * « comment choisir son agence immobilière paris 18 », « … montmartre », « comment reconnaître une
+ * bonne agence immobilière paris 9 », « meilleure agence immobilière ». Jamais de nom d'agence.
+ */
 const faq = [
+  {
+    question: 'Quelle est la meilleure agence immobilière pour vendre son appartement à Paris ?',
+    reponse:
+      "Il n'existe pas de classement officiel des agences. La meilleure pour vous est celle qui prouve, par écrit, qu'elle connaît les ventes de votre rue : un avis de valeur qui cite ses comparables, des ventes signées dans le quartier, des avis clients nombreux et récents, un interlocuteur unique et un mandat clair. Comparez deux ou trois avis de valeur écrits plutôt que des chiffres annoncés de vive voix.",
+  },
+  {
+    question: 'Comment choisir son agence immobilière à Montmartre et dans le 18e ?',
+    reponse:
+      "Sur la Butte, le prix change d'une rue à l'autre : vue, étage sans ascenseur, calme, état de la copropriété. Demandez à l'agence les ventes qu'elle a signées entre les Abbesses, Lepic, Junot et Caulaincourt, la façon dont elle chiffre la vue et l'escalier, et le profil des acheteurs qu'elle a en fichier. Trudaines a son bureau au 2 rue Livingstone, au pied de la Butte, et publie les prix signés rue par rue.",
+  },
+  {
+    question: 'Comment reconnaître une bonne agence immobilière dans le 9e, à Trudaine, Martyrs ou Saint-Georges ?',
+    reponse:
+      "Une bonne agence du 9e nord sait dire, rue par rue, ce que valent un immeuble en pierre de taille, un gardien et un étage élevé, et le montre avec les ventes signées de la base DVF. Elle vous remet un avis de valeur écrit, un calendrier de commercialisation et un compte rendu après chaque visite. Méfiez-vous du prix le plus haut annoncé pour obtenir le mandat.",
+  },
+  {
+    question: 'Comment savoir si une agence immobilière est fiable ?',
+    reponse:
+      "Vérifiez trois documents : la carte professionnelle (numéro et chambre de commerce qui l'a délivrée), l'attestation de garantie financière et d'assurance, et le barème des honoraires affiché. Puis lisez les avis clients récents, sur plusieurs sources, et demandez les références de ventes signées. Trudaines affiche sa carte professionnelle, son barème et ses avis sur son site.",
+  },
   {
     question: 'Faut il choisir une grande enseigne ou une agence indépendante ?',
     reponse:
@@ -122,7 +147,7 @@ const donnees = [
 ];
 ---
 <Layout
-  titre="Choisir son agence immobilière à Paris | Trudaines"
+  titre="Choisir son agence immobilière à Paris, 9e, 18e, Montmartre | Trudaines"
   description="Huit questions à poser avant de signer un mandat à Paris 9e, 10e ou 18e, la bonne réponse attendue et le signal qui doit alerter."
   filAriane={[{ nom: 'Choisir son agence' }]}
   donnees={donnees}
