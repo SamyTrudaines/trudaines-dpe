@@ -18,7 +18,7 @@ essentiel:
   - "Les prix réellement signés sont publics : la base des demandes de valeurs foncières (DVF) de l'administration fiscale recense les ventes enregistrées chez le notaire, avec un décalage de plusieurs mois."
   - "À Montmartre, sur les ventes d'appartements de janvier 2024 à juin 2026, la médiane va de 9 090 € le m² rue Coustou à 12 590 € passage Lepic : sur 40 m², l'écart entre deux rues du même quartier atteint 140 000 €."
   - "Seule la visite permet de situer un appartement dans la fourchette de sa rue : c'est elle qui transforme un ordre de grandeur en prix de mise en vente."
-  - "Chez Trudaines, l'estimation est offerte quand le propriétaire envisage de vendre ; l'avis de valeur écrit, remis sous 48 heures, cite les ventes comparables de la rue."
+  - "Chez Trudaines, l'estimation est offerte quand le propriétaire envisage de vendre ; l'avis de valeur écrit, remis sous 24 heures, cite les ventes comparables de la rue."
 faq:
   - question: "Une estimation en ligne est-elle fiable à Paris ?"
     reponse: "Elle donne un ordre de grandeur, utile pour savoir où l'on se situe. Elle raisonne sur l'adresse, la surface et parfois l'étage, mais elle ne voit pas l'état de l'appartement, la lumière, le plan ni la santé de la copropriété. À Paris, ce sont souvent ces critères qui font l'écart entre deux appartements d'une même rue."
@@ -62,6 +62,6 @@ Ce qu'il ne peut pas faire, c'est voir votre appartement. Il ignore l'étage ré
 
 ## Ce que contient notre avis de valeur
 
-Nous partons des ventes signées dans votre rue et dans les rues voisines, puis nous visitons. L'avis de valeur écrit, remis sous 48 heures, cite les ventes comparables, explique chaque ajustement et propose une stratégie de prix. Voir [ce que doit contenir un avis de valeur sérieux](/panorama/comprendre-avis-de-valeur).
+Nous partons des ventes signées dans votre rue et dans les rues voisines, puis nous visitons. L'avis de valeur écrit, remis sous 24 heures, cite les ventes comparables, explique chaque ajustement et propose une stratégie de prix. Voir [ce que doit contenir un avis de valeur sérieux](/panorama/comprendre-avis-de-valeur).
 
 Pour commencer par votre quartier : [Montmartre](/estimation/paris-18/montmartre), [Abbesses](/estimation/paris-18/abbesses), [Lamarck-Caulaincourt](/estimation/paris-18/lamarck), [Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge), [Lorette-Martyrs](/estimation/paris-9/martyrs-lorette), [Saint-Georges](/estimation/paris-9/saint-georges), [Batignolles](/estimation/paris-17/batignolles).

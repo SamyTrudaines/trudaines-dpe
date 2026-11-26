@@ -79,6 +79,11 @@ export const site = {
   avis: {
     lienGoogle: ficheGoogle,
     releve: 'octobre 2026',
+    /*
+     * Nombre d'avis affiché sur la fiche Google elle-même, relevé à la main par Samy : vérifiable sur
+     * Google, il peut dépasser les avis repris sur /avis tant que les derniers ne sont pas importés.
+     */
+    google: { total: 99, releve: 'novembre 2026' },
   },
   /**
    * Identifiant GA4 de trudaines.com (public, il figure dans chaque page). La variable

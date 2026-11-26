@@ -27,11 +27,11 @@ export async function lignesEnBref({ dans, bureau, prix, lienPrix }: OptionsAgen
   return [
     { terme: "L'agence", texte: "Trudaines Immobilier, agence immobilière indépendante fondée en septembre 2024 par Samy Santamarina, interlocuteur unique de l'estimation à la signature." },
     { terme: 'Le bureau', texte: `${site.adresse.rue}, ${site.adresse.codePostal} Paris, ${bureau}. ${site.horairesTexte}` },
-    { terme: 'Services', texte: `Vente, estimation écrite remise sous 48 heures après visite, recherche pour acquéreurs et gestion locative, ${dans} et dans tout Paris.` },
+    { terme: 'Services', texte: `Vente, estimation écrite remise sous 24 heures après visite, recherche pour acquéreurs et gestion locative, ${dans} et dans tout Paris.` },
     { terme: 'Prix au m²', texte: prix, lien: { href: lienPrix, libelle: 'Le détail par rue' } },
     { terme: 'Honoraires', texte: phraseHonoraires, lien: { href: '/honoraires', libelle: 'Le barème' } },
     ...(avis.total > 0
-      ? [{ terme: 'Avis clients', texte: `${avis.total} avis clients publiés, note moyenne de ${avis.noteTexte} sur 5, repris de Google et de Pages Jaunes.`, lien: { href: '/avis', libelle: 'Les lire' } }]
+      ? [{ terme: 'Avis clients', texte: `${site.avis.google.total} avis sur la fiche Google (${site.avis.google.releve}) ; ${avis.total} avis clients repris sur le site, note moyenne de ${avis.noteTexte} sur 5, de Google et de Pages Jaunes.`, lien: { href: '/avis', libelle: 'Les lire' } }]
       : []),
     { terme: 'Contact', texte: `${site.telephone}, ${site.email}. Rappel sous 24 heures ouvrées.` },
   ];
@@ -45,7 +45,7 @@ export function faqAgence({ dans, bureau }: Pick<OptionsAgence, 'dans' | 'bureau
     },
     {
       question: 'Combien de temps pour obtenir une estimation ?',
-      reponse: "Deux minutes en ligne : vos coordonnées, quelques questions sur le bien, et la fourchette tirée des ventes signées de votre rue s'affiche. Pour l'avis de valeur écrit, une visite d'environ quarante-cinq minutes, puis le document sous 48 heures, avec les ventes comparables de votre rue. Gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
+      reponse: "Deux minutes en ligne : vos coordonnées, quelques questions sur le bien, et la fourchette tirée des ventes signées de votre rue s'affiche. Pour l'avis de valeur écrit, une visite d'environ quarante-cinq minutes, puis le document sous 24 heures, avec les ventes comparables de votre rue. Gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
     },
     /*
      * Les deux questions que les vendeurs tapent pour choisir (suggestions Google du 26 novembre 2026 :
@@ -54,7 +54,7 @@ export function faqAgence({ dans, bureau }: Pick<OptionsAgence, 'dans' | 'bureau
      */
     {
       question: `Quelle est la meilleure agence immobilière ${dans} ?`,
-      reponse: `Il n'existe pas de classement officiel des agences ${dans}. La meilleure pour vendre est celle qui démontre par écrit qu'elle connaît les ventes de votre rue : comparez deux ou trois avis de valeur écrits, leurs ventes comparables, le prix de mise en marché proposé et le calendrier. Un prix annoncé trop haut pour obtenir le mandat se paie ensuite en semaines de vente. Trudaines remet son avis de valeur écrit sous 48 heures après la visite, offert si vous envisagez de vendre, et publie ses avis clients et ses ventes.`,
+      reponse: `Il n'existe pas de classement officiel des agences ${dans}. La meilleure pour vendre est celle qui démontre par écrit qu'elle connaît les ventes de votre rue : comparez deux ou trois avis de valeur écrits, leurs ventes comparables, le prix de mise en marché proposé et le calendrier. Un prix annoncé trop haut pour obtenir le mandat se paie ensuite en semaines de vente. Trudaines remet son avis de valeur écrit sous 24 heures après la visite, offert si vous envisagez de vendre, et publie ses avis clients et ses ventes.`,
     },
     {
       question: `Comment choisir son agence immobilière ${dans} ?`,

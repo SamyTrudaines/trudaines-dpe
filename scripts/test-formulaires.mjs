@@ -112,6 +112,15 @@ for (const [nom, chemin, donnees] of [
   const okRefus = refus.status === 400 && appels.length === 0;
   if (!okRefus) echecs++;
   console.log(`${okRefus ? 'OK   ' : 'ÉCHEC'} estimation, coordonnées sans téléphone : statut ${refus.status}, ${appels.length} appel(s) Brevo`);
+
+  /* Email facultatif quand le téléphone est donné (choix de Samy du 26 novembre 2026). */
+  appels.length = 0;
+  const { email, ...sansEmailContact } = contact;
+  const sansMail = await fonction.onRequestPost({ request: requete(sansEmailContact), env });
+  const smsSansMail = appels.filter((a) => a.url.endsWith('/transactionalSMS/send')).length;
+  const okSansMail = sansMail.status === 200 && smsSansMail === 1 && appels.filter((a) => a.url.endsWith('/smtp/email')).length === 1;
+  if (!okSansMail) echecs++;
+  console.log(`${okSansMail ? 'OK   ' : 'ÉCHEC'} estimation, coordonnées sans email : statut ${sansMail.status}, SMS ${smsSansMail}`);
 }
 
 /* Rappel sans email : la demande passe, le contact Brevo est créé par son numéro. */

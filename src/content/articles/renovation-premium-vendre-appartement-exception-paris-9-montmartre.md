@@ -86,7 +86,7 @@ La présentation suit la méthode décrite plus haut : reportage photographique 
 
 De l'estimation à la signature chez le notaire, c'est la même personne qui connaît votre appartement, ses travaux, ses artisans et son dossier. Pour un bien d'exception, c'est ce qui permet de répondre juste à chaque question d'acheteur, sans délai.
 
-Pour situer votre appartement dans la fourchette de sa rue, nous le visitons, puis nous vous remettons un avis de valeur écrit sous 48 heures, comparé aux ventes signées des mêmes rues. Il est offert si vous envisagez de vendre.
+Pour situer votre appartement dans la fourchette de sa rue, nous le visitons, puis nous vous remettons un avis de valeur écrit sous 24 heures, comparé aux ventes signées des mêmes rues. Il est offert si vous envisagez de vendre.
 
 Les prix par rue : [avenue Junot](/prix-immobilier/avenue-junot-18), [rue Caulaincourt](/prix-immobilier/rue-caulaincourt-18), [rue Lepic](/prix-immobilier/rue-lepic-18), [avenue Trudaine](/prix-immobilier/avenue-trudaine-09), [rue des Martyrs](/prix-immobilier/rue-des-martyrs-09), [rue de La Rochefoucauld](/prix-immobilier/rue-de-la-rochefoucauld-09). Notre agence à [Montmartre](/agence-immobiliere-montmartre) et [avenue Trudaine](/agence-immobiliere-trudaine).
 

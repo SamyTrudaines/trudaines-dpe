@@ -100,7 +100,7 @@ const questions = [
     name: `Quelle agence immobilière vend ${nomEnPhrase} ?`,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui-même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 48 heures. L'agence ne détient aucun fonds.`,
+      text: `Trudaines est une agence immobilière parisienne qui suit ${rue.arrondissement} voie par voie. Samy Santamarina, agent immobilier titulaire de la carte professionnelle ${site.legal.carteT}, visite lui-même chaque bien qu'il prend en mandat et remet un avis de valeur écrit sous 24 heures. L'agence ne détient aucun fonds.`,
     },
   },
   {
@@ -219,7 +219,7 @@ const regard = regardsRues[rue.slug] ?? [];
       {/* Le visiteur lit le prix de sa rue puis repart : la proposition d'estimation vient juste après le chiffre. */}
       <div class="mt-8 flex flex-col gap-4 border-l-2 border-[color:var(--color-or)] pl-5 sm:flex-row sm:items-center sm:justify-between">
         <p class="max-w-xl">
-          Votre appartement est {nomEnPhrase} ? La médiane ne dit pas son prix : votre estimation en moins d'une minute, ou un avis de valeur écrit sous 48 h. Gratuit et sans engagement.
+          Votre appartement est {nomEnPhrase} ? La médiane ne dit pas son prix : votre estimation en moins d'une minute, ou un avis de valeur écrit sous 24 h. Gratuit et sans engagement.
         </p>
         <a href={`#estimation-${rue.slug}`} class="bouton shrink-0" data-evt={evt('rue', 'vers_estimation', contexte)}>Estimer mon appartement</a>
       </div>

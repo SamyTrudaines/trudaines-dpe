@@ -41,8 +41,10 @@ function priorite(proprietaire, horizon) {
  */
 async function contactRecu(request, env, donnees) {
   const valeur = (champ) => String(donnees.get(champ) || '').trim();
-  const manquants = champsManquants(donnees, ['adresse', 'prenom', 'email', 'telephone']);
-  if (manquants.length || !emailValide(donnees.get('email'))) {
+  // Email facultatif (choix de Samy du 26 novembre 2026) : le téléphone suffit pour rappeler.
+  const manquants = champsManquants(donnees, ['adresse', 'prenom', 'telephone']);
+  const emailSaisi = valeur('email');
+  if (manquants.length || valeur('telephone').replace(/\D/g, '').length < 9 || (emailSaisi && !emailValide(emailSaisi))) {
     return reponse(request, { ok: false, message: 'Merci de compléter vos coordonnées.' }, 400);
   }
   const nomComplet = [valeur('prenom'), valeur('nom')].filter(Boolean).join(' ');
@@ -50,7 +52,7 @@ async function contactRecu(request, env, donnees) {
     ['Adresse', valeur('adresse')],
     ['Type de bien', valeur('type') || 'Appartement'],
     ['Nom', nomComplet],
-    ['Email', valeur('email')],
+    ['Email', valeur('email') || 'Non donné'],
     ['Téléphone', valeur('telephone')],
     ['Secteur', valeur('secteur')],
     ['Quartier', valeur('quartier')],
@@ -60,7 +62,7 @@ async function contactRecu(request, env, donnees) {
   await envoyerEmail(env, {
     sujet: `ESTIMATION COMMENCÉE · ${valeur('adresse')} · ${nomComplet} · ${valeur('telephone')}`,
     html: gabaritNotification('Estimation commencée : coordonnées reçues. Le détail du bien suit s’il termine.', lignes),
-    repondreA: valeur('email'),
+    repondreA: valeur('email') || undefined,
   }).catch(() => null);
   await envoyerSmsAgence(env, `Trudaines, estimation commencée : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')} (${(valeur('type') || 'appartement').toLowerCase()}). La suite peut ne pas arriver. A rappeler.`);
   return reponse(request, { ok: true, message: 'Coordonnées reçues' });

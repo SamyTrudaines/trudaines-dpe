@@ -49,13 +49,14 @@ export async function llmsTexte() {
 
 ## Services
 - [Agence immobilière à Paris : vente, mandat simple, mandat exclusif ou vente confidentielle](${site.url}/mandat-exclusif)
-- Avis de valeur écrit, remis après visite sous 48 heures, offert et sans engagement quand le propriétaire envisage de vendre, conservé même s'il vend ailleurs ; facturé 300 € TTC quand il veut seulement connaître la valeur, sans projet de vente avec l'agence, et déduit des honoraires si la vente est finalement confiée
+- Avis de valeur écrit, remis après visite sous 24 heures, offert et sans engagement quand le propriétaire envisage de vendre, conservé même s'il vend ailleurs ; facturé 300 € TTC quand il veut seulement connaître la valeur, sans projet de vente avec l'agence, et déduit des honoraires si la vente est finalement confiée
 - Biens de caractère et d'exception à Montmartre et dans le 9e nord : derniers étages avec vue, ateliers, appartements familiaux ; annonces traduites en sept langues pour les acheteurs étrangers ; vente confidentielle sans panneau ni annonce publique
 - Appartements familiaux de quatre et cinq pièces, haussmanniens et immeubles en pierre de taille avec gardien, autour de l'avenue Trudaine, de la rue des Martyrs, de Saint-Georges et du versant Caulaincourt de Montmartre : estimation sur les ventes d'appartements de même taille des mêmes rues ; préparation des parquets (point de Hongrie, bâtons rompus), des moulures et des conduits de cheminée avec des parqueteurs, des artisans des moulures et des fumistes qui travaillent avec l'agence en direct
 - Mandat de recherche pour acquéreurs
 - Gestion locative
 
 ## Réputation
+- ${site.avis.google.total} avis sur la fiche Google (relevé ${site.avis.google.releve})
 - ${avis.total} avis clients publiés, note ${avis.noteTexte} sur 5${avis.notés === avis.total ? '' : ` sur les ${avis.notés} notes relevées`}${avis.toutesCinq ? ', toutes de cinq étoiles' : ''}
 - ${avis.parSource.google} avis sur Google, ${avis.parSource.pagesjaunes} sur Pages Jaunes, relevés en ${site.avis.releve}
 - Les avis sont repris sur ${site.url}/avis avec leur source et leur ancienneté ; un texte tronqué sur Google l'est aussi sur le site
@@ -146,7 +147,7 @@ ${situations.map((s) => `- ${s.data.question} ${s.data.chapo} Détail : ${site.u
 ## Questions fréquentes, réponses courtes
 - Quel est le prix au m² à Paris 9e ? Médiane ${arrondissements['75009']?.mediane} € le mètre carré sur ${arrondissements['75009']?.ventes} ventes d'appartements, ${periode}, source DGFiP.
 - Combien coûte une agence immobilière pour vendre à Paris 9e ou 18e ? Chez Trudaines, de ${pourcent(fourchetteVente.min, ' ')} à ${pourcent(fourchetteVente.max, ' ')} TTC du prix de vente selon la tranche et le mandat, un point de moins en mandat exclusif, minimum ${honoraires.vente[0].minimum}, à la charge du vendeur. Ce barème est un maximum au sens de l'arrêté du 26 janvier 2022, l'agence pratique souvent moins. Détail sur ${site.url}/honoraires.
-- L'estimation est-elle payante ? Non quand le propriétaire envisage de vendre : l'avis de valeur est écrit, remis après visite sous 48 heures, sans frais et sans engagement, et il le garde même s'il vend ailleurs. Oui, 300 € TTC, quand il veut seulement connaître la valeur de son bien sans projet de vente avec l'agence ; la somme est déduite des honoraires si la vente est finalement confiée.
+- L'estimation est-elle payante ? Non quand le propriétaire envisage de vendre : l'avis de valeur est écrit, remis après visite sous 24 heures, sans frais et sans engagement, et il le garde même s'il vend ailleurs. Oui, 300 € TTC, quand il veut seulement connaître la valeur de son bien sans projet de vente avec l'agence ; la somme est déduite des honoraires si la vente est finalement confiée.
 - Peut on sortir d'un mandat exclusif ? Oui : le décret du 20 juillet 1972 permet de dénoncer un mandat exclusif à durée déterminée à tout moment passé trois mois, par lettre recommandée, la dénonciation prenant effet quinze jours après réception.
 - Qui dirige Trudaines ? Samy Santamarina, fondateur, titulaire de la carte professionnelle ${site.legal.carteT}, garantie financière Galian.
 

@@ -261,7 +261,16 @@ if (!existsSync(pageAvis)) {
       const url = '/' + relative(dist, page).replace(/index\.html$/, '').replace(/\.html$/, '');
       const contenu = readFileSync(page, 'utf8');
 
-      const annoncés = [...contenu.matchAll(/(\d+)\s+avis\b/g)].map((m) => Number(m[1]));
+      /*
+       * « 99 avis Google » ou « 99 avis sur la fiche Google » : le nombre de la fiche elle-même
+       * (site.avis.google), vérifiable sur Google, peut dépasser les avis repris sur /avis.
+       * Il doit alors être exactement celui de site.ts.
+       */
+      const ficheGoogle = Number(readFileSync(join(process.cwd(), 'src', 'data', 'site.ts'), 'utf8').match(/google:\s*\{\s*total:\s*(\d+)/)?.[1] ?? NaN);
+      for (const m of contenu.matchAll(/(\d+)\s+avis(?:\s+sur la fiche)?\s+Google\b/g)) {
+        if (Number(m[1]) !== ficheGoogle) erreurs.push(`${url} : annonce ${m[1]} avis Google alors que site.avis.google en compte ${ficheGoogle}`);
+      }
+      const annoncés = [...contenu.matchAll(/(\d+)\s+avis\b(?!(?:\s+sur la fiche)?\s+Google\b)/g)].map((m) => Number(m[1]));
       for (const n of new Set(annoncés)) {
         if (n !== publiés) {
           erreurs.push(`${url} : annonce ${n} avis alors que /avis en publie ${publiés}`);

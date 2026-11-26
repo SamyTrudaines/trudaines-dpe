@@ -123,7 +123,7 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       <legend class="titre-3 mb-2">À qui envoyer votre estimation ?</legend>
       <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
         Votre fourchette est calculée sur les ventes signées de votre rue. Elle s'affiche à la fin, en quatre
-        questions sur le bien, et vous arrive aussi par email.
+        questions sur le bien. Avec votre email, elle vous arrive aussi par écrit.
       </p>
       <div class="grid gap-6 sm:grid-cols-2">
         <div>
@@ -135,12 +135,13 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
           <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
         </div>
         <div>
-          <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
-          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" inputmode="email" required />
-        </div>
-        <div>
           <label class="etiquette" for={`telephone-${identifiant}`}>Téléphone</label>
           <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" inputmode="tel" required minlength="10" title="Un numéro de téléphone, par exemple 06 12 34 56 78" />
+        </div>
+        <div>
+          {/* Facultatif depuis le 26 novembre 2026, choix de Samy : le téléphone suffit pour rappeler. */}
+          <label class="etiquette" for={`email-${identifiant}`}>Adresse email <span class="font-normal normal-case tracking-normal text-[color:var(--color-ardoise)]">(facultatif)</span></label>
+          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" inputmode="email" />
         </div>
       </div>
       <div class="mt-6 flex items-start gap-3">

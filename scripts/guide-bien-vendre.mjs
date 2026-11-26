@@ -442,7 +442,7 @@ page('prix', () => `
       <li><p><strong>Ce que la visite révèle.</strong> Lumière, vue, calme, état de l’immeuble : aucune donnée ne les voit.</p></li>
     </ol>
     <div class="encart prix-encart">
-      <p>Votre avis de valeur écrit sous 48 heures. Il vous appartient, même si vous ne vendez pas avec nous.</p>
+      <p>Votre avis de valeur écrit sous 24 heures. Il vous appartient, même si vous ne vendez pas avec nous.</p>
       ${appel('Demander mon avis de valeur', lienEstimation('prix'))}
     </div>
   </div>`);
@@ -473,7 +473,7 @@ page('estimation', () => `
   ${photo('estimation', 'photo-gauche', { position: '50% 50%' })}
   <div class="colonne colonne-droite appel-page">
     <p class="surtitre">Votre estimation</p>
-    <p class="appel-grand">48&nbsp;h</p>
+    <p class="appel-grand">24&nbsp;h</p>
     <h2 class="titre-moyen">Votre avis de valeur écrit, avec les ventes signées de votre rue</h2>
     <ul class="coches texte">
       <li>Les ventes comparables, citées et datées</li>
@@ -758,7 +758,7 @@ page('signer', () => `
 
 /* 21. Le calendrier */
 const etapes = [
-  ['Semaine 0', 'Visite d’estimation', 'Avis de valeur écrit sous 48 heures, décision du prix et du calendrier.'],
+  ['Semaine 0', 'Visite d’estimation', 'Avis de valeur écrit sous 24 heures, décision du prix et du calendrier.'],
   ['Semaines 1 et 2', 'Préparation', 'Diagnostics, documents de copropriété, photographies, plan, annonce, mandat. Rien ne sort avant que le dossier soit complet.'],
   ['Semaines 3 et 4', 'Mise en marché', 'L’attention des acheteurs est à son maximum : les visites se concentrent.'],
   ['Semaine 5', 'Point chiffré', 'Visites, offres, rapport entre les deux. On confirme le prix ou on le corrige, ensemble.'],
@@ -830,7 +830,7 @@ page('liste', () => `
 const temps = [
   ['Un premier appel', 'Vous me parlez de votre projet. Je vous rappelle sous 24 heures ouvrées.'],
   ['La visite d’estimation', 'Je viens voir votre bien. Quarante-cinq minutes, aucune signature ce jour-là.'],
-  ['L’avis de valeur écrit', 'Sous 48 heures, avec les ventes signées de votre rue. Il vous reste, même sans mandat.'],
+  ['L’avis de valeur écrit', 'Sous 24 heures, avec les ventes signées de votre rue. Il vous reste, même sans mandat.'],
   ['La préparation', 'Diagnostics, dossier, photographies, plan. Rien ne sort avant que tout soit prêt.'],
   ['La mise en vente', 'Acheteurs vérifiés, compte rendu le jour même, synthèse chaque vendredi.'],
   ['Jusqu’à l’acte', 'Chaque offre par écrit, avec ma recommandation. Suivi avec le notaire, jusqu’aux clés.'],
@@ -846,7 +846,7 @@ page('methode', () => `
       ${temps.map(([t, x], i) => `<li><p class="methode-numero">${String(i + 1).padStart(2, '0')}</p><h3 class="intertitre">${t}</h3><p>${x}</p></li>`).join('')}
     </ol>
     <div class="preuves">
-      <div><p class="chiffre-valeur">48 h</p><p class="chiffre-libelle">pour votre avis de valeur écrit</p></div>
+      <div><p class="chiffre-valeur">24 h</p><p class="chiffre-libelle">pour votre avis de valeur écrit</p></div>
       <div><p class="chiffre-valeur">${nombre.format(rues.rues.length)}</p><p class="chiffre-libelle">rues analysées, vente par vente</p></div>
       <div><p class="chiffre-valeur">1</p><p class="chiffre-libelle">interlocuteur, de l’estimation à l’acte</p></div>
       <div><p class="chiffre-valeur">${avis.length}</p><p class="chiffre-libelle">avis clients${toutCinq ? ', tous à cinq étoiles' : ''}</p></div>
@@ -891,7 +891,7 @@ page('estimer', () => `
     <div class="logo dos-logo">${logoSvg(true)}</div>
     <p class="surtitre">Prochaine étape</p>
     <h2 class="titre dos-titre">Faites estimer votre bien</h2>
-    <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 48 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste. C'est moi qui vous réponds.</p>
+    <p class="chapo dos-chapo">Une visite de quarante-cinq minutes, puis un avis de valeur écrit sous 24 heures, avec les ventes signées de votre rue. Gratuit, sans engagement, et le document vous reste. C'est moi qui vous réponds.</p>
     <div class="dos-grille">
       <ul class="dos-appels">
         <li><a href="${lienEstimation('dos')}"><span class="dos-appel-titre">Prendre rendez-vous</span><span class="dos-appel-detail">Rappel sous 24 heures ouvrées</span></a></li>

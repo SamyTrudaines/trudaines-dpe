@@ -19,7 +19,7 @@ essentiel:
   - "Le point de Hongrie se reconnaît à ses lames coupées en biais qui forment des chevrons alignés ; les bâtons rompus ont des lames coupées droit, posées à angle droit. Un ponçage suivi d'une finition adaptée suffit souvent à rendre au parquet ancien son éclat avant les photos."
   - "Une moulure abîmée se restaure : on dégage les couches de peinture qui empâtent les profils, on reprend les fissures et on reproduit les parties manquantes à partir d'une empreinte prise sur une partie intacte."
   - "Une cheminée ne se présente comme fonctionnelle qu'après le passage d'un fumiste, qui vérifie l'état du conduit ; sans cette vérification, elle se décrit comme décorative."
-  - "Trudaines travaille en direct avec des parqueteurs, des artisans des moulures et des fumistes pour préparer ces appartements avant la première visite, et remet un avis de valeur écrit sous 48 heures, comparé aux ventes signées de la même rue."
+  - "Trudaines travaille en direct avec des parqueteurs, des artisans des moulures et des fumistes pour préparer ces appartements avant la première visite, et remet un avis de valeur écrit sous 24 heures, comparé aux ventes signées de la même rue."
 faq:
   - question: "Faut-il poncer le parquet avant de vendre son appartement ?"
     reponse: "Quand il est terne, rayé ou taché, oui le plus souvent : c'est l'une des préparations dont l'effet se voit le plus sur les photos et en visite. Un parqueteur dit d'abord si l'épaisseur d'usure permet un ponçage, puis propose la finition : vitrificateur mat pour la résistance, huile ou cire pour l'aspect ancien. Une lame fendue se remplace par une lame de récupération de même essence, plutôt que par une lame neuve qui se verrait."
@@ -85,7 +85,7 @@ Un dossier prêt dès la première visite fait gagner des semaines au moment du 
 
 ## Où en est votre appartement
 
-Nos pages de prix donnent les ventes signées de chaque rue : [avenue Trudaine](/prix-immobilier/avenue-trudaine-09), [rue des Martyrs](/prix-immobilier/rue-des-martyrs-09), [rue Condorcet](/prix-immobilier/rue-condorcet-09), [rue Caulaincourt](/prix-immobilier/rue-caulaincourt-18), [avenue Junot](/prix-immobilier/avenue-junot-18). Pour situer votre appartement dans la fourchette de sa rue, il faut le voir : nous visitons, puis nous vous remettons un avis de valeur écrit sous 48 heures, offert si vous envisagez de vendre.
+Nos pages de prix donnent les ventes signées de chaque rue : [avenue Trudaine](/prix-immobilier/avenue-trudaine-09), [rue des Martyrs](/prix-immobilier/rue-des-martyrs-09), [rue Condorcet](/prix-immobilier/rue-condorcet-09), [rue Caulaincourt](/prix-immobilier/rue-caulaincourt-18), [avenue Junot](/prix-immobilier/avenue-junot-18). Pour situer votre appartement dans la fourchette de sa rue, il faut le voir : nous visitons, puis nous vous remettons un avis de valeur écrit sous 24 heures, offert si vous envisagez de vendre.
 
 Commencer par votre quartier : [estimation Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge), [Lorette-Martyrs](/estimation/paris-9/martyrs-lorette), [Saint-Georges](/estimation/paris-9/saint-georges), [Montmartre](/estimation/paris-18/montmartre), [Lamarck-Caulaincourt](/estimation/paris-18/lamarck).
 

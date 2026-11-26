@@ -53,7 +53,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['montmartre', 'trudaine-maubeuge', 'martyrs-lorette'],
     titreSeo: 'Agence immobilière Montmartre, Abbesses, Caulaincourt | Trudaines',
     descriptionSeo:
-      "Agence immobilière à Montmartre, au pied de la Butte : appartements familiaux, haussmanniens et biens d'exception, prix signés par rue, avis de valeur sous 48 h.",
+      "Agence immobilière à Montmartre, au pied de la Butte : appartements familiaux, haussmanniens et biens d'exception, prix signés par rue, avis de valeur sous 24 h.",
     h1: 'Agence immobilière à Montmartre',
     surtitre: 'Paris 18e · Abbesses, Lepic, Junot, Caulaincourt',
     chapo:
@@ -107,7 +107,7 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement à Montmartre ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 24 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
       },
       {
         question: 'Vendez-vous des biens haut de gamme à Montmartre ?',
@@ -144,7 +144,7 @@ export const agencesLocales: AgenceLocale[] = [
     quartiersLies: ['martyrs-lorette', 'clichy-trinite', 'trudaine-maubeuge'],
     titreSeo: 'Agence immobilière Saint-Georges, Paris 9e | Trudaines',
     descriptionSeo:
-      "Agence immobilière Saint-Georges, Paris 9e, Nouvelle Athènes : prix au m² des rues voisines, estimation offerte sous 48 h.",
+      "Agence immobilière Saint-Georges, Paris 9e, Nouvelle Athènes : prix au m² des rues voisines, estimation offerte sous 24 h.",
     h1: 'Agence immobilière Saint-Georges, Paris 9e',
     surtitre: 'Paris 9e · Nouvelle Athènes',
     chapo:
@@ -171,7 +171,7 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement dans le quartier Saint-Georges ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 24 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
       },
     ],
   },
@@ -194,7 +194,7 @@ export const agencesLocales: AgenceLocale[] = [
     /* Maubeuge et rue des Martyrs : les deux recherches du quartier qu'aucune page ne portait (26/11/2026). */
     titreSeo: 'Agence immobilière Trudaine, Maubeuge, rue des Martyrs | Trudaines',
     descriptionSeo:
-      "Agence immobilière avenue Trudaine, Paris 9e : appartements familiaux et haussmanniens, prix signés rue par rue, avis de valeur sous 48 h, offert si vous vendez.",
+      "Agence immobilière avenue Trudaine, Paris 9e : appartements familiaux et haussmanniens, prix signés rue par rue, avis de valeur sous 24 h, offert si vous vendez.",
     h1: "Agence immobilière avenue Trudaine, Paris 9e",
     surtitre: 'Paris 9e · Trudaine, Martyrs, Anvers, Rochechouart',
     chapo:
@@ -234,7 +234,7 @@ export const agencesLocales: AgenceLocale[] = [
       {
         question: "Comment faire estimer mon appartement près de l'avenue Trudaine ?",
         reponse:
-          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 48 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
+          "Deux voies, au choix : l'estimation en ligne, qui donne en moins d'une minute une fourchette tirée des ventes de votre rue, ajustée selon l'étage, l'ascenseur et la taille ; ou un rappel par Samy Santamarina, puis une visite et un avis de valeur écrit remis sous 24 heures, offert si vous envisagez de vendre. L'estimation en ligne est toujours gratuite et sans engagement.",
       },
       {
         question: 'Vendez-vous des appartements familiaux dans le 9e nord ?',

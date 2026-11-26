@@ -19,7 +19,7 @@ essentiel:
   - "Le prix d'un grand appartement se compare aux ventes d'appartements de la même taille dans la même rue et les rues voisines : une médiane de quartier, tirée surtout par les studios et les deux pièces, le sous-estime."
   - "La surface vendue est la surface privative au sens de la loi Carrez (loi du 18 décembre 1996), qui exclut les parties de moins de 1,80 m de hauteur : dans un appartement sous les toits ou avec mezzanine, elle se mesure avant de fixer le prix."
   - "Les travaux qui touchent un mur porteur ou une partie commune supposent une autorisation de l'assemblée générale des copropriétaires : l'acheteur demandera le procès-verbal qui l'accorde."
-  - "Trudaines prépare ces appartements avec des parqueteurs, des artisans des moulures et des fumistes travaillant en direct, et remet un avis de valeur écrit sous 48 heures après visite, offert si le propriétaire envisage de vendre."
+  - "Trudaines prépare ces appartements avec des parqueteurs, des artisans des moulures et des fumistes travaillant en direct, et remet un avis de valeur écrit sous 24 heures après visite, offert si le propriétaire envisage de vendre."
 faq:
   - question: "Quel est le prix d'un appartement de 4 pièces dans le 9e nord ?"
     reponse: "De janvier 2024 à juin 2026, les quatre pièces et plus se sont vendus 11 340 € le m² en médiane dans le quartier Saint-Georges (200 ventes) comme dans le quartier Rochechouart, qui comprend l'avenue Trudaine (180 ventes), d'après la base DVF. Rue par rue, l'écart est large : avenue Trudaine, 12 480 € le m² sur 13 ventes de quatre pièces et plus. Seule une visite situe votre appartement dans la fourchette."
@@ -47,7 +47,7 @@ Une médiane de quartier est tirée par les petites surfaces, qui font l'essenti
 - **les éléments d'origine** : parquet, moulures, cheminées, hauteur sous plafond ;
 - **l'état** : à rafraîchir, rénové, rénové par un architecte.
 
-Chaque ajustement est écrit et justifié. Vous recevez l'avis sous 48 heures après la visite.
+Chaque ajustement est écrit et justifié. Vous recevez l'avis sous 24 heures après la visite.
 
 ## Préparer l'appartement
 

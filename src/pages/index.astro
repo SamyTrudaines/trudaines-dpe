@@ -34,9 +34,8 @@ const avis = await avisCommentés(3);
 const agregatAvis = await agrégatAvis();
 /* Toutes les notes relevées à cinq étoiles, et chaque avis noté : alors seulement « tous à cinq étoiles ». */
 const toutCinq = agregatAvis.toutesCinq && agregatAvis.notés === agregatAvis.total;
-const preuveAvis = toutCinq
-  ? `${agregatAvis.total} avis clients, tous à cinq étoiles`
-  : `${agregatAvis.total} avis clients, note moyenne de ${agregatAvis.noteTexte} sur 5`;
+/* Le nombre de la fiche Google, vérifiable par chacun, plutôt que les seuls avis repris sur /avis. */
+const preuveAvis = `${site.avis.google.total} avis Google`;
 const presse = (await getCollection('presse')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 4);
 
 
@@ -97,7 +96,7 @@ const coeur = ['paris-9', 'paris-18', 'paris-17', 'paris-10'];
           {/* Qui, où, quoi, en une phrase lisible hors contexte : c'est elle qu'un assistant reprend pour présenter l'agence. */}
           <p class="mt-5 max-w-2xl text-[color:var(--color-ardoise)]" id="reponse-courte">
             Trudaines Immobilier est une agence immobilière indépendante fondée en septembre 2024 par Samy Santamarina,
-            installée au {site.adresse.rue}, Paris {site.adresse.codePostal.replace(/^750/, '')}e. Vente, estimation écrite remise sous 48 heures
+            installée au {site.adresse.rue}, Paris {site.adresse.codePostal.replace(/^750/, '')}e. Vente, estimation écrite remise sous 24 heures
             après visite, recherche pour acquéreurs et gestion locative, dans les 9e, 10e, 17e et 18e arrondissements et dans tout Paris.
           </p>
           {agregatAvis.total > 0 && (
