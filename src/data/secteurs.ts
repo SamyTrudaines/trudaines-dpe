@@ -120,6 +120,13 @@ export const secteurs: Secteur[] = [
     introAgence:
       "Notre bureau est au 2 rue Livingstone, entre Anvers et Château Rouge. Nous couvrons Montmartre, les Abbesses, Lamarck-Caulaincourt et le sud de l'arrondissement, là où le 18e rejoint le 9e nord. C'est le même bassin d'acheteurs, nous le traitons comme un seul territoire.",
     quartiers: ['montmartre'],
+    /*
+     * Novembre 2026 : la page était 31e sur les recherches « estimation Paris 18 », derrière sa propre
+     * page Jules-Joffrin (6e), et Google ne l'avait pas relue depuis le 4 octobre. Prix médian dans le
+     * titre, comme pour le 17e, et prix des rues de Montmartre que Search Console montre déjà.
+     */
+    titrePrix: true,
+    ruesQuestions: ['avenue-junot-18', 'rue-lepic-18', 'rue-caulaincourt-18', 'rue-custine-18', 'rue-du-ruisseau-18'],
     prixMoyen: '8 900 € le m², prix médian',
     fourchette:
       "6 200 à 12 300 € le m², du premier au neuvième décile des ventes d'appartements de janvier à décembre 2025",
