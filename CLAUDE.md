@@ -36,20 +36,21 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   « estimation immobilière ». Positions suivies dans la feuille Search Console ; on travaille une page à la fois.
 - Pages de rue et de quartier : champ adresse en tête (`EntreeEstimation`) qui remplit le formulaire de la page.
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
-  le contact demandé avant de révéler le prix. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
+  le contact demandé dès la deuxième étape (choix de Samy du 26 novembre 2026), jamais de prix sans contact. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
   type en six cases illustrées (`PictoBien` : appartement, maison, duplex, loft ou atelier, hôtel particulier, immeuble
-  ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
-  ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
-  4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
-  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, email,
-  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF part de la médiane de la rue rapprochée de celle
+  ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 prénom, nom, email, téléphone
+  (consentement facultatif, réservé à l'information sur les prix), envoyés aussitôt à l'agence (`data-envoi-contact`,
+  `etape=contact` : email « ESTIMATION COMMENCÉE » et SMS, même si le visiteur s'arrête ensuite) ; 3 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
+  ventes signées de la rue (jamais le prix) ; 4 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
+  5 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
+  6 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents), précision facultative, puis l'envoi complet. Chaque demande, commencée ou complète, envoie un SMS. La fourchette DVF part de la médiane de la rue rapprochée de celle
   des rues à moins de 400 m (poids v / (v + 10), constante mesurée sur les ventes ; voisinage `c` de
   `/estimation-rues.json`), avec la dispersion et l'écart par taille du voisinage ; elle est placée entre
   les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
   l'état et les atouts, balcon ou terrasse comptés au tiers de leur surface sans dépasser 10 % de la surface habitable (`public/js/fourchette-formulaire.js`), n'apparaît qu'après l'envoi, pour un appartement seulement,
   et revient dans l'email du vendeur. Aucune page ne montre une fourchette sans contact : le calculateur libre a été retiré.
   L'adresse saisie en tête de page (`EntreeEstimation`) ou sur l'accueil (`/estimation?adresse=`) fait passer
-  directement à l'étape 2. Événements GA4 `estimation_etape1` à `3`, `estimation_apercu`, `estimation_envoyee`.
+  directement à l'étape 2, celle des coordonnées. Événements GA4 `estimation_etape1` à `5`, `estimation_contact`, `estimation_apercu`, `estimation_envoyee`.
 - Deux voies dans chaque bloc d'estimation : « Estimer en ligne » ou « Être rappelé » (`functions/api/rappel.js`,
   prénom et téléphone seulement). Estimation et rappel préviennent Samy par email et par SMS Brevo
   (`envoyerSmsAgence`, variable `NOTIFICATION_SMS`, expéditeur `BREVO_SMS_EXPEDITEUR`, 11 caractères au plus).
@@ -119,8 +120,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Défenses des formulaires (attaques des nuits du 12 et 13 novembre 2026) : 6 envois par IP et par quart d'heure
   (`functions/_middleware.js`, compteur Cache API), aucun lien ni code dans aucun champ (refus 400 expliqué au visiteur ; seul le champ `linkedin` des candidatures accepte linkedin.com), aucun email à un visiteur s'il contient un lien étranger au site ou un
   alphabet non latin, 10 emails visiteurs par heure au plus (`envoyerEmail`, choix de Samy : le relever seulement si de vrais clients l'atteignent). Une notification agence refusée par Brevo
-  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile prêt, actif seulement avec
-  `PUBLIC_TURNSTILE_SITEKEY` et `TURNSTILE_SECRET` dans Cloudflare.
+  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile actif (`PUBLIC_TURNSTILE_SITEKEY`, `TURNSTILE_SECRET`) : un envoi sans jeton
+  ou avec un jeton expiré ou déjà présenté passe, seul un jeton forgé est refusé ; le jeton est renouvelé après un envoi refusé
+  (`renouvelerTurnstile`, `public/js/formulaires.js`).
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
 - Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans

@@ -13,7 +13,10 @@
       var zone = document.createElement('div');
       zone.className = 'zone-turnstile';
       form.appendChild(zone);
-      window.turnstile.render(zone, { sitekey: cle, appearance: 'interaction-only', size: 'flexible' });
+      /* Le jeton expire au bout de cinq minutes et ne sert qu'une fois : Turnstile le renouvelle
+         seul à l'expiration, et formulaires.js le renouvelle après un envoi refusé. */
+      var id = window.turnstile.render(zone, { sitekey: cle, appearance: 'interaction-only', size: 'flexible', 'refresh-expired': 'auto' });
+      if (id !== undefined && id !== null) zone.setAttribute('data-widget', String(id));
     });
   };
   var api = document.createElement('script');

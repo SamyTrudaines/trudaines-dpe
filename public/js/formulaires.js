@@ -59,6 +59,7 @@
         }
         /* Une étape franchie, un événement : estimation_etape1, estimation_etape2... mesurent où le tunnel perd ses visiteurs. */
         if (form.dataset.evenementEtape) evt(form.dataset.evenementEtape.replace(/\d+$/, '') + (courante + 1), {});
+        if (etapes[courante].hasAttribute('data-envoi-contact')) envoyerContact(form);
         afficher(voisine(courante, 1));
       }
       if (precedent) {
@@ -68,6 +69,25 @@
     });
 
     afficher(0);
+  }
+
+  /*
+   * Coordonnées données à leur étape (data-envoi-contact) : la demande part aussitôt vers l'agence,
+   * qui est prévenue par SMS même si le visiteur s'arrête avant la fin. Une seule fois par formulaire ;
+   * la demande complète repart à l'envoi final, avec le détail du bien.
+   */
+  function envoyerContact(form) {
+    if (form.dataset.contactEnvoye) return;
+    form.dataset.contactEnvoye = '1';
+    var donnees = new FormData(form);
+    donnees.set('etape', 'contact');
+    var champHorodatage = form.querySelector('[name="horodatage"]');
+    var debut = champHorodatage ? parseInt(champHorodatage.value, 10) : NaN;
+    if (debut) donnees.set('duree', String(Date.now() - debut));
+    evt('estimation_contact', {});
+    fetch(form.action, { method: 'POST', body: donnees, headers: { Accept: 'application/json' }, keepalive: true }).catch(function () {});
+    /* Le jeton Turnstile vient d'être présenté : l'envoi final en demande un neuf, sinon il serait refusé. */
+    renouvelerTurnstile(form);
   }
 
   /* ----------------------------------------------------- autocomplete adresse */
@@ -143,6 +163,7 @@
               window.location.href = '/merci';
             }
           } else {
+            renouvelerTurnstile(form);
             afficherErreur(form, (reponse && reponse.message) || "L'envoi a échoué. Merci de réessayer ou de nous appeler.");
             if (bouton) {
               bouton.disabled = false;
@@ -151,6 +172,7 @@
           }
         })
         .catch(function () {
+          renouvelerTurnstile(form);
           afficherErreur(form, "L'envoi a échoué. Merci de réessayer ou de nous appeler au 06 20 46 59 12.");
           if (bouton) {
             bouton.disabled = false;
@@ -173,6 +195,19 @@
       if ((jeton && jeton.value) || Date.now() - debut > 6000) return suite();
       setTimeout(verifier, 250);
     })();
+  }
+
+  /*
+   * Un jeton Turnstile ne sert qu'une fois : après un envoi refusé (lien retiré, réseau coupé),
+   * le second essai du visiteur partirait avec un jeton déjà consommé et serait refusé à son tour.
+   */
+  function renouvelerTurnstile(form) {
+    var zone = form.querySelector('.zone-turnstile');
+    if (!zone || !window.turnstile) return;
+    var id = zone.getAttribute('data-widget');
+    try {
+      window.turnstile.reset(id || zone);
+    } catch (e) {}
   }
 
   function afficherErreur(form, message) {

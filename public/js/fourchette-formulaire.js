@@ -234,7 +234,8 @@
         'vérifie ces points et ajoute la copropriété et le plan.</p>' +
         '<p class="mt-2 text-sm"><strong>Fiabilité : ' + fiabilite(rue) + '</strong></p>';
       bloc.hidden = false;
-      if (mention) mention.hidden = false;
+      /* L'email est facultatif : la phrase « un email vient de partir » seulement s'il a été donné. */
+      if (mention) mention.hidden = !valeur(form, 'email').trim();
       if (cache) cache.value = euros(bas * surface) + ' à ' + euros(haut * surface) + (rue ? ' (rue)' : ' (arrondissement)');
       /* Le calcul se refait à chaque étape : l'événement ne part qu'une fois par formulaire. */
       if (!form.dataset.fourchetteMesuree && typeof window.trudainesEvent === 'function') {
@@ -274,10 +275,10 @@
     if (!champ) return;
     champ.value = demandee;
     if (premiere && !premiere.hidden && suivant) suivant.click();
-    /* Défilement jusqu'au formulaire lui-même : sur téléphone, le champ de surface reste visible. */
+    /* Défilement jusqu'au formulaire lui-même : sur téléphone, le premier champ des coordonnées reste visible. */
     form.scrollIntoView({ block: 'start' });
-    var surface = form.querySelector('[name="surface"]');
-    if (surface) setTimeout(function () { surface.focus({ preventScroll: true }); }, 300);
+    var prenom = form.querySelector('[name="prenom"]');
+    if (prenom) setTimeout(function () { prenom.focus({ preventScroll: true }); }, 300);
     if (typeof window.trudainesEvent === 'function') window.trudainesEvent('estimation_adresse_reprise', {});
   }
 

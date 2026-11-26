@@ -85,6 +85,35 @@ for (const [nom, chemin, donnees] of [
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} ${nom} : SMS à l'agence · ${sms[0] ? sms[0].corps.content : 'aucun'}`);
 }
 
+/*
+ * Coordonnées reçues à la deuxième étape (etape=contact) : SMS et email à l'agence aussitôt, sans
+ * confirmation au visiteur ni inscription Brevo ; sans téléphone, refus 400 et rien ne part.
+ */
+{
+  const contact = {
+    etape: 'contact', adresse: '12 avenue Trudaine, 75009 Paris', type: 'Appartement', prenom: 'Claire', nom: 'Martin',
+    email: 'claire.martin@example.com', telephone: '06 01 02 03 04', secteur: 'paris-9', horodatage: String(Date.now() - 30000),
+  };
+  const fonction = await import(new URL('../functions/api/estimation.js', import.meta.url).href);
+  appels.length = 0;
+  const r = await fonction.onRequestPost({ request: requete(contact), env });
+  const courriels = appels.filter((a) => a.url.endsWith('/smtp/email'));
+  const sms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send'));
+  const ok = r.status === 200 && courriels.length === 1 && courriels[0].corps.to?.[0]?.email === env.NOTIFICATION_EMAIL
+    && courriels[0].corps.subject.startsWith('ESTIMATION COMMENCÉE ·') && courriels[0].corps.subject.includes('Claire Martin')
+    && sms.length === 1 && sms[0].corps.content.includes('estimation commencée')
+    && !appels.some((a) => a.url.endsWith('/contacts'));
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation, coordonnées à la 2e étape : « ${courriels[0]?.corps.subject} » · SMS ${sms.length}`);
+
+  appels.length = 0;
+  const { telephone, ...sansTelephone } = contact;
+  const refus = await fonction.onRequestPost({ request: requete(sansTelephone), env });
+  const okRefus = refus.status === 400 && appels.length === 0;
+  if (!okRefus) echecs++;
+  console.log(`${okRefus ? 'OK   ' : 'ÉCHEC'} estimation, coordonnées sans téléphone : statut ${refus.status}, ${appels.length} appel(s) Brevo`);
+}
+
 /* Rappel sans email : la demande passe, le contact Brevo est créé par son numéro. */
 appels.length = 0;
 const rappel = await import(new URL('../functions/api/rappel.js', import.meta.url).href);
@@ -155,6 +184,28 @@ for (const [nom, champs, prefixe, sms, attendus, absents] of [
     && attendus.every((t) => client.includes(t)) && absents.every((t) => !client.includes(t));
   if (!ok) echecs++;
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation, ${nom} : « ${agence?.corps.subject} » · SMS ${nbSms}`);
+}
+
+/*
+ * Email facultatif depuis le 26 novembre 2026 : sans email, Samy reçoit quand même l'email et le SMS,
+ * le contact entre dans Brevo par son téléphone, et aucun email ne part vers le visiteur.
+ * Un email mal formé, lui, reste refusé.
+ */
+{
+  appels.length = 0;
+  const { email: _sansEmail, ...sansEmail } = cas[0][2];
+  const r = await estimation.onRequestPost({ request: requete(sansEmail), env });
+  const courriels = appels.filter((a) => a.url.endsWith('/smtp/email'));
+  const agence = courriels.find((a) => a.corps.to?.[0]?.email === env.NOTIFICATION_EMAIL);
+  const sms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send')).length;
+  const contact = appels.find((a) => a.url.endsWith('/contacts'));
+  const ok = r.status === 200 && agence && courriels.length === 1 && sms === 1
+    && contact && !contact.corps.email && contact.corps.attributes?.SMS;
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation sans email : email agence ${agence ? 1 : 0}, SMS ${sms}, Brevo par téléphone ${contact && !contact.corps.email ? 'oui' : 'non'}`);
+  const mauvais = await estimation.onRequestPost({ request: requete({ ...cas[0][2], email: 'claire@' }), env });
+  if (mauvais.status !== 400) echecs++;
+  console.log(`${mauvais.status === 400 ? 'OK   ' : 'ÉCHEC'} estimation : email mal formé refusé · statut ${mauvais.status}`);
 }
 
 const incomplete = await estimation.onRequestPost({ request: requete({ adresse: 'x' }), env });
@@ -678,6 +729,21 @@ globalThis.fetch = async (url, options) => String(url).includes('siteverify')
 fonctionAtteinte = false;
 const jetonFaux = await gardeSite.onRequest({ request: requeteTurnstile('jeton-faux'), env: envTurnstile, next: suivant });
 verifier('Turnstile : jeton jugé faux refusé', jetonFaux.status === 403 && !fonctionAtteinte, `statut ${jetonFaux.status}`);
+
+/* Jeton expiré ou déjà présenté : un visiteur réel (saisie longue, second essai), accepté. */
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: false, 'error-codes': ['timeout-or-duplicate'] }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonUse = await gardeSite.onRequest({ request: requeteTurnstile('jeton-deja-presente'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton expiré ou déjà présenté accepté', jetonUse.status === 200 && fonctionAtteinte, `statut ${jetonUse.status}`);
+
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: false, 'error-codes': ['invalid-input-response'] }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonForge = await gardeSite.onRequest({ request: requeteTurnstile('jeton-forge'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton forgé refusé', jetonForge.status === 403 && !fonctionAtteinte, `statut ${jetonForge.status}`);
 
 globalThis.fetch = async (url, options) => String(url).includes('siteverify')
   ? new Response(JSON.stringify({ success: true }), { status: 200 })

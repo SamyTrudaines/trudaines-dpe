@@ -32,17 +32,59 @@ function priorite(proprietaire, horizon) {
   return { libelle: 'À QUALIFIER', vendeur: true };
 }
 
+/*
+ * Coordonnées reçues à la deuxième étape du formulaire (data-envoi-contact) : l'agence est prévenue
+ * aussitôt, par SMS et par email, même si le visiteur s'arrête avant la fin. Choix de Samy du
+ * 26 novembre 2026, après trois semaines sans demande : un contact pris tôt vaut mieux qu'une
+ * estimation complète qui n'arrive jamais. Ni confirmation au visiteur, ni inscription Brevo à ce
+ * stade : elles partent avec la demande complète.
+ */
+async function contactRecu(request, env, donnees) {
+  const valeur = (champ) => String(donnees.get(champ) || '').trim();
+  const manquants = champsManquants(donnees, ['adresse', 'prenom', 'email', 'telephone']);
+  if (manquants.length || !emailValide(donnees.get('email'))) {
+    return reponse(request, { ok: false, message: 'Merci de compléter vos coordonnées.' }, 400);
+  }
+  const nomComplet = [valeur('prenom'), valeur('nom')].filter(Boolean).join(' ');
+  const lignes = [
+    ['Adresse', valeur('adresse')],
+    ['Type de bien', valeur('type') || 'Appartement'],
+    ['Nom', nomComplet],
+    ['Email', valeur('email')],
+    ['Téléphone', valeur('telephone')],
+    ['Secteur', valeur('secteur')],
+    ['Quartier', valeur('quartier')],
+    ['Page d’origine', valeur('origine')],
+    ['Consentement', valeur('consentement') === 'oui' ? 'Oui' : 'Non'],
+  ];
+  await envoyerEmail(env, {
+    sujet: `ESTIMATION COMMENCÉE · ${valeur('adresse')} · ${nomComplet} · ${valeur('telephone')}`,
+    html: gabaritNotification('Estimation commencée : coordonnées reçues. Le détail du bien suit s’il termine.', lignes),
+    repondreA: valeur('email'),
+  }).catch(() => null);
+  await envoyerSmsAgence(env, `Trudaines, estimation commencée : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')} (${(valeur('type') || 'appartement').toLowerCase()}). La suite peut ne pas arriver. A rappeler.`);
+  return reponse(request, { ok: true, message: 'Coordonnées reçues' });
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     const donnees = await request.formData();
     if (suspect(donnees)) return reponse(request, { ok: true, message: 'Reçu' });
+    if (String(donnees.get('etape') || '') === 'contact') return await contactRecu(request, env, donnees);
 
     // Étage et ascenseur n'existent que pour un appartement : le formulaire les retire pour une maison.
     const type = String(donnees.get('type') || 'Appartement').trim();
-    const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'email', 'telephone'];
+    /*
+     * Une demande complète sans email est acceptée (page en cache, envoi sans JavaScript, variante du
+     * formulaire) : le téléphone suffit pour rappeler. Elle arrive alors par email et SMS à l'agence et
+     * entre dans Brevo par le téléphone ; aucun email ne part au visiteur.
+     */
+    const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'telephone'];
     if (['Appartement', 'Duplex', 'Loft ou atelier'].includes(type)) requis.push('etage', 'ascenseur');
     const manquants = champsManquants(donnees, requis);
-    if (manquants.length || !emailValide(donnees.get('email'))) {
+    const emailSaisi = String(donnees.get('email') || '').trim();
+    const chiffres = String(donnees.get('telephone') || '').replace(/\D/g, '');
+    if (manquants.length || chiffres.length < 9 || (emailSaisi && !emailValide(emailSaisi))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
     }
 
@@ -77,7 +119,7 @@ export async function onRequestPost({ request, env }) {
       // Page quartier ou rue d'où part la demande : dit à l'agence ce que le visiteur lisait.
       ['Page d’origine', valeur('origine')],
       ['Nom', nomComplet],
-      ['Email', email],
+      ['Email', email || 'Non donné'],
       ['Téléphone', valeur('telephone')],
       ['Message', valeur('message')],
       ['Consentement', valeur('consentement') === 'oui' ? 'Oui' : 'Non'],
@@ -88,7 +130,7 @@ export async function onRequestPost({ request, env }) {
     await envoyerEmail(env, {
       sujet: `${libelle} · Estimation · ${valeur('adresse')} · ${valeur('fourchette') || valeur('horizon') || 'horizon non précisé'}`,
       html: gabaritNotification(`Nouvelle demande d’estimation : ${libelle}`, lignes),
-      repondreA: email,
+      repondreA: email || undefined,
     });
 
     /*
@@ -99,7 +141,7 @@ export async function onRequestPost({ request, env }) {
     await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} ${vendeur ? 'A rappeler.' : 'A qualifier.'}`);
 
     await embaser(env, {
-      email,
+      email: email || undefined,
       attributs: {
         PRENOM: prenom,
         NOM: valeur('nom'),
@@ -152,13 +194,15 @@ export async function onRequestPost({ request, env }) {
         'Si vous souhaitez un avis de valeur écrit, établi après visite, sans projet de vente, il est facturé 300 € TTC, intégralement déduits de nos honoraires si vous nous confiez ensuite la vente. Si un projet de vente se dessine, l’estimation devient gratuite : répondez simplement à cet email ou appelez-moi au 06 20 46 59 12.',
       ];
 
-    await envoyerEmail(env, {
-      destinataire: email,
-      sujet: 'Votre demande d’estimation est bien reçue',
-      html: gabaritClient(`Bonjour ${prenom},`, paragraphes),
-    }).catch(() => null);
+    if (email) {
+      await envoyerEmail(env, {
+        destinataire: email,
+        sujet: 'Votre demande d’estimation est bien reçue',
+        html: gabaritClient(`Bonjour ${prenom},`, paragraphes),
+      }).catch(() => null);
+    }
 
-    return reponse(request, { ok: true, message: 'Demande enregistrée' });
+    return reponse(request, { ok: true, message: 'Demande enregistrée', email: Boolean(email) });
   } catch (erreur) {
     console.error('api/estimation', erreur);
     return reponse(
