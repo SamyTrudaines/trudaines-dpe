@@ -114,6 +114,8 @@ export function lireAvis(html) {
   const defunt =
     plat.match(/((?:M\.|Mme|Mlle|Madame|Monsieur|Mademoiselle)\s[^,]{3,120}?),?\s+(?:en son vivant[^,]{0,60},?\s*)?(?:demeurant|domicili)/i)?.[1] ??
     plat.match(/([A-ZÀ-Ý][A-ZÀ-Ý' -]{1,40}\s*\([^)]{3,80}\))\s*,?\s*(?:en son vivant\s+)?(?:demeurant|domicili)/)?.[1] ??
+    // Sans civilité : « Martine Colette PLÉ , Retraitée, demeurant à ... » (prénoms puis nom en capitales, profession facultative).
+    plat.match(/((?:[A-ZÀ-Ý][a-zà-ÿ'’]+(?:-[A-ZÀ-Ý][a-zà-ÿ'’]+)?\s+){1,4}[A-ZÀ-Ý][A-ZÀ-Ý'’-]+(?:\s+[A-ZÀ-Ý][A-ZÀ-Ý'’-]+){0,3})\s*,\s*(?:[^,]{2,60},\s*)?(?:en son vivant\s+)?(?:demeurant|domicili)/)?.[1] ??
     '';
   const adresse =
     plat.match(/(?:demeurant|domicili[ée]e?)\s+(?:(?:en|de) son vivant\s+)?(?:à|au|a)\s+(.{5,160}?)(?:\s*,\s*n[ée]e?\s|\.\s|\s*,\s*d[ée]c[ée]d)/i)?.[1]
@@ -327,7 +329,7 @@ export function lettreAyantsDroit(a) {
   return [
     `Aux ayants droit ${de(a.defunt || 'la succession')}${a.adresse ? `\n${surDeuxLignes(a.adresse)}` : ''}`,
     'Madame, Monsieur,',
-    `J'écris à cette adresse sans savoir qui ouvrira ma lettre. Si c'est vous qui veillez sur la succession ${de(a.defunt || 'du défunt')}, permettez-moi d'abord de vous présenter mes condoléances.`,
+    `J'écris à cette adresse sans savoir qui ouvrira ma lettre. Si c'est vous qui veillez sur la succession ${a.defunt ? de(a.defunt) : 'du défunt'}, permettez-moi d'abord de vous présenter mes condoléances.`,
     "Je m'appelle Samy Santamarina et je dirige Trudaines, une agence immobilière du 18e arrondissement.",
     `Si l'appartement fait partie de la succession, le notaire vous demandera tôt ou tard ce qu'il vaut. Je peux vous le dire, sans engagement, ${
       v

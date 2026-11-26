@@ -250,7 +250,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       continue;
     }
     const texte = lettreAyantsDroit(a);
-    courriers.push({ type: 'ayants droit', avis: [a], texte, ligne: ligneCsv(texte, `Aux ayants droit de ${a.defunt}`, rue, cp, ville) });
+    courriers.push({ type: 'ayants droit', avis: [a], texte, ligne: ligneCsv(texte, a.defunt ? `Aux ayants droit de ${a.defunt}` : 'Aux ayants droit de la succession', rue, cp, ville) });
   }
   console.log(`${courriers.length} courrier(s), ${incomplets.length} avis incomplet(s).`);
 
