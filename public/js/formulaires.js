@@ -59,6 +59,7 @@
         }
         /* Une étape franchie, un événement : estimation_etape1, estimation_etape2... mesurent où le tunnel perd ses visiteurs. */
         if (form.dataset.evenementEtape) evt(form.dataset.evenementEtape.replace(/\d+$/, '') + (courante + 1), {});
+        if (etapes[courante].hasAttribute('data-envoi-contact')) envoyerContact(form);
         afficher(voisine(courante, 1));
       }
       if (precedent) {
@@ -68,6 +69,25 @@
     });
 
     afficher(0);
+  }
+
+  /*
+   * Coordonnées données à leur étape (data-envoi-contact) : la demande part aussitôt vers l'agence,
+   * qui est prévenue par SMS même si le visiteur s'arrête avant la fin. Une seule fois par formulaire ;
+   * la demande complète repart à l'envoi final, avec le détail du bien.
+   */
+  function envoyerContact(form) {
+    if (form.dataset.contactEnvoye) return;
+    form.dataset.contactEnvoye = '1';
+    var donnees = new FormData(form);
+    donnees.set('etape', 'contact');
+    var champHorodatage = form.querySelector('[name="horodatage"]');
+    var debut = champHorodatage ? parseInt(champHorodatage.value, 10) : NaN;
+    if (debut) donnees.set('duree', String(Date.now() - debut));
+    evt('estimation_contact', {});
+    fetch(form.action, { method: 'POST', body: donnees, headers: { Accept: 'application/json' }, keepalive: true }).catch(function () {});
+    /* Le jeton Turnstile vient d'être présenté : l'envoi final en demande un neuf, sinon il serait refusé. */
+    renouvelerTurnstile(form);
   }
 
   /* ----------------------------------------------------- autocomplete adresse */

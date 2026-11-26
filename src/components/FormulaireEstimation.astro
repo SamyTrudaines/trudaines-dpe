@@ -73,8 +73,9 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
     </div>
 
     {/*
-      Une question par écran, la plus simple d'abord : l'adresse. Le visiteur voit ensuite combien
-      de ventes signées fondent son estimation, puis donne son contact pour la recevoir.
+      Une question par écran, la plus simple d'abord : l'adresse. Puis les coordonnées, qui partent
+      aussitôt vers l'agence. Le visiteur voit ensuite combien de ventes signées fondent son
+      estimation, décrit son bien, et la fourchette s'affiche à la fin.
     */}
     <fieldset data-etape data-nom-etape="Adresse" class="border-0 p-0">
       <legend class="sr-only">Où se trouve votre bien ?</legend>
@@ -110,6 +111,53 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
         </fieldset>
       </div>
       <button type="button" class="bouton mt-8 w-full sm:w-auto" data-suivant>Commencer l'estimation</button>
+    </fieldset>
+
+    {/*
+      Coordonnées dès la deuxième étape, choix de Samy du 26 novembre 2026 (pratique des grands réseaux
+      et des sites d'estimation) : la demande lui parvient par SMS dès cet écran franchi
+      (data-envoi-contact, public/js/formulaires.js), même si le visiteur s'arrête ensuite. La fourchette
+      ne s'affiche qu'après l'envoi complet, à la dernière étape.
+    */}
+    <fieldset data-etape data-nom-etape="Vos coordonnées" data-envoi-contact class="border-0 p-0">
+      <legend class="titre-3 mb-2">À qui envoyer votre estimation ?</legend>
+      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
+        Votre fourchette est calculée sur les ventes signées de votre rue. Elle s'affiche à la fin, en quatre
+        questions sur le bien, et vous arrive aussi par email.
+      </p>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
+          <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`nom-${identifiant}`}>Nom</label>
+          <input class="champ" id={`nom-${identifiant}`} name="nom" type="text" autocomplete="family-name" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`email-${identifiant}`}>Adresse email</label>
+          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" inputmode="email" required />
+        </div>
+        <div>
+          <label class="etiquette" for={`telephone-${identifiant}`}>Téléphone</label>
+          <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" inputmode="tel" required minlength="10" title="Un numéro de téléphone, par exemple 06 12 34 56 78" />
+        </div>
+      </div>
+      <div class="mt-6 flex items-start gap-3">
+        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" value="oui" />
+        <label class="text-sm text-[color:var(--color-ardoise)]" for={`consentement-${identifiant}`}>
+          Recevoir aussi, deux fois par an, les prix signés de mon quartier. Facultatif.
+        </label>
+      </div>
+      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
+        Vos coordonnées servent seulement à vous envoyer votre estimation, puis à vous proposer un avis de valeur
+        écrit, gratuit et sans engagement. Elles ne sont ni vendues ni cédées.{' '}
+        <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
+        <button type="button" class="bouton" data-suivant>Continuer</button>
+      </div>
     </fieldset>
 
     <fieldset data-etape data-nom-etape="Le bien" class="border-0 p-0">
@@ -305,51 +353,13 @@ const lienPhotos = lienWhatsapp('', "Bonjour Samy, je viens de demander une esti
       </div>
       <div class="mt-8 flex flex-wrap gap-4">
         <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="button" class="bouton" data-suivant>Dernière étape</button>
-      </div>
-    </fieldset>
-
-    <fieldset data-etape data-nom-etape="Vos coordonnées" class="border-0 p-0">
-      <legend class="titre-3 mb-2">Où recevoir votre estimation ?</legend>
-      <p class="mb-6 text-sm text-[color:var(--color-ardoise)]">
-        Dans nos six arrondissements, votre fourchette s'affiche à l'écran dès l'envoi, calculée sur les ventes
-        signées. Avec votre email, elle vous arrive aussi par écrit.
-      </p>
-      {/* Deux champs obligatoires, pas un de plus : l'email est facultatif depuis le 26 novembre 2026. */}
-      <div class="grid gap-6 sm:grid-cols-2">
-        <div class="sm:col-span-2">
-          <label class="etiquette" for={`prenom-${identifiant}`}>Prénom</label>
-          <input class="champ" id={`prenom-${identifiant}`} name="prenom" type="text" autocomplete="given-name" required />
-        </div>
-        <div>
-          <label class="etiquette" for={`telephone-${identifiant}`}>Téléphone</label>
-          <input class="champ" id={`telephone-${identifiant}`} name="telephone" type="tel" autocomplete="tel" inputmode="tel" required />
-        </div>
-        <div>
-          <label class="etiquette" for={`email-${identifiant}`}>Adresse email <span class="font-normal normal-case tracking-normal text-[color:var(--color-ardoise)]">(facultatif)</span></label>
-          <input class="champ" id={`email-${identifiant}`} name="email" type="email" autocomplete="email" inputmode="email" />
-        </div>
+        <button type="submit" class="bouton">Voir mon estimation</button>
       </div>
       <details class="mt-6 text-sm">
         <summary class="cursor-pointer text-[color:var(--color-ardoise)]">Ajouter une précision, facultatif</summary>
         <label class="sr-only" for={`message-${identifiant}`}>Précisions utiles</label>
         <textarea class="champ mt-3" id={`message-${identifiant}`} name="message" rows="3" placeholder="Travaux récents, vue, exposition, contexte de la vente"></textarea>
       </details>
-      <div class="mt-6 flex items-start gap-3">
-        <input class="mt-1 h-5 w-5 shrink-0 accent-[color:var(--color-nuit)]" id={`consentement-${identifiant}`} name="consentement" type="checkbox" value="oui" />
-        <label class="text-sm text-[color:var(--color-ardoise)]" for={`consentement-${identifiant}`}>
-          Recevoir aussi, deux fois par an, les prix signés de mon quartier. Facultatif.
-        </label>
-      </div>
-      <p class="mt-4 text-xs text-[color:var(--color-ardoise)]">
-        Vos coordonnées servent seulement à vous envoyer votre estimation, puis à vous proposer un avis de valeur
-        écrit, gratuit et sans engagement. Elles ne sont ni vendues ni cédées.{' '}
-        <a href="/politique-de-confidentialite" class="lien-souligne">Politique de confidentialité</a>.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <button type="button" class="bouton bouton-secondaire" data-precedent>Revenir</button>
-        <button type="submit" class="bouton">Voir mon estimation</button>
-      </div>
     </fieldset>
 
     <p class="mt-6 text-sm text-[#a4262c]" data-erreur hidden></p>
