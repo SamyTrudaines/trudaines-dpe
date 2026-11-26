@@ -17,7 +17,7 @@ function etageLisible(etage, etages) {
  * Tri des demandes d'après l'étape « Ce bien et vous ». Un projet de vente compte même sans
  * la case propriétaire : un enfant ou un héritier vend souvent pour un parent (rue Bayen, octobre 2026),
  * le libellé le signale pour que l'appel commence par la question. Pas de projet, une vente déjà
- * faite ou une location : quelqu'un qui vérifie un prix, sans SMS ni promesse d'appel.
+ * faite ou une location : quelqu'un qui vérifie un prix, sans promesse d'appel dans sa confirmation.
  */
 const VENTE_PROCHE = ['Vente commencée', 'Dès que possible', 'Moins de 3 mois', '3 à 6 mois'];
 const SANS_VENTE = ['Pas de projet', 'Vient de vendre', 'Mise en location'];
@@ -91,8 +91,12 @@ export async function onRequestPost({ request, env }) {
       repondreA: email,
     });
 
-    // SMS seulement pour un projet de vente : les vérifications de prix restent dans l'email.
-    if (vendeur) await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} A rappeler.`);
+    /*
+     * Un SMS pour chaque demande, vendeur ou non. Du 3 au 26 novembre 2026, seul un projet de vente
+     * en déclenchait un. Or deux des quatre demandes d'octobre disaient « pas de projet » et valaient
+     * un appel. Le libellé en tête du SMS dit déjà la priorité.
+     */
+    await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} ${vendeur ? 'A rappeler.' : 'A qualifier.'}`);
 
     await embaser(env, {
       email,
