@@ -120,8 +120,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Défenses des formulaires (attaques des nuits du 12 et 13 novembre 2026) : 6 envois par IP et par quart d'heure
   (`functions/_middleware.js`, compteur Cache API), aucun lien ni code dans aucun champ (refus 400 expliqué au visiteur ; seul le champ `linkedin` des candidatures accepte linkedin.com), aucun email à un visiteur s'il contient un lien étranger au site ou un
   alphabet non latin, 10 emails visiteurs par heure au plus (`envoyerEmail`, choix de Samy : le relever seulement si de vrais clients l'atteignent). Une notification agence refusée par Brevo
-  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile prêt, actif seulement avec
-  `PUBLIC_TURNSTILE_SITEKEY` et `TURNSTILE_SECRET` dans Cloudflare.
+  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile actif (`PUBLIC_TURNSTILE_SITEKEY`, `TURNSTILE_SECRET`) : un envoi sans jeton
+  ou avec un jeton expiré ou déjà présenté passe, seul un jeton forgé est refusé ; le jeton est renouvelé après un envoi refusé
+  (`renouvelerTurnstile`, `public/js/formulaires.js`).
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
 - Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans

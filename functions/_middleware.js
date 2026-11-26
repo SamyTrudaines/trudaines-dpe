@@ -70,7 +70,19 @@ async function turnstileValide(env, request) {
   const verdict = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: corps })
     .then((r) => r.json())
     .catch(() => ({ success: true }));
-  return Boolean(verdict.success);
+  if (verdict.success) return true;
+  /*
+   * Un jeton expiré ou déjà présenté vient d'un visiteur qui a passé le contrôle : une saisie
+   * longue, un second essai. Un robot, lui, envoie sans jeton ou un jeton forgé. Refuser ici
+   * coûtait des demandes réelles sans arrêter un seul robot.
+   */
+  const codes = Array.isArray(verdict['error-codes']) ? verdict['error-codes'] : [];
+  if (codes.length && codes.every((code) => code === 'timeout-or-duplicate' || code === 'internal-error')) {
+    console.warn(`Turnstile : jeton ${codes.join(', ')} accepté sur ${new URL(request.url).pathname}`);
+    return true;
+  }
+  console.warn(`Turnstile : refus (${codes.join(', ') || 'sans code'}) sur ${new URL(request.url).pathname}`);
+  return false;
 }
 
 /*
