@@ -1,6 +1,7 @@
 ---
 titre: "Prix immobilier Paris 9e et 18e : l'analyse de l'agence"
 date: 2026-04-14
+dateMaj: 2026-11-08
 image: /images/panorama/prix-immobilier-paris-9-18-analyse.webp
 imageAlt: Les toits de Paris et la butte Montmartre au loin
 chapo: Les prix au mètre carré du 9e, du 10e et du 18e, quartier par quartier et typologie par typologie, tirés de 5 498 ventes signées devant notaire entre janvier et décembre 2025.
@@ -14,6 +15,8 @@ motsCles:
 ---
 
 Cette analyse ne contient aucune estimation. Elle contient des ventes signées, enregistrées par l'administration fiscale, et la manière de les lire.
+
+Pour le prix de votre appartement, à votre adresse : [estimation appartement Paris 9](/estimation/paris-9) ou [estimation appartement Paris 18](/estimation/paris-18), en ligne en une minute ou par un avis de valeur écrit après visite.
 
 Source unique : le fichier des demandes de valeurs foncières publié par la direction générale des finances publiques, millésime du 5 avril 2026, qui couvre les ventes de janvier à décembre 2025. Appartements seuls, ventes hors multilots, 5 498 mutations retenues sur les 9e, 10e et 18e arrondissements. Le calcul est refait à chaque publication de la base, en avril et en octobre, par un script versionné avec le site.
 
@@ -83,3 +86,9 @@ Un quartier reste une moyenne. Le prix au mètre carré de 312 voies du 9e, du 1
 Situez votre quartier, pas votre arrondissement. Situez votre typologie. Placez vous dans l'étendue, pas sur la médiane : un rez-de-chaussée sur rue passante, à rénover, sans ascenseur, se situe vers le premier décile, un dernier étage avec vue, refait, dans un immeuble tenu, vers le neuvième. Retranchez ce qui se voit, travaux votés en assemblée, procédure en cours, absence de cave. Puis demandez les comparables : cinq à dix ventes signées dans votre rue ou votre immeuble valent mieux que n'importe quelle médiane de quartier.
 
 Cette dernière étape, nous la faisons pour vous, gratuitement et sans engagement, dans un avis de valeur écrit remis après visite. Vous gardez le document même si vous vendez ailleurs, ou plus tard.
+
+## Faire estimer votre appartement dans le 9e ou le 18e
+
+Chaque arrondissement a sa page d'estimation, avec les ventes signées rue par rue et le formulaire qui calcule votre fourchette : [estimation immobilière Paris 9](/estimation/paris-9) et [estimation immobilière Paris 18](/estimation/paris-18).
+
+Au plus près de chez vous, par quartier. Dans le 9e : [Saint-Georges](/estimation/paris-9/saint-georges), [Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge), [Lorette-Martyrs](/estimation/paris-9/martyrs-lorette), [Clichy-Trinité](/estimation/paris-9/clichy-trinite) et [Pigalle](/estimation/paris-9/pigalle). Dans le 18e : [Montmartre](/estimation/paris-18/montmartre), [Abbesses](/estimation/paris-18/abbesses), [Lamarck](/estimation/paris-18/lamarck) et [Jules-Joffrin](/estimation/paris-18/jules-joffrin).
