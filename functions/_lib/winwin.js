@@ -187,7 +187,8 @@ const PLAFOND_HEURE = 80;
  */
 export async function courrier(env, db, { genre, a, sujet, repondreA, ...contenu }) {
   const destinataire = a || AGENCE(env);
-  const interne = !a;
+  // Un email adressé à un administrateur suit la même règle qu'une alerte : jamais expédié depuis sa propre adresse.
+  const interne = !a || estAdmin(env, a);
   const sujetPropre = borner(sujet, 140).replace(/[<>]/g, '');
   const noter = (etat, detail = '') =>
     db.prepare('INSERT INTO emails (genre, destinataire, sujet, etat, detail, cree_le) VALUES (?,?,?,?,?,?)')

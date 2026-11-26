@@ -261,14 +261,14 @@ async function majProfil(db, user, d) {
 
 /* ---------------------------------------------------------------- Back-office */
 
-async function tableau(db) {
+async function tableau(env, db) {
   const [recos, users, emails, etapes] = await Promise.all([
     db.prepare('SELECT * FROM recos ORDER BY cree_le DESC').all(),
     db.prepare('SELECT id, email, prenom, nom, telephone, metier, code, parrain_id, origine, cree_le, vu_le FROM users ORDER BY cree_le DESC').all(),
     db.prepare('SELECT * FROM emails ORDER BY id DESC LIMIT 80').all(),
     db.prepare('SELECT reco_id, statut, cree_le FROM etapes ORDER BY id').all(),
   ]);
-  return json({ ok: true, recos: recos.results, users: users.results, emails: emails.results, etapes: etapes.results });
+  return json({ ok: true, recos: recos.results, users: users.results.map((u) => ({ ...u, admin: estAdmin(env, u.email) })), emails: emails.results, etapes: etapes.results });
 }
 
 const MESSAGES_ETAPE = {
@@ -347,14 +347,14 @@ async function majReco(request, env, db, id, d) {
   return json({ ok: true, ...montants });
 }
 
-async function emailTest(env, db) {
+async function emailTest(env, db, d) {
   const envoye = await courrier(env, db, {
     genre: 'essai',
     sujet: 'Essai des alertes Trudaines WinWin',
     titre: 'Les alertes WinWin fonctionnent',
     paragraphes: ['Cet email est un essai lancé depuis le back-office. Les alertes de nouvelles recommandations arrivent à cette adresse.'],
   });
-  const sms = await envoyerSmsAgence(env, 'Essai des alertes Trudaines WinWin : les SMS de nouvelles recommandations arrivent sur ce numero.');
+  const sms = d.sms === false ? null : await envoyerSmsAgence(env, 'Essai des alertes Trudaines WinWin : les SMS de nouvelles recommandations arrivent sur ce numero.');
   return json({ ok: true, email: envoye, sms });
 }
 
@@ -444,8 +444,8 @@ export async function onRequest({ request, env, params }) {
 
     if (chemin.startsWith('admin/')) {
       if (user.role !== 'admin') return refus('Accès réservé à l\'agence.', 403);
-      if (methode === 'GET' && chemin === 'admin/tableau') return tableau(db);
-      if (methode === 'POST' && chemin === 'admin/essai') return emailTest(env, db);
+      if (methode === 'GET' && chemin === 'admin/tableau') return tableau(env, db);
+      if (methode === 'POST' && chemin === 'admin/essai') return emailTest(env, db, d);
       if (methode === 'POST' && chemin === 'admin/import') return importer(db, d);
       const dossier = /^admin\/recos\/([a-zA-Z0-9-]{8,64})$/.exec(chemin);
       if (methode === 'POST' && dossier) return majReco(request, env, db, dossier[1], d);

@@ -426,7 +426,7 @@
     const d = admin.donnees;
     const echecs = d.emails.filter((e) => e.etat !== 'envoyé').length;
     return h('nav', { class: 'onglets', 'aria-label': 'Back-office' },
-      [['/admin', `Dossiers (${d.recos.length})`], ['/admin/prescripteurs', `Prescripteurs (${d.users.length})`], ['/admin/emails', `Alertes${echecs ? ` (${echecs} à voir)` : ''}`]]
+      [['/admin', `Dossiers (${d.recos.length})`], ['/admin/prescripteurs', `Prescripteurs (${d.users.filter((u) => !u.admin).length})`], ['/admin/emails', `Alertes${echecs ? ` (${echecs} à voir)` : ''}`]]
         .map(([route, texte]) => h('a', { href: `#${route}`, 'aria-current': courant === route ? 'page' : null }, texte)));
   }
 
@@ -558,7 +558,8 @@
     const d = await chargerAdmin();
     if (!d) return;
     const message = (u) => `Bonjour ${u.prenom}, c'est Samy de Trudaines. Votre espace WinWin est ouvert : si quelqu'un autour de vous parle de vendre ou d'acheter à Paris, présentez-le-moi en deux minutes ici : ${ADRESSE} Belle journée.`;
-    const lignes = d.users.filter((u) => !['samy.santamarina@trudaines.com', 'samysantamarina@trudaines.com'].includes(u.email)).map((u) => {
+    const inscrits = d.users.filter((u) => !u.admin);
+    const lignes = inscrits.map((u) => {
       const recos = d.recos.filter((r) => r.user_id === u.id);
       const filleuls = d.users.filter((x) => x.parrain_id === u.id).length;
       const mobile = (u.telephone || '').replace(/[^\d+]/g, '').replace(/^0/, '33').replace(/^\+/, '');
@@ -572,7 +573,7 @@
           mobile && h('a', { class: 'btn fin clair', href: `https://wa.me/${mobile}?text=${encodeURIComponent(message(u))}`, target: '_blank', rel: 'noopener' }, 'WhatsApp'),
           h('a', { class: 'btn fin clair', href: `mailto:${u.email}?subject=${encodeURIComponent('Votre espace Trudaines WinWin')}&body=${encodeURIComponent(message(u))}` }, 'Email'))));
     });
-    const dormants = d.users.filter((u) => !d.recos.some((r) => r.user_id === u.id)).length;
+    const dormants = inscrits.filter((u) => !d.recos.some((r) => r.user_id === u.id)).length;
     afficher('/admin', h('div', { class: 'page section pile-l' },
       h('div', { class: 'tete pile' }, h('p', { class: 'sur' }, 'Back-office'), h('h2', null, 'Prescripteurs')),
       onglets('/admin/prescripteurs'),
