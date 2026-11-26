@@ -30,7 +30,7 @@ essentiel:
   - "Un appartement affiché trop haut reste en ligne, puis baisse : sur un bien de prestige, les acheteurs suivent l'historique des annonces, et chaque baisse visible affaiblit la négociation."
   - "Chez Trudaines, en mandat exclusif, les honoraires sont de 3 % TTC du prix de vente au-delà de 1 500 000 € et de 4 % TTC de 700 001 € à 1 500 000 €, à la charge du vendeur, publiés sur le site."
   - "Un mandat exclusif peut être dénoncé à l'issue d'un délai de trois mois, par lettre recommandée avec un préavis de quinze jours (article 78 du décret du 20 juillet 1972)."
-  - "Trudaines remet un avis de valeur écrit sous 48 heures après visite, suit la vente avec un seul interlocuteur de l'estimation à la signature, envoie un compte rendu écrit après chaque visite et diffuse les annonces sur vingt-quatre supports, dont des portails de luxe et internationaux."
+  - "Trudaines remet un avis de valeur écrit sous 24 heures après visite, suit la vente avec un seul interlocuteur de l'estimation à la signature, envoie un compte rendu écrit après chaque visite et diffuse les annonces sur vingt-quatre supports, dont des portails de luxe et internationaux."
 faq:
   - question: "Faut-il une agence de réseau international pour vendre un bien de prestige ?"
     reponse: "Ce qui compte est l'accès aux acheteurs, pas l'enseigne. Les portails de luxe et internationaux, Belles Demeures, JamesEdition, LuxuryEstate, Properstar, sont ouverts aux agences indépendantes : nous y diffusons nos annonces, traduites en sept langues. Demandez à chaque agence où sera vue votre annonce, dans quelles langues, et combien de ses acheteurs récents dans votre quartier venaient de l'étranger."
@@ -43,7 +43,7 @@ faq:
   - question: "Combien vaut un appartement de prestige avenue Junot ou rue des Martyrs ?"
     reponse: "De janvier 2024 à juin 2026, les appartements se sont vendus 11 830 € le m² en médiane avenue Junot, sur 31 ventes, et un dixième des ventes y a dépassé 17 050 € le m². Rue des Martyrs, côté 9e, la médiane est de 11 400 € sur 82 ventes et les quatre pièces et plus se sont vendus 12 580 € le m² en médiane sur 11 ventes (base DVF). Pour un bien d'exception, la vue, l'étage et l'état comptent plus que la moyenne de la rue : seule une visite permet de le situer."
   - question: "Combien d'agences recevoir avant de choisir ?"
-    reponse: "Deux ou trois, en leur posant les mêmes questions et en demandant les réponses par écrit : comparables, prix de mise en vente, honoraires, plan de diffusion, calendrier. Une estimation orale ne se compare pas. Nous répondons à ces dix points dans notre avis de valeur, remis sous 48 heures après la visite."
+    reponse: "Deux ou trois, en leur posant les mêmes questions et en demandant les réponses par écrit : comparables, prix de mise en vente, honoraires, plan de diffusion, calendrier. Une estimation orale ne se compare pas. Nous répondons à ces dix points dans notre avis de valeur, remis sous 24 heures après la visite."
 ---
 
 Un dernier étage rue Caulaincourt, un grand appartement de l'avenue Trudaine, un atelier sous verrière près de l'avenue Junot : ces biens attirent plusieurs agences dès que le propriétaire laisse entendre qu'il pourrait vendre. Elles viennent avec leur enseigne, leurs brochures, et souvent avec un chiffre. Ce chiffre est ce qui fait signer, et c'est aussi ce qui fait rater le plus de ventes de prestige.
@@ -73,7 +73,7 @@ Base DVF, ventes d'appartements, calculs Trudaines. La troisième colonne est le
 
 Ce tableau dit deux choses. La première : l'écart entre la médiane et le haut de la rue dépasse souvent 4 000 € le m², près de 5 750 € rue d'Orsel, plus de 5 200 € avenue Junot. C'est dans cet écart que se joue la valeur d'un bien d'exception, et c'est là qu'une estimation doit être argumentée, vente par vente. La seconde : une rue réputée ne vend pas tout au même prix. Un dernier étage traversant rue Lepic, un appartement familial en pierre de taille avec gardien rue de La Rochefoucauld, un atelier d'artiste rue d'Orsel ou un appartement haussmannien de la rue des Martyrs, côté SoPi, se comparent à leurs semblables, pas à la moyenne.
 
-Notre agence est au 2 rue Livingstone, à quelques minutes à pied de chacune de ces rues. Si vous êtes propriétaire avenue Trudaine, rue des Martyrs, rue Notre-Dame-de-Lorette, avenue Junot, rue Lepic, rue d'Orsel ou rue Caulaincourt, nous situons votre appartement dans la fourchette de sa rue lors d'une visite, et nous vous remettons un avis de valeur écrit sous 48 heures.
+Notre agence est au 2 rue Livingstone, à quelques minutes à pied de chacune de ces rues. Si vous êtes propriétaire avenue Trudaine, rue des Martyrs, rue Notre-Dame-de-Lorette, avenue Junot, rue Lepic, rue d'Orsel ou rue Caulaincourt, nous situons votre appartement dans la fourchette de sa rue lors d'une visite, et nous vous remettons un avis de valeur écrit sous 24 heures.
 
 ## 1. Un prix fondé sur des ventes signées, pas sur la promesse la plus haute
 
@@ -139,7 +139,7 @@ L'acheteur d'un bien d'exception et son notaire demandent davantage qu'ailleurs 
 
 ## Mettez-nous en concurrence
 
-Recevez deux ou trois agences. Posez-leur ces dix questions, demandez les réponses par écrit, et comparez. Nous y répondons dans notre avis de valeur, remis sous 48 heures après la visite, offert si vous envisagez de vendre.
+Recevez deux ou trois agences. Posez-leur ces dix questions, demandez les réponses par écrit, et comparez. Nous y répondons dans notre avis de valeur, remis sous 24 heures après la visite, offert si vous envisagez de vendre.
 
 Notre agence est au 2 rue Livingstone, au pied de la Butte : [à Montmartre](/agence-immobiliere-montmartre), [avenue Trudaine](/agence-immobiliere-trudaine), [à Saint-Georges](/agence-immobiliere-saint-georges). Pour un grand appartement familial, voir aussi [notre fiche dédiée](/vendre/appartement-familial-de-caractere).
 

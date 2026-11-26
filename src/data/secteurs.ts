@@ -52,7 +52,7 @@ export const secteurs: Secteur[] = [
     nomLong: '9e arrondissement de Paris',
     titre: 'Estimation appartement Paris 9, estimation immobilière gratuite | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 48 heures.",
+      "Estimation immobilière gratuite à Paris 9e : visite, ventes signées de votre rue, avis de valeur écrit sous 24 heures.",
     titreAgence: 'Agence immobilière Paris 9e nord, Trudaine | Trudaines',
     descriptionAgence:
       "Agence immobilière du 9e nord : Trudaine, Martyrs, Saint-Georges, Nouvelle Athènes. Vente d'appartements, prix rue par rue.",
@@ -74,7 +74,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Estimez-vous tout type de bien immobilier dans le 9e ?",
         reponse:
-          "Oui : appartement, duplex, atelier, hôtel particulier ou immeuble, de Trudaine-Maubeuge à Saint-Georges et de Lorette-Martyrs à Clichy-Trinité. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
+          "Oui : appartement, duplex, atelier, hôtel particulier ou immeuble, de Trudaine-Maubeuge à Saint-Georges et de Lorette-Martyrs à Clichy-Trinité. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 24 heures.",
       },
       {
         question: "Le marché a corrigé, vais-je vendre sous le prix ?",
@@ -110,7 +110,7 @@ export const secteurs: Secteur[] = [
     nomLong: '18e arrondissement de Paris',
     titre: 'Estimation appartement Paris 18, estimation immobilière gratuite | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
+      "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 24 h.",
     titreAgence: 'Agence immobilière indépendante Paris 18e, rue Livingstone | Trudaines',
     descriptionAgence:
       "Agence immobilière au 2 rue Livingstone, au pied de la Butte : vente d'appartements à Montmartre, Abbesses, Lamarck.",
@@ -159,7 +159,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Comment se passe une estimation immobilière à Paris 18 ?",
         reponse:
-          "En deux temps, et l'un n'oblige pas à l'autre. En ligne d'abord : votre adresse, la surface, l'étage, l'état et vos coordonnées suffisent pour recevoir une fourchette calculée sur les ventes signées de votre rue et des rues voisines. Puis, si vous envisagez de vendre, une visite de quarante-cinq minutes et un avis de valeur écrit sous 48 heures, qui cite les ventes comparables. L'estimation est offerte quand vous envisagez de vendre.",
+          "En deux temps, et l'un n'oblige pas à l'autre. En ligne d'abord : votre adresse, la surface, l'étage, l'état et vos coordonnées suffisent pour recevoir une fourchette calculée sur les ventes signées de votre rue et des rues voisines. Puis, si vous envisagez de vendre, une visite de quarante-cinq minutes et un avis de valeur écrit sous 24 heures, qui cite les ventes comparables. L'estimation est offerte quand vous envisagez de vendre.",
       },
       {
         question: "Estimez-vous tout type de bien immobilier dans le 18e ?",
@@ -180,10 +180,10 @@ export const secteurs: Secteur[] = [
     nomLong: '10e arrondissement de Paris',
     titre: 'Estimation immobilière gratuite Paris 10e | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 10e, Lariboisière Rocroy : visite, ventes de votre rue, avis de valeur sous 48 h.",
+      "Estimation immobilière gratuite à Paris 10e, Lariboisière Rocroy : visite, ventes de votre rue, avis de valeur sous 24 h.",
     titreAgence: 'Agence immobilière Paris 10e | Lariboisière Rocroy - Trudaines',
     descriptionAgence:
-      "Agence immobilière du 10e nord, Lariboisière Rocroy : estimation offerte sous 48 h, compte rendu chaque semaine.",
+      "Agence immobilière du 10e nord, Lariboisière Rocroy : estimation offerte sous 24 h, compte rendu chaque semaine.",
     hrefAgence: '/agence-immobiliere-paris-10',
     intro:
       "Le nord du 10e touche le 9e à la rue du Faubourg Poissonnière et le 18e au boulevard de la Chapelle. Les acheteurs y arrivent souvent après avoir cherché dans le 9e, avec le même budget et une exigence différente sur le volume. Estimer ici demande de savoir ce qui se vend juste à côté.",
@@ -233,7 +233,7 @@ export const secteurs: Secteur[] = [
     nomLong: '17e arrondissement de Paris',
     titre: 'Estimation appartement Paris 17, estimation immobilière gratuite | Trudaines',
     description:
-      "Estimation immobilière gratuite à Paris 17e : Batignolles, Legendre-Lévis, Épinettes. Avis de valeur écrit sous 48 heures.",
+      "Estimation immobilière gratuite à Paris 17e : Batignolles, Legendre-Lévis, Épinettes. Avis de valeur écrit sous 24 heures.",
     titreAgence: 'Agence immobilière Paris 17e, Batignolles | Trudaines',
     descriptionAgence:
       "Agence immobilière pour vendre aux Batignolles, rue Legendre, Cardinet et Épinettes. Prix par rue, ventes signées.",
@@ -252,7 +252,7 @@ export const secteurs: Secteur[] = [
       {
         question: "Estimez-vous tout type de bien immobilier dans le 17e ?",
         reponse:
-          "Oui : appartement, duplex, atelier, maison de ville, hôtel particulier ou immeuble, des Batignolles aux Épinettes et de Cardinet à la place de Clichy. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 48 heures.",
+          "Oui : appartement, duplex, atelier, maison de ville, hôtel particulier ou immeuble, des Batignolles aux Épinettes et de Cardinet à la place de Clichy. La fourchette en ligne est calculée pour les appartements, parce que ce sont eux que les ventes signées mesurent rue par rue. Pour les autres biens, l'estimation se fait sur place, avec un avis de valeur écrit sous 24 heures.",
       },
       {
         question: "Quel est le prix au mètre carré dans le 17e arrondissement ?",
@@ -293,10 +293,10 @@ export const secteurs: Secteur[] = [
     nomLong: '7e arrondissement de Paris',
     titre: 'Estimation immobilière gratuite Paris 7e | Trudaines',
     description:
-      "Estimation gratuite à Paris 7e : Saint-Germain, Invalides, Gros-Caillou. Avis de valeur écrit sous 48 heures.",
+      "Estimation gratuite à Paris 7e : Saint-Germain, Invalides, Gros-Caillou. Avis de valeur écrit sous 24 heures.",
     titreAgence: 'Agence immobilière Paris 7e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière Paris 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Estimation offerte sous 48 h.",
+      "Agence immobilière Paris 7e : faubourg Saint-Germain, Invalides, Gros-Caillou, École militaire. Estimation offerte sous 24 h.",
     hrefAgence: '/agence-immobiliere-paris-7',
     intro:
       "Le 7e est l'arrondissement le plus cher de nos secteurs, et celui où l'écart entre deux adresses est le plus large. Un étage noble sur une rue du faubourg Saint-Germain, un appartement sur cour près de l'École militaire, un pied-à-terre en étage élevé sans ascenseur : trois marchés, trois acheteurs. Notre estimation part des ventes signées de votre rue.",
@@ -336,10 +336,10 @@ export const secteurs: Secteur[] = [
     nomLong: '16e arrondissement de Paris',
     titre: 'Estimation immobilière gratuite Paris 16e | Trudaines',
     description:
-      "Estimation gratuite à Paris 16e : Passy, Auteuil, Muette, Trocadéro. Avis de valeur écrit sous 48 heures.",
+      "Estimation gratuite à Paris 16e : Passy, Auteuil, Muette, Trocadéro. Avis de valeur écrit sous 24 heures.",
     titreAgence: 'Agence immobilière Paris 16e | Vente et estimation - Trudaines',
     descriptionAgence:
-      "Agence immobilière dans le 16e : Passy, Auteuil, Muette, Trocadéro, Chaillot. Prix par rue, estimation offerte sous 48 h.",
+      "Agence immobilière dans le 16e : Passy, Auteuil, Muette, Trocadéro, Chaillot. Prix par rue, estimation offerte sous 24 h.",
     hrefAgence: '/agence-immobiliere-paris-16',
     intro:
       "Le 16e n'est pas un marché, c'en est plusieurs. Le nord, autour de l'Étoile, du Trocadéro et de l'avenue Foch, ne se vend pas comme Passy ou la Muette, et Auteuil a ses propres acheteurs, souvent des familles qui veulent la Seine, les écoles et le bois. Notre estimation part des ventes signées de votre rue.",

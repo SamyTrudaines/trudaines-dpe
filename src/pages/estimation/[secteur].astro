@@ -51,7 +51,7 @@ const reponseCourte = chiffres
       deux && trois
         ? ` Un deux pièces de ${deux.surface} m² s'est vendu autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.`
         : ''
-    } Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, gratuit et sans engagement.`
+    } Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 24 heures, gratuit et sans engagement.`
   : '';
 const faqTailles = typologies.length > 1
   ? [
@@ -122,7 +122,7 @@ const donnees = [
     serviceType: 'Estimation immobilière',
     provider: { '@id': 'https://www.trudaines.com/#agence' },
     areaServed: { '@type': 'AdministrativeArea', name: secteur.nomLong },
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 48 heures, sans engagement" },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 24 heures, sans engagement" },
   },
 ];
 ---

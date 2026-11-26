@@ -42,7 +42,7 @@ Ces calculs sont indicatifs : ils appliquent la médiane de l'arrondissement (DV
 
 Le 11e se vend bien parce qu'il est très demandé : la rue de la Roquette, les abords du square Maurice-Gardette, la rue Saint-Maur, les villas et les passages. Les acquéreurs y viennent pour la vie de quartier ; ils comparent beaucoup, et ils achètent vite quand le prix est juste.
 
-Notre méthode tient en trois temps : un avis de valeur écrit, remis sous 48 heures après la visite, fondé sur les ventes signées de votre rue ; une mise en vente préparée, diagnostics et documents de copropriété réunis avant la première visite ; des visites que nous menons nous-mêmes, avec un compte rendu après chacune.
+Notre méthode tient en trois temps : un avis de valeur écrit, remis sous 24 heures après la visite, fondé sur les ventes signées de votre rue ; une mise en vente préparée, diagnostics et documents de copropriété réunis avant la première visite ; des visites que nous menons nous-mêmes, avec un compte rendu après chacune.
 
 ## Acheter plus grand dans le 20e
 

@@ -19,7 +19,7 @@ essentiel:
   - "Sur la même période, les quatre pièces et plus du quartier des Grandes-Carrières, qui couvre l'ouest de Montmartre et la rue Caulaincourt, se sont vendus 10 460 € le m² en médiane (190 ventes), contre 9 150 € pour les studios du même quartier."
   - "Dans ces quartiers, les grands appartements se vendent plus cher au mètre carré que les petits, à l'inverse d'une idée répandue : ils sont rares, et les familles qui les cherchent comparent peu d'offres."
   - "Les critères qui pèsent le plus pour une famille sont l'immeuble (pierre de taille, gardien, ascenseur), le plan (chambres séparées des pièces de vie, double séjour, rangements) et la proximité des écoles et des squares."
-  - "Trudaines remet un avis de valeur écrit sous 48 heures après visite, comparé aux ventes signées des mêmes rues et de la même taille, offert si le propriétaire envisage de vendre."
+  - "Trudaines remet un avis de valeur écrit sous 24 heures après visite, comparé aux ventes signées des mêmes rues et de la même taille, offert si le propriétaire envisage de vendre."
 faq:
   - question: "Combien vaut un appartement de 4 pièces avenue Trudaine ?"
     reponse: "Sur les ventes de janvier 2024 à juin 2026, les appartements de quatre pièces et plus de l'avenue Trudaine se sont vendus 12 480 € le m² en médiane, sur 13 ventes (base DVF). Le chiffre est un repère : l'étage, la lumière, l'état et la copropriété placent chaque appartement au-dessus ou au-dessous. Le détail des ventes est sur notre page de prix de l'avenue."
@@ -94,7 +94,7 @@ Parquet en point de Hongrie, moulures, cheminées en marbre, hauteur sous plafon
 
 Les familles achètent souvent en vendant. Leur calendrier dépend de leur propre vente, de leur banque et de la rentrée scolaire. Nous qualifions chaque acheteur avant la visite : apport, accord de principe bancaire, vente préalable éventuelle. Moins de visites, plus d'offres solides, et votre appartement reste votre domicile pendant la vente.
 
-Pour situer votre appartement familial dans la fourchette de sa rue, nous le visitons, puis nous vous remettons un avis de valeur écrit sous 48 heures, comparé aux ventes signées des mêmes rues et de la même taille. Il est offert si vous envisagez de vendre.
+Pour situer votre appartement familial dans la fourchette de sa rue, nous le visitons, puis nous vous remettons un avis de valeur écrit sous 24 heures, comparé aux ventes signées des mêmes rues et de la même taille. Il est offert si vous envisagez de vendre.
 
 Estimer par quartier : [Trudaine-Maubeuge](/estimation/paris-9/trudaine-maubeuge), [Lorette-Martyrs](/estimation/paris-9/martyrs-lorette), [Saint-Georges](/estimation/paris-9/saint-georges), [Lamarck-Caulaincourt](/estimation/paris-18/lamarck), [Montmartre](/estimation/paris-18/montmartre), [Abbesses](/estimation/paris-18/abbesses).
 

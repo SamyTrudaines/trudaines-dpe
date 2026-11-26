@@ -31,7 +31,7 @@ faq:
   - question: "Mon bien est en ligne depuis longtemps, faut-il le retirer ?"
     reponse: "Souvent, oui, le temps de corriger ce qui bloquait. Un bien vu en ligne pendant des mois porte un historique que les acheteurs connaissent. Le retirer, refaire les photos, revoir le prix sur les ventes signées et revenir avec une présentation nouvelle redonne une chance d'être vu comme un bien neuf sur le marché."
   - question: "Trudaines reprend-elle des ventes commencées ailleurs ?"
-    reponse: "Oui, régulièrement, à Montmartre, dans le 9e, le 17e et le 18e. Le travail commence par un avis de valeur écrit, remis sous 48 heures après la visite, qui dit pourquoi le bien ne s'est pas vendu : prix, présentation, diffusion ou dossier. Il vous reste, que vous nous confiiez la vente ou non."
+    reponse: "Oui, régulièrement, à Montmartre, dans le 9e, le 17e et le 18e. Le travail commence par un avis de valeur écrit, remis sous 24 heures après la visite, qui dit pourquoi le bien ne s'est pas vendu : prix, présentation, diffusion ou dossier. Il vous reste, que vous nous confiiez la vente ou non."
 ---
 
 ## Ce que vos propres chiffres disent
@@ -56,4 +56,4 @@ Changer d'agence ne sert que si la méthode change : un prix argumenté par écr
 
 ## Ce que l'agence fait dans cette situation
 
-Nous reprenons régulièrement des ventes commencées ailleurs, entre particuliers ou avec une autre agence. Le travail commence par un avis de valeur écrit, remis sous 48 heures après la visite : il cite les ventes comparables de votre rue et dit, sans détour, ce qui a bloqué. Si c'est le prix, nous le disons chiffres à l'appui. Si c'est la présentation, nous refaisons photos, plan et annonce avant toute remise en ligne. Chaque acheteur est vérifié avant de visiter, et vous recevez un compte rendu écrit après chaque visite. L'avis de valeur vous reste, que vous nous confiiez la vente ou non.
+Nous reprenons régulièrement des ventes commencées ailleurs, entre particuliers ou avec une autre agence. Le travail commence par un avis de valeur écrit, remis sous 24 heures après la visite : il cite les ventes comparables de votre rue et dit, sans détour, ce qui a bloqué. Si c'est le prix, nous le disons chiffres à l'appui. Si c'est la présentation, nous refaisons photos, plan et annonce avant toute remise en ligne. Chaque acheteur est vérifié avant de visiter, et vous recevez un compte rendu écrit après chaque visite. L'avis de valeur vous reste, que vous nous confiiez la vente ou non.

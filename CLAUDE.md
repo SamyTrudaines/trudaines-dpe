@@ -38,8 +38,8 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Formulaire d'estimation, inspiré de MeilleursAgents : moins d'une minute sur téléphone, une question par écran,
   le contact demandé dès la deuxième étape (choix de Samy du 26 novembre 2026), jamais de prix sans contact. Six étapes, choix en pastilles (`.choix`) plutôt qu'en menus : 1 adresse et
   type en six cases illustrées (`PictoBien` : appartement, maison, duplex, loft ou atelier, hôtel particulier, immeuble
-  ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 prénom, nom, email, téléphone
-  (consentement facultatif, réservé à l'information sur les prix), envoyés aussitôt à l'agence (`data-envoi-contact`,
+  ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 prénom, nom, téléphone, email facultatif
+  (choix de Samy du 26 novembre 2026 ; consentement facultatif, réservé à l'information sur les prix), envoyés aussitôt à l'agence (`data-envoi-contact`,
   `etape=contact` : email « ESTIMATION COMMENCÉE » et SMS, même si le visiteur s'arrête ensuite) ; 3 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
   ventes signées de la rue (jamais le prix) ; 4 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
   5 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
@@ -115,6 +115,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 
 - Suivi de rue : formulaire d'un champ (`SuiviRue`, `functions/api/suivi-rue.js`) sur /prix-immobilier/<slug>, email
   seul, case « propriétaire » qui envoie le contact dans la liste vendeurs (sinon téléchargements) ; Samy prévenu par email.
+- Avis Google : `site.avis.google` (nombre affiché sur la fiche, relevé à la main, 99 en novembre 2026) sert à l'accueil, à /avis,
+  aux blocs agence et à llms.txt ; le total de /avis reste calculé sur les fiches importées. Horaires : `site.horaires`
+  (19 h 30 en semaine), la fiche Google doit dire la même chose.
 - Robots des formulaires : `suspect()` écarte aussi tout prénom d'un mot collé à deux majuscules (« CharlestotNZ »,
   « DanieltedGM »), sans email ni inscription dans Brevo.
 - Défenses des formulaires (attaques des nuits du 12 et 13 novembre 2026) : 6 envois par IP et par quart d'heure
@@ -125,7 +128,7 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   (`renouvelerTurnstile`, `public/js/formulaires.js`).
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
-- Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans
+- Avis de valeur : écrit, remis sous 24 heures après la visite (choix de Samy du 26 novembre 2026, jamais « 48 h ») ; offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans
   projet de vente avec l'agence, déduits des honoraires si la vente est finalement confiée.
 
 - Flux des portails : `/feeds/kyero.xml` (Kyero v3 : fr, en, de, es, it, pt ; le schéma refuse zh et ar),

@@ -84,7 +84,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Entre la rue de Lévis et sa rue commerçante, la place de Villiers et la rue Legendre, le 17e passe des Batignolles à la plaine Monceau. Les immeubles, les acheteurs et les prix changent en quelques rues : votre estimation part de la vôtre.",
     paragraphes: [
       "Les acheteurs du secteur sont souvent des familles et des cadres qui veulent le métro Villiers, les commerces de la rue de Lévis et le parc Monceau à pied. Ils comparent votre appartement avec ceux des Batignolles d'un côté, de la plaine Monceau de l'autre : la qualité de l'immeuble, l'étage et la lumière font la différence.",
-      "Nous estimons à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, chaque ajustement expliqué.",
+      "Nous estimons à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 24 heures, chaque ajustement expliqué.",
     ],
     ruesQuestions: ['rue-de-levis-17', 'rue-legendre-17', 'avenue-de-villiers-17'],
   },
@@ -119,7 +119,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Entre la porte Saint-Martin, la rue de Lancry et le canal, le 10e change de prix d'une rue à l'autre et d'un immeuble à l'autre. L'estimation commence par les ventes signées de votre rue, pas par une moyenne de l'arrondissement.",
     paragraphes: [
       "Les acheteurs y viennent pour le canal, les commerces et la desserte de la gare de l'Est et de République. Ils comparent l'étage, le bruit côté rue, la lumière et l'état de l'immeuble, qui varient beaucoup dans ce bâti ancien et mixte.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 24 heures, qui explique chaque ajustement.",
     ],
   },
   {
@@ -217,7 +217,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       {
         question: "Comment estimez-vous un grand appartement rue Caulaincourt ou rue Lamarck ?",
         reponse:
-          "Sur les ventes d'appartements de la même taille dans les mêmes rues, pas sur la médiane du quartier, tirée par les studios et les deux pièces. Un quatre ou cinq pièces en pierre de taille, avec gardien ou ascenseur, se compare à des ventes équivalentes, puis nous ajustons après visite selon l'étage, la vue, le plan et l'état. L'avis de valeur écrit vous est remis sous 48 heures.",
+          "Sur les ventes d'appartements de la même taille dans les mêmes rues, pas sur la médiane du quartier, tirée par les studios et les deux pièces. Un quatre ou cinq pièces en pierre de taille, avec gardien ou ascenseur, se compare à des ventes équivalentes, puis nous ajustons après visite selon l'étage, la vue, le plan et l'état. L'avis de valeur écrit vous est remis sous 24 heures.",
       },
     ],
   },
@@ -235,7 +235,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     paragraphes: [
       "Avenue Trudaine, rue Lentonnet, rue Alfred-Stevens : les rues calmes et bien tenues se vendent au-dessus de la médiane du quartier. Rue de Dunkerque ou boulevard de Rochechouart, plus passants, les prix descendent. Entre les deux, les rues Marguerite-de-Rochechouart, Rodier, Maubeuge et Condorcet font l'essentiel des ventes.",
       "L'agence porte le nom de l'avenue Trudaine : c'est notre quartier. Les acheteurs y viennent pour les immeubles en pierre de taille, les écoles et la proximité de Montmartre comme des grands boulevards. Ils comparent votre appartement avec ceux de Rochechouart et de Saint-Georges.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 24 heures.",
     ],
     questions: [
       {
@@ -264,7 +264,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "La rue des Martyrs concentre une densité de commerces rare à Paris. Autour d'elle, de Notre-Dame-de-Lorette à la place Saint-Georges, les écarts de prix entre rues sont parmi les plus faibles du 9e nord : c'est l'appartement lui-même qui fait la différence.",
     paragraphes: [
       "Les appartements anciens y sont très recherchés, du studio au quatre pièces. L'étage, le bruit côté rue, la cour et l'état de la copropriété créent des écarts nets entre deux biens de même surface, parfois dans le même immeuble.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 24 heures, qui explique chaque ajustement.",
     ],
     titreSeo: 'Estimation appartement rue des Martyrs, Paris 9e | Trudaines',
     questions: [
@@ -295,7 +295,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
       "Au sud de la place Pigalle, côté 9e, les rues Jean-Baptiste-Pigalle, Victor-Massé, Frochot et Duperré vendent des appartements anciens à des acheteurs qui viennent pour le quartier autant que pour le bien. D'une rue à l'autre, et d'un immeuble à l'autre, le prix au mètre carré change.",
     paragraphes: [
       "Les studios et les deux pièces y font plus de la moitié des ventes ; les grands appartements, plus rares, se négocient sur l'étage, la lumière et le calme côté cour. Le bruit côté boulevard et l'état de la copropriété pèsent aussi sur le prix.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 48 heures.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite : étage, ascenseur, lumière, état, copropriété. Vous recevez un avis de valeur écrit sous 24 heures.",
     ],
     ruesQuestions: ['rue-jean-baptiste-pigalle-09', 'rue-victor-masse-09', 'rue-des-martyrs-09'],
   },
@@ -313,7 +313,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     paragraphes: [
       "Les rues calmes de la Nouvelle Athènes, comme la rue du Cardinal-Mercier ou la rue La Bruyère, se vendent au-dessus de la médiane du quartier. Les grands axes, rue de Clichy, rue Blanche, rue de Douai, se situent autour d'elle ou un peu en dessous. L'étage et l'isolation du bruit pèsent plus qu'ailleurs.",
       "Les acheteurs viennent pour la desserte de Saint-Lazare et de la place de Clichy, et pour des immeubles anciens de qualité. Ils regardent l'étage, l'ascenseur, la hauteur sous plafond et le bruit côté rue, qui pèsent ici plus qu'ailleurs.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Chaque ajustement est écrit dans votre avis de valeur, remis sous 48 heures.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Chaque ajustement est écrit dans votre avis de valeur, remis sous 24 heures.",
     ],
     questions: [
       {
@@ -338,7 +338,7 @@ export const estimationsQuartiers: EstimationQuartier[] = [
     paragraphes: [
       "Rue Legendre, rue Nollet, rue Lemercier, rue des Dames : ces quatre rues font à elles seules près d'un tiers des ventes. Les abords du square et du boulevard des Batignolles se vendent plus cher ; l'avenue de Clichy, très passante, nettement moins.",
       "Le square des Batignolles, le parc Martin Luther King et la ligne 14 ont renforcé la demande. Les acheteurs comparent l'ancien du village avec le neuf de Clichy Batignolles : l'état de votre appartement et de la copropriété pèse donc lourd dans le prix.",
-      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 48 heures. Pour le secteur de la rue Cardinet, voir aussi notre page dédiée.",
+      "Nous estimons votre appartement à partir des ventes signées dans votre rue et dans les rues voisines, puis nous ajustons après visite. Vous recevez un avis de valeur écrit sous 24 heures. Pour le secteur de la rue Cardinet, voir aussi notre page dédiée.",
     ],
     ruesQuestions: ['rue-legendre-17', 'rue-nollet-17', 'rue-des-dames-17'],
   },

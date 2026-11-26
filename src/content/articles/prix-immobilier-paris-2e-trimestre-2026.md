@@ -63,7 +63,7 @@ Une médiane d'arrondissement cache des écarts considérables. Dans le 18e, sur
 
 Les vendeurs qui réussissent en 2026 partent d'une estimation fondée sur les ventes de leur rue, pas sur les annonces de leur quartier. Les annonces montrent ce que les vendeurs espèrent, les actes montrent ce que les acheteurs ont payé.
 
-[Recevoir un avis de valeur sous 48 heures](/estimation), fondé sur les ventes de votre rue.
+[Recevoir un avis de valeur sous 24 heures](/estimation), fondé sur les ventes de votre rue.
 
 Le détail quartier par quartier, rue par rue, est dans notre panorama d'automne : [Montmartre, haut du 9e, Batignolles, les prix rue par rue](/panorama/prix-montmartre-9e-batignolles-automne-2026).
 

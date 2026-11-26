@@ -67,8 +67,8 @@ const donnees = [
         <div>
           <dt class="text-xs uppercase tracking-[0.14em] text-[color:var(--color-ardoise)]">Sources</dt>
           <dd class="mt-3 text-sm leading-relaxed text-[color:var(--color-ardoise)]">
-            {agregat.parSource.google} sur Google et {agregat.parSource.pagesjaunes} sur Pages Jaunes.
-            Relevé en {site.avis.releve}.
+            {site.avis.google.total} sur <a href={site.avis.lienGoogle} rel="noopener" target="_blank" class="lien-souligne">notre fiche Google</a> ({site.avis.google.releve})
+            et {agregat.parSource.pagesjaunes} sur Pages Jaunes. Avis repris ici : relevé {site.avis.releve}.
           </dd>
         </div>
       </dl>

@@ -30,8 +30,8 @@ const aDesCitations = avis.some((a) => a.data.texte);
             {agregat.total} avis clients{!agregat.toutesCinq ? '.' : agregat.notés === agregat.total ? ', aucun en dessous de cinq étoiles.' : ', et toutes les notes relevées sont de cinq étoiles.'}
           </span>
           <span class="block">
-            {agregat.parSource.google} sur Google, {agregat.parSource.pagesjaunes} sur Pages Jaunes,
-            relevés en {site.avis.releve}.
+            {site.avis.google.total} sur <a href={site.avis.lienGoogle} rel="noopener" target="_blank" class="lien-souligne">notre fiche Google</a>, {agregat.parSource.pagesjaunes} sur Pages Jaunes ;{' '}
+            {agregat.total} repris ici, relevés en {site.avis.releve}.
           </span>
         </p>
       </div>

@@ -76,13 +76,13 @@ const chiffresCles = [
 /* La réponse en une fois, lisible hors contexte : c'est elle qu'un assistant reprend. */
 const reponseCourte = `${page.dans.charAt(0).toUpperCase()}${page.dans.slice(1)} (${secteur.nom}), les appartements se sont vendus ${medianeArrondie} le m² en médiane pondérée, sur ${nombre(ventes)} ventes signées de ${periode} dans ${liste.length} voies (base DVF de la DGFiP).${
   deux && trois ? ` Un deux pièces de ${deux.surface} m² s'y vend autour de ${prix(deux.prix)}, un trois pièces de ${trois.surface} m² autour de ${prix(trois.prix)}.` : ''
-} Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 48 heures, offert aux propriétaires qui envisagent de vendre.`;
+} Trudaines estime votre appartement en ligne en moins d'une minute, ou par un avis de valeur écrit après visite, remis sous 24 heures, offert aux propriétaires qui envisagent de vendre.`;
 
 /* Le titre porte « estimation appartement », le h1 « estimation immobilière » : les deux recherches visées. */
 /* Le prix au m² dans le titre : un chiffre signé se clique plus qu'un titre générique (CTR Search Console d'octobre 2026). */
 /* « Paris 9 » dans le titre : c'est ainsi que les vendeurs tapent leur recherche (Search Console). */
 const titre = page.titreSeo ?? `Estimation appartement ${secteur.nom.replace(/e$/, '')} ${page.nom} : ${medianeArrondie}/m² | Trudaines`;
-const description = `Combien vaut votre appartement ${page.dans} (${secteur.nom}) ? ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Estimation en ligne en une minute, avis de valeur écrit sous 48 h, offert si vous vendez.`;
+const description = `Combien vaut votre appartement ${page.dans} (${secteur.nom}) ? ${prix(Math.round(mediane / 10) * 10)} le m² sur ${nombre(ventes)} ventes signées. Estimation en ligne en une minute, avis de valeur écrit sous 24 h, offert si vous vendez.`;
 
 /* Le prix des rues que les vendeurs tapent dans Google, chacune comparée au quartier. */
 const questionsRues = (page.ruesQuestions ?? [])
@@ -116,7 +116,7 @@ const faq = [
   ...(page.questions ?? []),
   {
     question: 'Comment estimez-vous mon appartement ?',
-    reponse: "Nous partons des ventes signées dans votre rue et dans les rues voisines, publiées par l'administration fiscale, puis nous visitons. L'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 48 heures, qui explique chaque ajustement.",
+    reponse: "Nous partons des ventes signées dans votre rue et dans les rues voisines, publiées par l'administration fiscale, puis nous visitons. L'étage, la lumière, l'état, la copropriété et le plan ajustent le prix. Vous recevez un avis de valeur écrit sous 24 heures, qui explique chaque ajustement.",
   },
   {
     question: "L'estimation m'engage-t-elle ?",
@@ -149,7 +149,7 @@ const donnees = [
     name: `Estimation immobilière ${page.nom}, ${secteur.nom}`,
     serviceType: 'Estimation immobilière',
     provider: { '@id': 'https://www.trudaines.com/#agence' },
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 48 heures, sans engagement" },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Estimation en ligne immédiate, ou avis de valeur écrit remis après visite sous 24 heures, sans engagement" },
     areaServed: {
       '@type': 'Place',
       name: `${page.nom}, ${secteur.nomLong}`,

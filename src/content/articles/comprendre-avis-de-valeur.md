@@ -34,4 +34,4 @@ La valeur est une estimation de ce que le bien vaut. Le prix de mise en marché 
 
 Le document doit être daté, signé, et se terminer par une recommandation claire. Si le professionnel ne s'engage pas par écrit sur un chiffre, il n'y a aucune raison qu'il le défende face à un acheteur quelques semaines plus tard.
 
-Chez Trudaines, l'avis de valeur est remis sous 48 heures après la visite. Il vous appartient, y compris si vous décidez de ne pas vendre ou de confier votre bien ailleurs.
+Chez Trudaines, l'avis de valeur est remis sous 24 heures après la visite. Il vous appartient, y compris si vous décidez de ne pas vendre ou de confier votre bien ailleurs.

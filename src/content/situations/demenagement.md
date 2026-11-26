@@ -47,6 +47,6 @@ Trois chemins existent, et aucun n'est le bon pour tout le monde.
 
 ## Ce que nous faisons pour vous
 
-Un avis de valeur écrit, remis sous 48 heures après la visite, avec les ventes signées de votre rue : c'est lui qui sert de base à la banque pour un prêt relais et à vous pour décider. Puis une mise en vente préparée pour aller vite sans brader : photographies, diagnostics, documents de copropriété réunis avant la première visite, pour qu'aucune offre ne se perde faute de dossier complet.
+Un avis de valeur écrit, remis sous 24 heures après la visite, avec les ventes signées de votre rue : c'est lui qui sert de base à la banque pour un prêt relais et à vous pour décider. Puis une mise en vente préparée pour aller vite sans brader : photographies, diagnostics, documents de copropriété réunis avant la première visite, pour qu'aucune offre ne se perde faute de dossier complet.
 
 Pendant votre absence ou votre installation ailleurs, nous faisons les visites et vous adressons un compte rendu après chacune. Vous n'avez pas à revenir pour chaque rendez-vous.

@@ -96,7 +96,7 @@ const questions = [
   },
   {
     question: "Combien de temps faut-il pour recevoir l'avis de valeur ?",
-    reponse: "48 heures après la visite. Le document détaille les ventes de référence, les ajustements et une stratégie de prix pour la mise en vente. La fourchette en ligne, elle, s'affiche dès l'envoi du formulaire.",
+    reponse: "24 heures après la visite. Le document détaille les ventes de référence, les ajustements et une stratégie de prix pour la mise en vente. La fourchette en ligne, elle, s'affiche dès l'envoi du formulaire.",
   },
   {
     question: 'Sur quels quartiers intervenez-vous ?',
@@ -120,15 +120,15 @@ const donnees = [
     serviceType: "Estimation et avis de valeur d'un bien immobilier",
     provider: { '@id': 'https://www.trudaines.com/#agence' },
     areaServed: secteurs.map((s) => s.nom),
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Avis de valeur écrit, remis après visite sous 48 heures, sans engagement" },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: "Avis de valeur écrit, remis après visite sous 24 heures, sans engagement" },
   },
 ];
 ---
 <Layout
   filArianeMasqueMobile
   ancreEstimation="#avis-de-valeur"
-  titre="Estimation appartement Paris 9e et 18e, avis sous 48 h | Trudaines"
-  description={`Estimation immobilière gratuite à Paris 7e, 9e, 10e, 16e, 17e et 18e : visite, ventes signées, avis de valeur écrit sous 48 h. ${preuve}`}
+  titre="Estimation appartement Paris 9e et 18e, avis sous 24 h | Trudaines"
+  description={`Estimation immobilière gratuite à Paris 7e, 9e, 10e, 16e, 17e et 18e : visite, ventes signées, avis de valeur écrit sous 24 h. ${preuve}`}
   filAriane={[{ nom: 'Estimation' }]}
   donnees={donnees}
 >
@@ -145,7 +145,7 @@ const donnees = [
       <div class="lg:col-start-1 lg:row-start-2">
         <p class="chapo mt-8">
           Ce que nous remettons porte un nom : l'avis de valeur. Un document écrit, remis après visite sous
-          48 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et donne
+          24 heures, qui cite les ventes signées comparables de votre rue, explique chaque ajustement et donne
           une fourchette de prix.
         </p>
         <ul class="mt-10 space-y-4 text-sm">
