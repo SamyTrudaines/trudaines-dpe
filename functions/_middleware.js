@@ -102,10 +102,21 @@ async function contenuInterdit(request) {
   return null;
 }
 
+const HOTE_WINWIN = 'winwin.trudaines.com';
+
 export async function onRequest(context) {
   const { method, url } = context.request;
   const chemin = new URL(url).pathname;
-  if (method === 'POST' && chemin.startsWith('/api/')) {
+  /*
+   * winwin.trudaines.com n'ouvre que l'application des prescripteurs : sa racine sert /winwin/,
+   * toute autre page renvoie au site, pour qu'il n'existe jamais deux adresses du même contenu.
+   */
+  if (new URL(url).hostname === HOTE_WINWIN && !chemin.startsWith('/api/winwin/')) {
+    if (chemin === '/') return context.env.ASSETS.fetch(new Request(new URL('/winwin/', url), context.request));
+    return Response.redirect(`https://www.trudaines.com${chemin}`, 302);
+  }
+  // L'application WinWin a ses propres limites, par action : un prescripteur connecté envoie plus de six requêtes.
+  if (method === 'POST' && chemin.startsWith('/api/') && !chemin.startsWith('/api/winwin/')) {
     const ip = context.request.headers.get('CF-Connecting-IP') || 'inconnue';
     if ((await compter(`formulaire-${ip}`, FENETRE_SECONDES)) > ENVOIS_PAR_IP) {
       return refus("Trop d'envois depuis votre connexion. Merci de réessayer dans un quart d'heure ou de nous appeler.", 429);
