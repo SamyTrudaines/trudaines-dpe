@@ -274,10 +274,10 @@
     if (!champ) return;
     champ.value = demandee;
     if (premiere && !premiere.hidden && suivant) suivant.click();
-    /* Défilement jusqu'au formulaire lui-même : sur téléphone, le champ de surface reste visible. */
+    /* Défilement jusqu'au formulaire lui-même : sur téléphone, le premier champ des coordonnées reste visible. */
     form.scrollIntoView({ block: 'start' });
-    var surface = form.querySelector('[name="surface"]');
-    if (surface) setTimeout(function () { surface.focus({ preventScroll: true }); }, 300);
+    var prenom = form.querySelector('[name="prenom"]');
+    if (prenom) setTimeout(function () { prenom.focus({ preventScroll: true }); }, 300);
     if (typeof window.trudainesEvent === 'function') window.trudainesEvent('estimation_adresse_reprise', {});
   }
 

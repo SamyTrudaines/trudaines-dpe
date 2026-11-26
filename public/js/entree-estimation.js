@@ -21,12 +21,12 @@
       var adresse = entree.querySelector('input').value.trim();
       var champ = cible.querySelector('[name="adresse"]');
       if (champ && adresse) champ.value = adresse;
-      /* L'adresse est déjà donnée : le formulaire passe seul à l'étape suivante, celle de la surface. */
+      /* L'adresse est déjà donnée : le formulaire passe seul à l'étape suivante, celle des coordonnées. */
       var premiere = cible.querySelector('[data-etape]');
       var suivant = premiere && premiere.querySelector('[data-suivant]');
       if (adresse && premiere && !premiere.hidden && suivant) suivant.click();
       (adresse ? cible : bloc || cible).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      var suite = cible.querySelector(adresse ? '[name="surface"]' : '[name="adresse"]');
+      var suite = cible.querySelector(adresse ? '[name="prenom"]' : '[name="adresse"]');
       if (suite) setTimeout(function () { suite.focus({ preventScroll: true }); }, 400);
       if (typeof window.trudainesEvent === 'function') window.trudainesEvent('entree_estimation', {});
     });

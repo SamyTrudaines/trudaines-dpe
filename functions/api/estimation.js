@@ -32,10 +32,45 @@ function priorite(proprietaire, horizon) {
   return { libelle: 'À QUALIFIER', vendeur: true };
 }
 
+/*
+ * Coordonnées reçues à la deuxième étape du formulaire (data-envoi-contact) : l'agence est prévenue
+ * aussitôt, par SMS et par email, même si le visiteur s'arrête avant la fin. Choix de Samy du
+ * 26 novembre 2026, après trois semaines sans demande : un contact pris tôt vaut mieux qu'une
+ * estimation complète qui n'arrive jamais. Ni confirmation au visiteur, ni inscription Brevo à ce
+ * stade : elles partent avec la demande complète.
+ */
+async function contactRecu(request, env, donnees) {
+  const valeur = (champ) => String(donnees.get(champ) || '').trim();
+  const manquants = champsManquants(donnees, ['adresse', 'prenom', 'email', 'telephone']);
+  if (manquants.length || !emailValide(donnees.get('email'))) {
+    return reponse(request, { ok: false, message: 'Merci de compléter vos coordonnées.' }, 400);
+  }
+  const nomComplet = [valeur('prenom'), valeur('nom')].filter(Boolean).join(' ');
+  const lignes = [
+    ['Adresse', valeur('adresse')],
+    ['Type de bien', valeur('type') || 'Appartement'],
+    ['Nom', nomComplet],
+    ['Email', valeur('email')],
+    ['Téléphone', valeur('telephone')],
+    ['Secteur', valeur('secteur')],
+    ['Quartier', valeur('quartier')],
+    ['Page d’origine', valeur('origine')],
+    ['Consentement', valeur('consentement') === 'oui' ? 'Oui' : 'Non'],
+  ];
+  await envoyerEmail(env, {
+    sujet: `ESTIMATION COMMENCÉE · ${valeur('adresse')} · ${nomComplet} · ${valeur('telephone')}`,
+    html: gabaritNotification('Estimation commencée : coordonnées reçues. Le détail du bien suit s’il termine.', lignes),
+    repondreA: valeur('email'),
+  }).catch(() => null);
+  await envoyerSmsAgence(env, `Trudaines, estimation commencée : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')} (${(valeur('type') || 'appartement').toLowerCase()}). La suite peut ne pas arriver. A rappeler.`);
+  return reponse(request, { ok: true, message: 'Coordonnées reçues' });
+}
+
 export async function onRequestPost({ request, env }) {
   try {
     const donnees = await request.formData();
     if (suspect(donnees)) return reponse(request, { ok: true, message: 'Reçu' });
+    if (String(donnees.get('etape') || '') === 'contact') return await contactRecu(request, env, donnees);
 
     // Étage et ascenseur n'existent que pour un appartement : le formulaire les retire pour une maison.
     const type = String(donnees.get('type') || 'Appartement').trim();

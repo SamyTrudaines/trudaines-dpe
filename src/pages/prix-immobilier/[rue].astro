@@ -144,7 +144,12 @@ const regard = regardsRues[rue.slug] ?? [];
 <Layout
   ancreEstimation={`#estimation-${rue.slug}`}
   evtEstimation={evt('rue', 'estimer', contexte)}
-  titre={`${rue.nom}, ${rue.arrondissement} : prix au m² et ventes signées | Trudaines`}
+  titre={/*
+    « Prix au m² » en tête, comme avant le 7 novembre 2026, quand ces pages amenaient une demande
+    d'estimation par semaine ; le titre « <rue> : prix au m² et ventes signées » répondait d'abord
+    aux recherches du nom de la rue, celles d'un passant plus que d'un propriétaire. Prix médian
+    ajouté : un chiffre signé se clique plus qu'une promesse.
+  */ `Prix au m² ${rue.nom}, ${rue.arrondissement} : ${euros(Math.round(rue.mediane / 10) * 10)} | Trudaines`}
   description={`Combien vaut un appartement ${rue.nom.replace(/^(Rue|Avenue|Boulevard|Place|Square|Villa|Passage|Impasse|Cité|Quai|Allée)\b/, (m) => m.toLowerCase())} ? ${euros(rue.mediane)} le m² en médiane sur ${rue.ventes} ventes signées de 2024 à mi-2026, prix par taille, estimation en ligne en une minute.`}
   filAriane={quartier
     ? [{ nom: 'Quartiers', href: '/quartiers' }, { nom: quartier.data.nom, href: `/quartiers/${quartier.id}` }, { nom: rue.nom }]
