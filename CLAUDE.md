@@ -151,6 +151,18 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   lu sur les pages clés et les quatre portes du domaine), `synthese` (formules QUERY, séparateur `;` car la feuille est en
   français). Si Googlebot ne peut plus lire une page clé, le relevé échoue et GitHub prévient Samy.
 
+- Application Trudaines WinWin (prescripteurs : courtiers, notaires, diagnostiqueurs, anciens clients, gardiens, commerçants) :
+  page et scripts statiques dans `public/winwin/` (aucune page Astro, hors plan du site, `noindex`), points d'entrée dans
+  `functions/api/winwin/[[chemin]].js`, barème, base et emails dans `functions/_lib/winwin.js`. Données dans la base D1
+  `trudaines-winwin` (juridiction Union européenne), liée au projet Pages sous le nom `WINWIN_DB` en production et en aperçu ;
+  les tables se créent seules au premier appel. Connexion sans mot de passe : session ouverte à l'inscription, lien par email
+  ensuite, consommé par un POST. Administrateurs : variable `WINWIN_ADMINS` (par défaut les deux adresses de Samy). Prime du
+  prescripteur 15 % des honoraires HT, prime de cercle 5 % pour celui qui l'a invité (choix de Samy, 26 novembre 2026). Les
+  alertes à l'agence partent de `winwin@trudaines.com` : expédiées depuis l'adresse de Samy, Gmail les range en « envoyés »
+  et ne les signale pas. `functions/_middleware.js` exempte `/api/winwin/` de la limite de six envois (l'application a les
+  siennes) et sert `/winwin/` à la racine de `winwin.trudaines.com`, toute autre page de cet hôte renvoyant au site.
+  Essai local : `npx wrangler pages dev public --d1 WINWIN_DB=winwin-local`.
+
 ## Vérifications avant chaque envoi
 `npm run build`, `npm run check`, `npm run verifier`, `npm run test-formulaires`,
 `npm run test-mise-en-ligne`, `npm run verifier-mobile`, `npm run verifier-flux`.
