@@ -81,16 +81,63 @@ async function limite(request, cle, maximum) {
 
 /* ---------------------------------------------------------------- Public */
 
+function lireIdentite(d) {
+  const prenom = texte(d.prenom, 60), nom = texte(d.nom, 60), telephone = texte(d.telephone, 30);
+  const email = String(d.email || '').trim().toLowerCase();
+  const metier = METIERS.includes(d.metier) ? d.metier : 'Autre';
+  if (!prenom || !nom || !telephone || !emailValide(email) || email.length > 120) return { erreur: 'Merci de compléter votre prénom, votre nom, votre téléphone et votre email.' };
+  if (!telephoneInternational(telephone)) return { erreur: 'Votre numéro de téléphone ne semble pas valide.' };
+  if (d.cgu !== true) return { erreur: "Merci d'accepter les conditions du programme." };
+  return { prenom, nom, telephone, email, metier };
+}
+
+/** Contrôle d'une recommandation avant tout enregistrement : renvoie le message d'erreur, ou rien. */
+function recoInvalide(d) {
+  if ([d.contact_prenom, d.contact_nom, d.contact_telephone, d.lieu, d.commentaire].some((v) => texte(v, 800) === null)) return 'Les liens et le code ne sont pas acceptés dans ce formulaire. Merci de les retirer.';
+  const contactEmail = String(d.contact_email || '').trim();
+  if (contactEmail && !emailValide(contactEmail)) return "L'email de votre contact ne semble pas valide.";
+  if (!texte(d.contact_prenom, 60) || !texte(d.contact_telephone, 30)) return 'Le prénom et le téléphone de votre contact suffisent, mais ils sont nécessaires.';
+  if (d.accord !== true) return "Merci de confirmer que votre contact est d'accord pour être appelé.";
+  return '';
+}
+
+/**
+ * Recommander d'abord, s'inscrire ensuite : le contact et le projet sont saisis avant toute création
+ * de compte, puis les coordonnées du prescripteur ouvrent son espace et enregistrent la recommandation
+ * d'un seul geste. Une adresse déjà connue n'ouvre jamais de session : la recommandation est rattachée
+ * au compte et un lien de connexion part par email.
+ */
+async function express(request, env, db, d) {
+  if (d.controle || (Number(d.duree) >= 0 && Number(d.duree) < 2000)) return json({ ok: true, lien: true });
+  if (await limite(request, 'inscription', 8)) return refus("Trop d'essais depuis votre connexion. Réessayez dans un quart d'heure.", 429);
+  const invalide = recoInvalide(d);
+  if (invalide) return refus(invalide);
+  const identite = lireIdentite(d);
+  if (identite.erreur) return refus(identite.erreur);
+
+  const existant = await db.prepare('SELECT * FROM users WHERE email = ?').bind(identite.email).first();
+  if (existant || estAdmin(env, identite.email)) {
+    const cible = existant || await creerUtilisateur(db, identite);
+    const reco = await (await nouvelleReco(request, env, db, cible, d)).json();
+    if (!reco.ok) return refus(reco.message);
+    await envoyerLien(request, env, db, cible);
+    return json({ ok: true, lien: true });
+  }
+  const parrain = d.parrain ? await db.prepare('SELECT * FROM users WHERE code = ?').bind(String(d.parrain).trim().toUpperCase().slice(0, 12)).first() : null;
+  const user = await creerUtilisateur(db, { ...identite, parrain_id: parrain ? parrain.id : null });
+  const entetes = await ouvrirSession(db, user.id);
+  const reco = await (await nouvelleReco(request, env, db, user, d)).json();
+  await accueillir(request, env, db, user, parrain);
+  return json({ ok: true, user: publicUser({ ...user, role: 'prescripteur' }), prime: reco.prime || null, enregistree: Boolean(reco.ok) }, 200, entetes);
+}
+
 async function inscription(request, env, db, d) {
   if (d.controle || (Number(d.duree) >= 0 && Number(d.duree) < 2000)) return json({ ok: true, lien: true });
   if (await limite(request, 'inscription', 8)) return refus("Trop d'essais depuis votre connexion. Réessayez dans un quart d'heure.", 429);
 
-  const prenom = texte(d.prenom, 60), nom = texte(d.nom, 60), telephone = texte(d.telephone, 30);
-  const email = String(d.email || '').trim().toLowerCase();
-  const metier = METIERS.includes(d.metier) ? d.metier : 'Autre';
-  if (!prenom || !nom || !telephone || !emailValide(email) || email.length > 120) return refus('Merci de compléter votre prénom, votre nom, votre téléphone et votre email.');
-  if (!telephoneInternational(telephone)) return refus('Ce numéro de téléphone ne semble pas valide.');
-  if (d.cgu !== true) return refus("Merci d'accepter les conditions du programme pour créer votre espace.");
+  const identite = lireIdentite(d);
+  if (identite.erreur) return refus(identite.erreur);
+  const { prenom, nom, telephone, email, metier } = identite;
 
   const existant = await db.prepare('SELECT * FROM users WHERE email = ?').bind(email).first();
   if (existant || estAdmin(env, email)) {
@@ -103,6 +150,13 @@ async function inscription(request, env, db, d) {
   const parrain = d.parrain ? await db.prepare('SELECT * FROM users WHERE code = ?').bind(String(d.parrain).trim().toUpperCase().slice(0, 12)).first() : null;
   const user = await creerUtilisateur(db, { email, prenom, nom, telephone, metier, parrain_id: parrain ? parrain.id : null });
   const entetes = await ouvrirSession(db, user.id);
+  await accueillir(request, env, db, user, parrain);
+  return json({ ok: true, user: publicUser({ ...user, role: 'prescripteur' }) }, 200, entetes);
+}
+
+/** Emails qui suivent une inscription : bienvenue, alerte à l'agence, mot au parrain. */
+async function accueillir(request, env, db, user, parrain) {
+  const { prenom, nom, telephone, email, metier } = user;
   const app = adresseApp(request);
 
   await courrier(env, db, {
@@ -137,7 +191,6 @@ async function inscription(request, env, db, d) {
       bouton: { texte: 'Voir mon cercle', url: app },
     });
   }
-  return json({ ok: true, user: publicUser({ ...user, role: 'prescripteur' }) }, 200, entetes);
 }
 
 async function creerUtilisateur(db, { email, prenom, nom, telephone, metier, parrain_id = null, origine = '' }) {
@@ -428,6 +481,7 @@ export async function onRequest({ request, env, params }) {
       return json({ ok: true, prenom: parrain ? parrain.prenom : null });
     }
     if (methode === 'POST' && chemin === 'inscription') return inscription(request, env, db, d);
+    if (methode === 'POST' && chemin === 'express') return express(request, env, db, d);
     if (methode === 'POST' && chemin === 'connexion') return connexion(request, env, db, d);
     if (methode === 'POST' && chemin === 'jeton') return echangerJeton(request, env, db, d);
     if (methode === 'POST' && chemin === 'deconnexion') {

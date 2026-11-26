@@ -22,7 +22,7 @@ a { color: var(--encre); text-decoration-color: var(--or); text-underline-offset
 ::selection { background: var(--or); }
 [hidden] { display: none !important; }
 
-.chargement { padding: 40vh 24px 0; text-align: center; font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ardoise); }
+.chargement { padding: 40vh 24px 0; margin: 0; text-align: center; font-family: var(--texte); font-style: normal; font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--ardoise); }
 .page { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 .etroit { max-width: 560px; }
 .pile > * + * { margin-top: 16px; }
@@ -151,3 +151,9 @@ input:focus, textarea:focus, select:focus { border-color: var(--encre); outline:
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--encre); color: #fff; padding: 14px 22px; font-size: 0.875rem; z-index: 20; max-width: calc(100vw - 32px); }
 .fixe-mobile { position: sticky; bottom: 0; background: #fff; border-top: 1px solid var(--trait); padding: 12px 20px; margin: 0 -20px; }
 @media (min-width: 760px) { .fixe-mobile { position: static; border: 0; padding: 0; margin: 0; } }
+
+/* Téléphone : encoche et barre d'accueil respectées, application installée comprise. */
+.entete { padding-top: env(safe-area-inset-top); }
+.pied { padding-bottom: calc(48px + env(safe-area-inset-bottom)); }
+.frise i { transition: background 0.2s; }
+button, .btn, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }

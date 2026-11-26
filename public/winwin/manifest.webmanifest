@@ -1,0 +1,17 @@
+{
+  "name": "Trudaines WinWin",
+  "short_name": "WinWin",
+  "description": "La recommandation récompensée de Trudaines Immobilier.",
+  "lang": "fr",
+  "start_url": "/winwin/",
+  "scope": "/winwin/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/winwin/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/winwin/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/winwin/icone-512-pleine.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

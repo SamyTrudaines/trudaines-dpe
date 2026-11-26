@@ -94,7 +94,7 @@
           lien('/inviter', 'Inviter'),
           u.role === 'admin' && lien('/admin', 'Back-office'),
           h('button', { type: 'button', class: 'long', onclick: deconnexion }, 'Quitter'),
-        ] : [lien('/connexion', 'Se connecter')],
+        ] : [lien('/recommander', 'Recommander'), lien('/connexion', 'Se connecter')],
       )));
   }
 
@@ -150,8 +150,8 @@
             h('div', { class: 'pile' }, invitation, h('p', { class: 'sur' }, 'La recommandation récompensée'),
               h('h1', null, 'Vous connaissez quelqu\'un qui vend à Paris ?'),
               h('p', { class: 'accroche' }, `Présentez-le à Trudaines. Si la vente se fait, ${part} % de nos honoraires sont pour vous.`)),
-            h('div', { class: 'rang' }, h('a', { class: 'btn or', href: '#/inscription' }, 'Créer mon espace'), h('a', { class: 'btn clair', href: '#/connexion' }, 'J\'ai déjà un espace')),
-            h('p', { class: 'petit doux' }, 'Gratuit, sans engagement, sans exclusivité. Deux minutes pour s\'inscrire, aucun mot de passe.')),
+            h('div', { class: 'rang' }, h('a', { class: 'btn or', href: '#/recommander' }, "Recommander quelqu'un"), h('a', { class: 'btn clair', href: '#/connexion' }, 'J\'ai déjà un espace')),
+            h('p', { class: 'petit doux' }, 'Deux minutes, sans mot de passe. Vous présentez votre contact, puis vous suivez chaque étape et votre prime.')),
           simulateur()),
         h('section', { class: 'section pile-l' },
           h('h2', null, 'Comment cela se passe'),
@@ -164,7 +164,7 @@
             h('p', { class: 'petit doux' }, 'L\'avancement de chaque recommandation, étape par étape. Votre prime : estimée au dépôt, précisée au mandat, versée après l\'acte. Et votre lien personnel pour inviter votre entourage : '
               + `${Math.round(etat.config.partParrain * 100)} % de nos honoraires vous reviennent aussi sur les affaires qu'il apporte.`))),
         h('section', { class: 'section pile-l centre' }, h('h2', null, 'Un nom vous vient en tête ?'),
-          h('div', null, h('a', { class: 'btn', href: '#/inscription' }, 'Créer mon espace')))));
+          h('div', null, h('a', { class: 'btn or', href: '#/recommander' }, "Recommander quelqu'un")))));
   }
 
   /* ------------------------------------------------------------ Inscription et connexion */
@@ -242,7 +242,7 @@
     } }, email, message, envoyer);
     afficher('/connexion', h('div', { class: 'page etroit section pile-l' },
       h('div', { class: 'pile' }, h('h2', null, 'Retrouver mon espace'), h('p', { class: 'doux' }, 'Pas de mot de passe à retenir : nous vous envoyons un lien par email.')),
-      bloc, h('p', { class: 'petit centre' }, 'Pas encore inscrit ? ', h('a', { href: '#/inscription' }, 'Créer mon espace'))));
+      bloc, h('p', { class: 'petit centre' }, 'Pas encore inscrit ? ', h('a', { href: '#/recommander' }, "Recommander quelqu'un"), ' ou ', h('a', { href: '#/inscription' }, 'créer mon espace'))));
     email.entree.focus();
   }
 
@@ -321,13 +321,14 @@
         r.recos.length ? r.recos.map(carteReco) : h('div', { class: 'cadre papier pile' },
           h('p', null, 'Vous n\'avez encore présenté personne.'),
           h('p', { class: 'petit doux' }, 'Pensez à celles et ceux qui vous ont parlé d\'un déménagement, d\'une succession, d\'une séparation, d\'un départ à la retraite ou d\'un appartement devenu trop petit. Un prénom et un numéro suffisent.'))),
-      blocInvitation(true)));
+      blocInvitation(true), blocInstallation()));
   }
 
   function sessionPerdue() { etat.user = null; aller('/connexion'); }
 
-  function recommander() {
-    const types = Object.entries(etat.config.types).filter(([v]) => v !== 'autre').map(([v, l]) => [v, v === 'vente' ? 'Vendre' : v === 'achat' ? 'Acheter' : 'Faire gérer son bien']);
+  /* Champs d'une recommandation, communs au parcours sans compte et à l'espace connecté. */
+  function champsReco() {
+    const types = [['vente', 'Vendre'], ['achat', 'Acheter'], ['gestion', 'Faire gérer son bien']];
     const apercu = h('p', { class: 'succes', hidden: true });
     const valeur = champ('Valeur approximative du bien', { id: 'valeur', inputmode: 'numeric', placeholder: 'Par exemple 650 000' }, true);
     const loyer = champ('Loyer mensuel envisagé', { id: 'loyer', inputmode: 'numeric', placeholder: 'Par exemple 1 800' }, true);
@@ -341,40 +342,131 @@
     loyer.hidden = true;
     valeur.entree.addEventListener('input', majApercu);
     loyer.entree.addEventListener('input', majApercu);
-    const prenom = champ('Prénom de votre contact', { id: 'cprenom', required: true });
-    const nom = champ('Nom', { id: 'cnom' }, true);
-    const telephone = champ('Son téléphone', { id: 'ctel', type: 'tel', inputmode: 'tel', required: true });
-    const lieu = champ('Adresse ou quartier du bien', { id: 'lieu', placeholder: 'Par exemple rue des Martyrs, Paris 9e' }, true);
-    const commentaire = champ('Ce qu\'il faut savoir', { id: 'commentaire', rows: '3', placeholder: 'Son projet, le bon moment pour l\'appeler...' }, true);
+    const prenom = champ('Prénom de votre contact', { id: 'cprenom', required: true, autocomplete: 'off' });
+    const nom = champ('Son nom', { id: 'cnom', autocomplete: 'off' }, true);
+    const telephone = champ('Son téléphone', { id: 'ctel', type: 'tel', inputmode: 'tel', required: true, autocomplete: 'off' });
+    const lieu = champ('Adresse ou quartier du bien', { id: 'lieu', placeholder: 'Par exemple rue des Martyrs, Paris 9e', autocomplete: 'off' }, true);
+    const commentaire = champ("Ce qu'il faut savoir", { id: 'commentaire', rows: '3', placeholder: "Son projet, le bon moment pour l'appeler..." }, true);
     const accord = h('input', { type: 'checkbox', id: 'accord' });
+    return {
+      type, prenom, nom, telephone, lieu, valeur, loyer, commentaire, apercu, accord,
+      caseAccord: h('label', { class: 'case', for: 'accord' }, accord, h('span', null, "Mon contact est d'accord pour être appelé par Samy Santamarina, de ma part.")),
+      valeurs: () => ({
+        type: type.valeur, contact_prenom: prenom.entree.value, contact_nom: nom.entree.value, contact_telephone: telephone.entree.value,
+        lieu: lieu.entree.value, commentaire: commentaire.entree.value, valeur: lire(valeur) || null, loyer: lire(loyer) || null, accord: accord.checked,
+      }),
+    };
+  }
+
+  function merci(prenomContact, prime, enAttente) {
+    afficher('/recommander', h('div', { class: 'page etroit section pile-l' },
+      h('div', { class: 'pile' }, h('p', { class: 'sur' }, "C'est envoyé"), h('h2', null, etat.user ? `Merci ${etat.user.prenom}` : 'Merci'),
+        h('p', null, `Samy appelle ${prenomContact} de votre part sous 24 heures ouvrées. Vous recevez un email à chaque étape.`),
+        prime && h('p', { class: 'succes' }, `Prime estimée si l'affaire se conclut : ${euros(prime)}.`),
+        enAttente && h('p', { class: 'succes' }, 'Vous aviez déjà un espace à cette adresse : un lien de connexion vient de partir par email pour suivre cette recommandation.')),
+      etat.user && h('div', { class: 'rang' }, h('a', { class: 'btn', href: '#/espace' }, 'Suivre ma recommandation'), h('a', { class: 'btn clair', href: '#/recommander', onclick: () => setTimeout(rendre, 0) }, 'En présenter une autre')),
+      etat.user && blocInvitation(true), etat.user && blocInstallation()));
+  }
+
+  /* Espace connecté : un seul écran. */
+  function recommander() {
+    const c = champsReco();
     const message = h('p', { class: 'erreur', hidden: true, role: 'alert' });
     const envoyer = h('button', { class: 'btn or plein', type: 'submit' }, 'Envoyer ma recommandation');
     const formulaire = h('form', { class: 'pile-l', novalidate: true, onsubmit: async (e) => {
       e.preventDefault();
       message.hidden = true; envoyer.disabled = true;
-      const r = await api('recos', {
-        type: type.valeur, contact_prenom: prenom.entree.value, contact_nom: nom.entree.value, contact_telephone: telephone.entree.value,
-        lieu: lieu.entree.value, commentaire: commentaire.entree.value, valeur: lire(valeur) || null, loyer: lire(loyer) || null, accord: accord.checked,
-      });
+      const r = await api('recos', c.valeurs());
       envoyer.disabled = false;
       if (r.statut === 401) return sessionPerdue();
       if (!r.ok) { message.textContent = r.message; message.hidden = false; return; }
-      afficher('/recommander', h('div', { class: 'page etroit section pile-l' },
-        h('div', { class: 'pile' }, h('p', { class: 'sur' }, 'C\'est envoyé'), h('h2', null, `Merci ${etat.user.prenom}`),
-          h('p', null, `Samy appelle ${prenom.entree.value} de votre part sous 24 heures ouvrées. Vous recevez un email à chaque étape.`),
-          r.prime && h('p', { class: 'succes' }, `Prime estimée si l'affaire se conclut : ${euros(r.prime)}.`)),
-        h('div', { class: 'rang' }, h('a', { class: 'btn', href: '#/espace' }, 'Suivre mes recommandations'), h('a', { class: 'btn clair', href: '#/recommander', onclick: () => setTimeout(rendre, 0) }, 'En présenter une autre')),
-        blocInvitation(true)));
+      merci(c.prenom.entree.value, r.prime);
     } },
-      h('div', null, h('label', null, 'Votre contact souhaite'), type),
-      h('div', null, h('div', { class: 'deux' }, prenom, nom), telephone, lieu, valeur, loyer, commentaire),
-      apercu,
-      h('label', { class: 'case', for: 'accord' }, accord, h('span', null, 'Mon contact est d\'accord pour être appelé par Samy Santamarina, de ma part.')),
-      message, envoyer);
+      h('div', null, h('label', null, 'Votre contact souhaite'), c.type),
+      h('div', null, h('div', { class: 'deux' }, c.prenom, c.nom), c.telephone, c.lieu, c.valeur, c.loyer, c.commentaire),
+      c.apercu, c.caseAccord, message, envoyer);
     afficher('/recommander', h('div', { class: 'page etroit section pile-l' },
-      h('div', { class: 'pile' }, h('p', { class: 'sur' }, 'Deux minutes'), h('h2', null, 'Recommander quelqu\'un'),
-        h('p', { class: 'doux' }, 'Un prénom et un numéro suffisent. Samy l\'appelle de votre part, et vous suivez tout depuis votre espace.')),
+      h('div', { class: 'pile' }, h('p', { class: 'sur' }, 'Deux minutes'), h('h2', null, "Recommander quelqu'un"),
+        h('p', { class: 'doux' }, "Un prénom et un numéro suffisent. Samy l'appelle de votre part, et vous suivez tout depuis votre espace.")),
       formulaire));
+  }
+
+  /* Sans compte : la recommandation d'abord, les coordonnées du prescripteur ensuite, en trois écrans courts. */
+  function express() {
+    const c = champsReco();
+    const prenom = champ('Votre prénom', { id: 'prenom', autocomplete: 'given-name', required: true });
+    const nom = champ('Votre nom', { id: 'nom', autocomplete: 'family-name', required: true });
+    const telephone = champ('Votre mobile', { id: 'telephone', type: 'tel', autocomplete: 'tel', inputmode: 'tel', required: true });
+    const email = champ('Votre email', { id: 'email', type: 'email', autocomplete: 'email', inputmode: 'email', required: true });
+    const metier = pastilles(etat.config.metiers.map((m) => [m, m]), '');
+    const cgu = h('input', { type: 'checkbox', id: 'cgu' });
+    const piege = h('input', { type: 'text', name: 'controle', tabindex: '-1', autocomplete: 'off' });
+    const message = h('p', { class: 'erreur', hidden: true, role: 'alert' });
+    const envoyer = h('button', { class: 'btn or plein', type: 'submit' }, 'Envoyer et suivre ma recommandation');
+    const progres = h('div', { class: 'frise', 'aria-hidden': 'true' }, h('i'), h('i'), h('i'));
+    const compteur = h('p', { class: 'sur' });
+    const erreur = (libelle) => { message.textContent = libelle; message.hidden = false; };
+
+    const ecrans = [
+      h('div', { class: 'pile-l' }, h('h2', null, 'Que souhaite votre contact ?'), c.type,
+        h('p', { class: 'petit doux' }, "Un proche, un client, un voisin : dès qu'il vous parle d'un projet immobilier à Paris.")),
+      h('div', { class: 'pile-l' }, h('h2', null, 'Qui dois-je appeler ?'),
+        h('div', null, h('div', { class: 'deux' }, c.prenom, c.nom), c.telephone, c.lieu, c.valeur, c.loyer, c.commentaire), c.apercu, c.caseAccord),
+      h('div', { class: 'pile-l' }, h('div', { class: 'pile' }, h('h2', null, 'Et vous, pour suivre et être rémunéré ?'),
+        h('p', { class: 'doux' }, 'Vos coordonnées ouvrent votre espace : vous y suivez chaque étape et votre prime. Aucun mot de passe.')),
+        h('div', null, h('div', { class: 'deux' }, prenom, nom), telephone, email),
+        h('div', null, h('label', null, 'Vous êtes'), metier),
+        h('label', { class: 'case', for: 'cgu' }, cgu, h('span', null, "J'accepte les ", h('a', { href: '#/conditions', target: '_blank' }, 'conditions du programme'), '.')),
+        h('div', { class: 'piege', 'aria-hidden': 'true' }, piege)),
+    ];
+    let etape = 0;
+    const suite = h('button', { class: 'btn or plein', type: 'button', onclick: () => {
+      message.hidden = true;
+      if (etape === 1) {
+        if (!c.prenom.entree.value.trim() || !c.telephone.entree.value.trim()) return erreur('Le prénom et le téléphone de votre contact sont nécessaires.');
+        if (!c.accord.checked) return erreur("Merci de confirmer que votre contact est d'accord pour être appelé.");
+      }
+      return montrer(etape + 1);
+    } }, 'Continuer');
+    const retour = h('button', { class: 'lien petit', type: 'button', onclick: () => { message.hidden = true; montrer(etape - 1); } }, 'Retour');
+    function montrer(n) {
+      etape = n;
+      ecrans.forEach((ecran, i) => { ecran.hidden = i !== n; });
+      [...progres.children].forEach((trait, i) => { trait.className = i < n ? 'fait' : i === n ? 'ici' : ''; });
+      compteur.textContent = `Étape ${n + 1} sur 3`;
+      suite.hidden = n === 2; envoyer.hidden = n !== 2; retour.hidden = n === 0;
+      window.scrollTo(0, 0);
+      const premier = ecrans[n].querySelector('input:not([type="checkbox"])');
+      if (premier && n > 0) premier.focus();
+    }
+    const formulaire = h('form', { class: 'pile-l', novalidate: true, onsubmit: async (e) => {
+      e.preventDefault();
+      if (etape !== 2) return suite.click();
+      message.hidden = true; envoyer.disabled = true;
+      const r = await api('express', {
+        ...c.valeurs(), prenom: prenom.entree.value, nom: nom.entree.value, telephone: telephone.entree.value, email: email.entree.value,
+        metier: metier.valeur || 'Autre', cgu: cgu.checked, parrain: memoire('ww_parrain'), controle: piege.value, duree: Date.now() - debut,
+      });
+      envoyer.disabled = false;
+      if (!r.ok) return erreur(r.message);
+      if (r.user) etat.user = r.user;
+      return merci(c.prenom.entree.value, r.prime, Boolean(r.lien));
+    } }, ecrans, message, suite, envoyer, h('p', { class: 'centre' }, retour));
+    afficher('/recommander', h('div', { class: 'page etroit section pile-l' }, h('div', { class: 'pile' }, compteur, progres), formulaire,
+      h('p', { class: 'petit centre doux' }, 'Déjà un espace ? ', h('a', { href: '#/connexion' }, 'Se connecter'))));
+    montrer(0);
+  }
+
+  /* Installation sur l'écran d'accueil : bouton sur Android, mode d'emploi sur iPhone. */
+  let invite = null;
+  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); invite = e; });
+  function blocInstallation() {
+    if (window.matchMedia('(display-mode: standalone)').matches || navigator.standalone) return null;
+    const iphone = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    if (!invite && !iphone) return null;
+    return h('div', { class: 'cadre papier pile' }, h('p', { class: 'sur' }, 'Sur votre téléphone'), h('h3', null, 'Gardez WinWin à portée de main'),
+      iphone ? h('p', { class: 'petit doux' }, "Dans Safari, touchez le bouton Partager puis « Sur l'écran d'accueil ». WinWin s'ouvre ensuite comme une application.")
+        : h('div', null, h('button', { class: 'btn fin', type: 'button', onclick: () => { invite.prompt(); invite = null; } }, "Installer l'application")));
   }
 
   function inviter() {
@@ -626,7 +718,7 @@
     if (route === '/connexion') return connexion();
     if (route === '/conditions') return conditions();
     if (route === '/espace') return prive(espace);
-    if (route === '/recommander') return prive(recommander);
+    if (route === '/recommander') return etat.user ? recommander() : express();
     if (route === '/inviter') return prive(inviter);
     if (route === '/admin') return agence(adminDossiers);
     if (route === '/admin/prescripteurs') return agence(adminPrescripteurs);
