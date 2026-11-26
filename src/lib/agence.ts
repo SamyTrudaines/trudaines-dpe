@@ -45,7 +45,20 @@ export function faqAgence({ dans, bureau }: Pick<OptionsAgence, 'dans' | 'bureau
     },
     {
       question: 'Combien de temps pour obtenir une estimation ?',
-      reponse: "Moins d'une minute en ligne : la fourchette, tirée des ventes signées de votre rue, s'affiche dès l'envoi de vos coordonnées. Pour l'avis de valeur écrit, une visite d'environ quarante-cinq minutes, puis le document sous 48 heures, avec les ventes comparables de votre rue. Gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
+      reponse: "Deux minutes en ligne : vos coordonnées, quelques questions sur le bien, et la fourchette tirée des ventes signées de votre rue s'affiche. Pour l'avis de valeur écrit, une visite d'environ quarante-cinq minutes, puis le document sous 48 heures, avec les ventes comparables de votre rue. Gratuit, sans engagement, et il vous reste même si vous vendez ailleurs.",
+    },
+    /*
+     * Les deux questions que les vendeurs tapent pour choisir (suggestions Google du 26 novembre 2026 :
+     * « meilleure agence immobilière montmartre », « comment choisir son agence immobilière paris 18 »).
+     * Réponses factuelles, sans nommer ni juger aucune autre agence.
+     */
+    {
+      question: `Quelle est la meilleure agence immobilière ${dans} ?`,
+      reponse: `Il n'existe pas de classement officiel des agences ${dans}. La meilleure pour vendre est celle qui démontre par écrit qu'elle connaît les ventes de votre rue : comparez deux ou trois avis de valeur écrits, leurs ventes comparables, le prix de mise en marché proposé et le calendrier. Un prix annoncé trop haut pour obtenir le mandat se paie ensuite en semaines de vente. Trudaines remet son avis de valeur écrit sous 48 heures après la visite, offert si vous envisagez de vendre, et publie ses avis clients et ses ventes.`,
+    },
+    {
+      question: `Comment choisir son agence immobilière ${dans} ?`,
+      reponse: "Sur cinq preuves à demander avant de signer : des ventes signées dans votre quartier ; un prix argumenté par écrit avec les ventes comparables de votre rue ; des avis clients nombreux, récents et vérifiables ; un interlocuteur unique et un compte rendu après chaque visite ; des honoraires et un mandat clairs, durée et sortie comprises. Trudaines les remet toutes : références de ventes, avis publiés, barème affiché, avis de valeur écrit.",
     },
     {
       question: "Où se trouve l'agence ?",

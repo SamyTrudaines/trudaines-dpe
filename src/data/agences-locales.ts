@@ -191,7 +191,8 @@ export const agencesLocales: AgenceLocale[] = [
     rayon: 500,
     quartiersBiens: ['Trudaine Maubeuge'],
     quartiersLies: ['trudaine-maubeuge', 'martyrs-lorette', 'montmartre'],
-    titreSeo: 'Agence immobilière Trudaine, Martyrs, Paris 9e | Trudaines',
+    /* Maubeuge et rue des Martyrs : les deux recherches du quartier qu'aucune page ne portait (26/11/2026). */
+    titreSeo: 'Agence immobilière Trudaine, Maubeuge, rue des Martyrs | Trudaines',
     descriptionSeo:
       "Agence immobilière avenue Trudaine, Paris 9e : appartements familiaux et haussmanniens, prix signés rue par rue, avis de valeur sous 48 h, offert si vous vendez.",
     h1: "Agence immobilière avenue Trudaine, Paris 9e",

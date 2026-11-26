@@ -111,7 +111,7 @@ export const secteurs: Secteur[] = [
     titre: 'Estimation appartement Paris 18, estimation immobilière gratuite | Trudaines',
     description:
       "Estimation immobilière gratuite à Paris 18e et Montmartre : visite, ventes de votre rue, avis de valeur écrit sous 48 h.",
-    titreAgence: 'Agence immobilière Paris 18e, rue Livingstone | Trudaines',
+    titreAgence: 'Agence immobilière indépendante Paris 18e, rue Livingstone | Trudaines',
     descriptionAgence:
       "Agence immobilière au 2 rue Livingstone, au pied de la Butte : vente d'appartements à Montmartre, Abbesses, Lamarck.",
     hrefAgence: '/agence-immobiliere-paris-18',
