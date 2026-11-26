@@ -41,8 +41,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
   ou local ; duplex et loft comptent comme appartement, hôtel particulier comme maison) ; 2 surface, pièces, chambres, salles de bain, avec l'aperçu du nombre de
   ventes signées de la rue (jamais le prix) ; 3 état (neuf, rénové, très bon, correct, à rénover), extérieur (aucun, balcon, terrasse et sa surface) et atouts facultatifs ;
   4 étage et étages de l'immeuble en compteurs − / + liés (0 = rez-de-chaussée), ascenseur (étape sautée hors appartement) ;
-  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, email,
-  téléphone (consentement facultatif, réservé à l'information sur les prix). La fourchette DVF part de la médiane de la rue rapprochée de celle
+  5 « Ce bien et vous » : propriétaire, usage, projet de vente (choix repris de MeilleursAgents) ; 6 prénom, téléphone,
+  email facultatif depuis le 26 novembre 2026 (sans email : notification, SMS et contact Brevo par le téléphone, aucun email au
+  visiteur) ; consentement facultatif, réservé à l'information sur les prix. La fourchette DVF part de la médiane de la rue rapprochée de celle
   des rues à moins de 400 m (poids v / (v + 10), constante mesurée sur les ventes ; voisinage `c` de
   `/estimation-rues.json`), avec la dispersion et l'écart par taille du voisinage ; elle est placée entre
   les déciles par l'étage (dernier étage déduit de la hauteur de l'immeuble), l'ascenseur selon l'étage, la typologie,
@@ -119,8 +120,9 @@ Tailwind 4, Cloudflare Pages (projet `trudaines-dpe`), formulaires en Pages Func
 - Défenses des formulaires (attaques des nuits du 12 et 13 novembre 2026) : 6 envois par IP et par quart d'heure
   (`functions/_middleware.js`, compteur Cache API), aucun lien ni code dans aucun champ (refus 400 expliqué au visiteur ; seul le champ `linkedin` des candidatures accepte linkedin.com), aucun email à un visiteur s'il contient un lien étranger au site ou un
   alphabet non latin, 10 emails visiteurs par heure au plus (`envoyerEmail`, choix de Samy : le relever seulement si de vrais clients l'atteignent). Une notification agence refusée par Brevo
-  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile prêt, actif seulement avec
-  `PUBLIC_TURNSTILE_SITEKEY` et `TURNSTILE_SECRET` dans Cloudflare.
+  (quota) ne fait plus échouer la demande : SMS et contact partent quand même. Turnstile actif (`PUBLIC_TURNSTILE_SITEKEY`, `TURNSTILE_SECRET`) : un envoi sans jeton
+  ou avec un jeton expiré ou déjà présenté passe, seul un jeton forgé est refusé ; le jeton est renouvelé après un envoi refusé
+  (`renouvelerTurnstile`, `public/js/formulaires.js`).
 - Regard de l'agence sur une rue : `src/data/regards-rues.ts`, affiché sur /prix-immobilier/<slug> sous « Ce que ces
   chiffres disent », sans aucun chiffre (les prix de la page viennent de rues.json).
 - Avis de valeur : offert quand le propriétaire envisage de vendre ; 300 € TTC seulement s'il veut la valeur sans

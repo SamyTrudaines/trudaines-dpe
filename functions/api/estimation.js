@@ -39,10 +39,17 @@ export async function onRequestPost({ request, env }) {
 
     // Étage et ascenseur n'existent que pour un appartement : le formulaire les retire pour une maison.
     const type = String(donnees.get('type') || 'Appartement').trim();
-    const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'email', 'telephone'];
+    /*
+     * L'email est facultatif depuis le 26 novembre 2026 : le téléphone suffit pour rappeler, et la
+     * fourchette s'affiche à l'écran. Sur mobile, un formulaire immobilier n'est mené au bout qu'une
+     * fois sur trois (Zuko, 2025) ; chaque champ obligatoire en moins compte.
+     */
+    const requis = ['adresse', 'surface', 'pieces', 'chambres', 'prenom', 'telephone'];
     if (['Appartement', 'Duplex', 'Loft ou atelier'].includes(type)) requis.push('etage', 'ascenseur');
     const manquants = champsManquants(donnees, requis);
-    if (manquants.length || !emailValide(donnees.get('email'))) {
+    const emailSaisi = String(donnees.get('email') || '').trim();
+    const chiffres = String(donnees.get('telephone') || '').replace(/\D/g, '');
+    if (manquants.length || chiffres.length < 9 || (emailSaisi && !emailValide(emailSaisi))) {
       return reponse(request, { ok: false, message: 'Merci de compléter tous les champs obligatoires.' }, 400);
     }
 
@@ -77,7 +84,7 @@ export async function onRequestPost({ request, env }) {
       // Page quartier ou rue d'où part la demande : dit à l'agence ce que le visiteur lisait.
       ['Page d’origine', valeur('origine')],
       ['Nom', nomComplet],
-      ['Email', email],
+      ['Email', email || 'Non donné'],
       ['Téléphone', valeur('telephone')],
       ['Message', valeur('message')],
       ['Consentement', valeur('consentement') === 'oui' ? 'Oui' : 'Non'],
@@ -88,7 +95,7 @@ export async function onRequestPost({ request, env }) {
     await envoyerEmail(env, {
       sujet: `${libelle} · Estimation · ${valeur('adresse')} · ${valeur('fourchette') || valeur('horizon') || 'horizon non précisé'}`,
       html: gabaritNotification(`Nouvelle demande d’estimation : ${libelle}`, lignes),
-      repondreA: email,
+      repondreA: email || undefined,
     });
 
     /*
@@ -99,7 +106,7 @@ export async function onRequestPost({ request, env }) {
     await envoyerSmsAgence(env, `Trudaines, ${libelle.toLowerCase()} : ${nomComplet}, ${valeur('telephone')}. ${valeur('adresse')}, ${valeur('surface')} m², ${valeur('pieces')} p.${valeur('etat') ? `, ${valeur('etat').toLowerCase()}` : ''} ${valeur('fourchette') ? `Fourchette vue : ${valeur('fourchette')}.` : ''} ${valeur('horizon') ? `Projet : ${valeur('horizon').toLowerCase()}.` : ''} ${vendeur ? 'A rappeler.' : 'A qualifier.'}`);
 
     await embaser(env, {
-      email,
+      email: email || undefined,
       attributs: {
         PRENOM: prenom,
         NOM: valeur('nom'),
@@ -152,13 +159,15 @@ export async function onRequestPost({ request, env }) {
         'Si vous souhaitez un avis de valeur écrit, établi après visite, sans projet de vente, il est facturé 300 € TTC, intégralement déduits de nos honoraires si vous nous confiez ensuite la vente. Si un projet de vente se dessine, l’estimation devient gratuite : répondez simplement à cet email ou appelez-moi au 06 20 46 59 12.',
       ];
 
-    await envoyerEmail(env, {
-      destinataire: email,
-      sujet: 'Votre demande d’estimation est bien reçue',
-      html: gabaritClient(`Bonjour ${prenom},`, paragraphes),
-    }).catch(() => null);
+    if (email) {
+      await envoyerEmail(env, {
+        destinataire: email,
+        sujet: 'Votre demande d’estimation est bien reçue',
+        html: gabaritClient(`Bonjour ${prenom},`, paragraphes),
+      }).catch(() => null);
+    }
 
-    return reponse(request, { ok: true, message: 'Demande enregistrée' });
+    return reponse(request, { ok: true, message: 'Demande enregistrée', email: Boolean(email) });
   } catch (erreur) {
     console.error('api/estimation', erreur);
     return reponse(

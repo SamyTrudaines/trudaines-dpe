@@ -157,6 +157,28 @@ for (const [nom, champs, prefixe, sms, attendus, absents] of [
   console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation, ${nom} : « ${agence?.corps.subject} » · SMS ${nbSms}`);
 }
 
+/*
+ * Email facultatif depuis le 26 novembre 2026 : sans email, Samy reçoit quand même l'email et le SMS,
+ * le contact entre dans Brevo par son téléphone, et aucun email ne part vers le visiteur.
+ * Un email mal formé, lui, reste refusé.
+ */
+{
+  appels.length = 0;
+  const { email: _sansEmail, ...sansEmail } = cas[0][2];
+  const r = await estimation.onRequestPost({ request: requete(sansEmail), env });
+  const courriels = appels.filter((a) => a.url.endsWith('/smtp/email'));
+  const agence = courriels.find((a) => a.corps.to?.[0]?.email === env.NOTIFICATION_EMAIL);
+  const sms = appels.filter((a) => a.url.endsWith('/transactionalSMS/send')).length;
+  const contact = appels.find((a) => a.url.endsWith('/contacts'));
+  const ok = r.status === 200 && agence && courriels.length === 1 && sms === 1
+    && contact && !contact.corps.email && contact.corps.attributes?.SMS;
+  if (!ok) echecs++;
+  console.log(`${ok ? 'OK   ' : 'ÉCHEC'} estimation sans email : email agence ${agence ? 1 : 0}, SMS ${sms}, Brevo par téléphone ${contact && !contact.corps.email ? 'oui' : 'non'}`);
+  const mauvais = await estimation.onRequestPost({ request: requete({ ...cas[0][2], email: 'claire@' }), env });
+  if (mauvais.status !== 400) echecs++;
+  console.log(`${mauvais.status === 400 ? 'OK   ' : 'ÉCHEC'} estimation : email mal formé refusé · statut ${mauvais.status}`);
+}
+
 const incomplete = await estimation.onRequestPost({ request: requete({ adresse: 'x' }), env });
 if (incomplete.status !== 400) echecs++;
 console.log(`${incomplete.status === 400 ? 'OK   ' : 'ÉCHEC'} refus des champs manquants · statut ${incomplete.status}`);
@@ -678,6 +700,21 @@ globalThis.fetch = async (url, options) => String(url).includes('siteverify')
 fonctionAtteinte = false;
 const jetonFaux = await gardeSite.onRequest({ request: requeteTurnstile('jeton-faux'), env: envTurnstile, next: suivant });
 verifier('Turnstile : jeton jugé faux refusé', jetonFaux.status === 403 && !fonctionAtteinte, `statut ${jetonFaux.status}`);
+
+/* Jeton expiré ou déjà présenté : un visiteur réel (saisie longue, second essai), accepté. */
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: false, 'error-codes': ['timeout-or-duplicate'] }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonUse = await gardeSite.onRequest({ request: requeteTurnstile('jeton-deja-presente'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton expiré ou déjà présenté accepté', jetonUse.status === 200 && fonctionAtteinte, `statut ${jetonUse.status}`);
+
+globalThis.fetch = async (url, options) => String(url).includes('siteverify')
+  ? new Response(JSON.stringify({ success: false, 'error-codes': ['invalid-input-response'] }), { status: 200 })
+  : fetchOriginal(url, options);
+fonctionAtteinte = false;
+const jetonForge = await gardeSite.onRequest({ request: requeteTurnstile('jeton-forge'), env: envTurnstile, next: suivant });
+verifier('Turnstile : jeton forgé refusé', jetonForge.status === 403 && !fonctionAtteinte, `statut ${jetonForge.status}`);
 
 globalThis.fetch = async (url, options) => String(url).includes('siteverify')
   ? new Response(JSON.stringify({ success: true }), { status: 200 })

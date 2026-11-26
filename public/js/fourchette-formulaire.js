@@ -234,7 +234,8 @@
         'vérifie ces points et ajoute la copropriété et le plan.</p>' +
         '<p class="mt-2 text-sm"><strong>Fiabilité : ' + fiabilite(rue) + '</strong></p>';
       bloc.hidden = false;
-      if (mention) mention.hidden = false;
+      /* L'email est facultatif : la phrase « un email vient de partir » seulement s'il a été donné. */
+      if (mention) mention.hidden = !valeur(form, 'email').trim();
       if (cache) cache.value = euros(bas * surface) + ' à ' + euros(haut * surface) + (rue ? ' (rue)' : ' (arrondissement)');
       /* Le calcul se refait à chaque étape : l'événement ne part qu'une fois par formulaire. */
       if (!form.dataset.fourchetteMesuree && typeof window.trudainesEvent === 'function') {
