@@ -98,8 +98,8 @@ Attendre une embellie prochaine serait un pari. Les Notaires du Grand Paris n'en
 Dans ce marché, le prix de départ décide de tout. Les acquéreurs actifs sont surtout des primo-accédants, financés au plus juste, qui comparent chaque annonce. Un appartement affiché au bon prix dès la première semaine se vend. Affiché trop haut, il s'use sur les portails et finit par partir sous sa valeur. Nous détaillons ces délais dans [combien de temps pour vendre un appartement à Paris](/vendre/delai-de-vente-paris).
 
 <figure class="portrait">
-  <img src="/images/panorama/prix-immobilier-paris-9e-18e-fin-2026-rue-au-soleil.webp" width="900" height="1599" alt="Rue parisienne bordée d'immeubles anciens, soleil rasant du matin" loading="lazy" decoding="async" />
-  <figcaption>Un matin de novembre, dans nos rues.</figcaption>
+  <img src="/images/panorama/prix-immobilier-paris-9e-18e-fin-2026-rue-au-soleil.webp" width="900" height="1599" alt="Rue Blanche, Paris 9e, bordée d'immeubles anciens sous le soleil rasant du matin" loading="lazy" decoding="async" />
+  <figcaption>Rue Blanche, Paris 9e, un matin de novembre 2026.</figcaption>
 </figure>
 
 ## Comment acheter dans de bonnes conditions à Paris fin 2026 ?
@@ -122,4 +122,4 @@ Pour aller plus loin : [les prix rue par rue à Montmartre, dans le haut du 9e e
 - Observatoire Crédit Logement/CSA, taux moyen d'octobre 2026, cité par les notaires.
 - Meilleurtaux, [baromètre des taux de novembre 2026](https://www.meilleurtaux.com/credit-immobilier/info-des-taux/).
 - Demandes de valeurs foncières (DGFiP, data.gouv.fr), ventes d'appartements de janvier 2024 à juin 2026, calculs Trudaines.
-- Photos : Samy Santamarina, novembre 2026.
+- Photos : Samy Santamarina, novembre 2026 (place Saint-Georges, rue Pierre-Fontaine, rue Blanche).
