@@ -5,7 +5,7 @@ Sources publiques : DPE de l'ADEME (jeu dpe03existant) et annuaire des entrepris
 
 Usage :
   python3 -I scripts/prospection/dpe-immeubles.py --sortie /chemin/resultat.json \
-      [--jours 7] [--deja /chemin/deja.txt] [--sans-societes]
+      [--jours 7] [--deja /chemin/deja.txt] [--max-immeubles 40] [--sans-societes]
 
 --deja : fichier texte, une adresse par ligne (« 19 Rue Coysevox »), immeubles à écarter.
 Le résultat contient des noms de dirigeants : il ne se range jamais dans le dépôt, qui est public.
@@ -83,6 +83,7 @@ def main():
     p.add_argument('--jours', type=int, default=7)
     p.add_argument('--deja')
     p.add_argument('--sans-societes', action='store_true')
+    p.add_argument('--max-immeubles', type=int, default=40, help='immeubles nouveaux interrogés dans l annuaire')
     a = p.parse_args()
     depuis = (datetime.date.today() - datetime.timedelta(days=a.jours)).isoformat()
     deja = set()
@@ -115,9 +116,7 @@ def main():
     liste.sort(key=lambda i: (-ord(i['pire'][0]), -i['dpe'], i['cp'], cle(re.sub(r'^\d+\S*\s+', '', i['adresse']))))
 
     if not a.sans_societes:
-        for i in liste:
-            if i['deja_note']:
-                continue
+        for i in [i for i in liste if not i['deja_note']][:a.max_immeubles]:
             try:
                 s = societes(i['adresse'], i['cp'])
             except Exception as e:  # l'immeuble reste dans la liste, sans sociétés
